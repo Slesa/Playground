@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using ReportViewer.Reports;
 
 namespace ReportViewer
 {
@@ -26,10 +17,40 @@ namespace ReportViewer
 
         private void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
-            MyCrystalReportViewer.ReportSource = new CrystalReport1();
-
+            var connectionInfo = new ConnectionInfo
+                                     {
+                                         ServerName = @".\SQLEXPRESS",
+                                         DatabaseName = "NHibernateSketches",
+                                         IntegratedSecurity = true
+                                     };
+            InitializeExternalReport(connectionInfo);
+            InitializeEmbeddedReport(connectionInfo);
         }
 
+        void InitializeExternalReport(ConnectionInfo connectionInfo)
+        {
+            var reportDocument = new ReportDocument();
+            reportDocument.Load(@"Reports\CrystalReport2.rpt");
+            InitializeTables(connectionInfo, reportDocument);
+            extReportViewer.ReportSource = reportDocument;
+        }
 
+        void InitializeEmbeddedReport(ConnectionInfo connectionInfo)
+        {
+            var reportDocument = new CrystalReport1();
+            InitializeTables(connectionInfo, reportDocument);
+            embReportViewer.ReportSource = reportDocument;
+        }
+
+        static void InitializeTables(ConnectionInfo connectionInfo, ReportDocument reportDocument)
+        {
+            var tables = reportDocument.Database.Tables;
+            foreach (Table table in tables)
+            {
+                var logonInfo = table.LogOnInfo;
+                logonInfo.ConnectionInfo = connectionInfo;
+                table.ApplyLogOnInfo(logonInfo);
+            }
+        }
     }
 }
