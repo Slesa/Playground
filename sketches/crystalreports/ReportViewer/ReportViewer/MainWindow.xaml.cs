@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using ReportViewer.Reports;
@@ -52,5 +54,28 @@ namespace ReportViewer
                 table.ApplyLogOnInfo(logonInfo);
             }
         }
+
+        public List<ReportInfo> ReportInfos
+        {
+            get 
+            { 
+                var result = new List<ReportInfo>();
+                var directory = new DirectoryInfo("Reports");
+                var reportDocument = new ReportDocument();
+                foreach (var fileInfo in directory.GetFiles("*.rpt"))
+                {
+                    reportDocument.Load(fileInfo.FullName);
+                    var reportInfo = new ReportInfo();
+                    reportInfo.Name = reportDocument.Name;
+                    result.Add(reportInfo);
+                }
+                return result;
+            }
+        }
+    }
+
+    public class ReportInfo
+    {
+        public string Name { get; set; }
     }
 }

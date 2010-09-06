@@ -21,6 +21,19 @@
                     </WindowsFormsHost>
                 </DockPanel>
             </TabItem>
+            <TabItem Header="Reports">
+                <DockPanel LastChildFill="True">
+                    <GroupBox DockPanel.Dock="Top" Header="Select..." Height="Auto" Name="groupSelect">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Height="25" Name="tbReport" Text="Report:" />
+                            <ComboBox Height="25" Name="cbReport" DataContext="ReportInfos" ItemsSource="{Binding}" SelectedValuePath="Key" DisplayMemberPath="Name" />
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox DockPanel.Dock="Top" Header="Information" Height="Auto" Name="groupInfo">
+                        
+                    </GroupBox>
+                </DockPanel>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
