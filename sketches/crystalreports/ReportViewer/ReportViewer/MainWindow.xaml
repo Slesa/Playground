@@ -6,18 +6,20 @@
     <DockPanel LastChildFill="True">
         <TabControl>
             <TabItem Header="External">
-                <TabPanel>
+                <!-- TabPanel -->
+                    <DockPanel LastChildFill="True">
                     <WindowsFormsHost Width="Auto" Height="Auto" MinHeight="480" MinWidth="640">
                         <Forms:CrystalReportViewer x:Name="extReportViewer"/>
                     </WindowsFormsHost>
-                </TabPanel>
+                    </DockPanel>
+                <!-- /TabPanel -->
             </TabItem>
             <TabItem Header="Embedded">
-                <TabPanel>
+                <DockPanel LastChildFill="True">
                     <WindowsFormsHost Width="Auto" Height="Auto" MinHeight="480" MinWidth="640">
                         <Forms:CrystalReportViewer x:Name="embReportViewer"/>
                     </WindowsFormsHost>
-                </TabPanel>
+                </DockPanel>
             </TabItem>
         </TabControl>
     </DockPanel>
