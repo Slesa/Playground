@@ -3,6 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Forms="clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms" 
         Title="MainWindow" Height="600" Width="800" Loaded="OnWindowLoaded">
+    <Window.Resources>
+        <DataTemplate x:Key="ReportInfoItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Name}" />
+                <TextBlock Text=" - " />
+                <TextBlock Text="{Binding Path=Author}" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <DockPanel LastChildFill="True">
         <TabControl>
             <TabItem Header="External">
@@ -26,11 +35,42 @@
                     <GroupBox DockPanel.Dock="Top" Header="Select..." Height="Auto" Name="groupSelect">
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Height="25" Name="tbReport" Text="Report:" />
-                            <ComboBox Height="25" Name="cbReport" DataContext="ReportInfos" ItemsSource="{Binding}" SelectedValuePath="Key" DisplayMemberPath="Name" />
+                            <ComboBox Height="25" Width="400" Name="cbReport" 
+                                      IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" 
+                                      ItemTemplate="{StaticResource ReportInfoItemTemplate}" 
+                                      SelectionChanged="OnReportChanged" />
                         </StackPanel>
                     </GroupBox>
                     <GroupBox DockPanel.Dock="Top" Header="Information" Height="Auto" Name="groupInfo">
-                        
+                        <Grid DataContext="cbReport">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Report name:" />
+                            <TextBox Grid.Column="1" Grid.Row="0" Name="tbReportName" Text="{Binding Path=SelectedItem.Name}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="File name:" />
+                            <TextBox Grid.Column="1" Grid.Row="1" Name="tbFileName" />
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Author:" />
+                            <TextBox Grid.Column="1" Grid.Row="2" Name="tbAuthor" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Subject:" />
+                            <TextBox Grid.Column="1" Grid.Row="3" Name="tbSubject" />
+                            <TextBlock Grid.Column="0" Grid.Row="4" Text="Title:" />
+                            <TextBox Grid.Column="1" Grid.Row="4" Name="tbTitle" />
+                            <TextBlock Grid.Column="0" Grid.Row="5" Text="Keywords:" />
+                            <TextBox Grid.Column="1" Grid.Row="5" Name="tbKeywords" />
+                            <TextBlock Grid.Column="0" Grid.Row="6" Text="Comments:" />
+                            <TextBox Grid.Column="1" Grid.Row="6" Name="tbComments" />
+                        </Grid>
                     </GroupBox>
                 </DockPanel>
             </TabItem>

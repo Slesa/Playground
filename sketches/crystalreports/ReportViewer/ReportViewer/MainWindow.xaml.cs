@@ -15,6 +15,7 @@ namespace ReportViewer
         public MainWindow()
         {
             InitializeComponent();
+            cbReport.DataContext = ReportInfos;
         }
 
         private void OnWindowLoaded(object sender, RoutedEventArgs e)
@@ -65,17 +66,43 @@ namespace ReportViewer
                 foreach (var fileInfo in directory.GetFiles("*.rpt"))
                 {
                     reportDocument.Load(fileInfo.FullName);
-                    var reportInfo = new ReportInfo();
-                    reportInfo.Name = reportDocument.Name;
+                    var reportInfo = new ReportInfo
+                                         {
+                                             Name =
+                                                 string.IsNullOrEmpty(reportDocument.Name)
+                                                     ? fileInfo.Name
+                                                     : reportDocument.Name,
+                                             Filename = reportDocument.FileName,
+                                             Author = reportDocument.SummaryInfo.ReportAuthor
+                                         };
                     result.Add(reportInfo);
                 }
                 return result;
             }
         }
+
+        private void OnReportChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var reportInfo = cbReport.SelectedItem as ReportInfo;
+            if (reportInfo == null)
+                return;
+            var reportDocument = new ReportDocument();
+            reportDocument.Load(reportInfo.Filename);
+
+            tbReportName.Text = reportDocument.Name;
+            tbFileName.Text = reportDocument.FileName;
+            tbAuthor.Text = reportDocument.SummaryInfo.ReportAuthor;
+            tbSubject.Text = reportDocument.SummaryInfo.ReportSubject;
+            tbTitle.Text = reportDocument.SummaryInfo.ReportTitle;
+            tbKeywords.Text = reportDocument.SummaryInfo.KeywordsInReport;
+            tbComments.Text = reportDocument.SummaryInfo.ReportComments;
+        }
     }
 
     public class ReportInfo
     {
+        public string Filename { get; set; }
         public string Name { get; set; }
+        public string Author{ get; set; }
     }
 }
