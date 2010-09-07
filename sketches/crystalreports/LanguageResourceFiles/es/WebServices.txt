@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       WebServices.txt
+#   Summary:    This file contains SPANISH resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=No se puede crear el objeto de origen del informe.
+IDS_ERR_DIRECTORY_NOT_FOUND=No se encontró parte de la ruta de acceso '{0}'.
+

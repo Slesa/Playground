@@ -1,0 +1,51 @@
+#==============================================================================
+#   File:       SCRViewerReportSource.txt
+#   Summary:    This file contains KOREAN resources for Viewer ReportSource
+#==============================================================================
+
+;[strings]
+
+IDS_ENTRPT_APSSERVER=인증과 일정을 처리할 Crystal Enterprise CMS 서버입니다.
+IDS_ENTRPT_USERNAME=Crystal Enterprise에 연결하는 데 사용되는 사용자 이름입니다.
+IDS_ENTRPT_PASSWORD=Crystal Enterprise에 연결하는 데 사용되는 암호입니다.
+IDS_ENTRPT_AUTHTYPE=Crystal Enterprise에 연결하는 데 사용되는 인증 형식입니다.
+
+IDS_ENTRPT_LOGONINFO=Crystal Enterprise 로그온 정보 - EnterpriseSession을 사용하는 경우에는 사용하지 마십시오.
+IDS_ENTRPT_DOCUMENTURI=보고서 문서의 경로 예: "ras://c:\\report.rpt", "ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=사용할 보고서 응용 프로그램 서버
+IDS_ENTRPT_ENTSESSION=Crystal Enterprise 세션 개체
+;IDS_REPORTDATAVIEW_GROUPPATH=보고서의 데이터 그룹 경로입니다.
+;IDS_REPORTDATAVIEW_TOSTRINGFORMAT=ToString()에서 사용되는 형식 문자열입니다. 예: "{0}: {1}, {2}"
+;IDS_REPORTDATAVIEW_VISIBLEFIELDS=표시할 보고서 필드의 목록으로 세미콜론으로 구분됩니다. ""이면 모든 필드가 표시됩니다.
+;IDS_REPORTDATAVIEW_REPORT=데이터를 가져오는 데 사용되는 보고서입니다.
+
+;IDS_DOCURIEDITOR_FILTER=Crystal Reports 파일 (*.rpt)|*.rpt
+;IDS_OPENFILEDIALOG_TITLE=열기
+
+IDS_CATEGORY_REPORT=보고서
+ID_NONE=(없음)
+ID_BROWSE=찾아보기...
+ID_CREATE_NEW_REPORT_INSTANCE=입력된 보고서 클래스에서 새 ReportDocument 인스턴스를 만듭니다.
+ID_USE_EXISTING_INSTANCE=기존의 ReportDocument 인스턴스를 사용합니다.
+ID_OPEN_REPORT_DIALOG_TITLE=기존 Crystal Report 열기
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Report(*.rpt)|*.rpt
+ID_EDIT_REPORT_SOURCE=보고서 소스 편집
+ID_ENTER_REPORT_SOURCE=보고서 소스 입력
+ID_EDIT=편집...
+ID_CANCEL=취소
+ID_OK=확인
+
+# Exception messages
+IDS_EXCEPTION_INVALID_REPORTSOURCE=보고서 소스가 잘못되었습니다.
+IDS_EXCEPTION_INVALID_REPORTFILE=보고서 파일이 잘못되었습니다.
+IDS_EXCEPTION_CREATEREPORT_RETURNED_NULL=ICachedReport::CreateReport()에서 'null'을 반환했습니다.
+IDS_EXCEPTION_NO_REPORT_FILENAME=보고서 파일 이름이 비어 있습니다.
+;IDS_EXCEPTION_SESSIONNOTINITIALIZED=Enterprise 세션이 초기화되지 않았습니다.
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Enterprise에 로그온하지 못했습니다.
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=XML serialization에 실패했습니다.
+;IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon은 로그온 토큰 문자열 또는 ISEnterpriseSession이어야 합니다.
+;IDS_EXCEPTION_CE_NOT_FOUND=컴퓨터에서 Crystal Enterprise를 찾을 수 없습니다.\n자세한 내용은http://korea.businessobjects.com/products/products01_02.shtml을 참조하십시오.
+
+IDS_ERROR_INVALIDREPORTNAME=보고서를 로드하지 못했습니다.
+IDS_ERROR_DESERIALIZATIONFAILED=deserialization에 실패했습니다. 보고서 응용 프로그램 서버에서 "{0}"을(를) 실행해야 합니다.
+

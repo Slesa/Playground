@@ -1,0 +1,256 @@
+﻿#==============================================================================
+#   File:       CRVSShell.txt
+#   Summary:    This file contains SPANISH resources for VSDesigner.dll
+#==============================================================================
+
+# These next three strings must match the VS7 toolbox tab names
+IDS_TOOLBOX_WEBFORMS=Web Forms
+IDS_TOOLBOX_MOBILE_WEBFORMS=Web Forms móviles
+IDS_TOOLBOX_WINFORMS=Windows Forms
+IDS_TOOLBOX_COMPONENTS=Componentes
+IDS_TOOLBOX_CRYSTALREPORTS=Crystal Reports
+
+IDS_SERVEREXPLORER_ROOT=Crystal Services
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE=Informes del servidor
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_WEBSERVICE=Servicio Web de Crystal Enterprise
+IDS_SERVEREXPLORER_SERVERFILES=Report Application Server
+IDS_SERVEREXPLORER_REPORTDATA=Datos del informe
+
+IDS_SERVEREXPLORER_ROOT_WHIDBEY=Servicios de Crystal Reports
+IDS_SERVEREXPLORER_SERVERFILES_WHIDBEY=Servicio Web de archivos de servidor
+
+IDS_SERVEREXPLORER_RAS_PORTSETTING_MENU=&Cambiar configuración del puerto...
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_TITLE=Configuración del puerto
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_PORT=Puerto:
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR_TITLE=Configuración del puerto no válida
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR=Ha especificado un número de puerto no válido.
+
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LOGIN=&Conectar...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIRSTBATCH=&Primer lote
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_PREVIOUSBATCH=&Lote anterior
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_NEXTBATCH=&Lote siguiente
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LASTBATCH=Úl&timo lote
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIND=&Buscar...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_COPYOBJCUID=&Copiar CUID
+
+IDS_SERVEREXPLORER_FINDDLG_TITLE=Buscar
+IDS_SERVEREXPLORER_FINDDLG_FINDTEXT_LABEL=B&uscar el elemento que comienza por:
+
+IDS_SERVEREXPLORER_CE_LOGINDLG_LOGIN=Conectar
+IDS_SERVEREXPLORER_CE_LOGINDLG_AUTH=&Autenticación:
+IDS_SERVEREXPLORER_CE_LOGINDLG_USERNAME=No&mbre de usuario:
+IDS_SERVEREXPLORER_CE_LOGINDLG_PASSWD=&Contraseña:
+IDS_SERVEREXPLORER_CE_LOGINDLG_APS=&Sistema:
+IDS_SERVEREXPLORER_CE_LOGINDLG_WCS=&Web Connector:
+IDS_SERVEREXPLORER_CE_LOGINDLG_OK=Aceptar
+IDS_SERVEREXPLORER_CE_LOGINDLG_CANCEL=Cancelar
+
+IDS_SERVEREXPLORER_NO_NEXT_BATCH=Ya tiene el último lote.
+IDS_SERVEREXPLORER_NO_PREVIOUS_BATCH=Ya tiene el primer lote.
+
+IDS_SERVEREXPLORER_COULD_NOT_FIND_REPORT_MANAGER=No se puede encontrar el servicio web {0}.\nCompruebe que está instalado en el equipo remoto.
+IDS_SERVEREXPLORER_CE_LOGON_FAILED=Error al conectarse a Crystal Enterprise10 mediante '{0}'.  Compruebe que los servidores CMS y Web Connector, el nombre de usuario y la contraseña son correctos y, a continuación, vuelva a intentarlo.
+IDS_SERVEREXPLORER_NODE_TYPE_FAILED=Error al cargar el tipo '{0}'
+IDS_SERVEREXPLORER_NODE_CREATION_FAILED=Error al crear el nodo del explorador de servidores '{0}'
+IDS_SERVEREXPLORER_CHECKFORASPNET2=Error al obtener acceso al servicio Web.\nCompruebe que {0} está configurado como aplicación Web ASP.NET 2.0.
+
+IDS_SERVEREXPLORER_INSTANCE_FORMAT={0:aaaa-MM-dd HH:mm:ss}  {1}
+
+IDS_SERVEREXPLORER_FAILED_TO_QUERY_UNPATCHED_CE_FOR_INSTANCES=El sistema Enterprise no se ha actualizado para admitir el acceso a copias de informes mediante el explorador de servidores. Póngase en contacto con el administrador de Crystal Enterprise para obtener ayuda.
+
+IDS_INSTANCE_STATUS_ACTIVE=Activo
+IDS_INSTANCE_STATUS_COMPLETE=Completo
+IDS_INSTANCE_STATUS_FAILED=Error
+IDS_INSTANCE_STATUS_LOADED=Cargado
+IDS_INSTANCE_STATUS_LOADING=Cargando
+IDS_INSTANCE_STATUS_NOTRESPONDING=No responde
+IDS_INSTANCE_STATUS_ONHOLD=En espera
+IDS_INSTANCE_STATUS_PAUSED=Detenido
+IDS_INSTANCE_STATUS_SCHEDULED=Programado
+IDS_INSTANCE_STATUS_ERROR=Error
+IDS_INSTANCE_STATUS_QUEUED=En cola
+IDS_INSTANCE_STATUS_RUNTODAY=Ejecutar hoy
+IDS_INSTANCE_STATUS_TERMINATED=Terminado
+IDS_INSTANCE_STATUS_TERMINATING=Terminando
+
+# Smart Task
+IDS_TASK_CREATE_REPORTSOURCE_TEXT=Crear un nuevo informe de Crystal...
+IDS_TASK_CREATE_REPORTSOURCE_DESCRIPTION=Crear un nuevo informe y enlazarlo al visor.
+IDS_TASK_BROWSE_REPORTSOURCE_TEXT=Elegir un informe de Crystal... 
+IDS_TASK_BROWSE_REPORTSOURCE_DESCRIPTION=Buscar un archivo de CrystalReport, objeto de ReportDocument, objeto de informe con tipos declarados.
+IDS_TASK_CLEAR_REPORTSOURCE_TEXT=Borrar origen del informe
+IDS_TASK_CLEAR_REPORTSOURCE_DESCRIPTION=Borrar la propiedad ReportSource.
+IDS_TASK_CONVERT_TO_REPORT_TEXT=Crystal Report
+IDS_TASK_CONVERT_TO_REPORT_DESCRIPTION=Cambiar contenido a Crystal Report.
+IDS_TASK_EDIT_REPORTSOURCE_TEXT=Editar el informe de Crystal actual
+IDS_TASK_EDIT_REPORTSOURCE_DESCRIPTION=Editar el informe actual.
+IDS_INVALIDREPORTFILENAME=No se puede asignar al archivo un nombre reservado del sistema como '.', '..', 'COM1', 'LPT1', 'CON', 'AUX', 'PRN',\n ni el nombre puede contener ninguno de los siguientes caracteres: {0}.\nEl nombre de archivo no puede contener caracteres de control Unicode.
+IDS_INVALIDREPORTFILENAME_TITLE=Nombre de informe no válido
+IDS_CHOOSEREPORT_DIALOG_TITLE=Elegir un informe de Crystal - {0}
+IDS_EDIT_REPORTSOURCE_TITLE=Editar informe
+IDS_CANNOT_EDIT_REPORTSOURCE=No se ha establecido la propiedad ReportSource o no se puede editar el informe.
+
+# Chrome menu
+IDS_CONFIGURE_REPORT_DATA_SOURCE=Configurar origen de informe...
+IDS_CONNECT_REPORT_DATA_SOURCE=Conectar con origen de informe...
+IDS_TOGGLE_GROUP_TREE=Mostrar u ocultar árbol de grupos
+IDS_TOGGLE_TOOLBAR=Mostrar/ocultar barra de herramientas
+IDS_TOGGLE_REPORTVIEW=Mostrar u ocultar vista de informe
+IDS_TOGGLE_SEPARATE_PAGES=Mostrar informe en varias páginas
+IDS_TOGGLE_BEST_FIT_PAGE=Permitir que la página crezca
+IDS_EDIT_REPORT=Editar informe...
+IDS_CANNOT_FIND_REPORT=No se encontró el archivo de origen {0}.
+IDS_REPORT_SOURCE_NOT_SET=Aún no se ha configurado el origen de informe.
+IDS_EDITREPORT_ERROR_MSGBOX_TITLE=No se puede editar el informe
+
+# ReportSourcePicker
+IDS_REPORTSOURCEPICKER_TITLE=Crear origen de informe
+IDS_BROWSE_REPORT=<Examinar...>
+IDS_NEW_REPORT=<Nuevo informe...>
+IDS_NEW_REPORT_DATA_SOURCE=<Nuevo CrystalReportSource...>
+IDS_TITLE_STRING_FORMAT=%0 - %1
+IDS_DUPLICATE_ID=El nombre del nuevo origen de informe no es único.
+IDS_OPEN_REPORT_DIALOG_TITLE=Seleccionar un informe de Crystal
+IDS_OPEN_REPORT_DIALOG_FILTER=Informes de Crystal (*.rpt)|*.rpt
+
+# CreateReportSourceDialog
+IDS_CREATE_REPORT_SOURCE_LABEL_DIALOG_DESCRIPTION=Crear un CrystalReportSource que proporcionará contenido y datos del  informe.
+IDS_CREATE_REPORT_SOURCE_LABEL_HEADER=Crear un control CrystalReportSource
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_DATASOURCENAME=Especificar el nombre del control CrystalReportSource
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_FILE_NAME=Especificar un nombre de Crystal Report para el control CrystalReportSource
+
+IDS_NEW_REPORT_NAME_DIALOG_TITLE=Crear un nuevo informe de Crystal Reports
+IDS_NEW_REPORT_NAME_DIALOG_DESCR=Especificar el nombre del informe nuevo
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE_DESCRIPTION=No puede utilizar los siguientes caracteres en el nombre del control CrystalReportSource: {0}
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE=Nombre de CrystalReportSource no válido
+
+
+# BrowseReportSourceDialog
+IDS_ADD_TO_PROJECT=Agregar al proyecto
+IDS_USE_REPORTDOCUMENT=Utilizar ReportDocument
+IDS_SPECIFY_CRYSTAL_REPORT=Especificar un informe de Crystal Reporta para el control
+
+# ConfigureReportSource
+IDS_CONFIGURE_REPORTSOURCE_DIALOG_TITLE=Configurar origen de informe - {0}
+IDS_CONFIGURE_REPORTSOURCE_DESCR=Especificar el informe de Crystal al que enlazar este control CrystalReportSource.
+
+# ReportSourceIDListBox
+ID_NEW_REPORTSOURCE=<Nuevo origen de informe...>
+ID_NONE=<Ninguno>
+
+# BC: This is for webformviewer designer
+ID_LoadingHtml=Cargando ...
+ID_NoPreviewLogon=No se puede obtener una vista previa del informe debido a las conexiones a la base de datos.
+ID_NoPreviewParam=No se puede obtener una vista previa del informe debido a las solicitudes de parámetros.
+ID_NoPreviewGeneric=No se puede obtener una vista previa del informe debido al siguiente error:
+ID_NoReportPartsErr=Establezca las secciones iniciales del informe o utilice las propiedades ReportParts o DataBindings para especificar una definición de secciones de informe.
+
+# FL: You may not need to translate this; this is the default Enterprise
+# "guest" account name...
+IDS_SERVEREXPLORER_CE_LOGINDLG_GUEST=Guest
+
+IDS_SERVEREXPLORER_CE_WS_NOT_FOUND=El servicio Web de Crystal Enterprise (EnterpriseReportManager.asmx) no se detectó en '{0}'.\n\nPara conectarse con un sistema Crystal Enterprise 10, primero debe agregar el equipo que aloja EnterpriseReportManager.asmx como servidor en el nodo \"Servers\" mediante el elemento de menú contextual \"Agregar servidor...\".\n\nPara agregar EnterpriseReportManager.asmx a un servidor, instale SDK de CE .NET en el servidor.\n\n¿Desea obtener más información sobre Crystal Enterprise?
+IDS_SERVEREXPLORER_CE10_LOGON_FAILED=Error al conectarse a Crystal Enterprise10 mediante '{0}'.  Compruebe que los servidores CMS y Web Connector, el nombre de usuario y la contraseña son correctos y, a continuación, vuelva a intentarlo.
+IDS_SERVEREXPLORER_NO_CMS="El servicio Web de Crystal Enterprise (EnterpriseReportManager.asmx) se detectó en '{0}', pero no se encontró Crystal Management Server (CMS) de CE 10.\n\nEspecifique el CMS en el cuadro de diálogo de inicio de sesión.\n\n¿Desea obtener más información sobre Crystal Enterprise?"
+IDS_SERVEREXPLORER_CE_ENTERPRISE_URL=http://www.businessobjects.com/ipl/default.asp?destination=webreporting&language=ES&product=Crystal Reports&version=11.0&build=0
+
+IDS_SERVEREXPLORER_RAS_INTRO_WHIDBEY=El servidor de aplicaciones de informes está disponible con el Servidor de Crystal Reports o BusinessObjects Enterprise. ¿Desea obtener más información?
+IDS_SERVEREXPLORER_RAS_URL_WHIDBEY=http://www.spain.businessobjects.com/Productos/crystal_rep.htm
+
+# error
+IDS_REPORTTOOLBOX_DIALOG_TITLE=Elegir un ReportDocument
+IDS_REPORTTOOLBOX_MESSAGE=Elegir una clase ReportDocument escrita del proyecto, o bien la clase predeterminada ReportDocument no escrita.
+IDS_REPORTTOOLBOX_NAME=&Nombre:
+IDS_REPORTTOOLBOX_HELP=Si no existe ningún ReportDocument escrito en el proyecto, puede crear uno agregando o abriendo un informe Crystal en el proyecto.
+IDS_REPORTTOOLBOX_USECACHEDREPORT=&Generar informe con tipos declarados en caché
+IDS_OKAY=Aceptar
+IDS_CANCEL=Cancelar
+IDS_DEFAULTREPORT=ReportDocument no escrito
+IDS_CANNOTINITIALIZE="No se ha podido crear el objeto".
+IDS_NOTREPORTTYPE="No es una clase derivada de ReportDocument".
+IDS_NOCACHEDTYPEAVAILABLE="No hay ningún informe disponible en caché para el informe con tipos declarados".
+
+IDS_RPTCODEGEN_NOGENERATOR="ReportCodeGenerator: no hay ningún generador de código disponible para este lenguaje."
+IDS_RPTCODEGEN_CODEGENFAILED="Error en el generador de código '{0}'. Excepción de pila = {1}"
+
+CG_AddDLLFailed=No se puede agregar el archivo DLL a las referencias del proyecto: {0}. Agréguelas manualmente.
+CG_AddDLLFailed_Exception=Error al agregar {0}: '{1}'. Agréguelo manualmente.
+CombineTwoItems= {0}, {1}
+
+IDS_DESTINATION_FILE_EXISTS=El archivo de destino existe
+IDS_FILE_EXISTS_DIALOG_MESSAGE=Ya existe un informe llamado {0}. Vuelva a escribir un nuevo nombre de informe.
+
+IDS_ERROR_OPENING_REPORT_FILE_CAPTION=Error al abrir el archivo de informe
+IDS_ERROR_OPENING_REPORT_FILE_MESSAGE=Ha ocurrido un error al intenta abrir el informe {0}. Asegúrese de que el archivo existe y de que se le han concedido los permisos adecuados.
+IDS_ERROR_CREATING_NEW_REPORT_CAPTION=Error al crear el archivo de informe
+IDS_ERROR_CREATING_NEW_REPORT_MESSAGE=Error al intentar crear un nuevo informe:  {0}  Vuelva a escribir un nuevo nombre de informe.
+IDS_ERROR_ADDING_REPORT_TO_PROJ_MESSAGE=Error al intentar agregar el informe al proyecto.\nMensaje de error:  "{0}"
+IDS_ERROR_INVALID_REPORT_PATH=CrystalReportViewer no pudo cargar el informe denominado: {0}  Compruebe que el nombre de archivo del informe especificado por ReportSource es correcto.
+
+# ActionList
+ID_CATEGORY_DATA=Datos
+ID_CATEGORY_APPEARANCE=Apariencia
+ID_CATEGORY_TOOLBAR=Barra de herramientas
+ID_CATEGORY_BEHAVIOR=Comportamiento
+
+ID_REPORT_SOURCE_ID_DESCR=Conectarse a un origen de informe existente o crear uno nuevo.
+ID_REPORT_SOURCE_ID_DISPLAYNAME=Elegir un origen de informe:
+ID_REPORT_SOURCE_DESCR=Configurar los ajustes del origen de informe.
+ID_REPORT_SOURCE_DISPLAYNAME=Configurar el origen de informe...
+ID_ENABLE_STATUSBAR_DISPLAYNAME=Habilitar barra de estado
+ID_ENABLE_STATUSBAR_DESCR=Habilitar barra de estado en el visor de informes.
+ID_ENABLE_TOOLBAR_DISPLAYNAME=Habilitar barra de herramientas
+ID_ENABLE_TOOLBAR_DESCR=Habilitar barra de herramientas en el visor de informes.
+ID_ENABLE_GROUPTREE_DISPLAYNAME=Habilitar árbol de grupos
+ID_ENABLE_GROUPTREE_DESCR=Habilitar árbol de grupos en el visor de informes.
+ID_ENABLE_REPORTVIEW_DISPLAYNAME=Habilitar vista de informes
+ID_ENABLE_REPORTVIEW_DESCR=Habilitar vista de informes en el visor de informes.
+ID_ENABLE_LOGON_PROMPT_DISPLAYNAME=Habilitar solicitud de conexión a la base de datos
+ID_ENABLE_LOGON_PROMPT_DESCR=Habilitar visor de informes para solicitar la conexión a la base de datos cuando sea necesario.
+ID_ENABLE_PARAM_PROMPT_DISPLAYNAME=Habilitar solicitud de parámetros de informe
+ID_ENABLE_PARAM_PROMPT_DESCR=Habilitar visor de informes para solicitar parámetros cuando sea necesario.
+ID_REUSE_PARAM_VALUE_DISPLAYNAME=Volver a utilizar el valor de parámetro al actualizar el informe
+ID_REUSE_PARAM_VALUE_DESCR=Volver a utilizar los valores de parámetro anteriores al actualizar la vista de informe.
+ID_EDIT_REPORT_DESCR=Iniciar el diseñador de Crystal Reports para editar este informe.
+ID_EDIT_REPORT_DISPLAYNAME=Editar informe...
+ID_DISPLAY_TOOLBAR_DISPLAYNAME=Mostrar barra de herramientas
+ID_DISPLAY_TOOLBAR_DESCR=Mostrar barra de herramientas en el visor de informes.
+ID_DISPLAY_GROUPTREE_DISPLAYNAME=Mostrar árbol de grupos
+ID_DISPLAY_GROUPTREE_DESCR=Mostrar árbol de grupos en el visor de informes.
+ID_DISPLAY_STATUSBAR_DISPLAYNAME=Mostrar barra de estado
+ID_DISPLAY_STATUSBAR_DESCR=Mostrar barra de estado en el visor de informes.
+
+ID_CreateReportSourceTransaction=CreateReportSourceTransaction
+ID_ConnectToReportSourceTransaction=ConnectToReportSourceTransaction
+
+ID_TABLE_NAME_COLUMN_NAME=Nombre de tabla
+ID_SUBREPORT_NAME_COLUMN_NAME=Nombre de informe
+ID_DATASOURCEID_COLUMN_NAME=IDOrigenDeDatos
+ID_REPORTDATASOURCE_LISTVIEW_LABEL=Origen de datos del informe:
+ID_REMOVE_DATASOURCE=&Quitar
+ID_ADD_DATASOURCE=&Agregar
+ID_CHOOSE_DATA_SOURCE=Elegir &origen de datos
+ID_BUTTON_CANCEL=&Cancelar
+ID_BUTTON_OK=&Aceptar
+ID_MAIN_REPORT=&Informe principal
+ID_SUBREPORT=&Subinforme
+ID_SPECIFY_TABLENAME=Especificar nombre de &tabla
+ID_REPORT_PROPERTY_GROUP_NAME=Informe
+ID_DATASOURCE_COLLECTION_EDITOR_TITLE=Editor de colección de orígenes de datos
+ID_MAIN_REPORT_LISTITEM=[Informe principal]
+
+ID_NEWPARAMETER1=newParameter1
+ID_PARAMETER_NAME_COLUMN_NAME=Nombre de parámetro
+ID_VALUE=Valor
+ID_REPORT_PARAMETERS=&Parámetros del informe:
+ID_DEFAULT_VALUE=&Valor predeterminado
+ID_SPECIFY_CONTROLID=Especificar Control&ID
+ID_PARAMETER_NAME=&Nombre de parámetro
+ID_PARAMETER_COLLECTION_EDITOR=Editor de colección de parámetros
+
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_TITLE=Conectividad con Enterprise
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_ENTERPRISECONNECTIVITYNOTDETECTED=No se ha detectado conectividad con Enterprise en este equipo. Instale SDK de BusinessObjects Enterprise .NET desde el Servidor de Crystal Reports o BusinessObjects Enterprise y vuelva a intentarlo.
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_FINDOUTMORE=Obtener más información sobre las soluciones de Business Objects.
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_LEARNURL=http://www.businessobjects.com/jump/smb/sp/
+
+ID_CRYSTAL_REPORTS_DIALOG_TITLE=Crystal Reports para Visual Studio 2005

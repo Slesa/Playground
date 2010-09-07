@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Windows;
 using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
+using CrystalDecisions.ReportAppServer.DataDefModel;
 using ReportViewer.Reports;
+using ConnectionInfo = CrystalDecisions.Shared.ConnectionInfo;
+using Table = CrystalDecisions.CrystalReports.Engine.Table;
 
 namespace ReportViewer
 {
@@ -33,14 +36,41 @@ namespace ReportViewer
         void InitializeExternalReport(ConnectionInfo connectionInfo)
         {
             var reportDocument = new ReportDocument();
+            InitializeLanguage(reportDocument);
+
             reportDocument.Load(@"Reports\CrystalReport2.rpt");
+
             InitializeTables(connectionInfo, reportDocument);
             extReportViewer.ReportSource = reportDocument;
+        }
+
+        static void InitializeLanguage(ReportDocument reportDocument)
+        {
+            var language = GetCurrentLanguage();
+            reportDocument.ReportClientDocument.PreferredViewingLocaleID = language;
+            reportDocument.ReportClientDocument.LocaleID = language;
+            reportDocument.ReportClientDocument.ProductLocaleID = language;
+        }
+
+        static CeLocale GetCurrentLanguage()
+        {
+            var language = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+            switch (language)
+            {
+                case "de":
+                    return CeLocale.ceLocaleGerman;
+                case "en":
+                    return CeLocale.ceLocaleEnglishUK;
+                case "fr":
+                    return CeLocale.ceLocaleFrench;
+            }
+            return CeLocale.ceLocaleEnglishUS;
         }
 
         void InitializeEmbeddedReport(ConnectionInfo connectionInfo)
         {
             var reportDocument = new CrystalReport1();
+            InitializeLanguage(reportDocument);
             InitializeTables(connectionInfo, reportDocument);
             embReportViewer.ReportSource = reportDocument;
         }

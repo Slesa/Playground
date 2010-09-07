@@ -1,0 +1,175 @@
+#==============================================================================
+#   File:       SCRShared.txt
+#   Summary:    SIMPLIFIED CHINESE resources for Crystal Reports shared controls
+#==============================================================================
+
+# All the contents were moved to Viewer.txt under ViewerResource.
+
+#Copyright Message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Error Message
+IDS_INVALID_OBJECT_TYPE=无效对象类型。
+IDS_PARAMETER_NOT_IMPLEMENTED=无法使用此方法添加、删除或修改参数字段。请直接修改报表。
+
+IDS_TRUE_STRING=真
+IDS_FALSE_STRING=假
+
+# 
+# Group Tree Style Descriptions
+# 
+IDS_SHOW_LINES=是否显示树节点间的连接线。
+
+#==============================================================================
+#   From:       ObjectModel.txt
+#   Summary:    This file contains SIMPLIFIED CHINESE resources for the Page Object Model
+#==============================================================================
+
+IDS_NUMBER=数字
+IDS_CURRENCY=货币
+IDS_DATE=日期
+IDS_TIME=时间
+IDS_BOOLEAN=布尔值
+IDS_DATETIME=日期时间
+IDS_MEMO=备注
+IDS_STRING=字符串
+IDS_MAP=映射
+IDS_TEXTOBJECT=文本对象
+IDS_CROSSTAB=交叉表
+IDS_CHART=图表
+IDS_BLOB=Blob 字段
+IDS_INPLACE_SUBREPORT=子报表
+IDS_OLEOBJECT=OLE 对象
+IDS_SECTION=节
+IDS_OLAP_GRID=OLAP 网格
+IDS_GROUP_HEADER=组页眉
+IDS_GROUP_FOOTER=组页脚
+IDS_REPORT_HEADER=报表页眉
+IDS_REPORT_FOOTER=报表页脚
+IDS_PAGE_HEADER=页眉
+IDS_PAGE_FOOTER=页脚
+IDS_DETAIL=详细资料部分
+
+#==============================================================================
+#   From:       HTMLReportRender.txt
+#   Summary:    This file contains SIMPLIFIED CHINESE resources for HTMLReportRender
+#==============================================================================
+
+
+ID_InvalidAdornmentClass=查找装饰类失败。
+ID_InvalidFontColorClass=查找字体颜色类失败。
+ID_InvalidReportObject=无效的报表对象。
+
+FileDialogInvalidFileName=“{0}”是无效的文件名。
+FileDialogSubLassFailure=Window 子分类失败。
+FileDialogBufferTooSmall=缓冲区太小。
+FileDialogInvalidFilter=筛选器字符串无效。
+FileDialogInvalidFilterIndex=筛选器索引无效。
+FileDialogFileNotFound=未找到文件“{0}”。
+
+
+#
+#  EnterpriseReport and ServerFileReport strings
+#
+IDS_RPTCOMP_LOCATION=位置
+IDS_RPTCOMP_INVALID_SCHEME=不支持 URI“{1}”中的方案“{0}”。
+
+IDS_ENTRPT_WEBSERVICEURL=调用 Web Component Server 的 Web 服务的 URL。
+IDS_ENTRPT_APSSERVER=将处理身份验证和计划的 Crystal Enterprise CMS 服务器。
+IDS_ENTRPT_WCSSERVER=将处理企业报表请求的 Web 连接器。
+IDS_ENTRPT_USERNAME=用于连接 Crystal Enterprise 的用户名。
+IDS_ENTRPT_PASSWORD=用于连接 Crystal Enterprise 的密码。
+IDS_ENTRPT_AUTHTYPE=用于连接 Crystal Enterprise 的身份验证类型。
+IDS_ENTRPT_OBJECTID=要查看的报表的对象 ID。
+IDS_ENTRPT_OBJECTCUID=要查看的对象的对象 CUID。
+
+IDS_SERVRPT_WEBSERVICEURL=将访问服务器文件的 web 服务的 URL。
+IDS_SERVRPT_RPTPATH=服务器上报表的路径
+
+#
+# Group Tree Node strings
+#
+IDS_ExpandTreeNode=展开节点 {0}
+IDS_CollapseTreeNode=折叠节点 {0}
+
+#
+# Export dialog strings
+#
+IDS_ExportSubmit=导出
+IDS_PrintSubmit=打印
+IDS_ExportPageTitle=导出报表
+IDS_PrintPageTitle=打印报表
+IDS_ExportPageRange=输入您要导出的页码范围。
+IDS_PrintPageRange=输入您要打印的页码范围。
+IDS_ExportFormat=请从列表中选择导出格式。
+IDS_InvalidRange=页码范围值不正确。请输入有效的页码范围。
+IDS_PrintInstructions1=若要打印:
+IDS_PrintInstructions2=1.  在随后显示的对话框中，选择“打开该文件”选项，然后单击“确定”按钮。
+IDS_PrintInstructions3=2.  单击 Acrobat Reader 菜单上的打印机图标，而不要单击 Internet 浏览器上的打印按钮。
+IDS_Formats=格式:
+IDS_CrystalReportFormat=Crystal Reports (RPT)
+IDS_AcrobatFormat=Acrobat 格式 (PDF)
+IDS_WordFormat=MS Word (RTF)
+IDS_ExcelFormat=MS Excel 97-2000
+IDS_ExcelRecordFormat=MS Excel 97-2000 (仅限于数据)
+IDS_RTFFormat=RTF 格式
+IDS_All=全部
+IDS_Pages=页
+IDS_From=从:
+IDS_To=到:
+
+#
+# Viewer Prompting
+#
+ID_ParameterInSubreport={1} 中的 {0}
+ID_OK=确定
+ID_SUBMIT=提交
+ID_LOGON=登录
+ID_True=真
+ID_False=假
+
+ID_StringsJSFileName=strings_chs.js
+
+ID_AND=和
+ID_IncludeThisValue=包含该值
+ID_EditmaskSentence=此参数包含编辑掩码：
+ID_Parameter=参数字段
+ID_Prompt=您请求的报表需要更多信息.
+ID_RangeHasNoLowerLimit=范围没有下限
+ID_RangeHasNoUpperLimit=范围没有上限
+ID_RangeSentence=请为此参数指定介于 {0} 和 {1} 之间的值。
+ID_RangeValuesBetween=值范围介于：
+ID_CalendarButtonDescription=日历
+ID_Remove=删除
+ID_Select=选择
+ID_Add=添加
+ID_NoValue=没有值
+ID_StrRangeSentence=该参数值的长度必须介于 {0} 和 {1} 个字符之间。
+ID_InvalidReportContent=无效的报表内容。
+ID_ServerName=服务器名：
+ID_DatabaseName=数据库名：
+ID_UseIntegratedSecurity=使用集成安全性
+ID_QE_ServerDescription=服务器说明
+ID_QE_DatabaseType=数据库类型
+ID_UserId=用户名：
+ID_Password=密码：
+ID_USE_VALUE=使用值...
+ID_RANGE_FROM=从
+ID_RANGE_EXACTLY=等于
+ID_RANGE_AFTER=从（不包含）
+ID_RANGE_NO_LOWER=无下限值
+ID_RANGE_TO=到
+ID_RANGE_BEFORE=到（不包含）
+ID_RANGE_NO_UPPER=无上限值
+ID_VALUE=值
+ID_PARAMETERS=参数
+
+ID_UntitleFilename=无标题
+
+ID_NextPage=下一页
+ID_PrevPage=上一页
+
+#
+# Image Object Alt. Text
+#
+IDS_Image=图像

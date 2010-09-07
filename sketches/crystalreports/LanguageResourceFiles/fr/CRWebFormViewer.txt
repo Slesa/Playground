@@ -1,0 +1,171 @@
+#==============================================================================
+#   File:       CRWebFormViewer.txt
+#   Summary:    This file contains FRENCH resources for CrystalDecisions.CrystalReports.Web.CrystalReportViewer
+#==============================================================================
+
+# ToolTips
+###################################################################
+ID_Search=Rechercher
+ID_FirstPage=Premier
+ID_PrevPage=Précédent
+ID_NextPage=Suivant
+ID_LastPage=Dernier
+ID_GotoPage=Atteindre
+ID_Up=Haut
+ID_Refresh=Actualiser
+ID_Zoom=Zoom
+ID_PoweredByCrystal=Powered by Business Objects
+ID_ViewList=Afficher l'historique
+
+# Hidden internal links (for section 508)
+###################################################################
+ID_GoToGroupTree=Arborescence des groupes du rapport
+ID_GoToPageContent=Contenu des pages du rapport
+
+# Others 
+###################################################################
+ID_ReportFileNameEditorTitle=Sélectionner un rapport
+ID_ReportFileNameEditorFilter=Crystal Reports(*.rpt)|*.rpt|Tous(*.*)|*.*
+ID_CrystalReportViewerName=CrystalReportViewer
+ID_NoReportSource=Utilisez la propriété ReportSource ou DataBindings pour spécifier une source de données pour le rapport.
+ID_NoReportSourceID=Utilisez la propriété ReportSourceID pour spécifier un contrôle ReportSource.
+ID_NoReportParts=Aucune partie d'origine du rapport n'est définie ; utilisez la propriété ReportParts ou DataBindings pour spécifier une définition de partie de rapport.
+ID_NoData=Aucune donnée.
+ID_InvalidReportParts=Parties de rapport non valides. Assurez-vous que les parties de rapport d'origine sont des objets de rapport valides.
+ID_NoParameterFields=Utilisez la propriété ParameterFieldInfo pour spécifier des champs de paramètre.
+ID_NoLogOnInfos=Utilisez la propriété LogOnInfos pour spécifier des références de connexion.
+ID_SearchEnd=Fin de la recherche
+ID_Of=de
+ID_UnknownLastPageNumberSign=+
+ID_Print=Imprimer
+ID_ShowGroupTree=Afficher/Masquer l'arborescence des groupes
+ID_Export=Exporter
+ID_Local_File_Ext=fr
+ID_UntitleFilename=Sans titre
+ID_Category_Render=Rendu
+ID_Category_Toolbar=Barre d'outils
+ID_Category_GroupTree=Arborescence des groupes
+ID_MainReport=Rapport principal
+ID_UnknownView=(Inconnu)
+
+# Property Descriptions
+###################################################################
+ID_ReportSourceClassFactoryNameDescr=Nom de classe complet d'IReportSourceFactory utilisé pour la liaison à un rapport.
+ID_EnterpriseLogonDescr=Jeton de connexion Enterprise ou ISEnterpriseSession.
+ID_ReportSourceDescr=Objet rapport, nom de fichier ou service Web proxy à afficher.
+ID_ReportSourceIDDescr=L'ID d'un contrôle ReportSource qui sera utilisé comme source de rapport.
+ID_SeparatePagesDescr=Si les pages du rapport sont séparées ou concaténées.
+ID_PageToTreeRatioDescr=Rapport largeur de page/largeur d'arborescence.
+ID_DisplayGroupTreeDescr=Si l'arborescence est visible ou masquée.
+ID_DisplayPageDescr=Si la vue de la page est visible ou masquée.
+ID_DisplayToolbarDescr=Si la barre d'outils est visible ou masquée.
+ID_ClientTargetDescr=Rendu cible pour les différents navigateurs.
+ID_HasPageNavigationButtonsDescr=Si les boutons de barre d'outils permettant la navigation entre les pages sont visibles ou masqués.
+ID_HasGotoPageButtonDescr=Si le bouton de barre d'outils Aller à la page est visible ou masqué.
+ID_HasSearchButtonDescr=Si le bouton de barre d'outils Rechercher est visible ou masqué.
+ID_HasLevelUpButtonDescr=Si le bouton Page précédente de la barre d'outils est visible ou masqué.
+ID_HasRefreshButtonDescr=Si le bouton de barre d'outils Actualiser est visible ou masqué.
+ID_HasPrintButtonDescr=Si le bouton d'impression dans la barre d'outils est visible ou caché.
+ID_HasExportButtonDescr=Si le bouton d'exportation dans la barre d'outils est visible ou caché.
+ID_HasToggleGroupTreeButtonDescr=Si le bouton d'affichage/de masquage de l'arborescence des groupes dans la barre d'outils est visible ou caché.
+ID_HasCrystalLogoDescr=Si le logo de Business Objects est visible ou masqué.
+ID_BestFitPageDescr=Si la vue de la page occupe toute la place ou contient les barres de défilement.
+ID_SelectionFormulaDescr=Formule de sélection d'enregistrements du rapport.
+ID_ViewTimeSelectionFormulaDescr=Formule de sélection d'enregistrements au moment de l'affichage du rapport.
+ID_ParameterFieldInfoDescr=Champs de paramètre du rapport.
+ID_LogOnInfoDescr=Informations de connexion du rapport
+ID_ZoomFactorDescr=Facteur de zoom de la page.
+ID_HasZoomButtonDescr=Si la liste des facteurs de zoom est visible ou masquée dans la barre d'outils.
+ID_HasViewListDescr=Si la liste des vues dans la barre d'outils est visible ou masquée.
+ID_EnableDrillDownDescr=Si l'exploration d'un(e) page/diagramme/groupe/résumé est activée.
+ID_HyperlinkTargetDescr=Cadre cible vers lequel le lien hypertexte va renvoyer.
+ID_DrilldownTargetDescr=Cadre cible vers lequel l'exploration va renvoyer.
+ID_ReportPartsDescr=Définition des parties du rapport.
+ID_RecordNumberDescr=Nombre d'enregistrements affichés dans l'Afficheur de parties de rapport.
+ID_RotateSectionsDescr=Si la section est pivotée.
+ID_HasBorderDescr=Si la bordure est visible.
+ID_PersistLayoutDescr=Si les parties du rapport demeurent dans la disposition du rapport d'origine.
+ID_ReportTitleDescr=Le titre du rapport.
+ID_IsDisplayTitleDescr=Si le titre du rapport est affiché.
+ID_IsDisplayHeaderDescr=Si les en-têtes de section sont affichés.
+ID_HasPageNavigationLinksDescr=Si les liens de la navigation entre les pages sont visibles ou masqués.
+ID_ShowAllPageIds=Si les ID d'objet de rapport figurent dans HTML.
+ID_GroupTreeFormatDescr=Spécifier le style d'arborescence des groupes
+ID_ToolbarStyleDescr=Spécifier le style de la barre d'outils
+ID_PrintModeDescr=Méthode utilisée par le navigateur client pour imprimer localement.
+ID_AutoDataBindDescr=DataBind() automatique après OnInit()/Page_Init()
+ID_EnableDatabaseLogonPromptDescr=Si le visualiseur demandera une connexion à la base de données en cas de besoin.
+ID_EnableParameterPromptDescr=Si le visualiseur demandera des paramètres de rapport en cas de besoin.
+ID_ExportFormatTypeDescr=Spécifiez le type de format d'exportation qu'utilisera le contrôle.
+ID_ReuseParameterValuesOnRefreshDescr=Indique si le visualiseur conservera et réutilisera les valeurs de paramètre lors de l'actualisation.
+ID_EnableToolTipsDescr=Activez les info-bulles pour le visualiseur.
+ID_CssFilenameDescr=Feuille de style associée au rapport.
+ID_CacheDurationDescr=Délai, en secondes, avant l'expiration du rapport. La règle d'expiration est spécifiée par la propriété CacheExpirationPolicy.
+ID_CacheExpirationPolicyDescr=Règle d'expiration du cache. Le délai avant expiration est spécifié par la propriété CacheDuration.
+ID_EnableCachingDescr=Spécifie si la mise en cache est activée pour cette source de rapport.
+ID_ReportPropertyDescr=Objet rapport
+ID_DataSourcesDescr=Ensemble de sources de données utilisées dans le rapport.
+ID_ParameterCollectionDescr=Ensemble de paramètres utilisés dans le rapport.
+ID_FileNameDescr=Nom du fichier de rapport
+
+ID_TREE_IMAGE_FOLDER_URL=Url du dossier contenant les images de l'arborescence des groupes.
+ID_TOOLBAR_IMAGE_FOLDER_URL=Url du dossier contenant les images de la barre d'outils.
+ID_UseBrowserLocale=Si les paramètres régionaux du navigateur doivent ou non être utilisés dans le visualiseur.
+ID_CrystalReportSourceDescr=Se connecter à un rapport créé à l'aide de Crystal Reports.
+ID_CrystalReportSourceDisplayName=Rapport Crystal
+
+# Event Descriptions
+###################################################################
+ID_OnNavigateDescr=Se déclenche lorsque la navigation va commencer.
+ID_OnSearchDescr=Se déclenche lorsque la recherche de texte va commencer.
+ID_OnSubreportDrillDownDescr=Se déclenche lorsque l'exploration du sous-rapport va commencer.
+ID_OnRefreshDescr=Se déclenche lorsque l'actualisation du rapport va commencer.
+ID_OnZoomDescr=Se déclenche lorsque le facteur de zoom est est sur le point d'être modifié.
+ID_OnDrillDescr=Se déclenche lorsque l'exploration du diagramme ou du groupe va commencer.
+ID_OnReportPartBookmarkNavigationDescr=Se déclenche lorsque la navigation entre les signets des parties du rapport va commencer.
+ID_OnBeforeRenderDescr=Se déclenche lorsque le processus de rendu du rapport commence.
+ID_OnAfterRenderDescr=Se déclenche lorsque le processus de rendu du rapport est terminé.
+ID_OnBeforeRenderObjectDescr=Se déclenche lorsque le rendu de l'objet rapport commence.
+ID_OnAfterRenderObjectDescr=Se déclenche lorsque le rendu de l'objet rapport est terminé.
+ID_OnBeforeRenderContentDescr=Se déclenche lorsque le rendu du contenu du rapport commence.
+ID_OnAfterRenderContentDescr=Se déclenche lorsque le rendu du contenu du rapport est terminé.
+ID_OnRenderScriptDescr=Se déclenche lorsque la génération de scripts HTML commence.
+ID_OnRenderStyleDescr=Se déclenche lorsque la génération de classe de style HTML commence.
+ID_OnFieldDrillDescr=Se déclenche lorsque l'exploration du champ va commencer.
+ID_OnChartDrillDescr=Se déclenche lorsque l'exploration du diagramme va commencer.
+ID_OnEventErrorDescr=Se déclenche lorsqu'une erreur d'affichage se produit au cours du cycle de vie d'ASP.NET.
+ID_OnDataSourceChangedDescr=Se déclenche lorsque la valeur de la propriété DataSource est modifiée dans le contrôle.
+ID_OnFileNameChangedDescr=Se déclenche lorsque la valeur de la propriété FileName est modifiée dans le contrôle.
+ID_OnReportChangedDescr=Se déclenche lorsque la valeur de la propriété Report est modifiée dans le contrôle.
+
+# Error Messages
+###################################################################
+ID_InvalidPageToTreeRatioErr=Le rapport doit être supérieur à zéro.
+ID_InvalidPageErr=Echec de la génération de la page.
+ID_InvalidGroupTreeErr=Echec de la génération de l'arborescence des groupes.
+ID_GroupTreeRenderErr=Echec de l'affichage de l'arborescence des groupes.
+ID_PageRenderErr=Echec de l'affichage de la page.
+ID_FailToGetReportSource=Echec de l'extraction de la source du rapport.
+ID_InvalidPageZoomFactorErr=Le facteur de zoom de la page doit être compris entre 10 et 400.
+ID_GetPageErr=Echec de la lecture de la page spécifique.
+ID_GetTotallerErr=Echec de l'obtention du générateur de totaux pour la page spécifique.
+ID_InvalidReportSourceErr=Aucune source de rapport valide disponible.
+ID_ReportSourceRestoreErr=Erreur lors de la restauration de la source du rapport pour l'impression
+ID_NullReportSourceStateErr=La source du rapport ne peut pas être restaurée pour l'impression. La chaîne de statut de la vue en base 64 est nulle.
+ID_NullReportSourceStateStringLengthErr=La source du rapport ne peut pas être restaurée pour l'impression. La longueur de la chaîne de statut de la vue en base 64 est différente de 4 ou n'est pas un multiple de 4.
+ID_UnsupportExportFormatErr=Le format d'exportation spécifié n'est pas pris en charge par CrystalREportExportControl.
+ID_ControlMustBeInForm=Le contrôle '{0}' doit se trouver dans un formulaire
+ID_InvalidExportOptions=Impossible d'effectuer l'exportation avec les options que vous avez spécifiées. Vérifiez vos options et essayez de nouveau.
+ID_InvalidBatchSize=Vous devez saisir une taille de lot comprise entre 1 et 65 535.
+ID_RepPartNavThroughWebServNotSupported=La navigation entre les parties de rapport n'est pas prise en charge par le biais de ServerFileReportService.asmx ou de EnterpriseReportService.asmx.
+ID_LogonPromptNotSupported=L'invite de connexion à la base de données n'est pas prise en charge sur les périphériques mobiles.
+ID_ParamPromptNotSupported=L'invite de saisie de paramètre n'est pas prise en charge sur les périphériques mobiles.
+ID_TableNotFound=La table "{0}" n'existe pas dans le rapport.
+ID_ControlWithReportSourceIDDoesntExist=Impossible de trouver un contrôle possédant l'ID {1}, référencé par {0}.ReportSourceID.
+ID_ControlWithReportSourceIDIsntReportSource=Le contrôle possédant l'ID {1}, référencé par {0}.ReportSourceID, n'est pas un contrôle CrystalReportSource.
+
+# Category
+######################################################################
+ID_Category_Data=Données
+ID_Category_Misc=Divers
+ID_Category_Cache=Cache

@@ -1,0 +1,302 @@
+#==============================================================================
+#   File:       Viewer.txt
+#   Summary:    This file contains KOREAN resources for CrystalDecisions.Windows.Forms.CrystalReportViewer
+#==============================================================================
+
+ID_HELP_ABOUT=도움말
+ID_VIEW_GROUPTREE=그룹 트리 표시/숨기기
+ID_SEARCH=텍스트 찾기
+ID_GOTOPAGE=페이지로 이동
+ID_FIRSTPAGE=첫 페이지로 이동
+ID_PREVPAGE=이전 페이지로 이동
+ID_NEXTPAGE=다음 페이지로 이동
+ID_LASTPAGE=마지막 페이지로 이동
+ID_PAGENUMBER=페이지 번호
+ID_VIEW_TOOLBAR=도구 모음 표시/숨기기
+ID_PRINT=보고서 인쇄
+ID_SELECTEXPERT=선택 전문가
+ID_CLOSE=현재 뷰 닫기
+ID_STOP=로드 중지
+ID_REFRESH=새로 고침
+ID_EXPORT=보고서 내보내기
+ID_SEARCH_EXPERT=검색 전문가
+ID_ZOOM=확대/축소
+ID_ZOOMING=확대/축소
+ID_SELECTION_COPY=복사
+ID_OF=대상
+ID_EDIT_REPORT_SOURCE=보고서 소스 편집
+ID_ENTER_REPORT_SOURCE=보고서 소스 입력
+ID_EDIT=편집...
+ID_NONE=(없음)
+ID_BROWSE=찾아보기...
+ID_OPEN_REPORT_DIALOG_TITLE=기존 Crystal Report 열기
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Report(*.rpt)|*.rpt
+
+IDC_ZOOMCOMBO=확대/축소 컨트롤
+IDC_SEARCHCOMBO=검색 컨트롤
+IDC_PROGRESSBAR=진행 컨트롤
+IDC_PAGENUMBER=페이지 번호
+IDC_GROUPTREE=그룹 트리
+IDC_VALUE_OR_BOOLEAN_LABEL=이산 값(&L)
+IDC_PARAMETERFIELDS_LABEL=매개 변수 필드:
+IDC_END_OF_RANGE_LABEL=범위 끝(&E)
+IDC_START_OF_RANGE_LABEL=범위 시작(&S)
+IDC_END_LABEL=끝
+IDC_START_LABEL=시작
+IDC_VALUE_START_LABEL=값/시작
+IDC_CHECK_NULLVALUE=Null 값으로 설정
+#IDC_INCLUDE_LOWER_BOUND=&Include value (DIyer 19 June 2001: Not Used?)
+IDC_DELETE_VALUE=삭제(&T)
+IDCANCEL=취소
+IDOK=확인
+IDC_ADD_VALUE_OR_BOOLEAN=추가(&A)
+IDC_ADD_RANGE_VALUES=추가(&D)
+IDC_NO_UPPER_BOUND=상한 없음(&U)
+IDC_NO_LOWER_BOUND=하한 없음(&O)
+IDC_PICKDEFAULTS=기본값 중에서 선택(&P)
+IDC_FINDWHAT_LABEL=찾을 내용:
+IDC_FINDNEXT=다음 찾기(&F)
+IDC_PAGENUMBER_LABEL=페이지 번호를 지정하십시오.
+IDC_ZOOMING_LABEL=확대/축소 배율을 지정하십시오(25 - 400).
+
+IDS_CRYSTALREPORT=Crystal Report
+IDS_MSG_TITLE=Crystal Report Windows Forms Viewer
+IDS_PREVIEW=미리 보기
+IDS_LOADING=로드 중...
+IDS_PAGE_WIDTH=페이지 너비
+IDS_WHOLE_PAGE=전체 페이지
+IDS_CUSTOMIZE=사용자 지정...
+IDS_DRILLDOWN=드릴다운
+IDS_TEXT=텍스트
+IDS_FIELD=필드:
+IDS_MSG_STRINGNOTFOUND=다음 페이지부터는 지정한 텍스트의 인스턴스를 더 이상 찾을 수 없습니다.
+IDS_MSG_COULDNOTSTARTPRINTJOB=인쇄 작업을 시작할 수 없습니다.
+IDS_ERR_BUSY=컨트롤이 데이터를 다운로드하고 있습니다.
+IDS_ERR_INDEX_RANGE=인덱스가 범위를 벗어났습니다.
+IDS_ERR_GROUP_INFO=필요한 그룹 정보를 사용할 수 없습니다.
+IDS_EXPORT_UNAVAILABLE =이 보고서를 내보낼 수 없습니다.
+IDS_NEXT=다음(&N)>
+IDS_FINISH=마침
+IDS_MSG_NO_RPT_NAME=볼 보고서가 없습니다.
+IDS_PAGEN_SYMBOL=대상
+IDS_ERR_LOAD_EXPORT=내보내기 컨트롤을 초기화할 수 없습니다.
+IDS_ERR_EXPORT_FAILED=내보내기에 실패했습니다.
+IDS_EXPORT_COMPLETED=내보내기가 완료되었습니다.
+IDS_CONTENTS=다음 수준...
+IDS_ORIENTATION_MSG=인쇄하려는 보고서는 실제 보고서 데이터에서 사전에 서식이 설정된 이미지입니다. 용지 방향이나 용지 크기를 변경하면 인쇄된 페이지에서 개체가 손실될 수 있습니다. 계속하시겠습니까?
+IDS_USER_ID_PROMPT=사용자 ID(&U):
+IDS_PROMPT_TEXT=프롬프트(&P):
+IDS_DB_LOGON_PROMPT=데이터베이스의 사용자 ID와 암호를 입력하십시오.
+IDS_CANCEL_PROMPT_MSG=취소하시겠습니까? 로그온 정보가 필요하면 계속할 수 없습니다. 현재 기본 보고서 메시지가 사용됩니다.
+IDS_DB_LOGON_FOR_SUB=다음 하위 보고서에 사용됩니다.
+IDS_PROMPT_MSG=프롬프트에 표시할 정보를 입력하십시오.
+IDS_DEL_DRILL=이 작업을 계속하면 드릴다운 탭을 유지할 수 없습니다. 계속하면 드릴다운 탭이 닫힙니다.\n\n계속하시겠습니까?
+IDS_NUMBER=숫자
+IDS_CURRENCY=통화
+IDS_DATE=날짜
+IDS_TIME=시간
+IDS_BOOLEAN=부울
+IDS_DATETIME=날짜 시간
+IDS_MEMO=메모
+IDS_STRING=문자열
+IDS_MAP=매핑
+IDS_TEXTOBJECT=텍스트 개체
+IDS_CROSSTAB=크로스탭
+IDS_CHART=차트
+IDS_BLOB=BLOB 필드
+IDS_INPLACE_SUBREPORT=하위 보고서
+IDS_OLEOBJECT=OLE 개체
+IDS_SECTION=섹션
+IDS_OLAP_GRID=OLAP 모눈
+IDS_GROUP_HEADER=그룹 머리글
+IDS_GROUP_FOOTER=그룹 바닥글
+IDS_REPORT_HEADER=보고서 머리글
+IDS_REPORT_FOOTER=보고서 바닥글
+IDS_PAGE_HEADER=페이지 머리글
+IDS_PAGE_FOOTER=페이지 바닥글
+IDS_DETAIL=본문 섹션
+IDS_FREEZE_PANE=창 고정(&F)
+IDS_UNFREEZE_PANE=창 고정 취소(&U)
+IDS_PROMPTPARAM_DLGTITLE=매개 변수 값 입력
+IDS_ENTERSEARCHSTRING=찾을 문자열을 입력하십시오.
+IDS_FINISH_SEARCHING=문서 검색을 마쳤습니다.
+IDS_ENTERPAGENUMBER=올바른 페이지 번호를 입력하십시오.
+IDS_ENTERZOOMFACTOR=올바른 확대/축소 배율을 입력하십시오.
+IDS_MAIN_REPORT=주 보고서
+IDS_FILEFILTER_RPT=Crystal Reports (*.rpt)|*.rpt
+IDS_FILEFILTER_DOC=Microsoft Word (*.doc)|*.doc
+IDS_FILEFILTER_XLS=Microsoft Excel (*.xls)|*.xls
+IDS_FILEFILTER_RECORD_XLS=Microsoft Excel 데이터만 (*.xls)|*.xls
+IDS_FILEFILTER_RTF=서식 있는 텍스트 문서(*.rtf)|*.rtf
+IDS_FILEFILTER_PDF=Adobe Acrobat (*.pdf)|*.pdf
+IDS_FILEFILTER_HTML32=HTML 3.2 (*.html)|*.html
+IDS_FILEFILTER_HTML40=HTML 4.0(DHTML) (*.html)|*.html
+IDS_DRILL_DOWN=드릴다운
+IDS_REPORTOBJECT=보고서 개체
+IDS_TRY_AGAIN=다시 시도하십시오.
+IDS_LOGON_FAILED=로그온하지 못했습니다.
+IDS_MISSING_PARAMETERFIELD_CURRENTVALUE=ParameterField 현재 값이 없습니다.
+
+# StatusBar text:
+IDS_CURRENT_PAGENUMBER=현재 페이지 번호:
+IDS_TOTAL_PAGENUMBER=총 페이지 수:
+IDS_ZOOM_FACTOR=확대/축소 배율:
+IDS_ZOOM_FACTOR_DEFAULT=확대/축소 배율: 100%
+
+# Exception messages
+IDS_EXCEPTION_DOCUMENTMANAGER_INITDOCUMENTMANAGER=DocumentManager.InitDocumentManager에 예외가 발생했습니다.
+IDS_EXCEPTION_DOCUMENTMANAGER_ADDREPORT=DocumentManager.AddReport에 예외가 발생했습니다.
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETPAGE=MainReportDocument.GetPage에 예외가 발생했습니다.
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPTREEFROMENGINE=MainReportDocument.GetGroupTreeFromEngine에 예외가 발생했습니다.
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETLASTPAGENUMBERFROMENGINE=MainReportDocument.GetLastPageNumberFromEngine에 예외가 발생했습니다.
+IDS_EXCEPTION_MAINREPORTDOCUMENT_REFRESH=MainReportDocument.Refresh에 예외가 발생했습니다.
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPINFOFORDRILLONGRAPH=MainReportDocument.GetGroupInfoForDrillOnGraph에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENT_GETDRILLDOWNDOCUMENT=ReportDocument.GetDrillDownDocument에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETLASTPAGENUMBER=ReportDocumentBase.GetLastPageNumber에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETPAGE=ReportDocumentBase.GetPage에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_DRILLDOWNGRAPH=세부 데이터가 없는 영역에서 드릴했습니다. 드릴다운하려면 데이터가 있는 영역을 클릭하십시오.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETGROUPTREE=ReportDocumentBase.GetGroupTree에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDGROUP=ReportDocumentBase.FindGroup에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDTEXT=ReportDocumentBase.FindText에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_EXPORT=ReportDocumentBase.Export에 예외가 발생했습니다.
+IDS_EXCEPTION_REPORTGROUPTREE_INITREPORTGROUPTREE=ReportGroupTree.InitReportGroupTree에 예외가 발생했습니다.
+	
+IDS_EXCEPTION_TOOLTIPCAPTIONDUPLICATE=도구 모음의 도구 설명 캡션이 있습니다. 다른 도구 설명을 선택하십시오.
+IDS_EXCEPTION_TOOLBARBASE_INDEXOUTOFRANGE=도구 모음의 컨트롤 인덱스가 범위를 벗어났습니다.
+IDS_EXCEPTION_TOOLBARBASE_INVALIDTOOLTIP=도구 모음의 컨트롤 도구 설명이 잘못되었습니다.
+
+IDS_EXCEPTION_NULL_HOST=IDesignerHost를 가져올 수 없습니다.
+IDS_EXCEPTION_NULL_EXTENSIBILITYSERVICE=IExtensibilityService를 가져올 수 없습니다.
+IDS_EXCEPTION_NULL_PROJECT=현재 프로젝트를 가져올 수 없습니다.
+
+# Property descriptions
+IDS_DISPLAY_GROUPTREE_DESCRIPTION=CrystalReportViewer의 그룹 트리를 표시할지 또는 숨길지를 결정합니다.
+IDS_DISPLAY_TOOLBAR_DESCRIPTION=CrystalReportViewer의 도구 모음을 표시할지 또는 숨길지를 결정합니다.
+IDS_ENBALE_STATUSBAR_DESCRIPTION=CrystalReportViewer의 상태 표시줄을 표시할지 또는 숨길지 결정합니다.
+IDS_REPORT_NAME_DESCRIPTION=보고서의 이름 또는 URL이 표시됩니다.
+IDS_REPORT_SOURCE_DESCRIPTION=보고서의 원격 보고서 서비스 프록시가 표시됩니다.
+IDS_DISPLAY_BACKGROUNDEDGE_DESCRIPTION=해당 창의 가장자리에서 보고서를 오프셋할지를 결정합니다.
+IDS_SELECTION_FORMULA_DESCRIPTION=레코드 선택 수식
+IDS_VIEWTIME_SELECTION_FORMULA_DESCRIPTION=뷰 타임 선택 수식
+
+IDS_SHOW_PAGENAVIGATEBUTTONS_DESCRIPTION=뷰어 도구 모음에 보고서 페이지를 탐색하는 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_GOTOPAGEBUTTON_DESCRIPTION=뷰어 도구 모음에 페이지 번호를 지정하는 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_CLOSEBUTTON_DESCRIPTION=뷰어 도구 모음에 보고서 페이지를 닫는 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_PRINTBUTTON_DESCRIPTION=뷰어 도구 모음에 인쇄 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_REFRESHBUTTON_DESCRIPTION=뷰어 도구 모음에 새로 고침 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_EXPORTBUTTON_DESCRIPTION=뷰어 도구 모음에 내보내기 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_GROUPTREEBUTTON_DESCRIPTION=뷰어 도구 모음에 그룹 트리를 표시 또는 숨기는 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_ZOOMBUTTON_DESCRIPTION=뷰어 도구 모음에 보고서 페이지 확대/축소 수준을 설정하는 확대/축소 단추를 표시할지 여부를 결정합니다.
+IDS_SHOW_TEXTSEARCHBUTTON_DESCRIPTION=뷰어 도구 모음에 텍스트 검색 단추를 표시할지 여부를 결정합니다.
+IDS_ENABLE_DRILLDOWN_DESCRIPTION=Crystal Report Viewer의 드릴다운 기능을 설정할지 여부를 결정합니다.
+IDS_ENABLE_TOOLTIP_DESCRIPTION=뷰어 내에서 개체에 대한 도구 설명을 사용합니다.
+# Event Descriptions
+ID_OnPageNavigateDescr=페이지 탐색이 발생하려고 하면 시작합니다.
+ID_OnSearchDescr=텍스트 검색이 발생하려고 하면 시작합니다.
+ID_OnSubreportDrillDownDescr=하위 보고서 드릴다운이 발생하려고 하면 시작합니다.
+ID_OnRefreshDescr=보고서를 새로 고치려고 하면 시작합니다.
+ID_OnZoomDescr=확대/축소 배율을 변경하려고 하면 시작합니다.
+ID_OnDrillDescr=그래프 드릴다운 또는 그룹 드릴다운이 발생하려고 하면 시작합니다.
+ID_OnHandleExceptionDescr=뷰어가 예외를 catch하여 처리하려고 하면 시작합니다.
+
+#==============================================================================
+#   File:       SCRShared.txt (Merged from Shared resource)
+#   Summary:    KOREAN resources for Crystal Reports shared controls
+#==============================================================================
+
+#[strings]
+#Database Logon Dialog
+##############################################################
+IDS_LOGINDLG_TITLE=데이터베이스 로그인
+
+IDS_HELP=도움말(&H)
+IDS_BACK=< 뒤로(&B)
+###IDS_NEXT=Next >
+###IDS_FINISH=Finish
+IDS_CANCEL=취소
+IDS_USEINTEGRATEDSECURITYCHECKBOX=통합 보안 사용
+
+IDS_REPORTNAMELABEL=하위 보고서 이름:
+IDS_MAINREPORTLABEL=주 보고서
+IDS_TABLENAMELABEL=테이블 이름:
+IDS_SERVERNAME=서버 이름(&S):
+IDS_DATABASENAME=데이터베이스(&D):
+IDS_LOGINID=로그인 ID(&L):
+IDS_PWD=암호(&P):
+IDS_PASSWORDCHAR=c
+
+#Parameter Field Dialog
+##############################################################
+IDS_PROMPTPARAM_DLGTITLE2={1}의 {0} 정보를 입력하십시오.
+
+#SubTitles
+IDS_SINGLE_DISCRETE_EDIT=이 매개 변수에 단일 값을 입력할 수 있습니다.\r\n포함시킬 값을 입력하십시오.
+IDS_SINGLE_DISCRETE_PICK=이 매개 변수에 단일 값을 입력할 수 있습니다.\r\n포함시킬 값을 선택하십시오.
+IDS_SINGLE_DISCRETE_EDIT_AND_PICK=이 매개 변수에 단일 값을 입력할 수 있습니다.\r\n포함시킬 값을 선택하거나 입력하십시오.
+
+IDS_SINGLE_RANGE_EDIT=이 매개 변수에 단일 범위 값을 입력할 수 있습니다.\r\n포함시킬 값의 범위를 설명하는 하한과 상한을 입력하십시오.
+IDS_SINGLE_RANGE_PICK=이 매개 변수에 단일 범위 값을 입력할 수 있습니다.\r\n포함시킬 값의 범위를 설명하는 하한과 상한을 선택하십시오.
+IDS_SINGLE_RANGE_EDIT_AND_PICK=이 매개 변수에 단일 범위 값을 입력할 수 있습니다.\r\n포함시킬 값의 범위를 설명하는 하한과 상한을 선택하거나 입력하십시오.
+
+IDS_MULTIPLE_DISCRETE_EDIT=이 매개 변수에 값을 하나 이상 입력할 수 있습니다.\r\n값을 입력한 다음 [추가]를 클릭하여 포함시킬 각 값을 추가하십시오.
+IDS_MULTIPLE_DISCRETE_PICK=이 매개 변수에 값을 하나 이상 입력할 수 있습니다.\r\n값을 선택한 다음 [추가]를 클릭하여 포함시킬 각 값을 추가하십시오.
+IDS_MULTIPLE_DISCRETE_EDIT_AND_PICK=이 매개 변수에 값을 하나 이상 입력할 수 있습니다.\r\n값을 선택하거나 입력한 다음 [추가]를 클릭하여 포함시킬 각 값을 추가하십시오.
+
+IDS_MULTIPLE_RANGE_EDIT=이 매개 변수에 여러 범위 값을 입력할 수 있습니다.\r\n하한과 상한을 입력한 다음 [추가]를 클릭하여 포함시킬 범위 값을 추가하십시오.
+IDS_MULTIPLE_RANGE_PICK=이 매개 변수에 여러 범위 값을 입력할 수 있습니다.\r\n하한과 상한을 선택한 다음 [추가]를 클릭하여 포함시킬 범위 값을 추가하십시오.
+IDS_MULTIPLE_RANGE_EDIT_AND_PICK=이 매개 변수에 여러 범위 값을 입력할 수 있습니다.\r\n하한과 상한을 선택하거나 입력한 다음 [추가]를 클릭하여 포함시킬 범위 값을 추가하십시오.
+
+IDS_MULTIPLE_BOTH_EDIT=이 매개 변수에 여러 값(범위 포함)을 입력할 수 있습니다.\r\n값(하한 또는 상한)을 입력한 다음 [추가]를 클릭하여 포함시킬 값(범위 값)을 추가하십시오.
+IDS_MULTIPLE_BOTH_PICK=이 매개 변수에 여러 값(범위 포함)을 입력할 수 있습니다.\r\n값(하한 또는 상한)을 선택한 다음 [추가]를 클릭하여 포함시킬 값(범위 값)을 추가하십시오.
+IDS_MULTIPLE_BOTH_EDIT_AND_PICK=이 매개 변수에 여러 값(범위 포함)을 입력할 수 있습니다.\r\n값(하한 또는 상한)을 선택하거나 입력한 다음 [추가]를 클릭하여 포함시킬 값(범위 값)을 추가하십시오.
+
+#prompting text
+IDS_PROMPT_RANGE=값은 {0}에서 {1} {2} 사이여야 합니다.
+IDS_PROMPT_RANGE_STRING= 문자열 길이
+IDS_PROMPT_RANGE2=값은 {0}에서 {1} 사이여야 합니다.
+IDS_PROMPT_RANGE_STRING2=값의 문자 수는 {0}문자에서 {1}문자 사이여야 합니다.
+
+###IDC_VALUE_OR_BOOLEAN_LABEL=Discrete va&lues
+###IDC_PARAMETERFIELDS_LABEL=Parameter Fields:
+###IDC_END_OF_RANGE_LABEL=&End of range
+###IDC_START_OF_RANGE_LABEL=&Start of range
+###IDC_END_LABEL=End
+###IDC_START_LABEL=Start
+###IDC_VALUE_START_LABEL=Value/Start
+###IDC_CHECK_NULLVALUE=Set the value to "NULL"
+#IDC_INCLUDE_LOWER_BOUND=&Include value
+###IDC_DELETE_VALUE=&Remove
+###IDC_ADD_VALUE_OR_BOOLEAN=&Select
+###IDC_ADD_RANGE_VALUES=S&elect
+###IDC_NO_UPPER_BOUND=Range has no &upper limit
+###IDC_NO_LOWER_BOUND=Range has no &lower limit
+###IDC_PICKDEFAULTS=&Pick from defaults
+IDS_OK=확인
+
+IDC_INCLUDE_LOWER_BOUND=이 값 포함(&I)
+IDC_INCLUDE_UPPER_BOUND=이 값 포함(&C)
+IDC_RANGE_LABEL=값 범위(&W)
+IDS_AND_LABEL=그리고
+IDC_LABEL_VALUES=값:
+
+
+#prompting types
+IDS_PT_NUMBER=숫자
+IDS_PT_CURRENCY=통화
+IDS_PT_BOOLEAN=True/False
+IDS_PT_DATE=날짜
+IDS_PT_STRING=문자열
+IDS_PT_DATETIME=날짜 시간
+IDS_PT_TIME=시간
+
+
+#error messages
+IDS_ERROR_PARAMETER_TYPE={0} 값을 입력하십시오.
+IDS_ERROR_PARAMETER_RANGE=범위 시작 값은 범위 끝 값보다 작거나 같아야 합니다.
+IDS_ERROR_EMPTY_REPORT_NAME=보고서 이름이 비어 있습니다.
+IDS_ERROR_PARAMETER_GREATER_THAN_MAX=입력된 값이 이 매개 변수에 허용된 최대값보다 큽니다.
+IDS_ERROR_PARAMETER_LESS_THAN_MIN=입력된 값이 이 매개변수에 허용된 최소값보다 작습니다.
+
+# Granville-only error messages; no need to translate for CR10
+IDS_ERROR_INVALID_DATA_SOURCE=데이터 소스가 잘못되었습니다.
+

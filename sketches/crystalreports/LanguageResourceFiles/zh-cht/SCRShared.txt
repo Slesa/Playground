@@ -1,0 +1,175 @@
+#==============================================================================
+#   File:       SCRShared.txt
+#   Summary:    TRADITIONAL CHINESE resources for CrystalDecisions.Shared
+#==============================================================================
+
+# All the contents were moved to Viewer.txt under ViewerResource.
+
+#Copyright Message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Error Message
+IDS_INVALID_OBJECT_TYPE=物件類型無效。
+IDS_PARAMETER_NOT_IMPLEMENTED=您無法使用此方法來加入、移除或修改參數欄位。請直接修改報表。
+
+IDS_TRUE_STRING=true
+IDS_FALSE_STRING=false
+
+# 
+# Group Tree Style Descriptions
+# 
+IDS_SHOW_LINES=是否要顯示連接樹狀結構節點的線條。
+
+#==============================================================================
+#   From:       ObjectModel.txt
+#   Summary:    This file contains TRADITIONAL CHINESE resources for the Page Object Model
+#==============================================================================
+
+IDS_NUMBER=數字
+IDS_CURRENCY=貨幣
+IDS_DATE=日期
+IDS_TIME=時間
+IDS_BOOLEAN=布林
+IDS_DATETIME=日期時間
+IDS_MEMO=備忘
+IDS_STRING=字串
+IDS_MAP=地圖
+IDS_TEXTOBJECT=文字物件
+IDS_CROSSTAB=交叉表
+IDS_CHART=圖表
+IDS_BLOB=BLOB 欄位
+IDS_INPLACE_SUBREPORT=子報表
+IDS_OLEOBJECT=OLE 物件
+IDS_SECTION=區段
+IDS_OLAP_GRID=OLAP 格線
+IDS_GROUP_HEADER=群組頁首
+IDS_GROUP_FOOTER=群組頁尾
+IDS_REPORT_HEADER=報表首
+IDS_REPORT_FOOTER=報表尾
+IDS_PAGE_HEADER=頁首
+IDS_PAGE_FOOTER=頁尾
+IDS_DETAIL=細目區段
+
+#==============================================================================
+#   From:       HTMLReportRender.txt
+#   Summary:    This file contains TRADITIONAL CHINESE resources for HTMLReportRender
+#==============================================================================
+
+
+ID_InvalidAdornmentClass=找不到 adornment 類別。
+ID_InvalidFontColorClass=找不到 font color 類別。
+ID_InvalidReportObject=報表物件無效。
+
+FileDialogInvalidFileName='{0}' 為無效的檔案名稱。
+FileDialogSubLassFailure=視窗子類別化失敗。
+FileDialogBufferTooSmall=緩衝區太小。
+FileDialogInvalidFilter=篩選字串無效。
+FileDialogInvalidFilterIndex=篩選索引無效。
+FileDialogFileNotFound=找不到檔案 '{0}'。
+
+
+#
+#  EnterpriseReport and ServerFileReport strings
+#
+IDS_RPTCOMP_LOCATION=位置
+IDS_RPTCOMP_INVALID_SCHEME=不支援 URI "{1}" 中的方式 "{0}"。
+
+IDS_ENTRPT_WEBSERVICEURL=呼叫 Web 元件伺服器的 Web 服務的 URL
+IDS_ENTRPT_APSSERVER=The Crystal Enterprise CMS 伺服器將會處理驗證與排程。
+IDS_ENTRPT_WCSSERVER=將會處理  Enterprise 報表要求的 Web Connector
+IDS_ENTRPT_USERNAME=用來連線至 Crystal Enterprise 的使用者名稱
+IDS_ENTRPT_PASSWORD=用來連線至 Crystal Enterprise 的密碼
+IDS_ENTRPT_AUTHTYPE=用來連線至 Crystal Enterprise 的驗證類型
+IDS_ENTRPT_OBJECTID=要檢視的報表的物件 ID
+IDS_ENTRPT_OBJECTCUID=要檢視的物件的物件 CUID
+
+IDS_SERVRPT_WEBSERVICEURL=將會存取伺服器檔案的 Web 服務的 URL
+IDS_SERVRPT_RPTPATH=伺服器上報表的路徑
+
+#
+# Group Tree Node strings
+#
+IDS_ExpandTreeNode=展開節點 {0}
+IDS_CollapseTreeNode=收合節點 {0}
+
+#
+# Export dialog strings
+#
+IDS_ExportSubmit=匯出
+IDS_PrintSubmit=列印
+IDS_ExportPageTitle=匯出報表
+IDS_PrintPageTitle=列印報表
+IDS_ExportPageRange=輸入要匯出的頁面範圍。
+IDS_PrintPageRange=輸入要列印的頁面範圍。
+IDS_ExportFormat=請從清單中選取匯出格式。
+IDS_InvalidRange=頁面範圍值不正確。請輸入有效的頁面範圍。
+IDS_PrintInstructions1=若要列印:
+IDS_PrintInstructions2=1.  在下一個出現的對話方塊中，請選取 [開啟此檔案] 選項，然後再按一下 [確定] 按鈕。
+IDS_PrintInstructions3=2.  按一下 Acrobat Reader 功能表上的印表機圖示，而不是網際網路瀏覽器上的列印按鈕。
+IDS_Formats=格式:
+IDS_CrystalReportFormat=Crystal Reports (RPT)
+IDS_AcrobatFormat=Acrobat 格式 (PDF)
+IDS_WordFormat=MS Word (RTF)
+IDS_ExcelFormat=MS Excel 97-2000
+IDS_ExcelRecordFormat=MS Excel 97-2000 (只限資料)
+IDS_RTFFormat=Rich Text Format
+IDS_All=全部
+IDS_Pages=頁數
+IDS_From=從:
+IDS_To=到:
+
+#
+# Viewer Prompting
+#
+ID_ParameterInSubreport={1} 中的 {0}
+ID_OK=確定
+ID_SUBMIT=提交
+ID_LOGON=登入
+ID_True=True
+ID_False=False
+
+ID_StringsJSFileName=strings_cht.js
+
+ID_AND=和
+ID_IncludeThisValue=包括該值
+ID_EditmaskSentence=此參數具有編輯遮罩:
+ID_Parameter=參數欄位
+ID_Prompt=您要求的報表需要進一步的資訊。
+ID_RangeHasNoLowerLimit=範圍沒有下限
+ID_RangeHasNoUpperLimit=範圍沒有上限
+ID_RangeSentence=請為此參數指定介於 {0} 和 {1} 之間的值。
+ID_RangeValuesBetween=值的範圍介於:
+ID_CalendarButtonDescription=日曆
+ID_Remove=移除
+ID_Select=選取
+ID_Add=加入
+ID_NoValue=沒有值
+ID_StrRangeSentence=參數值必須介於 {0} 和 {1} 個字元長度之間。
+ID_InvalidReportContent=報表內容無效。
+ID_ServerName=伺服器名稱:
+ID_DatabaseName=資料庫名稱:
+ID_UseIntegratedSecurity=使用整合安全
+ID_QE_ServerDescription=伺服器描述
+ID_QE_DatabaseType=資料庫類型
+ID_UserId=使用者名稱:
+ID_Password=密碼:
+ID_USE_VALUE=使用值...
+ID_RANGE_FROM=從
+ID_RANGE_EXACTLY=正好
+ID_RANGE_AFTER=之後
+ID_RANGE_NO_LOWER=無下限值
+ID_RANGE_TO=至
+ID_RANGE_BEFORE=之前
+ID_RANGE_NO_UPPER=無上限值
+ID_VALUE=值
+ID_PARAMETERS=參數
+
+ID_UntitleFilename=未命名
+
+ID_NextPage=下一步
+ID_PrevPage=上一個
+
+#
+# Image Object Alt. Text
+#
+IDS_Image=影像

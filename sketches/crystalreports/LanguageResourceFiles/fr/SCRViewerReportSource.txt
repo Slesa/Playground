@@ -1,0 +1,51 @@
+#==============================================================================
+#   File:       SCRViewerReportSource.txt
+#   Summary:    This file contains FRENCH resources for Viewer ReportSource
+#==============================================================================
+
+;[strings]
+
+IDS_ENTRPT_APSSERVER=Serveur CMS Crystal Enterprise qui va prendre en charge l'authentification et la planification
+IDS_ENTRPT_USERNAME=Nom d'utilisateur utilisé pour la connexion à Crystal Enterprise
+IDS_ENTRPT_PASSWORD=Mot de passe utilisé pour la connexion à Crystal Enterprise
+IDS_ENTRPT_AUTHTYPE=Mode d'authentification utilisé pour la connexion à Crystal Enterprise
+
+IDS_ENTRPT_LOGONINFO=Informations de connexion à Crystal Enterprise. Ne pas utiliser ces données avec EnterpriseSession.
+IDS_ENTRPT_DOCUMENTURI=Chemin vers le document de rapport. Exemples : "ras://c:\\report.rpt", "ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=Le Report Application Server à utiliser.
+IDS_ENTRPT_ENTSESSION=Objet de session Crystal Enterprise
+;IDS_REPORTDATAVIEW_GROUPPATH=Chemin du groupe des données figurant dans le rapport.
+;IDS_REPORTDATAVIEW_TOSTRINGFORMAT=Chaîne de mise en forme qui sera utilisée par ToString(), par ex. : "{0}: {1}, {2}"
+;IDS_REPORTDATAVIEW_VISIBLEFIELDS=Liste séparée par des points-virgules des champs de rapport à afficher ; s'il s'agit de "", tous les champs seront affichés.
+;IDS_REPORTDATAVIEW_REPORT=Rapport utilisé pour obtenir les données.
+
+;IDS_DOCURIEDITOR_FILTER=Fichiers Crystal Reports (*.rpt)|*.rpt
+;IDS_OPENFILEDIALOG_TITLE=Ouvrir
+
+IDS_CATEGORY_REPORT=Rapport
+ID_NONE=(Aucun)
+ID_BROWSE=Parcourir ...
+ID_CREATE_NEW_REPORT_INSTANCE=Créer une nouvelle instance ReportDocument à partir d'une classe Report typée.
+ID_USE_EXISTING_INSTANCE=Utiliser une instance ReportDocument existante
+ID_OPEN_REPORT_DIALOG_TITLE=Ouvrir un rapport Crystal existant
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+ID_EDIT_REPORT_SOURCE=Modifier la source du rapport
+ID_ENTER_REPORT_SOURCE=Saisir la source du rapport
+ID_EDIT=Modifier ...
+ID_CANCEL=Annuler
+ID_OK=OK
+
+# Exception messages
+IDS_EXCEPTION_INVALID_REPORTSOURCE=Source de rapport incorrecte.
+IDS_EXCEPTION_INVALID_REPORTFILE=Fichier de rapport incorrect.
+IDS_EXCEPTION_CREATEREPORT_RETURNED_NULL=ICachedReport::CreateReport() a renvoyé la valeur 'null'
+IDS_EXCEPTION_NO_REPORT_FILENAME=Nom de fichier de rapport non renseigné
+;IDS_EXCEPTION_SESSIONNOTINITIALIZED=La session Enterprise n'est pas initialisée.
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Echec de la connexion à Enterprise.
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=Echec de la sérialisation XML.
+;IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon doit être une chaîne de jeton de connexion ou un objet ISEnterpriseSession.
+;IDS_EXCEPTION_CE_NOT_FOUND=Impossible de trouver Crystal Enterprise sur cet ordinateur.\nPour en savoir plus, rendez-vous sur http://www.businessobjects.com/products/reporting/crystalenterprise.
+
+IDS_ERROR_INVALIDREPORTNAME=Echec du chargement du rapport.
+IDS_ERROR_DESERIALIZATIONFAILED=La désérialisation a échoué. Vous devez exécuter "{0}" sur un Report Application Server.
+

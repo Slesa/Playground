@@ -1,0 +1,106 @@
+#==============================================================================
+#   File:       CREngine.txt
+#   Summary:    This file contains ITALIAN resources for CrystalDecisions.CrystalReports.Engine
+#==============================================================================
+
+# Strings
+# #################################
+
+#Copyright message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Group name field name
+GROUP_NAME_FIELD_NAME=Gruppo #{0} Name: {1}
+
+#Parameter prompting properties
+PARAM_PROMPT_ALL=Tutti
+PARAM_PROMPT_INCLUDE_ONDEMAND_SUBREPORT=IncludeOndemandSubreport
+
+IDS_ENTRPT_LOGONINFO=Informazioni di accesso di Crystal Enterprise. Non utilizzare se è in uso EnterpriseSession
+IDS_ENTRPT_DOCUMENTURI=Percorso per il documento report. Esempi: "ras://c:\\report.rpt", "ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=Server delle applicazioni report da utilizzare.
+IDS_ENTRPT_ENTSESSION=Oggetto sessione Crystal Enterprise
+IDS_CATEGORY_REPORT=Report
+
+#Lets set aside a block for error messages.
+
+#CREngine error message
+IDS_ERROR_INVALIDAREANAME=Nome di area non valido.
+IDS_ERROR_INVALIDSECTIONNAME=Nome di sezione non valido.
+IDS_ERROR_INVALIDOBJECTNAME=Nome dell'oggetto del report non valido.
+IDS_ERROR_INVALIDOBJECTINDEX=Indice dell'oggetto del report non valido.
+IDS_ERROR_INVALIDPAGE=Recupero pagina o recupero totale non riuscito
+IDS_ERROR_NOTMAINREPORT=Non è il report principale.
+IDS_ERROR_INVALIDPARAMETERFIELDTYPE=Il tipo di valore specificato è diverso dal tipo di valore corrente.
+IDS_ERROR_INVALIDARGUMENT=Argomento non valido.
+IDS_ERROR_INVALIDEXPORTOPTIONS=Opzioni di esportazione non valide.
+IDS_ERROR_INVALIDREPORTNAME=Caricamento report non riuscito.
+IDS_ERROR_INVALID_CE_URI=Impossibile trovare il report Crystal Enterprise specificato. Assicurarsi che il report esista e che il formato del nome file sia corretto.
+IDS_ERROR_DESERIALIZATIONFAILED=Deserializzazione non riuscita. È necessario eseguire "{0}" in un Report Application Server.
+IDS_ERROR_NOFILEPATH=Percorso del file del report non valido
+IDS_ERROR_LOADCRPEFAIL=Caricamento di crpe32.dll non riuscito.
+IDS_ERROR_LICENSEOVERLIMIT=Processo di Crystal Reports non riuscito. Impossibile ottenere una licenza gratuita nell'intervallo di tempo disponibile. Altre licenze possono essere acquistate direttamente da Business Objects o tramite Business Objects Online Store.
+IDS_ERROR_CANNOTSAVE=Impossibile salvare nel report originale
+IDS_ERROR_STRINGTOOLONG=Stringa troppo lunga
+IDS_ERROR_LOGONFAILED=Accesso non riuscito.
+IDS_ERROR_INVALIDSORTNUMBER=Numero di ordinamento non valido.
+IDS_ERROR_INVALIDREPORTPARTID=ID parte del report non valido.
+IDS_ERROR_INVALID_REPORT_PART=Impossibile trovare la parte report specificata. Verificare che la parte report esista o impostare Parte report iniziale in Opzioni report.
+IDS_ERROR_INTERNALERROR=Errore interno. Contattare Business Objects per segnalare il problema.
+IDS_ERROR_CANNOTSETTOPBOTTOMN=Impossibile impostare SortDirection di SortField su TopN/BottomN.
+IDS_ERROR_INVALIDDECIMAL=Posizione decimale non valida.
+IDS_ERROR_INVALIDFIELDNAME=Nome di campo non valido.
+IDS_ERROR_INVALIDTABLENAME=Nome di tabella non valido.
+IDS_ERROR_PARAMETERCURRENTVALUE=Valore corrente del campo parametro mancante.
+IDS_ERROR_INVALIDROOTDIR=Impossibile esportare i file HTML nella directory principale.
+IDS_ERROR_INVALIDKEYCODE=Il codice richiamato dal registro non è valido.
+IDS_ERROR_MISSING_KEYCODE_DLL=La libreria di codici è registrata ma non è possibile trovarla.
+IDS_ERROR_MISSING_KEYCODE_REGISTRY_SETTING=Il registro di codici non esiste oppure il processo non dispone delle autorizzazioni necessarie a leggere il codice.
+IDS_ERROR_KEYCODE_DLL_CLSID_NOT_FOUND=La libreria di codici non è registrata con COM oppure non è possibile caricarla.
+IDS_ERROR_OBSOLETEWIDTHPROPERTY=La proprietà Width è obsoleta. Utilizzare la proprietà Right per modificare la larghezza.
+IDS_ERROR_OBSOLETEHEIGHTPROPERTY=La proprietà Height è obsoleta. Utilizzare la proprietà Bottom per modificare l'altezza.
+IDS_ERROR_NEED_TO_USE_OLD_COMPLUS_ENGINE=Questa operazione non è supportata dal modello di oggetti di Report Application Server. Per risolvere questo problema, è necessario installare il modulo report precedente dalla directory "Legacy".
+
+IDS_ERROR_REPORTNOTINMANIFESTRESOURCES=Impossibile trovare il report nelle risorse disponibili. Creare il progetto e riprovare.
+IDS_ERROR_NOT_SUPPORTED=Non supportato.
+IDS_ERROR_EXPORT_DLL_NOT_FOUND=Impossibile caricare "{0}". Verificare che il componente di supporto dell'esportazione per l'operazione sia installato in Crystal Reports.
+IDS_ERROR_INVALID_EXPORT_FORMAT=Impossibile eseguire l'esportazione nel formato specificato. Verificare che il componente di supporto dell'esportazione per il formato in questione sia installato in Crystal Reports.
+IDS_ERROR_NOT_SUPPORTED_BY_SUBREPORT=Non supportato nei sottoreport.
+IDS_ERROR_REPORT_HAS_NO_TABLES=Il report non ha tabelle.
+IDS_ERROR_INVALID_DATASOURCE=Oggetto origine dati non valido.
+IDS_ERROR_PARAMETER_NOT_IMPLEMENTED=Impossibile aggiungere, rimuovere o modificare i campi parametro con questo metodo. Modificare il report direttamente.
+IDS_ERROR_EXPORT_TO_RESPONSE_IN_HTML_FORMAT_NOT_SUPPORTED=L'esportazione nella risposta HTTP in formato HTML non è supportata.
+IDS_ERROR_INVALIDGROUP=Gruppo non valido.
+IDS_ERROR_SETDATASOURCE_OLEDBDATAREADER_NOT_SUPPORTED=OleDbDataReader non è supportato a causa di una limitazione nell'implementazione di OleDbDataReader.  Per utilizzare OleDbDataReader, includerlo in un'implementazione personalizzata di IDataReader/IDataRecord che raccolga le chiamate a un componente COM STA del thread di chiamata.  Per ulteriori informazioni, visitare il sito Web all'indirizzo: http://support.microsoft.com/kb/313510/EN-US/.
+IDS_ERROR_CR_RUNTIME_NOT_INSTALLED=Si è verificato un errore durante il tentativo di caricare il runtime di Crystal Reports.\n\nLe autorizzazioni per la chiave di registro di Crystal Reports non sono sufficienti oppure il runtime di Crystal Reports non è installato correttamente.\n\nInstallare il ridistribuibile adeguato di Crystal Reports (CRRedist*.msi) contenente la versione corretta del runtime di Crystal Reports (x86, x64, or Itanium) necessaria.  Consultare http://www.businessobjects.com/support per ulteriori informazioni.
+
+
+#ENGINE messages
+IDS_MSG_NOPRINTER=Nessuna stampante installata.
+IDS_MSG_PRINTOPTIONS=Indica le opzioni di stampa di ReportDocument.
+IDS_MSG_SECOND=secondo
+IDS_MSG_SECONDS=secondi
+IDS_MSG_LICENCE_EXCEEDED=Operazione di Crystal Reports ritardata {0} {1} in attesa che una licenza gratuita diventi disponibile.  Altre licenze possono essere acquistate direttamente da Business Objects o tramite Business Objects Online Store.
+
+IDS_EVENTLOG_SOURCE=Crystal Reports
+
+IDS_EXCEPTION_NO_REPORT_FILENAME=Non è stato specificato un nome file per il report.
+IDS_EXCEPTION_SESSIONNOTINITIALIZED=Sessione Enterprise non inizializzata.
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Connessione a Enterprise non riuscita.
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=Serializzazione XML non riuscita.
+IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon deve essere una stringa di token di connessione o un ISEnterpriseSession.
+IDS_EXCEPTION_CE_NOT_FOUND=Crystal Enterprise non rilevato sulla macchina.\nPer ulteriori informazioni, visitare la pagina http://www.businessobjects.com/products/reporting/crystalenterprise.
+IDS_EXCEPTION_REPORTCLIENTDOCUMENT_ACCESS_VIOLATION=È possibile accedere alla proprietà ReportClientDocument solo quando il report viene aperto mediante Report Application Server.
+
+IDS_DOCURIEDITOR_FILTER=File Crystal Reports (*.rpt)|*.rpt
+IDS_OPENFILEDIALOG_TITLE=Apri
+
+IDS_ENTRPT_APSSERVER=Il server CSM di Crystal Enterprise che gestisce autenticazione e pianificazione
+IDS_ENTRPT_USERNAME=Il nome utente usato per connettersi a Crystal Enterprise
+IDS_ENTRPT_PASSWORD=La password usata per connettersi a Crystal Enterprise
+IDS_ENTRPT_AUTHTYPE=Il tipo di autenticazione usato per connettersi a Crystal Enterprise
+
+IDS_REPORTDATAVIEW_GROUPPATH=Il percorso di gruppo dei dati nel report.
+IDS_REPORTDATAVIEW_TOSTRINGFORMAT=La stringa di formato che deve essere utilizzata da ToString(), ad esempio "{0}: {1}, {2}"
+IDS_REPORTDATAVIEW_COLUMNS=Un insieme di oggetti CrystalReportDataViewColumn che rappresenta i campi del report da visualizzare; se l'insieme è vuoto verranno visualizzati tutti i campi.
+IDS_REPORTDATAVIEW_REPORT=Il report utilizzato per ottenere i datised to get the data.

@@ -1,0 +1,106 @@
+#==============================================================================
+#   File:       CREngine.txt
+#   Summary:    This file contains KOREAN resources for CrystalDecisions.CrystalReports.Engine
+#==============================================================================
+
+# Strings
+# #################################
+
+#Copyright message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Group name field name
+GROUP_NAME_FIELD_NAME=그룹 #{0} Name: {1}
+
+#Parameter prompting properties
+PARAM_PROMPT_ALL=모두
+PARAM_PROMPT_INCLUDE_ONDEMAND_SUBREPORT=IncludeOndemandSubreport
+
+IDS_ENTRPT_LOGONINFO=Crystal Enterprise 로그온 정보 - EnterpriseSession을 사용하는 경우에는 사용하지 마십시오.
+IDS_ENTRPT_DOCUMENTURI=보고서 문서의 경로 예: "ras://c:\\report.rpt", "ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=사용할 보고서 응용 프로그램 서버
+IDS_ENTRPT_ENTSESSION=Crystal Enterprise 세션 개체
+IDS_CATEGORY_REPORT=보고서
+
+#Lets set aside a block for error messages.
+
+#CREngine error message
+IDS_ERROR_INVALIDAREANAME=영역 이름이 잘못되었습니다.
+IDS_ERROR_INVALIDSECTIONNAME=섹션 이름이 잘못되었습니다.
+IDS_ERROR_INVALIDOBJECTNAME=보고서 개체 이름이 잘못되었습니다.
+IDS_ERROR_INVALIDOBJECTINDEX=보고서 개체 인덱스가 잘못되었습니다.
+IDS_ERROR_INVALIDPAGE=페이지 또는 합산기를 가져오지 못했습니다.
+IDS_ERROR_NOTMAINREPORT=주 보고서가 아닙니다.
+IDS_ERROR_INVALIDPARAMETERFIELDTYPE=지정한 값 형식이 현재 값 형식과 다릅니다.
+IDS_ERROR_INVALIDARGUMENT=잘못된 인수입니다.
+IDS_ERROR_INVALIDEXPORTOPTIONS=내보내기 옵션이 잘못되었습니다.
+IDS_ERROR_INVALIDREPORTNAME=보고서를 로드하지 못했습니다.
+IDS_ERROR_INVALID_CE_URI=지정된 Crystal Enterprise 보고서를 찾을 수 없습니다. 보고서가 있는지 그리고 파일 이름의 형식이 올바른지 확인하십시오.
+IDS_ERROR_DESERIALIZATIONFAILED=deserialization에 실패했습니다. 보고서 응용 프로그램 서버에서 "{0}"을(를) 실행해야 합니다.
+IDS_ERROR_NOFILEPATH=보고서 파일 경로가 잘못되었습니다.
+IDS_ERROR_LOADCRPEFAIL=crpe32.dll을 로드하지 못했습니다.
+IDS_ERROR_LICENSEOVERLIMIT=지정한 시간 내에 무상 라이센스를 구하지 못해 Crystal Reports 작업이 실패했습니다. 라이센스는 Business Objects에서 직접 구입하거나 Business Objects 온라인 상점을 통해 구입할 수 있습니다.
+IDS_ERROR_CANNOTSAVE=원본 보고서에 저장할 수 없습니다.
+IDS_ERROR_STRINGTOOLONG=문자열이 너무 깁니다.
+IDS_ERROR_LOGONFAILED=로그온하지 못했습니다.
+IDS_ERROR_INVALIDSORTNUMBER=정렬 번호가 잘못되었습니다.
+IDS_ERROR_INVALIDREPORTPARTID=잘못된 부분 보고서 ID입니다.
+IDS_ERROR_INVALID_REPORT_PART=지정한 부분 보고서를 찾을 수 없습니다. 보고서 부분이 있는지 그리고 보고서 옵션에서 초기 부분 보고서를 설정했는지 확인하십시오.
+IDS_ERROR_INTERNALERROR=내부 오류입니다. 이 문제를 Business Objects에 보고해 주십시오.
+IDS_ERROR_CANNOTSETTOPBOTTOMN=SortField의 SortDirection을 상위 N/하위 N으로 설정할 수 없습니다.
+IDS_ERROR_INVALIDDECIMAL=잘못된 소수 자릿수입니다.
+IDS_ERROR_INVALIDFIELDNAME=필드 이름이 잘못되었습니다.
+IDS_ERROR_INVALIDTABLENAME=잘못된 테이블 이름입니다.
+IDS_ERROR_PARAMETERCURRENTVALUE=매개 변수 필드 현재 값이 없습니다.
+IDS_ERROR_INVALIDROOTDIR=HTML 파일을 루트 디렉터리로 내보낼 수 없습니다.
+IDS_ERROR_INVALIDKEYCODE=레지스트리에서 검색한 키 코드가 잘못되었습니다.
+IDS_ERROR_MISSING_KEYCODE_DLL=키 코드 라이브러리가 등록되어 있지만 찾을 수 없습니다.
+IDS_ERROR_MISSING_KEYCODE_REGISTRY_SETTING=키 코드 레지스트리 항목이 없거나 키 코드를 읽을 수 있는 권한이 프로세스에 부여되지 않았습니다.
+IDS_ERROR_KEYCODE_DLL_CLSID_NOT_FOUND=키 코드 라이브러리가 COM에 등록되어 있지 않거나 로드될 수 없습니다.
+IDS_ERROR_OBSOLETEWIDTHPROPERTY=Width 속성은 이제 사용되지 않습니다. 너비를 변경하려면 Right 속성을 사용하십시오.
+IDS_ERROR_OBSOLETEHEIGHTPROPERTY=Height 속성은 이제 사용되지 않습니다. 높이를 변경하려면 Bottom 속성을 사용하십시오.
+IDS_ERROR_NEED_TO_USE_OLD_COMPLUS_ENGINE=보고서 응용 프로그램 서버 Object Model에서 작업을 지원하지 않습니다. 이 문제를 해결하려면 ""Legacy"" 디렉터리에 있는 이전 보고서 엔진을 설치해야 합니다.
+
+IDS_ERROR_REPORTNOTINMANIFESTRESOURCES=매니페스트 리소스에서 보고서를 찾을 수 없습니다. 프로젝트를 빌드한 다음 다시 시도하십시오.
+IDS_ERROR_NOT_SUPPORTED=지원되지 않습니다.
+IDS_ERROR_EXPORT_DLL_NOT_FOUND="{0}"을(를) 로드할 수 없습니다. 해당 형식에 대한 내보내기 지원 구성 요소가 Crystal Reports에 설치되어 있는지 확인하십시오.
+IDS_ERROR_INVALID_EXPORT_FORMAT=지정한 형식으로 내보낼 수 없습니다. 해당 형식에 대한 내보내기 지원 구성 요소가 Crystal Reports에 설치되어 있는지 확인하십시오.
+IDS_ERROR_NOT_SUPPORTED_BY_SUBREPORT=하위 보고서에서는 지원되지 않습니다.
+IDS_ERROR_REPORT_HAS_NO_TABLES=보고서에 테이블이 없습니다.
+IDS_ERROR_INVALID_DATASOURCE=데이터 소스 개체가 잘못되었습니다.
+IDS_ERROR_PARAMETER_NOT_IMPLEMENTED=이 방식으로 매개 변수 필드를 추가, 제거 또는 수정할 수 없습니다. 직접 보고서를 수정하십시오.
+IDS_ERROR_EXPORT_TO_RESPONSE_IN_HTML_FORMAT_NOT_SUPPORTED=HTML 형식의 HTTP 응답으로 내보낼 수 없습니다.
+IDS_ERROR_INVALIDGROUP=그룹이 잘못되었습니다.
+IDS_ERROR_SETDATASOURCE_OLEDBDATAREADER_NOT_SUPPORTED=OleDbDataReader를 지원하지 않습니다. OleDbDataReader를 사용하려면 호출한 스레드의 COM STA로 호출을 다시 마샬링하는 사용자 지정 IDataReader/IDataRecord 구현에서 사용하십시오. 자세한 내용은 <http://support.microsoft.com/kb/313510/EN-US/>를 참조하십시오.
+IDS_ERROR_CR_RUNTIME_NOT_INSTALLED=Crystal Reports 런타임을 로드하는 동안 오류가 발생했습니다.\n\nCrystal Reports 레지스트리 키 권한이 충분치 않거나 Crystal Reports 런타임이 제대로 설치되지 않았습니다.\n\n정확한 버전의 Crystal Reports 런타임(x86, x64 또는 Itanium)이 들어 있는 올바른 Crystal Reports 재배포 가능 버전(CRRedist*.msi)을 설치하십시오. 자세한 내용은 http://www.businessobjects.com/support를 참조하십시오.
+
+
+#ENGINE messages
+IDS_MSG_NOPRINTER=프린터가 설치되지 않았습니다.
+IDS_MSG_PRINTOPTIONS=ReportDocument의 인쇄 옵션을 나타냅니다.
+IDS_MSG_SECOND=초
+IDS_MSG_SECONDS=초
+IDS_MSG_LICENCE_EXCEEDED=무상 라이센스를 사용할 수 있을 때까지 기다리는 동안 Crystal Reports 작업이 {0} {1} 지연되었습니다. 라이센스는 Business Objects에서 직접 구입하거나 Business Objects 온라인 상점을 통해 구입할 수 있습니다.
+
+IDS_EVENTLOG_SOURCE=Crystal Reports
+
+IDS_EXCEPTION_NO_REPORT_FILENAME=보고서 파일 이름을 지정하지 않았습니다.
+IDS_EXCEPTION_SESSIONNOTINITIALIZED=Enterprise 세션이 초기화되지 않았습니다.
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Enterprise에 로그온하지 못했습니다.
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=XML serialization에 실패했습니다.
+IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon은 로그온 토큰 문자열 또는 ISEnterpriseSession이어야 합니다.
+IDS_EXCEPTION_CE_NOT_FOUND=컴퓨터에서 Crystal Enterprise를 찾을 수 없습니다.\n자세한 내용은 http://korea.businessobjects.com/products/products01_02.shtml을 참조하십시오.
+IDS_EXCEPTION_REPORTCLIENTDOCUMENT_ACCESS_VIOLATION=ReportClientDocument 속성은 보고서 응용 프로그램 서버를 사용하여 보고서를 연 경우에만 액세스할 수 있습니다.
+
+IDS_DOCURIEDITOR_FILTER=Crystal Reports 파일 (*.rpt)|*.rpt
+IDS_OPENFILEDIALOG_TITLE=열기
+
+IDS_ENTRPT_APSSERVER=인증과 일정을 처리할 Crystal Enterprise CMS 서버입니다.
+IDS_ENTRPT_USERNAME=Crystal Enterprise에 연결하는 데 사용되는 사용자 이름입니다.
+IDS_ENTRPT_PASSWORD=Crystal Enterprise에 연결하는 데 사용되는 암호입니다.
+IDS_ENTRPT_AUTHTYPE=Crystal Enterprise에 연결하는 데 사용되는 인증 형식입니다.
+
+IDS_REPORTDATAVIEW_GROUPPATH=보고서의 데이터 그룹 경로입니다.
+IDS_REPORTDATAVIEW_TOSTRINGFORMAT=ToString()에서 사용되는 형식 문자열입니다. 예: "{0}: {1}, {2}"
+IDS_REPORTDATAVIEW_COLUMNS=표시할 보고서 필드를 나타내는 CrystalReportDataViewColumn 개체 컬렉션입니다. 이 컬렉션이 비어 있으면 모든 필드가 표시됩니다.
+IDS_REPORTDATAVIEW_REPORT=데이터를 가져오는 데 사용되는 보고서입니다.

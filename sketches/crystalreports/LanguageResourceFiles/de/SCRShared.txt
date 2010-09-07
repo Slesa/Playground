@@ -1,0 +1,177 @@
+#==============================================================================
+#   File:       SCRShared.txt
+#   Summary:    GERMAN resources for CrystalDecisions.Shared
+#   Date:       May, 2000
+#==============================================================================
+
+# All the contents were moved to Viewer.txt under ViewerResource.
+
+#Copyright Message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Error Message
+IDS_INVALID_OBJECT_TYPE=Ungültiger Objekttyp.
+IDS_PARAMETER_NOT_IMPLEMENTED=Das Hinzufügen, Ändern oder Entfernen von Parameterfeldern ist mit dieser Methode nicht möglich. Ändern Sie stattdessen den Bericht direkt.
+
+IDS_TRUE_STRING=Wahr
+IDS_FALSE_STRING=Falsch
+
+# 
+# Group Tree Style Descriptions
+# 
+IDS_SHOW_LINES=Legt fest, ob die Zeilen angezeigt werden, die die drei Knoten verbinden.
+
+#==============================================================================
+#   From:       ObjectModel.txt
+#   Summary:    This file contains GERMAN resources for the Page Object Model
+#==============================================================================
+
+IDS_NUMBER=Zahl
+IDS_CURRENCY=Währung
+IDS_DATE=Datum
+IDS_TIME=Uhrzeit
+IDS_BOOLEAN=Boolesch
+IDS_DATETIME=DatumUhrzeit
+IDS_MEMO=Memo
+IDS_STRING=Zeichenfolge
+IDS_MAP=Karte
+IDS_TEXTOBJECT=Textobjekt
+IDS_CROSSTAB=Kreuztabelle
+IDS_CHART=Diagramm
+IDS_BLOB=BLOB-Feld
+IDS_INPLACE_SUBREPORT=Unterbericht
+IDS_OLEOBJECT=OLE-Objekt
+IDS_SECTION=Bereich
+IDS_OLAP_GRID=OLAP-Raster
+IDS_GROUP_HEADER=Gruppenkopf
+IDS_GROUP_FOOTER=Gruppenfuß
+IDS_REPORT_HEADER=Kopfbereich des Berichts
+IDS_REPORT_FOOTER=Fußbereich des Berichts
+IDS_PAGE_HEADER=Seitenkopf
+IDS_PAGE_FOOTER=Seitenfuß
+IDS_DETAIL=Detailbereich
+
+#==============================================================================
+#   From:       HTMLReportRender.txt
+#   Summary:    This file contains GERMAN resources for HTMLReportRender
+#   Date:       Feb, 2001
+#==============================================================================
+
+
+ID_InvalidAdornmentClass=Die Verzierungsklasse konnte nicht gefunden werden.
+ID_InvalidFontColorClass=Die Klasse für die Schriftfarbe konnte nicht gefunden werden.
+ID_InvalidReportObject=Ungültiges Berichtsobjekt.
+
+FileDialogInvalidFileName="{0}" ist ein ungültiger Dateiname.
+FileDialogSubLassFailure=Fehler bei der Klassizifierung von Windows.
+FileDialogBufferTooSmall=Der Puffer war zu klein.
+FileDialogInvalidFilter=Ungültige Filterzeichenfolge.
+FileDialogInvalidFilterIndex=Ungültiger Filterindex.
+FileDialogFileNotFound=Die Datei "{0}" wurde nicht gefunden.
+
+
+#
+#  EnterpriseReport and ServerFileReport strings
+#
+IDS_RPTCOMP_LOCATION=Speicherort
+IDS_RPTCOMP_INVALID_SCHEME=Das Schema "{0}" im URI "{1}" wird nicht unterstützt.
+
+IDS_ENTRPT_WEBSERVICEURL=Der URL des Webdienstes, der den Web Component Server aufruft.
+IDS_ENTRPT_APSSERVER=Der für die Authentifizierung und zeitgesteuerte Verarbeitung verantwortliche Crystal Enterprise CMS-Server
+IDS_ENTRPT_WCSSERVER=Die Webverbindung, die Enterprise-Berichtanforderungen verarbeitet.
+IDS_ENTRPT_USERNAME=Der zum Verbinden mit Crystal Enterprise verwendete Anwendername
+IDS_ENTRPT_PASSWORD=Das zum Verbinden mit Crystal Enterprise verwendete Kennwort
+IDS_ENTRPT_AUTHTYPE=Der zum Verbinden mit Crystal Enterprise verwendete Authentifizierungstyp
+IDS_ENTRPT_OBJECTID=Die Objekt-ID des Berichts, der angezeigt werden soll.
+IDS_ENTRPT_OBJECTCUID=Die Objekt-CUID des Berichts, der angezeigt werden soll.
+
+IDS_SERVRPT_WEBSERVICEURL=Der URL des Webdienstes, der auf die Serverdatei zugreift.
+IDS_SERVRPT_RPTPATH=Der Pfad zum Bericht auf dem Server.
+
+#
+# Group Tree Node strings
+#
+IDS_ExpandTreeNode=Knoten {0} erweitern
+IDS_CollapseTreeNode=Knoten {0} ausblenden
+
+#
+# Export dialog strings
+#
+IDS_ExportSubmit=Exportieren
+IDS_PrintSubmit=Drucken
+IDS_ExportPageTitle=Bericht exportieren
+IDS_PrintPageTitle=Bericht drucken
+IDS_ExportPageRange=Geben Sie den Seitenbereich ein, der exportiert werden soll.
+IDS_PrintPageRange=Geben Sie den Seitenbereich ein, der ausgedruckt werden soll.
+IDS_ExportFormat=Wählen Sie ein Exportformat in der Liste aus.
+IDS_InvalidRange=Die Werte für den Seitenbereich sind nicht gütlig. Geben Sie einen gültigen Seitenbereich ein.
+IDS_PrintInstructions1=Zum Drucken:
+IDS_PrintInstructions2=1.   Wählen Sie im nächsten Dialogfeld die Option "Diese Datei öffnen" aus, und klicken Sie auf "OK".
+IDS_PrintInstructions3=2.  Klicken Sie vorzugsweise auf das Druckersymbol im Acrobat Reader-Menü anstatt auf die Schaltfläche ""Drucken"" Ihres Internetbrowsers.
+IDS_Formats=Formate:
+IDS_CrystalReportFormat=Crystal Reports (RPT)
+IDS_AcrobatFormat=Acrobat-Format (PDF)
+IDS_WordFormat=MS Word (RTF)
+IDS_ExcelFormat=MS Excel 97-2000
+IDS_ExcelRecordFormat=MS Excel 97-2000 (nur Daten)
+IDS_RTFFormat=Rich Text-Format
+IDS_All=Alle
+IDS_Pages=Seiten
+IDS_From=von:
+IDS_To=bis:
+
+#
+# Viewer Prompting
+#
+ID_ParameterInSubreport={0} in {1}
+ID_OK=OK
+ID_SUBMIT=Absenden
+ID_LOGON=Anmeldung
+ID_True=Wahr
+ID_False=Falsch
+
+ID_StringsJSFileName=strings_de.js
+
+ID_AND=und
+ID_IncludeThisValue=Diesen Wert einschließen
+ID_EditmaskSentence=Dieser Parameter hat eine Bearbeitungsmaske:
+ID_Parameter=Parameterfeld(er)
+ID_Prompt=Für den angeforderten Bericht sind weitere Informationen erforderlich.
+ID_RangeHasNoLowerLimit=Bereich hat keine Untergrenze
+ID_RangeHasNoUpperLimit=Bereich hat keine Obergrenze
+ID_RangeSentence=Geben Sie einen Wert zwischen {0} und {1} für diesen Parameter ein.
+ID_RangeValuesBetween=Wertebereich zwischen:
+ID_CalendarButtonDescription=Kalender
+ID_Remove=Entfernen
+ID_Select=Auswählen
+ID_Add=Hinzufügen
+ID_NoValue=Kein Wert
+ID_StrRangeSentence=Der Parameterwert muss zwischen {0} und {1} Zeichen enthalten.
+ID_InvalidReportContent=Ungültiger Berichtsinhalt.
+ID_ServerName=Servername:
+ID_DatabaseName=Datenbank:
+ID_UseIntegratedSecurity=Integrierte Sicherheit verwenden
+ID_QE_ServerDescription=Serverbeschreibung
+ID_QE_DatabaseType=Datenbanktyp
+ID_UserId=Anwendername:
+ID_Password=Kennwort:
+ID_USE_VALUE=Wert verwenden...
+ID_RANGE_FROM=von
+ID_RANGE_EXACTLY=Genau
+ID_RANGE_AFTER=Nach
+ID_RANGE_NO_LOWER=Kein unterer Wert
+ID_RANGE_TO=bis
+ID_RANGE_BEFORE=vor
+ID_RANGE_NO_UPPER=Kein oberer Wert
+ID_VALUE=Werte
+ID_PARAMETERS=Parameter
+
+ID_UntitleFilename=Unbenannt
+
+ID_NextPage=Weiter
+ID_PrevPage=Vorherige
+
+#
+# Image Object Alt. Text
+#
+IDS_Image=Bild

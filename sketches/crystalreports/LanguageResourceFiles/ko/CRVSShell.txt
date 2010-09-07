@@ -1,0 +1,256 @@
+#==============================================================================
+#   File:       CRVSShell
+#   Summary:    This file contains KOREAN resources for VSDesigner.dll
+#==============================================================================
+
+# These next three strings must match the VS7 toolbox tab names
+IDS_TOOLBOX_WEBFORMS=Web Forms
+IDS_TOOLBOX_MOBILE_WEBFORMS=모바일 Web Forms
+IDS_TOOLBOX_WINFORMS=Windows Forms
+IDS_TOOLBOX_COMPONENTS=구성 요소
+IDS_TOOLBOX_CRYSTALREPORTS=Crystal Reports
+
+IDS_SERVEREXPLORER_ROOT=Crystal Services
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE=서버 보고서
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_WEBSERVICE=Crystal Enterprise 웹 서비스
+IDS_SERVEREXPLORER_SERVERFILES=보고서 응용 프로그램 서버
+IDS_SERVEREXPLORER_REPORTDATA=보고서 데이터
+
+IDS_SERVEREXPLORER_ROOT_WHIDBEY=Crystal Reports 서비스
+IDS_SERVEREXPLORER_SERVERFILES_WHIDBEY=서버 파일 웹 서비스
+
+IDS_SERVEREXPLORER_RAS_PORTSETTING_MENU=포트 설정 변경(&P)...
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_TITLE=포트 설정
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_PORT=포트:
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR_TITLE=잘못된 포트 설정
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR=잘못된 포트 번호를 입력했습니다.
+
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LOGIN=로그온(&L)...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIRSTBATCH=첫 번째 배치(&I)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_PREVIOUSBATCH=이전 배치(&P)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_NEXTBATCH=다음 배치(&N)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LASTBATCH=마지막 배치(&L)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIND=찾기(&F)...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_COPYOBJCUID=CUID 복사(&C)
+
+IDS_SERVEREXPLORER_FINDDLG_TITLE=찾기
+IDS_SERVEREXPLORER_FINDDLG_FINDTEXT_LABEL=다음으로 시작하는 항목 찾기(&N)
+
+IDS_SERVEREXPLORER_CE_LOGINDLG_LOGIN=로그온
+IDS_SERVEREXPLORER_CE_LOGINDLG_AUTH=인증(&A):
+IDS_SERVEREXPLORER_CE_LOGINDLG_USERNAME=사용자 이름(&U):
+IDS_SERVEREXPLORER_CE_LOGINDLG_PASSWD=암호(&P):
+IDS_SERVEREXPLORER_CE_LOGINDLG_APS=시스템(&S):
+IDS_SERVEREXPLORER_CE_LOGINDLG_WCS=웹 커넥터(&W):
+IDS_SERVEREXPLORER_CE_LOGINDLG_OK=확인
+IDS_SERVEREXPLORER_CE_LOGINDLG_CANCEL=취소
+
+IDS_SERVEREXPLORER_NO_NEXT_BATCH=마지막 배치가 이미 있습니다.
+IDS_SERVEREXPLORER_NO_PREVIOUS_BATCH=첫 번째 배치가 이미 있습니다.
+
+IDS_SERVEREXPLORER_COULD_NOT_FIND_REPORT_MANAGER={0} 웹 서비스를 찾을 수 없습니다.\n{0} 웹 서비스가 원격 컴퓨터에 설치되어 있는지 확인하십시오.
+IDS_SERVEREXPLORER_CE_LOGON_FAILED='{0}'을(를) 사용하여 Crystal Enterprise 10에 로그온하지 못했습니다. CMS 서버, 웹 커넥터 서버, 사용자 이름 및 암호가 정확한지 확인하고 다시 시도하십시오.
+IDS_SERVEREXPLORER_NODE_TYPE_FAILED='{0}' 형식을 로드하지 못했습니다.
+IDS_SERVEREXPLORER_NODE_CREATION_FAILED=서버 탐색기 노드 '{0}'을(를) 만들지 못했습니다.
+IDS_SERVEREXPLORER_CHECKFORASPNET2=웹 서비스에 액세스하는 동안 오류가 발생했습니다.\n{0}을(를) ASP.NET 2.0 웹 응용 프로그램으로 구성했는지 확인하십시오.
+
+IDS_SERVEREXPLORER_INSTANCE_FORMAT={0:yyyy-MM-dd HH:mm:ss}  {1}
+
+IDS_SERVEREXPLORER_FAILED_TO_QUERY_UNPATCHED_CE_FOR_INSTANCES=서버 탐색기를 통해 보고서 인스턴스에 액세스할 수 있도록 Enterprise 시스템이 업그레이드되지 않았습니다. Crystal Enterprise 관리자에게 문의하십시오.
+
+IDS_INSTANCE_STATUS_ACTIVE=활성
+IDS_INSTANCE_STATUS_COMPLETE=완료
+IDS_INSTANCE_STATUS_FAILED=실패
+IDS_INSTANCE_STATUS_LOADED=로드됨
+IDS_INSTANCE_STATUS_LOADING=로드 중
+IDS_INSTANCE_STATUS_NOTRESPONDING=응답 없음
+IDS_INSTANCE_STATUS_ONHOLD=중단
+IDS_INSTANCE_STATUS_PAUSED=일시 중지됨
+IDS_INSTANCE_STATUS_SCHEDULED=예약됨
+IDS_INSTANCE_STATUS_ERROR=오류
+IDS_INSTANCE_STATUS_QUEUED=대기
+IDS_INSTANCE_STATUS_RUNTODAY=오늘 실행
+IDS_INSTANCE_STATUS_TERMINATED=종료
+IDS_INSTANCE_STATUS_TERMINATING=종료 중
+
+# Smart Task
+IDS_TASK_CREATE_REPORTSOURCE_TEXT=새 Crystal Report를 만듭니다.
+IDS_TASK_CREATE_REPORTSOURCE_DESCRIPTION=새 보고서를 만들어 뷰어에 바인딩합니다.
+IDS_TASK_BROWSE_REPORTSOURCE_TEXT=Crystal Report를 선택합니다.
+IDS_TASK_BROWSE_REPORTSOURCE_DESCRIPTION=CrystalReport 파일, ReportDocument 개체, 강력한 형식의 보고서 개체를 찾아봅니다.
+IDS_TASK_CLEAR_REPORTSOURCE_TEXT=보고서 소스 제거
+IDS_TASK_CLEAR_REPORTSOURCE_DESCRIPTION=ReportSource 속성을 제거합니다.
+IDS_TASK_CONVERT_TO_REPORT_TEXT=Crystal Report
+IDS_TASK_CONVERT_TO_REPORT_DESCRIPTION=Crystal Report의 내용을 변경합니다.
+IDS_TASK_EDIT_REPORTSOURCE_TEXT=현재 Crystal Report 편집
+IDS_TASK_EDIT_REPORTSOURCE_DESCRIPTION=현재 보고서를 편집합니다.
+IDS_INVALIDREPORTFILENAME=시스템에서 예약된 이름인 '.', '..', 'COM1', 'LPT1', 'CON', 'AUX', 'PRN'을 사용하여 파일 이름을 지정할 수는 없으며,\n 파일 이름에는 {0} 문자가 포함될 수 없습니다.\n파일 이름에는 유니코드 제어 문자도 포함될 수 없습니다.
+IDS_INVALIDREPORTFILENAME_TITLE=잘못된 보고서 이름
+IDS_CHOOSEREPORT_DIALOG_TITLE=Crystal Report 선택- {0}
+IDS_EDIT_REPORTSOURCE_TITLE=보고서 편집
+IDS_CANNOT_EDIT_REPORTSOURCE=ReportSource 속성이 설정되지 않았거나 보고서를 편집할 수 없습니다.
+
+# Chrome menu
+IDS_CONFIGURE_REPORT_DATA_SOURCE=보고서 소스 구성...
+IDS_CONNECT_REPORT_DATA_SOURCE=보고서 소스에 연결...
+IDS_TOGGLE_GROUP_TREE=그룹 트리 표시/숨기기
+IDS_TOGGLE_TOOLBAR=도구 모음 표시/숨기기
+IDS_TOGGLE_REPORTVIEW=보고서 뷰 표시/숨기기
+IDS_TOGGLE_SEPARATE_PAGES=보고서를 여러 페이지에 표시
+IDS_TOGGLE_BEST_FIT_PAGE=페이지 확장 허용
+IDS_EDIT_REPORT=보고서 편집...
+IDS_CANNOT_FIND_REPORT=소스 파일 {0}을(를) 찾을 수 없습니다.
+IDS_REPORT_SOURCE_NOT_SET=보고서 소스가 아직 구성되지 않았습니다.
+IDS_EDITREPORT_ERROR_MSGBOX_TITLE=보고서를 편집할 수 없음
+
+# ReportSourcePicker
+IDS_REPORTSOURCEPICKER_TITLE=보고서 소스 만들기
+IDS_BROWSE_REPORT=<찾아보기...>
+IDS_NEW_REPORT=<새 보고서...>
+IDS_NEW_REPORT_DATA_SOURCE=<새 CrystalReportSource...>
+IDS_TITLE_STRING_FORMAT=%0 - %1
+IDS_DUPLICATE_ID=새 보고서 소스 이름이 고유하지 않습니다.
+IDS_OPEN_REPORT_DIALOG_TITLE=Crystal Report 선택
+IDS_OPEN_REPORT_DIALOG_FILTER=Crystal Report(*.rpt)|*.rpt
+
+# CreateReportSourceDialog
+IDS_CREATE_REPORT_SOURCE_LABEL_DIALOG_DESCRIPTION=보고서 내용과 데이터를 제공하는 CrystalReportSource를 만듭니다.
+IDS_CREATE_REPORT_SOURCE_LABEL_HEADER=CrystalReportSource 컨트롤 만들기
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_DATASOURCENAME=CrystalReportSource 컨트롤의 이름을 지정합니다.
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_FILE_NAME=CrystalReportSource 컨트롤에 대한 Crystal 보고서를 지정합니다.
+
+IDS_NEW_REPORT_NAME_DIALOG_TITLE=새 Crystal 보고서 만들기
+IDS_NEW_REPORT_NAME_DIALOG_DESCR=새 보고서의 이름을 지정합니다.
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE_DESCRIPTION=CrystalReportSource 컨트롤 이름에 다음 문자를 사용할 수 없습니다. {0}
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE=CrystalReportSource 이름이 잘못되었습니다.
+
+
+# BrowseReportSourceDialog
+IDS_ADD_TO_PROJECT=프로젝트에 추가
+IDS_USE_REPORTDOCUMENT=ReportDocument 사용
+IDS_SPECIFY_CRYSTAL_REPORT=컨트롤에 사용할 Crystal 보고서를 지정합니다.
+
+# ConfigureReportSource
+IDS_CONFIGURE_REPORTSOURCE_DIALOG_TITLE=보고서 소스 구성 - {0}
+IDS_CONFIGURE_REPORTSOURCE_DESCR=이 CrystalReportSource 컨트롤에 바인딩할 Crystal Report를 지정하십시오.
+
+# ReportSourceIDListBox
+ID_NEW_REPORTSOURCE=<새 보고서 소스...>
+ID_NONE=<없음>
+
+# BC: This is for webformviewer designer
+ID_LoadingHtml=로드하는 중 ...
+ID_NoPreviewLogon=데이터베이스 로그온 때문에 보고서를 미리 볼 수 없습니다.
+ID_NoPreviewParam=매개 변수 프롬프트 때문에 보고서를 미리 볼 수 없습니다.
+ID_NoPreviewGeneric=다음과 같은 오류 때문에 보고서를 미리 볼 수 없습니다.
+ID_NoReportPartsErr=초기 부분 보고서를 설정하거나 ReportParts 또는 DataBindings 속성을 사용하여 부분 보고서 정의를 지정하십시오.
+
+# FL: You may not need to translate this; this is the default Enterprise
+# "guest" account name...
+IDS_SERVEREXPLORER_CE_LOGINDLG_GUEST=Guest
+
+IDS_SERVEREXPLORER_CE_WS_NOT_FOUND='{0}'에서 Crystal Enterprise 웹 서비스(EnterpriseReportManager.asmx)가 검색되지 않았습니다.\n\nCrystal Enterprise 10 시스템에 연결하려면 먼저 상황에 맞는 메뉴의 \"서버 추가...\"를 사용하여 EnterpriseReportManager.asmx를 호스팅하는 컴퓨터를 \"서버\" 노드에 서버로 추가해야 합니다.\n\nEnterpriseReportManager.asmx를 서버에 추가하려면 해당 서버에 CE .NET SDK를 설치하십시오.\n\nCrystal Enterprise에 대한 자세한 내용을 살펴보시겠습니까?
+IDS_SERVEREXPLORER_CE10_LOGON_FAILED='{0}'을(를) 사용하여 Crystal Enterprise 10에 로그온하지 못했습니다. CMS 서버, 웹 커넥터 서버, 사용자 이름 및 암호가 정확한지 확인하고 다시 시도하십시오.
+IDS_SERVEREXPLORER_NO_CMS="'{0}'에서 Crystal Enterprise 웹 서비스(EnterpriseReportManager.asmx)가 검색되었지만 CE 10 CMS(중앙 관리 서버)가 없습니다.\n\n로그온 대화 상자에서 CMS를 지정하십시오.\n\nCrystal Enterprise에 대한 자세한 내용을 살펴보시겠습니까?"
+IDS_SERVEREXPLORER_CE_ENTERPRISE_URL=http://korea.businessobjects.com/product/reporting_02.htm
+
+IDS_SERVEREXPLORER_RAS_INTRO_WHIDBEY=보고서 응용 프로그램 서버를 Crystal Reports 서버 또는 BusinessObjects Enterprise와 함께 사용할 수 있습니다. 자세한 내용을 살펴보시겠습니까?
+IDS_SERVEREXPLORER_RAS_URL_WHIDBEY=http://www.businessobjects.com/products/crystalreports
+
+# error
+IDS_REPORTTOOLBOX_DIALOG_TITLE=ReportDocument 선택
+IDS_REPORTTOOLBOX_MESSAGE=프로젝트에서 형식화된 ReportDocument 클래스를 선택하거나 형식화되지 않은 기본 ReportDocument 클래스를 선택하십시오.
+IDS_REPORTTOOLBOX_NAME=이름(&N):
+IDS_REPORTTOOLBOX_HELP=프로젝트에 형식화된 ReportDocument가 없을 경우 프로젝트에 Crystal report를 추가하거나 열어서 만들 수 있습니다.
+IDS_REPORTTOOLBOX_USECACHEDREPORT=캐시된 강력한 형식의 보고서를 생성합니다(&G).
+IDS_OKAY=확인
+IDS_CANCEL=취소
+IDS_DEFAULTREPORT=형식화되지 않은 ReportDocument
+IDS_CANNOTINITIALIZE="개체를 만들 수 없습니다."
+IDS_NOTREPORTTYPE="ReportDocument 파생 클래스가 아닙니다."
+IDS_NOCACHEDTYPEAVAILABLE="강력한 형식의 보고서에 사용할 수 있는 캐시된 보고서가 없습니다."
+
+IDS_RPTCODEGEN_NOGENERATOR="ReportCodeGenerator - 이 언어에 사용할 수 있는 코드 생성기가 없습니다."
+IDS_RPTCODEGEN_CODEGENFAILED="코드 생성기 '{0}'이(가) 실패했습니다. 예외 스택 = {1}"
+
+CG_AddDLLFailed=DLL을 프로젝트 참조에 추가할 수 없습니다. {0}. 수동으로 추가하십시오.
+CG_AddDLLFailed_Exception={0}을(를) 추가하지 못했습니다: '{1}'. 수동으로 추가하십시오.
+CombineTwoItems= {0}, {1}
+
+IDS_DESTINATION_FILE_EXISTS=대상 파일 있음
+IDS_FILE_EXISTS_DIALOG_MESSAGE=이름이 {0}인 보고서가 이미 있습니다. 새 보고서 이름을 다시 입력하십시오.
+
+IDS_ERROR_OPENING_REPORT_FILE_CAPTION=보고서 파일 열기 오류
+IDS_ERROR_OPENING_REPORT_FILE_MESSAGE={0} 보고서를 여는 동안 오류가 발생했습니다. 파일이 있는지, 그리고 파일을 여는 데 필요한 적절한 권한이 있는지 확인하십시오.
+IDS_ERROR_CREATING_NEW_REPORT_CAPTION=보고서 파일 만들기 오류
+IDS_ERROR_CREATING_NEW_REPORT_MESSAGE=새 보고서 {0}을(를) 만드는 동안 오류가 발생했습니다. 새 보고서 이름을 다시 입력하십시오.
+IDS_ERROR_ADDING_REPORT_TO_PROJ_MESSAGE=프로젝트에 보고서를 추가하려는 동안 오류가 발생했습니다.\n오류 메시지: "{0}"
+IDS_ERROR_INVALID_REPORT_PATH=CrystalReportViewer에서 파일 이름이 {0}인 보고서를 로드하지 못했습니다. ReportSource 속성에서 지정한 보고서 파일 이름이 올바른지 확인하십시오.
+
+# ActionList
+ID_CATEGORY_DATA=데이터
+ID_CATEGORY_APPEARANCE=모양
+ID_CATEGORY_TOOLBAR=도구 모음
+ID_CATEGORY_BEHAVIOR=동작
+
+ID_REPORT_SOURCE_ID_DESCR=기존 보고서 소스에 연결하거나 새 소스를 만듭니다.
+ID_REPORT_SOURCE_ID_DISPLAYNAME=보고서 소스 선택:
+ID_REPORT_SOURCE_DESCR=보고서 소스의 설정을 구성합니다.
+ID_REPORT_SOURCE_DISPLAYNAME=보고서 소스 구성...
+ID_ENABLE_STATUSBAR_DISPLAYNAME=상태 표시줄 사용
+ID_ENABLE_STATUSBAR_DESCR=보고서 뷰어에 상태 표시줄을 사용합니다.
+ID_ENABLE_TOOLBAR_DISPLAYNAME=도구 모음 사용
+ID_ENABLE_TOOLBAR_DESCR=보고서 뷰어에 도구 모음을 사용합니다.
+ID_ENABLE_GROUPTREE_DISPLAYNAME=그룹 트리 사용
+ID_ENABLE_GROUPTREE_DESCR=보고서 뷰어에 그룹 트리를 사용합니다.
+ID_ENABLE_REPORTVIEW_DISPLAYNAME=보고서 뷰 사용
+ID_ENABLE_REPORTVIEW_DESCR=보고서 뷰어에서 보고서 뷰를 사용합니다.
+ID_ENABLE_LOGON_PROMPT_DISPLAYNAME=데이터베이스 로그온 프롬프트 사용
+ID_ENABLE_LOGON_PROMPT_DESCR=보고서 뷰어에서 데이터베이스 로그온 프롬프트를 필요할 때 표시합니다.
+ID_ENABLE_PARAM_PROMPT_DISPLAYNAME=보고서 매개 변수 프롬프트 사용
+ID_ENABLE_PARAM_PROMPT_DESCR=보고서 뷰어에서 매개 변수 프롬프트를 필요할 때 표시합니다.
+ID_REUSE_PARAM_VALUE_DISPLAYNAME=보고서를 새로 고칠 때 매개 변수 값 다시 사용
+ID_REUSE_PARAM_VALUE_DESCR=보고서 뷰를 새로 고칠 때 이전 매개 변수 값을 다시 사용합니다.
+ID_EDIT_REPORT_DESCR=이 보고서를 편집할 때 Crystal Reports Designer를 시작합니다.
+ID_EDIT_REPORT_DISPLAYNAME=보고서 편집...
+ID_DISPLAY_TOOLBAR_DISPLAYNAME=도구 모음 표시
+ID_DISPLAY_TOOLBAR_DESCR=보고서 뷰어에 도구 모음을 표시합니다.
+ID_DISPLAY_GROUPTREE_DISPLAYNAME=그룹 트리 표시
+ID_DISPLAY_GROUPTREE_DESCR=보고서 뷰어에 그룹 트리를 표시합니다.
+ID_DISPLAY_STATUSBAR_DISPLAYNAME=상태 표시줄 표시
+ID_DISPLAY_STATUSBAR_DESCR=보고서 뷰어에 상태 표시줄을 표시합니다.
+
+ID_CreateReportSourceTransaction=CreateReportSourceTransaction
+ID_ConnectToReportSourceTransaction=ConnectToReportSourceTransaction
+
+ID_TABLE_NAME_COLUMN_NAME=테이블 이름
+ID_SUBREPORT_NAME_COLUMN_NAME=보고서 이름
+ID_DATASOURCEID_COLUMN_NAME=DataSourceID
+ID_REPORTDATASOURCE_LISTVIEW_LABEL=보고서 데이터 소스:
+ID_REMOVE_DATASOURCE=제거(&V)
+ID_ADD_DATASOURCE=추가(&A)
+ID_CHOOSE_DATA_SOURCE=데이터 소스 선택(&H)
+ID_BUTTON_CANCEL=취소(&C)
+ID_BUTTON_OK=확인(&O)
+ID_MAIN_REPORT=주 보고서(&M)
+ID_SUBREPORT=하위 보고서(&S)
+ID_SPECIFY_TABLENAME=테이블 이름 지정(&T)
+ID_REPORT_PROPERTY_GROUP_NAME=보고서
+ID_DATASOURCE_COLLECTION_EDITOR_TITLE=데이터 소스 컬렉션 편집기
+ID_MAIN_REPORT_LISTITEM=[주 보고서]
+
+ID_NEWPARAMETER1=newParameter1
+ID_PARAMETER_NAME_COLUMN_NAME=매개 변수 이름
+ID_VALUE=값
+ID_REPORT_PARAMETERS=보고서 매개 변수(&P):
+ID_DEFAULT_VALUE=기본값(&D)
+ID_SPECIFY_CONTROLID=컨트롤 ID 지정(&I)
+ID_PARAMETER_NAME=매개 변수 이름(&N)
+ID_PARAMETER_COLLECTION_EDITOR=매개 변수 컬렉션 편집기
+
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_TITLE=Enterprise 연결
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_ENTERPRISECONNECTIVITYNOTDETECTED=이 시스템에서 Enterprise 연결을 찾을 수 없습니다. Crystal Reports 서버 또는 BusinessObjects Enterprise에서 BusinessObjects Enterprise .NET SDK를 설치한 다음 다시 시도하십시오.
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_FINDOUTMORE=Business Objects 솔루션에 대한 자세한 내용을 살펴보십시오.
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_LEARNURL=http://www.businessobjects.com/jump/smb/main/default.asp?ref=crystalreports_itpro_crystalreportsserver
+
+ID_CRYSTAL_REPORTS_DIALOG_TITLE=Crystal Reports for Visual Studio 2005

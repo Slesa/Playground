@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       webservices.txt
+#   Summary:    This file contains JAPANESE resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=レポート ソース オブジェクトを作成できません。
+IDS_ERR_DIRECTORY_NOT_FOUND=パス '{0}' の一部が見つかりません。.
+

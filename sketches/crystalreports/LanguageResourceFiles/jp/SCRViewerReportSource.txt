@@ -1,0 +1,51 @@
+#==============================================================================
+#   File:       SCRViewerReportSource.txt
+#   Summary:    This file contains JAPANESE resources for Viewer ReportSource
+#==============================================================================
+
+;[strings]
+
+IDS_ENTRPT_APSSERVER=認証とスケジュールを処理する Crystal Enterprise CMS サーバーです。
+IDS_ENTRPT_USERNAME=Crystal Enterprise への接続に使用するユーザー名です。
+IDS_ENTRPT_PASSWORD=Crystal Enterprise への接続に使用するパスワードです。
+IDS_ENTRPT_AUTHTYPE=Crystal Enterprise への接続に使用する認証の種類です。
+
+IDS_ENTRPT_LOGONINFO=Crystal Enterprise ログオン情報。EnterpriseSession を使用している場合は、これを使用しないでください。
+IDS_ENTRPT_DOCUMENTURI=レポート ドキュメントのパスを指定します。例 : "ras://c:\\report.rpt"、"ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=使用する Report Application Server です。
+IDS_ENTRPT_ENTSESSION=Crystal Enterprise セッション オブジェクトです。
+;IDS_REPORTDATAVIEW_GROUPPATH=レポート内のデータのグループ パスです。
+;IDS_REPORTDATAVIEW_TOSTRINGFORMAT=ToString() で使用される書式文字列です。例 : "{0}: {1}, {2}"
+;IDS_REPORTDATAVIEW_VISIBLEFIELDS=表示するレポート フィールドのセミコロン区切りリストです。これが "" の場合は、全フィールドが表示されます。
+;IDS_REPORTDATAVIEW_REPORT=データの取得に使用するレポートです。
+
+;IDS_DOCURIEDITOR_FILTER=Crystal Reports ファイル (*.rpt)|*.rpt
+;IDS_OPENFILEDIALOG_TITLE=開く
+
+IDS_CATEGORY_REPORT=レポート
+ID_NONE=(なし)
+ID_BROWSE=参照...
+ID_CREATE_NEW_REPORT_INSTANCE=型指定された Report クラスから新しい ReportDocument インスタンスを作成
+ID_USE_EXISTING_INSTANCE=既存の ReportDocument インスタンスを使用
+ID_OPEN_REPORT_DIALOG_TITLE=既存の Crystal レポートを開く
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal レポート (*.rpt)|*.rpt
+ID_EDIT_REPORT_SOURCE=レポート ソースの編集
+ID_ENTER_REPORT_SOURCE=レポート ソースの入力
+ID_EDIT=編集...
+ID_CANCEL=キャンセル
+ID_OK=OK
+
+# Exception messages
+IDS_EXCEPTION_INVALID_REPORTSOURCE=レポート ソースが無効です。
+IDS_EXCEPTION_INVALID_REPORTFILE=レポート ファイルが無効です。
+IDS_EXCEPTION_CREATEREPORT_RETURNED_NULL=ICachedReport::CreateReport() は 'null' を返しました。
+IDS_EXCEPTION_NO_REPORT_FILENAME=レポートのファイル名がありません。
+;IDS_EXCEPTION_SESSIONNOTINITIALIZED=Enterprise セッションは初期化されませんでした。
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Enterprise ログオンに失敗しました。
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=XML のシリアライズに失敗しまし。
+;IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon は、ログオン トークン文字列または ISEnterpriseSession である必要があります。
+;IDS_EXCEPTION_CE_NOT_FOUND=Crystal Enterprise はこのマシンで見つかりませんでした。\n詳細は、http://japan.businessobjects.com/products/crystalenterprise をご覧ください。
+
+IDS_ERROR_INVALIDREPORTNAME=レポートのロードに失敗しました。
+IDS_ERROR_DESERIALIZATIONFAILED=シリアル化の解除に失敗しました。Report Application Server で "{0}" を実行する必要があります。
+

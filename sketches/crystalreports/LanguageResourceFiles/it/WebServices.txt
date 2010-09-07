@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       WebServices.txt
+#   Summary:    This file contains ITALIAN resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=Impossibile creare l'oggetto dell'origine del report
+IDS_ERR_DIRECTORY_NOT_FOUND=Impossibile trovare una parte del percorso '{0}'.
+

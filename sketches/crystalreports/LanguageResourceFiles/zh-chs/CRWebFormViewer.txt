@@ -1,0 +1,172 @@
+#==============================================================================
+#   File:       CRWebFormViewer.txt
+#   Summary:    This file contains SIMPLIFIED CHINESE resources for CRWebFormViewer
+#   Date:       May, 2000
+#==============================================================================
+
+# ToolTips
+###################################################################
+ID_Search=查找
+ID_FirstPage=第一页
+ID_PrevPage=上一页
+ID_NextPage=下一页
+ID_LastPage=最后一页
+ID_GotoPage=转到
+ID_Up=向上
+ID_Refresh=刷新
+ID_Zoom=缩放
+ID_PoweredByCrystal=powered by Business Objects
+ID_ViewList=查看历史记录
+
+# Hidden internal links (for section 508)
+###################################################################
+ID_GoToGroupTree=转到报表组树
+ID_GoToPageContent=转到报表页内容
+
+# Others 
+###################################################################
+ID_ReportFileNameEditorTitle=选择报表
+ID_ReportFileNameEditorFilter=Crystal Reports(*.rpt)|*.rpt|所有文件 (*.*)|*.*
+ID_CrystalReportViewerName=CrystalReportViewer
+ID_NoReportSource=使用 ReportSource 或 DataBindings 属性来指定报表源。
+ID_NoReportSourceID=使用 ReportSourceID 属性来指定 ReportSource 控件。
+ID_NoReportParts=未设置初始报表部件；请使用 ReportParts 或 DataBindings 属性指定一个报表部件定义。
+ID_NoData=无数据。
+ID_InvalidReportParts=无效报表部件，请确认初始报表部件是有效报表对象。
+ID_NoParameterFields=使用 ParameterFieldInfo 属性指定参数字段。
+ID_NoLogOnInfos=使用 LogOnInfos 属性指定登录信息。
+ID_SearchEnd=搜索结束
+ID_Of=/
+ID_UnknownLastPageNumberSign=+
+ID_Print=打印
+ID_ShowGroupTree=显示/隐藏组树
+ID_Export=导出
+ID_Local_File_Ext=chs
+ID_UntitleFilename=无标题
+ID_Category_Render=呈现
+ID_Category_Toolbar=工具栏
+ID_Category_GroupTree=组树
+ID_MainReport=主报表
+ID_UnknownView=（未知）
+
+# Property Descriptions
+###################################################################
+ID_ReportSourceClassFactoryNameDescr=用于绑定到报表的 IReportSourceFactory 的完全限定的类名。
+ID_EnterpriseLogonDescr=Enterprise 登录标记或 ISEnterpriseSession。
+ID_ReportSourceDescr=要查看的报表对象、文件名或 Web 服务代理。
+ID_ReportSourceIDDescr=要用作报表源的 ReportSource 控件的控件 ID。
+ID_SeparatePagesDescr=报表页是分开还是连接。
+ID_PageToTreeRatioDescr=页宽与树宽之比。
+ID_DisplayGroupTreeDescr=树视图是可见还是隐藏。
+ID_DisplayPageDescr=页面视图是可见还是隐藏。
+ID_DisplayToolbarDescr=工具栏是可见还是隐藏。
+ID_ClientTargetDescr=目标针对不同的浏览器进行渲染。
+ID_HasPageNavigationButtonsDescr=工具栏上的页面导航按钮是可见还是隐藏。
+ID_HasGotoPageButtonDescr=工具栏上的转到页按钮是可见或隐藏。
+ID_HasSearchButtonDescr=工具栏上的搜索按钮是可见还是隐藏。
+ID_HasLevelUpButtonDescr=工具栏上的转到上一页按钮是可见还是隐藏。
+ID_HasRefreshButtonDescr=工具栏上的刷新按钮是可见还是隐藏。
+ID_HasPrintButtonDescr=工具栏上的打印按钮是可见还是隐藏。
+ID_HasExportButtonDescr=工具栏上的导出按钮是可见还是隐藏。
+ID_HasToggleGroupTreeButtonDescr=工具栏上的显示/隐藏组树按钮是可见还是隐藏。
+ID_HasCrystalLogoDescr=Business Objects 徽标是可见还是隐藏。
+ID_BestFitPageDescr=页面视图是恰好合适页面大小还是缩小尺寸并使用滚动条。
+ID_SelectionFormulaDescr=报表的记录选定公式。
+ID_ViewTimeSelectionFormulaDescr=报表被查看时使用的记录选定公式。
+ID_ParameterFieldInfoDescr=报表的参数字段。
+ID_LogOnInfoDescr=报表的登录信息。
+ID_ZoomFactorDescr=页面缩放系数。
+ID_HasZoomButtonDescr=工具栏上的缩放系数列表是可见还是隐藏。
+ID_HasViewListDescr=工具栏上的视图列表是可见还是隐藏。
+ID_EnableDrillDownDescr=是否启用向下钻取页面/图表/组/汇总。
+ID_HyperlinkTargetDescr=超级链接向其发回执行结果的框架目标。
+ID_DrilldownTargetDescr=向下钻取将向其发回执行结果的框架目标。
+ID_ReportPartsDescr=报表部件定义。
+ID_RecordNumberDescr=报表部件查看器中所显示的记录数量。
+ID_RotateSectionsDescr=是否旋转该节。
+ID_HasBorderDescr=边框是否可见。
+ID_PersistLayoutDescr=报表部件是否保持原报表中的布局。
+ID_ReportTitleDescr=报表的标题。
+ID_IsDisplayTitleDescr=是否显示报表标题。
+ID_IsDisplayHeaderDescr=是否显示节标题。
+ID_HasPageNavigationLinksDescr=页面导航链接是可见还是隐藏。
+ID_ShowAllPageIds=报表对象 ID 是否在 HTML 中给出。
+ID_GroupTreeFormatDescr=指定组树样式
+ID_ToolbarStyleDescr=指定工具栏样式
+ID_PrintModeDescr=客户端浏览器在本地打印所采用的方法。
+ID_AutoDataBindDescr=在 OnInit()/Page_Init() 后自动执行 DataBind()
+ID_EnableDatabaseLogonPromptDescr=查看器是否在需要时提示数据库登录。
+ID_EnableParameterPromptDescr=查看器是否在需要时提示报表参数。
+ID_ExportFormatTypeDescr=指定该控件将使用的导出格式类型。
+ID_ReuseParameterValuesOnRefreshDescr=指定查看器是否在刷新时保留并重新使用现有参数值。
+ID_EnableToolTipsDescr=启用查看器的工具提示。
+ID_CssFilenameDescr=报表所链接的样式表。
+ID_CacheDurationDescr=报表有效期（以秒计）。到期策略由 CacheExpirationPolicy 属性指定。
+ID_CacheExpirationPolicyDescr=高速缓存的报表到期策略。到期的持续时间由 CacheDuration 属性指定。
+ID_EnableCachingDescr=是否为此报表源启用高速缓存。
+ID_ReportPropertyDescr=报表对象。
+ID_DataSourcesDescr=报表中使用的数据源的集合。
+ID_ParameterCollectionDescr=报表中使用的参数的集合。
+ID_FileNameDescr=报表的文件名。
+
+ID_TREE_IMAGE_FOLDER_URL=包含组树图像的文件夹的 URL。
+ID_TOOLBAR_IMAGE_FOLDER_URL=包含工具栏图像的文件夹的 URL。
+ID_UseBrowserLocale=是否在查看器中使用浏览器的区域设置。
+ID_CrystalReportSourceDescr=连接到用 Crystal Reports 创建的报表。
+ID_CrystalReportSourceDisplayName=Crystal 报表
+
+# Event Descriptions
+###################################################################
+ID_OnNavigateDescr=即将发生页的导航时激发。
+ID_OnSearchDescr=即将发生文本搜索时激发。
+ID_OnSubreportDrillDownDescr=即将发生子报表向下钻取时激发。
+ID_OnRefreshDescr=即将刷新报表时激发。
+ID_OnZoomDescr=即将更改缩放系数时激发。
+ID_OnDrillDescr=即将发生图形向下钻取或组向下钻取时激发。
+ID_OnReportPartBookmarkNavigationDescr=即将发生报表部件书签的导航时激发。
+ID_OnBeforeRenderDescr=报表呈现进程开始时激发
+ID_OnAfterRenderDescr=报表呈现进程完成时激发。
+ID_OnBeforeRenderObjectDescr=报表对象呈现开始时激发。
+ID_OnAfterRenderObjectDescr=报表对象呈现完成时激发。
+ID_OnBeforeRenderContentDescr=报表内容呈现开始时激发。
+ID_OnAfterRenderContentDescr=报表内容呈现完成时激发。
+ID_OnRenderScriptDescr=HTML 脚本生成开始时激发。
+ID_OnRenderStyleDescr=HTML 样式类生成开始时激发。
+ID_OnFieldDrillDescr=即将发生字段向下钻取时激发。
+ID_OnChartDrillDescr=即将发生图表向下钻取时激发。
+ID_OnEventErrorDescr=在 ASP.NET 生命周期中出现查看错误时激发。
+ID_OnDataSourceChangedDescr=当在控件上更改了 DataSource 属性的值时激发。
+ID_OnFileNameChangedDescr=当在控件上更改了 FileName 属性的值时激发。
+ID_OnReportChangedDescr=当在控件上更改了 Report 属性的值时激发。
+
+# Error Messages
+###################################################################
+ID_InvalidPageToTreeRatioErr=该比值必须大于零。
+ID_InvalidPageErr=生成页失败。
+ID_InvalidGroupTreeErr=生成组树失败。
+ID_GroupTreeRenderErr=渲染组树失败。
+ID_PageRenderErr=渲染页失败。
+ID_FailToGetReportSource=获取报表源失败。
+ID_InvalidPageZoomFactorErr=页缩放系数必须介于 10 和 400 之间。
+ID_GetPageErr=无法获取特定页。
+ID_GetTotallerErr=无法获取特定页加法器。
+ID_InvalidReportSourceErr=没有有效的报表源。
+ID_ReportSourceRestoreErr=为打印恢复报表源时出错
+ID_NullReportSourceStateErr=不能为打印恢复报表源。Base-64 视图状态字符串为空。
+ID_NullReportSourceStateStringLengthErr=不能为打印恢复报表源。Base 64 视图状态字符串的长度不等于 4，也不等于 4 的偶数倍。
+ID_UnsupportExportFormatErr=CrystalREportExportControl 不支持指定的导出格式。
+ID_ControlMustBeInForm=“{0}”控件必须在窗体内
+ID_InvalidExportOptions=未能使用您指定的选项导出。请检查选项并重试。
+ID_InvalidBatchSize=必须输入介于 1 和 65535 之间的批大小。
+ID_RepPartNavThroughWebServNotSupported=ServerFileReportService.asmx 或 EnterpriseReportService.asmx 中不支持报表部件浏览。
+ID_LogonPromptNotSupported=移动设备上不支持数据库登录提示。
+ID_ParamPromptNotSupported=移动设备上不支持参数提示。
+ID_TableNotFound=表“{0}”在报表中不存在。
+ID_ControlWithReportSourceIDDoesntExist=找不到由 {0}.ReportSourceID 引用的 ID 为“{1}”的控件。
+ID_ControlWithReportSourceIDIsntReportSource=由 {0}.ReportSourceID 引用的 ID 为“{1}”的控件不是 CrystalReportSource。
+
+# Category
+######################################################################
+ID_Category_Data=数据
+ID_Category_Misc=杂项
+ID_Category_Cache=缓存

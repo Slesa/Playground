@@ -1,0 +1,106 @@
+#==============================================================================
+#   File:       CREngine.TXT
+#   Summary:    This file contains TRADITIONAL CHINESE resources for CrystalDecisions.CrystalReports.Engine
+#==============================================================================
+
+# Strings
+# #################################
+
+#Copyright message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Group name field name
+GROUP_NAME_FIELD_NAME=群組 #{0} Name: {1}
+
+#Parameter prompting properties
+PARAM_PROMPT_ALL=全部
+PARAM_PROMPT_INCLUDE_ONDEMAND_SUBREPORT=IncludeOndemandSubreport
+
+IDS_ENTRPT_LOGONINFO=如果您正在使用 EnterpriseSession，則請勿使用 Crystal Enterprise 登入資訊
+IDS_ENTRPT_DOCUMENTURI=報表文件路徑。例如: "ras://c:\\report.rpt"、"ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=將使用的報表應用程式伺服器。
+IDS_ENTRPT_ENTSESSION=Crystal Enterprise 階段物件
+IDS_CATEGORY_REPORT=報表
+
+#Lets set aside a block for error messages.
+
+#CREngine error message
+IDS_ERROR_INVALIDAREANAME=區域名稱無效。
+IDS_ERROR_INVALIDSECTIONNAME=區段名稱無效。
+IDS_ERROR_INVALIDOBJECTNAME=報表物件名稱無效。
+IDS_ERROR_INVALIDOBJECTINDEX=報表物件索引無效。
+IDS_ERROR_INVALIDPAGE=取得頁面或取得加總程式失敗
+IDS_ERROR_NOTMAINREPORT=不是主報表。
+IDS_ERROR_INVALIDPARAMETERFIELDTYPE=指定值類型與目前值類型不同。
+IDS_ERROR_INVALIDARGUMENT=引數無效。
+IDS_ERROR_INVALIDEXPORTOPTIONS=匯出選項無效。
+IDS_ERROR_INVALIDREPORTNAME=載入報表失敗。
+IDS_ERROR_INVALID_CE_URI=找不到已定義的 Crystal Enterprise 報表。請確認報表存在，以及檔案名稱為正確格式。
+IDS_ERROR_DESERIALIZATIONFAILED=還原序列化失敗。您需要在報表應用程式伺服器上執行 "{0}"。
+IDS_ERROR_NOFILEPATH=報表檔案路徑無效。
+IDS_ERROR_LOADCRPEFAIL=載入 crpe32.dll 失敗。
+IDS_ERROR_LICENSEOVERLIMIT=Crystal Reports 工作失敗，因為無法在配置的時間內取得免費使用權。您可以直接透過 Business Objects 或 Business Objects Online Store 購買更多使用權。
+IDS_ERROR_CANNOTSAVE=無法儲存至原始報表中。
+IDS_ERROR_STRINGTOOLONG=字串過長。
+IDS_ERROR_LOGONFAILED=登入失敗。
+IDS_ERROR_INVALIDSORTNUMBER=排序編號無效。
+IDS_ERROR_INVALIDREPORTPARTID=報表組件 ID 無效。
+IDS_ERROR_INVALID_REPORT_PART=找不到指定的報表組件。請確定報表組件存在，或是設定 [報表選項] 中的 [初始報表組件]。
+IDS_ERROR_INTERNALERROR=內部錯誤。請連絡 Business Objects 以回報此問題。
+IDS_ERROR_CANNOTSETTOPBOTTOMN=無法將 SortField 的 SortDirection 設成 TopN/BottomN。
+IDS_ERROR_INVALIDDECIMAL=小數位數無效。
+IDS_ERROR_INVALIDFIELDNAME=欄位名稱無效。
+IDS_ERROR_INVALIDTABLENAME=資料表名稱無效。
+IDS_ERROR_PARAMETERCURRENTVALUE=遺失參數欄位目前值。
+IDS_ERROR_INVALIDROOTDIR=無法將 HTML 檔匯出到根目錄。
+IDS_ERROR_INVALIDKEYCODE=從登錄擷取的識別碼無效。
+IDS_ERROR_MISSING_KEYCODE_DLL=識別碼程式庫已登錄，但是找不到。
+IDS_ERROR_MISSING_KEYCODE_REGISTRY_SETTING=識別碼登錄項目不存在，或者程序未具備足夠的權限，無法讀取識別碼。
+IDS_ERROR_KEYCODE_DLL_CLSID_NOT_FOUND=識別碼程式庫未利用 COM 登錄，或者無法載入。
+IDS_ERROR_OBSOLETEWIDTHPROPERTY=Width 屬性已經過時。請使用 Right 屬性變更寬度。
+IDS_ERROR_OBSOLETEHEIGHTPROPERTY=Height 屬性已經過時。請使用 Bottom 屬性變更高度。
+IDS_ERROR_NEED_TO_USE_OLD_COMPLUS_ENGINE=報表應用程式伺服器物件模型不支援這項操作。如果要修正此問題，必須從 "Legacy" 目錄安裝舊版報表引擎。
+
+IDS_ERROR_REPORTNOTINMANIFESTRESOURCES=資訊清單資源中找不到報表。請建置專案，然後再試一次。
+IDS_ERROR_NOT_SUPPORTED=不支援。
+IDS_ERROR_EXPORT_DLL_NOT_FOUND=無法載入 "{0}"。請確定在 Crystal Reports 中是否已安裝這項操作的匯出支援元件。
+IDS_ERROR_INVALID_EXPORT_FORMAT=無法匯出成指定的格式。請確定在 Crystal Reports 中是否已安裝此格式的匯出支援元件。
+IDS_ERROR_NOT_SUPPORTED_BY_SUBREPORT=在子報表中不受支援。
+IDS_ERROR_REPORT_HAS_NO_TABLES=報表沒有資料表。
+IDS_ERROR_INVALID_DATASOURCE=資料來源物件無效。
+IDS_ERROR_PARAMETER_NOT_IMPLEMENTED=您無法使用此方法來加入、移除或修改參數欄位。請直接修改報表。
+IDS_ERROR_EXPORT_TO_RESPONSE_IN_HTML_FORMAT_NOT_SUPPORTED=不支援匯出到 HTML 格式的 HTTP 回應。
+IDS_ERROR_INVALIDGROUP=無效的群組。
+IDS_ERROR_SETDATASOURCE_OLEDBDATAREADER_NOT_SUPPORTED=OleDbDataReader 不受支援，因為 OleDbDataReader 實作中的限制。如果要使用 OleDbDataReader，請將之包圍在自訂 IDataReader/IDataRecord 實作中，封送處理回呼至呼叫執行緒的 COM STA。如需詳細資訊，請造訪 http://support.microsoft.com/kb/313510/EN-US/。
+IDS_ERROR_CR_RUNTIME_NOT_INSTALLED=嘗試載入 Crystal Reports 執行時間時發生錯誤。\n\n原因為登錄機碼權限不足，或者為 Crystal Reports 執行時間安裝錯誤。\n\n請安裝正確的 Crystal Reports 可轉散佈檔案 (CRRedist*.msi)，該檔案包含了所需的 Crystal Reports 執行時間 (x86, x64, or Itanium) 之正確版本。如需詳細資訊，請造訪 <http://www.businessobjects.com/support>。
+
+
+#ENGINE messages
+IDS_MSG_NOPRINTER=未安裝印表機。
+IDS_MSG_PRINTOPTIONS=表示 ReportDocument 的列印選項。
+IDS_MSG_SECOND=秒
+IDS_MSG_SECONDS=秒
+IDS_MSG_LICENCE_EXCEEDED=為了等待取得免費的授權，Crystal Reports 工作已延遲 {0} {1}。您可以直接透過 Business Objects 或 Business Objects Online Store 購買更多使用權。
+
+IDS_EVENTLOG_SOURCE=Crystal Reports
+
+IDS_EXCEPTION_NO_REPORT_FILENAME=報表檔案名稱是空的。
+IDS_EXCEPTION_SESSIONNOTINITIALIZED=Enterprise 工作階段未初始化。
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Enterprise 登入失敗。
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=XML 序列化失敗。
+IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon 必須是登入 Token 字串或 ISEnterpriseSession。
+IDS_EXCEPTION_CE_NOT_FOUND=機器上找不到 Crystal Enterprise。\n如需詳細資訊，請前往 http://www.businessobjects.com/products/reporting/crystalenterprise。
+IDS_EXCEPTION_REPORTCLIENTDOCUMENT_ACCESS_VIOLATION=只有在使用報表應用程式伺服器開啟報表時，才能存取 ReportClientDocument 屬性。
+
+IDS_DOCURIEDITOR_FILTER=Crystal Reports 檔案 (*.rpt)|*.rpt
+IDS_OPENFILEDIALOG_TITLE=開啟
+
+IDS_ENTRPT_APSSERVER=The Crystal Enterprise CMS 伺服器將會處理驗證與排程。
+IDS_ENTRPT_USERNAME=用來連線至 Crystal Enterprise 的使用者名稱
+IDS_ENTRPT_PASSWORD=用來連線至 Crystal Enterprise 的密碼
+IDS_ENTRPT_AUTHTYPE=用來連線至 Crystal Enterprise 的驗證類型
+
+IDS_REPORTDATAVIEW_GROUPPATH=報表中資料的群組路徑。
+IDS_REPORTDATAVIEW_TOSTRINGFORMAT=ToString() 將使用的格式字串，例如 "{0}: {1}、{2}"
+IDS_REPORTDATAVIEW_COLUMNS=CrystalReportDataViewColumn 物件集合代表要顯示的報表欄位; 如果這個集合是空的，則會顯示所有欄位。
+IDS_REPORTDATAVIEW_REPORT=用來取得資料的報表。

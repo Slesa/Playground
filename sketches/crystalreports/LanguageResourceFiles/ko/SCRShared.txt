@@ -1,0 +1,178 @@
+#==============================================================================
+#   File:       SCRShared.txt
+#   Summary:    KOREAN resources for Crystal Reports shared controls
+#   Author:     Devan Iyer
+#   Date:       May, 2000
+#==============================================================================
+
+# All the contents were moved to Viewer.txt under ViewerResource.
+
+#Copyright Message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Error Message
+IDS_INVALID_OBJECT_TYPE=개체 형식이 잘못되었습니다.
+IDS_PARAMETER_NOT_IMPLEMENTED=이 방식으로 매개 변수 필드를 추가, 제거 또는 수정할 수 없습니다. 직접 보고서를 수정하십시오.
+
+IDS_TRUE_STRING=true
+IDS_FALSE_STRING=false
+
+# 
+# Group Tree Style Descriptions
+# 
+IDS_SHOW_LINES=트리 노드를 연결하는 선의 표시 여부
+
+#==============================================================================
+#   From:       ObjectModel.txt
+#   Summary:    This file contains KOREAN resources for the Page Object Model
+#==============================================================================
+
+IDS_NUMBER=숫자
+IDS_CURRENCY=통화
+IDS_DATE=날짜
+IDS_TIME=시간
+IDS_BOOLEAN=부울
+IDS_DATETIME=날짜 시간
+IDS_MEMO=메모
+IDS_STRING=문자열
+IDS_MAP=매핑
+IDS_TEXTOBJECT=텍스트 개체
+IDS_CROSSTAB=크로스탭
+IDS_CHART=차트
+IDS_BLOB=BLOB 필드
+IDS_INPLACE_SUBREPORT=하위 보고서
+IDS_OLEOBJECT=OLE 개체
+IDS_SECTION=섹션
+IDS_OLAP_GRID=OLAP 모눈
+IDS_GROUP_HEADER=그룹 머리글
+IDS_GROUP_FOOTER=그룹 바닥글
+IDS_REPORT_HEADER=보고서 머리글
+IDS_REPORT_FOOTER=보고서 바닥글
+IDS_PAGE_HEADER=페이지 머리글
+IDS_PAGE_FOOTER=페이지 바닥글
+IDS_DETAIL=본문 섹션
+
+#==============================================================================
+#   From:       HTMLReportRender.txt
+#   Summary:    This file contains KOREAN resources for HTMLReportRender
+#   Date:       Feb, 2001
+#==============================================================================
+
+
+ID_InvalidAdornmentClass=장식 클래스를 찾을 수 없습니다.
+ID_InvalidFontColorClass=글꼴 색 클래스를 찾을 수 없습니다.
+ID_InvalidReportObject=보고서 개체가 잘못되었습니다.
+
+FileDialogInvalidFileName='{0}'은(는) 잘못된 파일 이름입니다.
+FileDialogSubLassFailure=창을 하위 클래스로 분류하지 못했습니다.
+FileDialogBufferTooSmall=버퍼가 너무 작습니다.
+FileDialogInvalidFilter=필터 문자열이 잘못되었습니다.
+FileDialogInvalidFilterIndex=필터 인덱스가 잘못되었습니다.
+FileDialogFileNotFound='{0}' 파일을 찾을 수 없습니다.
+
+
+#
+#  EnterpriseReport and ServerFileReport strings
+#
+IDS_RPTCOMP_LOCATION=위치
+IDS_RPTCOMP_INVALID_SCHEME=URL "{1}"의 구성표 "{0}"은(는) 지원되지 않습니다.
+
+IDS_ENTRPT_WEBSERVICEURL=웹 구성 요소 서버를 호출하는 웹 서비스에 대한 URL
+IDS_ENTRPT_APSSERVER=인증과 일정을 처리할 Crystal Enterprise CMS 서버입니다.
+IDS_ENTRPT_WCSSERVER=Enterprise 보고서 요청을 처리하는 웹 커넥터
+IDS_ENTRPT_USERNAME=Crystal Enterprise에 연결하는 데 사용되는 사용자 이름입니다.
+IDS_ENTRPT_PASSWORD=Crystal Enterprise에 연결하는 데 사용되는 암호입니다.
+IDS_ENTRPT_AUTHTYPE=Crystal Enterprise에 연결하는 데 사용되는 인증 형식입니다.
+IDS_ENTRPT_OBJECTID=표시할 보고서의 개체 ID
+IDS_ENTRPT_OBJECTCUID=표시할 개체의 개체 CUID
+
+IDS_SERVRPT_WEBSERVICEURL=서버 파일에 액세스할 웹 서비스에 대한 URL
+IDS_SERVRPT_RPTPATH=서버에 있는 보고서에 대한 경로
+
+#
+# Group Tree Node strings
+#
+IDS_ExpandTreeNode={0} 노드 확장
+IDS_CollapseTreeNode={0} 노드 축소
+
+#
+# Export dialog strings
+#
+IDS_ExportSubmit=내보내기
+IDS_PrintSubmit=인쇄
+IDS_ExportPageTitle=보고서 내보내기
+IDS_PrintPageTitle=보고서 인쇄
+IDS_ExportPageRange=내보낼 페이지 범위를 입력하십시오.
+IDS_PrintPageRange=인쇄할 페이지 범위를 입력하십시오.
+IDS_ExportFormat=목록에서 내보내기 형식을 선택하십시오.
+IDS_InvalidRange=페이지 범위 값이 잘못되었습니다.  올바른 페이지 범위를 입력하십시오.
+IDS_PrintInstructions1=인쇄하려면
+IDS_PrintInstructions2=1.  다음 대화 상자에서 "이 파일 열기" 옵션을 선택하고 [확인] 단추를 클릭합니다.
+IDS_PrintInstructions3=2.  인터넷 브라우저의 인쇄 단추 대신 Acrobat Reader 메뉴에서 프린터 아이콘을 클릭합니다.
+IDS_Formats=형식:
+IDS_CrystalReportFormat=Crystal Reports(RPT)
+IDS_AcrobatFormat=Acrobat 형식(PDF)
+IDS_WordFormat=MS Word(RTF)
+IDS_ExcelFormat=MS Excel 97-2000
+IDS_ExcelRecordFormat=MS Excel 97-2000(데이터만)
+IDS_RTFFormat=서식있는 텍스트 형식
+IDS_All=모두
+IDS_Pages=페이지
+IDS_From=시작:
+IDS_To=끝:
+
+#
+# Viewer Prompting
+#
+ID_ParameterInSubreport={0}({1})
+ID_OK=확인
+ID_SUBMIT=제출
+ID_LOGON=로그온
+ID_True=True
+ID_False=False
+
+ID_StringsJSFileName=strings_ko.js
+
+ID_AND=그리고
+ID_IncludeThisValue=이 값 포함
+ID_EditmaskSentence=이 매개 변수에 편집 마스크가 있습니다.
+ID_Parameter=매개 변수 필드
+ID_Prompt=요청한 보고서를 사용하려면 자세한 정보가 필요합니다.
+ID_RangeHasNoLowerLimit=범위에 하한 없음
+ID_RangeHasNoUpperLimit=범위에 상한 없음
+ID_RangeSentence=이 매개 변수에 {0}에서 {1} 사이의 값을 지정하십시오.
+ID_RangeValuesBetween=값 범위:
+ID_CalendarButtonDescription=달력
+ID_Remove=제거
+ID_Select=선택
+ID_Add=추가
+ID_NoValue=값 없음
+ID_StrRangeSentence=매개 변수 값은 {0}자에서 {1}자 사이여야 합니다.
+ID_InvalidReportContent=보고서 내용이 잘못되었습니다.
+ID_ServerName=서버 이름:
+ID_DatabaseName=데이터베이스 이름:
+ID_UseIntegratedSecurity=통합 보안 사용
+ID_QE_ServerDescription=서버 설명
+ID_QE_DatabaseType=데이터베이스 유형
+ID_UserId=사용자 이름:
+ID_Password=암호:
+ID_USE_VALUE=값 사용...
+ID_RANGE_FROM=시작
+ID_RANGE_EXACTLY=고정
+ID_RANGE_AFTER=이후
+ID_RANGE_NO_LOWER=작은 값 없음
+ID_RANGE_TO=끝
+ID_RANGE_BEFORE=이전
+ID_RANGE_NO_UPPER=큰 값 없음
+ID_VALUE=값
+ID_PARAMETERS=매개 변수
+
+ID_UntitleFilename=제목 없음
+
+ID_NextPage=다음
+ID_PrevPage=이전
+
+#
+# Image Object Alt. Text
+#
+IDS_Image=이미지

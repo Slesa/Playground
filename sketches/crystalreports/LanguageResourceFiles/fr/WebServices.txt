@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       webservices.txt
+#   Summary:    This file contains FRENCH resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=Impossible de créer l'objet source du rapport.
+IDS_ERR_DIRECTORY_NOT_FOUND=Une partie du chemin '{0}' est introuvable.
+

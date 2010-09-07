@@ -1,0 +1,256 @@
+#==============================================================================
+#   File:       CRVSShell.txt
+#   Summary:    This file contains TRADITIONAL CHINESE resources for VSDesigner.dll
+#==============================================================================
+
+# These next three strings must match the VS7 toolbox tab names
+IDS_TOOLBOX_WEBFORMS=Web Form
+IDS_TOOLBOX_MOBILE_WEBFORMS=Mobile Web Form
+IDS_TOOLBOX_WINFORMS=Windows Form
+IDS_TOOLBOX_COMPONENTS=元件
+IDS_TOOLBOX_CRYSTALREPORTS=Crystal Reports
+
+IDS_SERVEREXPLORER_ROOT=Crystal Services
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE=伺服器報表
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_WEBSERVICE=Crystal Enterprise Web 服務
+IDS_SERVEREXPLORER_SERVERFILES=報表應用程式伺服器
+IDS_SERVEREXPLORER_REPORTDATA=報表資料
+
+IDS_SERVEREXPLORER_ROOT_WHIDBEY=Crystal Reports 服務
+IDS_SERVEREXPLORER_SERVERFILES_WHIDBEY=伺服器檔案 Web 服務
+
+IDS_SERVEREXPLORER_RAS_PORTSETTING_MENU=變更連接埠設定(&P)...
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_TITLE=連接埠設定
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_PORT=連接埠:
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR_TITLE=無效的連接埠設定
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR=您已經輸入了無效的連接埠號碼。
+
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LOGIN=登入(&L)...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIRSTBATCH=第一批次(&I)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_PREVIOUSBATCH=上一批次(&P)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_NEXTBATCH=下一批次(&N)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LASTBATCH=最後批次(&L)
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIND=尋找(&F)...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_COPYOBJCUID=複製 CUID(&C)
+
+IDS_SERVEREXPLORER_FINDDLG_TITLE=尋找
+IDS_SERVEREXPLORER_FINDDLG_FINDTEXT_LABEL=尋找以下列做為開頭的項目(&N):
+
+IDS_SERVEREXPLORER_CE_LOGINDLG_LOGIN=登入
+IDS_SERVEREXPLORER_CE_LOGINDLG_AUTH=驗證(&A):
+IDS_SERVEREXPLORER_CE_LOGINDLG_USERNAME=使用者名稱(&U):
+IDS_SERVEREXPLORER_CE_LOGINDLG_PASSWD=密碼(&P):
+IDS_SERVEREXPLORER_CE_LOGINDLG_APS=系統(&S):
+IDS_SERVEREXPLORER_CE_LOGINDLG_WCS=Web Connector(&W):
+IDS_SERVEREXPLORER_CE_LOGINDLG_OK=確定
+IDS_SERVEREXPLORER_CE_LOGINDLG_CANCEL=取消
+
+IDS_SERVEREXPLORER_NO_NEXT_BATCH=您已經有最後批次。
+IDS_SERVEREXPLORER_NO_PREVIOUS_BATCH=您已經有第一批次。
+
+IDS_SERVEREXPLORER_COULD_NOT_FIND_REPORT_MANAGER=找不到 {0} Web 服務。\n請檢查是否已經安裝在遠端電腦上。
+IDS_SERVEREXPLORER_CE_LOGON_FAILED=使用 '{0}' 登入 Crystal Enterprise 失敗。請確認您的 CMS 伺服器、Web 連接器伺服器、使用者名稱與密碼是正確的，然後再試一次。
+IDS_SERVEREXPLORER_NODE_TYPE_FAILED=無法載入類型 '{0}'
+IDS_SERVEREXPLORER_NODE_CREATION_FAILED=無法建立伺服器總管節點 '{0}'
+IDS_SERVEREXPLORER_CHECKFORASPNET2=存取 Web 服務時發生錯誤。\n請檢查 {0} 已經設定為 ASP.NET 2.0 Web 應用程式。
+
+IDS_SERVEREXPLORER_INSTANCE_FORMAT={0:yyyy-MM-dd HH:mm:ss}  {1}
+
+IDS_SERVEREXPLORER_FAILED_TO_QUERY_UNPATCHED_CE_FOR_INSTANCES=The Enterprise 系統尚未經由伺服器總管升級至支援存取報表執行個體。請聯絡 Crystal Enterprise 系統管理員尋求協助。
+
+IDS_INSTANCE_STATUS_ACTIVE=作用中
+IDS_INSTANCE_STATUS_COMPLETE=完成
+IDS_INSTANCE_STATUS_FAILED=已失敗
+IDS_INSTANCE_STATUS_LOADED=已載入
+IDS_INSTANCE_STATUS_LOADING=載入中
+IDS_INSTANCE_STATUS_NOTRESPONDING=未回應
+IDS_INSTANCE_STATUS_ONHOLD=保留中
+IDS_INSTANCE_STATUS_PAUSED=已暫停
+IDS_INSTANCE_STATUS_SCHEDULED=已排程
+IDS_INSTANCE_STATUS_ERROR=錯誤
+IDS_INSTANCE_STATUS_QUEUED=已佇列
+IDS_INSTANCE_STATUS_RUNTODAY=本日執行
+IDS_INSTANCE_STATUS_TERMINATED=已結束
+IDS_INSTANCE_STATUS_TERMINATING=結束中
+
+# Smart Task
+IDS_TASK_CREATE_REPORTSOURCE_TEXT=建立新增 Cystal Report...
+IDS_TASK_CREATE_REPORTSOURCE_DESCRIPTION=建立新報表並繫結到檢視器。
+IDS_TASK_BROWSE_REPORTSOURCE_TEXT=選擇 Crystal Report... 
+IDS_TASK_BROWSE_REPORTSOURCE_DESCRIPTION=瀏覽 CrystalReport 檔案、ReportDocument 物件、強型別報表物件。
+IDS_TASK_CLEAR_REPORTSOURCE_TEXT=清除報表來源
+IDS_TASK_CLEAR_REPORTSOURCE_DESCRIPTION=清除 ReportSource 屬性。
+IDS_TASK_CONVERT_TO_REPORT_TEXT=Crystal Report
+IDS_TASK_CONVERT_TO_REPORT_DESCRIPTION=將內容變更成 Crystal Report。
+IDS_TASK_EDIT_REPORTSOURCE_TEXT=編輯目前的 Crystal Report
+IDS_TASK_EDIT_REPORTSOURCE_DESCRIPTION=編輯目前 Crystal Report。
+IDS_INVALIDREPORTFILENAME=無法以系統保留名稱做為檔案名稱的命名'.', '..', 'COM1', 'LPT1', 'CON', 'AUX', 'PRN',\n 而且檔案名稱無法包含下列任一字元: {0}\n檔案名稱無法包含 Unicode 控制字元。
+IDS_INVALIDREPORTFILENAME_TITLE=無效的報表名稱
+IDS_CHOOSEREPORT_DIALOG_TITLE=選擇 Crystal Report - {0}
+IDS_EDIT_REPORTSOURCE_TITLE=編輯報表
+IDS_CANNOT_EDIT_REPORTSOURCE=未設定 ReportSource 屬性，或是無法編輯報表。
+
+# Chrome menu
+IDS_CONFIGURE_REPORT_DATA_SOURCE=設定報表來源...
+IDS_CONNECT_REPORT_DATA_SOURCE=連線至報表來源...
+IDS_TOGGLE_GROUP_TREE=顯示/隱藏群組樹狀結構
+IDS_TOGGLE_TOOLBAR=顯示/隱藏工具列
+IDS_TOGGLE_REPORTVIEW=顯示/隱藏報表檢視
+IDS_TOGGLE_SEPARATE_PAGES=在多頁中顯示報表
+IDS_TOGGLE_BEST_FIT_PAGE=啟用頁面加大
+IDS_EDIT_REPORT=編輯報表...
+IDS_CANNOT_FIND_REPORT=找不到來源檔 {0}。
+IDS_REPORT_SOURCE_NOT_SET=尚未設定報表來源。
+IDS_EDITREPORT_ERROR_MSGBOX_TITLE=無法編輯報表
+
+# ReportSourcePicker
+IDS_REPORTSOURCEPICKER_TITLE=建立報表來源
+IDS_BROWSE_REPORT=<瀏覽...>
+IDS_NEW_REPORT=<新增報表...>
+IDS_NEW_REPORT_DATA_SOURCE=<新增 CrystalReportSource...>
+IDS_TITLE_STRING_FORMAT=%0 - %1
+IDS_DUPLICATE_ID=新增報表來源的名稱不是唯一。
+IDS_OPEN_REPORT_DIALOG_TITLE=選取 Crystal Report
+IDS_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+
+# CreateReportSourceDialog
+IDS_CREATE_REPORT_SOURCE_LABEL_DIALOG_DESCRIPTION=建立 CrystalReportSource 將提供報表的內容和資料。
+IDS_CREATE_REPORT_SOURCE_LABEL_HEADER=建立 CrystalReportSource 控制
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_DATASOURCENAME=指定 CrystalReportSource 控制的名稱
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_FILE_NAME=指定 CrystalReportSource 控制的 Crystal Report
+
+IDS_NEW_REPORT_NAME_DIALOG_TITLE=建立新的 Crystal Report
+IDS_NEW_REPORT_NAME_DIALOG_DESCR=指定新報表的名稱
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE_DESCRIPTION=您無法使用下列在 CrystalReportSource 控制名稱中的字元: {0}
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE=無效的 CrystalReportSource 名稱
+
+
+# BrowseReportSourceDialog
+IDS_ADD_TO_PROJECT=加入至專案
+IDS_USE_REPORTDOCUMENT=使用 ReportDocument
+IDS_SPECIFY_CRYSTAL_REPORT=指定控制項的 Crystal Report
+
+# ConfigureReportSource
+IDS_CONFIGURE_REPORTSOURCE_DIALOG_TITLE=設定報表來源 - {0}
+IDS_CONFIGURE_REPORTSOURCE_DESCR=指定 Crystal 報表以繫結至這個 CrystalReportSource 控制。
+
+# ReportSourceIDListBox
+ID_NEW_REPORTSOURCE=<新報表來源...>
+ID_NONE=<無>
+
+# BC: This is for webformviewer designer
+ID_LoadingHtml=正在載入 ...
+ID_NoPreviewLogon=因為資料庫登入而無法預覽報表。
+ID_NoPreviewParam=因為參數提示而無法預覽報表。
+ID_NoPreviewGeneric=因為下列錯誤而無法預覽報表:
+ID_NoReportPartsErr=設定初始報表組件，或是使用 ReportParts 或 DataBindings 屬性來指定報表組件定義。
+
+# FL: You may not need to translate this; this is the default Enterprise
+# "guest" account name...
+IDS_SERVEREXPLORER_CE_LOGINDLG_GUEST=Guest
+
+IDS_SERVEREXPLORER_CE_WS_NOT_FOUND=在 '{0}' 偵測不到 Crystal Enterprise Web 服務 (EnterpriseReportManager.asmx)。\n\n如要連線至 Crystal Enterprise 10 系統，您必須在 \"Servers\" node using the \"Add Server...\" 之下的內容功能表項目，先將主控 EnterpriseReportManager.asmx 的機器新增為伺服器。\n\n如要新增 EnterpriseReportManager.asmx 至伺服器，請在伺服器上安裝 CE .NET SDK。\n\n您要進一步暸解 Crystal Enterprise 嗎?
+IDS_SERVEREXPLORER_CE10_LOGON_FAILED=使用 '{0}' 登入 Crystal Enterprise 失敗。請確認您的 CMS 伺服器、Web 連接器伺服器、使用者名稱與密碼是正確的，然後再試一次。
+IDS_SERVEREXPLORER_NO_CMS="在 '{0}' 偵測到 Crystal Enterprise Web 服務 (EnterpriseReportManager.asmx)，但在 '{0}' 找不到 CE 10 Crystal Management Server (CMS)。\n\n請在登入對話方塊中指定 CMS。\n\n您要進一步暸解 Crystal Enterprise 嗎 ?"
+IDS_SERVEREXPLORER_CE_ENTERPRISE_URL=http://www.businessobjects.com/products/reporting/crystalenterprise/default.asp
+
+IDS_SERVEREXPLORER_RAS_INTRO_WHIDBEY=Report Application Server 可以和 Crystal Reports Server 或 BusinessObjects Enterprise 一起使用。您要暸解更多資訊嗎?
+IDS_SERVEREXPLORER_RAS_URL_WHIDBEY=http://www.businessobjects.com/products/crystalreports
+
+# error
+IDS_REPORTTOOLBOX_DIALOG_TITLE=選擇 ReportDocument
+IDS_REPORTTOOLBOX_MESSAGE=從專案中選擇具型別的 ReportDocument 類別，或是預設不具型別的 ReportDocument 類別。
+IDS_REPORTTOOLBOX_NAME=名稱(&N):
+IDS_REPORTTOOLBOX_HELP=如果沒有輸入的 ReportDocument 存在於您的專案中，您可以建立一個新的，只要新增或開啟 Crystal 報表至您的專案。
+IDS_REPORTTOOLBOX_USECACHEDREPORT=產生快取的強型別報表(&G)
+IDS_OKAY=確定
+IDS_CANCEL=取消
+IDS_DEFAULTREPORT=不具型別 ReportDocument
+IDS_CANNOTINITIALIZE=「無法建立物件。」
+IDS_NOTREPORTTYPE=「不是 ReportDocument 衍生類別。」
+IDS_NOCACHEDTYPEAVAILABLE=「沒有強型別報表可用的快取報表。」
+
+IDS_RPTCODEGEN_NOGENERATOR=「ReportCodeGenerator - 沒有此語言可用的程式碼產生器。」
+IDS_RPTCODEGEN_CODEGENFAILED=「程式碼產生器 '{0}' 失敗。例外狀況堆疊 = {1}」
+
+CG_AddDLLFailed=無法將 DLL 加入至專案參考: {0}。請手動加入。
+CG_AddDLLFailed_Exception=加入 {0} 失敗: '{1}'。請手動加入。
+CombineTwoItems= {0}、{1}
+
+IDS_DESTINATION_FILE_EXISTS=目的檔案存在
+IDS_FILE_EXISTS_DIALOG_MESSAGE=具有名稱 {0} 的報表已經存在。請重新輸入新的報表名稱。
+
+IDS_ERROR_OPENING_REPORT_FILE_CAPTION=開啟報表檔時發生錯誤
+IDS_ERROR_OPENING_REPORT_FILE_MESSAGE=嘗試開啟報表 {0} 時發生錯誤。請確認檔案存在，並且已授與適當的權限。
+IDS_ERROR_CREATING_NEW_REPORT_CAPTION=建立報表檔案時，發生錯誤
+IDS_ERROR_CREATING_NEW_REPORT_MESSAGE=當嘗試建立新增報表時，發生錯誤:  {0}  請重新輸入新增報表名稱。
+IDS_ERROR_ADDING_REPORT_TO_PROJ_MESSAGE=當嘗試新增報表至專案時，發生錯誤。\n錯誤訊息:  "{0}"
+IDS_ERROR_INVALID_REPORT_PATH=CrystalReportViewer 無法載入檔案名稱: {0}  請確認由 ReportSource 屬性指定的報表檔案名稱是正確的。
+
+# ActionList
+ID_CATEGORY_DATA=資料
+ID_CATEGORY_APPEARANCE=外觀
+ID_CATEGORY_TOOLBAR=工具列
+ID_CATEGORY_BEHAVIOR=行為
+
+ID_REPORT_SOURCE_ID_DESCR=連線至現有的報表來源或建立一個新的。
+ID_REPORT_SOURCE_ID_DISPLAYNAME=選擇報表來源:
+ID_REPORT_SOURCE_DESCR=設定報表來源的設定。
+ID_REPORT_SOURCE_DISPLAYNAME=設定報表來源...
+ID_ENABLE_STATUSBAR_DISPLAYNAME=啟用狀態列
+ID_ENABLE_STATUSBAR_DESCR=在報表檢視器中啟用狀態列。
+ID_ENABLE_TOOLBAR_DISPLAYNAME=啟用工具列
+ID_ENABLE_TOOLBAR_DESCR=啟用報表檢視器中的工具列。
+ID_ENABLE_GROUPTREE_DISPLAYNAME=啟用群組樹狀結構
+ID_ENABLE_GROUPTREE_DESCR=啟用報表檢視器中的群組樹狀結構。
+ID_ENABLE_REPORTVIEW_DISPLAYNAME=啟用報表檢視
+ID_ENABLE_REPORTVIEW_DESCR=啟用報表檢視器中的報表檢視。
+ID_ENABLE_LOGON_PROMPT_DISPLAYNAME=啟用資料庫登入提示
+ID_ENABLE_LOGON_PROMPT_DESCR=啟用報表檢視器，在必要時提示資料庫登入。
+ID_ENABLE_PARAM_PROMPT_DISPLAYNAME=啟用報表參數提示
+ID_ENABLE_PARAM_PROMPT_DESCR=啟用報表檢視器，在必要時提示參數。
+ID_REUSE_PARAM_VALUE_DISPLAYNAME=重新整理報表時重複使用參數值
+ID_REUSE_PARAM_VALUE_DESCR=在重新整理報表檢視時，重複使用先前的參數值。
+ID_EDIT_REPORT_DESCR=啟動 Crystal Reports 設計工具以編輯此報表。
+ID_EDIT_REPORT_DISPLAYNAME=編輯報表...
+ID_DISPLAY_TOOLBAR_DISPLAYNAME=顯示工具列
+ID_DISPLAY_TOOLBAR_DESCR=在報表檢視器中顯示工具列。
+ID_DISPLAY_GROUPTREE_DISPLAYNAME=顯示群組樹狀結構
+ID_DISPLAY_GROUPTREE_DESCR=在報表檢視器中顯示群組樹狀結構。
+ID_DISPLAY_STATUSBAR_DISPLAYNAME=顯示狀態列
+ID_DISPLAY_STATUSBAR_DESCR=在報表檢視器中顯示狀態列。
+
+ID_CreateReportSourceTransaction=CreateReportSourceTransaction
+ID_ConnectToReportSourceTransaction=ConnectToReportSourceTransaction
+
+ID_TABLE_NAME_COLUMN_NAME=資料表名稱
+ID_SUBREPORT_NAME_COLUMN_NAME=報表名稱
+ID_DATASOURCEID_COLUMN_NAME=DataSourceID
+ID_REPORTDATASOURCE_LISTVIEW_LABEL=報表資料來源:
+ID_REMOVE_DATASOURCE=移除(&VE)
+ID_ADD_DATASOURCE=新增(&A)
+ID_CHOOSE_DATA_SOURCE=選擇資料來源(&H)
+ID_BUTTON_CANCEL=取消(&C)
+ID_BUTTON_OK=確定(&O)
+ID_MAIN_REPORT=主要報表(&M)
+ID_SUBREPORT=子報表(&S)
+ID_SPECIFY_TABLENAME=指定資料表名稱(&T)
+ID_REPORT_PROPERTY_GROUP_NAME=報表
+ID_DATASOURCE_COLLECTION_EDITOR_TITLE=資料來源收集編輯器
+ID_MAIN_REPORT_LISTITEM=[主要報表]
+
+ID_NEWPARAMETER1=newParameter1
+ID_PARAMETER_NAME_COLUMN_NAME=參數名稱
+ID_VALUE=值
+ID_REPORT_PARAMETERS=報表參數(&P):
+ID_DEFAULT_VALUE=預設值(&D)
+ID_SPECIFY_CONTROLID=指定控制 ID(&I)
+ID_PARAMETER_NAME=參數名稱(&N)
+ID_PARAMETER_COLLECTION_EDITOR=參數集合編輯器
+
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_TITLE=Enterprise 連線能力
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_ENTERPRISECONNECTIVITYNOTDETECTED=此電腦尚未偵測到 Enterprise 連線能力。請從 Crystal Server 或 BusinessObjects Enterprise 安裝 BusinessObjects Enterprise .NET SDK，並再試一次。
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_FINDOUTMORE=暸解更多有關 Business Objects 解決方案。
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_LEARNURL=http://www.businessobjects.com/jump/smb/main/default.asp?ref=crystalreports_itpro_crystalreportsserver
+
+ID_CRYSTAL_REPORTS_DIALOG_TITLE=Crystal Reports for Visual Studio 2005

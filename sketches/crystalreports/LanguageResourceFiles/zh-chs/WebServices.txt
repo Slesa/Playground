@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       webservices.txt
+#   Summary:    This file contains SIMPLIFIED CHINESE resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=无法创建报表源对象。
+IDS_ERR_DIRECTORY_NOT_FOUND=找不到路径“{0}”的一部分。
+

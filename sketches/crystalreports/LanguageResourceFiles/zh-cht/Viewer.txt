@@ -1,0 +1,302 @@
+#==============================================================================
+#   File:       Viewer.txt
+#   Summary:    This file contains TRADITIONAL CHINESE resources for CrystalDecisions.Windows.Forms
+#==============================================================================
+
+ID_HELP_ABOUT=說明
+ID_VIEW_GROUPTREE=切換群組樹狀結構
+ID_SEARCH=尋找文字
+ID_GOTOPAGE=移至頁面
+ID_FIRSTPAGE=移至第一頁
+ID_PREVPAGE=移至上一頁
+ID_NEXTPAGE=移至下一頁
+ID_LASTPAGE=移至最後一頁
+ID_PAGENUMBER=頁碼
+ID_VIEW_TOOLBAR=顯示/隱藏工具列
+ID_PRINT=列印報表
+ID_SELECTEXPERT=選擇專家
+ID_CLOSE=關閉目前檢視
+ID_STOP=停止載入
+ID_REFRESH=重新整理
+ID_EXPORT=匯出報表
+ID_SEARCH_EXPERT=搜尋專家
+ID_ZOOM=縮放
+ID_ZOOMING=縮放
+ID_SELECTION_COPY=複製
+ID_OF=的
+ID_EDIT_REPORT_SOURCE=編輯報表來源
+ID_ENTER_REPORT_SOURCE=輸入報表來源
+ID_EDIT=編輯 ...
+ID_NONE=(無)
+ID_BROWSE=瀏覽 ...
+ID_OPEN_REPORT_DIALOG_TITLE=開啟現有的 Crystal Report
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+
+IDC_ZOOMCOMBO=縮放控制項
+IDC_SEARCHCOMBO=搜尋控制項
+IDC_PROGRESSBAR=進度控制項
+IDC_PAGENUMBER=頁碼
+IDC_GROUPTREE=群組樹狀結構
+IDC_VALUE_OR_BOOLEAN_LABEL=離散值(&l)
+IDC_PARAMETERFIELDS_LABEL=參數欄位:
+IDC_END_OF_RANGE_LABEL=範圍終點(&E)
+IDC_START_OF_RANGE_LABEL=範圍起點(&S)
+IDC_END_LABEL=結束
+IDC_START_LABEL=開始
+IDC_VALUE_START_LABEL=值/開始
+IDC_CHECK_NULLVALUE=設為 NULL 值
+#IDC_INCLUDE_LOWER_BOUND=&Include value (DIyer 19 June 2001: Not Used?)
+IDC_DELETE_VALUE=刪除(&t)
+IDCANCEL=取消
+IDOK=確定
+IDC_ADD_VALUE_OR_BOOLEAN=加入(&A)
+IDC_ADD_RANGE_VALUES=加入(&d)
+IDC_NO_UPPER_BOUND=無上限(&u)
+IDC_NO_LOWER_BOUND=無下限(&o)
+IDC_PICKDEFAULTS=從預設值中挑選(&P)
+IDC_FINDWHAT_LABEL=尋找目標:
+IDC_FINDNEXT=尋找下一個(&F)
+IDC_PAGENUMBER_LABEL=請指定頁碼:
+IDC_ZOOMING_LABEL=請指定縮放因數: (25 - 400)
+
+IDS_CRYSTALREPORT=Crystal Report
+IDS_MSG_TITLE=Crystal Report Windows Form 檢視器
+IDS_PREVIEW=預覽
+IDS_LOADING=正在載入...
+IDS_PAGE_WIDTH=頁寬
+IDS_WHOLE_PAGE=整頁
+IDS_CUSTOMIZE=自訂...
+IDS_DRILLDOWN=擷取細目
+IDS_TEXT=文字
+IDS_FIELD=欄位:
+IDS_MSG_STRINGNOTFOUND=無法於此頁後找到更多指定文字的執行個體。
+IDS_MSG_COULDNOTSTARTPRINTJOB=無法開始列印工作。
+IDS_ERR_BUSY=控制項正忙碌於下載資料。
+IDS_ERR_INDEX_RANGE=索引超出範圍。
+IDS_ERR_GROUP_INFO=必要的群組資訊無法使用。
+IDS_EXPORT_UNAVAILABLE =無法匯出此報表。
+IDS_NEXT=下一步(&N) >
+IDS_FINISH=完成
+IDS_MSG_NO_RPT_NAME=沒有要檢視的報表。
+IDS_PAGEN_SYMBOL=的
+IDS_ERR_LOAD_EXPORT=無法初始化匯出控制項。
+IDS_ERR_EXPORT_FAILED=匯出失敗。
+IDS_EXPORT_COMPLETED=匯出已完成。
+IDS_CONTENTS=下一層級...
+IDS_ORIENTATION_MSG=您將要列印的報表，是實際報表資料的預先格式化影像。如果變更方向或紙張大小，可能會在各列印頁面上造成物件遺失。您要繼續嗎?
+IDS_USER_ID_PROMPT=使用者 ID(&U):
+IDS_PROMPT_TEXT=提示(&P):
+IDS_DB_LOGON_PROMPT=請輸入用於資料庫的使用者 ID 和密碼
+IDS_CANCEL_PROMPT_MSG=您確定要取消嗎? 如果需要登入資訊時，您便無法繼續。將會使用目前預設的報表提示。
+IDS_DB_LOGON_FOR_SUB=子報表所使用:
+IDS_PROMPT_MSG=請輸入提示的資訊:
+IDS_DEL_DRILL=您無法繼續這項操作和保留擷取細目索引標籤。如果繼續的話，便會關閉擷取細目索引標籤。\n\n您要繼續嗎?
+IDS_NUMBER=數字
+IDS_CURRENCY=貨幣
+IDS_DATE=日期
+IDS_TIME=時間
+IDS_BOOLEAN=布林
+IDS_DATETIME=日期時間
+IDS_MEMO=備忘
+IDS_STRING=字串
+IDS_MAP=地圖
+IDS_TEXTOBJECT=文字物件
+IDS_CROSSTAB=交叉表
+IDS_CHART=圖表
+IDS_BLOB=BLOB 欄位
+IDS_INPLACE_SUBREPORT=子報表
+IDS_OLEOBJECT=OLE 物件
+IDS_SECTION=區段
+IDS_OLAP_GRID=OLAP 格線
+IDS_GROUP_HEADER=群組頁首
+IDS_GROUP_FOOTER=群組頁尾
+IDS_REPORT_HEADER=報表首
+IDS_REPORT_FOOTER=報表尾
+IDS_PAGE_HEADER=頁首
+IDS_PAGE_FOOTER=頁尾
+IDS_DETAIL=細目區段
+IDS_FREEZE_PANE=凍結窗格(&F)
+IDS_UNFREEZE_PANE=解除凍結窗格(&U)
+IDS_PROMPTPARAM_DLGTITLE=輸入參數值
+IDS_ENTERSEARCHSTRING=請輸入要尋找的字串。
+IDS_FINISH_SEARCHING=已經完成搜尋文件。
+IDS_ENTERPAGENUMBER=請輸入有效的頁碼。
+IDS_ENTERZOOMFACTOR=請輸入有效的縮放因數。
+IDS_MAIN_REPORT=主報表
+IDS_FILEFILTER_RPT=Crystal Reports (*.rpt)|*.rpt
+IDS_FILEFILTER_DOC=Microsoft Word (*.doc)|*.doc 
+IDS_FILEFILTER_XLS=Microsoft Excel (*.xls)|*.xls
+IDS_FILEFILTER_RECORD_XLS=Microsoft Excel Data Only (*.xls)|*.xls
+IDS_FILEFILTER_RTF=Rich Text Format (*.rtf)|*.rtf
+IDS_FILEFILTER_PDF=Adobe Acrobat (*.pdf)|*.pdf
+IDS_FILEFILTER_HTML32=HTML 3.2 (*.html)|*.html
+IDS_FILEFILTER_HTML40=HTML 4.0(DHTML) (*.html)|*.html
+IDS_DRILL_DOWN=擷取細目
+IDS_REPORTOBJECT=報表物件
+IDS_TRY_AGAIN=請再試一次。
+IDS_LOGON_FAILED=登入失敗。
+IDS_MISSING_PARAMETERFIELD_CURRENTVALUE=遺失參數欄位目前值。
+
+# StatusBar text:
+IDS_CURRENT_PAGENUMBER=目前頁碼:
+IDS_TOTAL_PAGENUMBER=總計頁碼:
+IDS_ZOOM_FACTOR=縮放因數:
+IDS_ZOOM_FACTOR_DEFAULT=縮放因數: 100%
+
+# Exception messages
+IDS_EXCEPTION_DOCUMENTMANAGER_INITDOCUMENTMANAGER=DocumentManager.InitDocumentManager 中的例外狀況:
+IDS_EXCEPTION_DOCUMENTMANAGER_ADDREPORT=DocumentManager.AddReport 中的例外狀況:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETPAGE=MainReportDocument.GetPage 中的例外狀況:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPTREEFROMENGINE=MainReportDocument.GetGroupTreeFromEngine 中的例外狀況:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETLASTPAGENUMBERFROMENGINE=MainReportDocument.GetLastPageNumberFromEngine 中的例外狀況:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_REFRESH=MainReportDocument.Refresh 中的例外狀況:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPINFOFORDRILLONGRAPH=MainReportDocument.GetGroupInfoForDrillOnGraph 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENT_GETDRILLDOWNDOCUMENT=ReportDocument.GetDrillDownDocument 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETLASTPAGENUMBER=ReportDocumentBase.GetLastPageNumber 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETPAGE=ReportDocumentBase.GetPage 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_DRILLDOWNGRAPH=在沒有細目資料的區域上擷取細目。若要擷取細目，請按一下具有資料的區域。
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETGROUPTREE=ReportDocumentBase.GetGroupTree 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDGROUP=ReportDocumentBase.FindGroup 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDTEXT=ReportDocumentBase.FindText 中的例外狀況:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_EXPORT=ExportDocumentBase.Export 中的例外狀況:
+IDS_EXCEPTION_REPORTGROUPTREE_INITREPORTGROUPTREE=ReportGroupTree.InitReportGroupTree 中的例外狀況:
+	
+IDS_EXCEPTION_TOOLTIPCAPTIONDUPLICATE=工具列工具提示標題存在。請選擇另一個工具提示。
+IDS_EXCEPTION_TOOLBARBASE_INDEXOUTOFRANGE=工具列控制項索引超出範圍。
+IDS_EXCEPTION_TOOLBARBASE_INVALIDTOOLTIP=工具列控制項的工具提示無效。
+
+IDS_EXCEPTION_NULL_HOST=無法取得 IDesignerHost。
+IDS_EXCEPTION_NULL_EXTENSIBILITYSERVICE=無法取得 IExtensibilityService。
+IDS_EXCEPTION_NULL_PROJECT=無法取得目前的專案。
+
+# Property descriptions
+IDS_DISPLAY_GROUPTREE_DESCRIPTION=決定 CrystalReportViewer 的群組樹狀結構為可見或隱藏。
+IDS_DISPLAY_TOOLBAR_DESCRIPTION=決定 CrystalReportViewer 的工具列為可見或隱藏。
+IDS_ENBALE_STATUSBAR_DESCRIPTION=決定 CrystalReportViewer 的狀態列為可見或隱藏。
+IDS_REPORT_NAME_DESCRIPTION=將要檢視的報表的名稱或 URL。
+IDS_REPORT_SOURCE_DESCRIPTION=將要檢視的報表的遠端報表服務 Proxy。
+IDS_DISPLAY_BACKGROUNDEDGE_DESCRIPTION=決定報表是否要從其檢視視窗的邊緣偏移。
+IDS_SELECTION_FORMULA_DESCRIPTION=資料錄選取範圍公式。
+IDS_VIEWTIME_SELECTION_FORMULA_DESCRIPTION=檢視時間選取範圍公式。
+
+IDS_SHOW_PAGENAVIGATEBUTTONS_DESCRIPTION=決定檢視器工具列是否具有導覽報表頁面的按鈕。
+IDS_SHOW_GOTOPAGEBUTTON_DESCRIPTION=決定檢視器工具列是否具有指定頁碼的按鈕。
+IDS_SHOW_CLOSEBUTTON_DESCRIPTION=決定檢視器工具列是否具有關閉報表頁面的按鈕。
+IDS_SHOW_PRINTBUTTON_DESCRIPTION=決定檢視器工具列是否具有列印的按鈕。
+IDS_SHOW_REFRESHBUTTON_DESCRIPTION=決定檢視器工具列是否具有重新整理的按鈕。
+IDS_SHOW_EXPORTBUTTON_DESCRIPTION=決定檢視器工具列是否具有匯出的按鈕。
+IDS_SHOW_GROUPTREEBUTTON_DESCRIPTION=決定檢視器工具列是否具有顯示或隱藏群組樹狀結構的按鈕。
+IDS_SHOW_ZOOMBUTTON_DESCRIPTION=決定檢視器工具列是否具有設定報表頁面縮放層級的縮放按鈕。
+IDS_SHOW_TEXTSEARCHBUTTON_DESCRIPTION=決定檢視器工具列是否具有文字搜尋的按鈕。
+IDS_ENABLE_DRILLDOWN_DESCRIPTION=決定是否啟用 CrystalReportViewer 的擷取細目功能。
+IDS_ENABLE_TOOLTIP_DESCRIPTION=在檢視器中啟用物件的工具提示。
+# Event Descriptions
+ID_OnPageNavigateDescr=在將要導覽頁面時引發。
+ID_OnSearchDescr=在將要搜尋文字時引發。
+ID_OnSubreportDrillDownDescr=在將要對子報表擷取細目時引發。
+ID_OnRefreshDescr=在將要重新整理報表時引發。
+ID_OnZoomDescr=在將要變更縮放因數時引發。
+ID_OnDrillDescr=在將要對圖形或群組擷取細目時引發。
+ID_OnHandleExceptionDescr=在檢視器取得例外狀況並且將要進行處理時引發。
+
+#==============================================================================
+#   File:       SCRShared.txt (Merged from Shared resource)
+#   Summary:    TRADITIONAL CHINESE resources for Crystal Reports shared controls
+#==============================================================================
+
+#[strings]
+#Database Logon Dialog
+##############################################################
+IDS_LOGINDLG_TITLE=資料庫登入
+
+IDS_HELP=說明(&H)
+IDS_BACK=< 上一步(&B)
+###IDS_NEXT=Next >
+###IDS_FINISH=Finish
+IDS_CANCEL=取消
+IDS_USEINTEGRATEDSECURITYCHECKBOX=使用整合安全
+
+IDS_REPORTNAMELABEL=子報表名稱:
+IDS_MAINREPORTLABEL=主報表
+IDS_TABLENAMELABEL=資料表名稱:
+IDS_SERVERNAME=伺服器名稱(&S):
+IDS_DATABASENAME=資料庫(&D):
+IDS_LOGINID=登入 ID(&L):
+IDS_PWD=密碼(&P):
+IDS_PASSWORDCHAR=c
+
+#Parameter Field Dialog
+##############################################################
+IDS_PROMPTPARAM_DLGTITLE2=請提供資訊 - {1} 的 {0}
+
+#SubTitles
+IDS_SINGLE_DISCRETE_EDIT=您可以對此參數提供單一值。\r\n請輸入要包含的值。
+IDS_SINGLE_DISCRETE_PICK=您可以對此參數提供單一值。\r\n請選擇要包含的值。
+IDS_SINGLE_DISCRETE_EDIT_AND_PICK=您可以對此參數提供單一值。\r\n請選擇或輸入要包含的值。
+
+IDS_SINGLE_RANGE_EDIT=您可以對此參數提供單一值範圍。\r\n請輸入下限和上限，以描述要包含的值範圍。
+IDS_SINGLE_RANGE_PICK=您可以對此參數提供單一值範圍。\r\n請選擇下限和上限，以描述要包含的值範圍。
+IDS_SINGLE_RANGE_EDIT_AND_PICK=您可以對此參數提供單一值範圍。\r\n請選擇或輸入下限和上限，以描述要包含的值範圍。
+
+IDS_MULTIPLE_DISCRETE_EDIT=您可以對此參數提供一個或多個值。\r\n對於要包含的每個值，請輸入其值，然後再按一下 [加入]。
+IDS_MULTIPLE_DISCRETE_PICK=您可以對此參數提供一個或多個值。\r\n對於要包含的每個值，請選擇其值，然後再按一下 [加入]。
+IDS_MULTIPLE_DISCRETE_EDIT_AND_PICK=您可以對此參數提供一個或多個值。\r\n對於要包含的每個值，請選擇或輸入其值，然後再按一下 [加入]。
+
+IDS_MULTIPLE_RANGE_EDIT=您可以對此參數提供一個或多個值範圍。\r\n對於要包含的每個值範圍，請輸入其下限和上限，然後再按一下 [加入]。
+IDS_MULTIPLE_RANGE_PICK=您可以對此參數提供一個或多個值範圍。\r\n對於要包含的每個值範圍，請選擇其下限和上限，然後再按一下 [加入]。
+IDS_MULTIPLE_RANGE_EDIT_AND_PICK=您可以對此參數提供一個或多個值範圍。\r\n對於要包含的每個值範圍，請選擇或輸入其下限和上限，然後再按一下 [加入]。
+
+IDS_MULTIPLE_BOTH_EDIT=您可以對此參數提供一個或多個值 (包括範圍)。\r\n對於要包含的每個值 (值範圍)，請輸入其值 (或下限和上限)，然後再按一下 [加入]。
+IDS_MULTIPLE_BOTH_PICK=您可以對此參數提供一個或多個值 (包括範圍)。\r\n對於要包含的每個值 (值範圍)，請選擇其值 (或下限和上限)，然後再按一下 [加入]。
+IDS_MULTIPLE_BOTH_EDIT_AND_PICK=您可以對此參數提供一個或多個值 (包括範圍)。\r\n對於要包含的每個值 (值範圍)，請選擇或輸入其值 (或下限和上限)，然後再按一下 [加入]。
+
+#prompting text
+IDS_PROMPT_RANGE=值必須介於 {0} 和 {1}{2} 之間。
+IDS_PROMPT_RANGE_STRING= 字元長度
+IDS_PROMPT_RANGE2=值必須介於 {0} 和 {1} 之間。
+IDS_PROMPT_RANGE_STRING2=值必須介於 {0} 和 {1} 個字元長度之間。
+
+###IDC_VALUE_OR_BOOLEAN_LABEL=Discrete va&lues
+###IDC_PARAMETERFIELDS_LABEL=Parameter Fields:
+###IDC_END_OF_RANGE_LABEL=&End of range
+###IDC_START_OF_RANGE_LABEL=&Start of range
+###IDC_END_LABEL=End
+###IDC_START_LABEL=Start
+###IDC_VALUE_START_LABEL=Value/Start
+###IDC_CHECK_NULLVALUE=Set the value to "NULL"
+#IDC_INCLUDE_LOWER_BOUND=&Include value
+###IDC_DELETE_VALUE=&Remove
+###IDC_ADD_VALUE_OR_BOOLEAN=&Select
+###IDC_ADD_RANGE_VALUES=S&elect
+###IDC_NO_UPPER_BOUND=Range has no &upper limit
+###IDC_NO_LOWER_BOUND=Range has no &lower limit
+###IDC_PICKDEFAULTS=&Pick from defaults
+IDS_OK=確定
+
+IDC_INCLUDE_LOWER_BOUND=包含此值(&I)
+IDC_INCLUDE_UPPER_BOUND=包含此值(&C)
+IDC_RANGE_LABEL=值範圍介於(&W)
+IDS_AND_LABEL=和
+IDC_LABEL_VALUES=值:
+
+
+#prompting types
+IDS_PT_NUMBER=數字
+IDS_PT_CURRENCY=貨幣
+IDS_PT_BOOLEAN=True 或 False
+IDS_PT_DATE=日期
+IDS_PT_STRING=字串
+IDS_PT_DATETIME=日期時間
+IDS_PT_TIME=時間
+
+
+#error messages
+IDS_ERROR_PARAMETER_TYPE=請輸入 {0} 值。
+IDS_ERROR_PARAMETER_RANGE=範圍起始值必須小於或等於範圍結束值。
+IDS_ERROR_EMPTY_REPORT_NAME=報表名稱是空的。
+IDS_ERROR_PARAMETER_GREATER_THAN_MAX=輸入的值大於此參數所允許的最大值。
+IDS_ERROR_PARAMETER_LESS_THAN_MIN=輸入的值小於此參數所允許的最小值。
+
+# Granville-only error messages; no need to translate for CR10
+IDS_ERROR_INVALID_DATA_SOURCE=資料來源無效。
+

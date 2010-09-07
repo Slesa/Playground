@@ -1,0 +1,171 @@
+#==============================================================================
+#   File:       CRWebFormViewer.txt
+#   Summary:    This file contains GERMAN resources for CrystalDecisions.Web.CrystalReportViewer
+#==============================================================================
+
+# ToolTips
+###################################################################
+ID_Search=Suchen
+ID_FirstPage=Erste
+ID_PrevPage=Vorherige
+ID_NextPage=Weiter
+ID_LastPage=Letzte
+ID_GotoPage=Gehe zu
+ID_Up=Nach oben
+ID_Refresh=Aktualisieren
+ID_Zoom=Zoom
+ID_PoweredByCrystal=Powered by Business Objects
+ID_ViewList=Verlauf anzeigen
+
+# Hidden internal links (for section 508)
+###################################################################
+ID_GoToGroupTree=Zur Berichtgruppenstruktur gehen
+ID_GoToPageContent=Zum Inhalt der Berichtseite gehen
+
+# Others 
+###################################################################
+ID_ReportFileNameEditorTitle=Wählen Sie einen Bericht aus.
+ID_ReportFileNameEditorFilter=Crystal Reports(*.rpt)|*.rpt|Alle Dateien(*.*)|*.*
+ID_CrystalReportViewerName=CrystalReportViewer
+ID_NoReportSource=Verwenden Sie die ReportSource- oder DataBindings-Eigenschaft, um eine Berichtsquelle anzugeben.
+ID_NoReportSourceID=Verwenden Sie die ReportSourceID-Eigenschaft, um ein ReportSource-Steuerelement anzugeben.
+ID_NoReportParts=Keine anfänglichen Berichtbestandteile festgelegt. Verwenden Sie die ReportParts- oder DataBindings-Eigenschaft, um eine Berichtbestandteilsdefinition anzugeben.
+ID_NoData=Keine Daten.
+ID_InvalidReportParts=Ungültige Berichtbestandteile; stellen Sie sicher, dass die anfänglichen Berichtbestandteile gültige Berichtobjekte sind.
+ID_NoParameterFields=Verwenden Sie die ParameterFieldInfo-Eigenschaft, um Parameterfelder anzugeben.
+ID_NoLogOnInfos=Verwenden Sie die LogOnInfos-Eigenschaft, um Anmeldeinformationen anzugeben.
+ID_SearchEnd=Ende der Suche
+ID_Of=von
+ID_UnknownLastPageNumberSign=+
+ID_Print=Drucken
+ID_ShowGroupTree=Gruppenstruktur ein-/ausblenden
+ID_Export=Exportieren
+ID_Local_File_Ext=de
+ID_UntitleFilename=Unbenannt
+ID_Category_Render=Rendern
+ID_Category_Toolbar=Symbolleiste
+ID_Category_GroupTree=Gruppenstruktur
+ID_MainReport=Hauptbericht
+ID_UnknownView=(Unbekannt)
+
+# Property Descriptions
+###################################################################
+ID_ReportSourceClassFactoryNameDescr=Der voll qualifizierte Klassenname von IReportSourceFactory war an einen Bericht gebunden.
+ID_EnterpriseLogonDescr=Enterprise-Anmeldetoken oder ISEnterpriseSession.
+ID_ReportSourceDescr=Das Berichtobjekt, der Dateiname oder der Webdienst-Proxy, das bzw. der angezeigt werden soll.
+ID_ReportSourceIDDescr=Die Steuerelement-ID eines ReportSource-Steuerelements, das als Berichtquelle verwendet wird.
+ID_SeparatePagesDescr=Bestimmt, ob die Berichtseiten getrennt werden oder zusammenhängen.
+ID_PageToTreeRatioDescr=Das Verhältnis von Seitenbreite zu Strukturbreite.
+ID_DisplayGroupTreeDescr=Bestimmt, ob die Strukturansicht sichtbar oder ausgeblendet ist.
+ID_DisplayPageDescr=Bestimmt, ob die Seitenansicht sichtbar oder ausgeblendet ist.
+ID_DisplayToolbarDescr=Bestimmt, ob die Symbolleiste sichtbar oder ausgeblendet ist.
+ID_ClientTargetDescr=Zielrendering für verschiedene Browser.
+ID_HasPageNavigationButtonsDescr=Bestimmt, ob die Schaltflächen für die Seitennavigation auf der Symbolleiste sichtbar oder ausgeblendet sind.
+ID_HasGotoPageButtonDescr=Bestimmt, ob die Schaltfläche 'Gehe zu' auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasSearchButtonDescr=Bestimmt, ob die Schaltfläche 'Suchen' auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasLevelUpButtonDescr=Bestimmt, ob die Schaltfläche zum Wechseln zur vorherigen Seite auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasRefreshButtonDescr=Bestimmt, ob die Schaltfläche 'Aktualisieren' auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasPrintButtonDescr=Bestimmt, ob die Schaltfläche 'Drucken' auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasExportButtonDescr=Bestimmt, ob die Schaltfläche 'Exportieren' auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasToggleGroupTreeButtonDescr=Bestimmt, ob die Schaltfläche 'Gruppenstruktur ein-/ausblenden' auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasCrystalLogoDescr=Bestimmt, ob das Business Objects-Logo sichtbar oder ausgeblendet ist.
+ID_BestFitPageDescr=Bestimmt, ob die Seitenansicht an die Größe angepasst oder abgeschnitten und mit Bildlaufleisten versehen wird.
+ID_SelectionFormulaDescr=Die Datensatzauswahlformel des Berichts.
+ID_ViewTimeSelectionFormulaDescr=Die berichtspezifische Formel für die Datensatzauswahl während der Ansicht.
+ID_ParameterFieldInfoDescr=Die Parameterfelder des Berichts.
+ID_LogOnInfoDescr=Die Anmeldeinformationen des Berichts.
+ID_ZoomFactorDescr=Der Zoomfaktor der Seite.
+ID_HasZoomButtonDescr=Bestimmt, ob die Dropdownliste für den Zoomfaktor auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_HasViewListDescr=Bestimmt, ob die Dropdownliste für die Ansicht auf der Symbolleiste sichtbar oder ausgeblendet ist.
+ID_EnableDrillDownDescr=Bestimmt, ob ein Drilldown auf eine Seite, ein Diagramm, eine Gruppe oder eine Zusammenfassung zulässig ist.
+ID_HyperlinkTargetDescr=Das Frameziel, auf das der Hyperlink zurückverweist.
+ID_DrilldownTargetDescr=Das Frameziel, auf das der Drilldown zurückverweist.
+ID_ReportPartsDescr=Die Definition der Berichtbestandteile.
+ID_RecordNumberDescr=Die Anzahl der im Berichtbestandteile-Viewer angezeigten Datensätze.
+ID_RotateSectionsDescr=Bestimmt, ob der Bereich gedreht wird.
+ID_HasBorderDescr=Bestimmt, ob der Rahmen sichtbar ist.
+ID_PersistLayoutDescr=Bestimmt, ob das Layout der Berichtbestandteile im Originalbericht bestehen bleibt.
+ID_ReportTitleDescr=Der Titel des Berichts.
+ID_IsDisplayTitleDescr=Bestimmt, ob der Titel des Berichts angezeigt wird.
+ID_IsDisplayHeaderDescr=Bestimmt, ob die Bereichsüberschriften angezeigt werden.
+ID_HasPageNavigationLinksDescr=Bestimmt, ob die Seitennavigationsverknüpfungen sichtbar oder ausgeblendet sind.
+ID_ShowAllPageIds=Bestimmt, ob die Berichtobjekt-IDs in HTML angegeben sind.
+ID_GroupTreeFormatDescr=Legt das Format der Gruppenstruktur fest
+ID_ToolbarStyleDescr=Legt das Format der Symbolleiste fest
+ID_PrintModeDescr=Die vom Clientbrowser für den lokalen Druck verwendete Methode.
+ID_AutoDataBindDescr=DataBind() erfolgt automatisch nach OnInit()/Page_Init()
+ID_EnableDatabaseLogonPromptDescr=Bestimmt, ob der Viewer bei Bedarf eine Datenbankanmeldung anfordert.
+ID_EnableParameterPromptDescr=Bestimmt, ob der Viewer bei Bedarf Berichtparameter anfordert.
+ID_ExportFormatTypeDescr=Legt fest, welchen Exportformattyp das Steuerelement verwendet.
+ID_ReuseParameterValuesOnRefreshDescr=Gibt an, ob der Viewer vorhandene Parameterwerte nach der Aktualisierung beibehält und wiederverwendet.
+ID_EnableToolTipsDescr=Quickinfo für den Viewer aktivieren.
+ID_CssFilenameDescr=Das verknüpfte Stylesheet für den Bericht.
+ID_CacheDurationDescr=Die Dauer in Sekunden, bis der Bericht abläuft. Die Zeitablauf-Richtlinie wird durch die CacheExpirationPolicy-Eigenschaft festgelegt.
+ID_CacheExpirationPolicyDescr=Die Richtlinie für den Zeitablauf des Berichts im Cache. Die Dauer für den Zeitablauf wird durch die CacheDuration-Eigenschaft angegeben.
+ID_EnableCachingDescr=Gibt an, ob Zwischenspeichern für diese Berichtquelle aktiviert ist.
+ID_ReportPropertyDescr=Das Berichtobjekt.
+ID_DataSourcesDescr=Die Sammlung der Datenquellen, die im Bericht verwendet werden.
+ID_ParameterCollectionDescr=Die Sammlung der Parameter, die im Bericht verwendet werden.
+ID_FileNameDescr=Der Dateiname des Berichts.
+
+ID_TREE_IMAGE_FOLDER_URL=Die URL des Ordners, der die Bilder für die Gruppenstruktur enthält.
+ID_TOOLBAR_IMAGE_FOLDER_URL=Die URL des Ordners, der die Bilder für die Symbolleiste enthält.
+ID_UseBrowserLocale=Gibt an, ob das Gebietsschema des Browsers im Viewer verwendet wird oder nicht.
+ID_CrystalReportSourceDescr=Stellt eine Verbindung mit einem mit Crystal Reports erstellten Bericht her.
+ID_CrystalReportSourceDisplayName=Crystal Reports-Bericht
+
+# Event Descriptions
+###################################################################
+ID_OnNavigateDescr=Wird kurz vor der Ausführung der Seitennavigation ausgelöst.
+ID_OnSearchDescr=Wird kurz vor der Ausführung der Textsuche ausgelöst.
+ID_OnSubreportDrillDownDescr=Wird kurz vor der Ausführung des Unterberichtdrilldowns ausgelöst.
+ID_OnRefreshDescr=Wird kurz vor der Aktualisierung des Berichts ausgelöst.
+ID_OnZoomDescr=Wird kurz vor der Änderung des Zoomfaktors ausgelöst.
+ID_OnDrillDescr=Wird kurz vor der Ausführung des Diagrammdrilldowns oder Gruppendrilldowns ausgelöst.
+ID_OnReportPartBookmarkNavigationDescr=Wird kurz vor der Ausführung der Lesezeichennavigation des Berichtbestanteils ausgelöst.
+ID_OnBeforeRenderDescr=Wird ausgelöst, wenn der Berichtrenderingprozess beginnt.
+ID_OnAfterRenderDescr=Wird ausgelöst, wenn der Berichtrenderingprozess beendet wird.
+ID_OnBeforeRenderObjectDescr=Wird ausgelöst, wenn das Berichtobjektrendering beginnt.
+ID_OnAfterRenderObjectDescr=Wird ausgelöst, wenn das Berichtobjektrendering beendet wird.
+ID_OnBeforeRenderContentDescr=Wird ausgelöst, wenn das Berichtinhaltsrendering beginnt.
+ID_OnAfterRenderContentDescr=Wird ausgelöst, wenn das Berichtinhaltsrendering beendet wird.
+ID_OnRenderScriptDescr=Wird ausgelöst, wenn die HTML-Skripterstellung beginnt.
+ID_OnRenderStyleDescr=Wird ausgelöst, wenn die Erstellung der HTML Style Class beginnt.
+ID_OnFieldDrillDescr=Wird kurz vor der Ausführung des Felddrilldowns ausgelöst.
+ID_OnChartDrillDescr=Wird kurz vor der Ausführung des Diagrammdrilldowns ausgelöst.
+ID_OnEventErrorDescr=Wird ausgelöst, wenn während des ASP.NET-Lebenszyklus ein Anzeigefehler auftritt.
+ID_OnDataSourceChangedDescr=Wird ausgelöst, wenn der Wert der DataSource-Eigenschaft im Steuerelement geändert wird.
+ID_OnFileNameChangedDescr=Wird ausgelöst, wenn der Wert der FileName-Eigenschaft im Steuerelement geändert wird.
+ID_OnReportChangedDescr=Wird ausgelöst, wenn der Wert der Report-Eigenschaft im Steuerelement geändert wird.
+
+# Error Messages
+###################################################################
+ID_InvalidPageToTreeRatioErr=Das Verhältnis muss größer als null sein.
+ID_InvalidPageErr=Fehler beim Generieren der Seite.
+ID_InvalidGroupTreeErr=Fehler beim Generieren der Gruppenstruktur.
+ID_GroupTreeRenderErr=Fehler beim Rendern der Gruppenstruktur.
+ID_PageRenderErr=Fehler beim Rendern der Seite.
+ID_FailToGetReportSource=Fehler beim Abrufen der Berichtsquelle.
+ID_InvalidPageZoomFactorErr=Der Zoomfaktor muss zwischen 10 und 400 betragen.
+ID_GetPageErr=Fehler beim Abrufen der Seite.
+ID_GetTotallerErr=Fehler beim Abrufen der Summenbildung für die Seite.
+ID_InvalidReportSourceErr=Keine gültige Berichtquelle verfügbar.
+ID_ReportSourceRestoreErr=Fehler beim Wiederherstellen der Berichtquelle für den Druck
+ID_NullReportSourceStateErr=Die Berichtquelle kann für den Druck nicht wiederhergestellt werden. Die Zeichenfolge für den Base-64-Ansichtsstatus ist Null.
+ID_NullReportSourceStateStringLengthErr=Die Berichtquelle kann für den Druck nicht wiederhergestellt werden. Die Länge der Zeichenfolge für den Base-64-Ansichtsstatus beträgt nicht 4 bzw. ist kein gerades Vielfaches von 4.
+ID_UnsupportExportFormatErr=Das angegebene Exportformat wird von CrystalREportExportControl nicht unterstützt.
+ID_ControlMustBeInForm=Das Steuerelement ""{0}"" muss sich innerhalb eines Formulars befinden
+ID_InvalidExportOptions=Der Export mit den angegebenen Optionen ist fehlgeschalgen.  Überprüfen Sie die Optionen und versuchen Sie es erneut.
+ID_InvalidBatchSize=Sie müssen eine Stapelgröße zwischen 1 und 65535 eingeben.
+ID_RepPartNavThroughWebServNotSupported=Das Navigieren in Berichtbestandteilen wird von ""ServerFileReportService.asmx"" oder ""EnterpriseReportService.asmx"" nicht unterstützt.
+ID_LogonPromptNotSupported=Die Aufforderung zur Datenbankanmeldung wird auf mobilen Geräten nicht unterstützt.
+ID_ParamPromptNotSupported=Die Aufforderung zu Parametereingabe wird auf mobilen Geräten nicht unterstützt.
+ID_TableNotFound=Tabelle "{0}" ist im Bericht nicht vorhanden.
+ID_ControlWithReportSourceIDDoesntExist=Steuerelement mit ID '{1}' nicht gefunden, das von {0}.ReportSourceID aufgerufen wird.
+ID_ControlWithReportSourceIDIsntReportSource=Das Steuerelement ID '{1}', auf das von {0}.ReportSourceID verwiesen wird, ist keine CrystalReportSource.
+
+# Category
+######################################################################
+ID_Category_Data=Daten
+ID_Category_Misc=Sonstiges
+ID_Category_Cache=Cache

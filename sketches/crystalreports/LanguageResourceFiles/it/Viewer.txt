@@ -1,0 +1,304 @@
+#==============================================================================
+#   File:       Viewer.txt
+#   Summary:    This file contains ITALIAN resources for CrystalDecisions.Windows.Forms.CrystalReportViewer
+#==============================================================================
+
+ID_HELP_ABOUT=?
+ID_VIEW_GROUPTREE=Alterna struttura gruppi
+ID_SEARCH=Trova testo
+ID_GOTOPAGE=Vai a pagina
+ID_FIRSTPAGE=Vai alla prima pagina
+ID_PREVPAGE=Vai alla pagina precedente
+ID_NEXTPAGE=Vai alla pagina successiva
+ID_LASTPAGE=Vai all'ultima pagina
+ID_PAGENUMBER=Numero pagina
+ID_VIEW_TOOLBAR=Mostra/Nascondi barra degli strumenti
+ID_PRINT=Stampa report
+ID_SELECTEXPERT=Esperto selezione
+ID_CLOSE=Chiudi finestra corrente
+ID_STOP=Arresta caricamento
+ID_REFRESH=Aggiorna
+ID_EXPORT=Esporta il report
+ID_SEARCH_EXPERT=Esperto ricerca
+ID_ZOOM=Zoom
+ID_ZOOMING=Ingrandimento
+ID_SELECTION_COPY=Copia
+ID_OF=di
+ID_EDIT_REPORT_SOURCE=Modifica origine report
+ID_ENTER_REPORT_SOURCE=Immetti origine report
+ID_EDIT=Modifica
+ID_NONE=(Nessuno)
+ID_BROWSE=Sfoglia
+ID_OPEN_REPORT_DIALOG_TITLE=Apri un report Crystal esistente
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+
+IDC_ZOOMCOMBO=Zoom
+IDC_SEARCHCOMBO=Cerca
+IDC_PROGRESSBAR=Avanzamento
+IDC_PAGENUMBER=Numero pagina
+IDC_GROUPTREE=Struttura gruppi
+IDC_VALUE_OR_BOOLEAN_LABEL=Valo&ri discreti
+IDC_PARAMETERFIELDS_LABEL=Campi parametro:
+IDC_END_OF_RANGE_LABEL=&Fine di intervallo
+IDC_START_OF_RANGE_LABEL=Ini&zio di intervallo
+IDC_END_LABEL=Fine
+IDC_START_LABEL=Inizio
+IDC_VALUE_START_LABEL=Valore/Inizio
+IDC_CHECK_NULLVALUE=Imposta a Valore nullo
+#IDC_INCLUDE_LOWER_BOUND=&Include value (DIyer 19 June 2001: Not Used?)
+IDC_DELETE_VALUE=&Elimina
+IDCANCEL=Annulla
+IDOK=OK
+IDC_ADD_VALUE_OR_BOOLEAN=&Aggiungi
+IDC_ADD_RANGE_VALUES=A&ggiungi
+IDC_NO_UPPER_BOUND=Nessun l&imite superiore
+IDC_NO_LOWER_BOUND=Nessun li&mite inferiore
+IDC_PICKDEFAULTS=Scegli tra i &default
+IDC_FINDWHAT_LABEL=Trova:
+IDC_FINDNEXT=Tro&va successivo
+IDC_PAGENUMBER_LABEL=Specificare il numero di pagina:
+IDC_ZOOMING_LABEL=Specificare il fattore di ingrandimento: (25 - 400)
+
+IDS_CRYSTALREPORT=Report Crystal Report
+IDS_MSG_TITLE=Crystal Report Windows Forms Viewer
+IDS_PREVIEW=Anteprima
+IDS_LOADING=Caricamento in corso...
+IDS_PAGE_WIDTH=Larghezza pagina
+IDS_WHOLE_PAGE=Pagina intera
+IDS_CUSTOMIZE=Personalizza
+IDS_DRILLDOWN=Analisi dettagliata
+IDS_TEXT=Testo
+IDS_FIELD=Campo:
+IDS_MSG_STRINGNOTFOUND=Impossibile trovare altre istanze del testo specificato dopo questa pagina.
+IDS_MSG_COULDNOTSTARTPRINTJOB=Impossibile avviare la stampa del lavoro.
+IDS_ERR_BUSY=Il comando sta scaricando i dati.
+IDS_ERR_INDEX_RANGE=Indice fuori intervallo.
+IDS_ERR_GROUP_INFO=Informazioni sul gruppo richieste non disponibili.
+IDS_EXPORT_UNAVAILABLE =Questo report non può essere esportato.
+IDS_NEXT=&Succes. >
+IDS_FINISH=Fine
+IDS_MSG_NO_RPT_NAME=Nessun report da visualizzare.
+IDS_PAGEN_SYMBOL=di
+IDS_ERR_LOAD_EXPORT=Impossibile inizializzare il comando di esportazione.
+IDS_ERR_EXPORT_FAILED=Esportazione fallita.
+IDS_EXPORT_COMPLETED=Esportazione completata.
+IDS_CONTENTS=Livello successivo
+IDS_ORIENTATION_MSG=Il report che si sta per stampare è un'immagine pre-formattata dei dati del report. Modificare l'orientamento o le dimensioni del foglio potrebbe determinare una perdita di oggetti sulle singole pagine stampate. Continuare?
+IDS_USER_ID_PROMPT=ID &utente:
+IDS_PROMPT_TEXT=&Prompt:
+IDS_DB_LOGON_PROMPT=Immettere l'ID utente e la password per il database
+IDS_CANCEL_PROMPT_MSG=Annullare? Se vengono richieste le informazioni di collegamento, non sarà possibile continuare. Verranno utilizzati i prompt dei report predefiniti correnti.
+IDS_DB_LOGON_FOR_SUB=utilizzato dal sottoreport:
+IDS_PROMPT_MSG=Immettere informazioni per il prompt:
+IDS_DEL_DRILL=Impossibile continuare l'operazione e mantenere i campi di analisi dettagliata. Se si continua, i campi di analisi dettagliata verranno chiusi.\n\nContinuare?
+IDS_NUMBER=Numero
+IDS_CURRENCY=Valuta
+IDS_DATE=Data
+IDS_TIME=Ora
+IDS_BOOLEAN=Booleano
+IDS_DATETIME=DataOra
+IDS_MEMO=Memo
+IDS_STRING=Stringa
+IDS_MAP=Mappa
+IDS_TEXTOBJECT=Oggetto di testo
+IDS_CROSSTAB=Campi incrociati
+IDS_CHART=Grafico
+IDS_BLOB=Campo blob
+IDS_INPLACE_SUBREPORT=Sottoreport
+IDS_OLEOBJECT=Oggetto OLE
+IDS_SECTION=Sezione
+IDS_OLAP_GRID=Griglia OLAP
+IDS_GROUP_HEADER=Intestazione di gruppo N.
+IDS_GROUP_FOOTER=Piè di pagina di gruppo N.
+IDS_REPORT_HEADER=Intestazione report
+IDS_REPORT_FOOTER=Piè di pagina report
+IDS_PAGE_HEADER=Intestazione pagina
+IDS_PAGE_FOOTER=Piè di pagina pagina
+IDS_DETAIL=Sezione dettagli
+IDS_FREEZE_PANE=&Blocca pannello
+IDS_UNFREEZE_PANE=&Sblocca pannello
+IDS_PROMPTPARAM_DLGTITLE=Immetti valori dei parametri
+IDS_ENTERSEARCHSTRING=Immettere la stringa da cercare.
+IDS_FINISH_SEARCHING=Ricerca nel documento terminata.
+IDS_ENTERPAGENUMBER=Immettere un numero di pagina valido
+IDS_ENTERZOOMFACTOR=Immettere un fattore di ingrandimento valido
+IDS_MAIN_REPORT=Report principale
+IDS_FILEFILTER_RPT=Crystal Reports (*.rpt)|*.rpt
+IDS_FILEFILTER_DOC=Microsoft Word (*.doc)|*.doc
+IDS_FILEFILTER_XLS=Microsoft Excel (*.xls)|*.xls
+IDS_FILEFILTER_RECORD_XLS=Solo dati Microsoft Excel (*.xls)|*.xls
+IDS_FILEFILTER_RTF=Rich Text Format (*.rtf)|*.rtf
+IDS_FILEFILTER_PDF=Adobe Acrobat (*.pdf)|*.pdf
+IDS_FILEFILTER_HTML32=HTML 3.2 (*.html)|*.html
+IDS_FILEFILTER_HTML40=HTML 4.0(DHTML) (*.html)|*.html
+IDS_DRILL_DOWN=Analisi dettagliata
+IDS_REPORTOBJECT=Oggetto report
+IDS_TRY_AGAIN=Riprovare.
+IDS_LOGON_FAILED=Accesso non riuscito.
+IDS_MISSING_PARAMETERFIELD_CURRENTVALUE=Valore corrente di ParameterField mancante.
+
+# StatusBar text:
+IDS_CURRENT_PAGENUMBER=N. pagina corrente:
+IDS_TOTAL_PAGENUMBER=N. pagine totali:
+IDS_ZOOM_FACTOR=Fattore di ingrandimento:
+IDS_ZOOM_FACTOR_DEFAULT=Fattore di ingrandimento: 100%
+
+# Exception messages
+IDS_EXCEPTION_DOCUMENTMANAGER_INITDOCUMENTMANAGER=Eccezione in DocumentManager.InitDocumentManager:
+IDS_EXCEPTION_DOCUMENTMANAGER_ADDREPORT=Eccezione in DocumentManager.AddReport:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETPAGE=Eccezione in MainReportDocument.GetPage:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPTREEFROMENGINE=Eccezione in MainReportDocument.GetGroupTreeFromEngine:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETLASTPAGENUMBERFROMENGINE=Eccezione in MainReportDocument.GetLastPageNumberFromEngine:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_REFRESH=Eccezione in MainReportDocument.Refresh:
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPINFOFORDRILLONGRAPH=Eccezione in MainReportDocument.GetGroupInfoForDrillOnGraph:
+IDS_EXCEPTION_REPORTDOCUMENT_GETDRILLDOWNDOCUMENT=Eccezione in ReportDocument.GetDrillDownDocument:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETLASTPAGENUMBER=Eccezione in ReportDocumentBase.GetLastPageNumber:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETPAGE=Eccezione in ReportDocumentBase.GetPage:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_DRILLDOWNGRAPH=L'analisi dettagliata è stata eseguita su un'area priva di dati dettagliati. Per eseguire questo tipo di analisi, selezionare un'area contenente dati.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETGROUPTREE=Eccezione in ReportDocumentBase.GetGroupTree:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDGROUP=Eccezione in ReportDocumentBase.FindGroup:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDTEXT=Eccezione in ReportDocumentBase.FindText:
+IDS_EXCEPTION_REPORTDOCUMENTBASE_EXPORT=Eccezione in ReportDocumentBase.Export:
+IDS_EXCEPTION_REPORTGROUPTREE_INITREPORTGROUPTREE=Eccezione in ReportGroupTree.InitReportGroupTree:
+	
+IDS_EXCEPTION_TOOLTIPCAPTIONDUPLICATE=Didascalia della descrizione comando della barra degli strumenti esistente. Scegliere una descrizione comando diversa.
+IDS_EXCEPTION_TOOLBARBASE_INDEXOUTOFRANGE=Indice controllo della barra degli strumenti fuori dall'intervallo.
+IDS_EXCEPTION_TOOLBARBASE_INVALIDTOOLTIP=Descrizione comando del controllo della barra degli strumenti non valida.
+
+IDS_EXCEPTION_NULL_HOST=Impossibile ottenere IDesignerHost.
+IDS_EXCEPTION_NULL_EXTENSIBILITYSERVICE=Impossibile ottenere IExtensibilityService.
+IDS_EXCEPTION_NULL_PROJECT=Impossibile ottenere Current Project.
+
+# Property descriptions
+IDS_DISPLAY_GROUPTREE_DESCRIPTION=Determina se la struttura di gruppo di CrystalReportViewer è visibile o nascosta.
+IDS_DISPLAY_TOOLBAR_DESCRIPTION=Determina se la barra degli strumenti di CrystalReportViewer è visibile o nascosta.
+IDS_ENBALE_STATUSBAR_DESCRIPTION=Determina se la barra di stato di CrystalReportViewer è visibile o nascosta.
+IDS_REPORT_NAME_DESCRIPTION=Il nome o l'URL del report da visualizzare.
+IDS_REPORT_SOURCE_DESCRIPTION=Il proxy del servizio di report remoto del report da visualizzare.
+IDS_DISPLAY_BACKGROUNDEDGE_DESCRIPTION=Determina la distanza del report dal bordo della relativa finestra di visualizzazione.
+IDS_SELECTION_FORMULA_DESCRIPTION=Formula di selezione del record.
+IDS_VIEWTIME_SELECTION_FORMULA_DESCRIPTION=La formula di selezione del tempo di visualizzazione.
+
+IDS_SHOW_PAGENAVIGATEBUTTONS_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per l'esplorazione delle pagine del report.
+IDS_SHOW_GOTOPAGEBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per specificare il numero di pagina.
+IDS_SHOW_CLOSEBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per chiudere una pagina del report.
+IDS_SHOW_PRINTBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per la stampa.
+IDS_SHOW_REFRESHBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per l'aggiornamento.
+IDS_SHOW_EXPORTBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per l'esportazione.
+IDS_SHOW_GROUPTREEBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per mostrare o nascondere la struttura gruppo.
+IDS_SHOW_ZOOMBUTTON_DESCRIPTION=Determina se la barra degli strumenti è dotata del pulsante di ingrandimento per impostare il livello di ingrandimento della pagina del report.
+IDS_SHOW_TEXTSEARCHBUTTON_DESCRIPTION=Determina se la barra degli strumenti del programma di visualizzazione è dotata del pulsante per la ricerca del testo.
+IDS_ENABLE_DRILLDOWN_DESCRIPTION=Determina se la funzionalità di analisi di CrystalReportViewer è abilitata.
+IDS_ENABLE_TOOLTIP_DESCRIPTION=Attiva le descrizioni dei comandi per gli oggetti nel programma di visualizzazione.
+# Event Descriptions
+ID_OnPageNavigateDescr=Viene attivato quando l'esplorazione delle pagine sta per iniziare.
+ID_OnSearchDescr=Viene attivato quando la ricerca di testo sta per iniziare.
+ID_OnSubreportDrillDownDescr=Viene attivato quando l'analisi del sottoreport sta per iniziare.
+ID_OnRefreshDescr=Viene attivato quando il report sta per essere aggiornato.
+ID_OnZoomDescr=Viene attivato quando il fattore di ingrandimento sta per essere modificato.
+ID_OnDrillDescr=Viene attivato quando l'analisi del grafico o del gruppo sta per iniziare.
+ID_OnHandleExceptionDescr=Viene attivato quando il programma di visualizzazione rileva un'eccezione e sta per gestirla.
+
+#==============================================================================
+#   File:       SCRShared.txt (Merged from Shared resource)
+#   Summary:    ITALIAN resources for Crystal Reports shared controls
+#   Author:     Devan Iyer
+#   Date:       May, 2000
+#==============================================================================
+
+#[strings]
+#Database Logon Dialog
+##############################################################
+IDS_LOGINDLG_TITLE=Collegamento al database
+
+IDS_HELP=&?
+IDS_BACK=< &Preced.
+###IDS_NEXT=Next >
+###IDS_FINISH=Finish
+IDS_CANCEL=Annulla
+IDS_USEINTEGRATEDSECURITYCHECKBOX=Utilizza protezione integrata
+
+IDS_REPORTNAMELABEL=Nome sottoreport:
+IDS_MAINREPORTLABEL=Report principale
+IDS_TABLENAMELABEL=Nome tabella:
+IDS_SERVERNAME=Nome &server:
+IDS_DATABASENAME=&Database:
+IDS_LOGINID=&ID collegamento:
+IDS_PWD=&Password:
+IDS_PASSWORDCHAR=c
+
+#Parameter Field Dialog
+##############################################################
+IDS_PROMPTPARAM_DLGTITLE2=Immettere le informazioni - {0} di {1}
+
+#SubTitles
+IDS_SINGLE_DISCRETE_EDIT=È possibile fornire un solo valore per questo parametro.\r\nImmettere il valore da includere.
+IDS_SINGLE_DISCRETE_PICK=È possibile fornire un solo valore per questo parametro.\r\nScegliere il valore da includere.
+IDS_SINGLE_DISCRETE_EDIT_AND_PICK=È possibile fornire un solo valore per questo parametro.\r\nScegliere o immettere il valore da includere.
+
+IDS_SINGLE_RANGE_EDIT=È possibile fornire un solo intervallo di valori per questo parametro.\r\nImmettere il limite inferiore e superiore per definire l'intervallo di valori da includere.
+IDS_SINGLE_RANGE_PICK=È possibile fornire un solo intervallo di valori per questo parametro.\r\nScegliere il limite inferiore e superiore per definire l'intervallo di valori da includere.
+IDS_SINGLE_RANGE_EDIT_AND_PICK=È possibile fornire un solo intervallo di valori per questo parametro.\r\nScegliere o immettere il limite inferiore e superiore per definire l'intervallo di valori da includere.
+
+IDS_MULTIPLE_DISCRETE_EDIT=È possibile fornire uno o più valori per questo parametro.\r\nImmettere un valore, quindi fare clic su Aggiungi per ciascun valore da includere.
+IDS_MULTIPLE_DISCRETE_PICK=È possibile fornire uno o più valori per questo parametro.\r\nScegliere un valore, quindi fare clic su Aggiungi per ciascun valore da includere.
+IDS_MULTIPLE_DISCRETE_EDIT_AND_PICK=È possibile fornire uno o più valori per questo parametro.\r\nScegliere o immettere un valore, quindi fare clic su Aggiungi per ciascun valore da includere.
+
+IDS_MULTIPLE_RANGE_EDIT=È possibile fornire uno o più intervalli di valori per questo parametro.\r\nImmettere il limite inferiore e superiore, quindi fare clic su Aggiungi per ciascun intervallo di valori da includere.
+IDS_MULTIPLE_RANGE_PICK=È possibile fornire uno o più intervalli di valori per questo parametro.\r\nScegliere il limite inferiore e superiore, quindi fare clic su Aggiungi per ciascun intervallo di valori da includere.
+IDS_MULTIPLE_RANGE_EDIT_AND_PICK=È possibile fornire uno o più intervalli di valori per questo parametro.\r\nScegliere o immettere il limite inferiore e superiore, quindi fare clic su Aggiungi per ciascun intervallo di valori da includere.
+
+IDS_MULTIPLE_BOTH_EDIT=È possibile fornire uno o più valori (incluso un intervallo) per questo parametro.\r\nImmettere un valore o il limite inferiore e superiore, quindi fare clic su Aggiungi per ciascun valore (intervallo di valori) da includere.
+IDS_MULTIPLE_BOTH_PICK=È possibile fornire uno o più valori (incluso un intervallo) per questo parametro.\r\nScegliere un valore o il limite inferiore e superiore, quindi fare clic su Aggiungi per ciascun valore (intervallo di valori) da includere.
+IDS_MULTIPLE_BOTH_EDIT_AND_PICK=È possibile fornire uno o più valori (incluso un intervallo) per questo parametro.\r\nScegliere o immettere un valore o il limite inferiore e superiore, quindi fare clic su Aggiungi per ciascun valore (intervallo di valori) da includere.
+
+#prompting text
+IDS_PROMPT_RANGE=Il valore deve essere compreso tra {0} e {1}{2}.
+IDS_PROMPT_RANGE_STRING= caratteri
+IDS_PROMPT_RANGE2=Il valore deve essere compreso tra {0} e {1}.
+IDS_PROMPT_RANGE_STRING2=Il valore deve essere compreso tra {0} e {1} caratteri.
+
+###IDC_VALUE_OR_BOOLEAN_LABEL=Discrete va&lues
+###IDC_PARAMETERFIELDS_LABEL=Parameter Fields:
+###IDC_END_OF_RANGE_LABEL=&End of range
+###IDC_START_OF_RANGE_LABEL=&Start of range
+###IDC_END_LABEL=End
+###IDC_START_LABEL=Start
+###IDC_VALUE_START_LABEL=Value/Start
+###IDC_CHECK_NULLVALUE=Set the value to "NULL"
+#IDC_INCLUDE_LOWER_BOUND=&Include value
+###IDC_DELETE_VALUE=&Remove
+###IDC_ADD_VALUE_OR_BOOLEAN=&Select
+###IDC_ADD_RANGE_VALUES=S&elect
+###IDC_NO_UPPER_BOUND=Range has no &upper limit
+###IDC_NO_LOWER_BOUND=Range has no &lower limit
+###IDC_PICKDEFAULTS=&Pick from defaults
+IDS_OK=OK
+
+IDC_INCLUDE_LOWER_BOUND=Includi &questo valore
+IDC_INCLUDE_UPPER_BOUND=In&cludi questo valore
+IDC_RANGE_LABEL=Inter&vallo di valori tra
+IDS_AND_LABEL=e
+IDC_LABEL_VALUES=Valori:
+
+
+#prompting types
+IDS_PT_NUMBER=Numero
+IDS_PT_CURRENCY=Valuta
+IDS_PT_BOOLEAN=Vero o Falso
+IDS_PT_DATE=Data
+IDS_PT_STRING=Stringa
+IDS_PT_DATETIME=Data ora
+IDS_PT_TIME=Ora
+
+
+#error messages
+IDS_ERROR_PARAMETER_TYPE=Immettere un valore {0}.
+IDS_ERROR_PARAMETER_RANGE=Il valore di inizio dell'intervallo deve essere inferiore o uguale al valore finale.
+IDS_ERROR_EMPTY_REPORT_NAME=Il campo Nome del report è vuoto.
+IDS_ERROR_PARAMETER_GREATER_THAN_MAX=Il valore immesso è maggiore del limite massimo consentito per questo parametro.
+IDS_ERROR_PARAMETER_LESS_THAN_MIN=Il valore immesso è minore del limite minimo consentito per questo parametro.
+
+# Granville-only error messages; no need to translate for CR10
+IDS_ERROR_INVALID_DATA_SOURCE=Origine dati non valida.
+

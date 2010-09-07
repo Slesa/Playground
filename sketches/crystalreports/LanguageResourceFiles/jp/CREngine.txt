@@ -1,0 +1,106 @@
+#==============================================================================
+#   File:       CREngine.txt
+#   Summary:    This file contains JAPANESE resources for CrystalDecisions.CrystalReports.Engine.dll
+#==============================================================================
+
+# Strings
+# #################################
+
+#Copyright message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Group name field name
+GROUP_NAME_FIELD_NAME=グループ #{0} Name: {1}
+
+#Parameter prompting properties
+PARAM_PROMPT_ALL=すべて
+PARAM_PROMPT_INCLUDE_ONDEMAND_SUBREPORT=IncludeOndemandSubreport
+
+IDS_ENTRPT_LOGONINFO=Crystal Enterprise ログオン情報です。EnterpriseSession を使用している場合は、これを使用しないでください。
+IDS_ENTRPT_DOCUMENTURI=レポート ドキュメントのパスを指定します。例 : "ras://c:\\report.rpt"、"ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=使用する Report Application Server です。
+IDS_ENTRPT_ENTSESSION=Crystal Enterprise セッション オブジェクトです。
+IDS_CATEGORY_REPORT=レポート
+
+#Lets set aside a block for error messages.
+
+#CREngine error message
+IDS_ERROR_INVALIDAREANAME=領域名が無効です。
+IDS_ERROR_INVALIDSECTIONNAME=セクション名が無効です。
+IDS_ERROR_INVALIDOBJECTNAME=レポート　オブジェクト名が無効です。
+IDS_ERROR_INVALIDOBJECTINDEX=レポート オブジェクト インデックスが無効です。
+IDS_ERROR_INVALIDPAGE=ページの取得またはトータラーの取得に失敗しました。
+IDS_ERROR_NOTMAINREPORT=メイン レポートではありません。
+IDS_ERROR_INVALIDPARAMETERFIELDTYPE=指定された値の型は現在の値の型と異なります。
+IDS_ERROR_INVALIDARGUMENT=引数が無効です。
+IDS_ERROR_INVALIDEXPORTOPTIONS=エクスポート オプションが無効です。
+IDS_ERROR_INVALIDREPORTNAME=レポートのロードに失敗しました。
+IDS_ERROR_INVALID_CE_URI=指定した Crystal Enterprise レポートが見つかりませんでした。レポートが存在し、ファイル名が正しい形式で入力されていることを確認してください。
+IDS_ERROR_DESERIALIZATIONFAILED=シリアル化の解除に失敗しました。Report Application Server で "{0}" を実行する必要があります。
+IDS_ERROR_NOFILEPATH=レポート ファイル パスが無効です。
+IDS_ERROR_LOADCRPEFAIL=crpe32.dll のロードに失敗しました。
+IDS_ERROR_LICENSEOVERLIMIT=割り当てられた時間内で無償ライセンスを取得できなかったため、Crystal Reports ジョブが失敗しました。ライセンスは、日本ビジネスオブジェクツ株式会社または Business Objects オンライン ストアから購入できます。
+IDS_ERROR_CANNOTSAVE=元のレポートに保存できません。
+IDS_ERROR_STRINGTOOLONG=文字列が長すぎます。
+IDS_ERROR_LOGONFAILED=ログオンに失敗しました。
+IDS_ERROR_INVALIDSORTNUMBER=並べ替え番号が無効です。
+IDS_ERROR_INVALIDREPORTPARTID=レポート パーツ ID が無効です。
+IDS_ERROR_INVALID_REPORT_PART=指定のレポート パーツが見つかりません。このレポート パーツが存在することを確認するか、レポート オプションで最初のレポート パーツを設定してください。
+IDS_ERROR_INTERNALERROR=内部エラー。Business Objects にこの問題を報告してください。
+IDS_ERROR_CANNOTSETTOPBOTTOMN=SortField の SortDirection を TopN/BottomN に設定できません。
+IDS_ERROR_INVALIDDECIMAL=小数点以下の桁数が無効です。
+IDS_ERROR_INVALIDFIELDNAME=フィールド名が無効です。
+IDS_ERROR_INVALIDTABLENAME=テーブル名が無効です。
+IDS_ERROR_PARAMETERCURRENTVALUE=パラメータ フィールドの現在の値がありません。
+IDS_ERROR_INVALIDROOTDIR=HTML ファイルをルート ディレクトリにエクスポートできません。
+IDS_ERROR_INVALIDKEYCODE=レジストリから取得したキーコードが無効です。
+IDS_ERROR_MISSING_KEYCODE_DLL=キーコード ライブラリが登録されていますが、見つかりません。
+IDS_ERROR_MISSING_KEYCODE_REGISTRY_SETTING=キーコード レジストリ エントリが存在しないか、キーコードを読み込む十分な権限がプロセスにありません。
+IDS_ERROR_KEYCODE_DLL_CLSID_NOT_FOUND=キーコード ライブラリが COM で登録されていないか、またはロードされていません。
+IDS_ERROR_OBSOLETEWIDTHPROPERTY=Width プロパティが最新ではありません。Right プロパティを使用して、幅を変更してください。
+IDS_ERROR_OBSOLETEHEIGHTPROPERTY=Height プロパティが最新ではありません。Bottom プロパティを使用して、高さを変更してください。
+IDS_ERROR_NEED_TO_USE_OLD_COMPLUS_ENGINE=この操作は Report Application Server オブジェクト モデルではサポートされていません。これを修正するには、"Legacy" ディレクトリから、古いレポート エンジンをインストールする必要があります。
+
+IDS_ERROR_REPORTNOTINMANIFESTRESOURCES=明示的なリソースにレポートが見つかりません。プロジェクトを作成して、もう一度実行してください。
+IDS_ERROR_NOT_SUPPORTED=サポートされていません。
+IDS_ERROR_EXPORT_DLL_NOT_FOUND="{0}" をロードできません。この操作用の Exporting Support コンポーネントが Crystal Reports にインストールされていることを確認してください。
+IDS_ERROR_INVALID_EXPORT_FORMAT=指定された形式にエクスポートできませんでした。この形式用の Exporting Support コンポーネントが Crystal Reports にインストールされていることを確認してください。
+IDS_ERROR_NOT_SUPPORTED_BY_SUBREPORT=サブレポート内ではサポートされません。
+IDS_ERROR_REPORT_HAS_NO_TABLES=レポートにテーブルがありません。
+IDS_ERROR_INVALID_DATASOURCE=データ ソース オブジェクトが無効です。
+IDS_ERROR_PARAMETER_NOT_IMPLEMENTED=この方法でパラメータ フィールドを追加、削除、または変更できません。直接レポートを変更してください。
+IDS_ERROR_EXPORT_TO_RESPONSE_IN_HTML_FORMAT_NOT_SUPPORTED=HTML 形式で HTTP 応答へのエクスポートはサポートされません。
+IDS_ERROR_INVALIDGROUP=グループが無効です。
+IDS_ERROR_SETDATASOURCE_OLEDBDATAREADER_NOT_SUPPORTED=OleDbDataReader は実装の制限のためサポートされません。OleDbDataReader を使用するには、呼び出しスレッドの COM STA へ呼び出しをマーシャルするカスタム IDataReader/IDataRecord 実装でラップします。詳細は、http://support.microsoft.com/kb/313510/EN-US/.
+IDS_ERROR_CR_RUNTIME_NOT_INSTALLED=Crystal Reports ランタイムをロードしようとしてエラーが発生しました。\n\nCrystal Reports レジストリ キーの許諾が適切でないか、または Crystal Reports ランタイムが正しくインストールされていない可能性があります。\n\n必要な正しいバージョンの Crystal Reports ランタイム (x86、x64 または Itanium) が含まれる、適切な Crystal Reports (CRRedist*.msi) の再配布可能版をインストールしてください。詳細は http://www.businessobjects.com/support を参照してください。
+
+
+#ENGINE messages
+IDS_MSG_NOPRINTER=プリンタがインストールされていません。
+IDS_MSG_PRINTOPTIONS=ReportDocument の印刷オプションを示します。
+IDS_MSG_SECOND=秒
+IDS_MSG_SECONDS=秒
+IDS_MSG_LICENCE_EXCEEDED=無償ライセンスの取得待ちで、Crystal Reports のジョブが {0} {1} 遅れました。追加ライセンスは、日本ビジネスオブジェクツ株式会社または Business Objects オンライン ストアから購入できます。
+
+IDS_EVENTLOG_SOURCE=Crystal Reports
+
+IDS_EXCEPTION_NO_REPORT_FILENAME=レポートのファイル名が空です。
+IDS_EXCEPTION_SESSIONNOTINITIALIZED=Enterprise セッションは初期化されませんでした。
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Enterprise ログオンに失敗しました。
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=XML のシリアライズに失敗しまし。
+IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon は、ログオン トークン文字列または ISEnterpriseSession である必要があります。
+IDS_EXCEPTION_CE_NOT_FOUND=Crystal Enterprise はこのマシンで見つかりませんでした。\n詳細は、http://japan.businessobjects.com/products/crystalenterprise をご覧ください。
+IDS_EXCEPTION_REPORTCLIENTDOCUMENT_ACCESS_VIOLATION=ReportClientDocument プロパティにアクセスできるのは、Report Application Server を使用してレポートが開かれているときだけです。
+
+IDS_DOCURIEDITOR_FILTER=Crystal Reports ファイル (*.rpt)|*.rpt
+IDS_OPENFILEDIALOG_TITLE=開く
+
+IDS_ENTRPT_APSSERVER=認証とスケジュールを処理する Crystal Enterprise CMS サーバーです。
+IDS_ENTRPT_USERNAME=Crystal Enterprise への接続に使用するユーザー名です。
+IDS_ENTRPT_PASSWORD=Crystal Enterprise への接続に使用するパスワードです。
+IDS_ENTRPT_AUTHTYPE=Crystal Enterprise への接続に使用する認証の種類です。
+
+IDS_REPORTDATAVIEW_GROUPPATH=レポート内のデータのグループ パスです。
+IDS_REPORTDATAVIEW_TOSTRINGFORMAT=ToString() で使用される書式文字列です。例 : "{0}: {1}, {2}"
+IDS_REPORTDATAVIEW_COLUMNS=表示されるレポート フィールドを表す CrystalReportDataViewColumn オブジェクトのコレクションです。このコレクションが空の場合は、すべてのフィールドが表示されます。
+IDS_REPORTDATAVIEW_REPORT=データの取得に使用するレポートです。

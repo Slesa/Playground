@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       WebServices.txt
+#   Summary:    This file contains GERMAN resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=Das Berichtquellenobjekt konnte nicht erstellt werden.
+IDS_ERR_DIRECTORY_NOT_FOUND=Ein Teil des Pfads'{0}' wurde nicht gefunden.
+

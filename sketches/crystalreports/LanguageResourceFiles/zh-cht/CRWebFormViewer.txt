@@ -1,0 +1,171 @@
+#==============================================================================
+#   File:       CRWebFormViewer.txt
+#   Summary:    This file contains TRADITIONAL CHINESE resources for CRWebFormViewer
+#==============================================================================
+
+# ToolTips
+###################################################################
+ID_Search=尋找
+ID_FirstPage=前
+ID_PrevPage=上一個
+ID_NextPage=下一步
+ID_LastPage=最後
+ID_GotoPage=移至
+ID_Up=向上
+ID_Refresh=重新整理
+ID_Zoom=縮放
+ID_PoweredByCrystal=powered by Business Objects
+ID_ViewList=檢視記錄
+
+# Hidden internal links (for section 508)
+###################################################################
+ID_GoToGroupTree=移至報表群組樹狀結構
+ID_GoToPageContent=移至報表頁面內容
+
+# Others 
+###################################################################
+ID_ReportFileNameEditorTitle=選取報表
+ID_ReportFileNameEditorFilter=Crystal Reports(*.rpt)|*.rpt|所有檔案(*.*)|*.*
+ID_CrystalReportViewerName=CrystalReportViewer
+ID_NoReportSource=使用 ReportSource 或 DataBindings 屬性來指定報表來源。
+ID_NoReportSourceID=使用 ReportSourceID 屬性指定 ReportSource 控制項。
+ID_NoReportParts=未設定起始報表組件; 請使用 ReportParts 或 DataBindings 屬性來指定報表組件定義。
+ID_NoData=沒有資料。
+ID_InvalidReportParts=報表組件無效; 請確定起始報表組件為有效的報表物件。
+ID_NoParameterFields=使用 ParameterFieldInfo 屬性來指定參數欄位。
+ID_NoLogOnInfos=使用 LogOnInfos 屬性來指定登入資訊。
+ID_SearchEnd=搜尋結束
+ID_Of=的
+ID_UnknownLastPageNumberSign=+
+ID_Print=列印
+ID_ShowGroupTree=顯示/隱藏群組樹狀結構
+ID_Export=匯出
+ID_Local_File_Ext=cht
+ID_UntitleFilename=未命名
+ID_Category_Render=建構
+ID_Category_Toolbar=工具列
+ID_Category_GroupTree=群組樹狀結構
+ID_MainReport=主報表
+ID_UnknownView=(未知)
+
+# Property Descriptions
+###################################################################
+ID_ReportSourceClassFactoryNameDescr=用來繫結報表的 IReportSourceFactory 的完整類別名稱。
+ID_EnterpriseLogonDescr=Enterprise 登入 Token 或 ISEnterpriseSession。
+ID_ReportSourceDescr=將要檢視的報表物件、檔案名稱或 Web 服務 Proxy。
+ID_ReportSourceIDDescr=將會用來做為報表來源的 ReportSource 控制項的控制 ID。
+ID_SeparatePagesDescr=報表頁面為分隔或是連結的。
+ID_PageToTreeRatioDescr=頁面寬度與樹狀結構寬度的比例。
+ID_DisplayGroupTreeDescr=樹狀結構檢視為可見或是隱藏。
+ID_DisplayPageDescr=頁面檢視為可見或是隱藏。
+ID_DisplayToolbarDescr=工具列為可見或是隱藏。
+ID_ClientTargetDescr=不同瀏覽器的目標建構。
+ID_HasPageNavigationButtonsDescr=工具列上的頁面導覽按鈕為可見或是隱藏。
+ID_HasGotoPageButtonDescr=工具列上的移至頁面按鈕為可見或是隱藏。
+ID_HasSearchButtonDescr=工具列上的搜尋按鈕為可見或是隱藏。
+ID_HasLevelUpButtonDescr=工具列上的上一頁按鈕為可見或是隱藏。
+ID_HasRefreshButtonDescr=工具列上的重新整理按鈕為可見或是隱藏。
+ID_HasPrintButtonDescr=工具列上的列印按鈕為可見或是隱藏。
+ID_HasExportButtonDescr=工具列上的匯出按鈕為可見或是隱藏。
+ID_HasToggleGroupTreeButtonDescr=工具列上的顯示/隱藏群組樹狀結構按鈕為可見或是隱藏。
+ID_HasCrystalLogoDescr=Business Objects 商標為可見或是隱藏。
+ID_BestFitPageDescr=頁面檢視會自動調整其大小，或使用捲軸來裁剪。
+ID_SelectionFormulaDescr=報表的資料錄選取範圍公式。
+ID_ViewTimeSelectionFormulaDescr=報表的檢視時間資料錄選取範圍公式。
+ID_ParameterFieldInfoDescr=報表的參數欄位。
+ID_LogOnInfoDescr=報表的登入資訊。
+ID_ZoomFactorDescr=頁面縮放因數。
+ID_HasZoomButtonDescr=工具列上的縮放因數清單為可見或是隱藏。
+ID_HasViewListDescr=工具列上的檢視清單為可見或是隱藏。
+ID_EnableDrillDownDescr=是否啟用對頁面/圖表/群組/摘要擷取細目。
+ID_HyperlinkTargetDescr=超連結將會貼回到的框架目標。
+ID_DrilldownTargetDescr=擷取細目將會貼回到的框架目標。
+ID_ReportPartsDescr=報表組件定義。
+ID_RecordNumberDescr=報表組件檢視器中要顯示的資料錄數。
+ID_RotateSectionsDescr=區段是否旋轉。
+ID_HasBorderDescr=框線是否可見。
+ID_PersistLayoutDescr=在原始報表中報表組件是否保持配置方式。
+ID_ReportTitleDescr=報表的標題。
+ID_IsDisplayTitleDescr=報表標題是否顯示。
+ID_IsDisplayHeaderDescr=區段標題是否顯示。
+ID_HasPageNavigationLinksDescr=頁面導覽連結為可見或是隱藏。
+ID_ShowAllPageIds=在 HTML 中是否提供報表物件 ID。
+ID_GroupTreeFormatDescr=指定群組樹狀結構樣式
+ID_ToolbarStyleDescr=指定工具列樣式
+ID_PrintModeDescr=用戶端瀏覽器在本機列印時所用的方法。
+ID_AutoDataBindDescr=在 OnInit()/Page_Init() 後自動 DataBind()
+ID_EnableDatabaseLogonPromptDescr=檢視器在必要時是否提示資料庫登入。
+ID_EnableParameterPromptDescr=檢視器在必要時是否提示報表參數。
+ID_ExportFormatTypeDescr=指定控制項將要使用何種匯出格式類型。
+ID_ReuseParameterValuesOnRefreshDescr=表示在重新整理時，檢視器是否會保留並重複使用現有的參數值。
+ID_EnableToolTipsDescr=啟用檢視器的工具提示。
+ID_CssFilenameDescr=連結的報表樣式表。
+ID_CacheDurationDescr=報表過期的期間 (以秒為單位)。過期政策由 CacheExpirationPolicy 屬性指定。
+ID_CacheExpirationPolicyDescr=快取的報表過期政策。過期期間由 CacheDuration 屬性指定。
+ID_EnableCachingDescr=不論此報表來源的快取是否啟用。
+ID_ReportPropertyDescr=報表物件。
+ID_DataSourcesDescr=在報表中的資料來源集合。
+ID_ParameterCollectionDescr=在報表中的參數集合。
+ID_FileNameDescr=報表的檔案名稱。
+
+ID_TREE_IMAGE_FOLDER_URL=包含群組樹狀結構影像的資料夾的 Url。
+ID_TOOLBAR_IMAGE_FOLDER_URL=包含工具列影像的資料夾的 Url。
+ID_UseBrowserLocale=在檢視器中是否使用瀏覽器的地區設定。
+ID_CrystalReportSourceDescr=連線至以 Crystal Reports 建立的報表。
+ID_CrystalReportSourceDisplayName=Crystal Report
+
+# Event Descriptions
+###################################################################
+ID_OnNavigateDescr=在將要導覽頁面時引發。
+ID_OnSearchDescr=在將要搜尋文字時引發。
+ID_OnSubreportDrillDownDescr=在將要對子報表擷取細目時引發。
+ID_OnRefreshDescr=在將要重新整理報表時引發。
+ID_OnZoomDescr=在將要變更縮放因數時引發。
+ID_OnDrillDescr=在將要對圖形或群組擷取細目時引發。
+ID_OnReportPartBookmarkNavigationDescr=在將要導覽報表組件書籤時引發。
+ID_OnBeforeRenderDescr=在報表建構處理程序啟動時引發
+ID_OnAfterRenderDescr=在報表建構處理程序完成時引發。
+ID_OnBeforeRenderObjectDescr=在報表物件建構啟動時引發。
+ID_OnAfterRenderObjectDescr=在報表物件建構完成時引發。
+ID_OnBeforeRenderContentDescr=在報表內容建構啟動時引發。
+ID_OnAfterRenderContentDescr=在報表內容建構完成時引發。
+ID_OnRenderScriptDescr=在 html 指令碼產生啟動時引發。
+ID_OnRenderStyleDescr=在 html 樣式類別產生啟動時引發。
+ID_OnFieldDrillDescr=在將要對欄位擷取細目時引發。
+ID_OnChartDrillDescr=在將要對圖表擷取細目時引發。
+ID_OnEventErrorDescr=在 ASP.NET 生命週期期間發生檢視錯誤時引發。
+ID_OnDataSourceChangedDescr=在控制上變更 DataSource 屬性的值時引發。
+ID_OnFileNameChangedDescr=在控制上變更 FileName 屬性的值時引發。
+ID_OnReportChangedDescr=在控制上變更 Report 屬性的值時引發。
+
+# Error Messages
+###################################################################
+ID_InvalidPageToTreeRatioErr=比例必須大於零。
+ID_InvalidPageErr=無法產生頁面。
+ID_InvalidGroupTreeErr=無法產生群組樹狀結構。
+ID_GroupTreeRenderErr=無法建構群組樹狀結構。
+ID_PageRenderErr=無法建構頁面。
+ID_FailToGetReportSource=無法取得報表來源。
+ID_InvalidPageZoomFactorErr=頁面縮放因數必須介於 10 和 400 之間。
+ID_GetPageErr=無法取得特定頁面。
+ID_GetTotallerErr=無法取得特定頁面加總程式。
+ID_InvalidReportSourceErr=沒有可用的有效報表來源。
+ID_ReportSourceRestoreErr=還原報表來源以列印時發生錯誤
+ID_NullReportSourceStateErr=無法還原報表來源以列印。Base-64 檢視狀態字串為 Null。
+ID_NullReportSourceStateStringLengthErr=無法還原報表來源以列印。Base-64 檢視狀態字串長度不是 4，或不是 4 的偶數倍數。
+ID_UnsupportExportFormatErr=CrystalREportExportControl 不支援指定的匯出格式。
+ID_ControlMustBeInForm='{0}' 控制項必須在表單中
+ID_InvalidExportOptions=無法使用指定的選項來匯出。請檢查您的選項，然後再試一次。
+ID_InvalidBatchSize=您必須輸入介於 1 和 65535 之間的批次大小。
+ID_RepPartNavThroughWebServNotSupported=不支援透過 ServerFileReportService.asmx 或 EnterpriseReportService.asmx 來進行報表組件導覽。
+ID_LogonPromptNotSupported=在行動裝置上不支援資料庫登入提示。
+ID_ParamPromptNotSupported=在行動裝置上不支援參數提示。
+ID_TableNotFound=報表中沒有資料表 "{0}"。
+ID_ControlWithReportSourceIDDoesntExist=找不到具有 ID '{1}' 的控制，由 {0}.ReportSourceID 所參考。
+ID_ControlWithReportSourceIDIsntReportSource=具有 ID '{1}' 的控制，由 {0}.ReportSourceID 所參考，不是 CrystalReportSource。
+
+# Category
+######################################################################
+ID_Category_Data=資料
+ID_Category_Misc=其他
+ID_Category_Cache=快取

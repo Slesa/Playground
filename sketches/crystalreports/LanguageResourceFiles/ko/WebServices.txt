@@ -1,0 +1,9 @@
+#==============================================================================
+#   File:       WebServices.txt
+#   Summary:    This file contains KOREAN resources for CrystalDecisions.Web.Services
+#==============================================================================
+
+# Error messages
+IDS_ERR_CANNOT_CREATE_REPORTSOURCE=보고서 소스 개체를 만들 수 없습니다.
+IDS_ERR_DIRECTORY_NOT_FOUND=경로 '{0}'의 일부를 찾을 수 없습니다.
+

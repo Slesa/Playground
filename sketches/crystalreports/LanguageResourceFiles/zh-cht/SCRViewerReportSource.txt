@@ -1,0 +1,51 @@
+#==============================================================================
+#   File:       SCRViewerReportSource.txt
+#   Summary:    This file contains TRADITIONAL CHINESE resources for Viewer ReportSource
+#==============================================================================
+
+;[strings]
+
+IDS_ENTRPT_APSSERVER=The Crystal Enterprise CMS 伺服器將會處理驗證與排程。
+IDS_ENTRPT_USERNAME=用來連線至 Crystal Enterprise 的使用者名稱
+IDS_ENTRPT_PASSWORD=用來連線至 Crystal Enterprise 的密碼
+IDS_ENTRPT_AUTHTYPE=用來連線至 Crystal Enterprise 的驗證類型
+
+IDS_ENTRPT_LOGONINFO=如果您正在使用 EnterpriseSession，則請勿使用 Crystal Enterprise 登入資訊
+IDS_ENTRPT_DOCUMENTURI=報表文件路徑。例如: "ras://c:\\report.rpt"、"ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=將使用的報表應用程式伺服器。
+IDS_ENTRPT_ENTSESSION=Crystal Enterprise 階段物件
+;IDS_REPORTDATAVIEW_GROUPPATH=報表中資料的群組路徑。
+;IDS_REPORTDATAVIEW_TOSTRINGFORMAT=ToString() 將使用的格式字串，例如 "{0}: {1}、{2}"
+;IDS_REPORTDATAVIEW_VISIBLEFIELDS=將要顯示的報表欄位的分號分隔清單; 如果為 ""，則會顯示所有欄位。
+;IDS_REPORTDATAVIEW_REPORT=用來取得資料的報表。
+
+;IDS_DOCURIEDITOR_FILTER=Crystal Reports 檔案 (*.rpt)|*.rpt
+;IDS_OPENFILEDIALOG_TITLE=開啟
+
+IDS_CATEGORY_REPORT=報表
+ID_NONE=(無)
+ID_BROWSE=瀏覽 ...
+ID_CREATE_NEW_REPORT_INSTANCE=從輸入的報表類別建立新的 ReportDocument 執行個體
+ID_USE_EXISTING_INSTANCE=使用現有的 ReportDocument 執行個體
+ID_OPEN_REPORT_DIALOG_TITLE=開啟現有的 Crystal Report
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+ID_EDIT_REPORT_SOURCE=編輯報表來源
+ID_ENTER_REPORT_SOURCE=輸入報表來源
+ID_EDIT=編輯 ...
+ID_CANCEL=取消
+ID_OK=確定
+
+# Exception messages
+IDS_EXCEPTION_INVALID_REPORTSOURCE=報表來源無效。
+IDS_EXCEPTION_INVALID_REPORTFILE=報表檔案無效。
+IDS_EXCEPTION_CREATEREPORT_RETURNED_NULL=ICachedReport::CreateReport() 傳回 'null'
+IDS_EXCEPTION_NO_REPORT_FILENAME=報表檔案名稱是空的
+;IDS_EXCEPTION_SESSIONNOTINITIALIZED=Enterprise 工作階段未初始化。
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Enterprise 登入失敗。
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=XML 序列化失敗。
+;IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon 必須是登入 Token 字串或 ISEnterpriseSession。
+;IDS_EXCEPTION_CE_NOT_FOUND=機器上找不到 Crystal Enterprise。\n如需詳細資訊，請前往 http://www.businessobjects.com/products/reporting/crystalenterprise。
+
+IDS_ERROR_INVALIDREPORTNAME=載入報表失敗。
+IDS_ERROR_DESERIALIZATIONFAILED=還原序列化失敗。您需要在報表應用程式伺服器上執行 "{0}"。
+

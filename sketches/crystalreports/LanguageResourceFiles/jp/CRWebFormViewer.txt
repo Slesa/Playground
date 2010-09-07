@@ -1,0 +1,171 @@
+#==============================================================================
+#   File:       CRWebFormViewer.txt
+#   Summary:    This file contains JAPANESE resources for CrystalDecisions.Web.dll
+#==============================================================================
+
+# ToolTips
+###################################################################
+ID_Search=検索
+ID_FirstPage=最初のページ
+ID_PrevPage=前のページ
+ID_NextPage=次のページ
+ID_LastPage=最後のページ
+ID_GotoPage=指定のページ
+ID_Up=上へ
+ID_Refresh=最新表示
+ID_Zoom=ズーム
+ID_PoweredByCrystal=Powered by Business Objects
+ID_ViewList=ビューの履歴
+
+# Hidden internal links (for section 508)
+###################################################################
+ID_GoToGroupTree=レポート グループ ツリーへ移動
+ID_GoToPageContent=レポート ページ コンテンツへ移動
+
+# Others 
+###################################################################
+ID_ReportFileNameEditorTitle=レポートの選択
+ID_ReportFileNameEditorFilter=Crystal Reports(*.rpt)|*.rpt|すべてのファイル(*.*)|*.*
+ID_CrystalReportViewerName=CrystalReportViewer
+ID_NoReportSource=ReportSource または DataBindings プロパティを使用して、レポートのソースを指定します。
+ID_NoReportSourceID=ReportSourceID プロパティを使って ReportSource コントロールを指定します。
+ID_NoReportParts=最初のレポート パーツが設定されていません。ReportParts または DataBindings プロパティを使用して、レポート パーツの定義を指定します。
+ID_NoData=データがありません。
+ID_InvalidReportParts=無効なレポート パーツです。初期レポート パーツが有効なレポート オブジェクトであることを確認してください。
+ID_NoParameterFields=ParameterFieldInfo プロパティを使用して、パラメータ フィールドを指定します。
+ID_NoLogOnInfos=LogOnInfos プロパティを使用して、ログオン情報を指定します。
+ID_SearchEnd=検索終了
+ID_Of=/
+ID_UnknownLastPageNumberSign=+
+ID_Print=印刷
+ID_ShowGroupTree=グループ ツリーの表示/非表示
+ID_Export=エクスポート
+ID_Local_File_Ext=ja
+ID_UntitleFilename=無題
+ID_Category_Render=レンダリング
+ID_Category_Toolbar=ツールバー
+ID_Category_GroupTree=グループ ツリー
+ID_MainReport=メイン レポート
+ID_UnknownView=(不明)
+
+# Property Descriptions
+###################################################################
+ID_ReportSourceClassFactoryNameDescr=レポートのバインドに使用する IReportSourceFactory の完全修飾クラス名。
+ID_EnterpriseLogonDescr=Enterprise ログオン トークンまたは ISEnterpriseSession。
+ID_ReportSourceDescr=表示するレポート オブジェクト、ファイル名、または web サービス プロキシです。
+ID_ReportSourceIDDescr=レポート ソースとして使用される ReportSource コントロールのコントロール ID です。
+ID_SeparatePagesDescr=レポート ページを分割するか連結するかを指定します。
+ID_PageToTreeRatioDescr=ページ幅とツリー幅の比率を設定します。
+ID_DisplayGroupTreeDescr=ツリー ビューを表示するかどうかを設定します。
+ID_DisplayPageDescr=ページ ビューを表示するかどうかを設定します。
+ID_DisplayToolbarDescr=ツール バーを表示するかどうかを設定します。
+ID_ClientTargetDescr=異なるブラウザのターゲット レンダリングを設定します。
+ID_HasPageNavigationButtonsDescr=ツール バーでページ ナビゲーション ボタンを表示するかどうかを設定します。
+ID_HasGotoPageButtonDescr=ツール バーで [指定したページへ] ボタンを表示するかどうかを設定します。
+ID_HasSearchButtonDescr=ツール バーで [検索] ボタンを表示するかどうかを設定します。
+ID_HasLevelUpButtonDescr=ツール バーで [前ページ] ボタンを表示するかどうかを設定します。
+ID_HasRefreshButtonDescr=ツール バーで [最新表示] ボタンを表示するかどうかを設定します。
+ID_HasPrintButtonDescr=ツール ﾊﾞｰで [印刷] ボタンを表示するかどうかを設定します。
+ID_HasExportButtonDescr=ツール ﾊﾞｰで [エクスポート] ボタンを表示するかどうかを設定します。
+ID_HasToggleGroupTreeButtonDescr=ツール ﾊﾞｰで [グループ ツリーの表示/非表示] ボタンを表示するかどうかを設定します。
+ID_HasCrystalLogoDescr=Business Objects ロゴの表示/非表示を設定します。
+ID_BestFitPageDescr=ページ ビューをサイズに合わせて表示するか、スクロールバーを使ってクリッピングするかを設定します。
+ID_SelectionFormulaDescr=レポートのレコード選択式です。
+ID_ViewTimeSelectionFormulaDescr=レポートの表示時のレコード選択式です。
+ID_ParameterFieldInfoDescr=レポートのパラメータ フィールドです。
+ID_LogOnInfoDescr=レポートのログオン情報です。
+ID_ZoomFactorDescr=ページ ズーム率を設定します。
+ID_HasZoomButtonDescr=ツールバーでズーム率リストを表示するかどうかを設定します。
+ID_HasViewListDescr=ツールバーでビュー リストを表示するかどうかを設定します。
+ID_EnableDrillDownDescr=ページ/チャート/グループ/集計へのドリル ダウンを有効にするかどうかを設定します。
+ID_HyperlinkTargetDescr=ハイパーリンクが再度ポストするフレーム ターゲットです。
+ID_DrilldownTargetDescr=ドリル ダウンが再度ポストするフレーム ターゲットです。
+ID_ReportPartsDescr=レポート パーツの定義です。
+ID_RecordNumberDescr=Report Parts Viewer に表示されているレコード数です。
+ID_RotateSectionsDescr=セクションを回転するかどうかを設定します。
+ID_HasBorderDescr=境界線を表示するかどうかを設定します。
+ID_PersistLayoutDescr=レポート パーツで元のレポートのレイアウトを保持するかどうかを設定します。
+ID_ReportTitleDescr=レポートのタイトルです。
+ID_IsDisplayTitleDescr=レポートのタイトルを表示するかどうかを設定します。
+ID_IsDisplayHeaderDescr=セクションの見出しを表示するかどうかを設定します。
+ID_HasPageNavigationLinksDescr=ページ ナビゲーションのリンクを表示するかどうかを設定します。
+ID_ShowAllPageIds=レポートのオブジェクト ID を HTML に指定するかどうかを設定します。
+ID_GroupTreeFormatDescr=グループ ツリーのスタイルを指定します。
+ID_ToolbarStyleDescr=ツールバーのスタイルを指定します。
+ID_PrintModeDescr=クライアント ブラウザがローカルに印刷する場合に使用するメソッドです。
+ID_AutoDataBindDescr=OnInit()/Page_Init() の後に、DataBind() を自動的に実行します。
+ID_EnableDatabaseLogonPromptDescr=ビューアで必要に応じてデータベース ログオンのプロンプトを表示するかどうかを設定します。
+ID_EnableParameterPromptDescr=ビューアで必要に応じてレポート パラメータのプロンプトを表示するかどうかを設定します。
+ID_ExportFormatTypeDescr=コントロールが使用するエクスポート形式を指定します。
+ID_ReuseParameterValuesOnRefreshDescr=最新表示後に、既存のパラメータ値がビューアによって保持および再使用されるかどうかを示します。
+ID_EnableToolTipsDescr=ビューアのツールヒントを有効にするかどうかを指定します。
+ID_CssFilenameDescr=レポートのリンクされたスタイルシートです。
+ID_CacheDurationDescr=レポートの有効期限の長さ (秒) です。有効期限ポリシーは CacheExpirationPolicy プロパティで指定されます。
+ID_CacheExpirationPolicyDescr=キャッシュのレポート有効期限ポリシーです。有効期限の長さは CacheDuration プロパティで指定されます。
+ID_EnableCachingDescr=このレポート ソースに対してキャッシュが有効かどうかを設定します。
+ID_ReportPropertyDescr=レポート オブジェクトです。
+ID_DataSourcesDescr=レポートで使用されているレポート ソースのコレクションでThe collection of data sources that are used in the report.
+ID_ParameterCollectionDescr=レポートで使用されているパラメータのコレクションです。
+ID_FileNameDescr=レポート ファイルの名前です。
+
+ID_TREE_IMAGE_FOLDER_URL=グループ ツリーのイメージがあるフォルダの URL を指定します。
+ID_TOOLBAR_IMAGE_FOLDER_URL=ツールバーのイメージがあるフォルダの URL を指定します。
+ID_UseBrowserLocale=ビューアでブラウザのロケールを使用するかどうかを設定します。
+ID_CrystalReportSourceDescr=Crystal Reports で作成したレポートに接続してください。
+ID_CrystalReportSourceDisplayName=Crystal レポート
+
+# Event Descriptions
+###################################################################
+ID_OnNavigateDescr=ページ ナビゲーションが発生するときに発生します。
+ID_OnSearchDescr=テキスト検索が発生するときに発生します。
+ID_OnSubreportDrillDownDescr=サブレポートのドリル ダウンが発生するときに発生します。
+ID_OnRefreshDescr=レポートが最新表示されるときに発生します。
+ID_OnZoomDescr=ズーム率が変更されるときに発生します。
+ID_OnDrillDescr=チャートのドリル ダウンまたはグループのドリル ダウンが発生するときに発生します。
+ID_OnReportPartBookmarkNavigationDescr=レポート パーツのブックマーク ナビゲーションが発生するときに発生します。
+ID_OnBeforeRenderDescr=レポートのレンダリング プロセスが開始するときに発生します。
+ID_OnAfterRenderDescr=レポートのレンダリング プロセスが終了するときに発生します。
+ID_OnBeforeRenderObjectDescr=レポート オブジェクトのレンダリングが開始するときに発生します。
+ID_OnAfterRenderObjectDescr=レポート オブジェクトのレンダリングが終了するときに発生します。
+ID_OnBeforeRenderContentDescr=レポート コンテンツのレンダリングが開始するときに発生します。
+ID_OnAfterRenderContentDescr=レポート コンテンツのレンダリングが終了するときに発生します。
+ID_OnRenderScriptDescr=HTML スクリプトの生成が開始するときに発生します。
+ID_OnRenderStyleDescr=HTML スタイル クラスの生成が開始するときに発生します。
+ID_OnFieldDrillDescr=フィールドのドリル ダウンが発生するときに発生します。
+ID_OnChartDrillDescr=チャートのドリル ダウンが発生するときに発生します。
+ID_OnEventErrorDescr=ASP.NET ライフ サイクルの間に表示エラーが発生すると、発生します。
+ID_OnDataSourceChangedDescr=コントロールの DataSource プロパティの値が変更されると、発生します。
+ID_OnFileNameChangedDescr=コントロールの FileName プロパティの値が変更されると、発生します。
+ID_OnReportChangedDescr=コントロールの Report プロパティの値が変更されると、発生します。
+
+# Error Messages
+###################################################################
+ID_InvalidPageToTreeRatioErr=比率は 0 (ゼロ) 以上にする必要があります。
+ID_InvalidPageErr=ページが生成されません。
+ID_InvalidGroupTreeErr=グループ ツリーが生成されません。
+ID_GroupTreeRenderErr=グループ ツリーがロードされません。
+ID_PageRenderErr=ページがロードされません。
+ID_FailToGetReportSource=レポートのソースを取得できません。
+ID_InvalidPageZoomFactorErr=ページ ズーム率は 10 から 400 の間でなければなりません。
+ID_GetPageErr=特定のページを取得できません。
+ID_GetTotallerErr=特定のページのトータラーを取得できません。
+ID_InvalidReportSourceErr=有効なレポート ソースがありません。
+ID_ReportSourceRestoreErr=印刷にレポート ソースを復元中にエラーが発生しました。
+ID_NullReportSourceStateErr=印刷にレポート ソースを復元できません。 ベース 64 ビュー ステート文字列が NULL です
+ID_NullReportSourceStateStringLengthErr=印刷にレポート ソースを復元できません。 ベース 64 のビュー ステート文字列の長さが、4 または 4 の倍数ではありません。
+ID_UnsupportExportFormatErr=指定したエクスポート形式は、CrystalREportExportControl ではサポートされていません。
+ID_ControlMustBeInForm='{0}' コントロールはフォーム内にあることが必要です。
+ID_InvalidExportOptions=指定のオプションでのエクスポートに失敗しました。オプションを確認してもう一度実行してください。
+ID_InvalidBatchSize=バッチ サイズを 1 〜 65535 の範囲で入力してください。
+ID_RepPartNavThroughWebServNotSupported=ServerFileReportService.asmx や EnterpriseReportService.asmx によるレポート パーツ ナビゲーションはサポートされていません。
+ID_LogonPromptNotSupported=データベース ログオンのプロンプトは、モバイル デバイスではサポートされていません。
+ID_ParamPromptNotSupported=パラメータのプロンプトは、モバイル デバイスではサポートされていません。
+ID_TableNotFound=テーブル "{0}" はレポートに存在しません。
+ID_ControlWithReportSourceIDDoesntExist={0}.ReportSourceID が参照する ID '{1}' を持つコントロールがありません。
+ID_ControlWithReportSourceIDIsntReportSource={0}.ReportSourceID が参照する ID '{1}' を持つコントロールは、CrystalReportSource ではありません。
+
+# Category
+######################################################################
+ID_Category_Data=データ
+ID_Category_Misc=その他
+ID_Category_Cache=キャッシュ

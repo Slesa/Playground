@@ -1,0 +1,302 @@
+#==============================================================================
+#   File:       Viewer.txt
+#   Summary:    This file contains JAPANESE resources for CrystalDecisions.Windows.Forms.CrystalReportViewer
+#==============================================================================
+
+ID_HELP_ABOUT=ヘルプ
+ID_VIEW_GROUPTREE=グループ ツリーの切り換え
+ID_SEARCH=文字列の検索
+ID_GOTOPAGE=指定のページ
+ID_FIRSTPAGE=最初のページ
+ID_PREVPAGE=前のページ
+ID_NEXTPAGE=次のページ
+ID_LASTPAGE=最後のページ
+ID_PAGENUMBER=ページ番号
+ID_VIEW_TOOLBAR=ツール バーの表示/非表示
+ID_PRINT=レポートの印刷
+ID_SELECTEXPERT=選択エキスパート
+ID_CLOSE=現在のビューを閉じる
+ID_STOP=ロードの中止
+ID_REFRESH=最新表示
+ID_EXPORT=レポートのエクスポート
+ID_SEARCH_EXPERT=検索エキスパート
+ID_ZOOM=ズーム
+ID_ZOOMING=ズーム
+ID_SELECTION_COPY=コピー
+ID_OF=/
+ID_EDIT_REPORT_SOURCE=レポート ソースの編集
+ID_ENTER_REPORT_SOURCE=レポート ソースの入力
+ID_EDIT=編集...
+ID_NONE=(なし)
+ID_BROWSE=参照...
+ID_OPEN_REPORT_DIALOG_TITLE=既存の Crystal レポートを開く
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal レポート (*.rpt)|*.rpt
+
+IDC_ZOOMCOMBO=ズーム コントロール
+IDC_SEARCHCOMBO=検索コントロール
+IDC_PROGRESSBAR=プログレス コントロール
+IDC_PAGENUMBER=ページ番号
+IDC_GROUPTREE=グループ ツリー
+IDC_VALUE_OR_BOOLEAN_LABEL=離散値(&L) :
+IDC_PARAMETERFIELDS_LABEL=パラメータ フィールド :
+IDC_END_OF_RANGE_LABEL=範囲の終了(&E) :
+IDC_START_OF_RANGE_LABEL=範囲の開始(&S) :
+IDC_END_LABEL=終了
+IDC_START_LABEL=開始
+IDC_VALUE_START_LABEL=値/開始
+IDC_CHECK_NULLVALUE=NULL 値を設定する
+#IDC_INCLUDE_LOWER_BOUND=&Include value (DIyer 19 June 2001: Not Used?)
+IDC_DELETE_VALUE=削除(&T)
+IDCANCEL=キャンセル
+IDOK=OK
+IDC_ADD_VALUE_OR_BOOLEAN=追加(&A)
+IDC_ADD_RANGE_VALUES=追加(&D)
+IDC_NO_UPPER_BOUND=終了値を指定しない(&U)
+IDC_NO_LOWER_BOUND=開始値を指定しない(&O)
+IDC_PICKDEFAULTS=既定値から取得(&P)
+IDC_FINDWHAT_LABEL=検索対象 :
+IDC_FINDNEXT=次を検索(&F)
+IDC_PAGENUMBER_LABEL=ページ番号を指定してください :
+IDC_ZOOMING_LABEL=ズーム率を指定してください (25 - 400)。
+
+IDS_CRYSTALREPORT=Crystal レポート
+IDS_MSG_TITLE=Crystal レポート Windows フォーム ビューア
+IDS_PREVIEW=プレビュー
+IDS_LOADING=ロード中...
+IDS_PAGE_WIDTH=ページ幅
+IDS_WHOLE_PAGE=ページ全体
+IDS_CUSTOMIZE=ユーザー設定...
+IDS_DRILLDOWN=ドリル ダウン
+IDS_TEXT=テキスト
+IDS_FIELD=フィールド :
+IDS_MSG_STRINGNOTFOUND=レポートの検索が終了しました。検索項目は見つかりませんでした。
+IDS_MSG_COULDNOTSTARTPRINTJOB=印刷ジョブを開始できませんでした。
+IDS_ERR_BUSY=コントロールはデータをダウンロード中です。
+IDS_ERR_INDEX_RANGE=インデックスが範囲外です
+IDS_ERR_GROUP_INFO=必要なグループ情報を利用できません。
+IDS_EXPORT_UNAVAILABLE =レポートをエクスポートできませんでした。
+IDS_NEXT=次(&N) >
+IDS_FINISH=完了
+IDS_MSG_NO_RPT_NAME=表示するレポートがありません。
+IDS_PAGEN_SYMBOL=/
+IDS_ERR_LOAD_EXPORT=エクスポート コントロールを初期化できません。
+IDS_ERR_EXPORT_FAILED=エクスポートに失敗しました。
+IDS_EXPORT_COMPLETED=エクスポートが完了しました。
+IDS_CONTENTS=次のレベル...
+IDS_ORIENTATION_MSG=このレポートは実際のレポート データの書式設定されたイメージです。方向や用紙のサイズを変更すると、ページ上のオブジェクトが印刷時に失われる可能性があります。継続しますか？
+IDS_USER_ID_PROMPT=ユーザー ID(&U) :
+IDS_PROMPT_TEXT=プロンプト(&P) :
+IDS_DB_LOGON_PROMPT=データベースのユーザー ID とパスワードを入力してください。
+IDS_CANCEL_PROMPT_MSG=キャンセルしますか? ログオン情報が必要な場合は続行できません。現在のデフォルトのレポート プロンプトが使用されます。
+IDS_DB_LOGON_FOR_SUB=サブレポートで使用 :
+IDS_PROMPT_MSG=プロンプトする内容を入力してください :
+IDS_DEL_DRILL=[ドリル ダウン] タブを開いたままこのコマンドを実行することはできません。このまま続けると [ドリル ダウン] タブは閉じられます。\n\n続行しますか?
+IDS_NUMBER=数値
+IDS_CURRENCY=通貨
+IDS_DATE=日付
+IDS_TIME=時刻
+IDS_BOOLEAN=論理値
+IDS_DATETIME=日時
+IDS_MEMO=メモ
+IDS_STRING=文字列
+IDS_MAP=マップ
+IDS_TEXTOBJECT=テキスト オブジェクト
+IDS_CROSSTAB=クロスタブ
+IDS_CHART=チャート
+IDS_BLOB=BLOB フィールド
+IDS_INPLACE_SUBREPORT=サブレポート
+IDS_OLEOBJECT=OLE オブジェクト
+IDS_SECTION=セクション
+IDS_OLAP_GRID=OLAP グリッド
+IDS_GROUP_HEADER=グループ ヘッダー
+IDS_GROUP_FOOTER=グループ フッター
+IDS_REPORT_HEADER=レポート ヘッダー
+IDS_REPORT_FOOTER=レポート フッター
+IDS_PAGE_HEADER=ページ ヘッダー
+IDS_PAGE_FOOTER=ページ フッター
+IDS_DETAIL=詳細セクション
+IDS_FREEZE_PANE=ウィンドウ枠の固定(&F)
+IDS_UNFREEZE_PANE=ウィンドウ枠の固定解除(&U)
+IDS_PROMPTPARAM_DLGTITLE=パラメータ値の入力
+IDS_ENTERSEARCHSTRING=検索する文字列を入力してください。
+IDS_FINISH_SEARCHING=ドキュメントの検索が完了しました。
+IDS_ENTERPAGENUMBER=有効なページ番号を入力してください。
+IDS_ENTERZOOMFACTOR=有効なズーム率を入力してください。
+IDS_MAIN_REPORT=メイン レポート
+IDS_FILEFILTER_RPT=Crystal Reports (*.rpt)|*.rpt
+IDS_FILEFILTER_DOC=Microsoft Word (*.doc)|*.doc 
+IDS_FILEFILTER_XLS=Microsoft Excel (*.xls)|*.xls
+IDS_FILEFILTER_RECORD_XLS=Microsoft Excel データのみ (*.xls)|*.xls
+IDS_FILEFILTER_RTF=リッチ テキスト形式 (*.rtf)|*.rtf
+IDS_FILEFILTER_PDF=Adobe Acrobat (*.pdf)|*.pdf
+IDS_FILEFILTER_HTML32=HTML 3.2 (*.html)|*.html
+IDS_FILEFILTER_HTML40=HTML 4.0(DHTML) (*.html)|*.html
+IDS_DRILL_DOWN=ドリル ダウン
+IDS_REPORTOBJECT=ポート オブジェクト
+IDS_TRY_AGAIN=やり直してください。
+IDS_LOGON_FAILED=ログオンに失敗しました。
+IDS_MISSING_PARAMETERFIELD_CURRENTVALUE=ParameterField の現在の値がありません。
+
+# StatusBar text:
+IDS_CURRENT_PAGENUMBER=現在のページ番号 :
+IDS_TOTAL_PAGENUMBER=合計ページ数 :
+IDS_ZOOM_FACTOR=ズーム率 :
+IDS_ZOOM_FACTOR_DEFAULT=ズーム率 : 100%
+
+# Exception messages
+IDS_EXCEPTION_DOCUMENTMANAGER_INITDOCUMENTMANAGER=DocumentManager.InitDocumentManager で例外が発生しました :
+IDS_EXCEPTION_DOCUMENTMANAGER_ADDREPORT=DocumentManager.AddReport で例外が発生しました :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETPAGE=MainReportDocument.GetPage で例外が発生しました :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPTREEFROMENGINE=MainReportDocument.GetGroupTreeFromEngine で例外が発生しました :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETLASTPAGENUMBERFROMENGINE=MainReportDocument.GetLastPageNumberFromEngine で例外が発生しました :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_REFRESH=MainReportDocument.Refresh で例外が発生しました :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPINFOFORDRILLONGRAPH=MainReportDocument.GetGroupInfoForDrillOnGraph で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENT_GETDRILLDOWNDOCUMENT=ReportDocument.GetDrillDownDocument で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETLASTPAGENUMBER=ReportDocumentBase.GetLastPageNumber で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETPAGE=ReportDocumentBase.GetPage で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_DRILLDOWNGRAPH=詳細データがない領域をドリル ダウンしました。ドリル ダウンするには、データが存在する領域をクリックしてください。
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETGROUPTREE=ReportDocumentBase.GetGroupTree で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDGROUP=ReportDocumentBase.FindGroup で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDTEXT=ReportDocumentBase.FindText で例外が発生しました :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_EXPORT=ReportDocumentBase.Export で例外が発生しました :
+IDS_EXCEPTION_REPORTGROUPTREE_INITREPORTGROUPTREE=ReportGroupTree.InitReportGroupTree で例外が発生しました :
+	
+IDS_EXCEPTION_TOOLTIPCAPTIONDUPLICATE=ツール バーのツールヒント キャプションが既に存在します。別のツールヒントを選んでください。
+IDS_EXCEPTION_TOOLBARBASE_INDEXOUTOFRANGE=ツール バー コントロールのインデックスが範囲外です。
+IDS_EXCEPTION_TOOLBARBASE_INVALIDTOOLTIP=ツール バー コントロールのツールヒントが不正です。
+
+IDS_EXCEPTION_NULL_HOST=IDesignerHost を取得できませんでした。
+IDS_EXCEPTION_NULL_EXTENSIBILITYSERVICE=IExtensibilityService を取得できませんでした。
+IDS_EXCEPTION_NULL_PROJECT=カレント プロジェクトを取得できませんでした。
+
+# Property descriptions
+IDS_DISPLAY_GROUPTREE_DESCRIPTION=CrystalReportViewer のグループ ツリーを表示するかどうかを設定します。
+IDS_DISPLAY_TOOLBAR_DESCRIPTION=CrystalReportViewer のツール バーを表示するかどうかを設定します。
+IDS_ENBALE_STATUSBAR_DESCRIPTION=CrystalReportViewer のステータス バーが表示されるかどうかを設定します。
+IDS_REPORT_NAME_DESCRIPTION=表示するレポートの名前または URL です。
+IDS_REPORT_SOURCE_DESCRIPTION=表示するレポートのリモート レポート サービス プロキシです。
+IDS_DISPLAY_BACKGROUNDEDGE_DESCRIPTION=表示ウィンドウの端からレポートまでの間にオフセットを設定するかどうかを設定します。
+IDS_SELECTION_FORMULA_DESCRIPTION=レコード選択式です。
+IDS_VIEWTIME_SELECTION_FORMULA_DESCRIPTION=表示時の選択式です。
+
+IDS_SHOW_PAGENAVIGATEBUTTONS_DESCRIPTION=ビューアのツール バーにレポート ページを移動するためのボタンを設定するかどうかを設定します。
+IDS_SHOW_GOTOPAGEBUTTON_DESCRIPTION=ビューアのツール バーにページ番号を指定するためのボタンを設定するかどうかを設定します。
+IDS_SHOW_CLOSEBUTTON_DESCRIPTION=ビューアのツール バーにレポート ページを閉じるためのボタンを設定するかどうかを設定します。
+IDS_SHOW_PRINTBUTTON_DESCRIPTION=ビューアのツール バーに出力ボタンを設定するかどうかを設定します。
+IDS_SHOW_REFRESHBUTTON_DESCRIPTION=ビューアのツール バーに [最新表示] ボタンを設定するかどうかを設定します。
+IDS_SHOW_EXPORTBUTTON_DESCRIPTION=ビューアのツール バーにエクスポート ボタンを設定するかどうかを設定します。
+IDS_SHOW_GROUPTREEBUTTON_DESCRIPTION=ビューアのツール バーにグループ ツリーの表示/非表示ボタンを設定するかどうかを設定します。
+IDS_SHOW_ZOOMBUTTON_DESCRIPTION=ビューアのツール バーにレポート ページのズーム レベルを指定するズーム ボタンです。
+IDS_SHOW_TEXTSEARCHBUTTON_DESCRIPTION=ビューアのツール バーにテキストの検索ボタンを設定するかどうかを設定します。
+IDS_ENABLE_DRILLDOWN_DESCRIPTION=CrystalReportViewer のドリル ダウン機能を有効にするかどうかを設定します。
+IDS_ENABLE_TOOLTIP_DESCRIPTION=ビューア内でオブジェクトのツールヒントを有効にします。
+# Event Descriptions
+ID_OnPageNavigateDescr=ページ ナビゲーションが発生するときに発生します。
+ID_OnSearchDescr=テキスト検索が発生するときに発生します。
+ID_OnSubreportDrillDownDescr=サブレポートのドリル ダウンが発生するときに発生します。
+ID_OnRefreshDescr=レポートが最新表示されるときに発生します。
+ID_OnZoomDescr=ズーム率が変更されるときに発生します。
+ID_OnDrillDescr=チャートのドリル ダウンまたはグループのドリル ダウンが発生するときに発生します。
+ID_OnHandleExceptionDescr=ビューアが例外をキャッチして処理するときに発生します。
+
+#==============================================================================
+#   File:       SCRShared.txt (Merged from Shared resource)
+#   Summary:    JAPANESE resources for Crystal Reports shared controls
+#==============================================================================
+
+#[strings]
+#Database Logon Dialog
+##############################################################
+IDS_LOGINDLG_TITLE=データベース ログイン
+
+IDS_HELP=ヘルプ(&H)
+IDS_BACK=< 戻る(&B)
+###IDS_NEXT=Next >
+###IDS_FINISH=Finish
+IDS_CANCEL=キャンセル
+IDS_USEINTEGRATEDSECURITYCHECKBOX=統合セキュリティを使用する
+
+IDS_REPORTNAMELABEL=サブレポート名 :
+IDS_MAINREPORTLABEL=メイン レポート
+IDS_TABLENAMELABEL=テーブル名 :
+IDS_SERVERNAME=サーバー名(&S) :
+IDS_DATABASENAME=データベース(&D) :
+IDS_LOGINID=ログイン ID(&L) :
+IDS_PWD=パスワード(&P) :
+IDS_PASSWORDCHAR=c
+
+#Parameter Field Dialog
+##############################################################
+IDS_PROMPTPARAM_DLGTITLE2=情報を提供してください - {1} の {0}
+
+#SubTitles
+IDS_SINGLE_DISCRETE_EDIT=このパラメータには単一の値を設定できます。\r\n使用する値を入力してください。
+IDS_SINGLE_DISCRETE_PICK=このパラメータには単一の値を設定できます。\r\n使用する値を選択してください。
+IDS_SINGLE_DISCRETE_EDIT_AND_PICK=このパラメータには単一の値を設定できます。\r\n使用する値を選択または入力してください。
+
+IDS_SINGLE_RANGE_EDIT=このパラメータには単一の範囲値を設定できます。\r\n使用する範囲値の最小および最大の値を入力してください。
+IDS_SINGLE_RANGE_PICK=このパラメータには単一の範囲値を設定できます。\r\n使用する範囲値の最小および最大の値を選択してください。
+IDS_SINGLE_RANGE_EDIT_AND_PICK=このパラメータには単一の範囲値を設定できます。\r\n使用する範囲値の最小および最大の値を選択または入力してください。
+
+IDS_MULTIPLE_DISCRETE_EDIT=このパラメータには 1 つ以上の値を設定できます。\r\n複数の値を使用するには、各値を入力してから [追加] をクリックしてください。
+IDS_MULTIPLE_DISCRETE_PICK=このパラメータには 1 つ以上の値を設定できます。\r\n複数の値を使用するには、各値を選択してから [追加] をクリックしてください。
+IDS_MULTIPLE_DISCRETE_EDIT_AND_PICK=このパラメータには 1 つ以上の値を設定できます。\r\n複数の値を使用するには、各値を入力または選択してから [追加] をクリックしてください。
+
+IDS_MULTIPLE_RANGE_EDIT=このパラメータには 1 つ以上の範囲値を設定できます。\r\n複数の範囲値を使用するには、各範囲値の最小および最大の値を入力してから [追加] をクリックしてください。
+IDS_MULTIPLE_RANGE_PICK=このパラメータには 1 つ以上の範囲値を設定できます。\r\n複数の範囲値を使用するには、各範囲値の最小および最大の値を選択してから [追加] をクリックします。
+IDS_MULTIPLE_RANGE_EDIT_AND_PICK=このパラメータには 1 つ以上の範囲値を設定できます。\r\n複数の範囲値を使用するには、各範囲値の最小および最大の値を選択または入力してから [追加] をクリックします。
+
+IDS_MULTIPLE_BOTH_EDIT=このパラメータには 1 つ以上の値 (範囲値も含む) を設定できます。\r\n複数の値 (範囲値) を使用するには、各値、または範囲値の最小および最大の値を入力してから [追加] をクリックします。
+IDS_MULTIPLE_BOTH_PICK=このパラメータには 1 つ以上の値 (範囲値も含む) を設定できます。\r\n複数の値 (範囲値) を使用するには、各値、または範囲値の最小および最大の値を選択してから [追加] をクリックします。
+IDS_MULTIPLE_BOTH_EDIT_AND_PICK=このパラメータには 1 つ以上の値 (範囲値も含む) を設定できます。\r\n複数の値 (範囲値) を使用するには、各値、または範囲値の最小および最大の値を選択または入力してから [追加] をクリックします。
+
+#prompting text
+IDS_PROMPT_RANGE=値は {0} 〜 {1}{2} の間にする必要があります。
+IDS_PROMPT_RANGE_STRING= 文字の長さ
+IDS_PROMPT_RANGE2=値は {0} 〜 {1} の間にする必要があります。
+IDS_PROMPT_RANGE_STRING2=値の長さは {0} 〜 {1} 文字の間にする必要があります。
+
+###IDC_VALUE_OR_BOOLEAN_LABEL=Discrete va&lues
+###IDC_PARAMETERFIELDS_LABEL=Parameter Fields:
+###IDC_END_OF_RANGE_LABEL=&End of range
+###IDC_START_OF_RANGE_LABEL=&Start of range
+###IDC_END_LABEL=End
+###IDC_START_LABEL=Start
+###IDC_VALUE_START_LABEL=Value/Start
+###IDC_CHECK_NULLVALUE=Set the value to "NULL"
+#IDC_INCLUDE_LOWER_BOUND=&Include value
+###IDC_DELETE_VALUE=&Remove
+###IDC_ADD_VALUE_OR_BOOLEAN=&Select
+###IDC_ADD_RANGE_VALUES=S&elect
+###IDC_NO_UPPER_BOUND=Range has no &upper limit
+###IDC_NO_LOWER_BOUND=Range has no &lower limit
+###IDC_PICKDEFAULTS=&Pick from defaults
+IDS_OK=OK
+
+IDC_INCLUDE_LOWER_BOUND=値を含める(&I)
+IDC_INCLUDE_UPPER_BOUND=値を含める(&C)
+IDC_RANGE_LABEL=値の範囲(&W)
+IDS_AND_LABEL=および
+IDC_LABEL_VALUES=値 :
+
+
+#prompting types
+IDS_PT_NUMBER=数値
+IDS_PT_CURRENCY=通貨
+IDS_PT_BOOLEAN=真または偽
+IDS_PT_DATE=日付
+IDS_PT_STRING=文字列
+IDS_PT_DATETIME=日時
+IDS_PT_TIME=時刻
+
+
+#error messages
+IDS_ERROR_PARAMETER_TYPE={0} 値を入力してください。
+IDS_ERROR_PARAMETER_RANGE=範囲の開始値は終了値以下の値にする必要があります。
+IDS_ERROR_EMPTY_REPORT_NAME=レポート名がありません。
+IDS_ERROR_PARAMETER_GREATER_THAN_MAX=入力された値は、このパラメータに指定できる最大値を超えています。
+IDS_ERROR_PARAMETER_LESS_THAN_MIN=入力された値は、このパラメータに指定できる最小値を満たしません。
+
+# Granville-only error messages; no need to translate for CR10
+IDS_ERROR_INVALID_DATA_SOURCE=無効なデータ ソースです。
+

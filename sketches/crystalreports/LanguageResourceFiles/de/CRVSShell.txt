@@ -1,0 +1,256 @@
+#==============================================================================
+#   File:       CRVSShell.txt
+#   Summary:    This file contains GERMAN resources for VSDesigner.dll
+#==============================================================================
+
+# These next three strings must match the VS7 toolbox tab names
+IDS_TOOLBOX_WEBFORMS=Web Forms
+IDS_TOOLBOX_MOBILE_WEBFORMS=Mobile Web Forms
+IDS_TOOLBOX_WINFORMS=Windows Forms
+IDS_TOOLBOX_COMPONENTS=Komponenten
+IDS_TOOLBOX_CRYSTALREPORTS=Crystal Reports
+
+IDS_SERVEREXPLORER_ROOT=Crystal Services
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE=Serverberichte
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_WEBSERVICE=Crystal Enterprise-Webdienst
+IDS_SERVEREXPLORER_SERVERFILES=Report Application Server
+IDS_SERVEREXPLORER_REPORTDATA=Berichtsdaten
+
+IDS_SERVEREXPLORER_ROOT_WHIDBEY=Crystal Reports-Dienste
+IDS_SERVEREXPLORER_SERVERFILES_WHIDBEY=Serverdatei-Webdienst
+
+IDS_SERVEREXPLORER_RAS_PORTSETTING_MENU=&Anschlusseinstellung ändern...
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_TITLE=Anschlusseinstellung
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_PORT=Anschluss:
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR_TITLE=Ungültige Anschlusseinstellung
+IDS_SERVEREXPLORER_RAS_PORTSETTINGDLG_ERROR=Sie haben eine ungültige Anschlussnummer eingegeben.
+
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LOGIN=&Anmelden...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIRSTBATCH=&Erster Stapel
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_PREVIOUSBATCH=&Vorheriger Stapel
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_NEXTBATCH=&Nächster Stapel
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_LASTBATCH=&Letzter Stapel
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_FIND=&Suchen...
+IDS_SERVEREXPLORER_CRYSTALENTERPRISE_COPYOBJCUID=&CUID kopieren
+
+IDS_SERVEREXPLORER_FINDDLG_TITLE=Suchen
+IDS_SERVEREXPLORER_FINDDLG_FINDTEXT_LABEL=&Element suchen, das beginnt mit:
+
+IDS_SERVEREXPLORER_CE_LOGINDLG_LOGIN=Anmeldung
+IDS_SERVEREXPLORER_CE_LOGINDLG_AUTH=&Authentifizierung:
+IDS_SERVEREXPLORER_CE_LOGINDLG_USERNAME=&Anwendername:
+IDS_SERVEREXPLORER_CE_LOGINDLG_PASSWD=&Kennwort:
+IDS_SERVEREXPLORER_CE_LOGINDLG_APS=&System:
+IDS_SERVEREXPLORER_CE_LOGINDLG_WCS=&Web Connector:
+IDS_SERVEREXPLORER_CE_LOGINDLG_OK=OK
+IDS_SERVEREXPLORER_CE_LOGINDLG_CANCEL=Abbrechen
+
+IDS_SERVEREXPLORER_NO_NEXT_BATCH=Sie verfügen bereits über den letzten Stapel.
+IDS_SERVEREXPLORER_NO_PREVIOUS_BATCH=Sie verfügen bereits über den ersten Stapel.
+
+IDS_SERVEREXPLORER_COULD_NOT_FIND_REPORT_MANAGER=Der Webdienst {0} wurde nicht gefunden.\nStellen Sie sicher, dass der Webdienst auf dem Remotecomputer installiert ist.
+IDS_SERVEREXPLORER_CE_LOGON_FAILED=Fehler bei der Anmeldung bei Crystal Enterprise 10 unter Verwendung von {0}.Stellen Sie sicher, dass CMS-Server, Web Connector-Server, Anwendername und Kennwort richtig sind, und wiederholen Sie den Vorgang.
+IDS_SERVEREXPLORER_NODE_TYPE_FAILED=Fehler beim Laden von Typ '{0}'
+IDS_SERVEREXPLORER_NODE_CREATION_FAILED=Fehler bei der Erstellung des Server-Explorer-Knotens '{0}'
+IDS_SERVEREXPLORER_CHECKFORASPNET2=Fehler beim Zugreifen auf den Webdienst.\nStellen Sie sicher, dass {0} als ASP.NET 2.0-Webanwendung konfiguriert wurde.
+
+IDS_SERVEREXPLORER_INSTANCE_FORMAT={0:yyyy-MM-dd HH:mm:ss}  {1}
+
+IDS_SERVEREXPLORER_FAILED_TO_QUERY_UNPATCHED_CE_FOR_INSTANCES=Das Enterprise-System wurde nicht dafür aktualisiert, über den Server-Explorer auf Berichtinstanzen zuzugreifen. Bitten Sie Ihren Crystal Enterprise-Administrator um Unterstützung.
+
+IDS_INSTANCE_STATUS_ACTIVE=Aktiv
+IDS_INSTANCE_STATUS_COMPLETE=Abgeschlossen
+IDS_INSTANCE_STATUS_FAILED=Fehlgeschlagen
+IDS_INSTANCE_STATUS_LOADED=Geladen
+IDS_INSTANCE_STATUS_LOADING=Wird geladen
+IDS_INSTANCE_STATUS_NOTRESPONDING=Keine Antwort
+IDS_INSTANCE_STATUS_ONHOLD=Wartestellung
+IDS_INSTANCE_STATUS_PAUSED=Angehalten
+IDS_INSTANCE_STATUS_SCHEDULED=Zeitgesteuert
+IDS_INSTANCE_STATUS_ERROR=Fehler
+IDS_INSTANCE_STATUS_QUEUED=In Warteschlange
+IDS_INSTANCE_STATUS_RUNTODAY=Heute ausführen
+IDS_INSTANCE_STATUS_TERMINATED=Abgebrochen
+IDS_INSTANCE_STATUS_TERMINATING=Wird abgebrochen
+
+# Smart Task
+IDS_TASK_CREATE_REPORTSOURCE_TEXT=Neuen Crystal Reports-Bericht erstellen...
+IDS_TASK_CREATE_REPORTSOURCE_DESCRIPTION=Neuen Bericht erstellen und an den Viewer binden.
+IDS_TASK_BROWSE_REPORTSOURCE_TEXT=Wählen Sie einen Crystal Reports-Bericht... 
+IDS_TASK_BROWSE_REPORTSOURCE_DESCRIPTION=Nach CrystalReport-Datei, ReportDocument-Objekt, Berichtobjekt mit strikter Typisierung suchen.
+IDS_TASK_CLEAR_REPORTSOURCE_TEXT=Berichtquelle löschen
+IDS_TASK_CLEAR_REPORTSOURCE_DESCRIPTION=ReportSource-Eigenschaft löschen.
+IDS_TASK_CONVERT_TO_REPORT_TEXT=Crystal Reports-Bericht
+IDS_TASK_CONVERT_TO_REPORT_DESCRIPTION=Inhalt in Crystal Reports-Bericht ändern.
+IDS_TASK_EDIT_REPORTSOURCE_TEXT=Aktuellen Crystal Reports-Bericht bearbeiten
+IDS_TASK_EDIT_REPORTSOURCE_DESCRIPTION=Aktuellen Bericht bearbeiten.
+IDS_INVALIDREPORTFILENAME=Die Datei darf nicht mit den systemreservierten Namen ""."", "".."", ""COM1"", ""LPT1"", ""CON"", ""AUX"", ""PRN"" \n benannt werden,\n und der Dateiname darf keines der folgenden Zeichen enthalten: {0}\nDer Dateiname darf keine Unicode-Steuerzeichen aufweisen.
+IDS_INVALIDREPORTFILENAME_TITLE=Ungültiger Berichtname
+IDS_CHOOSEREPORT_DIALOG_TITLE=Crystal Reports-Bericht auswählen - {0}
+IDS_EDIT_REPORTSOURCE_TITLE=Bericht bearbeiten
+IDS_CANNOT_EDIT_REPORTSOURCE=Die ReportSource-Eigenschaft wurde nicht festgelegt, oder der Bericht kann nicht bearbeitet werden.
+
+# Chrome menu
+IDS_CONFIGURE_REPORT_DATA_SOURCE=Berichtquelle konfigurieren...
+IDS_CONNECT_REPORT_DATA_SOURCE=Mit Berichtquelle verbinden...
+IDS_TOGGLE_GROUP_TREE=Gruppenstruktur ein-/ausblenden
+IDS_TOGGLE_TOOLBAR=Blendet Symbolleiste ein/aus
+IDS_TOGGLE_REPORTVIEW=Berichtansicht ein-/ausblenden
+IDS_TOGGLE_SEPARATE_PAGES=Bericht auf mehreren Seiten anzeigen
+IDS_TOGGLE_BEST_FIT_PAGE=Seite kann vergrößert werden
+IDS_EDIT_REPORT=Bericht bearbeiten...
+IDS_CANNOT_FIND_REPORT=Die Quelldatei {0} wurde nicht gefunden.
+IDS_REPORT_SOURCE_NOT_SET=Die Berichtquelle wurde noch nicht konfiguriert.
+IDS_EDITREPORT_ERROR_MSGBOX_TITLE=Bericht kann nicht bearbeitet werden
+
+# ReportSourcePicker
+IDS_REPORTSOURCEPICKER_TITLE=Berichtquelle erstellen
+IDS_BROWSE_REPORT=<Durchsuchen...>
+IDS_NEW_REPORT=<Neuer Bericht...>
+IDS_NEW_REPORT_DATA_SOURCE=<Neue CrystalReportSource...>
+IDS_TITLE_STRING_FORMAT=%0 - %1
+IDS_DUPLICATE_ID=Der Name der neuen Berichtquelle ist nicht eindeutig.
+IDS_OPEN_REPORT_DIALOG_TITLE=Crystal Report-Bericht auswählen
+IDS_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+
+# CreateReportSourceDialog
+IDS_CREATE_REPORT_SOURCE_LABEL_DIALOG_DESCRIPTION=Erstellen Sie eine CrystalReportSource, die Berichtinhalt und -daten bereitstellt.
+IDS_CREATE_REPORT_SOURCE_LABEL_HEADER=Erstellen Sie ein CrystalReportSource-Steuerelement
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_DATASOURCENAME=Geben Sie einen Namen für das CrystalReportSource-Steuerelement an
+IDS_CREATE_REPORT_SOURCE_LABEL_REPORT_FILE_NAME=Geben Sie einen Crystal Reports-Bericht für das CrystalReportSource-Steuerelement an
+
+IDS_NEW_REPORT_NAME_DIALOG_TITLE=Neuen Crystal Reports-Bericht erstellen
+IDS_NEW_REPORT_NAME_DIALOG_DESCR=Geben Sie einen Namen für den neuen Bericht an
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE_DESCRIPTION=Die folgenden Zeichen können im Namen des CrystalReportSource-Steuerelements nicht verwendet werden: {0}
+IDS_NEW_REPORT_NAME_DIALOG_INVALID_REPORTSOURCE=Ungültiger CrystalReportSource-Name
+
+
+# BrowseReportSourceDialog
+IDS_ADD_TO_PROJECT=Zu Projekt hinzufügen
+IDS_USE_REPORTDOCUMENT=ReportDocument verwenden
+IDS_SPECIFY_CRYSTAL_REPORT=Geben Sie einen Crystal Reports-Bericht für das Steuerelement an
+
+# ConfigureReportSource
+IDS_CONFIGURE_REPORTSOURCE_DIALOG_TITLE=Berichtquelle konfigurieren - {0}
+IDS_CONFIGURE_REPORTSOURCE_DESCR=Legen Sie den Crystal Reports-Bericht fest, um das CrystalReportSource-Steuerelement zu binden.
+
+# ReportSourceIDListBox
+ID_NEW_REPORTSOURCE=<Neue Berichtquelle...>
+ID_NONE=<Keine>
+
+# BC: This is for webformviewer designer
+ID_LoadingHtml=Laden ...
+ID_NoPreviewLogon=Die Anzeige einer Berichtvorschau ist aufgrund von Datenbankanmeldungen nicht möglich.
+ID_NoPreviewParam=Die Anzeige einer Berichtvorschau ist aufgrund der Aufforderung zur Parametereingabe nicht möglich.
+ID_NoPreviewGeneric=Die Anzeige einer Berichtvorschau des Berichts ist aufgrund des folgenden Fehlers nicht möglich:
+ID_NoReportPartsErr=Legen Sie anfängliche Berichtbestandteile fest, oder verwenden Sie die ReportParts- oder die DataBindings-Eigenschaft, um eine Berichtbestandteilsdefinition anzugeben.
+
+# FL: You may not need to translate this; this is the default Enterprise
+# "guest" account name...
+IDS_SERVEREXPLORER_CE_LOGINDLG_GUEST=Guest
+
+IDS_SERVEREXPLORER_CE_WS_NOT_FOUND=Der Crystal Enterprise-Webdienst (EnterpriseReportManager.asmx) wurde unter {0} nicht gefunden.\n\nUm eine Verbindung zu einem Crystal Enterprise 10-System herzustellen, müssen Sie zuerst den Computer, der als Host für EnterpriseReportManager.asmx fungiert, unter dem Knoten \"Server\" über die Kontextmenüoption \"Server hinzufügen...\" als Server hinzufügen.\n\nUm einem Server EnterpriseReportManager.asmx hinzuzufügen, installieren Sie das CE .NET SDK auf dem Server.\n\nMöchten Sie mehr über Crystal Enterprise erfahren?
+IDS_SERVEREXPLORER_CE10_LOGON_FAILED=Anmeldung bei Crystal Enterprise 10 über {0} konnte nicht ausgeführt werden. Stellen Sie sicher, dass CMS-Server, Web Connector-Server, Anwendername und Kennwort richtig sind, und wiederholen Sie den Vorgang.
+IDS_SERVEREXPLORER_NO_CMS="Der Crystal Enterprise-Webdienst (EnterpriseReportManager.asmx) wurde unter {0} erkannt, der CE 10 Crystal Management Server (CMS) wurde jedoch nicht gefunden.\n\nGeben Sie den CMS im Anmeldedialog an.\n\nMöchten Sie mehr über Crystal Enterprise erfahren?"
+IDS_SERVEREXPLORER_CE_ENTERPRISE_URL=http://www.businessobjects.com/products/reporting/crystalenterprise/default.asp
+
+IDS_SERVEREXPLORER_RAS_INTRO_WHIDBEY=Report Application Server ist mit Crystal Reports Server oder BusinessObjects Enterprise erhältlich. Möchten Sie mehr darüber erfahren?
+IDS_SERVEREXPLORER_RAS_URL_WHIDBEY=http://www.businessobjects.com/products/crystalreports
+
+# error
+IDS_REPORTTOOLBOX_DIALOG_TITLE=Wählen Sie ein ReportDocument.
+IDS_REPORTTOOLBOX_MESSAGE=Typisierte ReportDocument-Klasse des Projekts oder nicht typisierte ReportDocument-Standardklasse auswählen.
+IDS_REPORTTOOLBOX_NAME=&Name:
+IDS_REPORTTOOLBOX_HELP=Wenn in dem Projekt kein typisiertes ReportDocument-Objekt vorhanden ist, können Sie dieses erstellen, indem Sie einen Crystal Reports-Bericht öffnen oder zu dem Projekt hinzufügen.
+IDS_REPORTTOOLBOX_USECACHEDREPORT=Zwischengespeicherten Bericht mit strikter Typisierung &generieren
+IDS_OKAY=OK
+IDS_CANCEL=Abbrechen
+IDS_DEFAULTREPORT=Nicht typisiertes ReportDocument
+IDS_CANNOTINITIALIZE="Das Objekt kann nicht erstellt werden."
+IDS_NOTREPORTTYPE="Diese Klasse wurde nicht von ReportDocument abgeleitet."
+IDS_NOCACHEDTYPEAVAILABLE="Für den Bericht mit strikter Typisierung ist kein zwischengespeicherter Bericht verfügbar."
+
+IDS_RPTCODEGEN_NOGENERATOR="ReportCodeGenerator - Für diese Sprache ist kein Code-Generator verfügbar."
+IDS_RPTCODEGEN_CODEGENFAILED="Der Code-Generator '{0}' konnte nicht ausgeführt werden. Ausnahmestapel = {1}"
+
+CG_AddDLLFailed=Die DLL kann nicht zu Projektverweisen hinzugefügt werden: {0}. Fügen Sie sie manuell hinzu.
+CG_AddDLLFailed_Exception=Fehler beim Hinzufügen von {0}: '{1}'. Fügen Sie sie manuell hinzu
+CombineTwoItems= {0}, {1}
+
+IDS_DESTINATION_FILE_EXISTS=Zieldatei ist vorhanden
+IDS_FILE_EXISTS_DIALOG_MESSAGE=Ein Bericht mit dem Namen {0} ist bereits vorhanden. Geben Sie einen neuen Berichtnamen ein.
+
+IDS_ERROR_OPENING_REPORT_FILE_CAPTION=Fehler beim Öffnen der Berichtdatei
+IDS_ERROR_OPENING_REPORT_FILE_MESSAGE=Fehler beim Versuch, den Bericht {0} zu öffnen. Stellen Sie sicher, dass die Datei vorhanden ist und dass die entsprechenden Berechtigungen gewährt wurden.
+IDS_ERROR_CREATING_NEW_REPORT_CAPTION=Fehler beim Erstellen der Berichtdatei
+IDS_ERROR_CREATING_NEW_REPORT_MESSAGE=Beim Versuch, einen neuen Bericht zu erstellen, ist ein Fehler aufgetreten: {0} Geben Sie einen neuen Berichtnamen ein.
+IDS_ERROR_ADDING_REPORT_TO_PROJ_MESSAGE=Beim Versuch, dem Projekt den Bericht hinzuzufügen, ist ein Fehler aufgetreten.\nFehlermeldung: {0}
+IDS_ERROR_INVALID_REPORT_PATH=CrystalReportViewer konnte den Bericht mit Dateinamen {0}  nicht laden. Prüfen Sie, ob der von der ReportSource-Eigenschaft angegebene Berichtdateiname korrekt ist.
+
+# ActionList
+ID_CATEGORY_DATA=Data
+ID_CATEGORY_APPEARANCE=Aussehen
+ID_CATEGORY_TOOLBAR=Symbolleiste
+ID_CATEGORY_BEHAVIOR=Verhalten
+
+ID_REPORT_SOURCE_ID_DESCR=Stellen Sie eine Verbindung zu einer vorhandenen Berichtquelle her, oder erstellen Sie eine neue.
+ID_REPORT_SOURCE_ID_DISPLAYNAME=Berichtquelle auswählen:
+ID_REPORT_SOURCE_DESCR=Konfigurieren Sie die Einstellung für die Berichtquelle.
+ID_REPORT_SOURCE_DISPLAYNAME=Berichtquelle konfigurieren...
+ID_ENABLE_STATUSBAR_DISPLAYNAME=Statusleiste aktivieren
+ID_ENABLE_STATUSBAR_DESCR=Aktiviert die Statusleiste im Report Viewer.
+ID_ENABLE_TOOLBAR_DISPLAYNAME=Symbolleiste aktivieren
+ID_ENABLE_TOOLBAR_DESCR=Aktiviert die Symbolleiste im Report Viewer.
+ID_ENABLE_GROUPTREE_DISPLAYNAME=Gruppenstruktur aktivieren
+ID_ENABLE_GROUPTREE_DESCR=Aktiviert die Gruppenstruktur im Report Viewer.
+ID_ENABLE_REPORTVIEW_DISPLAYNAME=Berichtansicht aktivieren
+ID_ENABLE_REPORTVIEW_DESCR=Aktiviert die Berichtansicht im Report Viewer.
+ID_ENABLE_LOGON_PROMPT_DISPLAYNAME=Aufforderung zur Datenbankanmeldung aktivieren
+ID_ENABLE_LOGON_PROMPT_DESCR=Aktiviert den Report Viewer ggf. für die Aufforderung zur Datenbankanmeldung.
+ID_ENABLE_PARAM_PROMPT_DISPLAYNAME=Aufforderung zur Berichtparametereingabe aktivieren
+ID_ENABLE_PARAM_PROMPT_DESCR=Aktiviert den Report Viewer ggf. für die Aufforderung zur Parametereingabe.
+ID_REUSE_PARAM_VALUE_DISPLAYNAME=Parameterwert bei der Berichtaktualisierung erneut verwenden
+ID_REUSE_PARAM_VALUE_DESCR=Verwendet vorherige Parameterwerte bei der Aktualisierung der Berichtansicht erneut.
+ID_EDIT_REPORT_DESCR=Startet den Crystal Reports Designer, um diesen Bericht zu bearbeiten.
+ID_EDIT_REPORT_DISPLAYNAME=Bericht bearbeiten...
+ID_DISPLAY_TOOLBAR_DISPLAYNAME=Symbolleiste anzeigen
+ID_DISPLAY_TOOLBAR_DESCR=Zeigt die Symbolleiste im Report Viewer an.
+ID_DISPLAY_GROUPTREE_DISPLAYNAME=Gruppenstruktur anzeigen
+ID_DISPLAY_GROUPTREE_DESCR=Zeigt die Gruppenstruktur im Report Viewer an.
+ID_DISPLAY_STATUSBAR_DISPLAYNAME=Statusleiste anzeigen
+ID_DISPLAY_STATUSBAR_DESCR=Zeigt die Statusleiste im Report Viewer an.
+
+ID_CreateReportSourceTransaction=CreateReportSourceTransaction
+ID_ConnectToReportSourceTransaction=ConnectToReportSourceTransaction
+
+ID_TABLE_NAME_COLUMN_NAME=Tabellenname
+ID_SUBREPORT_NAME_COLUMN_NAME=Berichtname
+ID_DATASOURCEID_COLUMN_NAME=DataSourceID
+ID_REPORTDATASOURCE_LISTVIEW_LABEL=Berichtdatenquelle:
+ID_REMOVE_DATASOURCE=Ent&fernen
+ID_ADD_DATASOURCE=&Hinzufügen
+ID_CHOOSE_DATA_SOURCE=Datenquelle auswä&hlen
+ID_BUTTON_CANCEL=Abbre&chen
+ID_BUTTON_OK=&OK
+ID_MAIN_REPORT=Haupt&bericht
+ID_SUBREPORT=&Unterbericht
+ID_SPECIFY_TABLENAME=&Tabellennamen angeben
+ID_REPORT_PROPERTY_GROUP_NAME=Bericht
+ID_DATASOURCE_COLLECTION_EDITOR_TITLE=Editor für Datenquellen-Auflistungen
+ID_MAIN_REPORT_LISTITEM=[Hauptbericht]
+
+ID_NEWPARAMETER1=newParameter1
+ID_PARAMETER_NAME_COLUMN_NAME=Parametername
+ID_VALUE=Werte
+ID_REPORT_PARAMETERS=Bericht&parameter:
+ID_DEFAULT_VALUE=&Standardwert
+ID_SPECIFY_CONTROLID=Steuerelement-ID festlegen
+ID_PARAMETER_NAME=Parameter&name
+ID_PARAMETER_COLLECTION_EDITOR=Parametersammlung-Editor
+
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_TITLE=Enterprise-Konnektivität
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_ENTERPRISECONNECTIVITYNOTDETECTED=Die Enterprise-Konnektivität wurde auf diesem Rechner nicht gefunden. Installieren Sie BusinessObjects Enterprise .NET SDK vom Crystal Reports Server oder von BusinessObjects Enterprise, und versuchen Sie es erneut.
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_FINDOUTMORE=Hier erhalten Sie weitere Informationen zu den Business Objects-Lösungen.
+ID_SERVEREXPLORER_CE_NOCONNECTIVITYDIALOG_LEARNURL=http://www.businessobjects.com/jump/smb/de/
+
+ID_CRYSTAL_REPORTS_DIALOG_TITLE=Crystal Reports für Visual Studio 2005

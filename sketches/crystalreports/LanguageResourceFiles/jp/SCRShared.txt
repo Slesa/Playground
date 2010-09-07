@@ -1,0 +1,175 @@
+#==============================================================================
+#   File:       SCRShared.txt
+#   Summary:    JAPANESE resources for CrystalDecisions.Shared.dll
+#==============================================================================
+
+# All the contents were moved to Viewer.txt under ViewerResource.
+
+#Copyright Message
+IDS_COPYRIGHT=(c) Business Objects Inc. 1991..2004
+
+#Error Message
+IDS_INVALID_OBJECT_TYPE=オブジェクト タイプが無効です。
+IDS_PARAMETER_NOT_IMPLEMENTED=この方法でパラメータ フィールドを追加、削除、または変更できません。直接レポートを変更してください。
+
+IDS_TRUE_STRING=真
+IDS_FALSE_STRING=偽
+
+# 
+# Group Tree Style Descriptions
+# 
+IDS_SHOW_LINES=ツリー ノードに接続する線を表示するかどうかを設定
+
+#==============================================================================
+#   From:       ObjectModel.txt
+#   Summary:    This file contains JAPANESE resources for the Page Object Model
+#==============================================================================
+
+IDS_NUMBER=数値
+IDS_CURRENCY=通貨
+IDS_DATE=日付
+IDS_TIME=時刻
+IDS_BOOLEAN=論理値
+IDS_DATETIME=日時
+IDS_MEMO=メモ
+IDS_STRING=文字列
+IDS_MAP=マップ
+IDS_TEXTOBJECT=テキスト オブジェクト
+IDS_CROSSTAB=クロスタブ
+IDS_CHART=チャート
+IDS_BLOB=BLOB フィールド
+IDS_INPLACE_SUBREPORT=サブレポート
+IDS_OLEOBJECT=OLE オブジェクト
+IDS_SECTION=セクション
+IDS_OLAP_GRID=OLAP グリッド
+IDS_GROUP_HEADER=グループ ヘッダー
+IDS_GROUP_FOOTER=グループ フッター
+IDS_REPORT_HEADER=レポート ヘッダー
+IDS_REPORT_FOOTER=レポート フッター
+IDS_PAGE_HEADER=ページ ヘッダー
+IDS_PAGE_FOOTER=ページ フッター
+IDS_DETAIL=詳細セクション
+
+#==============================================================================
+#   From:       HTMLReportRender.txt
+#   Summary:    This file contains JAPANESE resources for HTMLReportRender
+#==============================================================================
+
+
+ID_InvalidAdornmentClass=装飾のクラスが見つかりません。
+ID_InvalidFontColorClass=フォントの色のクラスが見つかりません。
+ID_InvalidReportObject=レポート オブジェクトが無効です。
+
+FileDialogInvalidFileName='{0}' は無効なファイル名です。
+FileDialogSubLassFailure=ウィンドウ サブクラスに失敗しました。
+FileDialogBufferTooSmall=バッファは小さすぎます。
+FileDialogInvalidFilter=無効なフィルタ文字列です。
+FileDialogInvalidFilterIndex=無効なフィルタ インデックスです。
+FileDialogFileNotFound=フィル '{0}' は見つかりませんでした。
+
+
+#
+#  EnterpriseReport and ServerFileReport strings
+#
+IDS_RPTCOMP_LOCATION=場所
+IDS_RPTCOMP_INVALID_SCHEME=URI "{1}" のスキーム "{0}" はサポートされていません。
+
+IDS_ENTRPT_WEBSERVICEURL=Web Component Server を呼び出す Web サービスへの URL です。
+IDS_ENTRPT_APSSERVER=認証とスケジュールを処理する Crystal Enterprise CMS サーバーです。
+IDS_ENTRPT_WCSSERVER=Enterprise レポートに対する要求を処理する Web Connector です。
+IDS_ENTRPT_USERNAME=Crystal Enterprise への接続に使用するユーザー名です。
+IDS_ENTRPT_PASSWORD=Crystal Enterprise への接続に使用するパスワードです。
+IDS_ENTRPT_AUTHTYPE=Crystal Enterprise への接続に使用する認証の種類です。
+IDS_ENTRPT_OBJECTID=表示するレポートのオブジェクト ID です。
+IDS_ENTRPT_OBJECTCUID=表示するオブジェクトのオブジェクト CUID です。
+
+IDS_SERVRPT_WEBSERVICEURL=サーバー ファイルにアクセスする Web サービスへの URL です。
+IDS_SERVRPT_RPTPATH=サーバー上のレポートへのパスです。
+
+#
+# Group Tree Node strings
+#
+IDS_ExpandTreeNode=ノード {0} を展開
+IDS_CollapseTreeNode=ノード {0} を折りたたむ
+
+#
+# Export dialog strings
+#
+IDS_ExportSubmit=エクスポート
+IDS_PrintSubmit=印刷
+IDS_ExportPageTitle=レポートをエクスポート
+IDS_PrintPageTitle=レポートを印刷
+IDS_ExportPageRange=エクスポートするページの範囲を入力してください。
+IDS_PrintPageRange=印刷するページの範囲を入力してください。
+IDS_ExportFormat=一覧からエクスポート形式を選択してください。
+IDS_InvalidRange=ページ範囲の値が不正です。有効なページ範囲を入力してください。
+IDS_PrintInstructions1=印刷するには :
+IDS_PrintInstructions2=1. 次に表示されるダイアログで、[このファイルを開く] オプションを選択し、[OK] ボタンをクリックします。
+IDS_PrintInstructions3=2. ブラウザの印刷ボタンではなく、Acrobat Reader メニューの印刷アイコンをクリックします。
+IDS_Formats=形式 :
+IDS_CrystalReportFormat=Crystal Reports (RPT)
+IDS_AcrobatFormat=Acrobat 形式 (PDF)
+IDS_WordFormat=MS Word (RTF)
+IDS_ExcelFormat=MS Excel 97-2000
+IDS_ExcelRecordFormat=MS Excel 97-2000 (データのみ)
+IDS_RTFFormat=リッチ テキスト形式
+IDS_All=すべて
+IDS_Pages=ページ指定
+IDS_From=開始 :
+IDS_To=終了 :
+
+#
+# Viewer Prompting
+#
+ID_ParameterInSubreport={1} の {0}
+ID_OK=OK
+ID_SUBMIT=送信
+ID_LOGON=ログオン
+ID_True=真
+ID_False=偽
+
+ID_StringsJSFileName=strings_ja.js
+
+ID_AND=および
+ID_IncludeThisValue=この値を含む
+ID_EditmaskSentence=パラメータのエディット マスク :
+ID_Parameter=パラメータ フィールド
+ID_Prompt=リクエストされたレポートにはさらに詳細な情報が必要です。
+ID_RangeHasNoLowerLimit=範囲の下限を指定しない
+ID_RangeHasNoUpperLimit=範囲の上限を指定しない
+ID_RangeSentence=このパラメータには {0} から {1} の間の値を指定してください。
+ID_RangeValuesBetween=値の範囲 :
+ID_CalendarButtonDescription=カレンダー
+ID_Remove=削除
+ID_Select=選択
+ID_Add=追加
+ID_NoValue=値なし
+ID_StrRangeSentence=このパラメータには、文字長が {0} から {1} の間の値を入力してください。
+ID_InvalidReportContent=無効なレポート コンテンツです。
+ID_ServerName=サーバー名 :
+ID_DatabaseName=データベース名 :
+ID_UseIntegratedSecurity=統合セキュリティを使用する
+ID_QE_ServerDescription=サーバーの説明
+ID_QE_DatabaseType=データベース タイプ
+ID_UserId=ユーザー名 :
+ID_Password=パスワード :
+ID_USE_VALUE=使用する値...
+ID_RANGE_FROM=開始値
+ID_RANGE_EXACTLY=正確に一致
+ID_RANGE_AFTER=開始値 (排他)
+ID_RANGE_NO_LOWER=開始値を指定しない
+ID_RANGE_TO=終了値
+ID_RANGE_BEFORE=終了値 (排他)
+ID_RANGE_NO_UPPER=終了値を指定しない
+ID_VALUE=値
+ID_PARAMETERS=パラメータ
+
+ID_UntitleFilename=無題
+
+ID_NextPage=次のページ
+ID_PrevPage=前のページ
+
+#
+# Image Object Alt. Text
+#
+IDS_Image=イメージ

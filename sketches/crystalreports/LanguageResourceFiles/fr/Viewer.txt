@@ -1,0 +1,304 @@
+#==============================================================================
+#   File:       Viewer.txt
+#   Summary:    This file contains FRENCH resources for CrystalDecisions.Windows.Forms.CrystalReportViewer
+#==============================================================================
+
+ID_HELP_ABOUT=Aide
+ID_VIEW_GROUPTREE=Activer/Désactiver l'arborescence des groupes
+ID_SEARCH=Rechercher le texte
+ID_GOTOPAGE=Aller à la page
+ID_FIRSTPAGE=Première page
+ID_PREVPAGE=Page précédente
+ID_NEXTPAGE=Page suivante
+ID_LASTPAGE=Dernière page
+ID_PAGENUMBER=Numéro de page
+ID_VIEW_TOOLBAR=Afficher/Masquer la barre d'outils
+ID_PRINT=Imprimer le rapport
+ID_SELECTEXPERT=Expert Sélection
+ID_CLOSE=Fermer la vue
+ID_STOP=Arrêter le chargement
+ID_REFRESH=Actualiser
+ID_EXPORT=Exporter le rapport
+ID_SEARCH_EXPERT=Expert Recherche
+ID_ZOOM=Zoom
+ID_ZOOMING=Zoom
+ID_SELECTION_COPY=Copier
+ID_OF=de
+ID_EDIT_REPORT_SOURCE=Modifier la source du rapport
+ID_ENTER_REPORT_SOURCE=Saisir la source du rapport
+ID_EDIT=Modifier ...
+ID_NONE=(Aucun)
+ID_BROWSE=Parcourir ...
+ID_OPEN_REPORT_DIALOG_TITLE=Ouvrir un rapport Crystal existant
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+
+IDC_ZOOMCOMBO=Contrôle du zoom
+IDC_SEARCHCOMBO=Contrôle de la recherche
+IDC_PROGRESSBAR=Contrôle de la progression
+IDC_PAGENUMBER=Numéro de page
+IDC_GROUPTREE=Arborescence des groupes
+IDC_VALUE_OR_BOOLEAN_LABEL=&Valeurs discrètes
+IDC_PARAMETERFIELDS_LABEL=Champs de paramètre :
+IDC_END_OF_RANGE_LABEL=&Fin de plage
+IDC_START_OF_RANGE_LABEL=&Début de plage
+IDC_END_LABEL=Fin
+IDC_START_LABEL=Début
+IDC_VALUE_START_LABEL=Valeur/Début
+IDC_CHECK_NULLVALUE=Définir sur la valeur NULL
+#IDC_INCLUDE_LOWER_BOUND=&Include value (DIyer 19 June 2001: Not Used?)
+IDC_DELETE_VALUE=&Supprimer
+IDCANCEL=Annuler
+IDOK=OK
+IDC_ADD_VALUE_OR_BOOLEAN=&Ajouter
+IDC_ADD_RANGE_VALUES=A&jouter
+IDC_NO_UPPER_BOUND=&Aucune limite supérieure
+IDC_NO_LOWER_BOUND=&Aucune limite inférieure
+IDC_PICKDEFAULTS=&Choisir des paramètres par défaut
+IDC_FINDWHAT_LABEL=Rechercher :
+IDC_FINDNEXT=&Suivant
+IDC_PAGENUMBER_LABEL=Spécifiez le numéro de page :
+IDC_ZOOMING_LABEL=Spécifiez le facteur de zoom : (25 - 400)
+
+IDS_CRYSTALREPORT=Rapport Crystal
+IDS_MSG_TITLE=Crystal Reports Windows Forms Viewer
+IDS_PREVIEW=Aperçu
+IDS_LOADING=Chargement...
+IDS_PAGE_WIDTH=Largeur de page
+IDS_WHOLE_PAGE=Toute la page
+IDS_CUSTOMIZE=Personnaliser...
+IDS_DRILLDOWN=Explorer
+IDS_TEXT=Texte
+IDS_FIELD=Champ :
+IDS_MSG_STRINGNOTFOUND=Il n'existe pas d'autres instances du texte spécifié au-delà de cette page.
+IDS_MSG_COULDNOTSTARTPRINTJOB=Impossible de lancer l'impression.
+IDS_ERR_BUSY=Le contrôle est occupé à télécharger des données.
+IDS_ERR_INDEX_RANGE=L'index est hors plage.
+IDS_ERR_GROUP_INFO=L'information de groupe nécessaire n'est pas disponible.
+IDS_EXPORT_UNAVAILABLE =Vous ne pouvez pas exporter ce rapport.
+IDS_NEXT=&Suivant >
+IDS_FINISH=Terminer
+IDS_MSG_NO_RPT_NAME=Aucun rapport à visualiser.
+IDS_PAGEN_SYMBOL=de
+IDS_ERR_LOAD_EXPORT=Impossible d'initialiser le contrôle d'exportation.
+IDS_ERR_EXPORT_FAILED=L'exportation a échoué.
+IDS_EXPORT_COMPLETED=Exportation terminée.
+IDS_CONTENTS=Niveau suivant...
+IDS_ORIENTATION_MSG=Le rapport que vous allez imprimer est une image des données de rapport actuelles mise en forme à l'avance. Le changement de l'orientation ou de la taille de papier peut provoquer une perte d'objets sur chaque page imprimée. Voulez-vous continuer?
+IDS_USER_ID_PROMPT=&ID utilisateur :
+IDS_PROMPT_TEXT=&Invite :
+IDS_DB_LOGON_PROMPT=Saisissez vos ID utilisateur et mot de passe pour la base de données
+IDS_CANCEL_PROMPT_MSG=Etes-vous sûr de vouloir annuler ? Si les informations de connexion sont obligatoires, vous ne pourrez pas continuer. Les invites par défaut du rapport seront utilisées.
+IDS_DB_LOGON_FOR_SUB=utilisé par le sous-rapport :
+IDS_PROMPT_MSG=Saisissez les informations de l'invite :
+IDS_DEL_DRILL=Vous ne pouvez pas poursuivre cette opération et garder vos onglets Exploration. Si vous continuez, vos onglets Exploration seront fermés.\n\nVoulez-vous continuer ?
+IDS_NUMBER=Nombre
+IDS_CURRENCY=Devise
+IDS_DATE=Date
+IDS_TIME=Heure
+IDS_BOOLEAN=Booléen
+IDS_DATETIME=Date/heure
+IDS_MEMO=Mémo
+IDS_STRING=Chaîne
+IDS_MAP=Carte
+IDS_TEXTOBJECT=Objet texte
+IDS_CROSSTAB=Tableau croisé
+IDS_CHART=Diagramme
+IDS_BLOB=Champ BLOB
+IDS_INPLACE_SUBREPORT=Sous-rapport
+IDS_OLEOBJECT=Objet OLE
+IDS_SECTION=Section
+IDS_OLAP_GRID=Grille OLAP
+IDS_GROUP_HEADER=En-tête de groupe
+IDS_GROUP_FOOTER=Pied de page de groupe
+IDS_REPORT_HEADER=En-tête du rapport
+IDS_REPORT_FOOTER=Pied de page du rapport
+IDS_PAGE_HEADER=En-tête de page
+IDS_PAGE_FOOTER=Pied de page
+IDS_DETAIL=Section Détails
+IDS_FREEZE_PANE=&Figer le volet
+IDS_UNFREEZE_PANE=&Libérer le volet
+IDS_PROMPTPARAM_DLGTITLE=Saisir des valeurs de paramètre
+IDS_ENTERSEARCHSTRING=Veuillez saisir la chaîne que vous souhaitez rechercher.
+IDS_FINISH_SEARCHING=La recherche dans le document est terminée.
+IDS_ENTERPAGENUMBER=Veuillez saisir un numéro de page valide.
+IDS_ENTERZOOMFACTOR=Veuillez saisir un facteur de zoom valide.
+IDS_MAIN_REPORT=Rapport principal
+IDS_FILEFILTER_RPT=Crystal Reports (*.rpt)|*.rpt
+IDS_FILEFILTER_DOC=Microsoft Word (*.doc)|*.doc
+IDS_FILEFILTER_XLS=Microsoft Excel (*.xls)|*.xls
+IDS_FILEFILTER_RECORD_XLS=Données Microsoft Excel uniquement (*.xls)|*.xls
+IDS_FILEFILTER_RTF=Format RTF (*.rtf)|*.rtf
+IDS_FILEFILTER_PDF=Adobe Acrobat (*.pdf)|*.pdf
+IDS_FILEFILTER_HTML32=HTML 3.2 (*.html)|*.html
+IDS_FILEFILTER_HTML40=HTML 4.0(DHTML) (*.html)|*.html
+IDS_DRILL_DOWN=Exploration
+IDS_REPORTOBJECT=Objet de rapport
+IDS_TRY_AGAIN=Réessayez.
+IDS_LOGON_FAILED=Echec de la connexion.
+IDS_MISSING_PARAMETERFIELD_CURRENTVALUE=Valeur actuelle de ParameterField introuvable.
+
+# StatusBar text:
+IDS_CURRENT_PAGENUMBER=Numéro de la page actuelle :
+IDS_TOTAL_PAGENUMBER=Nombre total de pages :
+IDS_ZOOM_FACTOR=Facteur de zoom :
+IDS_ZOOM_FACTOR_DEFAULT=Facteur de zoom : 100 %
+
+# Exception messages
+IDS_EXCEPTION_DOCUMENTMANAGER_INITDOCUMENTMANAGER=Exception dans DocumentManager.InitDocumentManager :
+IDS_EXCEPTION_DOCUMENTMANAGER_ADDREPORT=Exception dans DocumentManager.AddReport :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETPAGE=Exception dans MainReportDocument.GetPage :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPTREEFROMENGINE=Exception dans MainReportDocument.GetGroupTreeFromEngine :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETLASTPAGENUMBERFROMENGINE=Exception dans MainReportDocument.GetLastPageNumberFromEngine :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_REFRESH=Exception dans MainReportDocument.Refresh :
+IDS_EXCEPTION_MAINREPORTDOCUMENT_GETGROUPINFOFORDRILLONGRAPH=Exception dans MainReportDocument.GetGroupInfoForDrillOnGraph :
+IDS_EXCEPTION_REPORTDOCUMENT_GETDRILLDOWNDOCUMENT=Exception dans ReportDocument.GetDrillDownDocument :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETLASTPAGENUMBER=Exception dans ReportDocumentBase.GetLastPageNumber :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETPAGE=Exception dans ReportDocumentBase.GetPage :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_DRILLDOWNGRAPH=Exploration d'une zone n'ayant pas de données de détail. Pour explorer, cliquez sur une zone contenant des données.
+IDS_EXCEPTION_REPORTDOCUMENTBASE_GETGROUPTREE=Exception dans ReportDocumentBase.GetGroupTree :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDGROUP=Exception dans ReportDocumentBase.FindGroup :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_FINDTEXT=Exception dans ReportDocumentBase.FindText :
+IDS_EXCEPTION_REPORTDOCUMENTBASE_EXPORT=Exception dans ReportDocumentBase.Export :
+IDS_EXCEPTION_REPORTGROUPTREE_INITREPORTGROUPTREE=Exception dans ReportGroupTree.InitReportGroupTree :
+	
+IDS_EXCEPTION_TOOLTIPCAPTIONDUPLICATE=La légende de l'info-bulle de la barre d'outils existe déjà. Choisissez une autre info-bulle.
+IDS_EXCEPTION_TOOLBARBASE_INDEXOUTOFRANGE=L'index des contrôles de barre d'outils est hors plage.
+IDS_EXCEPTION_TOOLBARBASE_INVALIDTOOLTIP=Info-bulle du contrôle de barre d'outils incorrecte.
+
+IDS_EXCEPTION_NULL_HOST=Impossible d'extraire IDesignerHost.
+IDS_EXCEPTION_NULL_EXTENSIBILITYSERVICE=Impossible d'extraire IExtensibilityService.
+IDS_EXCEPTION_NULL_PROJECT=Impossible d'extraire le projet actuel.
+
+# Property descriptions
+IDS_DISPLAY_GROUPTREE_DESCRIPTION=Détermine si l'arborescence des groupes du CrystalReportViewer est visible ou masquée.
+IDS_DISPLAY_TOOLBAR_DESCRIPTION=Détermine si la barre d'outils du CrystalReportViewer est visible ou masquée.
+IDS_ENBALE_STATUSBAR_DESCRIPTION=Détermine si la barre de rapport du CrystalReportViewer est visible ou masquée.
+IDS_REPORT_NAME_DESCRIPTION=Nom ou adresse URL du rapport à afficher.
+IDS_REPORT_SOURCE_DESCRIPTION=Mandataire du service de rapport distant du rapport à afficher.
+IDS_DISPLAY_BACKGROUNDEDGE_DESCRIPTION=Détermine si le rapport est décalé par rapport au bord de sa fenêtre d'affichage.
+IDS_SELECTION_FORMULA_DESCRIPTION=Formule de sélection d'enregistrements.
+IDS_VIEWTIME_SELECTION_FORMULA_DESCRIPTION=Formule de sélection d'enregistrements au moment de l'affichage.
+
+IDS_SHOW_PAGENAVIGATEBUTTONS_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte les boutons permettant de naviguer dans les pages du rapport.
+IDS_SHOW_GOTOPAGEBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton permettant de spécifier le numéro de page.
+IDS_SHOW_CLOSEBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton permettant de fermer une page de rapport.
+IDS_SHOW_PRINTBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton d'impression.
+IDS_SHOW_REFRESHBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton d'actualisation.
+IDS_SHOW_EXPORTBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton d'exportation.
+IDS_SHOW_GROUPTREEBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton permettant d'afficher ou de masquer l'arborescence des groupes.
+IDS_SHOW_ZOOMBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton zoom permettant de définir le niveau de zoom des pages du rapport.
+IDS_SHOW_TEXTSEARCHBUTTON_DESCRIPTION=Détermine si la barre d'outils du visualiseur comporte le bouton de recherche de texte.
+IDS_ENABLE_DRILLDOWN_DESCRIPTION=Détermine si les fonctions d'exploration de CrystalReportViewer sont activées.
+IDS_ENABLE_TOOLTIP_DESCRIPTION=Activez les info-bulles pour les objets affichés dans le visualiseur.
+# Event Descriptions
+ID_OnPageNavigateDescr=Se déclenche lorsque la navigation va commencer.
+ID_OnSearchDescr=Se déclenche lorsque la recherche de texte va commencer.
+ID_OnSubreportDrillDownDescr=Se déclenche lorsque l'exploration du sous-rapport va commencer.
+ID_OnRefreshDescr=Se déclenche lorsque l'actualisation du rapport va commencer.
+ID_OnZoomDescr=Se déclenche lorsque le facteur de zoom va être modifié.
+ID_OnDrillDescr=Se déclenche lorsque l'exploration du diagramme ou du groupe va commencer.
+ID_OnHandleExceptionDescr=Se déclenche lorsque le visualiseur détecte une exception et va la traiter.
+
+#==============================================================================
+#   File:       SCRShared.txt (Merged from Shared resource)
+#   Summary:    FRENCH resources for Crystal Reports shared controls
+#   Author:     Devan Iyer
+#   Date:       May, 2000
+#==============================================================================
+
+#[strings]
+#Database Logon Dialog
+##############################################################
+IDS_LOGINDLG_TITLE=Connexion à la base de données
+
+IDS_HELP=&Aide
+IDS_BACK=< &Précédent
+###IDS_NEXT=Next >
+###IDS_FINISH=Finish
+IDS_CANCEL=Annuler
+IDS_USEINTEGRATEDSECURITYCHECKBOX=Utiliser la sécurité intégrée
+
+IDS_REPORTNAMELABEL=Nom du sous-rapport :
+IDS_MAINREPORTLABEL=Rapport principal
+IDS_TABLENAMELABEL=Nom de la table :
+IDS_SERVERNAME=&Nom du serveur :
+IDS_DATABASENAME=&Base de données :
+IDS_LOGINID=&ID de connexion :
+IDS_PWD=&Mot de passe :
+IDS_PASSWORDCHAR=c
+
+#Parameter Field Dialog
+##############################################################
+IDS_PROMPTPARAM_DLGTITLE2=Indiquez les informations - {0} sur {1}
+
+#SubTitles
+IDS_SINGLE_DISCRETE_EDIT=Vous pouvez fournir une seule valeur pour ce paramètre.\r\nSaisissez la valeur que vous voulez inclure.
+IDS_SINGLE_DISCRETE_PICK=Vous pouvez fournir une seule valeur pour ce paramètre.\r\nSélectionnez la valeur que vous voulez inclure.
+IDS_SINGLE_DISCRETE_EDIT_AND_PICK=Vous pouvez fournir une seule valeur pour ce paramètre.\r\nSélectionnez ou saisissez la valeur que vous voulez inclure.
+
+IDS_SINGLE_RANGE_EDIT=Vous pouvez fournir une seule plage de valeurs pour ce paramètre.\r\nSaisissez une limite inférieure et une limite supérieure pour décrire la plage de valeurs que vous voulez inclure.
+IDS_SINGLE_RANGE_PICK=Vous pouvez fournir une seule plage de valeurs pour ce paramètre.\r\nSélectionnez une limite inférieure et une limite supérieure pour décrire la plage de valeurs que vous voulez inclure.
+IDS_SINGLE_RANGE_EDIT_AND_PICK=Vous pouvez fournir une seule plage de valeurs pour ce paramètre.\r\nSélectionnez ou saisissez une limite inférieure et une limite supérieure pour décrire la plage de valeurs que vous voulez inclure.
+
+IDS_MULTIPLE_DISCRETE_EDIT=Vous pouvez spécifier une ou plusieurs valeurs pour ce paramètre.\r\nSaisissez une valeur et cliquez sur Ajouter pour chaque valeur à inclure.
+IDS_MULTIPLE_DISCRETE_PICK=Vous pouvez spécifier une ou plusieurs valeurs pour ce paramètre.\r\nSélectionnez une valeur et cliquez sur Ajouter pour chaque valeur à inclure.
+IDS_MULTIPLE_DISCRETE_EDIT_AND_PICK=Vous pouvez spécifier une ou plusieurs valeurs pour ce paramètre.\r\nSélectionnez ou saisissez une valeur et cliquez sur Ajouter pour chaque valeur à inclure.
+
+IDS_MULTIPLE_RANGE_EDIT=Vous pouvez spécifier une ou plusieurs plages de valeurs pour ce paramètre.\r\nSaisissez une limite inférieure et une limite supérieure, puis cliquez sur Ajouter pour chaque plage de valeurs à inclure.
+IDS_MULTIPLE_RANGE_PICK=Vous pouvez spécifier une ou plusieurs plages de valeurs pour ce paramètre.\r\nSélectionnez une limite inférieure et une limite supérieure, puis cliquez sur Ajouter pour chaque plage de valeurs à inclure.
+IDS_MULTIPLE_RANGE_EDIT_AND_PICK=Vous pouvez spécifier une ou plusieurs plages de valeurs pour ce paramètre.\r\nSélectionnez ou saisissez une limite inférieure et une limite supérieure, puis cliquez sur Ajouter pour chaque plage de valeurs à inclure.
+
+IDS_MULTIPLE_BOTH_EDIT=Vous pouvez spécifier une ou plusieurs valeurs (y compris des plages de valeurs) pour ce paramètre.\r\nSaisissez une valeur (ou une limite inférieure et une limite supérieure), puis cliquez sur Ajouter pour chaque valeur à inclure.
+IDS_MULTIPLE_BOTH_PICK=Vous pouvez spécifier une ou plusieurs valeurs (y compris des plages de valeurs) pour ce paramètre.\r\nSélectionnez une valeur (ou une limite inférieure et une limite supérieure), puis cliquez sur Ajouter pour chaque valeur (ou plage de valeurs) à inclure.
+IDS_MULTIPLE_BOTH_EDIT_AND_PICK=Vous pouvez spécifier une ou plusieurs valeurs (y compris des plages de valeurs) pour ce paramètre.\r\nSélectionnez ou saisissez une valeur (ou une limite inférieure et une limite supérieure), puis cliquez sur Ajouter pour chaque valeur (ou plage de valeurs) à inclure.
+
+#prompting text
+IDS_PROMPT_RANGE=La valeur doit comporter entre {0} et {1}{2}.
+IDS_PROMPT_RANGE_STRING= caractères
+IDS_PROMPT_RANGE2=La valeur doit être comprise entre {0} et {1}.
+IDS_PROMPT_RANGE_STRING2=La valeur doit comporter entre {0} et {1} caractères.
+
+###IDC_VALUE_OR_BOOLEAN_LABEL=Discrete va&lues
+###IDC_PARAMETERFIELDS_LABEL=Parameter Fields:
+###IDC_END_OF_RANGE_LABEL=&End of range
+###IDC_START_OF_RANGE_LABEL=&Start of range
+###IDC_END_LABEL=End
+###IDC_START_LABEL=Start
+###IDC_VALUE_START_LABEL=Value/Start
+###IDC_CHECK_NULLVALUE=Set the value to "NULL"
+#IDC_INCLUDE_LOWER_BOUND=&Include value
+###IDC_DELETE_VALUE=&Remove
+###IDC_ADD_VALUE_OR_BOOLEAN=&Select
+###IDC_ADD_RANGE_VALUES=S&elect
+###IDC_NO_UPPER_BOUND=Range has no &upper limit
+###IDC_NO_LOWER_BOUND=Range has no &lower limit
+###IDC_PICKDEFAULTS=&Pick from defaults
+IDS_OK=OK
+
+IDC_INCLUDE_LOWER_BOUND=&Inclure cette valeur
+IDC_INCLUDE_UPPER_BOUND=I&nclure cette valeur
+IDC_RANGE_LABEL=&Plage de valeurs entre
+IDS_AND_LABEL=et
+IDC_LABEL_VALUES=Valeurs :
+
+
+#prompting types
+IDS_PT_NUMBER=Nombre
+IDS_PT_CURRENCY=Devise
+IDS_PT_BOOLEAN=Vrai ou Faux
+IDS_PT_DATE=Date
+IDS_PT_STRING=Chaîne
+IDS_PT_DATETIME=Date/heure
+IDS_PT_TIME=Heure
+
+
+#error messages
+IDS_ERROR_PARAMETER_TYPE=Veuillez saisir une valeur {0}.
+IDS_ERROR_PARAMETER_RANGE=La valeur de début de plage doit être inférieure ou égale à la valeur de fin de plage.
+IDS_ERROR_EMPTY_REPORT_NAME=Aucun nom de rapport n'est spécifié.
+IDS_ERROR_PARAMETER_GREATER_THAN_MAX=La valeur saisie est supérieure au maximum autorisé pour ce paramètre.
+IDS_ERROR_PARAMETER_LESS_THAN_MIN=La valeur saisie est inférieure au minimum autorisé pour ce paramètre.
+
+# Granville-only error messages; no need to translate for CR10
+IDS_ERROR_INVALID_DATA_SOURCE=Source de données non valide.
+

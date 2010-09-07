@@ -1,0 +1,51 @@
+#==============================================================================
+#   File:       SCRViewerReportSource.txt
+#   Summary:    This file contains GERMAN resources for Viewer ReportSource
+#==============================================================================
+
+;[strings]
+
+IDS_ENTRPT_APSSERVER=Der für die Authentifizierung und zeitgesteuerte Verarbeitung verantwortliche Crystal Enterprise CMS-Server
+IDS_ENTRPT_USERNAME=Der zum Verbinden mit Crystal Enterprise verwendete Anwendername
+IDS_ENTRPT_PASSWORD=Das zum Verbinden mit Crystal Enterprise verwendete Kennwort
+IDS_ENTRPT_AUTHTYPE=Der zum Verbinden mit Crystal Enterprise verwendete Authentifizierungstyp
+
+IDS_ENTRPT_LOGONINFO=Crystal Enterprise-Anmeldeinformationen. Bei Verwendung von EnterpriseSession nicht verwenden.
+IDS_ENTRPT_DOCUMENTURI=Ein Pfad zum Report-Dokument.  Beispiele: "ras://c:\\report.rpt", "ceis://@cms/#115", "c:\\report.rpt"
+IDS_ENTRPT_RPTAPPSERVER=Der Report Application Server, der verwendet wird.
+IDS_ENTRPT_ENTSESSION=Das Crystal Enterprise-Sitzungsobjekt
+;IDS_REPORTDATAVIEW_GROUPPATH=Der Gruppenpfad der Daten im Bericht.
+;IDS_REPORTDATAVIEW_TOSTRINGFORMAT=Die von ToString() zu verwendende Formatzeichenfolge, z. B. ""{0}: {1}, {2}""
+;IDS_REPORTDATAVIEW_VISIBLEFIELDS=Eine durch Semikolons getrennte Liste anzuzeigender Berichtfelder. Bei """" werden alle Felder angezeigt.
+;IDS_REPORTDATAVIEW_REPORT=Der zum Abrufen der Daten verwendete Bericht.
+
+;IDS_DOCURIEDITOR_FILTER=Crystal Reports-Dateien (*.rpt)|*.rpt
+;IDS_OPENFILEDIALOG_TITLE=Öffnen
+
+IDS_CATEGORY_REPORT=Bericht
+ID_NONE=(Keine)
+ID_BROWSE=Durchsuchen ...
+ID_CREATE_NEW_REPORT_INSTANCE=Neue ReportDocument-Instanz von typisierter Report-Klasse erstellen
+ID_USE_EXISTING_INSTANCE=Vorhandene ReportDocument-Instanz verwenden
+ID_OPEN_REPORT_DIALOG_TITLE=Vorhandenen Crystal Reports-Bericht öffnen
+ID_OPEN_REPORT_DIALOG_FILTER=Crystal Reports (*.rpt)|*.rpt
+ID_EDIT_REPORT_SOURCE=Berichtquelle bearbeiten
+ID_ENTER_REPORT_SOURCE=Berichtquelle eingeben
+ID_EDIT=Bearbeiten ...
+ID_CANCEL=Abbrechen
+ID_OK=OK
+
+# Exception messages
+IDS_EXCEPTION_INVALID_REPORTSOURCE=Ungültige Berichtquelle.
+IDS_EXCEPTION_INVALID_REPORTFILE=Ungültige Berichtdatei.
+IDS_EXCEPTION_CREATEREPORT_RETURNED_NULL=ICachedReport::CreateReport() hat "Null" zurückgegeben.
+IDS_EXCEPTION_NO_REPORT_FILENAME=Der Berichtdateiname war leer.
+;IDS_EXCEPTION_SESSIONNOTINITIALIZED=Die Enterprise-Sitzung wurde nicht initialisiert.
+IDS_EXCEPTION_ENTERPRISELOGONFAILED=Fehler bei der Anmeldung an Enterprise.
+IDS_EXCEPTION_XMLSERIALIZATIONFAILED=Fehler bei XML-Serialisierung.
+;IDS_EXCEPTION_BADENTERPRISELOGONINFO=EnterpriseLogon muss eine Anmeldetoken-Zeichenfolge oder ISEnterpriseSession sein.
+;IDS_EXCEPTION_CE_NOT_FOUND=Crystal Enterprise wurde auf dem Rechner nicht gefunden.\nWeitere Informationen finden Sie unter http://www.businessobjects.com/products/reporting/crystalenterprise.
+
+IDS_ERROR_INVALIDREPORTNAME=Der Bericht konnte nicht geladen werden.
+IDS_ERROR_DESERIALIZATIONFAILED=Fehler bei Deserialisierung. Sie müssen ""{0}"" auf einem Report Application Server ausführen.
+
