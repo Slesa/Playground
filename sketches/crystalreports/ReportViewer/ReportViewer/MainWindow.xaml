@@ -2,7 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Forms="clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms" 
-        Title="MainWindow" Height="600" Width="800" Loaded="OnWindowLoaded">
+        xmlns:ReportViewer="clr-namespace:ReportViewer" 
+        Title="{x:Static ReportViewer:Strings.MainWindow_Title}"
+        Height="600" Width="800" Loaded="OnWindowLoaded">
     <Window.Resources>
         <DataTemplate x:Key="ReportInfoItemTemplate">
             <StackPanel Orientation="Horizontal">
@@ -14,7 +16,7 @@
     </Window.Resources>
     <DockPanel LastChildFill="True">
         <TabControl>
-            <TabItem Header="External">
+            <TabItem Header="{x:Static ReportViewer:Strings.Reports_tabExternal}" x:Name="tabExternal">
                 <!-- TabPanel -->
                     <DockPanel LastChildFill="True">
                     <WindowsFormsHost Width="Auto" Height="Auto" MinHeight="480" MinWidth="640">
@@ -23,25 +25,25 @@
                     </DockPanel>
                 <!-- /TabPanel -->
             </TabItem>
-            <TabItem Header="Embedded">
+            <TabItem Header="{x:Static ReportViewer:Strings.Reports_tabEmbedded}" x:Name="tabEmbedded">
                 <DockPanel LastChildFill="True">
                     <WindowsFormsHost Width="Auto" Height="Auto" MinHeight="480" MinWidth="640">
                         <Forms:CrystalReportViewer x:Name="embReportViewer"/>
                     </WindowsFormsHost>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Reports">
+            <TabItem Header="{x:Static ReportViewer:Strings.Reports_tabReport}" x:Name="tabReport">
                 <DockPanel LastChildFill="True">
-                    <GroupBox DockPanel.Dock="Top" Header="Select..." Height="Auto" Name="groupSelect">
+                    <GroupBox DockPanel.Dock="Top" Header="{x:Static ReportViewer:Strings.Reports_groupSelection}" Height="Auto" Name="groupSelection">
                         <StackPanel Orientation="Horizontal" >
-                            <TextBlock Height="25" Name="tbReport" Text="Report:" />
+                            <TextBlock Height="25" Name="tbReport" Text="{x:Static ReportViewer:Strings.Reports_lbSelectReport}" />
                             <ComboBox Height="25" Width="400" Name="cbReport" 
                                       IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" 
                                       ItemTemplate="{StaticResource ReportInfoItemTemplate}" 
                                       SelectionChanged="OnReportChanged" />
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox DockPanel.Dock="Top" Header="Information" Height="Auto" Name="groupInfo">
+                    <GroupBox DockPanel.Dock="Top" Header="{x:Static ReportViewer:Strings.Reports_groupInformation}" Height="Auto" Name="groupInformation">
                         <Grid DataContext="cbReport">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -56,19 +58,19 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Report name:" />
-                            <TextBox Grid.Column="1" Grid.Row="0" Name="tbReportName" Text="{Binding Path=SelectedItem.Name}"/>
-                            <TextBlock Grid.Column="0" Grid.Row="1" Text="File name:" />
+                            <TextBlock Grid.Column="0" Grid.Row="0" x:Name="lbReportName" Text="{x:Static ReportViewer:Strings.Reports_lbReportName}" />
+                            <TextBox Grid.Column="1" Grid.Row="0" Name="tbReportName" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" x:Name="lbFileName" Text="{x:Static ReportViewer:Strings.Reports_lbFileName}" />
                             <TextBox Grid.Column="1" Grid.Row="1" Name="tbFileName" />
-                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Author:" />
+                            <TextBlock Grid.Column="0" Grid.Row="2" x:Name="lbAuthor" Text="{x:Static ReportViewer:Strings.Reports_lbAuthor}" />
                             <TextBox Grid.Column="1" Grid.Row="2" Name="tbAuthor" />
-                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Subject:" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" x:Name="lbSubject" Text="{x:Static ReportViewer:Strings.Reports_lbSubject}" />
                             <TextBox Grid.Column="1" Grid.Row="3" Name="tbSubject" />
-                            <TextBlock Grid.Column="0" Grid.Row="4" Text="Title:" />
+                            <TextBlock Grid.Column="0" Grid.Row="4" x:Name="lbTitle" Text="{x:Static ReportViewer:Strings.Reports_lbTitle}" />
                             <TextBox Grid.Column="1" Grid.Row="4" Name="tbTitle" />
-                            <TextBlock Grid.Column="0" Grid.Row="5" Text="Keywords:" />
+                            <TextBlock Grid.Column="0" Grid.Row="5" x:Name="lbKeywords" Text="{x:Static ReportViewer:Strings.Reports_lbKeywords}" />
                             <TextBox Grid.Column="1" Grid.Row="5" Name="tbKeywords" />
-                            <TextBlock Grid.Column="0" Grid.Row="6" Text="Comments:" />
+                            <TextBlock Grid.Column="0" Grid.Row="6" x:Name="lbComments" Text="{x:Static ReportViewer:Strings.Reports_lbComments}" />
                             <TextBox Grid.Column="1" Grid.Row="6" Name="tbComments" />
                         </Grid>
                     </GroupBox>
