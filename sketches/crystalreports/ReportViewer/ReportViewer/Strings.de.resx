@@ -132,6 +132,9 @@
   <data name="Reports_lbComments" xml:space="preserve">
     <value>Kommentare:</value>
   </data>
+  <data name="Reports_lbFields" xml:space="preserve">
+    <value>Felder:</value>
+  </data>
   <data name="Reports_lbFileName" xml:space="preserve">
     <value>Dateiname:</value>
   </data>

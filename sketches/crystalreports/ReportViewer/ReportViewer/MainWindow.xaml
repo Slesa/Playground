@@ -57,6 +57,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition />
+                                <RowDefinition />
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0" x:Name="lbReportName" Text="{x:Static ReportViewer:Strings.Reports_lbReportName}" />
                             <TextBox Grid.Column="1" Grid.Row="0" Name="tbReportName" />
@@ -72,6 +73,8 @@
                             <TextBox Grid.Column="1" Grid.Row="5" Name="tbKeywords" />
                             <TextBlock Grid.Column="0" Grid.Row="6" x:Name="lbComments" Text="{x:Static ReportViewer:Strings.Reports_lbComments}" />
                             <TextBox Grid.Column="1" Grid.Row="6" Name="tbComments" />
+                            <TextBlock Grid.Column="0" Grid.Row="7" x:Name="lbFields" Text="{x:Static ReportViewer:Strings.Reports_lbFields}" />
+                            <TextBox Grid.Column="1" Grid.Row="7" Name="tbFields" />
                         </Grid>
                     </GroupBox>
                 </DockPanel>

@@ -8,6 +8,8 @@ using ReportViewer.Reports;
 using ConnectionInfo = CrystalDecisions.Shared.ConnectionInfo;
 using Table = CrystalDecisions.CrystalReports.Engine.Table;
 
+// Localization: http://msdn.microsoft.com/en-us/library/ms227631.aspx
+// Kompilieren der CR Textdateien: http://msdn.microsoft.com/en-us/library/ms227633%28v=VS.90%29.aspx
 namespace ReportViewer
 {
     /// <summary>
@@ -126,6 +128,26 @@ namespace ReportViewer
             tbTitle.Text = reportDocument.SummaryInfo.ReportTitle;
             tbKeywords.Text = reportDocument.SummaryInfo.KeywordsInReport;
             tbComments.Text = reportDocument.SummaryInfo.ReportComments;
+
+            var msg = "";
+            var fields = reportDocument.ParameterFields;
+            for(var i=0; i<fields.Count; i++)
+            {
+                var param = fields[i] as CrystalDecisions.Shared.ParameterField;
+                if( param!=null )
+                    msg += "Parameter field - " + param.Name /*+ param.Nam .LongName*/ + "\n";
+            }
+
+//            msg = "";
+            var formulas = reportDocument.DataDefinition.FormulaFields;
+            for(var i=0; i<formulas.Count; i++)
+            {
+                var formula = formulas[i];
+                if( formula!=null )
+                    msg += "Formula field - " + formula.Name + " = " + formula.Text.Replace('\n','_') + "\n";
+
+            }
+            tbFields.Text = msg;
         }
     }
 

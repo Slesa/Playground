@@ -106,6 +106,15 @@ namespace ReportViewer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fields:.
+        /// </summary>
+        public static string Reports_lbFields {
+            get {
+                return ResourceManager.GetString("Reports_lbFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File name:.
         /// </summary>
         public static string Reports_lbFileName {
