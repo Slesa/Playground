@@ -120,6 +120,9 @@
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Versuche mit Crystal Reports</value>
   </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Anzahl</value>
+  </data>
   <data name="Reports_groupInformation" xml:space="preserve">
     <value>Information</value>
   </data>

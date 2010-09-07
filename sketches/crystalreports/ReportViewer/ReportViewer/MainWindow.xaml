@@ -19,6 +19,13 @@
             <TabItem Header="{x:Static ReportViewer:Strings.Reports_tabExternal}" x:Name="tabExternal">
                 <!-- TabPanel -->
                     <DockPanel LastChildFill="True">
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" >
+                        <TextBlock Height="25" Name="tbExternal" Text="{x:Static ReportViewer:Strings.Reports_lbSelectReport}" />
+                        <ComboBox Height="25" Width="400" Name="cbExternal" 
+                                      IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" 
+                                      ItemTemplate="{StaticResource ReportInfoItemTemplate}" 
+                                      SelectionChanged="OnExternalChanged" />
+                    </StackPanel>
                     <WindowsFormsHost Width="Auto" Height="Auto" MinHeight="480" MinWidth="640">
                         <Forms:CrystalReportViewer x:Name="extReportViewer"/>
                     </WindowsFormsHost>

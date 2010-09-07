@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Resources;
 using System.Threading;
 using System.Windows;
 using CrystalDecisions.CrystalReports.Engine;
@@ -17,33 +18,25 @@ namespace ReportViewer
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly ConnectionInfo _connectionInfo;
+
         public MainWindow()
         {
             InitializeComponent();
+            cbExternal.DataContext = ReportInfos;
             cbReport.DataContext = ReportInfos;
+
+            _connectionInfo = new ConnectionInfo
+            {
+                ServerName = @".\SQLEXPRESS",
+                DatabaseName = "NHibernateSketches",
+                IntegratedSecurity = true
+            };
         }
 
         private void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
-            var connectionInfo = new ConnectionInfo
-                                     {
-                                         ServerName = @".\SQLEXPRESS",
-                                         DatabaseName = "NHibernateSketches",
-                                         IntegratedSecurity = true
-                                     };
-            InitializeExternalReport(connectionInfo);
-            InitializeEmbeddedReport(connectionInfo);
-        }
-
-        void InitializeExternalReport(ConnectionInfo connectionInfo)
-        {
-            var reportDocument = new ReportDocument();
-            InitializeLanguage(reportDocument);
-
-            reportDocument.Load(@"Reports\CrystalReport2.rpt");
-
-            InitializeTables(connectionInfo, reportDocument);
-            extReportViewer.ReportSource = reportDocument;
+            InitializeEmbeddedReport();
         }
 
         static void InitializeLanguage(ReportDocument reportDocument)
@@ -69,11 +62,11 @@ namespace ReportViewer
             return CeLocale.ceLocaleEnglishUS;
         }
 
-        void InitializeEmbeddedReport(ConnectionInfo connectionInfo)
+        void InitializeEmbeddedReport()
         {
             var reportDocument = new CrystalReport1();
             InitializeLanguage(reportDocument);
-            InitializeTables(connectionInfo, reportDocument);
+            InitializeTables(_connectionInfo, reportDocument);
             embReportViewer.ReportSource = reportDocument;
         }
 
@@ -90,8 +83,8 @@ namespace ReportViewer
 
         public List<ReportInfo> ReportInfos
         {
-            get 
-            { 
+            get
+            {
                 var result = new List<ReportInfo>();
                 var directory = new DirectoryInfo("Reports");
                 var reportDocument = new ReportDocument();
@@ -113,6 +106,52 @@ namespace ReportViewer
             }
         }
 
+        private void OnExternalChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var reportInfo = cbExternal.SelectedItem as ReportInfo;
+            if (reportInfo == null)
+                return;
+            try
+            {
+                var reportDocument = new ReportDocument();
+                InitializeLanguage(reportDocument);
+
+                reportDocument.Load(reportInfo.Filename);
+                InitializeTables(_connectionInfo, reportDocument);
+
+                var objects = reportDocument.ReportDefinition.ReportObjects;
+                foreach (var anobject in objects)
+                {
+                    if (anobject is FieldHeadingObject)
+                    {
+                        var fho = anobject as FieldHeadingObject;
+                        fho.Text = translateText(fho.Text);
+                        continue;
+                    }
+                    if (anobject is TextObject)
+                    {
+                        var to = anobject as TextObject;
+                        to.Text = translateText(to.Text);
+                        continue;
+                    }
+                }
+
+                extReportViewer.ReportSource = reportDocument;
+            }
+            catch(System.Exception)
+            {
+                MessageBox.Show("Unable to load report {0}", reportInfo.Name);
+            }
+        }
+
+        string translateText(string sourceText)
+        {
+            var translated = ReportViewer.Strings.ResourceManager.GetString(sourceText, Thread.CurrentThread.CurrentUICulture);
+            if (string.IsNullOrWhiteSpace(translated))
+                translated = sourceText;
+            return translated;
+        }
+
         private void OnReportChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var reportInfo = cbReport.SelectedItem as ReportInfo;
@@ -131,21 +170,45 @@ namespace ReportViewer
 
             var msg = "";
             var fields = reportDocument.ParameterFields;
-            for(var i=0; i<fields.Count; i++)
+            for (var i = 0; i < fields.Count; i++)
             {
                 var param = fields[i] as CrystalDecisions.Shared.ParameterField;
-                if( param!=null )
+                if (param != null)
                     msg += "Parameter field - " + param.Name /*+ param.Nam .LongName*/ + "\n";
             }
 
-//            msg = "";
+            //            msg = "";
             var formulas = reportDocument.DataDefinition.FormulaFields;
-            for(var i=0; i<formulas.Count; i++)
+            for (var i = 0; i < formulas.Count; i++)
             {
                 var formula = formulas[i];
-                if( formula!=null )
-                    msg += "Formula field - " + formula.Name + " = " + formula.Text.Replace('\n','_') + "\n";
+                if (formula != null)
+                    msg += "Formula field - " + formula.Name + " = " + formula.Text.Replace('\n', '_') + "\n";
 
+            }
+
+            var objects = reportDocument.ReportDefinition.ReportObjects;
+            foreach (var anobject in objects)
+            {
+                if( anobject is FieldHeadingObject)
+                {
+                    var fho = anobject as FieldHeadingObject;
+                    msg += "Field heading - " + fho.Name + " = " + fho.Text + "\n";
+                    continue;
+                }
+                if( anobject is FieldObject)
+                {
+                    var fo = anobject as FieldObject;
+                    msg += "Field object - " + fo.Name + "\n";
+                    continue;
+                }
+                if( anobject is TextObject)
+                {
+                    var to = anobject as TextObject;
+                    msg += "Text object - " + to.Name + " = " + to.Text;
+                    continue;
+                }
+//                msg += "Object field - " + anobject + "\n";
             }
             tbFields.Text = msg;
         }
@@ -155,6 +218,6 @@ namespace ReportViewer
     {
         public string Filename { get; set; }
         public string Name { get; set; }
-        public string Author{ get; set; }
+        public string Author { get; set; }
     }
 }
