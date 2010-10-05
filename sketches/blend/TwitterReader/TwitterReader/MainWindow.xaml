@@ -8,7 +8,10 @@
 	<Window.Resources>
 		<DataTemplate x:Key="itemTemplate">
 			<StackPanel>
-				<TextBlock Text="{Binding XPath=title}"/>
+				<TextBlock FontSize="10" Text="{Binding XPath=pubDate}" />
+				<TextBlock FontSize="14" Text="{Binding XPath=title}" Foreground="#FF0B1F8F" />
+				<TextBlock FontSize="10" Text="{Binding XPath=description}"/>
+                <TextBlock />
 			</StackPanel>
 		</DataTemplate>
 	</Window.Resources>
@@ -18,9 +21,12 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
-		<Button Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="5"/>
+		<Button x:Name="buttonRefresh" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="5,0,0,5" Click="OnRefresh" IsEnabled="False" />
 		<TextBlock Text="{Binding XPath=/rss/channel/title}" Margin="5" Grid.Row="1" FontSize="16" Background="#FFFFc600" FontWeight="Bold" TextAlignment="Center"/>
-		<ListView ItemTemplate="{DynamicResource itemTemplate}" ItemsSource="{Binding XPath=/rss/channel/item}" Margin="5" Grid.Row="2"/>
+		<ListBox ItemTemplate="{DynamicResource itemTemplate}" ItemsSource="{Binding XPath=/rss/channel/item}" Margin="5" Grid.Row="2">
+        </ListBox>
+        <TextBlock Grid.Row="3" x:Name="statusLine" />
 	</Grid>
 </Window>

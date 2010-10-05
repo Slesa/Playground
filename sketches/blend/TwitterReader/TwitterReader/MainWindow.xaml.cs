@@ -1,27 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace TwitterReader
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window
-	{
-		public MainWindow()
-		{
-			this.InitializeComponent();
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow 
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
 
-			// Insert code required on object creation below this point.
-		}
-	}
+            var rssBinding = FindResource("rssDs") as XmlDataProvider;
+            if (rssBinding != null)
+                rssBinding.DataChanged += RssDataChanged;
+            ToggleRefreshState(false);
+        }
+
+        private void RssDataChanged(object sender, EventArgs e)
+        {
+            ToggleRefreshState(true);
+        }
+
+        private void ToggleRefreshState(bool show)
+        {
+            if (show)
+            {
+                buttonRefresh.IsEnabled = true;
+                statusLine.Text = "";
+            }
+            else
+            {
+                buttonRefresh.IsEnabled = false;
+                statusLine.Text = "Please be patient...";
+            }
+        }
+
+        private void OnRefresh(object sender, RoutedEventArgs e)
+        {
+            var rssBinding = FindResource("rssDs") as XmlDataProvider;
+            if (rssBinding != null)
+                rssBinding.Refresh();
+            ToggleRefreshState(true);
+        }
+    }
 }
