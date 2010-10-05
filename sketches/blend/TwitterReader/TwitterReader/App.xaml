@@ -1,0 +1,24 @@
+﻿<Application
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="TwitterReader.App"
+	StartupUri="MainWindow.xaml">
+	<Application.Resources>
+		<!-- Resources scoped at the Application level should be defined here. -->
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Simple Styles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<XmlDataProvider x:Key="rssDs" Source="http://twitter.com/statuses/user_timeline/14632507.rss" d:IsDataSource="True">
+				<XmlDataProvider.XmlNamespaceManager>
+					<XmlNamespaceMappingCollection>
+						<XmlNamespaceMapping Prefix="atom" Uri="http://www.w3.org/2005/Atom"/>
+						<XmlNamespaceMapping Prefix="twitter" Uri="http://api.twitter.com"/>
+						<XmlNamespaceMapping Prefix="georss" Uri="http://www.georss.org/georss"/>
+					</XmlNamespaceMappingCollection>
+				</XmlDataProvider.XmlNamespaceManager>
+			</XmlDataProvider>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>
