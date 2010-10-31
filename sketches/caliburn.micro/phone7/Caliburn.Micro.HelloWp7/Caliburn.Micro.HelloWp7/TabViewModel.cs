@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows;
 using Microsoft.Phone.Tasks;
 
 namespace Caliburn.Micro.HelloWp7
@@ -21,8 +20,11 @@ namespace Caliburn.Micro.HelloWp7
 
         public event EventHandler<TaskLaunchEventArgs> TaskLaunchRequested = delegate { };
 
-        public void Handle(PhoneNumberResult message) {
-            MessageBox.Show("The result was " + message.TaskResult, DisplayName, MessageBoxButton.OK);
+        public void Handle(PhoneNumberResult message)
+        {
+            if (message.TaskResult == TaskResult.OK)
+                Text = message.PhoneNumber;
+//            MessageBox.Show("The result was " + message.TaskResult, DisplayName, MessageBoxButton.OK);
         }
 
         public void Choose() {
