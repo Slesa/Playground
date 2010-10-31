@@ -1,0 +1,3 @@
+http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
+
+http://github.com/nvie/gitflow
