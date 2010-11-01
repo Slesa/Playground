@@ -1,0 +1,32 @@
+﻿<Window x:Class="Caliburn.Micro.Recipes.Filters.Views.CalculatorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="200"
+        SizeToContent="Height">
+	<Grid>
+		<StackPanel Margin="10">
+			<Label>A</Label>
+			<TextBox Name="A" />
+			<Label>B</Label>
+			<TextBox Name="B" />
+			<Button Name="Divide">Divide</Button>
+			<Button Name="SkippedDivide">SkippedDivide</Button>
+			<Button Name="ThrowingDivide">ThrowingDivide</Button>
+			<Button Name="VerySlowDivide">VerySlowDivide</Button>
+			<Button Name="NotUpdatedDivide">NotUpdatedDivide</Button>
+			<Button Name="ChattyDivide">ChattyDivide</Button>
+
+			<Label>Result</Label>
+			<TextBox Name="Result" />
+		</StackPanel>
+        <Border Name="IsBusy"
+                Background="#88000000">
+			<Label Foreground="White"
+			       HorizontalAlignment="Center"
+			       VerticalAlignment="Center"
+			       FontSize="20">
+				Working...
+			</Label>
+		</Border>
+	</Grid>
+</Window>
