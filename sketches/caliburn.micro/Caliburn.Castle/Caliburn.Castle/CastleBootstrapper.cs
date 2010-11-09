@@ -1,6 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using Caliburn.Micro;
+using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 
@@ -8,16 +14,34 @@ namespace Caliburn.Castle
 {
     public class CastleBootstrapper : Bootstrapper<IShell>
     {
-        WindsorContainer _container;
+        IWindsorContainer _windsorContainer;
 
         protected override void Configure()
         {
-            _container = new WindsorContainer();
+           _windsorContainer = new WindsorContainer();
 
-            _container.Register(Component.For<IWindsorContainer>().Instance(_container));
-            _container.Register(Component.For<IWindowManager>().ImplementedBy<WindowManager>());
-            _container.Register(Component.For<IEventAggregator>().ImplementedBy<EventAggregator>());
-            _container.Register(Component.For<IShell>().ImplementedBy<ShellViewModel>());
+           _windsorContainer.Register(Component.For<IWindsorContainer>().Instance(_windsorContainer));
+           _windsorContainer.Register(Component.For<IWindowManager>().ImplementedBy<WindowManager>());
+           _windsorContainer.Register(Component.For<IEventAggregator>().ImplementedBy<EventAggregator>());
+
+            /*
+            _windsorContainer.Install(new CommonsWindsorInstaller(),
+                                      new InfastructureInstaller(),
+                                      new CaliburnMicroInstaller(),
+                                      new ViewModelInstaller(),
+                                      new MessageHandlerInstaller());
+            */
+            _windsorContainer.Register(Component.For<IShell>().ImplementedBy<ShellViewModel>().LifeStyle.Is(LifestyleType.Singleton));
+            _windsorContainer.Register(Component.For<ShellView>().ImplementedBy<ShellView>());
+
+            /*
+            var eventAggregator = _windsorContainer.Resolve<IEventAggregator>();
+            var messageHandlers = _windsorContainer.ResolveAll<IMessageHandler>();
+            foreach (var messageHandler in messageHandlers)
+            {
+                eventAggregator.Subscribe(messageHandler);    
+            }
+            */
 
             /*
             _container =
@@ -34,32 +58,55 @@ namespace Caliburn.Castle
              * */
         }
 
+#if (!SILVERLIGHT)
+        protected override IEnumerable<Assembly> SelectAssemblies()
+        {
+            return AppDomain.CurrentDomain.GetAssemblies();
+            /*
+            var directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+            foreach (var dllPath in Directory.GetFiles(directoryPath, "*.dll"))
+            {
+                try
+                {
+                    var assembly = Assembly.LoadFrom(dllPath);
+                    container.Register(
+                        AllTypes
+                        .FromAssembly(assembly)
+                        .BasedOn<IRegistrationContributor>());
+
+                }
+                catch (BadImageFormatException ex)
+                {
+                    System.Diagnostics.Trace.TraceError(ex.ToString());
+                }
+                catch (FileNotFoundException ex)
+                {
+                    System.Diagnostics.Trace.TraceError(ex.ToString());
+                }
+            }*/
+        }
+#endif
+
         protected override object GetInstance(Type service, string key)
         {
-            var contract = string.IsNullOrEmpty(key) ? service.Name : key;
-            return _container.Resolve<object>(contract);
-            /*
-            var contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(service) : key;
-            var exports = _container.GetExportedValues<object>(contract);
-            
-            if (exports.Count() > 0)
-                return exports.First();
-
-            throw new Exception(string.Format("Could not locate any instance of contract {0}", service));
-             * */
+            return string.IsNullOrWhiteSpace(key) ? _windsorContainer.Resolve(service) : _windsorContainer.Resolve(key, new { });
         }
+
 
         protected override IEnumerable<object> GetAllInstances(Type service)
         {
-            return _container.ResolveAll<object>(service);
-            //return _container.GetExportedValues<object>(AttributedModelServices.GetContractName(service));
+            return _windsorContainer.ResolveAll(service).Cast<object>();
         }
 
-        /*
-        protected override void BuildUp(object instance)
+#if (!SILVERLIGHT)
+       protected override void BuildUp(object instance)
         {
-            //_container.SatisfyImportsOnce(instance);
-        }*/
+            instance.GetType().GetProperties()
+                .Where(property => property.CanWrite && property.PropertyType.IsPublic)
+                .Where(property => _windsorContainer.Kernel.HasComponent(property.PropertyType))
+                .ForEach(property => property.SetValue(instance, _windsorContainer.Resolve(property.PropertyType), null));
+        }
+#endif
 
     }
 }
