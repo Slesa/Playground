@@ -1,0 +1,4 @@
+http://caliburnmicro.codeplex.com/wikipage?title=Basic%20Configuration%2c%20Actions%20and%20Conventions&referringTitle=Documentation
+
+http://www.dennisdoomen.net/2010/10/my-silverlight-4-reference-architecture_26.html
+http://codeswamp.com/2010/08/14/caliburn-micro-talk-at-devlink/
