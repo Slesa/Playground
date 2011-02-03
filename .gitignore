@@ -6,3 +6,4 @@ obj/
 _ReSharper.*/
 Bin/
 ClientBin/
+opt/
