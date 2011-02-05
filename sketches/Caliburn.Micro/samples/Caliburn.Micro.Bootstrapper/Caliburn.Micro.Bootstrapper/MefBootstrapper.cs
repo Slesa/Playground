@@ -5,6 +5,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 #endif
 using System.Linq;
+using System.Reflection;
 
 namespace Caliburn.Micro.Bootstrapper
 {
@@ -21,8 +22,9 @@ namespace Caliburn.Micro.Bootstrapper
                     )
                 );
 #else
-            // TODO: funktioniert nicht, fehlt wohl der Catalog
-            _container = new CompositionContainer();
+            var catalog = new AggregateCatalog();
+            catalog.Catalogs.Add(new AssemblyCatalog(Assembly.GetExecutingAssembly()));
+            _container = new CompositionContainer(catalog);
 #endif
             var batch = new CompositionBatch();
             batch.AddExportedValue<IWindowManager>(new WindowManager());
