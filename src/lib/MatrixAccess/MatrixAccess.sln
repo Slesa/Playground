@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixAccess", "MatrixAccess\MatrixAccess.csproj", "{D9826A9A-3A29-4032-9371-0FEC1DC576BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess\DataAccess.csproj", "{C44EF633-425D-446D-8359-817F027FD400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure\Infrastructure.csproj", "{4E878C92-EA4D-497C-800C-B0EAFC3DEA72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9826A9A-3A29-4032-9371-0FEC1DC576BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9826A9A-3A29-4032-9371-0FEC1DC576BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9826A9A-3A29-4032-9371-0FEC1DC576BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9826A9A-3A29-4032-9371-0FEC1DC576BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44EF633-425D-446D-8359-817F027FD400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44EF633-425D-446D-8359-817F027FD400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44EF633-425D-446D-8359-817F027FD400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44EF633-425D-446D-8359-817F027FD400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E878C92-EA4D-497C-800C-B0EAFC3DEA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E878C92-EA4D-497C-800C-B0EAFC3DEA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E878C92-EA4D-497C-800C-B0EAFC3DEA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E878C92-EA4D-497C-800C-B0EAFC3DEA72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
