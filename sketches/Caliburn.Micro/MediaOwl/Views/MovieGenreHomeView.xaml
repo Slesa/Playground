@@ -1,0 +1,85 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:MediaOwl_Resources_Behaviors="clr-namespace:MediaOwl.Resources.Behaviors"
+             x:Class="MediaOwl.Views.MovieGenreHomeView"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="GenreItemTemplate">
+            <toolkit:DockPanel Margin="5">
+                <TextBlock TextWrapping="Wrap"
+                           Text="{Binding Name}"
+                           Style="{StaticResource Heading4}"
+                           Foreground="{StaticResource ControlForeground}"
+                           toolkit:DockPanel.Dock="Top" />
+            </toolkit:DockPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <toolkit:DockPanel>
+
+        <toolkit:DockPanel LastChildFill="False"
+                           Margin="0,0,0,5"
+                           toolkit:DockPanel.Dock="Top">
+            <TextBlock x:Name="DisplayName"
+                       TextWrapping="Wrap"
+                       toolkit:DockPanel.Dock="Top"
+                       Style="{StaticResource Heading2}"
+                       Margin="0,0,0,10" />
+            <TextBlock x:Name="SearchResultText"
+                       Foreground="{StaticResource ControlForeground}"
+                       MinHeight="20"
+                       Margin="0,2,0,0"
+                       toolkit:DockPanel.Dock="Bottom" />
+            <TextBox x:Name="SearchGenreTerm"
+                     TextWrapping="Wrap"
+                     Margin="0,0,10,0"
+                     MinWidth="150"
+                     VerticalAlignment="Top">
+                <i:Interaction.Triggers>
+                    <ei:KeyTrigger Key="Enter">
+                        <cal:ActionMessage MethodName="SearchGenreShortCut" />
+                    </ei:KeyTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+            <Button x:Name="SearchGenre"
+                    Content="Search"
+                    Margin="0,0,10,0"
+                    VerticalAlignment="Top" />
+            <StackPanel toolkit:DockPanel.Dock="Right">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <Button x:Name="PreviousGenre"
+                            Content="Previous"
+                            d:LayoutOverrides="Height"
+                            Margin="0,0,10,0" />
+                    <Button x:Name="NextGenre"
+                            Content="Next"
+                            d:LayoutOverrides="Height"
+                            Margin="0" />
+                </StackPanel>
+            </StackPanel>
+        </toolkit:DockPanel>
+        <ListBox x:Name="Genres"
+                 ItemTemplate="{StaticResource GenreItemTemplate}"
+                 d:LayoutOverrides="Height"
+                 Background="{x:Null}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <i:Interaction.Triggers>
+                <MediaOwl_Resources_Behaviors:DoubleClick>
+                    <cal:ActionMessage MethodName="OpenGenre">
+                        <cal:Parameter Value="{Binding SelectedItem, ElementName=Genres}" />
+                    </cal:ActionMessage>
+                </MediaOwl_Resources_Behaviors:DoubleClick>
+            </i:Interaction.Triggers>
+        </ListBox>
+
+    </toolkit:DockPanel>
+</UserControl>

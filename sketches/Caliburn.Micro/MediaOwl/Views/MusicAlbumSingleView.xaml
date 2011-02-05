@@ -1,0 +1,245 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:MediaOwl_Resources_Behaviors="clr-namespace:MediaOwl.Resources.Behaviors"
+             x:Class="MediaOwl.Views.MusicAlbumSingleView"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+    <UserControl.Resources>
+        <DataTemplate x:Key="TracksItemTemplate">
+            <Grid Width="100">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Rectangle Fill="{StaticResource TreeViewItemSelectionBorder}"
+                           Stroke="{StaticResource ColorAccentBrush}"
+                           Width="70"
+                           Height="70" />
+                <TextBlock TextWrapping="Wrap"
+                           Text="No Image"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="{StaticResource ControlForeground}" />
+                <Image Source="{Binding Picture}"
+                       Width="70"
+                       Height="70"
+                       Stretch="UniformToFill" />
+                <TextBlock Margin="0,5,0,0"
+                           TextWrapping="Wrap"
+                           Text="{Binding Rank}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource ControlForeground}"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center"
+                           FontWeight="Bold"
+                           FontSize="13.333" />
+                <TextBlock Margin="0,2,0,5"
+                           TextWrapping="Wrap"
+                           d:LayoutOverrides="Width"
+                           Text="{Binding Name}"
+                           Grid.Row="2"
+                           Foreground="{StaticResource ControlForeground}"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center"
+                           FontWeight="Bold" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <toolkit:DockPanel x:Name="LayoutRoot">
+        <StackPanel Orientation="Horizontal"
+                    d:LayoutOverrides="Height"
+                    toolkit:DockPanel.Dock="Top"
+                    Margin="0,0,0,15">
+            <TextBlock TextWrapping="Wrap"
+                       Text="Album:"
+                       Style="{StaticResource Heading2}"
+                       d:LayoutOverrides="Width"
+                       Margin="0,0,10,0" />
+            <TextBlock x:Name="DisplayName"
+                       TextWrapping="Wrap"
+                       Style="{StaticResource Heading2}" />
+        </StackPanel>
+        <Border BorderBrush="{StaticResource ControlBorderBrush}"
+                BorderThickness="1"
+                toolkit:DockPanel.Dock="Bottom"
+                Margin="10,15,10,10"
+                CornerRadius="3"
+                Background="{StaticResource DarkInnerShadowDarkBrush}"
+                Padding="5">
+            <Button x:Name="TryClose"
+                    Content="Close"
+                    HorizontalAlignment="Right" />
+        </Border>
+        <sdk:TabControl toolkit:DockPanel.Dock="Top"
+                        Margin="10,0">
+            <sdk:TabItem Header="Information">
+                <ScrollViewer Margin="-5,-4"
+                              Style="{StaticResource CustomScrollViewerStyle}"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <toolkit:DockPanel Margin="5">
+                        <Grid toolkit:DockPanel.Dock="Top">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="Artist"
+                                       Margin="5"
+                                       VerticalAlignment="Center"
+                                       Foreground="{StaticResource ControlForeground}" />
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="Listeners"
+                                       Margin="5"
+                                       VerticalAlignment="Center"
+                                       Foreground="{StaticResource ControlForeground}"
+                                       Grid.Row="2" />
+                            <TextBlock HorizontalAlignment="Left"
+                                       TextWrapping="Wrap"
+                                       Text="Playcount"
+                                       VerticalAlignment="Center"
+                                       Grid.Row="3"
+                                       Margin="5"
+                                       Foreground="{StaticResource ControlForeground}" />
+                            <TextBlock HorizontalAlignment="Left"
+                                       TextWrapping="Wrap"
+                                       Text="Release"
+                                       VerticalAlignment="Center"
+                                       Grid.Row="1"
+                                       Margin="5"
+                                       Foreground="{StaticResource ControlForeground}" />
+                            <TextBox Grid.Column="1"
+                                     IsReadOnly="True"
+                                     Margin="5,2,75,2"
+                                     Text="{Binding CurrentAlbum.ArtistName}"
+                                     d:LayoutOverrides="Width" />
+                            <Button x:Name="ShowArtist"
+                                    Content="Show"
+                                    Margin="0,0,5,0"
+                                    d:LayoutOverrides="Height"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Right"
+                                    Width="65"
+                                    VerticalAlignment="Center" />
+                            <TextBox Grid.Column="1"
+                                     d:LayoutOverrides="Width"
+                                     IsReadOnly="True"
+                                     Margin="5,2"
+                                     Text="{Binding CurrentAlbum.ListenersString}"
+                                     Grid.Row="2" />
+                            <TextBox Text="{Binding CurrentAlbum.PlayCountString}"
+                                     d:LayoutOverrides="Width"
+                                     Grid.Row="3"
+                                     Grid.Column="1"
+                                     Margin="5,2"
+                                     IsReadOnly="True" />
+                            <TextBox Text="{Binding CurrentAlbum.ReleaseDateString}"
+                                     Grid.Row="1"
+                                     Grid.Column="1"
+                                     Margin="5,2"
+                                     Visibility="{Binding CurrentAlbum.Streamable, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                     IsReadOnly="True"
+                                     d:LayoutOverrides="Width" />
+                            <StackPanel Grid.ColumnSpan="3"
+                                        Margin="0,15"
+                                        d:LayoutOverrides="Width, Height"
+                                        Grid.Row="4">
+                                <TextBox TextWrapping="Wrap"
+                                         Text="{Binding CurrentAlbum.Wiki.Content}"
+                                         IsReadOnly="True"
+                                         d:LayoutOverrides="Width, GridBox"
+                                         FontWeight="Normal"
+                                         VerticalScrollBarVisibility="Disabled" />
+                                <TextBlock Text="{Binding CurrentAlbum.Wiki.Published}"
+                                           TextAlignment="Right"
+                                           Foreground="{StaticResource ControlForeground}"
+                                           d:LayoutOverrides="Width" />
+                            </StackPanel>
+                            <Rectangle Margin="5,0"
+                                       Grid.RowSpan="3"
+                                       Stroke="{StaticResource ColorAccentBrush}"
+                                       RadiusX="3"
+                                       RadiusY="3"
+                                       Grid.Column="2"
+                                       Width="130"
+                                       Height="92"
+                                       Fill="{StaticResource TreeViewItemSelectionBorder}" />
+                            <TextBlock HorizontalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Text="No Image"
+                                       VerticalAlignment="Center"
+                                       Foreground="{StaticResource ControlForeground}"
+                                       Grid.Column="3"
+                                       Grid.RowSpan="3" />
+                            <Rectangle Margin="5,0"
+                                       Grid.RowSpan="3"
+                                       RadiusX="3"
+                                       RadiusY="3"
+                                       Grid.Column="2"
+                                       Width="130"
+                                       Height="92"
+                                       Cursor="Hand"
+                                       Visibility="{Binding CurrentAlbum.PictureVisibility, FallbackValue=Collapsed}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                                        <cal:ActionMessage MethodName="OpenPicture" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Rectangle.Fill>
+                                    <ImageBrush Stretch="UniformToFill"
+                                                ImageSource="{Binding CurrentAlbum.Picture}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Grid>
+                        <ListBox x:Name="Tags"
+                                 ItemTemplate="{StaticResource TagItemTemplate}"
+                                 ItemsPanel="{StaticResource WrappingItemsPanelTemplate}"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                 Style="{StaticResource InvisibleListBoxStyle}"
+                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                 toolkit:DockPanel.Dock="Top" >
+                        	<i:Interaction.Triggers>
+                        		<MediaOwl_Resources_Behaviors:DoubleClick>
+                        			<cal:ActionMessage MethodName="OpenTag">
+                        				<cal:Parameter Value="{Binding SelectedItem, ElementName=Tags}"/>
+                        			</cal:ActionMessage>
+                        		</MediaOwl_Resources_Behaviors:DoubleClick>
+                        	</i:Interaction.Triggers>
+                        </ListBox>
+                    </toolkit:DockPanel>
+                </ScrollViewer>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Tracks">
+                <ListBox x:Name="Tracks"
+                         ItemTemplate="{StaticResource TracksItemTemplate}"
+                         ItemsPanel="{StaticResource WrappingItemsPanelTemplate}"
+                         Margin="-5"
+                         Style="{StaticResource InvisibleListBoxStyle}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <i:Interaction.Triggers>
+                        <MediaOwl_Resources_Behaviors:DoubleClick>
+                            <cal:ActionMessage MethodName="OpenTrack">
+                                <cal:Parameter Value="{Binding SelectedItem, ElementName=Tracks}" />
+                            </cal:ActionMessage>
+                        </MediaOwl_Resources_Behaviors:DoubleClick>
+                    </i:Interaction.Triggers>
+                </ListBox>
+            </sdk:TabItem>
+        </sdk:TabControl>
+    </toolkit:DockPanel>
+</UserControl>
