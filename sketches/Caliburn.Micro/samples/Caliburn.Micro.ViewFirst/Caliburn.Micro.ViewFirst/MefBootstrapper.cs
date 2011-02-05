@@ -56,8 +56,16 @@ namespace Caliburn.Micro.ViewFirst
 #if SILVERLIGHT
             Application.Current.RootVisual = new ShellView();
 #else
-            // TODO: unter WPF die ShellView anzeigen, aber wie?
-            new ShellView();
+            IWindowManager windowManager;
+            try
+            {
+                windowManager = IoC.Get<IWindowManager>();
+            }
+            catch
+            {
+                windowManager = new WindowManager();
+            }
+            windowManager.ShowWindow(new ShellView());
 #endif
         }
     }
