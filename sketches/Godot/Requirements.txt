@@ -1,0 +1,96 @@
+333UnitType
+--------------------------------------------------------------------------------------------------
+- Ein UnitType beschreibt die Art einer Unit, um sie (die Units) typgerecht auswählbar zu machen
+- Ein UnitType ist valid, wenn der Name nicht leer ist
+
+Unit
+--------------------------------------------------------------------------------------------------
+- Eine Unit beschreibt eine Maßeinheit.
+- Eine Unit hat einen UnitType, um die Auswahl von Units typsicher zu machen
+- Eine Unit kann gültig sein für den Einkauf, für die Rezeptur oder für beides. 
+- Eine Unit kann eine Bezugseinheit Parent haben. In diesem Fall gibt FactorToParent an, womit man
+  man die Einheit multiplizieren muß, um die Einheit Parent zu bekommen.
+- Eine Unit ist valid, wenn der Name und die Contraction nicht leer sind, der UnitType nicht NULL 
+  ist und entweder der Parent NULL ist oder FactorToParent!=0.0. Der Parent muß außerdem den selben
+  UnitType haben wie die Unit selbst.
+
+PurchaseFamily
+--------------------------------------------------------------------------------------------------
+- Eine PurchaseFamily beschreibt eine Einkaufswarengruppe
+- Eine PurchaseFamily dient der Gruppierung von PurchaseItems
+- Eine PurchaseFamily ist valid, wenn der Name nicht leer ist. 
+
+RecipeableItem
+--------------------------------------------------------------------------------------------------
+- Ein RecipeableItem beschreibt den möglichen Bestandteil eines Rezepts. 
+- Ein RecipeableItem hat einen Namen und eine Rezeptureinheit
+- Es gibt folgende möglichen RecipeableItems:
+
+	Purchaseitem
+	----------------------------------------------------------------------------------------------
+	- Ein PurchaseItem beschreibt einen Einkaufsartikel bzw Rohartikel
+	- Ein PurchaseItem kann Bestandteil eines Rezepts sein
+	- Ein PurchaseItem ist valid, wenn der Name nicht leer ist, und RecipeUnit, PurchaseUnit sowie 
+	  PurchaseFamily nicht NULL sind.
+
+	ProductionItem
+	----------------------------------------------------------------------------------------------
+	- Ein ProductionItem beschreibt einen Produktionsartikel
+	- Ein ProduktionItem besteht aus einem oder mehreren Purchaseitems und/oder aus einem oder 
+	  mehreren ProductionItems
+	- Ein ProductionItem kann Bestandteil eines Rezepts sein
+	- Ein ProductionItem ist valid, wenn der Name nicht leer ist und RecipeUnit nicht NULL ist.
+
+RecipeItem
+--------------------------------------------------------------------------------------------------
+- Ein RecipeItem gehört zu einem Recipe
+- Ein RecipeItem verbindet eine Quantity und eine Unit mit einem RecipeableItem.
+- Die Unit des RecipeableItem ist die Voreinstellung der Unit des RecipeItems.
+- Ein RecipeItem ist valid, wenn das Recipe, die Unit und das RecipeableItem nicht NULL sind.
+
+Recipe
+--------------------------------------------------------------------------------------------------
+- Ein Recipe beschreibt ein Rezept bzw eine Rezepturauflösung.
+- Ein Recipe verbindet eine PLU-Nummer eines SalesItem (PMS) mit einer Liste von RecipeItems.
+- Ein Recipe ist valid, wenn die Plu-Nummer nicht 0 ist.
+
+StockItem
+--------------------------------------------------------------------------------------------------
+- Ein StockItem gehört zu einem Stock
+- Ein StockItem verbindet eine Quantity und eine Unit mit einem RecipeableItem zu einem aktuellen
+  Bestand
+- Die Unit des RecipeableItem ist die Voreinstellung der Unit des StockItems.
+- Ein StockItem ist valid, wenn der Stock, die Unit und das RecipeableItem nicht NULL sind.
+
+Stock
+--------------------------------------------------------------------------------------------------
+- Ein Stock beschreibt ein Lager
+- Ein Stock hat ein Flag MainStock, das angibt, ob es sich um ein Hauptlager handelt.
+- Ein Stock hat eine Liste von StockItems, den aktuellen Lagerbestand.
+(- Ein Hauptlager definiert ein Lager, ...)
+- Ein Stock ist valid, wenn der Name nicht leer ist.
+
+StockMovement
+--------------------------------------------------------------------------------------------------
+- Ein StockMovement umfasst ein oder mehrere Bewegungen von StockMoveItems innerhalb eines Stocks
+- Ein StockMovement betrifft einen Stock OfStock
+- Ein StockMovement findet zu einem Zeitpunkt When statt
+- Es gibt folgende möglichen StockMovements:
+
+	StockMoveDeposit
+	----------------------------------------------------------------------------------------------
+	- Ein StockMoveDeposit ist eine (manuelle) Einzahlung als StockMovement
+	- Ein StockMoveDeposit hat einen Reason für das Deposit
+
+	StockMoveRemoval
+	----------------------------------------------------------------------------------------------
+	- Ein StockMoveRemoval ist eine (manuelle) Auszahlung als StockMovement
+	- Ein StockMoveRemoval hat einen Reason für das Removal
+
+	StockMoveTransfer
+	----------------------------------------------------------------------------------------------
+	- Ein StockMoveTransfer ist eine (manuelle) Umbuchung nach OfStock von einem FromStock
+
+	StockMoveRecipe
+	----------------------------------------------------------------------------------------------
+	- Ein StockMoveRecipe ist eine Verbuchung durch ein Recipe

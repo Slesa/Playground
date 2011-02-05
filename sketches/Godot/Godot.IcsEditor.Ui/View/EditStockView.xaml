@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="Godot.IcsEditor.Ui.View.EditStockView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" xmlns:ViewModel="clr-namespace:Godot.IcsEditor.Ui.ViewModel" MinHeight="320" MinWidth="480" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Style x:Key="CellEditComboboxStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self},
+                                    Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Red"/>
+                    <Setter Property="ToolTip"
+              Value="{Binding RelativeSource={RelativeSource Self},
+                     Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+            <Setter Property="ValidationErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Ellipse Width="12" Height="12" Fill="Red" Stroke="Black" StrokeThickness="0.5"/>
+                            <TextBlock FontWeight="Bold" Padding="4,0,0,0" Margin="0" VerticalAlignment="Top" Foreground="White" Text="!"
+                                ToolTip="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}},
+                                Path=(Validation.Errors)[0].ErrorContent}"/>
+                            <!-- TextBlock Foreground="Red" Margin="2,0,0,0" Text="!" VerticalAlignment="Center"/ -->
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRow}">
+                        <Border x:Name="DGR_Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <SelectiveScrollingGrid>
+                                <SelectiveScrollingGrid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </SelectiveScrollingGrid.ColumnDefinitions>
+                                <SelectiveScrollingGrid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </SelectiveScrollingGrid.RowDefinitions>
+                                <DataGridCellsPresenter Grid.Column="1" ItemsPanel="{TemplateBinding ItemsPanel}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Visibility="{TemplateBinding DetailsVisibility}"/>
+                                <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                            </SelectiveScrollingGrid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+            <DataGridRowsPresenter x:Name="PART_RowsPresenter" IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+    </UserControl.Resources>
+
+    <DockPanel LastChildFill="True" Style="{DynamicResource DialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource DialogButtonStackSkin}" >
+            <!-- Button Content="{x:Static Localization:Strings.Button_Help}" Style="{DynamicResource DialogHelpButtonSkin}" / -->
+            <Button Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=SaveCommand}" IsDefault="True">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/button_ok.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Localization:Strings.Button_Save}" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=CloseCommand}" IsCancel="True">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/button_cancel.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Localization:Strings.Button_Cancel}" />
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+        <Grid Style="{DynamicResource DialogGridSkin}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Grid.Resources>
+                <DataTemplate DataType="{x:Type ValidationError}">
+                    <TextBlock FontStyle="Italic" Foreground="Red" HorizontalAlignment="Right" Margin="0,1" 
+                        Text="{Binding Path=ErrorContent}" />
+                </DataTemplate>
+            </Grid.Resources -->
+
+            <!-- Id >
+            <Label Grid.Row="0" Style="{DynamicResource LabelSkin}" 
+                   Content="{x:Static Localization:Strings.View_SingleStockView_Id}" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="_textId" Style="{DynamicResource DialogTextBoxSkin}" 
+                   Text="{Binding Path=Id, Mode=OneTime}" IsReadOnly="True" / -->
+
+            <!-- Name -->
+            <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textName}" Content="{x:Static Localization:Strings.View_SingleStockView_Name}" />
+            <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource DialogTextBoxSkin}" 
+                   Text="{Binding Path=Name, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}"></TextBox>
+            <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Stock items -->
+            <Label Grid.Row="3" Grid.Column="0" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_gridStockItems}" Content="{x:Static Localization:Strings.View_SingleStockView_StockItems}" />
+            <DockPanel Grid.Column="1" Grid.Row="3" LastChildFill="True">
+
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Right">
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=BookFromCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_BookFrom}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=SendToCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_SendTo}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=DepositCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_Deposit}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=RemovalCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_Removal}" />
+                    <!-- Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=RemoveStockItem}" 
+                        Content="{x:Static Localization:Strings.Button_Remove}" / -->
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=PrintCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Print}" />
+                </StackPanel>
+
+                <DataGrid Name="_gridStockItems" IsSynchronizedWithCurrentItem="True" Margin="5" AutoGenerateColumns="false" AlternationCount="2"
+                    ItemsSource="{Binding StockItems}" 
+                    RowStyle="{DynamicResource DataGridRowStyle}" ItemsPanel="{DynamicResource ItemsPanelTemplate}">
+
+                    <DataGrid.RowValidationRules>
+                        <ViewModel:RowDataInfoValidationRule ValidationStep="UpdatedValue" />
+                    </DataGrid.RowValidationRules>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{x:Static Localization:Strings.View_SingleStockView_HeaderType}" 
+                             Binding="{Binding RecipeableItemType, Mode=OneWay}" IsReadOnly="True" />
+                        <DataGridComboBoxColumn x:Name="_comboItems" Header="{x:Static Localization:Strings.View_SingleStockView_HeaderArticle}" MinWidth="60"
+                             EditingElementStyle="{StaticResource CellEditComboboxStyle}"                   
+                             SelectedItemBinding="{Binding RecipeableItem, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"  
+                             ItemsSource="{Binding Source=AllRecipeableItems}" 
+                             DisplayMemberPath="Name" SortMemberPath="RecipeableItem.Name" />
+                        <DataGridTextColumn Header="{x:Static Localization:Strings.View_SingleStockView_HeaderQuantity}" 
+                             Binding="{Binding Quantity, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+                        <DataGridComboBoxColumn x:Name="_comboUnits" Header="{x:Static Localization:Strings.View_SingleStockView_HeaderUnit}"
+                             EditingElementStyle="{StaticResource CellEditComboboxStyle}"                   
+                             SelectedItemBinding="{Binding Unit, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                             ItemsSource="{Binding Source=AllUnits}" 
+                             DisplayMemberPath="Contraction" SortMemberPath="Unit.Contraction" />
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

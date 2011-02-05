@@ -1,0 +1,78 @@
+﻿<Window x:Class="Godot.IcsEditor.View.DlgSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" 
+        Title="{x:Static Localization:Strings.View_DlgSettings_Title}" MinHeight="200" MinWidth="320" Height="480" Width="640">
+
+    <DockPanel LastChildFill="True" Style="{DynamicResource DialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textMatrixPath}">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" Height="35">
+            <!-- Button Content="{x:Static Localization:Strings.Button_Help}" Margin="5,5,25,5" Name="BtnHelp" MinHeight="25" MinWidth="75"  / -->
+            <Button Content="{x:Static Localization:Strings.Button_Save}" Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=SaveCommand}" IsDefault="True" />
+            <Button Content="{x:Static Localization:Strings.Button_Cancel}" Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=CancelCommand}" IsCancel="True" />
+        </StackPanel>
+        <Grid Name="GrdContent" Margin="5" Background="LightYellow" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Matrix path -->
+            <Label Grid.Row="0" Grid.Column="0" Margin="3" VerticalAlignment="Center" Target="{Binding ElementName=_textMatrixPath}"
+                   Content="{x:Static Localization:Strings.View_DlgSettings_MatrixPath}" />
+            <DockPanel Grid.Row="0" Grid.Column="1" LastChildFill="True">
+                <Button DockPanel.Dock="Right" Name="ButtonMatrixPath"  Margin="3" Content="..." Width="50" Height="Auto" Command="{Binding Path=SearchMatrixPathCommand}" />
+                <TextBox Margin="3" Height="Auto"  VerticalAlignment="Center" Name="_textMatrixPath" 
+                   Text="{Binding Path=MatrixPath, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            </DockPanel>
+            <ContentPresenter Grid.Row="1" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textMatrixPath, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Database server -->
+            <Label Grid.Row="2" Grid.Column="0" Margin="3" VerticalAlignment="Center" 
+                   Target="{Binding ElementName=_textDbServer}" Content="{x:Static Localization:Strings.View_DlgSettings_DbServer}" />
+            <TextBox Grid.Row="2" Grid.Column="1" Name="_textDbServer" Margin="3" Height="Auto"  VerticalAlignment="Center" 
+                   Text="{Binding Path=DbServer, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+            <ContentPresenter Grid.Row="3" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textDbServer, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Database integrated security -->
+            <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Name="_dbIsIntergated" Margin="5"
+                      Content="{x:Static Localization:Strings.View_DlgSettings_DbIntegrated}" 
+                      IsChecked="{Binding Path=DbIsIntegrated}"/>
+
+            <!-- Database user -->
+            <Label Grid.Row="5" Grid.Column="0" Margin="3" VerticalAlignment="Center" 
+                   Target="{Binding ElementName=_textDbUser}" Content="{x:Static Localization:Strings.View_DlgSettings_DbUser}" />
+            <TextBox Grid.Row="5" Grid.Column="1" Name="_textDbUser" Margin="3" Height="Auto"  VerticalAlignment="Center" 
+                   Text="{Binding Path=DbUser, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   IsEnabled="{Binding DbUseLogin}" />
+            <ContentPresenter Grid.Row="6" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textDbUser, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Database password -->
+            <Label Grid.Row="7" Grid.Column="0" Margin="3" VerticalAlignment="Center" 
+                   Target="{Binding ElementName=_textDbPassword}" Content="{x:Static Localization:Strings.View_DlgSettings_DbPassword}" />
+            <TextBox Grid.Row="7" Grid.Column="1" Name="_textDbPassword" Margin="3" Height="Auto"  VerticalAlignment="Center" 
+                   Text="{Binding Path=DbPassword, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                     IsEnabled="{Binding DbUseLogin}"/>
+            <ContentPresenter Grid.Row="8" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textDbPassword, Path=(Validation.Errors).CurrentItem}" />
+
+        </Grid>
+
+    </DockPanel>
+</Window>

@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  
+  <!-- *** Buttons *** -->
+  <data name="Button_Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+  <data name="Button_New" xml:space="preserve">
+    <value>_Neu</value>
+  </data>
+  <data name="Button_Add" xml:space="preserve">
+    <value>_Neu</value>
+  </data>
+  <data name="Button_Edit" xml:space="preserve">
+    <value>_Bearbeiten</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>_Löschen</value>
+  </data>
+  <data name="Button_Print" xml:space="preserve">
+    <value>_Drucken</value>
+  </data>
+
+  
+  <!-- *** Main View *** -->
+  <data name="View_MainView_MainMenu_File" xml:space="preserve">
+    <value>_Datei</value>
+  </data>
+  <data name="View_MainView_MainMenu_Options" xml:space="preserve">
+    <value>_Optionen</value>
+  </data>
+  <data name="View_MainView_MainMenu_Exit" xml:space="preserve">
+    <value>_Beenden</value>
+  </data>
+
+  <data name="View_MainView_Menu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="View_MainView_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_DisplayName" xml:space="preserve">
+    <value>Lagerbestandsverwaltung</value>
+  </data>
+
+  
+  <!-- *** Units *** -->
+  <data name="ViewModel_MainWindowViewModel_ViewAllUnits" xml:space="preserve">
+    <value>Einheiten</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_CreateNewUnit" xml:space="preserve">
+    <value>Neue Einheit</value>
+  </data>
+
+  <data name="Model_EditUnit_Name_is_missing" xml:space="preserve">
+    <value>Der Name fehlt</value>
+  </data>
+  <data name="Model_EditUnit_Contraction_is_missing" xml:space="preserve">
+    <value>Das Kürzel fehlt</value>
+  </data>
+  <data name="Model_EditUnit_FactorToParent_is_missing" xml:space="preserve">
+    <value>Kein Faktor angegeben</value>
+  </data>
+  <data name="Model_EditUnit_FactorToParent_is_invalid" xml:space="preserve">
+    <value>Der Faktor ist ungültig</value>
+  </data>
+  <data name="Model_EditUnit_Parent_recursion_detected" xml:space="preserve">
+    <value>Rekursion bei der Basiseinheit erkannt</value>
+  </data>
+
+  <data name="View_AllUnitsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="View_AllUnitsView_Header_Contraction" xml:space="preserve">
+    <value>Kürzel</value>
+  </data>
+  <data name="View_AllUnitsView_Header_Parent" xml:space="preserve">
+    <value>Basis</value>
+  </data>
+  <data name="View_AllUnitsView_Header_FactorToParent" xml:space="preserve">
+    <value>Faktor</value>
+  </data>
+  <data name="View_AllUnitsView_Header_Purchasing" xml:space="preserve">
+    <value>Einkauf</value>
+  </data>
+  <data name="View_AllUnitsView_Header_Reciping" xml:space="preserve">
+    <value>Rezeptur</value>
+  </data>
+
+  <data name="View_SingleUnitView_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="View_SingleUnitView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="View_SingleUnitView_Contraction" xml:space="preserve">
+    <value>_Kürzel:</value>
+  </data>
+  <data name="View_SingleUnitView_Parent" xml:space="preserve">
+    <value>_Bezugseinheit:</value>
+  </data>
+  <data name="View_SingleUnitView_Factor" xml:space="preserve">
+    <value>_Faktor:</value>
+  </data>
+  <data name="View_SingleUnitView_Purchasing" xml:space="preserve">
+    <value>Für _Einkauf benutzbar</value>
+  </data>
+  <data name="View_SingleUnitView_Reciping" xml:space="preserve">
+    <value>Für _Rezeptur benutzbar</value>
+  </data>
+
+  <data name="ViewModel_AllUnitsViewModel_DisplayName" xml:space="preserve">
+    <value>Alle Einheiten</value>
+  </data>
+  <data name="ViewModel_AllUnitsViewModel_PrintHeader" xml:space="preserve">
+    <value>[Liste der Einheiten]</value>
+  </data>
+
+  <data name="ViewModel_SingleUnitViewModel_NewId" xml:space="preserve">
+    <value>(Neu)</value>
+  </data>
+  <data name="ViewModel_SingleUnitViewModel_NewItem" xml:space="preserve">
+    <value>Neue Einheit</value>
+  </data>
+
+  
+  <!-- *** Purchase families *** -->
+  <data name="ViewModel_MainWindowViewModel_ViewAllPurchaseFamilies" xml:space="preserve">
+    <value>Einkaufswarengruppen</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_CreateNewPurchaseFamily" xml:space="preserve">
+    <value>Neue Einkaufswarengruppe</value>
+  </data>
+
+  <data name="Model_EditPurchaseFamily_Name_is_missing" xml:space="preserve">
+    <value>Der Name fehlt</value>
+  </data>
+
+  <data name="View_AllPurchaseFamiliesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+
+  <data name="ViewModel_AllPurchaseFamiliesViewModel_DisplayName" xml:space="preserve">
+    <value>Alle Einkaufswarengruppen</value>
+  </data>
+  <data name="ViewModel_AllPurchaseFamiliesViewModel_PrintHeader" xml:space="preserve">
+    <value>[Liste der Einkaufswarengruppen]</value>
+  </data>
+
+  <data name="View_SinglePurchaseFamilyView_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="View_SinglePurchaseFamilyView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+
+  <data name="ViewModel_SinglePurchaseFamilyViewModel_NewId" xml:space="preserve">
+    <value>(Neu)</value>
+  </data>
+  <data name="ViewModel_SinglePurchaseFamilyViewModel_NewItem" xml:space="preserve">
+    <value>Neue Einkaufswarengruppe</value>
+  </data>
+
+
+  <!-- *** Purchase items *** -->
+  <data name="ViewModel_MainWindowViewModel_ViewAllPurchaseItems" xml:space="preserve">
+    <value>Einkaufsartikel</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_CreateNewPurchaseItem" xml:space="preserve">
+    <value>Neuer Einkaufsartikel</value>
+  </data>
+
+  <data name="Model_EditPurchaseItem_Name_is_missing" xml:space="preserve">
+    <value>Der Name fehlt</value>
+  </data>
+  <data name="Model_EditPurchaseItem_Family_is_missing" xml:space="preserve">
+    <value>Die Einkaufswarengruppe fehlt</value>
+  </data>
+  <data name="Model_EditPurchaseItem_Unit_is_missing" xml:space="preserve">
+    <value>Die Einkaufseinheit fehlt</value>
+  </data>
+
+  <data name="View_AllPurchaseItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="View_AllPurchaseItemsView_Header_Family" xml:space="preserve">
+    <value>Warengruppe</value>
+  </data>
+  <data name="View_AllPurchaseItemsView_Header_PurchaseUnit" xml:space="preserve">
+    <value>E.-Einheit</value>
+  </data>
+  <data name="View_AllPurchaseItemsView_Header_RecipeUnit" xml:space="preserve">
+    <value>R.-Einheit</value>
+  </data>
+
+  <data name="View_SinglePurchaseItemView_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="View_SinglePurchaseItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="View_SinglePurchaseItemView_Family" xml:space="preserve">
+    <value>_Warengruppe:</value>
+  </data>
+  <data name="View_SinglePurchaseItemView_PurchaseUnit" xml:space="preserve">
+    <value>_E.-Einheit:</value>
+  </data>
+  <data name="View_SinglePurchaseItemView_RecipeUnit" xml:space="preserve">
+    <value>_R.-Einheit:</value>
+  </data>
+
+  <data name="ViewModel_AllPurchaseItemsViewModel_DisplayName" xml:space="preserve">
+    <value>Alle Einkaufsartikel</value>
+  </data>
+  <data name="ViewModel_AllPurchaseItemsViewModel_PrintHeader" xml:space="preserve">
+    <value>[Liste der Einkaufsartikel]</value>
+  </data>
+
+  <data name="ViewModel_SinglePurchaseItemViewModel_NewId" xml:space="preserve">
+    <value>(Neu)</value>
+  </data>
+  <data name="ViewModel_SinglePurchaseItemViewModel_NewItem" xml:space="preserve">
+    <value>Neuer Einkaufsartikel</value>
+  </data>
+
+
+  <!-- *** Production items *** -->
+  <data name="ViewModel_MainWindowViewModel_ViewAllProductionItems" xml:space="preserve">
+    <value>Produktionsartikel</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_CreateNewProductionItem" xml:space="preserve">
+    <value>Neuer Produktionsartikel</value>
+  </data>
+
+  <data name="Model_EditProductionItem_Name_is_missing" xml:space="preserve">
+    <value>Der Name fehlt</value>
+  </data>
+  <data name="Model_EditProductionItem_Family_is_missing" xml:space="preserve">
+    <value>Die Einkaufswarengruppe fehlt</value>
+  </data>
+  <data name="Model_EditProductionItem_Unit_is_missing" xml:space="preserve">
+    <value>Die Rezepteinheit fehlt</value>
+  </data>
+
+  <data name="View_AllProductionItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="View_AllProductionItemsView_Header_Family" xml:space="preserve">
+    <value>Warengruppe</value>
+  </data>
+  <data name="View_AllProductionItemsView_Header_RecipeUnit" xml:space="preserve">
+    <value>R.-Einheit</value>
+  </data>
+  <data name="View_AllProductionItemsView_Header_ItemNames" xml:space="preserve">
+    <value>Artikel</value>
+  </data>
+
+  <data name="View_SingleProductionItemView_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="View_SingleProductionItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="View_SingleProductionItemView_Family" xml:space="preserve">
+    <value>_Warengruppe:</value>
+  </data>
+  <data name="View_SingleProductionItemView_RecipeUnit" xml:space="preserve">
+    <value>_R.-Einheit:</value>
+  </data>
+  <data name="View_SingleProductionitemView_HeaderQuantity" xml:space="preserve">
+    <value>Anzahl</value>
+  </data>
+  <data name="View_SingleProductionitemView_HeaderUnit" xml:space="preserve">
+    <value>Einheit</value>
+  </data>
+  <data name="View_SingleProductionitemView_HeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+
+  <data name="ViewModel_AllProductionItemsViewModel_DisplayName" xml:space="preserve">
+    <value>Alle Produktionsartikel</value>
+  </data>
+  <data name="ViewModel_AllProductionItemsViewModel_PrintHeader" xml:space="preserve">
+    <value>[Liste der Produktionsartikel]</value>
+  </data>
+
+  <data name="ViewModel_SingleProductionItemViewModel_NewId" xml:space="preserve">
+    <value>(Neu)</value>
+  </data>
+  <data name="ViewModel_SingleProductionItemViewModel_NewItem" xml:space="preserve">
+    <value>Neuer Produktionsartikel</value>
+  </data>
+
+
+  <!-- *** Recipes *** -->
+  <data name="ViewModel_MainWindowViewModel_ViewAllRecipes" xml:space="preserve">
+    <value>Rezepte</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_CreateNewRecipe" xml:space="preserve">
+    <value>Neues Rezept</value>
+  </data>
+
+  <data name="Model_Recipe_SalesItem_is_missing" xml:space="preserve">
+    <value>Der zugehörige Verkaufsartikel fehlt</value>
+  </data>
+
+  <data name="View_AllRecipesView_Header_Plu" xml:space="preserve">
+    <value>Plu</value>
+  </data>
+  <data name="View_AllRecipesView_Header_ItemNames" xml:space="preserve">
+    <value>Artikel</value>
+  </data>
+
+  <data name="View_SingleRecipeView_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="View_SingleRecipeView_SalesItem" xml:space="preserve">
+    <value>_Plu:</value>
+  </data>
+  <data name="View_SingleRecipeView_HeaderQuantity" xml:space="preserve">
+    <value>Anzahl</value>
+  </data>
+  <data name="View_SingleRecipeView_HeaderUnit" xml:space="preserve">
+    <value>Einheit</value>
+  </data>
+  <data name="View_SingleRecipeView_HeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+
+  <data name="ViewModel_AllRecipesViewModel_DisplayName" xml:space="preserve">
+    <value>Alle Rezepturen</value>
+  </data>
+  <data name="ViewModel_AllRecipesViewModel_PrintHeader" xml:space="preserve">
+    <value>[Liste der Rezepturen]</value>
+  </data>
+
+  <data name="ViewModel_SingleRecipeViewModel_NewId" xml:space="preserve">
+    <value>(Neu)</value>
+  </data>
+  <data name="ViewModel_SingleRecipeViewModel_NewItem" xml:space="preserve">
+    <value>Neue Rezeptur</value>
+  </data>
+  <data name="ViewModel_SingleRecipeViewModel_EditItem" xml:space="preserve">
+    <value>Rezeptur für {0}</value>
+  </data>
+
+  <!-- *** RecipeItem *** -->
+  <data name="Model_EditRecipeItem_Quantity_is_invalid" xml:space="preserve">
+    <value>Quantity is invalid</value>
+  </data>
+  <data name="Model_EditRecipeItem_Production_is_missing" xml:space="preserve">
+    <value>Production item is missing</value>
+  </data>
+
+
+  <!-- *** Stock *** -->
+  <data name="ViewModel_MainWindowViewModel_ViewAllStocks" xml:space="preserve">
+    <value>Lager</value>
+  </data>
+  <data name="ViewModel_MainWindowViewModel_CreateNewStock" xml:space="preserve">
+    <value>Neues Lager anlegen</value>
+  </data>
+
+  <data name="Model_EditStock_Name_is_missing" xml:space="preserve">
+    <value>Der Name fehlt</value>
+  </data>
+
+  <data name="View_AllStocksView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="View_AllStocksView_Header_ItemNames" xml:space="preserve">
+    <value>Artikel</value>
+  </data>
+
+  <data name="View_SingleStockView_Id" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="View_SingleStockView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="View_SingleStockView_HeaderQuantity" xml:space="preserve">
+    <value>Anzahl</value>
+  </data>
+  <data name="View_SingleStockView_HeaderUnit" xml:space="preserve">
+    <value>Einheit</value>
+  </data>
+  <data name="View_SingleStockView_HeaderArticle" xml:space="preserve">
+    <value>Artikel</value>
+  </data>
+
+  <data name="ViewModel_AllStocksViewModel_DisplayName" xml:space="preserve">
+    <value>Alle Lager</value>
+  </data>
+  <data name="ViewModel_AllStocksViewModel_PrintHeader" xml:space="preserve">
+    <value>[Liste der Lager]</value>
+  </data>
+
+  <data name="ViewModel_SingleStockViewModel_NewId" xml:space="preserve">
+    <value>(Neu)</value>
+  </data>
+  <data name="ViewModel_SingleStockViewModel_NewItem" xml:space="preserve">
+    <value>Neues Lager</value>
+  </data>
+
+  
+  <!-- *** DlgSettings *** -->
+  <data name="View_DlgSettings_Title" xml:space="preserve">
+    <value>Programmeinstellungen...</value>
+  </data>
+  <data name="View_DlgSettings_MatrixPath" xml:space="preserve">
+    <value>Pfad zu _Matrix:</value>
+  </data>
+  <data name="View_DlgSettings_DbConnection" xml:space="preserve">
+    <value>_Datenbankverbindung:</value>
+  </data>
+
+</root>

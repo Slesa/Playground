@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Godot.IcsEditor.Ui.View.CrystalReportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:crystal="clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms"
+        MinHeight="480" MinWidth="640" Loaded="OnWindowLoaded">
+    <DockPanel LastChildFill="True">
+        
+        <WindowsFormsHost Width="Auto" Height="Auto" MinHeight="320" MinWidth="480">
+
+            <crystal:CrystalReportViewer x:Name="ReportViewer" />
+            
+        </WindowsFormsHost>
+        
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22213F32-8DE8-46E3-BD18-783D31441C51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Godot.IcsEditor.Ui</RootNamespace>
+    <AssemblyName>Godot.IcsEditor.Ui</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\lib\CastleWindsor\net-3.5\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel">
+      <HintPath>..\..\..\lib\CastleWindsor\net-3.5\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\lib\CastleWindsor\net-3.5\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\lib\CrystalReports\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework">
+      <HintPath>..\..\..\lib\CrystalReports\iPoint\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore">
+      <HintPath>..\..\..\lib\CrystalReports\iPoint\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <HintPath>..\..\..\lib\CrystalReports\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <HintPath>..\..\..\lib\CrystalReports\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\lib\CrystalReports\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\lib\CrystalReports\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\lib\CrystalReports\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\tools\Machine.Specifications\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\lib\NHibernate\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\tools\Rhino Mocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CrystalReportCommands.cs" />
+    <Compile Include="Commands\EntityCommands.cs" />
+    <Compile Include="Commands\ProductionItemCommands.cs" />
+    <Compile Include="Commands\PurchaseFamilyCommands.cs" />
+    <Compile Include="Commands\PurchaseItemCommands.cs" />
+    <Compile Include="Commands\RecipeCommands.cs" />
+    <Compile Include="Commands\StockCommands.cs" />
+    <Compile Include="Events\BackgroundEventSubscription.cs" />
+    <Compile Include="Events\BackgroundEventSubscriptionFixture.cs">
+      <DependentUpon>BackgroundEventSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\CompositePresentationEvent.cs" />
+    <Compile Include="Events\DataEventArgs.cs" />
+    <Compile Include="Events\DataEventArgsFixture.cs">
+      <DependentUpon>DataEventArgs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\DefaultDispatcher.Desktop.cs" />
+    <Compile Include="Events\DelegateReference.cs" />
+    <Compile Include="Events\DelegateReferenceFixture.cs">
+      <DependentUpon>DelegateReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\DispatcherEventSubscription.cs" />
+    <Compile Include="Events\EventAggregator.cs" />
+    <Compile Include="Events\EventAggregatorFixture.cs">
+      <DependentUpon>EventAggregator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EventBase.cs" />
+    <Compile Include="Events\EventBaseFixture.cs">
+      <DependentUpon>EventBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EventSubscription.cs" />
+    <Compile Include="Events\EventSubscriptionFixture.cs">
+      <DependentUpon>EventSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\IDelegateReference.cs" />
+    <Compile Include="Events\IDispatcherFacade.cs" />
+    <Compile Include="Events\IEventAggregator.cs" />
+    <Compile Include="Events\IEventSubscription.cs" />
+    <Compile Include="Events\SubscriptionToken.cs" />
+    <Compile Include="Events\SubscriptionTokenFixture.cs">
+      <DependentUpon>SubscriptionToken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\ThreadOption.cs" />
+    <Compile Include="Events\WeakDelegatesManager.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="IcsEditorRegistrationContributor.cs" />
+    <Compile Include="Commands\IEntityCommands.cs" />
+    <Compile Include="Infrastructure\ConnectDatabaseOnStartup.cs" />
+    <Compile Include="Infrastructure\ImageConverter.cs" />
+    <Compile Include="Infrastructure\IViewActivator.cs" />
+    <Compile Include="Infrastructure\WorkspaceCollectorSpecs.cs">
+      <DependentUpon>WorkspaceCollector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\ReportStrings.Designer.cs">
+      <DependentUpon>ReportStrings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Localization\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditStockMovementItem.cs" />
+    <Compile Include="Model\MoveBookStockItems.cs" />
+    <Compile Include="Model\EditObject.cs" />
+    <Compile Include="Model\EditProductionItem.cs" />
+    <Compile Include="Model\EditPurchaseFamily.cs" />
+    <Compile Include="Model\EditPurchaseFamilySpecs.cs">
+      <DependentUpon>EditPurchaseFamily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditPurchaseItem.cs" />
+    <Compile Include="Model\EditPurchaseItemSpecs.cs">
+      <DependentUpon>EditPurchaseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditRecipe.cs" />
+    <Compile Include="Model\EditRecipeableItemExtensions.cs" />
+    <Compile Include="Model\EditRecipeItemSpecs.cs">
+      <DependentUpon>EditRecipeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditRecipeSpecs.cs">
+      <DependentUpon>EditRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditSettings.cs" />
+    <Compile Include="Model\EditStock.cs" />
+    <Compile Include="Model\EditStockItem.cs" />
+    <Compile Include="Model\EditStockItemSpecs.cs">
+      <DependentUpon>EditStockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditStockSpecs.cs">
+      <DependentUpon>EditStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditUnit.cs" />
+    <Compile Include="Model\EditUnitSpecs.cs">
+      <DependentUpon>EditUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditUnitType.cs" />
+    <Compile Include="Model\EditUnitTypeSpecs.cs">
+      <DependentUpon>EditUnitType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EditProductionItemSpecs.cs">
+      <DependentUpon>EditProductionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MoveDepositStockItems.cs" />
+    <Compile Include="Model\MoveRemovalStockItems.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReport1.cs">
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\UnitList.cs">
+      <DependentUpon>UnitList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Commands\UnitCommands.cs" />
+    <Compile Include="Commands\UnitTypeCommands.cs" />
+    <Compile Include="Infrastructure\ViewActivator.cs" />
+    <Compile Include="ViewModel\ActionCommand.cs" />
+    <Compile Include="ViewModel\AllProductionItemsViewModel.cs" />
+    <Compile Include="ViewModel\AllPurchaseFamiliesViewModel.cs" />
+    <Compile Include="ViewModel\AllPurchaseItemsViewModel.cs" />
+    <Compile Include="ViewModel\AllRecipesViewModel.cs" />
+    <Compile Include="ViewModel\AllStocksViewModel.cs" />
+    <Compile Include="ViewModel\AllUnitsViewModel.cs" />
+    <Compile Include="ViewModel\AllUnitTypesViewModel.cs" />
+    <Compile Include="ViewModel\CommandViewModel.cs" />
+    <Compile Include="ViewModel\CrystalReportViewModel.cs" />
+    <Compile Include="ViewModel\DoubleClickBehavior.cs" />
+    <Compile Include="ViewModel\EditProductionItemViewModel.cs" />
+    <Compile Include="ViewModel\EditPurchaseFamilyViewModel.cs" />
+    <Compile Include="ViewModel\EditPurchaseItemViewModel.cs" />
+    <Compile Include="Model\EditRecipeItem.cs" />
+    <Compile Include="ViewModel\EditRecipeViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\EditStockViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\EditUnitTypeViewModel.cs" />
+    <Compile Include="ViewModel\EditUnitViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\RowDataInfoValidationRule.cs" />
+    <Compile Include="ViewModel\SingleProductionItemViewModel.cs" />
+    <Compile Include="ViewModel\SinglePurchaseFamilyViewModel.cs" />
+    <Compile Include="ViewModel\SinglePurchaseItemViewModel.cs" />
+    <Compile Include="ViewModel\SingleRecipeItemViewModel.cs" />
+    <Compile Include="ViewModel\SingleRecipeViewModel.cs" />
+    <Compile Include="ViewModel\SingleStockItemViewModel.cs" />
+    <Compile Include="ViewModel\SingleStockViewModel.cs" />
+    <Compile Include="ViewModel\SingleUnitTypeViewModel.cs" />
+    <Compile Include="ViewModel\SingleUnitViewModel.cs" />
+    <Compile Include="ViewModel\StockItemBookingViewModel.cs" />
+    <Compile Include="ViewModel\StockItemDepositViewModel.cs" />
+    <Compile Include="ViewModel\StockItemRemovalViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelBaseTest.cs">
+      <DependentUpon>ViewModelBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelEditEventArgs.cs" />
+    <Compile Include="ViewModel\WorkspaceViewModel.cs" />
+    <Compile Include="View\AllProductionItemsView.xaml.cs">
+      <DependentUpon>AllProductionItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllPurchaseFamiliesView.xaml.cs">
+      <DependentUpon>AllPurchaseFamiliesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllPurchaseItemsView.xaml.cs">
+      <DependentUpon>AllPurchaseItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllRecipesView.xaml.cs">
+      <DependentUpon>AllRecipesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllStocksView.xaml.cs">
+      <DependentUpon>AllStocksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllUnitsView.xaml.cs">
+      <DependentUpon>AllUnitsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllUnitTypesView.xaml.cs">
+      <DependentUpon>AllUnitTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CrystalReportView.xaml.cs">
+      <DependentUpon>CrystalReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditProductionItemView.xaml.cs">
+      <DependentUpon>EditProductionItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditPurchaseFamilyView.xaml.cs">
+      <DependentUpon>EditPurchaseFamilyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditPurchaseItemView.xaml.cs">
+      <DependentUpon>EditPurchaseItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditUnitTypeView.xaml.cs">
+      <DependentUpon>EditUnitTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditUnitView.xaml.cs">
+      <DependentUpon>EditUnitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditRecipeView.xaml.cs">
+      <DependentUpon>EditRecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditStockView.xaml.cs">
+      <DependentUpon>EditStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StockItemDepositView.xaml.cs">
+      <DependentUpon>StockItemDepositView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StockItemBookingView.xaml.cs">
+      <DependentUpon>StockItemBookingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\WorkspaceCollector.cs" />
+    <Compile Include="View\StockItemRemovalView.xaml.cs">
+      <DependentUpon>StockItemRemovalView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindowResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllProductionItemsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllPurchaseFamiliesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllPurchaseItemsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllRecipesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllStocksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllUnitsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AllUnitTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CrystalReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditProductionItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditPurchaseFamilyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditPurchaseItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditUnitTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditUnitView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditRecipeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EditStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StockItemDepositView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StockItemBookingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StockItemRemovalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\ReportStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.de-DE.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\IcsEditor.png" />
+    <Resource Include="Images\button_add.png" />
+    <Resource Include="Images\button_cancel.png" />
+    <Resource Include="Images\button_edit.png" />
+    <Resource Include="Images\button_help.png" />
+    <Resource Include="Images\button_ok.png" />
+    <Resource Include="Images\button_print.png" />
+    <Resource Include="Images\button_remove.png" />
+    <Resource Include="Images\ProductionItem.png" />
+    <Resource Include="Images\PurchaseFamily.png" />
+    <Resource Include="Images\PurchaseItem.png" />
+    <Content Include="Reports\Receipts.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\StockList.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\UnitList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UnitList.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Godot.IcsModel\Godot.IcsModel.csproj">
+      <Project>{DABA94FB-76AE-421C-81DC-F6B0EC8A1455}</Project>
+      <Name>Godot.IcsModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.Infrastructure\Godot.Infrastructure.csproj">
+      <Project>{29BE47FD-7E62-4EB1-91D8-4D109586AB83}</Project>
+      <Name>Godot.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.Model\Godot.Model.csproj">
+      <Project>{AE01BFFD-717E-44D0-8285-7B07C7B90F18}</Project>
+      <Name>Godot.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.PmsModel\Godot.PmsModel.csproj">
+      <Project>{0ED21D5F-A21E-4A11-BD04-D8728FC4CEF4}</Project>
+      <Name>Godot.PmsModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

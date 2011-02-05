@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Godot.IcsEditor.Ui.View.EditPurchaseItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" 
+             mc:Ignorable="d" 
+        MinHeight="320" MinWidth="480">
+    <DockPanel LastChildFill="True" Style="{DynamicResource DialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource DialogButtonStackSkin}" >
+            <Button Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=SaveCommand}" IsDefault="True">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/button_ok.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Localization:Strings.Button_Save}" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=CloseCommand}" IsCancel="True">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/button_cancel.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Localization:Strings.Button_Cancel}" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Grid Style="{DynamicResource DialogGridSkin}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <DataTemplate DataType="{x:Type ValidationError}">
+                    <TextBlock FontStyle="Italic" Foreground="Red" HorizontalAlignment="Right" Margin="0,1" 
+                        Text="{Binding Path=ErrorContent}" />
+                </DataTemplate>
+            </Grid.Resources>
+
+            <!-- Id >
+            <Label Grid.Row="0" Style="{DynamicResource LabelSkin}" 
+                   Content="{x:Static Localization:Strings.View_SinglePurchaseItemView_Id}" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="_textId" Style="{DynamicResource DialogTextBoxSkin}" 
+                   Text="{Binding Path=Id, Mode=OneTime}" IsReadOnly="True" / -->
+
+            <!-- Name -->
+            <Label Grid.Row="1" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textName}" Content="{x:Static Localization:Strings.View_SinglePurchaseItemView_Name}" />
+            <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource DialogTextBoxSkin}" 
+                   Text="{Binding Path=Name, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Family -->
+            <Label Grid.Row="5" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_comboFamily}" Content="{x:Static Localization:Strings.View_SinglePurchaseItemView_Family}" />
+            <ComboBox Grid.Row="5" Grid.Column="1" Name="_comboFamily" Style="{DynamicResource DialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllFamilies}" DisplayMemberPath="Name" 
+                      SelectedItem="{Binding PurchaseFamily, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="6" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_comboFamily, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Purchase Unit -->
+            <Label Grid.Row="7" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_comboPurchaseUnit}" Content="{x:Static Localization:Strings.View_SinglePurchaseItemView_PurchaseUnit}" />
+            <ComboBox Grid.Row="7" Grid.Column="1" Name="_comboPurchaseUnit" Style="{DynamicResource DialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllPurchaseUnits}" DisplayMemberPath="Name" 
+                      SelectedItem="{Binding PurchaseUnit, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="8" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_comboPurchaseUnit, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Recipe Unit -->
+            <Label Grid.Row="9" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_comboRecipeUnit}" Content="{x:Static Localization:Strings.View_SinglePurchaseItemView_RecipeUnit}" />
+            <ComboBox Grid.Row="9" Grid.Column="1" Name="_comboRecipeUnit" Style="{DynamicResource DialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllRecipeUnits}" DisplayMemberPath="Name" 
+                      SelectedItem="{Binding RecipeUnit, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="10" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_comboRecipeUnit, Path=(Validation.Errors).CurrentItem}" />
+
+        </Grid>
+    </DockPanel>
+</UserControl>
