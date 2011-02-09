@@ -38,6 +38,6 @@
                 <cal:AppBarButton IconUri="ApplicationIcon.png" Text="Page Two" Message="GotoPageTwo" />
             </shell:ApplicationBar.Buttons>
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
