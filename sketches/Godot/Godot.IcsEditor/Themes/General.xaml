@@ -1,0 +1,222 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="Godot.IcsEditor.Ui.Themes.c__sources_43gmbh_sketches_nhibernate_godot_godot_icseditor_ui_themes_general_xaml">
+    <LinearGradientBrush x:Key="Brush_HeaderBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#66000088" Offset="0" />
+        <GradientStop Color="#BB000088" Offset="1" />
+    </LinearGradientBrush>
+    
+    <!-- Style TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="18" />
+    </Style -->
+
+    <LinearGradientBrush x:Key="BlueBackground"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Offset="0"
+                      Color="#c1dbe8" />
+        <GradientStop Offset="0.5"
+                      Color="#008fc7" />
+        <GradientStop Offset="1"
+                      Color="#066caa" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="BlueStroke"
+                     Color="#0075b0" />
+    <ControlTemplate x:Key="LabelTemplate"
+                     TargetType="Label">
+        <Border BorderBrush="{StaticResource BlueStroke}"
+                BorderThickness="1"
+                Background="White"
+                CornerRadius="3,15,15,3"
+                Padding="1">
+            <Border Background="{StaticResource BlueBackground}"
+                    CornerRadius="3,15,15,3"
+                    Padding="3">
+                <ContentPresenter />
+            </Border>
+        </Border>
+    </ControlTemplate>
+
+
+
+
+    <Style x:Key="LabelSkin" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="Foreground" Value="Black" />
+        <!-- Setter Property="Template" Value="{StaticResource LabelTemplate}" / -->
+        <!-- Setter Property="Width" Value="100" / -->
+        <!-- Setter Property="VerticalAlignment" Value="Top" / -->
+        <!-- Setter Property="Margin" Value="0,0,8,0" / -->
+    </Style>
+
+    <Style x:Key="ButtonLabelSkin" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="Foreground" Value="White" />
+        <!-- Setter Property="Template" Value="{StaticResource LabelTemplate}" / -->
+        <!-- Setter Property="Width" Value="100" / -->
+        <!-- Setter Property="VerticalAlignment" Value="Top" / -->
+        <!-- Setter Property="Margin" Value="0,0,8,0" / -->
+    </Style>
+
+    <Style x:Key="TextBoxSkin" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="BorderBrush" Value="{StaticResource BlueStroke}" />
+        <Setter Property="Foreground" Value="{StaticResource BlueStroke}" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+
+    <Style x:Key="ComboBoxSkin" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="BorderBrush" Value="{StaticResource BlueStroke}" />
+        <Setter Property="Foreground" Value="{StaticResource BlueStroke}" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+<!-- BasedOn="{StaticResource ButtonTemplate}" -->
+    <Style x:Key="ButtonSkin" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <!-- Setter Property="Template" Value="{StaticResource ButtonTemplate}" / -->
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <!-- ************************************** -->
+    <!-- *** Listen: Listenansicht der Elemente -->
+    <!-- ************************************** -->
+
+    <!-- Das Dockpanel, das den gesamten Dialog einnimmt -->
+    <Style x:Key="ListDockSkin" TargetType="DockPanel">
+        <Setter Property="Background" Value="LightBlue" />
+    </Style>
+    
+    <!-- Das Stackpanel mit den Command-Buttons -->
+    <Style x:Key="ListStackSkin" TargetType="StackPanel">
+        <Setter Property="DockPanel.Dock" Value="Right" />
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
+    <!-- Die Buttons in der Command-Buttonleiste -->
+    <Style x:Key="ListButtonSkin" TargetType="Button" BasedOn="{StaticResource ButtonSkin}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="MinHeight" Value="25" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <!-- Das Verhalten der Liste mit den Elementen -->
+    <Style x:Key="ListCollectionStyle" TargetType="{x:Type ListViewItem}">
+        <!-- Setter for the DoubleClick Command -->
+        <!-- Setter Property="local:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+        <!-- Stretch the content of each cell so that we can right-align text in the Total Sales column. -->
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <!-- Bind the IsSelected property of a ListViewItem to the IsSelected property of a CustomerViewModel object. -->
+        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#EEEEEEEE" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Die Liste mit den Elementen -->
+    <Style x:Key="ListCollectionSkin" TargetType="ListView">
+        <Setter Property="AlternationCount" Value="2" />
+    </Style>
+    
+    <!-- ************************************** -->
+    <!-- *** Dialog: Einzelansicht der Elemente -->
+    <!-- ************************************** -->
+    
+    <!-- Das Dockpanel, das den gesamten Dialog einnimmt -->
+    <Style x:Key="DialogDockPanelSkin" TargetType="DockPanel">
+        <Setter Property="Background" Value="LightBlue" />
+        <Setter Property="Height" Value="Auto" />
+    </Style>
+  
+    <!-- Das Stackpanel, das die untere Buttonleiste aufnimmt -->
+    <Style x:Key="DialogButtonStackSkin" TargetType="StackPanel">
+        <Setter Property="DockPanel.Dock" Value="Bottom" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Height" Value="Auto" />
+    </Style>
+    
+    <!-- Die Buttons in der unteren Buttonleiste -->
+    <Style x:Key="DialogButtonSkin" TargetType="Button" BasedOn="{StaticResource ButtonSkin}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="MinHeight" Value="25" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <!-- Der Hilfe-Button in der unteren Buttonleiste -->
+    <Style x:Key="DialogHelpButtonSkin" TargetType="Button" BasedOn="{StaticResource DialogButtonSkin}">
+        <Setter Property="Margin" Value="5,5,25,5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <!-- Das Grid, das die Eingabelemente aufnimmt -->
+    <Style x:Key="DialogGridSkin" TargetType="Grid">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="LightYellow" />
+    </Style>
+    
+    <!-- Eingabebox innerhalb eines Dialoges -->
+    <Style x:Key="DialogTextBoxSkin" TargetType="TextBox" BasedOn="{StaticResource TextBoxSkin}">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+
+    <!-- Combobox innerhalb eines Dialoges -->
+    <Style x:Key="DialogComboBoxSkin" TargetType="ComboBox" BasedOn="{StaticResource ComboBoxSkin}">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+    
+    <DataTemplate DataType="{x:Type ValidationError}">
+        <TextBlock FontStyle="Italic" Foreground="Red" HorizontalAlignment="Right" Margin="0,1" Text="{Binding Path=ErrorContent}" />
+    </DataTemplate>
+    
+    <Style x:Key="DialogErrorPresenterSkin" TargetType="ContentPresenter">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+    
+    
+    <!-- ImageBrush x:Key="BluePattern"
+                ImageSource="/Resources;component/Chapter10/line6.png"
+                TileMode="Tile"
+                Viewport="0,0,100,100"
+                ViewportUnits="Absolute" />
+
+    <Style x:Key="FormSkin"
+           TargetType="Border">
+        <Setter Property="Padding"
+                Value="10" />
+        <Setter Property="Background"
+                Value="{StaticResource BluePattern}" />
+    </Style -->
+
+
+    <!-- DataGrid Background -->
+    <LinearGradientBrush x:Key="BlueLightGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#FFEAF3FF"/>
+        <GradientStop Offset="0.654" Color="#FFC0DEFF"/>
+        <GradientStop Offset="1" Color="#FFC0D9FB"/>
+    </LinearGradientBrush>
+
+    <!-- DatGrid style -->
+    <Style TargetType="{x:Type DataGrid}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="{StaticResource BlueLightGradientBrush}" />
+        <Setter Property="BorderBrush" Value="#FFA6CCF2" />
+        <Setter Property="RowBackground" Value="White" />
+        <Setter Property="AlternatingRowBackground" Value="#FDFFD0" />
+        <Setter Property="HorizontalGridLinesBrush" Value="Transparent" />
+        <Setter Property="VerticalGridLinesBrush" Value="#FFD3D0" />
+        <Setter Property="RowHeaderWidth" Value="0" />
+    </Style>
+
+</ResourceDictionary>

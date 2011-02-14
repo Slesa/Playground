@@ -1,0 +1,62 @@
+﻿<Window x:Class="Godot.IcsEditor.Ui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" Title="{Binding Path=DisplayName}"
+  Width="700" Height="500"
+  WindowStartupLocation="CenterScreen" Icon="Images/IcsEditor.png">
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml" />
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" KeyboardNavigation.TabNavigation="None">
+            <Menu KeyboardNavigation.TabNavigation="Cycle">
+                <MenuItem Header="{x:Static Localization:Strings.View_MainView_MainMenu_File}">
+                    <!-- MenuItem Header="{x:Static Localization:Strings.View_MainView_MainMenu_Options}" Command="{Binding Path=ShowOptionsCommand}" />
+                    <Separator / -->
+                    <MenuItem Header="{x:Static Localization:Strings.View_MainView_MainMenu_Exit}" Command="{Binding Path=CloseCommand}">
+                        <MenuItem.Icon>
+                            <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/exit.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <!-- MenuItem Header="_Options">
+                    <MenuItem Header="_Load Customer View" Command="{Binding Path=LoadCustomerViewCommand}" />
+                </MenuItem -->
+                <!-- MenuItem Header="_Help" / -->
+            </Menu>
+        </DockPanel>
+
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="4" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border 
+        Grid.Column="0" 
+        Style="{StaticResource MainBorderStyle}"
+        Width="170"
+        >
+                <HeaderedContentControl
+          Content="{Binding Path=Commands}"
+          ContentTemplate="{StaticResource CommandsTemplate}"
+          Header="{x:Static Localization:Strings.View_MainView_Menu}"
+          Style="{StaticResource MainHCCStyle}"
+          />
+            </Border>
+
+            <Border
+        Grid.Column="2" 
+        Style="{StaticResource MainBorderStyle}"
+        >
+                <HeaderedContentControl 
+          Content="{Binding Path=Workspaces}"
+          ContentTemplate="{StaticResource WorkspacesTemplate}"
+          Header="{x:Static Localization:Strings.View_MainView_Details}"
+          Style="{StaticResource MainHCCStyle}"
+          />
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,215 @@
+﻿<!-- 
+This resource dictionary is used by the MainWindow. 
+-->
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:vm="clr-namespace:Godot.IcsEditor.Ui.ViewModel" 
+    xmlns:vw="clr-namespace:Godot.IcsEditor.Ui.View" 
+    x:Class="Godot.IcsEditor.Ui.MainWindowResources_xaml">
+
+    <!-- Crystal Reports -->
+    <DataTemplate DataType="{x:Type vm:CrystalReportViewModel}">
+        <vw:CrystalReportView />
+    </DataTemplate>
+
+    <!-- DlgSettings -->
+    <!-- DataTemplate DataType="{x:Type vm:DlgSettingsViewModel}">
+        <vw:DlgSettings />
+    </DataTemplate -->
+
+
+    <!-- Unit Types -->
+    <DataTemplate DataType="{x:Type vm:AllUnitTypesViewModel}">
+        <vw:AllUnitTypesView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditUnitTypeViewModel}">
+        <vw:EditUnitTypeView />
+    </DataTemplate>
+
+    <!-- Units -->
+    <DataTemplate DataType="{x:Type vm:AllUnitsViewModel}">
+        <vw:AllUnitsView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditUnitViewModel}">
+        <vw:EditUnitView />
+    </DataTemplate>
+
+
+    <!-- Purchase families -->
+    <DataTemplate DataType="{x:Type vm:AllPurchaseFamiliesViewModel}">
+        <vw:AllPurchaseFamiliesView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditPurchaseFamilyViewModel}">
+        <vw:EditPurchaseFamilyView />
+    </DataTemplate>
+
+
+    <!-- Purchase items -->
+    <DataTemplate DataType="{x:Type vm:AllPurchaseItemsViewModel}">
+        <vw:AllPurchaseItemsView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditPurchaseItemViewModel}">
+        <vw:EditPurchaseItemView />
+    </DataTemplate>
+
+
+    <!-- Production items -->
+    <DataTemplate DataType="{x:Type vm:AllProductionItemsViewModel}">
+        <vw:AllProductionItemsView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditProductionItemViewModel}">
+        <vw:EditProductionItemView />
+    </DataTemplate>
+
+
+    <!-- Recipes -->
+    <DataTemplate DataType="{x:Type vm:AllRecipesViewModel}">
+        <vw:AllRecipesView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditRecipeViewModel}">
+        <vw:EditRecipeView />
+    </DataTemplate>
+
+    <!-- Stocks -->
+    <DataTemplate DataType="{x:Type vm:AllStocksViewModel}">
+        <vw:AllStocksView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EditStockViewModel}">
+        <vw:EditStockView />
+    </DataTemplate>
+
+    <!-- Stock items -->
+    <DataTemplate DataType="{x:Type vm:StockItemBookingViewModel}">
+        <vw:StockItemBookingView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:StockItemDepositViewModel}">
+        <vw:StockItemDepositView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:StockItemRemovalViewModel}">
+        <vw:StockItemRemovalView />
+    </DataTemplate>
+
+    <!-- 
+  This style configures both of the main content areas in the main window.
+  -->
+    <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border 
+            Background="{StaticResource Brush_HeaderBackground}" 
+            BorderBrush="LightGray" 
+            BorderThickness="1" 
+            CornerRadius="5" 
+            Margin="4" 
+            Padding="4" 
+            SnapsToDevicePixels="True" 
+            >
+                        <TextBlock 
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White" 
+              HorizontalAlignment="Center"  
+              Text="{TemplateBinding Content}" 
+              />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- 
+        This template ensures that content of a HeaderedContentControl 
+        fills the available vertical space. 
+        -->
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                    <DockPanel>
+                        <ContentPresenter 
+              DockPanel.Dock="Top"
+              ContentSource="Header" 
+              ContentTemplate="{TemplateBinding HeaderTemplate}" 
+              />
+                        <ContentPresenter 
+              ContentSource="Content" 
+              ContentTemplate="{TemplateBinding ContentTemplate}" 
+              />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--
+  This style ensures that the borders in the main window are consistent.
+  -->
+    <Style x:Key="MainBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="WhiteSmoke" />
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+    <!--
+  This template explains how to render the list of commands on the left
+  side in the main window (the 'Control Panel' area).
+  -->
+    <DataTemplate x:Key="CommandsTemplate">
+        <ItemsControl IsTabStop="False" ItemsSource="{Binding}" Margin="6,2">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel LastChildFill="True">
+                        <Image Width="24" Height="24"  Source="{Binding IconFileName}" />
+                        <TextBlock Margin="2,6">
+                            <Hyperlink Command="{Binding Path=Command}">
+                                <TextBlock Text="{Binding Path=DisplayName}" />
+                            </Hyperlink>
+                        </TextBlock>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DataTemplate>
+
+    <!-- 
+  This template explains how to render 
+  a tab item with a close button.
+  -->
+    <DataTemplate x:Key="ClosableTabItemTemplate">
+        <DockPanel Width="120">
+            <Button 
+        Command="{Binding Path=CloseCommand}"
+        Content="X"
+        Cursor="Hand"
+        DockPanel.Dock="Right"
+        Focusable="False"
+        FontFamily="Courier" 
+        FontSize="9"
+        FontWeight="Bold"  
+        Margin="0,1,0,0"
+        Padding="0"
+        VerticalContentAlignment="Bottom"
+        Width="16" Height="16" 
+        />
+            <ContentPresenter 
+        Content="{Binding Path=DisplayName}" 
+        VerticalAlignment="Center" 
+        />
+        </DockPanel>
+    </DataTemplate>
+
+    <!--
+  This template explains how to render the 'Workspace' content area in the main window.
+  -->
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl 
+      IsSynchronizedWithCurrentItem="True" 
+      ItemsSource="{Binding}" 
+      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+      Margin="4"
+      />
+    </DataTemplate>
+
+</ResourceDictionary>

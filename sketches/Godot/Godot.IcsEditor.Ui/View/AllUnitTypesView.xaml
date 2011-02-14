@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Godot.IcsEditor.Ui.View.AllUnitTypesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+             xmlns:ViewModel="clr-namespace:Godot.IcsEditor.Ui.ViewModel" xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" mc:Ignorable="d" 
+            MinHeight="320" MinWidth="480">
+    <UserControl.Resources>
+
+        <!-- Die View Source -->
+        <CollectionViewSource x:Key="UnitTypeList"  Source="{Binding Path=AllUnitTypes}" >
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+
+        <Style x:Key="UnitTypeItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListCollectionStyle}">
+            <!-- Setter for the DoubleClick Command -->
+            <Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <DockPanel LastChildFill="True" Style="{DynamicResource ListDockSkin}" >
+
+        <!-- Buttons -->
+        <StackPanel Style="{DynamicResource ListStackSkin}">
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=NewCommand}"
+                Content="{x:Static Localization:Strings.Button_New}" ToolTip="{x:Static Localization:Strings.View_AllUnitsView_New_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=EditCommand}" IsDefault="True" 
+                Content="{x:Static Localization:Strings.Button_Edit}" ToolTip="{x:Static Localization:Strings.View_AllUnitsView_Edit_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=RemoveCommand}"
+                Content="{x:Static Localization:Strings.Button_Remove}" ToolTip="{x:Static Localization:Strings.View_AllUnitsView_Remove_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=PrintCommand}"
+                Content="{x:Static Localization:Strings.Button_Print}" ToolTip="{x:Static Localization:Strings.View_AllUnitsView_Print_Tooltip}" />
+        </StackPanel>
+
+        <!-- Liste -->
+        <ListView Style="{DynamicResource ListCollectionSkin}" DataContext="{StaticResource UnitTypeList}" 
+          ItemContainerStyle="{StaticResource UnitTypeItemStyle}" ItemsSource="{Binding}">
+
+            <ListView.View>
+                <GridView>
+                    <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->
+                    <GridViewColumn Header="{x:Static Localization:Strings.View_AllUnitTypesView_Header_Name}" DisplayMemberBinding="{Binding Path=Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</UserControl>

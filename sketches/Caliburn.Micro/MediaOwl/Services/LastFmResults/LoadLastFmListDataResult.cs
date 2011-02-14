@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using Caliburn.Micro;
+using MediaOwl.Model;
+using MediaOwl.Model.LastFm;
+
+namespace MediaOwl.Services.LastFmResults
+{
+    /// <summary>
+    /// This <see cref="IResult"/> loads a list of entities of the given type. It uses <see cref="LoadLastFmXmlDataResult"/>.
+    /// </summary>
+    /// <typeparam name="TEntity">The type of entity, must inherit from <see cref="EntityBase"/></typeparam>
+    public class LoadLastFmListDataResult<TEntity> : IResult
+        where TEntity : EntityBase
+    {
+        private readonly string searchString;
+        private readonly string xmlElementName;
+
+        /// <summary>
+        /// The constructor.
+        /// </summary>
+        /// <param name="searchString">The searchstring built by the <see cref="ServiceHelper" />.</param>
+        /// <param name="xmlElementName">The element-name of an entity in the xml-file</param>
+        public LoadLastFmListDataResult(string searchString, string xmlElementName)
+        {
+            this.searchString = searchString;
+            this.xmlElementName = xmlElementName;
+        }
+
+
+        /// <summary>
+        /// The Result is stored here
+        /// </summary>
+        public IList<TEntity> EntityList { get; private set; }
+
+        #region Implementation of IResult
+
+        public void Execute(ActionExecutionContext context)
+        {
+            Coroutine.Execute(EntityResult());
+        }
+
+        private IEnumerator<IResult> EntityResult()
+        {
+            var result = new LoadLastFmXmlDataResult(searchString, null, LastFmRepository.RepositoryTypes.None);
+            yield return result;
+            EntityList = new List<TEntity>();
+            var elements = result.XmlResult.Descendants(xmlElementName);
+            foreach (var element in elements)
+            {
+                var entity = Activator.CreateInstance(typeof (TEntity)) as TEntity;
+                if (entity != null) entity.FromXml(element);
+                EntityList.Add(entity);
+            }
+            Completed(this, new ResultCompletionEventArgs());
+        }
+
+        public event EventHandler<ResultCompletionEventArgs> Completed = delegate {};
+
+        #endregion
+    }
+}

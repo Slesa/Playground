@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="Godot.IcsEditor.Ui.View.StockItemBookingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" 
+             xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+             mc:Ignorable="d" 
+             MinHeight="320" MinWidth="480" d:DesignHeight="320" d:DesignWidth="480" >
+    
+    <UserControl.Resources>
+        
+        <CollectionViewSource x:Key="UnitList"  Source="{Binding Path=AllUnits}" >
+            <!-- CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="Name" Direction="Ascending" />
+            </CollectionViewSource.SortDescriptions -->
+        </CollectionViewSource>
+        
+        <CollectionViewSource x:Key="StockProductionItemList"  Source="{Binding Path=StockProductionItems}" >
+            <!-- CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="Name" Direction="Ascending" />
+            </CollectionViewSource.SortDescriptions -->
+        </CollectionViewSource>
+        
+        <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+            <Setter Property="ValidationErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <TextBlock Foreground="Red" Margin="2,0,0,0" Text="!" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRow}">
+                        <Border x:Name="DGR_Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <SelectiveScrollingGrid>
+                                <SelectiveScrollingGrid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </SelectiveScrollingGrid.ColumnDefinitions>
+                                <SelectiveScrollingGrid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </SelectiveScrollingGrid.RowDefinitions>
+                                <DataGridCellsPresenter Grid.Column="1" ItemsPanel="{TemplateBinding ItemsPanel}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Visibility="{TemplateBinding DetailsVisibility}"/>
+                                <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                            </SelectiveScrollingGrid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+            <DataGridRowsPresenter x:Name="PART_RowsPresenter" IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+    </UserControl.Resources>
+
+    <DockPanel LastChildFill="True" Style="{DynamicResource DialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_comboFromStock}">
+        
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource DialogButtonStackSkin}" >
+            <Button Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=SubmitCommand}" IsDefault="True">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/button_ok.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Localization:Strings.Button_Submit}" />
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource DialogButtonSkin}" Command="{Binding Path=CloseCommand}" IsCancel="True">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Godot.IcsEditor.Ui;component/Images/button_cancel.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Localization:Strings.Button_Cancel}" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <Grid Style="{DynamicResource DialogGridSkin}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Source stock -->
+            <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_comboFromStock}" Content="{x:Static Localization:Strings.View_StockItemBookingView_FromStock}" />
+            <ComboBox Grid.Row="1" Grid.Column="1" Name="_comboFromStock" Style="{DynamicResource DialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllStocks}" DisplayMemberPath="Name" 
+                      SelectedValue="{Binding Path=FromStock, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_comboFromStock, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Destination stock -->
+            <Label Grid.Row="3" Grid.Column="0" Margin="3" VerticalAlignment="Center" 
+                   Name="LabelToStock" Target="{Binding ElementName=_comboToStock}" Content="{x:Static Localization:Strings.View_StockItemBookingView_ToStock}" />
+            <ComboBox Grid.Row="3" Grid.Column="1" Name="_comboToStock" Style="{DynamicResource DialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllStocks}" DisplayMemberPath="Name" 
+                      SelectedValue="{Binding Path=ToStock, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="4" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_comboToStock, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Items to move -->
+            <Label Grid.Row="5" Grid.Column="0" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_gridStockItems}" Content="{x:Static Localization:Strings.View_StockItemBookingView_StockItems}" />
+            <DataGrid Grid.Column="1" Grid.Row="5" IsSynchronizedWithCurrentItem="True" x:Name="_gridStockItems" Margin="5" AutoGenerateColumns="False" 
+                ItemsSource="{Binding ItemsToMove}"
+                RowStyle="{DynamicResource DataGridRowStyle}" ItemsPanel="{DynamicResource ItemsPanelTemplate}" AreRowDetailsFrozen="True" AlternationCount="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static Localization:Strings.View_StockItemBookingView_HeaderItem}" 
+                         Binding="{Binding ItemToBook.Name}" IsReadOnly="True" Width="*" />
+                    <!-- DataGridComboBoxColumn x:Name="comboItems" Header="{x:Static Localization:Strings.View_StockItemsView_HeaderItem}" MinWidth="200" Width="*"
+                             SelectedItemBinding="{Binding ProductionItem}"  DisplayMemberPath="ProductionItem.Name" 
+                             ItemsSource="{Binding Source={StaticResource StockProductionItemList}}" / -->
+                    <DataGridTextColumn Header="{x:Static Localization:Strings.View_StockItemBookingView_HeaderQuantity}" MinWidth="60"
+                        Binding="{Binding QuantityToBook, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+                    <DataGridTextColumn Header="{x:Static Localization:Strings.View_StockItemBookingView_HeaderUnit}" MinWidth="60"
+                        Binding="{Binding UnitToBook.Contraction}" IsReadOnly="True" />
+                    <!-- DataGridComboBoxColumn x:Name="comboUnits" Header="{x:Static Localization:Strings.View_StockItemsView_HeaderUnit}"
+                             SelectedItemBinding="{Binding Unit}"  DisplayMemberPath="Name" 
+                             ItemsSource="{Binding Source={StaticResource UnitList}}" / -->
+                    <DataGridTextColumn Header="{x:Static Localization:Strings.View_StockItemBookingView_HeaderInStock}" 
+                        Binding="{Binding QuantityLeft}" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,162 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:cal="http://www.caliburnproject.org" xmlns:MediaOwl_Resources_Behaviors="clr-namespace:MediaOwl.Resources.Behaviors" x:Class="MediaOwl.Views.MoviePersonSingleView"
+    mc:Ignorable="d"
+    d:DesignHeight="443" d:DesignWidth="538">
+	<toolkit:DockPanel x:Name="LayoutRoot">
+		<StackPanel Orientation="Horizontal"
+			d:LayoutOverrides="Height"
+			toolkit:DockPanel.Dock="Top"
+			Margin="0,0,0,15">
+			<TextBlock TextWrapping="Wrap"
+				Text="Detail:"
+				Style="{StaticResource Heading2}"
+				d:LayoutOverrides="Width"
+				Margin="0,0,10,0" />
+			<TextBlock x:Name="DisplayName"
+				TextWrapping="Wrap"
+				Style="{StaticResource Heading2}" />
+		</StackPanel>
+		<Border BorderBrush="{StaticResource ControlBorderBrush}"
+			BorderThickness="1"
+			toolkit:DockPanel.Dock="Bottom"
+			Margin="10,15,10,10"
+			CornerRadius="3"
+			Background="{StaticResource DarkInnerShadowDarkBrush}"
+			Padding="5">
+			<Button x:Name="TryClose"
+				Content="Close"
+				HorizontalAlignment="Right" />
+		</Border>
+		<sdk:TabControl toolkit:DockPanel.Dock="Top"
+			Margin="10,0">
+			<sdk:TabItem Header="Information">
+				<ScrollViewer Margin="-5,-4"
+					Style="{StaticResource CustomScrollViewerStyle}"
+					ScrollViewer.VerticalScrollBarVisibility="Auto">
+					<toolkit:DockPanel Margin="5">
+						<Grid toolkit:DockPanel.Dock="Top">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<TextBlock TextWrapping="Wrap"
+								Text="Name"
+								Margin="5"
+								VerticalAlignment="Center" />
+							<TextBlock
+								TextWrapping="Wrap"
+								Text="Type"
+								VerticalAlignment="Center"
+								Grid.Row="1"
+								Margin="5" />
+							<TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Awards" Margin="5" VerticalAlignment="Top"/>
+							<TextBlock
+								TextWrapping="Wrap"
+								Text="Rating as Director"
+								VerticalAlignment="Center"
+								Grid.Row="3"
+								Margin="5,5,0,5" Visibility="{Binding IsDirector, Converter={StaticResource BooleanToVisibilityConverter}}" />
+							<TextBlock
+								TextWrapping="Wrap"
+								Text="Rating as Actor"
+								VerticalAlignment="Center"
+								Grid.Row="4"
+								Margin="5" Visibility="{Binding IsActor, Converter={StaticResource BooleanToVisibilityConverter}}" />
+							<TextBox Grid.Column="1"
+								d:LayoutOverrides="Width"
+								IsReadOnly="True"
+								Margin="5,2"
+								Text="{Binding CurrentPerson.Name}" />
+							<TextBox x:Name="PersonType"
+								d:LayoutOverrides="Width"
+								Grid.Row="1"
+								Grid.Column="1"
+								Margin="5,2"
+								IsReadOnly="True" />
+							<ListBox x:Name="Awards" Grid.Column="1" Grid.Row="2" Style="{StaticResource InvisibleListBoxStyle}" ItemTemplate="{StaticResource AwardItemTemplate}" IsHitTestVisible="False"/>
+							<toolkit:Rating ItemCount="5" Grid.Column="1" Grid.Row="3" Margin="5" IsReadOnly="True" Value="{Binding DirectorRating}" d:LayoutOverrides="Width, Height" Visibility="{Binding IsDirector, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+							<toolkit:Rating ItemCount="5" d:LayoutOverrides="Width, Height" Grid.Column="1" Grid.Row="4" Margin="5" IsReadOnly="True" Value="{Binding ActorRating}" Visibility="{Binding IsActor, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+						</Grid>
+					</toolkit:DockPanel>
+				</ScrollViewer>
+			</sdk:TabItem>
+			<sdk:TabItem Header="Acting" Visibility="{Binding IsActor, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<ScrollViewer Margin="-5,-4" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{StaticResource CustomScrollViewerStyle}">
+					<toolkit:DockPanel>
+						<TextBlock TextWrapping="Wrap" Text="Titles acted in" toolkit:DockPanel.Dock="Top" Style="{StaticResource Heading5}" Margin="10"/>
+						<ListBox x:Name="MoviesActed" Style="{StaticResource InvisibleListBoxStyle}" ItemTemplate="{StaticResource CompactTitleItemTemplate}" toolkit:DockPanel.Dock="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsPanel="{StaticResource WrappingItemsPanelTemplate}">
+							<i:Interaction.Triggers>
+								<MediaOwl_Resources_Behaviors:DoubleClick>
+									<cal:ActionMessage MethodName="OpenTitle">
+										<cal:Parameter Value="{Binding SelectedItem, ElementName=MoviesActed}"/>
+									</cal:ActionMessage>
+								</MediaOwl_Resources_Behaviors:DoubleClick>
+							</i:Interaction.Triggers>
+						</ListBox>
+					</toolkit:DockPanel>
+				</ScrollViewer>
+			</sdk:TabItem>
+			<sdk:TabItem Header="Type of Actor" Visibility="{Binding IsActor, Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="{StaticResource ControlForeground}">
+				<ScrollViewer Margin="-5,-4" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{StaticResource CustomScrollViewerStyle}">
+					<toolkit:DockPanel>
+						<toolkit:Chart Title="Type of Actor" toolkit:DockPanel.Dock="Top" Background="{x:Null}" Foreground="{StaticResource ControlForeground}">
+							<toolkit:BarSeries x:Name="ActorBarSeries" DependentValuePath="Y" IndependentValuePath="X" AnimationSequence="FirstToLast" IndependentValueBinding="{Binding Name}" DependentValueBinding="{Binding Amount}" Title="Genre" IsSelectionEnabled="True" ItemsSource="{Binding ActorGenre}">
+								<i:Interaction.Triggers>
+									<MediaOwl_Resources_Behaviors:DoubleClick>
+										<cal:ActionMessage MethodName="OpenGenre">
+											<cal:Parameter Value="{Binding SelectedItem, ElementName=ActorBarSeries}"/>
+										</cal:ActionMessage>
+									</MediaOwl_Resources_Behaviors:DoubleClick>
+								</i:Interaction.Triggers>
+							</toolkit:BarSeries>
+						</toolkit:Chart>
+					</toolkit:DockPanel>
+				</ScrollViewer>
+			</sdk:TabItem>
+			<sdk:TabItem Header="Directing" Visibility="{Binding IsDirector, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<ScrollViewer Margin="-5,-4" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{StaticResource CustomScrollViewerStyle}">
+					<toolkit:DockPanel>
+						<TextBlock TextWrapping="Wrap" Text="Directed Titles" toolkit:DockPanel.Dock="Top" Style="{StaticResource Heading5}" Margin="10"/>
+						<ListBox x:Name="MoviesDirected" Style="{StaticResource InvisibleListBoxStyle}" ItemTemplate="{StaticResource CompactTitleItemTemplate}" toolkit:DockPanel.Dock="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsPanel="{StaticResource WrappingItemsPanelTemplate}">
+							<i:Interaction.Triggers>
+								<MediaOwl_Resources_Behaviors:DoubleClick>
+									<cal:ActionMessage MethodName="OpenTitle">
+										<cal:Parameter Value="{Binding SelectedItem, ElementName=MoviesDirected}"/>
+									</cal:ActionMessage>
+								</MediaOwl_Resources_Behaviors:DoubleClick>
+							</i:Interaction.Triggers>
+						</ListBox>
+					</toolkit:DockPanel>
+				</ScrollViewer>
+			</sdk:TabItem>
+			<sdk:TabItem Header="Type of Director" Visibility="{Binding IsDirector, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<ScrollViewer Margin="-5,-4" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{StaticResource CustomScrollViewerStyle}">
+					<toolkit:DockPanel>
+						<toolkit:Chart Title="Type of Director" toolkit:DockPanel.Dock="Top" Background="{x:Null}" Foreground="{StaticResource ControlForeground}">
+							<toolkit:BarSeries x:Name="DirectorBarSeries" DependentValuePath="Y" IndependentValuePath="X" AnimationSequence="LastToFirst" ItemsSource="{Binding DirectorGenre}" IndependentValueBinding="{Binding Name}" DependentValueBinding="{Binding Amount}" Title="Genre" IsSelectionEnabled="True">
+								<i:Interaction.Triggers>
+									<MediaOwl_Resources_Behaviors:DoubleClick>
+										<cal:ActionMessage MethodName="OpenGenre">
+											<cal:Parameter Value="{Binding SelectedItem, ElementName=DirectorBarSeries}"/>
+										</cal:ActionMessage>
+									</MediaOwl_Resources_Behaviors:DoubleClick>
+								</i:Interaction.Triggers>
+							</toolkit:BarSeries>
+						</toolkit:Chart>
+					</toolkit:DockPanel>
+				</ScrollViewer>
+			</sdk:TabItem>
+		</sdk:TabControl>
+	</toolkit:DockPanel>
+</UserControl>

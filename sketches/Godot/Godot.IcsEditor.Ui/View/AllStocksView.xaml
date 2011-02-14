@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Godot.IcsEditor.Ui.View.AllStocksView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+        xmlns:local="clr-namespace:Godot.IcsEditor.Ui.ViewModel" 
+        xmlns:Localization="clr-namespace:Godot.IcsEditor.Ui.Localization" MinHeight="320" MinWidth="480" >
+    <UserControl.Resources>
+
+        <!-- Die View Source -->
+        <CollectionViewSource x:Key="StockList"  Source="{Binding Path=AllStocks}" >
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+
+        <Style x:Key="StockStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListCollectionStyle}">
+            <!-- Setter for the DoubleClick Command -->
+            <Setter Property="local:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+        </Style>
+        <Style x:Key="OldStockStyle" TargetType="{x:Type ListViewItem}">
+            <!-- Setter for the DoubleClick Command -->
+            <Setter Property="local:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+            <!-- Stretch the content of each cell so that we can right-align text in the Total Sales column. -->
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <!-- Bind the IsSelected property of a ListViewItem to the IsSelected property of a CustomerViewModel object. -->
+            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                        <Condition Property="IsSelected" Value="False" />
+                        <Condition Property="IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#EEEEEEEE" />
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel LastChildFill="True" Style="{DynamicResource ListDockSkin}" >
+
+        <!-- Buttons -->
+        <StackPanel Style="{DynamicResource ListStackSkin}">
+            <!-- Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=ShowMainBearingCommand}"
+                Content="{x:Static Localization:Strings.Button_Stocks_ShowMainbearing}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_ShowMainBearing_Tooltip}" / -->
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=BookFromCommand}"
+                Content="{x:Static Localization:Strings.Button_Stocks_BookFrom}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_BookFrom_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=SendToCommand}"
+                Content="{x:Static Localization:Strings.Button_Stocks_SendTo}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_SendTo_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=DepositCommand}"
+                Content="{x:Static Localization:Strings.Button_Stocks_Deposit}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_Deposit_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=RemovalCommand}"
+                Content="{x:Static Localization:Strings.Button_Stocks_Removal}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_Removal_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=NewCommand}"
+                Content="{x:Static Localization:Strings.Button_New}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_New_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=EditCommand}" IsDefault="True" 
+                Content="{x:Static Localization:Strings.Button_Edit}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_Edit_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=RemoveCommand}"
+                Content="{x:Static Localization:Strings.Button_Remove}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_Remove_Tooltip}" />
+            <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=PrintCommand}"
+                Content="{x:Static Localization:Strings.Button_Print}" ToolTip="{x:Static Localization:Strings.View_AllStocksView_Print_Tooltip}" />
+        </StackPanel>
+
+        <!-- Liste -->
+        <ListView Style="{DynamicResource ListCollectionSkin}" DataContext="{StaticResource StockList}" 
+          ItemContainerStyle="{StaticResource StockStyle}" ItemsSource="{Binding}">
+
+            <ListView.View>
+                <GridView>
+                    <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->
+                    <GridViewColumn Header="{x:Static Localization:Strings.View_AllStocksView_Header_Name}" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="{x:Static Localization:Strings.View_AllStocksView_Header_ItemNames}" DisplayMemberBinding="{Binding Path=ItemNames}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</UserControl>

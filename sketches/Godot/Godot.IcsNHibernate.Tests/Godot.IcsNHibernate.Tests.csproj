@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53AD2266-5E82-4A7E-9A24-0C51D20F09E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Godot.IcsNHibernate.Tests</RootNamespace>
+    <AssemblyName>Godot.IcsNHibernate.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\lib\CastleWindsor\net-3.5\\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\..\..\lib\FluentNHibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\tools\Machine.Specifications\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\lib\NHibernate\Required_Bins\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\SQLite\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProductionItemMapSpecs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseFamilyMapSpecs.cs" />
+    <Compile Include="PurchaseItemMapSpecs.cs" />
+    <Compile Include="RecipeItemMapSpecs.cs" />
+    <Compile Include="RecipeMapSpecs.cs" />
+    <Compile Include="StockItemMapSpecs.cs" />
+    <Compile Include="StockMapperMapSpecs.cs" />
+    <Compile Include="StockMapSpecs.cs" />
+    <Compile Include="StockMovementMapSpecs.cs" />
+    <Compile Include="UnitMapSpecs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTypeMapSpecs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Godot.IcsModel\Godot.IcsModel.csproj">
+      <Project>{DABA94FB-76AE-421C-81DC-F6B0EC8A1455}</Project>
+      <Name>Godot.IcsModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.IcsNHibernate\Godot.IcsNHibernate.csproj">
+      <Project>{114FC1D6-D8A2-4B30-A0D2-972294F1FD12}</Project>
+      <Name>Godot.IcsNHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.Infrastructure\Godot.Infrastructure.csproj">
+      <Project>{29BE47FD-7E62-4EB1-91D8-4D109586AB83}</Project>
+      <Name>Godot.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.Model\Godot.Model.csproj">
+      <Project>{AE01BFFD-717E-44D0-8285-7B07C7B90F18}</Project>
+      <Name>Godot.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Godot.Tests.Core\Godot.Tests.Core.csproj">
+      <Project>{C0A69688-B794-49D9-8A4C-26A815D09835}</Project>
+      <Name>Godot.Tests.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+<OutOfBrowserSettings ShortName="MediaOwl" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>MediaOwl is a music and movie search engine, but above all, it is a Microsoft Silverlight 4 application, that shows how to use Caliburn Micro.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="MediaOwl" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Resources/Icons/icon16.png</Icon>
+    <Icon Size="32,32">Resources/Icons/icon32.png</Icon>
+    <Icon Size="48,48">Resources/Icons/icon48.png</Icon>
+    <Icon Size="128,128">Resources/Icons/icon128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

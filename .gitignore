@@ -5,4 +5,14 @@ obj/
 *.user
 _ReSharper.*/
 Bin/
+Debug/
+Release/
 ClientBin/
+.moc/
+tmp/
+opt/
+*.sdf
+*.opensdf
+*.idb
+*.pdb
+ipch/

@@ -1,1 +1,0 @@
-Please make sure to run the application from the Host web project. Otherwise, the package download will not work properly.

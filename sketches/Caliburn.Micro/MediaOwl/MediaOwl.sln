@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaOwl", "MediaOwl.csproj", "{57E3B301-47B7-4C0E-A476-A7EC10385ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaOwl.Web", "..\MediaOwl.Web\MediaOwl.Web.csproj", "{F2D0D42B-D304-4D95-AC39-58CFA0C72CFE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs19
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\MediaOwl.Web\\MediaOwl.Web.csproj
+		SccProjectName1 = ../MediaOwl.Web
+		SccLocalPath1 = ..\\MediaOwl.Web
+		SccProjectUniqueName2 = MediaOwl.csproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = ..\\..\\..\\Frameworks\\CaliburnMicro\\src\\Caliburn.Micro.Silverlight\\Caliburn.Micro.Silverlight.csproj
+		SccProjectName3 = Caliburn.Micro.Silverlight
+		SccLocalPath3 = ..\\..\\..\\Frameworks\\CaliburnMicro\\src\\Caliburn.Micro.Silverlight
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57E3B301-47B7-4C0E-A476-A7EC10385ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E3B301-47B7-4C0E-A476-A7EC10385ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E3B301-47B7-4C0E-A476-A7EC10385ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E3B301-47B7-4C0E-A476-A7EC10385ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D0D42B-D304-4D95-AC39-58CFA0C72CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D0D42B-D304-4D95-AC39-58CFA0C72CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D0D42B-D304-4D95-AC39-58CFA0C72CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D0D42B-D304-4D95-AC39-58CFA0C72CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
