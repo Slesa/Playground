@@ -26,9 +26,9 @@ namespace MediaOwl.Core
         public static void Coroutine(IEnumerator<IResult> coroutines, ActionExecutionContext context = null)
         {
             if (context == null)
-                Caliburn.Micro.Coroutine.Execute(coroutines);
+                Caliburn.Micro.Coroutine.BeginExecute(coroutines);
             else
-                Caliburn.Micro.Coroutine.Execute(coroutines, context);
+                Caliburn.Micro.Coroutine.BeginExecute(coroutines, context);
         }
 
         /// <summary>

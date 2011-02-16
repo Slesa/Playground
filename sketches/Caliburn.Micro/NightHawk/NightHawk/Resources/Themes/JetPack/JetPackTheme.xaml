@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/Brushes.xaml" />
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/Fonts.xaml" />
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/CoreStyles.xaml" />
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/SDKStyles.xaml" />
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/Styles.xaml" />
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/ToolkitStyles.xaml" />
+        <ResourceDictionary Source="/MediaOwl;component/Resources/Themes/JetPack/CustomStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

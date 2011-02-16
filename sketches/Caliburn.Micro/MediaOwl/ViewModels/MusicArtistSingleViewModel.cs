@@ -71,7 +71,7 @@ namespace MediaOwl.ViewModels
                 ? artistBase.Name
                 : artistBase.MusicBrainzId;
 
-            Coroutine.Execute(FetchInfo(artistBase));
+            Coroutine.BeginExecute(FetchInfo(artistBase));
         }
 
         public IEnumerator<IResult> FetchInfo(ArtistBase artistBase)

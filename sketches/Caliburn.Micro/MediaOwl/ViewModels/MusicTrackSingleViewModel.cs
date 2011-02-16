@@ -82,7 +82,7 @@ namespace MediaOwl.ViewModels
             ScreenId = string.IsNullOrEmpty(track.MusicBrainzId)
                            ? track.Name
                            : track.MusicBrainzId;
-            Coroutine.Execute(FetchInfo(track));
+            Coroutine.BeginExecute(FetchInfo(track));
         }
 
         public IEnumerator<IResult> FetchInfo(Track track)

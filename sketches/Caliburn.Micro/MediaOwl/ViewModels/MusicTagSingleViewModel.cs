@@ -67,7 +67,7 @@ namespace MediaOwl.ViewModels
             CurrentTag = tag;
             DisplayName = "Tag: \'" + CurrentTag.Name + "\'";
             ScreenId = CurrentTag.Name;
-            Coroutine.Execute(FetchInfo());
+            Coroutine.BeginExecute(FetchInfo());
         }
 
         private IEnumerator<IResult> FetchInfo()

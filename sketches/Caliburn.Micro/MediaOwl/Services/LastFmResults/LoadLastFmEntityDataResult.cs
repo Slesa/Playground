@@ -38,7 +38,7 @@ namespace MediaOwl.Services.LastFmResults
 
         public void Execute(ActionExecutionContext context)
         {
-            Coroutine.Execute(EntityResult());
+            Coroutine.BeginExecute(EntityResult());
         }
 
         private IEnumerator<IResult> EntityResult()

@@ -66,7 +66,7 @@ namespace MediaOwl.ViewModels
             ScreenId = string.IsNullOrEmpty(album.MusicBrainzId)
                            ? album.Name
                            : album.MusicBrainzId;
-            Coroutine.Execute(FetchInfo(album));
+            Coroutine.BeginExecute(FetchInfo(album));
         }
 
         public IEnumerator<IResult> FetchInfo(Album album)
