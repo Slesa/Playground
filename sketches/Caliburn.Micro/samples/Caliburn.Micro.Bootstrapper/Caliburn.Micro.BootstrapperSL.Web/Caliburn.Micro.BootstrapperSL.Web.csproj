@@ -13,7 +13,7 @@
     <RootNamespace>Caliburn.Micro.BootstrapperSL.Web</RootNamespace>
     <AssemblyName>Caliburn.Micro.BootstrapperSL.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SilverlightApplicationList>{C36E966B-1411-4A29-A5B8-E6E01C55DB1B}|..\Caliburn.Micro.BootstrapperSL\Caliburn.Micro.BootstrapperSL.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{C36E966B-1411-4A29-A5B8-E6E01C55DB1B}|..\Caliburn.Micro.BootstrapperSL\Caliburn.Micro.BootstrapperSL.csproj|ClientBin|False,{723E0119-45AF-4B18-B928-301AC5C6903A}|..\Caliburn.Micro.CastleSL\Caliburn.Micro.CastleSL.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,7 +53,10 @@
   <ItemGroup>
     <Content Include="Caliburn.Micro.BootstrapperSLTestPage.aspx" />
     <Content Include="Caliburn.Micro.BootstrapperSLTestPage.html" />
+    <Content Include="Caliburn.Micro.CastleSLTestPage.aspx" />
+    <Content Include="Caliburn.Micro.CastleSLTestPage.html" />
     <Content Include="ClientBin\Caliburn.Micro.BootstrapperSL.xap" />
+    <Content Include="ClientBin\Caliburn.Micro.CastleSL.xap" />
     <Content Include="Silverlight.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

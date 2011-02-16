@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Bootstrapper
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.BootstrapperSL.Web", "Caliburn.Micro.BootstrapperSL.Web\Caliburn.Micro.BootstrapperSL.Web.csproj", "{F0F3E2BD-3462-4844-87C0-118BE6DFA2FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Castle", "Caliburn.Micro.Castle\Caliburn.Micro.Castle.csproj", "{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.CastleSL", "Caliburn.Micro.CastleSL\Caliburn.Micro.CastleSL.csproj", "{723E0119-45AF-4B18-B928-301AC5C6903A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,26 @@ Global
 		{F0F3E2BD-3462-4844-87C0-118BE6DFA2FE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F0F3E2BD-3462-4844-87C0-118BE6DFA2FE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F0F3E2BD-3462-4844-87C0-118BE6DFA2FE}.Release|x86.ActiveCfg = Release|Any CPU
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Debug|x86.ActiveCfg = Debug|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Debug|x86.Build.0 = Debug|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Release|Any CPU.ActiveCfg = Release|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Release|Mixed Platforms.Build.0 = Release|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Release|x86.ActiveCfg = Release|x86
+		{593172B0-A6F6-44B3-BAB4-61720EFC2BF0}.Release|x86.Build.0 = Release|x86
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{723E0119-45AF-4B18-B928-301AC5C6903A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
