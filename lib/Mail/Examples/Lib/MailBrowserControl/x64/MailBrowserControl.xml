@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MailBrowserControl</name>
+    </assembly>
+    <members>
+        <member name="T:Lesnikowski.Windows.MhtDataProvider">
+            <summary>
+            Represents HTML/plain text mht data provider for the WebBrowserControl.
+            </summary>
+        </member>
+        <member name="T:Lesnikowski.Windows.IHtmlDataProvider">
+            <summary>
+            Represents HTML data provider for the WebBrowserControl.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.IHtmlDataProvider.GetProtocols">
+            <summary>
+            Gets the protocol list handled by this provider.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.IHtmlDataProvider.GetHtml">
+            <summary>
+            Gets the HTML data.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MhtDataProvider.#ctor(Lesnikowski.Mail.IMail)">
+            <summary>
+            Creates new MhtDataProvider object.
+            </summary>
+            <param name="message">Mht document to extract data from.</param>
+        </member>
+        <member name="M:Lesnikowski.Windows.MhtDataProvider.GetProtocols">
+            <summary>
+            Gets the protocol list handled by this provider.
+            "Http:" protocol is handled by this provider.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MhtDataProvider.GetHtml">
+            <summary>
+            Gets the HTML or plain text data.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MhtDataProvider.GetData(System.String)">
+            <summary>
+            Gets the data using ContentLocationof the elements.
+            </summary>
+            <param name="url">Url of the data</param>
+            <returns>Data for the specified url.</returns>
+        </member>
+        <member name="T:Lesnikowski.Windows.MailBrowserControl">
+            <summary>
+            Enables users show e-mail content inside a form.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MailBrowserControl.#ctor">
+            <summary>
+            Creates new MailBrowserControl object.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MailBrowserControl.Navigate(Lesnikowski.Windows.IHtmlDataProvider)">
+            <summary>
+            Loads the HTML provider into the <see cref="T:Lesnikowski.Windows.MailBrowserControl"/>.
+            </summary>
+            <param name="provider">HTML data provider to load.</param>
+            <returns>Returns <c>true</c> on success, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Lesnikowski.Windows.MailHtmlDataProvider">
+            <summary>
+            Represents HTML/plain text email data provider for the WebBrowserControl.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MailHtmlDataProvider.#ctor(Lesnikowski.Mail.IMail)">
+            <summary>
+            Creates new MailHtmlDataProvider object.
+            </summary>
+            <param name="message">Email to extract data from.</param>
+        </member>
+        <member name="M:Lesnikowski.Windows.MailHtmlDataProvider.GetProtocols">
+            <summary>
+            Gets the protocol list handled by this provider.
+            Only "Cid:" protocol is handled by this provider.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MailHtmlDataProvider.GetHtml">
+            <summary>
+            Gets the HTML or plain text data.
+            </summary>
+        </member>
+        <member name="M:Lesnikowski.Windows.MailHtmlDataProvider.GetData(System.String)">
+            <summary>
+            Gets the data for cid protocol elements.
+            </summary>
+            <param name="url">Url of the data</param>
+            <returns>Data for the specified url.</returns>
+        </member>
+    </members>
+</doc>

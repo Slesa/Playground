@@ -1,0 +1,67 @@
+END-USER LICENSE AGREEMENT
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE YOU START USING THIS SOFTWARE IN ANY WAY. THE MOMENT THE SOFTWARE IS INSTALLED THE USER CONCLUDES A LICENSE AGREEMENT WITH THE PRODUCER. PROVISIONS OF THIS AGREEMENT ARE BINDING FOR BOTH PARTIES.
+
+This End-User License Agreement ("Agreement") is a legal contract between you (either (a) an individual user or (b) a business organization) ("User") and the Producer of the Computer Software ("Producer") including any associated media, printed materials and electronic documentation (the "Software"). This License Agreement specifies the User's rights to use the Computer Software.
+
+The Software as well as the materials provided together with it are protected by Polish Copyright Law and international treaty provisions. The Producer owns full copyright to the Software, and any person who infringes the copyright will be liable to civil and criminal proceedings. Under this License Agreement the Producer does not sell the Software to the User. The Producer only empowers the User to perform the operations defined in the provisions of this Agreement. Performing operations not defined in the provisions of this Agreement requires written permission of the Producer.
+
+The powers of the User arising from this License Agreement become extinct if the User breaks any of its provisions. In such case the Producer will assert their rights specified by respective regulations within the largest scope possible.
+
+The License Agreement consists of three parts. The first part describes rights and duties of the User of evaluation version of the Software. The second part describes how the User can purchase full version of the Software. The third part describes rights and duties of the User of the full version of the Software.
+
+PART ONE: RIGHTS AND DUTIES OF THE USER OF THE EVALUATION VERSION.
+
+The Producer permits the User to use the Software on unlimited number of computers. The User is also allowed to make backup copies of the Software. The User is not allowed to sell, let, rent nor lease these copies to third parties. The User may give the copies gratuitously if they ensure that the receiving party accepts the terms and conditions of this Agreement.
+
+The User IS NOT ALLOWED:
+- to decompile the Software or to modify it,
+- to use the Software in a commercial way,
+- to copy the printed materials provided together with the Software,
+- to create any software similar to or based on the Software,
+- to remove or change any trademarks or information about the Producer included in the Software and in the materials provided together with it.
+
+The Producer does not warrant that the Software will meet the expectations of the User and that it will properly cooperate with other programs. The Producer does not warrant either that the Software will function without errors. If the User intends to use the Software for any particular purpose, they accept full risk of the results they may obtain.
+
+THE PRODUCER ASSUMES NO RESPONSIBILITY FOR ANY DAMAGES RESULTING FROM THE USE OR FROM IMPOSSIBILITY TO USE THE SOFTWARE. THIS PROVISION CONCERNS IN PARTICULAR LOSS AND LOST PROFITS CONNECTED TO ANY ENTERPRISE AND LOSS OR DISTORTIONS OF TRADE REFERENCE.
+
+The Producer may collect and use technical information, gathered as part of support or other services provided to you related to the Software, to improve our products or services or provide customized services or technologies to you. We may disclose this information to others, but not in a form that personally identifies you.
+
+PART TWO: HOW THE USER CAN ACQUIRE THE RIGHT TO USE THE FULL VERSION
+
+The User of the evaluation version can acquire the right to use the full version by contacting the www.lesnikowski.com and by acquiring appropriate rights (these rights include in particular acquiring the license file, which enables unrestricted use of the library).
+
+PART THREE: THE RIGHTS AND DUTIES OF THE USER OF THE FULL VERSION
+
+The Producer permits the User to use the Computer Software on:
+(1.) one computer in case of 'Server license'.
+(2.) unlimited number of computers by User's product in case of 'Product license'.
+	User may redistribute all Computer Software files - library and license file ("Redistributables") to end users of his product, provided that:
+	(a) such products add primary and substantial functionality to the redistributables, 
+	(b) all copies of the redistributables must be exact and unmodified,
+	(c) You grant your end users a limited, personal, non-exclusive and non-transferable license to use the redistributables only to the extent required for the permitted operation of your product and not to distribute them further; and 
+	(d) you redistribute the Redistributables only as a part of the Software for which the license file was acquired.
+(3.) unlimited number of computers by any User's product in case of 'Ultimate license'.
+	User may redistribute all Computer Software files - library and license file ("Redistributables") to end users of his product, provided that:
+	(a) such products add primary and substantial functionality to the redistributables, 
+	(b) all copies of the redistributables must be exact and unmodified,
+	(c) You grant your end users a limited, personal, non-exclusive and non-transferable license to use the redistributables only to the extent required for the permitted operation of your product and not to distribute them further.
+
+You will reproduce with the redistributables all applicable trademarks and copyright notices that accompany the Software, but you may not use Producer's name, logos or trademarks to market your products. 
+
+You give the Producer, without charge, the right to use your company name and logo on the Producer's customers list. 
+
+The User IS NOT ALLOWED:
+- to transfer their rights arising from this License Agreement to third parties.
+- to decompile the Software or to modify it,
+- to copy the printed materials provided together with the Software,
+- to create any software similar to the Software,
+- to remove nor change any trademarks or information about the Producer included in the Software and the materials provided together with it.
+
+The Producer does not warrant that the Software will meet the expectations of the User or that it will properly cooperate with other Software. The Producer does not warrant either that the Software will function without errors. If the User intends to use the Software for any particular purpose, they accept full risk of the results they may obtain.
+
+THE PRODUCER ASSUMES NO RESPONSIBILITY FOR ANY DAMAGES RESULTING FROM THE USE OR IMPOSSIBILITY TO USE THE SOFTWARE. THIS PROVISION CONCERNS IN PARTICULAR LOSS AND LOST PROFITS CONNECTED TO ANY ENTERPRISE AND LOSS OR DISTORTIONS OF TRADE REFERENCE.
+
+The liability of the Producer under this Agreement shall be limited to the amount of US$1.00.
+
+The Producer may collect and use technical information, gathered as part of support or other services provided to you related to the Software, to improve our products or services or provide customized services or technologies to you. We may disclose this information to others, but not in a form that personally identifies you.

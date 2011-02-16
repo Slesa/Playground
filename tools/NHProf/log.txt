@@ -1,0 +1,7 @@
+2011-01-28 23:48:47,339 [1] WARN  Rhino.Licensing.LicenseValidator [(null)] - Could not find license file: C:\Users\Auba\AppData\Local\NHibernate Profiler\license.xml
+2011-01-28 23:48:51,528 [1] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-01-28 23:48:51,551 [1] DEBUG Rhino.Licensing.LicenseValidator [(null)] - License accepted for NHibernate Profiler
+2011-01-28 23:48:51,809 [1] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-01-28 23:48:51,818 [1] DEBUG Rhino.Licensing.LicenseValidator [(null)] - License accepted for NHibernate Profiler
+2011-01-28 23:49:32,882 [1] INFO  Rhino.Licensing.LicenseValidator [(null)] - License expiration date is 12/31/9999 23:59:59
+2011-01-28 23:49:32,939 [1] DEBUG Rhino.Licensing.LicenseValidator [(null)] - License accepted for NHibernate Profiler

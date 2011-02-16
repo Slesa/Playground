@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Your order</title>
+<style type="text/css">
+body 
+{
+	background: white;
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.8em; 
+}
+a
+{
+	color: #267;
+	text-decoration: underline; 	
+}
+a:hover
+{
+	color: #9ab;
+	text-decoration: underline;
+}
+#content
+{
+	color: #667;
+	text-align: left;
+	padding: 20px 20px 20px 240px;
+}
+#footer
+{
+	color: #667;
+	text-align: center;
+	border-top: solid 1px silver;
+}
+.header
+{
+	color: #667;
+	background-color: #E0ECFF; 
+	font-weight: bold;
+}
+.item
+{
+	color: #667;
+	background-color: #E0ECFF;
+}
+</style>
+</head>
+
+<body>
+	<!-- Please note that 'cid:' is required by email clients, lemon@id is an content-id assigend to the lemon.jpg attachment -->
+    <img src="cid:lemon@id" align="left" />
+    <div id="content">
+        Hi [CustomerName],
+        <p>
+            Thank you for your purchase.
+        </p>
+        <p>
+            Here are the items you've ordered:
+        </p> 
+			<table>
+				<tr class="header">
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Price ([Currency])</th>
+				</tr>
+			[foreach Items]
+				<tr class="item">
+					<td>[Name]</td>
+					<td>[Quantity]</td>
+					<td>[Price]</td>
+				</tr>
+			[end]
+			</table>
+        <p>
+            You can check your <a href="http://www.lemon.com/shipment.aspx?id=[OrderId]">shipment status here</a>.
+        </p>
+        <p>
+        Sincerely, <br />
+        Your Lemon Ltd team
+        </p>
+    </div>
+    <div id="footer">
+		Copyright &copy; [Year], Lemon Ltd
+    </div>
+</body>
+</html>
