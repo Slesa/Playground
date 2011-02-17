@@ -104,10 +104,12 @@
     <Compile Include="Core\BoolConverter.cs" />
     <Compile Include="Core\BusyResult.cs" />
     <Compile Include="Core\DefaultBusyService.cs" />
+    <Compile Include="Core\DialogResultEventArgs.cs" />
     <Compile Include="Core\ErrorMessage.cs" />
     <Compile Include="Core\FiveStarRatingConverter.cs" />
     <Compile Include="Core\IBusyService.cs" />
     <Compile Include="Core\IChildScreen.cs" />
+    <Compile Include="Core\IDialog.cs" />
     <Compile Include="Core\ImageSourceConverter.cs" />
     <Compile Include="Core\IShell.cs" />
     <Compile Include="Core\Logging\DebugLog.cs" />

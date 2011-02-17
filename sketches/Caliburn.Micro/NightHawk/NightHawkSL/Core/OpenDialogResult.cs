@@ -2,23 +2,15 @@ using System;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace MediaOwl.Core
+namespace NightHawkSL.Core
 {
-    /// <summary>
-    /// An <see cref="IResult"/>, that takes a Type of <see cref="IDialog"/> (or the instance itself), 
-    /// locates/instanciates it (<see cref="locateDialog"/>), 
-    /// configures it (<see cref="Configured"/>) 
-    /// and activates it via the <see cref="WindowManager"/>.
-    /// </summary>
-    /// <typeparam name="TDialog">The Dialog-Type</typeparam>
     public class OpenDialogResult<TDialog> : IResult
         where TDialog : IDialog
     {
-        private IDialog dialog;
-        private Action<TDialog> onConfigure;
+        private IDialog _dialog;
+        private Action<TDialog> _onConfigure;
 
-        private readonly Func<ActionExecutionContext, TDialog> locateDialog =
-            c => IoC.Get<TDialog>();
+        private readonly Func<ActionExecutionContext, TDialog> _locateDialog = c => IoC.Get<TDialog>();
 
         public bool? DialogResult { get; set; }
 
@@ -29,30 +21,30 @@ namespace MediaOwl.Core
 
         public OpenDialogResult(TDialog dialog)
         {
-            locateDialog = c => dialog;
+            _locateDialog = c => dialog;
         }
 
         public OpenDialogResult<TDialog> Configured(Action<TDialog> configure)
         {
-            onConfigure = configure;
+            _onConfigure = configure;
             return this;
         }
 
         public void Execute(ActionExecutionContext context)
         {
-            var tdialog = locateDialog(context);
+            var tdialog = _locateDialog(context);
 
-            if (onConfigure != null)
-                onConfigure(tdialog);
+            if (_onConfigure != null)
+                _onConfigure(tdialog);
 
-            dialog = tdialog;
+            _dialog = tdialog;
             // Needs to be an IDialog so we can hook on the Completed event
-            if (dialog == null)
+            if (_dialog == null)
                 throw new InvalidOperationException();
 
-            dialog.Completed += OnDialogCompleted;
+            _dialog.Completed += OnDialogCompleted;
 
-            WindowManager.ShowDialog(dialog);
+            WindowManager.ShowDialog(_dialog);
         }
 
         void OnDialogCompleted(object sender, DialogResultEventArgs e)
@@ -67,11 +59,11 @@ namespace MediaOwl.Core
             //});
             //screen.TryClose();
 
-            dialog = sender as IDialog;
+            _dialog = sender as IDialog;
 
-            if (null == dialog) throw new ArgumentException("sender");
+            if (null == _dialog) throw new ArgumentException("sender");
 
-            dialog.Completed -= OnDialogCompleted;
+            _dialog.Completed -= OnDialogCompleted;
             //Application.Current.RootVisual.SetValue(Control.IsEnabledProperty, True)
             Completed(this, new ResultCompletionEventArgs
             {

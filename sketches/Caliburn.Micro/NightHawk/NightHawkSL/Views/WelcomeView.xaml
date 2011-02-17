@@ -1,0 +1,98 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             x:Class="NightHawkSL.Views.WelcomeView"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+    <toolkit:BusyIndicator x:Name="busyIndicator"
+                           Style="{StaticResource CustomBusyIndicatorStyle}">
+        <Border CornerRadius="3"
+                BorderThickness="2">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="1,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#FFC2DF00"
+                                  Offset="0.15" />
+                    <GradientStop Color="Transparent"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#7FC2DF00"
+                                  Offset="0.15" />
+                    <GradientStop Color="Transparent"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <toolkit:DockPanel x:Name="LayoutRoot"
+                               Margin="15">
+                <TextBlock x:Name="DisplayName"
+                           TextWrapping="Wrap"
+                           Style="{StaticResource Heading1}"
+                           toolkit:DockPanel.Dock="Top"
+                           Margin="0,0,0,15" />
+                <RichTextBox toolkit:DockPanel.Dock="Top" IsReadOnly="True">
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" 
+                             Text="MediaOwl is a music and movie search engine, but above all, it is a " />
+                        <Hyperlink Foreground="#FF337CBB" TextDecorations="Underline" TargetName="_blank" NavigateUri="http://www.microsoft.com/silverlight/" MouseOverForeground="#FFED6E00"><Run FontSize="16" 
+                            Text="Microsoft Silverlight 4" />
+                        </Hyperlink>
+                        <Run FontSize="16" 
+                             Text=" application, that shows how to use " />
+                        <Hyperlink Foreground="#FF337CBB" TextDecorations="Underline" TargetName="_blank" NavigateUri="http://caliburnmicro.codeplex.com/" MouseOverForeground="#FFED6E00">
+                            <Run FontSize="16" Text="Caliburn Micro" />
+                        </Hyperlink>
+                        <Run FontSize="16" Text="." />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" Text="This demo shows how the final application runs and should support the documentation." />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" FontWeight="Bold" Text="What's the application for?" />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" FontWeight="Normal" 
+                             Text="As written above, you can search for several topics in music and movies. In the music-part you can search for artists, albums, tracks or you sort them out by using the top tags. In the movies-part you can search for titles, which means movies and series, people, which means actors and directors, or a genre. Finally, there is a test-part, which shows the basic functionality of Caliburn Micro." />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontWeight="Normal" />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" FontWeight="Bold" Text="Where's the data from?" />
+                    </Paragraph><Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" FontWeight="Normal" Text="The music search is powered by " />
+                        <Hyperlink Foreground="#FF337CBB" TextDecorations="Underline" TargetName="_blank" NavigateUri="http://www.last.fm/" MouseOverForeground="#FFED6E00">
+                            <Run FontSize="16" Text="Last.fm" />
+                        </Hyperlink>
+                        <Run FontSize="16" FontWeight="Normal" Text=", getting the data from their REST-service. The movie search is powered by " />
+                        <Hyperlink Foreground="#FF337CBB" TextDecorations="Underline" TargetName="_blank" NavigateUri="http://www.netflix.com/" MouseOverForeground="#FFED6E00">
+                            <Run FontSize="16" Text="Netflix" />
+                        </Hyperlink>
+                        <Run FontSize="16" FontWeight="Normal" Text=", where its OData-Service is used." />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left" />
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Bold" FontStyle="Normal" FontStretch="Normal" Text="Final Question: Why... just why?" />
+                    </Paragraph>
+                    <Paragraph FontSize="20" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" TextAlignment="Left">
+                        <Run FontSize="16" FontFamily="Portable User Interface" Foreground="#FF000000" FontWeight="Normal" FontStyle="Normal" FontStretch="Normal" 
+                        Text="Basically, I made this application for myself, just to get used to CM, MVVM, REST, OData and several other abbreviations. As sample-apps in CM are rare until now, I thought why not publish it, maybe it is helping someone." />
+                    </Paragraph>
+                </RichTextBox>
+
+            </toolkit:DockPanel>
+        </Border>
+    </toolkit:BusyIndicator>
+</UserControl>
