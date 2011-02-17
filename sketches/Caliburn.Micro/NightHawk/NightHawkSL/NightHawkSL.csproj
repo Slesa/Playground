@@ -95,14 +95,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core\BoolConverter.cs" />
     <Compile Include="Core\BusyResult.cs" />
     <Compile Include="Core\DefaultBusyService.cs" />
     <Compile Include="Core\DialogResultEventArgs.cs" />
     <Compile Include="Core\ErrorMessage.cs" />
     <Compile Include="Core\IBusyService.cs" />
+    <Compile Include="Core\IChildScreen.cs" />
     <Compile Include="Core\IDialog.cs" />
+    <Compile Include="Core\ImageSourceConverter.cs" />
     <Compile Include="Core\IShell.cs" />
     <Compile Include="Core\Logging\DebugLog.cs" />
+    <Compile Include="Core\NamingConventions.cs" />
     <Compile Include="Core\OpenChildResult.cs" />
     <Compile Include="Core\OpenDialogResult.cs" />
     <Compile Include="Core\Run.cs" />
@@ -116,6 +120,9 @@
     </Compile>
     <Compile Include="ViewModels\ErrorDialogViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\TestMainOneHomeViewModel.cs" />
+    <Compile Include="ViewModels\TestMainSingleViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
     <Compile Include="ViewModels\WelcomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +178,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestMainOneHomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestMainSingleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

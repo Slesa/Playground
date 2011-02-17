@@ -15,8 +15,8 @@ namespace NightHawkSL.ViewModels
 
         [ImportingConstructor]
         public ShellViewModel(
-            /*TestViewModel testViewModel,
-            MusicViewModel musicViewModel,
+            TestViewModel testViewModel,
+            /*MusicViewModel musicViewModel,
             MovieViewModel movieViewModel, */
             WelcomeViewModel welcomeViewModel,
             IEventAggregator eventAggregator)
@@ -27,7 +27,7 @@ namespace NightHawkSL.ViewModels
             //Items.Add(welcomeViewModel);
             //Items.Add(movieViewModel);
             //Items.Add(musicViewModel);
-            //Items.Add(testViewModel);
+            Items.Add(testViewModel);
         }
 
         protected override void OnInitialize()

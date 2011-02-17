@@ -1,0 +1,74 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+    x:Class="NightHawkSL.Views.TestMainOneHomeView"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="TrackItemTemplate">
+            <Border CornerRadius="3"
+                Background="{StaticResource DarkInnerShadowDarkBrush}"
+                Width="350"
+                Height="95">
+                <Grid Margin="5"
+                    Width="340"
+                    Height="75">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="22" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="{StaticResource TreeViewItemSelectionBorder}"
+                        Stroke="{StaticResource ColorAccentBrush}"
+                        Grid.RowSpan="3"
+                        Width="75"
+                        Height="75"
+                        d:LayoutOverrides="GridBox" />
+                    <TextBlock TextWrapping="Wrap"
+                        Text="No Image"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Foreground="{StaticResource ControlForeground}"
+                        Grid.RowSpan="3" />
+                    <Image Source="{Binding Picture}"
+                        Width="75"
+                        Height="75"
+                        Grid.RowSpan="3"
+                        d:LayoutOverrides="GridBox" />
+                    <TextBlock TextWrapping="Wrap"
+                        Text="{Binding Name}"
+                        Style="{StaticResource Heading3}"
+                        Foreground="{StaticResource ControlForeground}"
+                        Grid.Column="1"
+                        Margin="10,0,0,3"
+                        FontSize="18.667" />
+                    <TextBlock Text="{Binding ArtistName}"
+                        Style="{StaticResource Heading5}"
+                        Foreground="{StaticResource ControlForeground}"
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        Grid.Row="2"
+                        FontSize="13.333"
+                        FontWeight="Bold" />
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <toolkit:DockPanel>
+        <TextBlock x:Name="DisplayName"
+            TextWrapping="Wrap"
+            toolkit:DockPanel.Dock="Top"
+            Style="{StaticResource Heading2}"
+                />
+        <TextBox x:Name="ChildScreenId" TextWrapping="Wrap" Text="Id" toolkit:DockPanel.Dock="Top" Margin="0,20,0,0" HorizontalAlignment="Center" Width="200"/>
+        <Button x:Name="OpenFromOne"
+            Content="Open the Childscreen" toolkit:DockPanel.Dock="Top" HorizontalAlignment="Center" Width="200" VerticalAlignment="Top" Margin="0,10,0,0" />
+    </toolkit:DockPanel>
+</UserControl>

@@ -1,6 +1,8 @@
 ﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              xmlns:NightHawkSL="clr-namespace:NightHawkSL" 
+             xmlns:localcore="clr-namespace:NightHawkSL.Core" 
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              x:Class="NightHawkSL.App"
              >
     <Application.Resources>
@@ -9,6 +11,9 @@
                 <ResourceDictionary Source="Resources/Themes/JetPack/JetPackTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <NightHawkSL:MefBootstrapper x:Key="bootstrapper" />
+            <cal:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <localcore:BoolVisibilityInvertConverter x:Key="InverseBooleanToVisibilityConverter" />
+            <localcore:ImageSourceConverter x:Key="StringToImageSourceConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
