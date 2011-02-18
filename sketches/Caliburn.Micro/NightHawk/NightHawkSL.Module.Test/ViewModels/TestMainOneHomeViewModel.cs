@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using NightHawkSL.Core;
-using NightHawkSL.Resources;
+using NightHawkSL.Ui.Core;
 
-namespace NightHawkSL.ViewModels
+namespace NightHawkSL.Module.Test.ViewModels
 {
     [Export(typeof(TestMainOneHomeViewModel))]
     [Export(typeof(IChildScreen<TestViewModel>))]
@@ -12,7 +11,7 @@ namespace NightHawkSL.ViewModels
     {
         public TestMainOneHomeViewModel()
         {
-            DisplayName = AppStrings.TestMainOneHomeTitle;
+            DisplayName = Resources.Strings.TestMainOneHomeTitle;
         }
 
         private string _childScreenId;

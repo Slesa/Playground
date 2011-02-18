@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using Caliburn.Micro;
+using IResult = Caliburn.Micro.IResult;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public class Run
     {

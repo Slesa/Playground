@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public class OpenDialogResult<TDialog> : IResult
         where TDialog : IDialog

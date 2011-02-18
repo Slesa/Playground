@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public class ImageSourceConverter : IValueConverter
     {

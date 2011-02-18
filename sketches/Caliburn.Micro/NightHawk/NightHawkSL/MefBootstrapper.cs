@@ -4,10 +4,11 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Controls;
 using Caliburn.Micro;
-using NightHawkSL.Core;
-using NightHawkSL.Core.Logging;
+using NightHawkSL.Ui.Core;
+using NightHawkSL.Ui.Core.Logging;
 
 namespace NightHawkSL
 {
@@ -25,10 +26,16 @@ namespace NightHawkSL
         protected override void Configure()
         {
             _container = CompositionHost.Initialize(
-            new AggregateCatalog(
-                AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()
-                )
-            );
+                new AggregateCatalog(
+                    new AssemblyCatalog(System.Reflection.Assembly.GetExecutingAssembly()),
+                    new TypeCatalog(typeof(IScreen)),
+                    new TypeCatalog(typeof(IBusyService))
+                    //new AssemblyCatalog(Assembly.Load("NightHawkSL.Ui.Core.dll")),
+                    //new AssemblyCatalog(Assembly.Load("NightHawkSL.Module.Test.dll"))
+                    //AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()
+                    //new DirectoryCatalog(".")
+                    )
+                );
 
             var batch = new CompositionBatch();
 

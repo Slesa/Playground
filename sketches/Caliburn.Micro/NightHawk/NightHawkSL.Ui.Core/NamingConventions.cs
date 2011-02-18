@@ -1,7 +1,7 @@
 using System;
 using Caliburn.Micro;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public static class NamingConventions
     {

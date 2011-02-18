@@ -2,18 +2,17 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using Caliburn.Micro;
-using NightHawkSL.Core;
-using NightHawkSL.Resources;
+using NightHawkSL.Ui.Core;
 
-namespace NightHawkSL.ViewModels
+namespace NightHawkSL.Module.Test.ViewModels
 {
-    [Export(typeof(TestViewModel))]
+    [Export(typeof(IScreen))]
     public class TestViewModel : Conductor<IScreen>.Collection.OneActive
     {
         [ImportingConstructor]
         public TestViewModel([ImportMany(AllowRecomposition = true)] IEnumerable<IChildScreen<TestViewModel>> childScreens)
         {
-            DisplayName = AppStrings.TestTitle;
+            DisplayName = Resources.Strings.TestTitle;
             FillItems(childScreens);
         }
 

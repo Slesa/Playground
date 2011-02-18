@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public interface IDialog
     {

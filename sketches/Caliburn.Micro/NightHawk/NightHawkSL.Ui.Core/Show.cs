@@ -1,4 +1,4 @@
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public static class Show
     {

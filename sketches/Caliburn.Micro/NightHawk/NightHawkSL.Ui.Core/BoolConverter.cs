@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using Caliburn.Micro;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public class BoolInvertConverter : IValueConverter
     {

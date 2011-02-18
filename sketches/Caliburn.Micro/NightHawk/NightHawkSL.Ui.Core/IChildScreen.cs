@@ -1,6 +1,6 @@
 using Caliburn.Micro;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     public interface IChildScreen : IScreen
     {

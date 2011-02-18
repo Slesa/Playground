@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using NightHawkSL.Core;
+using NightHawkSL.Ui.Core;
 
-namespace NightHawkSL.ViewModels
+namespace NightHawkSL.Module.Test.ViewModels
 {
     [Export(typeof(TestMainSingleViewModel)), PartCreationPolicy(CreationPolicy.NonShared)]
     public class TestMainSingleViewModel : Screen, IChildScreen<TestViewModel>

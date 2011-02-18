@@ -3,7 +3,7 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using Caliburn.Micro;
 
-namespace NightHawkSL.Core.Logging
+namespace NightHawkSL.Ui.Core.Logging
 {
     [Export(typeof(ILog))]
     public class DebugLog : ILog

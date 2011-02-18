@@ -4,36 +4,43 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Caliburn.Micro;
-using NightHawkSL.Core;
 using NightHawkSL.Resources;
+using NightHawkSL.Ui.Core;
 
 namespace NightHawkSL.ViewModels
 {
     [Export(typeof(IShell))]
     public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<ErrorMessage>
     {
+        [ImportMany(AllowRecomposition = true)] 
+        public IEnumerable<IScreen> Modules;
 
         [ImportingConstructor]
         public ShellViewModel(
-            TestViewModel testViewModel,
+            //TestViewModel testViewModel,
             /*MusicViewModel musicViewModel,
             MovieViewModel movieViewModel, */
-            WelcomeViewModel welcomeViewModel,
+            //WelcomeViewModel welcomeViewModel,
             IEventAggregator eventAggregator)
         {
             HasActiveDialog = false;
             eventAggregator.Subscribe(this);
-            Items.Add(welcomeViewModel);
+            //Items.Add(welcomeViewModel);
             //Items.Add(welcomeViewModel);
             //Items.Add(movieViewModel);
             //Items.Add(musicViewModel);
-            Items.Add(testViewModel);
+            //Items.Add(testViewModel);
         }
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
             DisplayName = AppStrings.AppTitle;
+
+            foreach (var module in Modules)
+            {
+                Items.Add(module);
+            }
             ActivateItem(Items.FirstOrDefault());
         }
 

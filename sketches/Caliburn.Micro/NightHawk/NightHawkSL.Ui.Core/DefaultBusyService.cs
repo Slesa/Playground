@@ -7,7 +7,7 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using Caliburn.Micro;
 
-namespace NightHawkSL.Core
+namespace NightHawkSL.Ui.Core
 {
     [Export(typeof(IBusyService))]
     public class DefaultBusyService : IBusyService

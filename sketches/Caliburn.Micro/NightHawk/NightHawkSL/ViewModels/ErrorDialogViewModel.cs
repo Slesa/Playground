@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using NightHawkSL.Core;
 using NightHawkSL.Resources;
+using NightHawkSL.Ui.Core;
 
 namespace NightHawkSL.ViewModels
 {

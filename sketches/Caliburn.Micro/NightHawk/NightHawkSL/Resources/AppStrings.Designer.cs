@@ -169,42 +169,6 @@ namespace NightHawkSL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Test Home Screen One.
-        /// </summary>
-        public static string TestMainOneHomeTitle {
-            get {
-                return ResourceManager.GetString("TestMainOneHomeTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This is a single screen.
-        /// </summary>
-        public static string TestMainSingleTitle {
-            get {
-                return ResourceManager.GetString("TestMainSingleTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Another Home Screen.
-        /// </summary>
-        public static string TestMainTwoHomeTitle {
-            get {
-                return ResourceManager.GetString("TestMainTwoHomeTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Test Screen.
-        /// </summary>
-        public static string TestTitle {
-            get {
-                return ResourceManager.GetString("TestTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string WelcomeTitle {
