@@ -1,6 +1,6 @@
 @echo off
 cls
-call "tools\VisualStudio\vcvarsall.bat" x86 
+rem call "tools\VisualStudio\vcvarsall.bat" x86 
 
 :Build
 "tools\FAKE\Fake.exe" build.fsx
