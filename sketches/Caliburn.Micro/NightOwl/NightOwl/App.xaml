@@ -1,15 +1,18 @@
 ﻿<Application x:Class="NightOwl.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-             xmlns:local="clr-namespace:NightOwl" 
-             >
+             xmlns:local="clr-namespace:NightOwl" xmlns:Core="clr-namespace:NightOwl.Core">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <local:CastleBootstrapper x:Key="bootstrapper" />
+                    <!--<ResourceDictionary Source="Resources/Themes/JetPack/JetPackTheme.xaml" />-->
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+            <local:CastleBootstrapper x:Key="bootstrapper" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <Core:BoolVisibilityInvertConverter x:Key="InverseBooleanToVisibilityConverter" />
+            <Core:ImageSourceConverter x:Key="StringToImageSourceConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -25,14 +25,16 @@ namespace NightHawkSL
 
         protected override void Configure()
         {
+            //var catalog = new PackageCatalog();
+
             _container = CompositionHost.Initialize(
                 new AggregateCatalog(
-                    new AssemblyCatalog(System.Reflection.Assembly.GetExecutingAssembly()),
-                    new TypeCatalog(typeof(IScreen)),
-                    new TypeCatalog(typeof(IBusyService))
+                    //new AssemblyCatalog(System.Reflection.Assembly.GetExecutingAssembly()),
+                    //new TypeCatalog(typeof(IScreen)),
+                    //new TypeCatalog(typeof(IBusyService))
                     //new AssemblyCatalog(Assembly.Load("NightHawkSL.Ui.Core.dll")),
                     //new AssemblyCatalog(Assembly.Load("NightHawkSL.Module.Test.dll"))
-                    //AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()
+                    AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()
                     //new DirectoryCatalog(".")
                     )
                 );

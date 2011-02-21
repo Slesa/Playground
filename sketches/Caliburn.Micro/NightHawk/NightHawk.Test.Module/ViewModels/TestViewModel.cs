@@ -4,7 +4,7 @@ using System.Linq;
 using Caliburn.Micro;
 using NightHawkSL.Ui.Core;
 
-namespace NightHawkSL.Module.Test.ViewModels
+namespace NightHawk.Test.Module.ViewModels
 {
     [Export(typeof(IScreen))]
     public class TestViewModel : Conductor<IScreen>.Collection.OneActive

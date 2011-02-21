@@ -15,38 +15,6 @@
             <ImageBrush Stretch="UniformToFill" ImageSource="/Resources/Images/noise.jpg" Opacity="0.4" />
         </Grid.Background>
 
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="AppTitleStates">
-                <VisualStateGroup.Transitions>
-                    <VisualTransition GeneratedDuration="0:0:0.4" />
-                </VisualStateGroup.Transitions>
-                <VisualState x:Name="Normal">
-                    <Storyboard>
-                        <DoubleAnimation Duration="0" To="0.35"
-                                     Storyboard.TargetProperty="(UIElement.Opacity)"
-                                     Storyboard.TargetName="DisplayName"
-                                     d:IsOptimized="True" />
-                        <DoubleAnimation Duration="0" To="0.35"
-                                     Storyboard.TargetProperty="(UIElement.Opacity)"
-                                     Storyboard.TargetName="rectangle"
-                                     d:IsOptimized="True" />
-                    </Storyboard>
-                </VisualState>
-                <VisualState x:Name="MouseOver">
-                    <Storyboard>
-                        <DoubleAnimation Duration="0" To="1"
-                                         Storyboard.TargetProperty="(UIElement.Opacity)"
-                                         Storyboard.TargetName="rectangle"
-                                         d:IsOptimized="True" />
-                        <DoubleAnimation Duration="0" To="0.75"
-                                         Storyboard.TargetProperty="(UIElement.Opacity)"
-                                         Storyboard.TargetName="DisplayName"
-                                         d:IsOptimized="True" />
-                    </Storyboard>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-
         <Rectangle Fill="{StaticResource OverlayBrush}"
                    Stroke="{StaticResource TreeViewItemSelectionBorder}"
                    StrokeThickness="2"
@@ -56,8 +24,8 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <toolkit:DockPanel Margin="30">
-            <StackPanel toolkit:DockPanel.Dock="Top"
+        <DockPanel Margin="30">
+            <StackPanel DockPanel.Dock="Top"
                         Orientation="Horizontal"
                         Margin="0,0,0,20">
                 <Rectangle x:Name="rectangle" Width="100" Height="100" Margin="0" 
@@ -66,27 +34,11 @@
                     <Rectangle.Fill>
                         <ImageBrush Stretch="Uniform" ImageSource="/NightHawk;component/Resources/Images/mediaowl.png" />
                     </Rectangle.Fill>
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseEnter">
-                            <ei:GoToStateAction StateName="MouseOver" />
-                        </i:EventTrigger>
-                        <i:EventTrigger EventName="MouseLeave">
-                            <ei:GoToStateAction StateName="Normal" />
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
                 </Rectangle>
                 <TextBlock x:Name="DisplayName" TextWrapping="Wrap"
                            Text="Nigh Hawk" VerticalAlignment="Center"
                            Style="{StaticResource ApplicationNameStyle}"
                            FontSize="48" Opacity="0.345">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseEnter">
-                            <ei:GoToStateAction StateName="MouseOver" />
-                        </i:EventTrigger>
-                        <i:EventTrigger EventName="MouseLeave">
-                            <ei:GoToStateAction StateName="Normal" />
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
                     <TextBlock.Effect>
                         <DropShadowEffect BlurRadius="1" Direction="343" ShadowDepth="2" />
                     </TextBlock.Effect>
@@ -101,10 +53,10 @@
                      Padding="10,10,10,0" />
             
             <Controls:TransitioningContentControl x:Name="ActiveItem"
-                                              toolkit:DockPanel.Dock="Right"
+                                              DockPanel.Dock="Right"
                                               HorizontalContentAlignment="Stretch"
                                                  VerticalContentAlignment="Stretch"
                                                  Transition="DownTransition" />
-        </toolkit:DockPanel>
+        </DockPanel>
     </Grid>
 </UserControl>

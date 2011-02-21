@@ -7,7 +7,7 @@
                     xmlns:prim="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Input.Toolkit" 
                     xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
                     xmlns:dvp="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
-                    mc:Ignorable="d">
+                    mc:Ignorable="d" x:Class="NightHawkSL.Ui.Core.Resources.Themes.JetPack.d__sources_playground_sketches_caliburn_micro_nighthawk_nighthawksl_ui_core_resources_themes_jetpack_toolkitstyles_xaml">
 
     <!-- Global Settings. -->
     <ResourceDictionary.MergedDictionaries>

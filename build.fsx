@@ -15,6 +15,9 @@ let appReferences =
 
 Target? Default <- DoNothing
 
+Target? Clean <-
+  fun _ -> CleanDirs [buildDir; testDir; deployDir] 
+
 Target? BuildApp <-
   fun _ ->  
     MSBuildDebug buildDir "Build" appReferences
@@ -51,8 +54,6 @@ Run? Default
 
 
 // Targets
-//Target? Clean <-
-//    fun _ -> CleanDirs [buildDir; testDir; deployDir] 
  
 //Target? BuildApp <-
 //    fun _ ->  

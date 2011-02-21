@@ -13,7 +13,7 @@
     <RootNamespace>NightHawkSL.Web</RootNamespace>
     <AssemblyName>NightHawkSL.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SilverlightApplicationList>{AE527FF4-8BA7-4EF8-B8CC-47251F6A54DC}|..\NightHawkSL\NightHawkSL.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{AE527FF4-8BA7-4EF8-B8CC-47251F6A54DC}|..\NightHawkSL\NightHawkSL.csproj|ClientBin|False,{52E1C64E-90FA-46C6-8B53-F760B22C2BA8}|..\NightHawk.Test.Module\NightHawk.Test.Module.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\NightHawkSL.xap" />
+    <Content Include="NightHawk.Test.ModuleTestPage.aspx" />
+    <Content Include="NightHawk.Test.ModuleTestPage.html" />
     <Content Include="NightHawkSLTestPage.aspx" />
     <Content Include="NightHawkSLTestPage.html" />
     <Content Include="Silverlight.js" />

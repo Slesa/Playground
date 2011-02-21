@@ -76,6 +76,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="UserControl3D.xaml.cs">
+      <DependentUpon>UserControl3D.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ErrorDialogViewModel.cs" />
     <Compile Include="Core\IModule.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -129,6 +132,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UserControl3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ErrorDialogView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -145,6 +152,9 @@
   <ItemGroup>
     <Resource Include="Resources\Images\mediaowl.png" />
     <Resource Include="Resources\Images\noise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Themes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

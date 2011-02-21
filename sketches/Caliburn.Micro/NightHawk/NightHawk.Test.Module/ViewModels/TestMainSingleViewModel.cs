@@ -3,7 +3,7 @@ using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using NightHawkSL.Ui.Core;
 
-namespace NightHawkSL.Module.Test.ViewModels
+namespace NightHawk.Test.Module.ViewModels
 {
     [Export(typeof(TestMainSingleViewModel)), PartCreationPolicy(CreationPolicy.NonShared)]
     public class TestMainSingleViewModel : Screen, IChildScreen<TestViewModel>

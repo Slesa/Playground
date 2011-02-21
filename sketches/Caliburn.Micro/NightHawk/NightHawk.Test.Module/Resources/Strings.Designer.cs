@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NightHawk.Resources {
+namespace NightHawk.Test.Module.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace NightHawk.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppStrings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppStrings() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace NightHawk.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NightHawkSL.Resources.AppStrings", typeof(AppStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NightHawk.Test.Module.Resources.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,38 @@ namespace NightHawk.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Night Hawk.
+        ///   Looks up a localized string similar to Test Home Screen One.
         /// </summary>
-        public static string AppTitle {
+        public static string TestMainOneHomeTitle {
             get {
-                return ResourceManager.GetString("AppTitle", resourceCulture);
+                return ResourceManager.GetString("TestMainOneHomeTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ok.
+        ///   Looks up a localized string similar to This is a single screen.
         /// </summary>
-        public static string OkButtonText {
+        public static string TestMainSingleTitle {
             get {
-                return ResourceManager.GetString("OkButtonText", resourceCulture);
+                return ResourceManager.GetString("TestMainSingleTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to Another Home Screen.
         /// </summary>
-        public static string StringError {
+        public static string TestMainTwoHomeTitle {
             get {
-                return ResourceManager.GetString("StringError", resourceCulture);
+                return ResourceManager.GetString("TestMainTwoHomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test Screen.
+        /// </summary>
+        public static string TestTitle {
+            get {
+                return ResourceManager.GetString("TestTitle", resourceCulture);
             }
         }
     }

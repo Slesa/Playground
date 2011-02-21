@@ -1,0 +1,184 @@
+﻿<Window x:Class="UserControl3D"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="475">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+            <GradientStop Offset="0" Color="Black"/>
+            <GradientStop Offset="0.5" Color="DarkGray"/>
+            <GradientStop Offset="1" Color="Black"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Window.Resources>
+        <DiffuseMaterial x:Key="material" Brush="Yellow"/>
+        <DiffuseMaterial x:Key="backMaterial" Brush="Gold"/>
+
+        <GeometryModel3D x:Key="side"
+                        Material="{StaticResource material}" 
+                        BackMaterial="{StaticResource backMaterial}">
+            <GeometryModel3D.Geometry>
+                <MeshGeometry3D 
+                                    Positions="-1 0 1 ,-1 0 -1,1 0 -1, 1 0 1" 
+                                    TriangleIndices="0 1 2, 0 2 3"/>
+            </GeometryModel3D.Geometry>
+        </GeometryModel3D>
+
+
+    </Window.Resources>
+
+
+    <Viewport3D>
+        <Viewport3D.Camera>
+            <PerspectiveCamera Position="0 6 25" LookDirection="0 -2 -10" UpDirection="0 1 0" FieldOfView="30"/>
+        </Viewport3D.Camera>
+
+        <ModelVisual3D Content="{StaticResource side}"/>
+
+        <ModelVisual3D Content="{StaticResource side}">
+            <ModelVisual3D.Transform>
+                <Transform3DGroup>
+                    <TranslateTransform3D OffsetX="-2"/>
+                    <RotateTransform3D CenterX="-1">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeLeft" Axis="0 0 -1"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Transform3DGroup>
+            </ModelVisual3D.Transform>
+        </ModelVisual3D>
+
+        <ModelVisual3D Content="{StaticResource side}">
+            <ModelVisual3D.Transform>
+                <Transform3DGroup>
+                    <TranslateTransform3D OffsetX="2"/>
+                    <RotateTransform3D CenterX="1">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeRight" Axis="0 0 1"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Transform3DGroup>
+            </ModelVisual3D.Transform>
+        </ModelVisual3D>
+
+        <ModelVisual3D Content="{StaticResource side}">
+            <ModelVisual3D.Transform>
+                <Transform3DGroup>
+                    <TranslateTransform3D OffsetZ="2"/>
+                    <RotateTransform3D CenterZ="1">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeFront" Axis="-1 0 0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Transform3DGroup>
+            </ModelVisual3D.Transform>
+        </ModelVisual3D>
+
+        <ModelVisual3D Content="{StaticResource side}">
+            <ModelVisual3D.Transform>
+                <Transform3DGroup>
+                    <TranslateTransform3D OffsetZ="-2"/>
+                    <RotateTransform3D CenterZ="-1">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeBack" Axis="1 0 0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Transform3DGroup>
+            </ModelVisual3D.Transform>
+        </ModelVisual3D>
+
+        <ModelVisual3D Content="{StaticResource side}">
+            <ModelVisual3D.Transform>
+                <Transform3DGroup>
+                    <RotateTransform3D CenterZ="1" CenterY="-2">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D Axis="1 0 0" Angle="90"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                    <RotateTransform3D CenterZ="1">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeTopSeq1" Axis="-1 0 0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                    <RotateTransform3D CenterZ="1" CenterY="2">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeTopSeq2" Axis="-1 0 0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                    <RotateTransform3D CenterZ="-1" CenterY="2">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D x:Name="shapeTopSeq3" Axis="-1 0 0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Transform3DGroup>
+            </ModelVisual3D.Transform>
+        </ModelVisual3D>
+
+
+
+
+        <ModelVisual3D>
+            <ModelVisual3D.Content>
+                <Model3DGroup>
+                    <AmbientLight Color="DarkGray"/>
+                    <DirectionalLight Color="Gray" Direction="1,-3,-2"/>
+                </Model3DGroup>
+            </ModelVisual3D.Content>
+        </ModelVisual3D>
+
+
+
+    </Viewport3D>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard SpeedRatio="1.5" RepeatBehavior="Forever">
+
+                    <ParallelTimeline Duration="0:0:30" AutoReverse="True">
+                        <DoubleAnimation 
+                                Storyboard.TargetName="shapeLeft"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="90" Duration="0:0:10"/>
+                        <DoubleAnimation 
+                                Storyboard.TargetName="shapeRight"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="90" Duration="0:0:10"/>
+
+                        <DoubleAnimation
+                                Storyboard.TargetName="shapeFront"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="90" Duration="0:0:10"/>
+
+                        <DoubleAnimation 
+                                Storyboard.TargetName="shapeBack"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="90" Duration="0:0:10"/>
+
+                        <DoubleAnimation 
+                                Storyboard.TargetName="shapeTopSeq1"
+                                Storyboard.TargetProperty="Angle"
+                                From="0" To="90" Duration="0:0:10"/>
+
+                        <DoubleAnimation  
+                                Storyboard.TargetName="shapeTopSeq2"
+                                Storyboard.TargetProperty="Angle"
+                                BeginTime="0:0:10"
+                                From="0" To="180" Duration="0:0:10"/>
+
+                        <DoubleAnimation  
+                                Storyboard.TargetName="shapeTopSeq3"
+                                Storyboard.TargetProperty="Angle"
+                                BeginTime="0:0:20"
+                                From="0" To="90" Duration="0:0:10"/>
+                    </ParallelTimeline>
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+
+</Window>
+
+

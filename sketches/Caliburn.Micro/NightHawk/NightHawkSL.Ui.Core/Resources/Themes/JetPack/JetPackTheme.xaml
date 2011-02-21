@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="NightHawkSL.Ui.Core.Resources.Themes.JetPack.d__sources_playground_sketches_caliburn_micro_nighthawk_nighthawksl_ui_core_resources_themes_jetpack_jetpacktheme_xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/NightHawkSL;component/Resources/Themes/JetPack/Brushes.xaml" />
         <ResourceDictionary Source="/NightHawkSL;component/Resources/Themes/JetPack/Fonts.xaml" />

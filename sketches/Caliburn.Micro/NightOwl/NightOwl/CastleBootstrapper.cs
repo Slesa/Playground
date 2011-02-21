@@ -9,6 +9,8 @@ using NightOwl.ViewModels;
 
 namespace NightOwl
 {
+    // JetPack Theme for WPF:
+    // http://blog.lexique-du-net.com/index.php?post/2010/10/14/Migrate-the-Jetpack-theme-from-Silverlight-to-WPF
     public class CastleBootstrapper : Bootstrapper<IShell>
     {
         IWindsorContainer _container;

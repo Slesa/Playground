@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             xmlns:vsm="clr-namespace:System.Windows;assembly=WPFToolkit"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              x:Class="NightOwl.Views.ShellView"
@@ -51,12 +52,14 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <!-- Rectangle Fill="{StaticResource OverlayBrush}" 
-            Stroke="{StaticResource TreeViewItemSelectionBorder}"
-        -->
+        <Rectangle Fill="{StaticResource OverlayBrush}" 
+            Stroke="{StaticResource TreeViewItemSelectionBorder}" />
         <Rectangle
             StrokeThickness="2"
             RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <RotateTransform CenterX="1" CenterY="12" />
+            </Rectangle.RenderTransform>
             <!-- Rectangle.RenderTransform>
                 <CompositeTransform Rotation="180" />
             </Rectangle.RenderTransform -->
@@ -74,7 +77,7 @@
                     Opacity="0.35">
                     <Rectangle.Fill>
                         <ImageBrush Stretch="Uniform"
-                            ImageSource="/NightHawkSL;component/Resources/Images/mediaowl.png" />
+                            ImageSource="/NightOwl;component/Resources/Images/mediaowl.png" />
                     </Rectangle.Fill>
                     <!-- i:Interaction.Triggers>
                         <EventTrigger EventName="MouseEnter">
@@ -85,11 +88,11 @@
                         </EventTrigger>
                     </i:Interaction.Triggers -->
                 </Rectangle>
+                <!--Style="{StaticResource ApplicationNameStyle}"-->
                 <TextBlock x:Name="DisplayName"
                     TextWrapping="Wrap"
-                    Text="Night Hawk"
+                    Text="Night Owl"
                     VerticalAlignment="Center"
-                    Style="{StaticResource ApplicationNameStyle}"
                     FontSize="48"
                     Opacity="0.345">
                     <!-- i:Interaction.Triggers>
@@ -115,11 +118,11 @@
                 Margin="0,0,20,0"
                 ItemContainerStyle="{StaticResource ShellNavigationItemStyle}"
                 Padding="10,10,10,0" />
-            <!-- toolkit:TransitioningContentControl x:Name="ActiveItem"
+            <Frame x:Name="ActiveItem"
                 DockPanel.Dock="Right"
                 HorizontalContentAlignment="Stretch"
                 VerticalContentAlignment="Stretch"
-                Transition="DownTransition" / -->
+                />
         </DockPanel>
     </Grid>
 </UserControl>

@@ -7,12 +7,12 @@
              xmlns:res="clr-namespace:NightHawk.Resources" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <toolkit:DockPanel x:Name="LayoutRoot" Margin="10">
-        <Button x:Name="TryClose" Content="{x:Static res:AppStrings.OkButtonText}" Width="75" toolkit:DockPanel.Dock="Bottom" HorizontalAlignment="Right" />
-        <TextBlock x:Name="ErrorMessage" TextWrapping="Wrap" toolkit:DockPanel.Dock="Top" Foreground="{StaticResource ControlForeGround}">
+    <DockPanel x:Name="LayoutRoot" Margin="10">
+        <Button x:Name="TryClose" Content="{x:Static res:AppStrings.OkButtonText}" Width="75" DockPanel.Dock="Bottom" HorizontalAlignment="Right" />
+        <TextBlock x:Name="ErrorMessage" TextWrapping="Wrap" DockPanel.Dock="Top" Foreground="{StaticResource ControlForeGround}">
             <Run />
             <LineBreak />
             <Run />
         </TextBlock>
-    </toolkit:DockPanel>
+    </DockPanel>
 </UserControl>
