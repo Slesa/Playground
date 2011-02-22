@@ -7,9 +7,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <!--<ResourceDictionary Source="Resources/Themes/JetPack/JetPackTheme.xaml" />-->
+                    <local:CastleBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-            <local:CastleBootstrapper x:Key="bootstrapper" />
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <Core:BoolVisibilityInvertConverter x:Key="InverseBooleanToVisibilityConverter" />
             <Core:ImageSourceConverter x:Key="StringToImageSourceConverter" />

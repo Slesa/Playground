@@ -1,0 +1,32 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="2400BC51-BF6A-4225-80A6-BC639ED73033/f:App.xaml.cs" caret="0" fromTop="0" />
+      <File id="2400BC51-BF6A-4225-80A6-BC639ED73033/f:App.xaml" caret="0" fromTop="0" />
+      <File id="2400BC51-BF6A-4225-80A6-BC639ED73033/f:ExternalScreenView.xaml.cs" caret="0" fromTop="0" />
+      <File id="2400BC51-BF6A-4225-80A6-BC639ED73033/f:ExternalScreenViewModel.cs" caret="0" fromTop="0" />
+      <File id="71B3BB3D-2B4F-4A3F-A0F9-8F697EE6054D/f:Caliburn.Micro.CoroutinesTestPage.aspx" caret="0" fromTop="0" />
+      <File id="71B3BB3D-2B4F-4A3F-A0F9-8F697EE6054D/f:Silverlight.js" caret="0" fromTop="0" />
+      <File id="71B3BB3D-2B4F-4A3F-A0F9-8F697EE6054D/f:Web.config" caret="0" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits />
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

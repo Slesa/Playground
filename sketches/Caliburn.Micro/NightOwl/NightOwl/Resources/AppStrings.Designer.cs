@@ -61,7 +61,7 @@ namespace NightOwl.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Media Owl.
+        ///   Looks up a localized string similar to Night Owl.
         /// </summary>
         public static string AppTitle {
             get {
