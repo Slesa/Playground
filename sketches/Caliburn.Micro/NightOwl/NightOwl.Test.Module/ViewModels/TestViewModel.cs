@@ -1,7 +1,7 @@
 using Caliburn.Micro;
 using NightOwl.Core;
 
-namespace NightOwl.Views
+namespace NightOwl.Test.Module.ViewModels
 {
     public class TestViewModel : Screen, IModule
     {
@@ -9,5 +9,6 @@ namespace NightOwl.Views
         {
             DisplayName = "Test Module";
         }
+
     }
 }

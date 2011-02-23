@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using Caliburn.Micro;
+using ActionExecutionContext = Caliburn.Micro.ActionExecutionContext;
+using IResult = Caliburn.Micro.IResult;
 
 namespace NightOwl.Core
 {

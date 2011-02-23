@@ -1,5 +1,8 @@
 using System;
+using System.IO;
+using System.Linq;
 using System.Collections.Generic;
+using System.Reflection;
 using Caliburn.Micro;
 using Castle.Core;
 using Castle.MicroKernel.Registration;
@@ -19,10 +22,9 @@ namespace NightOwl
         {
             _container = new WindsorContainer();
 
-            var registrations = GetRegistrations();
-            foreach (var registration in registrations)
-                _container.Register(registration);
-
+            GetCoreRegistrations().ForEach(x => _container.Register(x));;
+            GetModuleRegistrations().ForEach(x => _container.Register(x));;
+            GetShellRegistrations().ForEach(x => _container.Register(x));;
         }
 
         protected override object GetInstance(Type serviceType, string key)
@@ -46,7 +48,7 @@ namespace NightOwl
         //    //_container.SatisfyImportsOnce(instance);
         //}
 
-        IEnumerable<IRegistration> GetRegistrations()
+        IEnumerable<IRegistration> GetCoreRegistrations()
         {
             yield return Component
                 .For<IWindowManager>()
@@ -57,13 +59,46 @@ namespace NightOwl
             yield return Component
                 .For<IWindsorContainer>()
                 .Instance(_container);
-            yield return AllTypes
-                .FromAssemblyContaining<IModule>()
-                .BasedOn<IModule>()
-                .WithService.FromInterface(typeof(IModule));
+        }
+
+        static IEnumerable<IRegistration> GetShellRegistrations()
+        {
             yield return Component
                 .For<IShell>()
                 .ImplementedBy<ShellViewModel>();
+        }
+
+
+        static IEnumerable<IRegistration> GetModuleRegistrations()
+        {
+            yield return AllTypes
+                .FromAssembly(Assembly.GetExecutingAssembly())
+                .BasedOn<IModule>()
+                .WithService.FromInterface(typeof (IModule));
+
+            var directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+            foreach (var dllPath in Directory.GetFiles(directoryPath, "*.dll"))
+            {
+                Assembly assembly;
+                try
+                {
+                    assembly = Assembly.LoadFrom(dllPath);
+                }
+                catch (BadImageFormatException ex)
+                {
+                    System.Diagnostics.Trace.TraceError(ex.ToString());
+                    continue;
+                }
+                catch (FileNotFoundException ex)
+                {
+                    System.Diagnostics.Trace.TraceError(ex.ToString());
+                    continue;
+                }
+                yield return AllTypes
+                    .FromAssembly(assembly)
+                    .BasedOn<IModule>()
+                    .WithService.FromInterface(typeof(IModule));
+            }
         }
     }
 }

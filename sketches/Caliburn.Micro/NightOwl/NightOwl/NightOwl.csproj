@@ -81,32 +81,11 @@
       <DependentUpon>UserControl3D.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ErrorDialogViewModel.cs" />
-    <Compile Include="Core\IModule.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\WelcomeViewModel.cs" />
-    <Compile Include="ViewModels\TestViewModel.cs" />
-    <Compile Include="Views\TestView.xaml.cs">
-      <DependentUpon>TestView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CastleBootstrapper.cs" />
-    <Compile Include="Core\BoolConverter.cs" />
-    <Compile Include="Core\BusyResult.cs" />
-    <Compile Include="Core\DefaultBusyService.cs" />
-    <Compile Include="Core\DialogResultEventArgs.cs" />
-    <Compile Include="Core\ErrorMessage.cs" />
-    <Compile Include="Core\IBusyService.cs" />
-    <Compile Include="Core\IChildScreen.cs" />
-    <Compile Include="Core\IDialog.cs" />
-    <Compile Include="Core\ImageSourceConverter.cs" />
-    <Compile Include="Core\IShell.cs" />
-    <Compile Include="Core\Logging\DebugLog.cs" />
-    <Compile Include="Core\NamingConventions.cs" />
-    <Compile Include="Core\OpenChildResult.cs" />
-    <Compile Include="Core\OpenDialogResult.cs" />
-    <Compile Include="Core\Run.cs" />
-    <Compile Include="Core\Show.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -149,10 +128,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TestView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\WelcomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -162,7 +137,19 @@
     <Resource Include="Resources\Images\mediaowl.png" />
     <Resource Include="Resources\Images\noise.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NightOwl.Core\NightOwl.Core.csproj">
+      <Project>{F50EC3EE-444C-4399-BB51-9E0629F7CDA9}</Project>
+      <Name>NightOwl.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NightOwl.Test.Module\NightOwl.Test.Module.csproj">
+      <Project>{F59E8E4F-1711-4DD8-90DB-7E2BC009D879}</Project>
+      <Name>NightOwl.Test.Module</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
