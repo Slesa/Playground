@@ -83,6 +83,7 @@ namespace NightOwl
                 try
                 {
                     assembly = Assembly.LoadFrom(dllPath);
+                    AssemblySource.Instance.Add(assembly);
                 }
                 catch (BadImageFormatException ex)
                 {

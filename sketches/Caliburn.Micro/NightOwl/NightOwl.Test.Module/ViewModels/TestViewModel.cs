@@ -10,5 +10,14 @@ namespace NightOwl.Test.Module.ViewModels
             DisplayName = "Test Module";
         }
 
+        public string IconFileName
+        {
+            get { return "/NightOwl.Test.Module;component/Resources/TestView.png"; }
+        }
+
+        public string ToolTip
+        {
+            get { return "A test module to show a second view"; }
+        }
     }
 }
