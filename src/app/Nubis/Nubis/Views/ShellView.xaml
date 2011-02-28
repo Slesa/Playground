@@ -38,7 +38,7 @@
             <Rectangle x:Name="rectangle"
                     Height="100"
                     Margin="0"
-                    ToolTipService.ToolTip="Night Owl"
+                    ToolTipService.ToolTip="Nubis"
                     Width="100"
                     HorizontalAlignment="Left"
                     Opacity="0.35">

@@ -14,7 +14,7 @@ namespace Nubis.Funding.ViewModels
 
         public string IconFileName
         {
-            get { return "Nubis.Funding;component/Resources/FundingDataView.png"; }
+            get { return "Nubis.Funding;component/Resources/Images/FundingData.png"; }
         }
 
         public string ToolTip

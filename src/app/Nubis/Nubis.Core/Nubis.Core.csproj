@@ -59,8 +59,28 @@
     <Compile Include="OpenChildResult.cs" />
     <Compile Include="OpenDialogResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Run.cs" />
     <Compile Include="Show.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Images\ButtonCancel.png" />
+    <Content Include="Resources\Images\ButtonDate.png" />
+    <Content Include="Resources\Images\ButtonExit.png" />
+    <Content Include="Resources\Images\ButtonOk.png" />
+    <Content Include="Resources\Images\ButtonPrint.png" />
+    <Content Include="Resources\Images\Error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

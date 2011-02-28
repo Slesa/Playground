@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro">
+    <Reference Include="Caliburn.Micro, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\lib\Caliburn.Micro\wpf\Caliburn.Micro.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -74,6 +74,9 @@
       <Project>{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}</Project>
       <Name>Nubis.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\FundingData.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
