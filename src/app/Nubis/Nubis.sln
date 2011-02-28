@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis", "Nubis\Nubis.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Core", "Nubis.Core\Nubis.Core.csproj", "{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Funding", "Nubis.Funding\Nubis.Funding.csproj", "{5A4D59A0-504A-4A10-B08C-029599315BE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Release|x86.ActiveCfg = Release|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5A4D59A0-504A-4A10-B08C-029599315BE2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

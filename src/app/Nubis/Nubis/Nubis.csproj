@@ -114,6 +114,10 @@
       <Project>{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}</Project>
       <Name>Nubis.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nubis.Funding\Nubis.Funding.csproj">
+      <Project>{5A4D59A0-504A-4A10-B08C-029599315BE2}</Project>
+      <Name>Nubis.Funding</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\ErrorDialogView.xaml">
@@ -124,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\nubis.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

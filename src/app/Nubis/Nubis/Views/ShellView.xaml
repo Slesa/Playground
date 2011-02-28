@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
-             xmlns:core="NightOwl.Core" 
              x:Class="Nubis.Views.ShellView"
              mc:Ignorable="d"
              d:DesignHeight="300"
@@ -45,13 +44,13 @@
                     Opacity="0.35">
                 <Rectangle.Fill>
                     <ImageBrush Stretch="Uniform"
-                            ImageSource="/NightOwl;component/Resources/Images/mediaowl.png" />
+                            ImageSource="/Nubis;component/Resources/Images/nubis.png" />
                 </Rectangle.Fill>
             </Rectangle>
             <!--Style="{StaticResource ApplicationNameStyle}"-->
             <TextBlock x:Name="DisplayName"
                     TextWrapping="Wrap"
-                    Text="Night Owl"
+                    Text="Nubis"
                     VerticalAlignment="Center"
                     FontSize="48"
                     Opacity="0.345">
