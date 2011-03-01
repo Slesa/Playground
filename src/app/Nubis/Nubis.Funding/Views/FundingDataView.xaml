@@ -4,24 +4,52 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Resources="clr-namespace:Nubis.Funding.Resources" 
+             xmlns:Converters="clr-namespace:Nubis.Core.Converters;assembly=Nubis.Core"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Converters:DecimalConverter x:Key="DecimalConverter" />
+    </UserControl.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+    	<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition/>
         </Grid.RowDefinitions>
-            
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static Resources:Strings.FundingData_LabelAmount}" />
-        <TextBox x:Name="inputAmount" Grid.Column="1" Grid.Row="0" />
+        <!--  Text="{Binding Converter={StaticResource DecimalConverter}}" -->
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static Resources:Strings.FundingData_LabelDarlehensBetrag}" />
+        <TextBox x:Name="EinDarlehensBetrag" Grid.Column="1" Grid.Row="0" />
         
-        <TextBlock Grid.Column="0" Grid.Row="1" Text="{x:Static Resources:Strings.FundingData_LabelInterestRate}" />
-        <TextBox x:Name="inputInterestRate" Grid.Column="1" Grid.Row="1" />
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="{x:Static Resources:Strings.FundingData_LabelNominalZins}" />
+        <TextBox x:Name="EinNominalZins" Grid.Column="1" Grid.Row="1" />
+
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="{x:Static Resources:Strings.FundingData_LabelEffektivZins}" />
+        <TextBox x:Name="EinEffektivZins" Grid.Column="1" Grid.Row="2" />
+
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="{x:Static Resources:Strings.FundingData_LabelLaufzeit}" />
+        <DockPanel Grid.Column="1" Grid.Row="3" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Right" Text="{x:Static Resources:Strings.FundingData_LabelYearMonthHint}" />
+            <TextBox x:Name="EinLaufzeit" />
+        </DockPanel>
+
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="{x:Static Resources:Strings.FundingData_LabelFestZinsDauer}" />
+        <DockPanel Grid.Column="1" Grid.Row="4" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Right" Text="{x:Static Resources:Strings.FundingData_LabelYearMonthHint}" />
+            <TextBox x:Name="EinFestZinsDauer" />
+        </DockPanel>
+
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="{x:Static Resources:Strings.FundingData_LabelZahlungsweise}" />
+
+        <TextBlock Grid.Column="0" Grid.Row="6" Text="{x:Static Resources:Strings.FundingData_LabelMonatsRate}" />
+        <TextBox x:Name="EinMonatsRate" Grid.Column="1" Grid.Row="6" />
 
     </Grid>
 </UserControl>

@@ -123,10 +123,28 @@
   <data name="FundingDataViewModel_ToolTip" xml:space="preserve">
     <value>Enter data to calculate financement</value>
   </data>
-  <data name="FundingData_LabelAmount" xml:space="preserve">
+  <data name="FundingData_LabelDarlehensBetrag" xml:space="preserve">
     <value>Amount:</value>
   </data>
-  <data name="FundingData_LabelInterestRate" xml:space="preserve">
-    <value>Nominal interest rate:</value>
+  <data name="FundingData_LabelNominalZins" xml:space="preserve">
+    <value>Nominal rate:</value>
+  </data>
+  <data name="FundingData_LabelEffektivZins" xml:space="preserve">
+    <value>Effective rate:</value>
+  </data>
+  <data name="FundingData_LabelLaufzeit" xml:space="preserve">
+    <value>Runtime:</value>
+  </data>
+  <data name="FundingData_LabelFestZinsDauer" xml:space="preserve">
+    <value>Fixed rate time:</value>
+  </data>
+  <data name="FundingData_LabelZahlungsweise" xml:space="preserve">
+    <value>Payment method:</value>
+  </data>
+  <data name="FundingData_LabelMonatsRate" xml:space="preserve">
+    <value>Monthly fund:</value>
+  </data>
+  <data name="FundingData_LabelYearMonthHint" xml:space="preserve">
+    <value>(YY.MM)</value>
   </data>
 </root>

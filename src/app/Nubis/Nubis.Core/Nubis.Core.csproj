@@ -43,8 +43,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoolConverter.cs" />
+    <Compile Include="Converters\BoolConverter.cs" />
     <Compile Include="BusyResult.cs" />
+    <Compile Include="Converters\DecimalConverter.cs" />
     <Compile Include="DefaultBusyService.cs" />
     <Compile Include="DialogResultEventArgs.cs" />
     <Compile Include="ErrorMessage.cs" />

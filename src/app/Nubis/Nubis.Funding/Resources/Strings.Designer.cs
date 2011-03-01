@@ -63,18 +63,72 @@ namespace Nubis.Funding.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Amount:.
         /// </summary>
-        public static string FundingData_LabelAmount {
+        public static string FundingData_LabelDarlehensBetrag {
             get {
-                return ResourceManager.GetString("FundingData_LabelAmount", resourceCulture);
+                return ResourceManager.GetString("FundingData_LabelDarlehensBetrag", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nominal interest rate:.
+        ///   Looks up a localized string similar to Effective rate:.
         /// </summary>
-        public static string FundingData_LabelInterestRate {
+        public static string FundingData_LabelEffektivZins {
             get {
-                return ResourceManager.GetString("FundingData_LabelInterestRate", resourceCulture);
+                return ResourceManager.GetString("FundingData_LabelEffektivZins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed rate time:.
+        /// </summary>
+        public static string FundingData_LabelFestZinsDauer {
+            get {
+                return ResourceManager.GetString("FundingData_LabelFestZinsDauer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Runtime:.
+        /// </summary>
+        public static string FundingData_LabelLaufzeit {
+            get {
+                return ResourceManager.GetString("FundingData_LabelLaufzeit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly fund:.
+        /// </summary>
+        public static string FundingData_LabelMonatsRate {
+            get {
+                return ResourceManager.GetString("FundingData_LabelMonatsRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nominal rate:.
+        /// </summary>
+        public static string FundingData_LabelNominalZins {
+            get {
+                return ResourceManager.GetString("FundingData_LabelNominalZins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (YY.MM).
+        /// </summary>
+        public static string FundingData_LabelYearMonthHint {
+            get {
+                return ResourceManager.GetString("FundingData_LabelYearMonthHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment method:.
+        /// </summary>
+        public static string FundingData_LabelZahlungsweise {
+            get {
+                return ResourceManager.GetString("FundingData_LabelZahlungsweise", resourceCulture);
             }
         }
         

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Nubis.Core
+namespace Nubis.Core.Converters
 {
     public class BoolInvertConverter : IValueConverter
     {
