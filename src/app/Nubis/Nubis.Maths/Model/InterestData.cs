@@ -16,7 +16,7 @@ namespace Nubis.Maths.Model
             set 
             { 
                 _yearPayments = value;
-                _effectiveInterest = calculateEffective(_yearPayments, _nominalInterest);
+                _effectiveInterest = CalculateEffective(_yearPayments, _nominalInterest);
             }
         }
 
@@ -27,7 +27,7 @@ namespace Nubis.Maths.Model
             set 
             { 
                 _nominalInterest = value;
-                _effectiveInterest = calculateEffective(_yearPayments, _nominalInterest);
+                _effectiveInterest = CalculateEffective(_yearPayments, _nominalInterest);
             }
         }
 
@@ -38,16 +38,16 @@ namespace Nubis.Maths.Model
             set
             {
                 _effectiveInterest = value;
-                _nominalInterest = calculateNominal(_yearPayments, _effectiveInterest);
+                _nominalInterest = CalculateNominal(_yearPayments, _effectiveInterest);
             }
         }
 
-        static decimal calculateEffective(int rates, decimal rate)
+        static decimal CalculateEffective(int rates, decimal rate)
         {
             return (2*rates*rate)/(rates + 1);
         }
 
-        static decimal calculateNominal(int rates, decimal rate)
+        static decimal CalculateNominal(int rates, decimal rate)
         {
             return (rate*(rates + 1))/(2*rates);
         }

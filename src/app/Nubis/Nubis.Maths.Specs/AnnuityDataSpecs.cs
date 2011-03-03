@@ -3,10 +3,10 @@ using Nubis.Maths.Model;
 
 namespace Nubis.Maths.Specs
 {
-    /*[Subject(typeof (FundingData))]
-    public class When_creating_funding_data
+    [Subject(typeof (AnnuityData))]
+    public class When_creating_annuity_data
     {
-        Establish context = () => _fundingData = new FundingData();
+        Establish context = () => _annuitygData = new AnnuityData();
         Because of = () =>
             {
                 _fundingData.Kreditsumme = 10000;
