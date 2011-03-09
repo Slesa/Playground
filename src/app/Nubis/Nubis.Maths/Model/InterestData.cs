@@ -4,19 +4,19 @@ namespace Nubis.Maths.Model
     {
         public InterestData()
         {
-            YearPayments = 1;
+            PaymentsInYear = 1;
             NominalInterest = 1;
             EffectiveInterest = 1;
         }
 
-        int _yearPayments;
-        public int YearPayments
+        int _paymentsInYear;
+        public int PaymentsInYear
         {
-            get { return _yearPayments; }
+            get { return _paymentsInYear; }
             set 
             { 
-                _yearPayments = value;
-                _effectiveInterest = CalculateEffective(_yearPayments, _nominalInterest);
+                _paymentsInYear = value;
+                _effectiveInterest = CalculateEffective(_paymentsInYear, _nominalInterest);
             }
         }
 
@@ -27,7 +27,7 @@ namespace Nubis.Maths.Model
             set 
             { 
                 _nominalInterest = value;
-                _effectiveInterest = CalculateEffective(_yearPayments, _nominalInterest);
+                _effectiveInterest = CalculateEffective(_paymentsInYear, _nominalInterest);
             }
         }
 
@@ -38,7 +38,7 @@ namespace Nubis.Maths.Model
             set
             {
                 _effectiveInterest = value;
-                _nominalInterest = CalculateNominal(_yearPayments, _effectiveInterest);
+                _nominalInterest = CalculateNominal(_paymentsInYear, _effectiveInterest);
             }
         }
 

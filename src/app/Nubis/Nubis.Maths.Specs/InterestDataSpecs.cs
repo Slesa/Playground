@@ -8,7 +8,7 @@ namespace Nubis.Maths.Specs
     {
         Because of = () => _interestData = new InterestData();
 
-        It should_initialize_year_payments = () => _interestData.YearPayments.ShouldEqual(1);
+        It should_initialize_year_payments = () => _interestData.PaymentsInYear.ShouldEqual(1);
         It should_initialize_nominal_interest = () => _interestData.NominalInterest.ShouldEqual(1);
         It should_initialize_effective_interest = () => _interestData.EffectiveInterest.ShouldEqual(1);
 
@@ -48,7 +48,7 @@ namespace Nubis.Maths.Specs
                 _effectiveInterest = 2 * _interestData.NominalInterest * 12 / 13;
             };
 
-        Because of = () => _interestData.YearPayments = 12;
+        Because of = () => _interestData.PaymentsInYear = 12;
 
         It should_have_nominal_interest = () => _interestData.NominalInterest.ShouldEqual(1);
         It should_calculate_effective_interest = () => _interestData.EffectiveInterest.ShouldEqual(_effectiveInterest);
@@ -62,13 +62,13 @@ namespace Nubis.Maths.Specs
     {
         Establish context = () =>
             {
-                _interestData = new InterestData {YearPayments = 12};
+                _interestData = new InterestData {PaymentsInYear = 12};
                 _effectiveInterest = 2 * 5.0m * 12 / 13;
             };
 
         Because of = () => _interestData.NominalInterest = 5.0m;
 
-        It should_have_year_payments = () => _interestData.YearPayments.ShouldEqual(12);
+        It should_have_year_payments = () => _interestData.PaymentsInYear.ShouldEqual(12);
         It should_have_nominal_interest = () => _interestData.NominalInterest.ShouldEqual(5.0m);
         It should_calculate_effective_interest = () => _interestData.EffectiveInterest.ShouldEqual(_effectiveInterest);
         It should_have_effective_interest = () => _interestData.EffectiveInterest.ShouldNotEqual(0);
@@ -84,13 +84,13 @@ namespace Nubis.Maths.Specs
     {
         Establish context = () =>
             {
-                _interestData = new InterestData {YearPayments = 12};
+                _interestData = new InterestData {PaymentsInYear = 12};
                 _nominalZins = (5.0m * 13) / (2*12);
             };
 
         Because of = () => _interestData.EffectiveInterest = 5.0m;
 
-        It should_have_year_payments = () => _interestData.YearPayments.ShouldEqual(12);
+        It should_have_year_payments = () => _interestData.PaymentsInYear.ShouldEqual(12);
         It should_calculate_nominalinterest = () => _interestData.NominalInterest.ShouldEqual(_nominalZins);
         It should_have_effective_interest = () => _interestData.EffectiveInterest.ShouldEqual(5.0m);
         It should_have_nominal_interest = () => _interestData.NominalInterest.ShouldNotEqual(0);

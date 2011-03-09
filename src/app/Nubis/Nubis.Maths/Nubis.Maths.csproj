@@ -37,8 +37,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ICalculateMissings.cs" />
-    <Compile Include="Model\FundingData.cs" />
+    <Compile Include="Model\AnnuityData.cs" />
     <Compile Include="Model\InterestData.cs" />
+    <Compile Include="Model\LinearInterest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

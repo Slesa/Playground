@@ -34,12 +34,14 @@
     <Reference Include="Machine.Specifications, Version=0.3.0.0, Culture=neutral, PublicKeyToken=5c474de7a495cff1, processorArchitecture=MSIL">
       <HintPath>..\packages\Machine.Specifications.0.3.0.0\lib\40\Machine.Specifications.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnuityDataSpecs.cs" />
+    <Compile Include="LinearInterestSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InterestDataSpecs.cs" />
   </ItemGroup>
