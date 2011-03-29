@@ -1,4 +1,0 @@
-\select@language {ngerman}
-\contentsline {section}{\numberline {1}Requirements}{1}
-\contentsline {subsection}{\numberline {1.1}MSMQ bereitstellen}{1}
-\contentsline {subsection}{\numberline {1.2}NServiceBus bereitstellen}{1}
