@@ -11,12 +11,16 @@ namespace HelloLog
 
         public Foo()
         {
+            User = "Bart Simpson";
+
             Log.Info("Foo tells info");
             Log.InfoFormat("Foo called at {0}", DateTime.Now);
             Log.Debug("Foo tells debug");
             Log.Warn("Foo tells warning");
             Log.Error("Fool tells error");
         }
+
+        public string User { get; private set; }
     }
 
     class Program
