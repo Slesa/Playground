@@ -217,7 +217,7 @@ angegeben werden:
 
 
 \subsubsection{Ausgabe im Debug-Fenster}
-Wie erwähnt, erscheint die Konsolenausgabe nicht im Debugfenster von Visual Studio. Hierfür existiert ein eigener Appender:
+Wie erwähnt, erscheint die Konsolenausgabe nicht im Debug-Fenster von Visual Studio. Hierfür existiert ein eigener Appender:
 
 \begin{lstlisting}
 ...
@@ -237,7 +237,7 @@ Wie erwähnt, erscheint die Konsolenausgabe nicht im Debugfenster von Visual Stud
 
 
 \subsubsection{Ausgabe in Datei}
-Die Ausgabe in eine Datei kann ganz einfach erfolgen über
+Die Ausgabe in eine Datei kann ganz einfach erfolgen über:
 
 \begin{lstlisting}
 ...
@@ -290,7 +290,7 @@ gebildet werden, empfiehlt sich der Einsatz des RollingFileAppenders:
 
 \section{Ausgabe anpassen}
 Wie in einem Beispiel bereits gesehen, kann die Log-Ausgabe auch an persönliche Bedürfnisse angepasst werden. Hierfür wird das Layout
-nicht auf \emph{SimpleLayout} gesetzt, sondern expliziet per \emph{Patternlayout} angegeben:
+nicht auf \emph{SimpleLayout} gesetzt, sondern explizit per \emph{Patternlayout} angegeben:
 
 \begin{lstlisting}
 ...
@@ -370,10 +370,13 @@ Hier noch eine kleine Übersicht der mitgelieferten Appender:\\
 			SmtpPickupDirAppender				& Versenden der Einträge per Mail-Programm									\\
 			TelnetAppender							& Ausgabe auf Telnet-Host, mit dem man sich verbinden kann	\\
 			TraceAppender								& Ausgabe in das Trace-System																\\
-			UdpAppender									& \\
+			UdpAppender									& Versenden der Log-Nachrichten per UDP											\\
 		\end{tabular}
 \\
 \medskip
-{\scriptsize Quelle: {\url{http://www.beefycode.com/post/Log4Net-Tutorial-pt-3-Appenders.aspx}} }
+{\scriptsize Quelle: {\url{http://www.beefycode.com/post/Log4Net-Tutorial-pt-3-Appenders.aspx}} } \\
+
+Hinweis: es wurden beileibe nicht alle Möglichkeiten von Log4net aufgezeigt. ZB bestehen diverse Filter-Möglichkeiten bei
+der Weiterleitung der Log-Events.
 
 \end{document}
