@@ -7,10 +7,9 @@
 
 \usepackage{listings}
 \usepackage{color}
-
 \definecolor{darkgray}{rgb}{0.95,0.95,0.95}
 
-\lstset{language=C++, tabsize=2, backgroundcolor=\color{darkgray}, showstringspaces=false}
+\lstset{language=C++, tabsize=2, backgroundcolor=\color{darkgray}, showstringspaces=false, basicstyle=\footnotesize, breaklines=true}
 
 
 \begin{document}
@@ -44,7 +43,7 @@ Konfigurationsdatei angeben:
 [assembly: log4net.Config.XmlConfigurator(ConfigFile = "App.config")]
 \end{lstlisting}
 
-Ein weiterer Parameter names \emph{Watch} gibt an, ob die Konfigurationsdatei auf Änderungen hin überwacht werden soll:
+Ein weiterer Parameter namens \emph{Watch} gibt an, ob die Konfigurationsdatei auf Änderungen hin überwacht werden soll:
 
 \begin{lstlisting}
 [assembly: log4net.Config.XmlConfigurator(Watch=true)]
@@ -60,13 +59,13 @@ log4net.Config.XmlConfigurator.Configure();
 
 Das Ändern der Konfigurationsdatei kann zB erfolgen durch
 \begin{lstlisting}
-log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
+log4net.Config.XmlConfigurator.Configure(new FileInfo("log4net.config"));
 \end{lstlisting}
 
 Das Überwachen der Konfigurationsdatei wird erreicht mittels
 
 \begin{lstlisting}
-log4net.Config.XmlConfigurator.Configure(new FileInfo("log4net.config"));
+log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
 \end{lstlisting}
 
 in diesem Fall muss allerdings zwingend eine Konfigurationsdatei angegeben werden.
@@ -90,7 +89,7 @@ class Foo
 Je nach globalen Konfiguration der Logausgabe von Log4net und eventuell vorgenommenen gesonderten Einstellungen der Klasse, in diesem 
 Falle Foo, wird die Nachricht ausgegeben oder unterdrückt.\\
 Zu den einfachen Textausgabe-Funktionen - \emph{Debug}, \emph{Info}, \emph{Warn}, \emph{Error} - gibt es eine korrespondierende Funktion 
-zur formatieren Ausgabe von Text - \emph{DebugFormat}, \emph{InfoFormat}, \emph{WarnFormat}, \emph{ErrorFormat}:
+zur formatierten Ausgabe von Text - \emph{DebugFormat}, \emph{InfoFormat}, \emph{WarnFormat}, \emph{ErrorFormat}:
 
 \begin{lstlisting}
   	Log.InfoFormat("Foo called at {0}", DateTime.Now);
@@ -112,7 +111,7 @@ angegebenen Konfigurationsdatei für Log4net) das interne Debugging anschalten:
 
 \subsection{Globale Einstellungen}
 Die Konfiguration der Log-Mechanismen erfolgt mittels eines SectionHandlers von Log4net. Wir legen eine neue Sektion an und setzen
-den Default-Level erstmal auf \emph{Warn}:
+den Default-Level erst einmal auf \emph{Warn}:
 
 \begin{lstlisting}
 <configuration>
@@ -238,6 +237,66 @@ Die Ausgabe in eine Datei kann ganz einfach erfolgen über
 ...
 \end{lstlisting}
 
-Das Unterverzeichnis "`log"' wird hierbei angelegt falls es nicht existiert.
+Das Unterverzeichnis "`log"' wird hierbei angelegt falls es nicht existiert.\\
+Soll die Log-Datei hierbei eine gewisse Größe nicht überschreiten, oder soll der Dateiname in Abhängigkeit des Datums 
+gebildet werden, empfiehlt sich der Einsatz des RollingFileAppenders:
+
+\begin{lstlisting}
+...
+  <log4net>
+    <root>
+      <level value="WARN"/>
+      <appender-ref ref="RollSize"/>
+      <appender-ref ref="RollDate"/>
+    </root>
+    <appender name="RollSize" type="log4net.Appender.RollingFileAppender">
+      <file value="log/SizeLog.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="size" />
+      <maxSizeRollBackups value="10" />
+      <maximumFileSize value="1MB" />
+      <layout type="log4net.Layout.SimpleLayout" />
+    </appender>
+    <appender name="RollDate" type="log4net.Appender.RollingFileAppender">
+      <file value="log/DateLog.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="date" />
+      <layout type="log4net.Layout.SimpleLayout" />
+    </appender>
+  </log4net>
+...
+\end{lstlisting}
+
+\section{Epilog}
+Es existieren noch weit mehr Appender als hier angegeben, zB Ausgabe auf Twitter, MongoDB, etc \dots
+Hier noch eine kleine Übersicht der mitgelieferten Appender:\\
+
+		\begin{tabular}{l|l}
+			log4net.Appender\@. & Beschreibung\\
+			\hline AdoNetAppender & Ausgabe in Datenbank\\
+			AnsiColorTerminalAppender & Ausgabe auf Terminal mittels ANSI-Farbsequenzen\\
+			AspNetTraceAppender & Ausgabe in ASP.NET Trace-Kontext\\
+			BufferingForwardingAppender & Puffert Einträge und leitet sie weiter\\
+			ColoredConsoleAppender & Farbige Ausgabe in Konsole\\
+			ConsoleAppender & Ausgabe in Konsole\\
+			DebugAppender & Ausgabe in das Debug-Fenster\\
+			EventLogAppender & Ausgabe in das Event-Log\\
+			ForwardingAppender & Weiterleitung der Einträge\\
+			FileAppender & Ausgabe in Datei\\
+			LocalSyslogAppender & Ausgabe in das Syslog-System\\
+			MemoryAppender\\
+			NetSendAppender\\
+			OutputDebugStringAppender\\
+			RemoteSyslogAppender\\
+			RemotingAppender\\
+			RollingFileAppender\\
+			SmtpAppender\\
+			SmtpPickupDirAppender\\
+			TelnetAppender & Ausgabe auf Telnet-Host, mit dem man sich verbinden kann\\
+			TraceAppender & Ausgabe in das Trace-System\\
+			UdpAppender\\
+		\end{tabular}
+\\
+(Quelle {\url{http://www.beefycode.com/post/Log4Net-Tutorial-pt-3-Appenders.aspx})}\\
 
 \end{document}

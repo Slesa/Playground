@@ -41,6 +41,8 @@ namespace HelloLog
             var foo = new Foo();
 
             LogManager.Shutdown();
+
+            Console.Write("Press <Enter> to continue...");
             Console.ReadLine();
         }
     }
