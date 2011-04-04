@@ -1,0 +1,83 @@
+\documentclass[a4paper]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{url}
+
+\begin{document}
+\author{Jörg Preiß}
+\title{Lucifer}
+\maketitle
+\tableofcontents
+
+\section{Lucifer}
+
+
+
+\subsection{Prolog}
+Das Projekt Lucifer besteht aus mehreren ineinander greifenden Modulen. Diese umfassen im speziellen:
+\begin{itemize}
+	\item UMS User Management System
+	\item JMS Journal Management System
+	\item PMS POS Management System
+	\item CMS Client Management System
+	\item ICS Inventory Control System
+	\item \textit{TRS Table Reservation System}
+	\item \textit{HMS Hotel Management System}
+	\item \textit{RSS Reporting Services System}
+\end{itemize}
+Es soll darauf geachtet werden, daß jedes Modul auch von extern verwaltet werden kann. Die Anbindung an Fremdsysteme
+muß möglich sein.
+
+
+\subsection{Infrastruktur}
+Das Projekt Lucifer soll modular aufgebaut sein. Hierfür ist es erforderlich, daß auch die gesamte Infrastruktur
+modularisiert wird. Es soll testbar aufgebaut werden, Log-Möglichkeiten müssen vorhanden sein, es muß eine Verbindung 
+zu einer Datenbank hergestellt werden können und es braucht eine grafische Oberfläche.
+
+
+\subsubsection{Testbarkeit}
+Zum Einsatz kommt das Test-Framework Machine.Specifications, als Mocking-Framework wird Machine.Fakes verwendet.
+
+
+\subsubsection{Inversion of Control}
+Es muß ein Dependency Injection Container zum Einsatz kommen. Hierbei stehen zur Auswahl
+\begin{itemize}
+	\item StructureMap
+	\item Unity
+	\item Microsoft Extension Framework
+	\item LightCore
+	\item Castle Windsor
+\end{itemize}
+
+
+\subsubsection{Log-Mechanismen}
+Das Log-System sollte prinzipiell austauschbar sein. Favorisiert wird zur Zeit allerdings Log4net.
+
+
+\subsubsection{Datenbank-Anbindung}
+Die Datenbankanbindung sollte durch einen OR-Mapper erfolgen. Hierfür stehen zur Verfügung:
+\begin{itemize}
+	\item Entity Framework
+	\item NHibernate
+\end{itemize}
+Zur Zeit bevorzugt wird NHibernate, da mit dem Code-First-Ansatz Tests implementiert werden können, ohne bereits eine
+Datenbank aufsetzen zu müssen.
+
+
+\subsubsection{Grafische Oberfläche}
+Für die Modularisierung der grafischen Oberfläche existieren die folgenden Ansätze:
+\begin{itemize}
+	\item Prism
+	\item Caliburn
+	\item Caliburn.Micro
+\end{itemize}
+Preferiert wird bisher Caliburn Micro.
+
+
+
+\include{Lucifer.ums}
+\include{Lucifer.pms}
+\include{Lucifer.ics}
+
+\end{document}

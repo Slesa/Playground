@@ -1,0 +1,29 @@
+\section{Inventory Control System}
+
+\subsection{Einleitung}
+In dem Modul ICS werden Läger verwaltet und mit Hilfe von Rezepturen Abbuchen vorgenommen.
+
+
+
+\subsection{Modell}
+
+
+\subsubsection{UnitType}
+Beschreibt den Typ einer Einheit im System. Dient vornehmlich der Gruppierung von Einheiten.
+
+\begin{itemize}
+	\item Name (nn) Name des UnitTypes
+\end{itemize}
+
+
+\subsubsection{Unit}
+Beschreibt eine Einheit im System.
+
+\begin{itemize}
+	\item Name: (nn) Name der Unit
+	\item Contraction: Abkürzung der Unit
+	\item UnitType: (nn), Der UnitType der Unit
+	\item Parent Unit: von der diese abgeleitet wurde
+	\item FactorToParent: Umrechnungsfaktor, um zur Parent zu gelangen
+\end{itemize}
+
