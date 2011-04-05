@@ -20,8 +20,9 @@
 
 
 
-\section{Requirements}
-
+\section{Prolog}
+Der nachfolgende Text umfaßt einen Schnelleinstieg in die Konfiguration von Log4net. Das Beispiel-Projekt steht auf 
+\url{https://github.com/Slesa/Playground/tree/master/sketches/log4net/HelloLog} zur Verfügung.
 
 
 \subsection{Log4net bereitstellen}
@@ -342,6 +343,41 @@ Um die Ausgabe anzupassen, stehen folgende Kürzel bereit:\\
 		\emph{\%-20\@.30logger} oder \emph{\%\@.10logger}.
 
 
+\section{Log pro Klasse}
+Das global eingestellte Log-Verhalten kann pro Klasse überschrieben werden. Damit ist es möglich, nur bestimmte Klassen
+bzw deren Methoden zu protokollieren, oder auch nur diese Log-Nachrichten auf anderen Appendern auszugeben.\\
+Hierzu wird für diese Klasse eine eigene Einstellungsebene hinzugefügt:
+
+\begin{lstlisting}
+...
+    <root>
+      <level value="WARN"/>
+      <appender-ref ref="Console"/>
+    </root>
+    <logger name="HelloLog.Foo">
+      <level value="ALL" />
+      <appender-ref ref="Colored"/>
+    </logger>
+...
+\end{lstlisting}
+
+In diesem Beispiel werden alle Log-Nachrichten der Stufe \emph{Warn} auf der Konsole ausgegeben, für die Klasse HelloLog.Foo 
+allerdings werden alle Nachrichten ausgegeben, zusätzlich werden diese Nachrichten noch farbig auf der Konsole ausgegeben.\\
+\medskip
+Dieses Überschreiben kann auch per Namensraum geschehen. Mit:
+
+\begin{lstlisting}
+...
+    <logger name="HelloLog">
+      <level value="ALL" />
+      <appender-ref ref="Colored"/>
+    </logger>
+...
+\end{lstlisting}
+
+gilt oben beschriebenes Verhalten für alle Klassen im Namensraum \emph{HelloLog}.
+
+
 
 \section{Epilog}
 Es existieren noch weit mehr Appender als hier angegeben, zB Ausgabe auf Twitter, MongoDB, etc \dots
@@ -377,6 +413,7 @@ Hier noch eine kleine Übersicht der mitgelieferten Appender:\\
 {\scriptsize Quelle: {\url{http://www.beefycode.com/post/Log4Net-Tutorial-pt-3-Appenders.aspx}} } \\
 
 Hinweis: es wurden beileibe nicht alle Möglichkeiten von Log4net aufgezeigt. ZB bestehen diverse Filter-Möglichkeiten bei
-der Weiterleitung der Log-Events.
+der Weiterleitung der Log-Events. Weiterführende Informationen finden sich auf der Seite 
+\url{http://logging.apache.org/log4net/release/sdk/}
 
 \end{document}
