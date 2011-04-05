@@ -52,7 +52,8 @@
     <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Entities\UserRoleItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\Users.cs" />
+    <Compile Include="Queries\UserRoleQueries.cs" />
+    <Compile Include="Queries\UserQueries.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lucifer.DataAccess\Lucifer.DataAccess.csproj">

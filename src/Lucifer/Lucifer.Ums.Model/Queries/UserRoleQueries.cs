@@ -6,12 +6,11 @@ using NHibernate.Linq;
 
 namespace Lucifer.Ums.Model.Queries
 {
-    public class AllUsersQuery : IDomainQuery<IEnumerable<User>>
+    public class AllUserRolesQuery : IDomainQuery<IEnumerable<UserRole>>
     {
-        public IEnumerable<User> Execute(ISession session)
+        public IEnumerable<UserRole> Execute(ISession session)
         {
-            return null;
-            //return session.Linq<User>();
+            return session.Query<UserRole>();
         }
     }
 }

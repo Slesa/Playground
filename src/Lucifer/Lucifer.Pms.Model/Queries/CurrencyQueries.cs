@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Lucifer.DataAccess;
 using Lucifer.Pms.Model.Entities;
@@ -11,8 +10,7 @@ namespace Lucifer.Pms.Model.Queries
     {
         public IEnumerable<Currency> Execute(ISession session)
         {
-            return null;
-            //return session.Linq<Currency>();
+            return session.Query<Currency>();
         }
     }
 }
