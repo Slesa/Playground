@@ -117,16 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AllUnitTypesView_New" xml:space="preserve">
-    <value>_New</value>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Lucifer Office</value>
   </data>
-  <data name="AllUnitTypesView_New_ToolTip" xml:space="preserve">
-    <value>Insert a new unit type</value>
-  </data>
-  <data name="IcsModuleTitle" xml:space="preserve">
-    <value>Inventory Control</value>
-  </data>
-  <data name="IcsModuleTooltip" xml:space="preserve">
-    <value>Manage your inventories, stocks, ...</value>
+  <data name="AppToolTip" xml:space="preserve">
+    <value>Integration of all Lucifer Modules</value>
   </data>
 </root>

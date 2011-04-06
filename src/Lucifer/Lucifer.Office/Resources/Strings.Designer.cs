@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lucifer.Ics.Editor.Resources {
+namespace Lucifer.Office.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Lucifer.Ics.Editor.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lucifer.Ics.Editor.Resources.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lucifer.Office.Resources.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,20 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _New.
+        ///   Looks up a localized string similar to Lucifer Office.
         /// </summary>
-        public static string AllUnitTypesView_New {
+        public static string AppTitle {
             get {
-                return ResourceManager.GetString("AllUnitTypesView_New", resourceCulture);
+                return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Insert a new unit type.
+        ///   Looks up a localized string similar to Integration of all Lucifer Modules.
         /// </summary>
-        public static string AllUnitTypesView_New_ToolTip {
+        public static string AppToolTip {
             get {
-                return ResourceManager.GetString("AllUnitTypesView_New_ToolTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inventory Control.
-        /// </summary>
-        public static string IcsModuleTitle {
-            get {
-                return ResourceManager.GetString("IcsModuleTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage your inventories, stocks, ....
-        /// </summary>
-        public static string IcsModuleTooltip {
-            get {
-                return ResourceManager.GetString("IcsModuleTooltip", resourceCulture);
+                return ResourceManager.GetString("AppToolTip", resourceCulture);
             }
         }
     }

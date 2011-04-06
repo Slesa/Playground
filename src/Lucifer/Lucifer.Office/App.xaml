@@ -1,0 +1,15 @@
+﻿<Application x:Class="Lucifer.Office.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Lucifer.Office" 
+             xmlns:lc="clr-namespace:Lucifer.Caliburn.Converters;assembly=Lucifer.Caliburn">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:CastleBootstrapper x:Key="bootstrapper" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <lc:ImageSourceConverter x:Key="StringToImageSourceConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
