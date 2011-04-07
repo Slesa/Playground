@@ -38,6 +38,8 @@ namespace Lucifer.Office
             GetModuleRegistrations().ForEach(x => _container.Register(x));
             GetShellRegistrations().ForEach(x => _container.Register(x));
 
+            _container.Install(_container.ResolveAll<IWindsorInstaller>());
+
             base.Configure();
         }
 
@@ -91,6 +93,10 @@ namespace Lucifer.Office
                     .FromAssembly(assembly)
                     .BasedOn<IModule>()
                     .WithService.FromInterface(typeof(IModule));
+                yield return AllTypes
+                    .FromAssembly(assembly)
+                    .BasedOn<IWindsorInstaller>()
+                    .WithService.FromInterface(typeof(IWindsorInstaller));
             }
        
         }

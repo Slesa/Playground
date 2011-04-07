@@ -23,9 +23,5 @@ namespace Lucifer.Ums.Editor.ViewModel
             get { return Strings.UmsModuleTooltip; }
         }
 
-        public IEnumerable<IModule> SubModules
-        {
-            get { throw new NotImplementedException(); }
-        }
     }
 }

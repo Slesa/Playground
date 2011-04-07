@@ -25,7 +25,7 @@ namespace Lucifer.Office.ViewModel
             base.OnInitialize();
             DisplayName = Strings.AppTitle;
 
-            Modules.ToArray().Apply(x => Items.Add(x));
+            Items.AddRange(Modules);
             ActivateItem(Items.FirstOrDefault());
         }
     }

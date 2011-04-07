@@ -95,5 +95,23 @@ namespace Lucifer.Ics.Editor.Resources {
                 return ResourceManager.GetString("IcsModuleTooltip", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit types.
+        /// </summary>
+        public static string UnitTypesModule {
+            get {
+                return ResourceManager.GetString("UnitTypesModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage unit types for grouping units.
+        /// </summary>
+        public static string UnitTypesTooltip {
+            get {
+                return ResourceManager.GetString("UnitTypesTooltip", resourceCulture);
+            }
+        }
     }
 }

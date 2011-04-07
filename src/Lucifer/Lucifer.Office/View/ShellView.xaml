@@ -5,11 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Resources="clr-namespace:Lucifer.Office.Resources" 
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="300" d:DesignWidth="400">
 
-    <UserControl.Resources>
+    <!-- UserControl.Resources>
         <DataTemplate x:Key="ShellNavigationItemTemplate">
             <Grid>
                 <Button ToolTip="{Binding ToolTip}">
@@ -17,17 +16,17 @@
                         <Image Source="{Binding IconFileName}" Width="48" Height="48" />
                         <TextBlock Text="{Binding ModuleName}" />
                     </StackPanel>
-                    <!-- i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <EventTrigger EventName="Click">
                             <cal:ActionMessage MethodName="MenuBtnClick">
                                 <cal:Parameter Value="{Binding}"/>
                             </cal:ActionMessage>
                         </EventTrigger>
-                    </i:Interaction.Triggers -->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
         </DataTemplate>
-    </UserControl.Resources>
+    </UserControl.Resources -->
 
     <DockPanel Margin="20" LastChildFill="True">
 
@@ -45,9 +44,30 @@
                 </TextBlock.Effect>
             </TextBlock>
         </StackPanel>
-        
-        <ListBox x:Name="Items" DockPanel.Dock="Left" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,20,0" Padding="10,10,10,0"
-                 ItemTemplate="{StaticResource ShellNavigationItemTemplate}" />
+       
+        <ItemsControl x:Name="Items" DockPanel.Dock="Left">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!--  -->
+                    <Button Margin="8" ToolTip="{Binding ToolTip}" cal:Message.Attach="ActivateItem($datacontext)">
+                        <!-- Grid Width="100" -->
+                            <StackPanel>
+                                <Image Source="{Binding IconFileName}" Width="48" Height="48" />
+                                <TextBlock Text="{Binding ModuleName}" HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <!-- TextBlock VerticalAlignment="Top" HorizontalAlignment="Right" Margin="2" Text="{Binding Status, Mode=TwoWay}" / -->
+                        <!-- /Grid -->
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!-- ListBox x:Name="Itemsi2" DockPanel.Dock="Left" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,20,0" Padding="10,10,10,0"
+                 ItemTemplate="{StaticResource ShellNavigationItemTemplate}" / -->
         
         <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
         

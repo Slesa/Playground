@@ -23,9 +23,5 @@ namespace Lucifer.Pms.Editor.ViewModel
             get { return Strings.PmsModuleTooltip; }
         }
 
-        public IEnumerable<IModule> SubModules
-        {
-            get { throw new NotImplementedException(); }
-        }
     }
 }

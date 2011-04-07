@@ -1,11 +1,10 @@
-using Caliburn.Micro;
-
-namespace Lucifer.Caliburn
+namespace Lucifer.Ics.Editor
 {
-    public interface IModule : IScreen
+    public interface IIcsModule 
     {
         string ModuleName { get; }
         string IconFileName { get; }
         string ToolTip { get; }
+        
     }
 }

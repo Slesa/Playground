@@ -129,4 +129,10 @@
   <data name="IcsModuleTooltip" xml:space="preserve">
     <value>Manage your inventories, stocks, ...</value>
   </data>
+  <data name="UnitTypesModule" xml:space="preserve">
+    <value>Unit types</value>
+  </data>
+  <data name="UnitTypesTooltip" xml:space="preserve">
+    <value>Manage unit types for grouping units</value>
+  </data>
 </root>
