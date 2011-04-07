@@ -7,6 +7,7 @@ using Lucifer.Office.Resources;
 
 namespace Lucifer.Office.ViewModel
 {
+    // http://devlicio.us/blogs/rob_eisenberg/archive/2010/11/18/caliburn-micro-soup-to-nuts-part-6d-a-billy-hollis-hybrid-shell.aspx
     public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell
     {
         readonly IWindsorContainer _container;

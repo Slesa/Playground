@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Lucifer.Office.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro">
       <HintPath>..\..\..\lib\Caliburn.Micro\wpf\Caliburn.Micro.dll</HintPath>
@@ -59,6 +62,7 @@
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\lib\Caliburn.Micro\wpf\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -129,6 +133,14 @@
       <Project>{414A511E-1974-4B8D-802B-40F1969EA325}</Project>
       <Name>Lucifer.Ics.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Pms.Editor\Lucifer.Pms.Editor.csproj">
+      <Project>{7EA710A1-159B-4D4F-97D9-ACEC012D0D3B}</Project>
+      <Name>Lucifer.Pms.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Ums.Editor\Lucifer.Ums.Editor.csproj">
+      <Project>{60BDCF5E-40B4-4669-B456-E8A4A0BDFEEE}</Project>
+      <Name>Lucifer.Ums.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Lucifer.Office.png" />
@@ -138,6 +150,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Lucifer.Office.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
