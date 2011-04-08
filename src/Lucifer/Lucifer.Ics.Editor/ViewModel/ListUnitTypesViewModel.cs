@@ -13,13 +13,13 @@ namespace Lucifer.Ics.Editor.ViewModel
             CreateAllUnitTypes();
         }
 
-        public ObservableCollection<UnitType> AllUnitTypes;
+        public ObservableCollection<UnitTypeRowViewModel> AllUnitTypes { get; private set; }
 
         void CreateAllUnitTypes()
         {
-            AllUnitTypes = new ObservableCollection<UnitType>
+            AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>
                 {
-                    new UnitType {Name = "Unit type 1"},
+                    new UnitTypeRowViewModel(new UnitType {Name = "Unit type 1"}),
                 };
         }
 

@@ -1,8 +1,8 @@
 using Caliburn.Micro;
 
-namespace Lucifer.Ics.Editor
+namespace Lucifer.Ums.Editor
 {
-    public interface IIcsModule : IScreen
+    public interface IUmsModule : IScreen
     {
         string ModuleName { get; }
         string IconFileName { get; }

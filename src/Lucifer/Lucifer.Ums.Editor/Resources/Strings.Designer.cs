@@ -61,6 +61,105 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current user role.
+        /// </summary>
+        public static string AllUserRolesView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUserRolesView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllUserRolesView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllUserRolesView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new user role.
+        /// </summary>
+        public static string AllUserRolesView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUserRolesView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current user role.
+        /// </summary>
+        public static string AllUserRolesView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUserRolesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit current user.
+        /// </summary>
+        public static string AllUsersView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUsersView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllUsersView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllUsersView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new user.
+        /// </summary>
+        public static string AllUsersView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUsersView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current user.
+        /// </summary>
+        public static string AllUsersView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUsersView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Edit.
+        /// </summary>
+        public static string Button_Edit {
+            get {
+                return ResourceManager.GetString("Button_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _New.
+        /// </summary>
+        public static string Button_New {
+            get {
+                return ResourceManager.GetString("Button_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Remove.
+        /// </summary>
+        public static string Button_Remove {
+            get {
+                return ResourceManager.GetString("Button_Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Management.
         /// </summary>
         public static string UmsModuleTitle {
@@ -75,6 +174,42 @@ namespace Lucifer.Ums.Editor.Resources {
         public static string UmsModuleTooltip {
             get {
                 return ResourceManager.GetString("UmsModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User roles.
+        /// </summary>
+        public static string UserRolesModule {
+            get {
+                return ResourceManager.GetString("UserRolesModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage different user roles.
+        /// </summary>
+        public static string UserRolesTooltip {
+            get {
+                return ResourceManager.GetString("UserRolesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string UsersModule {
+            get {
+                return ResourceManager.GetString("UsersModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage users.
+        /// </summary>
+        public static string UsersTooltip {
+            get {
+                return ResourceManager.GetString("UsersTooltip", resourceCulture);
             }
         }
     }

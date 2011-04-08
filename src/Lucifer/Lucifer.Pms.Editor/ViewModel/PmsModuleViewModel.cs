@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Caliburn.Micro;
 using Castle.Windsor;
 using Lucifer.Caliburn;
@@ -6,12 +7,12 @@ using Lucifer.Pms.Editor.Resources;
 
 namespace Lucifer.Pms.Editor.ViewModel
 {
-    public class PmsModuleViewModel : Screen, IModule
+    public class PmsModuleViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
         readonly IWindsorContainer _container;
 
         IEnumerable<IPmsModule> _pmsModules;
-        public IEnumerable<IPmsModule> Items { get { return _pmsModules ?? (_pmsModules = _container.ResolveAll<IPmsModule>()); } }
+        public IEnumerable<IPmsModule> PmsModules { get { return _pmsModules ?? (_pmsModules = _container.ResolveAll<IPmsModule>()); } }
         
         public PmsModuleViewModel(IWindsorContainer container/*, IEventAggregator eventAggregator*/)
         {
@@ -22,6 +23,9 @@ namespace Lucifer.Pms.Editor.ViewModel
         {
             base.OnInitialize();
             DisplayName = Strings.PmsModuleTitle;
+
+            Items.AddRange(PmsModules);
+            ActivateItem(Items.FirstOrDefault());
         }
 
         public string ModuleName

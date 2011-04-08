@@ -117,10 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AllUserRolesView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current user role</value>
+  </data>
+  <data name="AllUserRolesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllUserRolesView_New_ToolTip" xml:space="preserve">
+    <value>Insert new user role</value>
+  </data>
+  <data name="AllUserRolesView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current user role</value>
+  </data>
+  <data name="AllUsersView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current user</value>
+  </data>
+  <data name="AllUsersView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllUsersView_New_ToolTip" xml:space="preserve">
+    <value>Insert new user</value>
+  </data>
+  <data name="AllUsersView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current user</value>
+  </data>
+  <data name="Button_Edit" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="Button_New" xml:space="preserve">
+    <value>_New</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>_Remove</value>
+  </data>
   <data name="UmsModuleTitle" xml:space="preserve">
     <value>User Management</value>
   </data>
   <data name="UmsModuleTooltip" xml:space="preserve">
     <value>Edit user and their rights</value>
+  </data>
+  <data name="UserRolesModule" xml:space="preserve">
+    <value>User roles</value>
+  </data>
+  <data name="UserRolesTooltip" xml:space="preserve">
+    <value>Manage different user roles</value>
+  </data>
+  <data name="UsersModule" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UsersTooltip" xml:space="preserve">
+    <value>Manage users</value>
   </data>
 </root>

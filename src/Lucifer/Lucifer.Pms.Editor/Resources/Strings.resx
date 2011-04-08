@@ -129,6 +129,18 @@
   <data name="AllCurrenciesView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current currency</value>
   </data>
+  <data name="AllPayformsView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current payform</value>
+  </data>
+  <data name="AllPayformsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllPayformsView_New_ToolTip" xml:space="preserve">
+    <value>Insert new payform</value>
+  </data>
+  <data name="AllPayformsView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current payform</value>
+  </data>
   <data name="Button_Edit" xml:space="preserve">
     <value>_Edit</value>
   </data>
@@ -143,6 +155,12 @@
   </data>
   <data name="CurrenciesTooltip" xml:space="preserve">
     <value>Manage currency informations and rates</value>
+  </data>
+  <data name="PayformsModule" xml:space="preserve">
+    <value>Payforms</value>
+  </data>
+  <data name="PayformsTooltip" xml:space="preserve">
+    <value>Manage payforms and their relation to external modules</value>
   </data>
   <data name="PmsModuleTitle" xml:space="preserve">
     <value>POS Management</value>

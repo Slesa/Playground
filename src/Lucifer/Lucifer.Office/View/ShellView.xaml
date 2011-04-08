@@ -6,6 +6,7 @@
              xmlns:Resources="clr-namespace:Lucifer.Office.Resources" 
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              mc:Ignorable="d" 
+             MinHeight="600" MinWidth="800"
              d:DesignHeight="300" d:DesignWidth="400">
 
     <!-- UserControl.Resources>

@@ -97,6 +97,42 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current payform.
+        /// </summary>
+        public static string AllPayformsView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPayformsView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllPayformsView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllPayformsView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new payform.
+        /// </summary>
+        public static string AllPayformsView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPayformsView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current payform.
+        /// </summary>
+        public static string AllPayformsView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPayformsView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Edit.
         /// </summary>
         public static string Button_Edit {
@@ -138,6 +174,24 @@ namespace Lucifer.Pms.Editor.Resources {
         public static string CurrenciesTooltip {
             get {
                 return ResourceManager.GetString("CurrenciesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payforms.
+        /// </summary>
+        public static string PayformsModule {
+            get {
+                return ResourceManager.GetString("PayformsModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage payforms and their relation to external modules.
+        /// </summary>
+        public static string PayformsTooltip {
+            get {
+                return ResourceManager.GetString("PayformsTooltip", resourceCulture);
             }
         }
         

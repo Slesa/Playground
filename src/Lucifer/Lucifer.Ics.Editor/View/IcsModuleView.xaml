@@ -6,10 +6,10 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <DockPanel Margin="10" LastChildFill="True">
 
-        <ItemsControl x:Name="Items" DockPanel.Dock="Bottom">
+        <ItemsControl x:Name="Items" DockPanel.Dock="Top">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical" />
+                    <StackPanel Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
