@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using Caliburn.Micro;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
@@ -21,6 +22,29 @@ namespace Lucifer.Ics.Editor.ViewModel
                 {
                     new UnitTypeRowViewModel(new UnitType {Name = "Unit type 1"}),
                 };
+        }
+
+        public void Add()
+        {
+
+        }
+
+        public void Edit()
+        {
+        }
+
+        public bool CanEdit()
+        {
+            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; ;
+        }
+
+        public void Remove()
+        {
+        }
+
+        public bool CanRemove()
+        {
+            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; ;
         }
 
         public string ModuleName

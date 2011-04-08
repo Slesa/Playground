@@ -23,13 +23,13 @@
 
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_New}" 
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_New_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_Edit}"
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Edit_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}"
+            <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}"
                     Content="{x:Static Resources:Strings.Button_Remove}"
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Remove_ToolTip}" />
         </StackPanel>
