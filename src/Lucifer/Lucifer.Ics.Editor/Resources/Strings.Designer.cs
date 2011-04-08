@@ -61,11 +61,110 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _New.
+        ///   Looks up a localized string similar to Edit current unit.
         /// </summary>
-        public static string AllUnitTypesView_New {
+        public static string AllUnitsView_Edit_ToolTip {
             get {
-                return ResourceManager.GetString("AllUnitTypesView_New", resourceCulture);
+                return ResourceManager.GetString("AllUnitsView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contraction.
+        /// </summary>
+        public static string AllUnitsView_Header_Contraction {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_Contraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factor.
+        /// </summary>
+        public static string AllUnitsView_Header_FactorToParent {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_FactorToParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllUnitsView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent.
+        /// </summary>
+        public static string AllUnitsView_Header_Parent {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_Parent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchasing.
+        /// </summary>
+        public static string AllUnitsView_Header_Purchasing {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_Purchasing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reciping.
+        /// </summary>
+        public static string AllUnitsView_Header_Reciping {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_Reciping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string AllUnitsView_Header_UnitType {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Header_UnitType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a new unit.
+        /// </summary>
+        public static string AllUnitsView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUnitsView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current unit.
+        /// </summary>
+        public static string AllUnitsView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUnitsView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit current unit type.
+        /// </summary>
+        public static string AllUnitTypesView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUnitTypesView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllUnitTypesView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllUnitTypesView_Header_Name", resourceCulture);
             }
         }
         
@@ -75,6 +174,42 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string AllUnitTypesView_New_ToolTip {
             get {
                 return ResourceManager.GetString("AllUnitTypesView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current unit type.
+        /// </summary>
+        public static string AllUnitTypesView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllUnitTypesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Edit.
+        /// </summary>
+        public static string Button_Edit {
+            get {
+                return ResourceManager.GetString("Button_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _New.
+        /// </summary>
+        public static string Button_New {
+            get {
+                return ResourceManager.GetString("Button_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Remove.
+        /// </summary>
+        public static string Button_Remove {
+            get {
+                return ResourceManager.GetString("Button_Remove", resourceCulture);
             }
         }
         
@@ -93,6 +228,24 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string IcsModuleTooltip {
             get {
                 return ResourceManager.GetString("IcsModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Units.
+        /// </summary>
+        public static string UnitsModule {
+            get {
+                return ResourceManager.GetString("UnitsModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage measurement units.
+        /// </summary>
+        public static string UnitsTooltip {
+            get {
+                return ResourceManager.GetString("UnitsTooltip", resourceCulture);
             }
         }
         

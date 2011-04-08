@@ -61,6 +61,87 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current currency.
+        /// </summary>
+        public static string AllCurrenciesView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllCurrenciesView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new currency.
+        /// </summary>
+        public static string AllCurrenciesView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current currency.
+        /// </summary>
+        public static string AllCurrenciesView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Edit.
+        /// </summary>
+        public static string Button_Edit {
+            get {
+                return ResourceManager.GetString("Button_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _New.
+        /// </summary>
+        public static string Button_New {
+            get {
+                return ResourceManager.GetString("Button_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Remove.
+        /// </summary>
+        public static string Button_Remove {
+            get {
+                return ResourceManager.GetString("Button_Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currencies.
+        /// </summary>
+        public static string CurrenciesModule {
+            get {
+                return ResourceManager.GetString("CurrenciesModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage currency informations and rates.
+        /// </summary>
+        public static string CurrenciesTooltip {
+            get {
+                return ResourceManager.GetString("CurrenciesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to POS Management.
         /// </summary>
         public static string PmsModuleTitle {

@@ -6,8 +6,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <DockPanel Margin="10" LastChildFill="True">
 
-        <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
-
         <ItemsControl x:Name="Items" DockPanel.Dock="Bottom">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -29,5 +27,8 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        
+        <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+
     </DockPanel>
 </UserControl>

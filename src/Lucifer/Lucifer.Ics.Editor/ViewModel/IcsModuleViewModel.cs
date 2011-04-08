@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Caliburn.Micro;
 using Castle.Windsor;
@@ -23,9 +22,6 @@ namespace Lucifer.Ics.Editor.ViewModel
         {
             base.OnInitialize();
             DisplayName = Strings.IcsModuleTitle;
-
-            //Items.AddRange(IcsModules);
-            ////ActivateItem(Items.FirstOrDefault());
         }
 
         public string ModuleName

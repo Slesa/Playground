@@ -1,13 +1,13 @@
-﻿<UserControl x:Class="Lucifer.Ics.Editor.View.ListUnitTypesView"
+﻿<UserControl x:Class="Lucifer.Ics.Editor.View.ListUnitsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" mc:Ignorable="d" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
 
     <UserControl.Resources>
         <!-- Die View Source -->
-        <CollectionViewSource x:Key="UnitTypeList"  Source="{Binding Path=AllUnitTypes}" >
+        <CollectionViewSource x:Key="UnitList"  Source="{Binding Path=AllUnits}" >
             <CollectionViewSource.SortDescriptions>
                 <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
             </CollectionViewSource.SortDescriptions>
@@ -25,26 +25,32 @@
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
             <Button Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_New}" 
-                    ToolTip="{x:Static Resources:Strings.AllUnitTypesView_New_ToolTip}" />
+                    ToolTip="{x:Static Resources:Strings.AllUnitsView_New_ToolTip}" />
             <Button Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_Edit}"
-                    ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Edit_ToolTip}" />
+                    ToolTip="{x:Static Resources:Strings.AllUnitsView_Edit_ToolTip}" />
             <Button Style="{DynamicResource ListViewButtonSkin}"
                     Content="{x:Static Resources:Strings.Button_Remove}"
-                    ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Remove_ToolTip}" />
+                    ToolTip="{x:Static Resources:Strings.AllUnitsView_Remove_ToolTip}" />
         </StackPanel>
 
         <!-- Liste ItemContainerStyle="{StaticResource UnitTypeItemStyle}" -->
-        <ListView x:Name="UnitTypes" Style="{DynamicResource ListViewCollectionSkin}"
-                  DataContext="{StaticResource UnitTypeList}" ItemsSource="{Binding}"> 
-                  
+        <ListView Style="{DynamicResource ListViewCollectionSkin}" DataContext="{StaticResource UnitList}"
+                  ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>
                     <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->
-                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitTypesView_Header_Name}" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_Name}" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_Contraction}" DisplayMemberBinding="{Binding Path=Contraction}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_Parent}" DisplayMemberBinding="{Binding Path=Parent.Name}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_UnitType}" DisplayMemberBinding="{Binding Path=UnitType.Name}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_FactorToParent}" DisplayMemberBinding="{Binding Path=FactorToParent}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_Purchasing}" DisplayMemberBinding="{Binding Path=Purchasing}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUnitsView_Header_Reciping}" DisplayMemberBinding="{Binding Path=Reciping}" />
                 </GridView>
             </ListView.View>
 
         </ListView>
     </DockPanel>
+            
 </UserControl>

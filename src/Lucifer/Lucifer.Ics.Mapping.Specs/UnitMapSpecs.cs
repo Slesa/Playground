@@ -22,7 +22,9 @@ namespace Lucifer.Ics.Mapping.Specs
                 .CheckReference(c => c.UnitType, unitType)
                 .CheckReference(c => c.Parent, parent)
                 .CheckProperty(c => c.FactorToParent, 1.42m)
-                .CheckProperty(c => c.Version, 1);
+                .CheckProperty(c => c.Version, 1)
+                .CheckProperty(c => c.Purchasing, true)
+                .CheckProperty(c => c.Reciping, true);
         };
 
         It should_be_verified = () => _check.VerifyTheMappings();

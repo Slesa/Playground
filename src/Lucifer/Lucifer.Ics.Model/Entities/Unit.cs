@@ -12,6 +12,8 @@ namespace Lucifer.Ics.Model.Entities
         public virtual Unit Parent { get; set; }
         public virtual UnitType UnitType { get; set; }
         public virtual decimal FactorToParent { get; set; }
+        public virtual bool Purchasing { get; set; }
+        public virtual bool Reciping { get; set; }
 
         public virtual IEnumerable<Unit> Children
         {

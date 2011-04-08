@@ -57,10 +57,14 @@
     </Compile>
     <Compile Include="ViewModel\IcsModuleViewModel.cs" />
     <Compile Include="IIcsModule.cs" />
+    <Compile Include="ViewModel\ListUnitsViewModel.cs" />
     <Compile Include="ViewModel\ListUnitTypesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IcsModuleView.xaml.cs">
       <DependentUpon>IcsModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListUnitsView.xaml.cs">
+      <DependentUpon>ListUnitsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListUnitTypesView.xaml.cs">
       <DependentUpon>ListUnitTypesView.xaml</DependentUpon>
@@ -77,6 +81,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ListUnitsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ListUnitTypesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,9 +98,23 @@
       <Project>{C3D42136-0EB5-452B-827A-84FCEF880273}</Project>
       <Name>Lucifer.Caliburn</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lucifer.DataAccess\Lucifer.DataAccess.csproj">
+      <Project>{78C534DA-A9F9-4E79-8790-70AB5FCA39D7}</Project>
+      <Name>Lucifer.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Ics.Model\Lucifer.Ics.Model.csproj">
+      <Project>{E9C92FF1-5366-4FAF-9E3A-008EB06E577B}</Project>
+      <Name>Lucifer.Ics.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UnitType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Unit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

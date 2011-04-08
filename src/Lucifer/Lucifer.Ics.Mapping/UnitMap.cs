@@ -13,6 +13,8 @@ namespace Lucifer.Ics.Mapping
             References(d => d.UnitType).Not.Nullable();
             References(d => d.Parent);
             Map(d => d.FactorToParent);
+            Map(d => d.Purchasing);
+            Map(d => d.Reciping);
 
             HasMany(d => d.Children)
                 .Access.CamelCaseField(Prefix.Underscore)
