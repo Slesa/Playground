@@ -13,13 +13,13 @@ namespace Lucifer.Pms.Editor.ViewModel
             CreateAllCurrencies();
         }
 
-        public ObservableCollection<Currency> AllCurrencies;
+        public ObservableCollection<CurrencyRowViewModel> AllCurrencies { get; private set; }
 
         void CreateAllCurrencies()
         {
-            AllCurrencies = new ObservableCollection<Currency>
+            AllCurrencies = new ObservableCollection<CurrencyRowViewModel>
                 {
-                    new Currency {Name = "Currency 1"},
+                    new CurrencyRowViewModel(new Currency {Name = "Currency 1"}),
                 };
         }
 

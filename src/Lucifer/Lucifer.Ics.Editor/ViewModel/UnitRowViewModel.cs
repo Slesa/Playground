@@ -1,28 +1,15 @@
-using Caliburn.Micro;
+using Lucifer.Editor;
 using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
-    public class UnitRowViewModel : PropertyChangedBase
+    public class UnitRowViewModel : SelectableRowViewModelBase
     {
         readonly Unit _unit;
 
         public UnitRowViewModel(Unit unit)
         {
             _unit = unit;
-        }
-
-        bool _isSelected;
-        public bool IsSelected
-        {
-            get { return _isSelected; }
-            set
-            {
-                if (value == _isSelected)
-                    return;
-                _isSelected = value;
-                NotifyOfPropertyChange(()=>IsSelected);
-            }
         }
 
         public int Id { get { return _unit.Id; } }

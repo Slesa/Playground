@@ -60,6 +60,8 @@
     <Compile Include="ViewModel\ListUsersViewModel.cs" />
     <Compile Include="ViewModel\UmsModuleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\UserRoleRowViewModel.cs" />
+    <Compile Include="ViewModel\UserRowViewModel.cs" />
     <Compile Include="View\ListUserRolesView.xaml.cs">
       <DependentUpon>ListUserRolesView.xaml</DependentUpon>
     </Compile>
@@ -90,6 +92,10 @@
     <ProjectReference Include="..\Lucifer.DataAccess\Lucifer.DataAccess.csproj">
       <Project>{78C534DA-A9F9-4E79-8790-70AB5FCA39D7}</Project>
       <Name>Lucifer.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Editor\Lucifer.Editor.csproj">
+      <Project>{1CC60306-C505-4AAA-89A0-8F9EE13CF5A8}</Project>
+      <Name>Lucifer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lucifer.Ums.Model\Lucifer.Ums.Model.csproj">
       <Project>{D4204F2F-BDA1-4D16-BCE8-00A7954C42DD}</Project>

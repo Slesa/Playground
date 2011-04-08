@@ -104,6 +104,10 @@
       <Project>{78C534DA-A9F9-4E79-8790-70AB5FCA39D7}</Project>
       <Name>Lucifer.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Editor\Lucifer.Editor.csproj">
+      <Project>{1CC60306-C505-4AAA-89A0-8F9EE13CF5A8}</Project>
+      <Name>Lucifer.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lucifer.Ics.Model\Lucifer.Ics.Model.csproj">
       <Project>{E9C92FF1-5366-4FAF-9E3A-008EB06E577B}</Project>
       <Name>Lucifer.Ics.Model</Name>

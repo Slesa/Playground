@@ -14,13 +14,13 @@ namespace Lucifer.Ums.Editor.ViewModel
             CreateAllUserRoles();
         }
 
-        public ObservableCollection<User> AllUserRoles;
+        public ObservableCollection<UserRoleRowViewModel> AllUserRoles { get; private set; }
 
         void CreateAllUserRoles()
         {
-            AllUserRoles = new ObservableCollection<User>
+            AllUserRoles = new ObservableCollection<UserRoleRowViewModel>
                 {
-                    new User {Name = "User Role 1"},
+                    new UserRoleRowViewModel(new UserRole {Name = "User Role 1"}),
                 };
         }
 

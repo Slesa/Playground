@@ -13,13 +13,13 @@ namespace Lucifer.Pms.Editor.ViewModel
             CreateAllPayforms();
         }
 
-        public ObservableCollection<Payform> AllPayforms;
+        public ObservableCollection<PayformRowViewModel> AllPayforms { get; private set; }
 
         void CreateAllPayforms()
         {
-            AllPayforms = new ObservableCollection<Payform>
+            AllPayforms = new ObservableCollection<PayformRowViewModel>
                 {
-                    new Payform() {Name = "Payform 1"},
+                    new PayformRowViewModel(new Payform {Name = "Payform 1"}),
                 };
         }
 
