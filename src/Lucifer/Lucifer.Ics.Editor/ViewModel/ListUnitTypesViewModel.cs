@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Caliburn.Micro;
 using Lucifer.Ics.Editor.Resources;
@@ -24,9 +25,19 @@ namespace Lucifer.Ics.Editor.ViewModel
                 };
         }
 
+        public bool ItemSelected
+        {
+            get { return AllUnitTypes.Where(unitType => unitType.IsSelected).Count() == 1 ? true : false; }
+        }
+
+        public bool ItemsSelected
+        {
+            get { return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; }
+        }
+
         public void Add()
         {
-
+            ScreenManager.ActivateItem(new EditUnitTypeViewModel());
         }
 
         public void Edit()
@@ -60,6 +71,12 @@ namespace Lucifer.Ics.Editor.ViewModel
         public string ToolTip
         {
             get { return Strings.UnitTypesTooltip; }
+        }
+
+        public Conductor<IScreen>.Collection.OneActive ScreenManager
+        {
+            get;
+            set;
         }
     }
 }

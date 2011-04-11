@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using Caliburn.Micro;
 using Lucifer.Ics.Editor.Resources;
@@ -36,6 +37,12 @@ namespace Lucifer.Ics.Editor.ViewModel
         public string ToolTip
         {
             get { return Strings.UnitsTooltip; }
+        }
+
+        public Conductor<IScreen>.Collection.OneActive ScreenManager
+        {
+            get;
+            set;
         }
     }
 }

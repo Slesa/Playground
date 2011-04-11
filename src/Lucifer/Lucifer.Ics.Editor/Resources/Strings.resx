@@ -186,4 +186,13 @@
   <data name="UnitTypesTooltip" xml:space="preserve">
     <value>Manage unit types for grouping units</value>
   </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EditUnitView_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
 </root>

@@ -187,6 +187,15 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Button_Cancel {
+            get {
+                return ResourceManager.GetString("Button_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Edit.
         /// </summary>
         public static string Button_Edit {
@@ -210,6 +219,24 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string Button_Remove {
             get {
                 return ResourceManager.GetString("Button_Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Button_Save {
+            get {
+                return ResourceManager.GetString("Button_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        public static string EditUnitView_Name {
+            get {
+                return ResourceManager.GetString("EditUnitView_Name", resourceCulture);
             }
         }
         

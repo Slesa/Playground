@@ -50,11 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IcsWindsorInstaller.cs" />
+    <Compile Include="Model\UnitTypeModel.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\EditUnitTypeViewModel.cs" />
     <Compile Include="ViewModel\IcsModuleViewModel.cs" />
     <Compile Include="IIcsModule.cs" />
     <Compile Include="ViewModel\ListUnitsViewModel.cs" />
@@ -62,6 +64,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\UnitRowViewModel.cs" />
     <Compile Include="ViewModel\UnitTypeRowViewModel.cs" />
+    <Compile Include="View\EditUnitTypeView.xaml.cs">
+      <DependentUpon>EditUnitTypeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\IcsModuleView.xaml.cs">
       <DependentUpon>IcsModuleView.xaml</DependentUpon>
     </Compile>
@@ -79,6 +84,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\EditUnitTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\IcsModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -112,4 +112,64 @@
         <Setter Property="AlternationCount" Value="2" />
     </Style>
 
+
+    <!-- ************************************** -->
+    <!-- *** Dialog: Einzelansicht der Elemente -->
+    <!-- ************************************** -->
+
+    <!-- Das Dockpanel, das den gesamten Dialog einnimmt -->
+    <Style x:Key="EditDialogDockPanelSkin" TargetType="DockPanel">
+        <Setter Property="Background" Value="LightBlue" />
+        <Setter Property="Height" Value="Auto" />
+    </Style>
+
+    <!-- Das Stackpanel, das die untere Buttonleiste aufnimmt -->
+    <Style x:Key="EditDialogButtonStackSkin" TargetType="StackPanel">
+        <Setter Property="DockPanel.Dock" Value="Bottom" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Height" Value="Auto" />
+    </Style>
+
+    <!-- Die Buttons in der unteren Buttonleiste -->
+    <Style x:Key="EditDialogButtonSkin" TargetType="Button" BasedOn="{StaticResource ButtonSkin}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="MinHeight" Value="25" />
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <!-- Der Hilfe-Button in der unteren Buttonleiste -->
+    <Style x:Key="EditDialogHelpButtonSkin" TargetType="Button" BasedOn="{StaticResource EditDialogButtonSkin}">
+        <Setter Property="Margin" Value="5,5,25,5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <!-- Das Grid, das die Eingabelemente aufnimmt -->
+    <Style x:Key="EditDialogGridSkin" TargetType="Grid">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="LightYellow" />
+    </Style>
+
+    <!-- Eingabebox innerhalb eines Dialoges -->
+    <Style x:Key="EditDialogTextBoxSkin" TargetType="TextBox" BasedOn="{StaticResource TextBoxSkin}">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+
+    <!-- Combobox innerhalb eines Dialoges -->
+    <Style x:Key="EditDialogComboBoxSkin" TargetType="ComboBox" BasedOn="{StaticResource ComboBoxSkin}">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+
+    <DataTemplate DataType="{x:Type ValidationError}">
+        <TextBlock FontStyle="Italic" Foreground="Red" HorizontalAlignment="Right" Margin="0,1" Text="{Binding Path=ErrorContent}" />
+    </DataTemplate>
+
+    <Style x:Key="EditDialogErrorPresenterSkin" TargetType="ContentPresenter">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+
 </ResourceDictionary>

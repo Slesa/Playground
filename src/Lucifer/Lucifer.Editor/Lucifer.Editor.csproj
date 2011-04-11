@@ -39,8 +39,17 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EachExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableRowViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button_cancel.png" />
+    <Resource Include="Resources\button_help.png" />
+    <Resource Include="Resources\button_ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
