@@ -6,7 +6,7 @@
              xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" 
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
-    
+
     <DockPanel LastChildFill="True" Style="{DynamicResource EditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource EditDialogButtonStackSkin}" >
             <Button Style="{DynamicResource EditDialogButtonSkin}" Command="{Binding Path=SaveCommand}" IsDefault="True">
@@ -15,7 +15,7 @@
                     <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Resources:Strings.Button_Save}" />
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource EditDialogButtonSkin}" Command="{Binding Path=CloseCommand}" IsCancel="True">
+            <Button x:Name="Close" Style="{DynamicResource EditDialogButtonSkin}" IsCancel="True">
                 <StackPanel Orientation="Horizontal" Width="Auto">
                     <Image Width="22" Height="22" Source="/Lucifer.Editor;component/Resources/button_cancel.png" />
                     <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Resources:Strings.Button_Cancel}" />
@@ -23,7 +23,9 @@
             </Button>
         </StackPanel>
 
-    <Grid Style="{DynamicResource EditDialogGridSkin}">
+        <TextBlock DockPanel.Dock="Top" x:Name="Title" FontSize="20" Text="{x:Static Resources:Strings.EditUnitTypeView_TitleEdit}"/>
+
+        <Grid Style="{DynamicResource EditDialogGridSkin}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -40,7 +42,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Row="1" Style="{DynamicResource LabelSkin}" 
-                   Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditUnitView_Name}" />
+                   Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditUnitTypeView_Name}" />
             <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource DialogTextBoxSkin}" 
                    Text="{Binding Path=Name, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
                    Validation.ErrorTemplate="{x:Null}" />

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Caliburn.Micro;
 using Lucifer.Ics.Editor.Resources;
@@ -9,8 +8,11 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class ListUnitTypesViewModel: Screen, IIcsModule
     {
-        public ListUnitTypesViewModel()
+        readonly IWindowManager _windowManager;
+
+        public ListUnitTypesViewModel(IWindowManager windowManager)
         {
+            _windowManager = windowManager;
             DisplayName = Strings.UnitTypesModule;
             CreateAllUnitTypes();
         }
@@ -21,7 +23,10 @@ namespace Lucifer.Ics.Editor.ViewModel
         {
             AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>
                 {
-                    new UnitTypeRowViewModel(new UnitType {Name = "Unit type 1"}),
+                    new UnitTypeRowViewModel(new UnitType {Name = "Length"}),
+                    new UnitTypeRowViewModel(new UnitType {Name = "Weight"}),
+                    new UnitTypeRowViewModel(new UnitType {Name = "Area"}),
+                    new UnitTypeRowViewModel(new UnitType {Name = "Pressure"}),
                 };
         }
 
@@ -37,6 +42,7 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public void Add()
         {
+            //_windowManager.ShowDialog(new EditUnitTypeViewModel());
             ScreenManager.ActivateItem(new EditUnitTypeViewModel());
         }
 
@@ -46,7 +52,7 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public bool CanEdit()
         {
-            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; ;
+            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; 
         }
 
         public void Remove()
@@ -55,7 +61,7 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public bool CanRemove()
         {
-            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; ;
+            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; 
         }
 
         public string ModuleName
@@ -78,5 +84,6 @@ namespace Lucifer.Ics.Editor.ViewModel
             get;
             set;
         }
-    }
+
+   }
 }

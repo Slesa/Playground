@@ -192,7 +192,16 @@
   <data name="Button_Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="EditUnitView_Name" xml:space="preserve">
+  <data name="EditUnitTypeView_Name" xml:space="preserve">
     <value>Name:</value>
+  </data>
+  <data name="EditUnitTypeView_TitleEdit" xml:space="preserve">
+    <value>Edit unit type</value>
+  </data>
+  <data name="EditUnitTypeView_TitleNew" xml:space="preserve">
+    <value>Add new unit type...</value>
+  </data>
+  <data name="EditUnitTypeView_NewUnitType" xml:space="preserve">
+    <value>&lt;New unit type&gt;</value>
   </data>
 </root>

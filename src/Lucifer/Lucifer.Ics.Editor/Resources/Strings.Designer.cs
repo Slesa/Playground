@@ -234,9 +234,36 @@ namespace Lucifer.Ics.Editor.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Name:.
         /// </summary>
-        public static string EditUnitView_Name {
+        public static string EditUnitTypeView_Name {
             get {
-                return ResourceManager.GetString("EditUnitView_Name", resourceCulture);
+                return ResourceManager.GetString("EditUnitTypeView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New unit type&gt;.
+        /// </summary>
+        public static string EditUnitTypeView_NewUnitType {
+            get {
+                return ResourceManager.GetString("EditUnitTypeView_NewUnitType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit unit type.
+        /// </summary>
+        public static string EditUnitTypeView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditUnitTypeView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new unit type....
+        /// </summary>
+        public static string EditUnitTypeView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditUnitTypeView_TitleNew", resourceCulture);
             }
         }
         

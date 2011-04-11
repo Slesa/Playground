@@ -13,9 +13,9 @@
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
 
-        <!-- Style x:Key="UnitTypeItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListCollectionStyle}">
-            <Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
-        </Style -->
+        <Style x:Key="UnitTypeListItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewCollectionStyle}">
+            <!-- Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+        </Style>
 
     </UserControl.Resources>
 
@@ -37,8 +37,8 @@
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Remove_ToolTip}" />
         </StackPanel>
 
-        <!-- Liste ItemContainerStyle="{StaticResource UnitTypeItemStyle}" -->
-        <ListView x:Name="UnitTypes" Style="{DynamicResource ListViewCollectionSkin}"
+        <!-- Liste -->
+        <ListView x:Name="UnitTypes" Style="{DynamicResource ListViewCollectionSkin}" ItemContainerStyle="{StaticResource UnitTypeListItemStyle}" 
                   DataContext="{StaticResource UnitTypeList}" ItemsSource="{Binding}"> 
                   
             <ListView.View>
