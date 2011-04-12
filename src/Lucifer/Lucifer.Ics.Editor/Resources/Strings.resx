@@ -204,4 +204,58 @@
   <data name="EditUnitTypeView_NewUnitType" xml:space="preserve">
     <value>&lt;New unit type&gt;</value>
   </data>
+  <data name="UnitTypeModel_Name_missing" xml:space="preserve">
+    <value>Name of the unit type is missing</value>
+  </data>
+  <data name="EditUnitView_Contraction" xml:space="preserve">
+    <value>_Contraction:</value>
+  </data>
+  <data name="EditUnitView_FactorToParent" xml:space="preserve">
+    <value>_Factor to parent:</value>
+  </data>
+  <data name="EditUnitView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditUnitView_NewUnit" xml:space="preserve">
+    <value>&lt;New unit&gt;</value>
+  </data>
+  <data name="EditUnitView_Parent" xml:space="preserve">
+    <value>_Parent:</value>
+  </data>
+  <data name="EditUnitView_Purchasing" xml:space="preserve">
+    <value>Used for purchasing</value>
+  </data>
+  <data name="EditUnitView_Reciping" xml:space="preserve">
+    <value>Used for reciping</value>
+  </data>
+  <data name="EditUnitView_TitleEdit" xml:space="preserve">
+    <value>Edit unit</value>
+  </data>
+  <data name="EditUnitView_TitleNew" xml:space="preserve">
+    <value>Add new unit...</value>
+  </data>
+  <data name="EditUnitView_UnitType" xml:space="preserve">
+    <value>Unit _type:</value>
+  </data>
+  <data name="UnitModel_Contraction_missing" xml:space="preserve">
+    <value>Contraction of the unit is missing</value>
+  </data>
+  <data name="UnitModel_FactorToParent_invalid" xml:space="preserve">
+    <value>Factor to parent is invalid</value>
+  </data>
+  <data name="UnitModel_FactorToParent_missing" xml:space="preserve">
+    <value>Factor to parent is missing</value>
+  </data>
+  <data name="UnitModel_InvalidParentType" xml:space="preserve">
+    <value>Parent's type is invalid</value>
+  </data>
+  <data name="UnitModel_Name_missing" xml:space="preserve">
+    <value>Name of the unit is missing</value>
+  </data>
+  <data name="UnitModel_Parent_recursion_detected" xml:space="preserve">
+    <value>Recursion in parent of this unit detected</value>
+  </data>
+  <data name="UnitModel_UnitType_missing" xml:space="preserve">
+    <value>Unit type of the unit is missing</value>
+  </data>
 </root>

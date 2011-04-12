@@ -23,7 +23,7 @@
 
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_New}" 
                     ToolTip="{x:Static Resources:Strings.AllUnitsView_New_ToolTip}" />
             <Button Style="{DynamicResource ListViewButtonSkin}" 

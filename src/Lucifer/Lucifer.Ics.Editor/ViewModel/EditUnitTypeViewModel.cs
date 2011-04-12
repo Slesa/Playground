@@ -21,8 +21,8 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public string Title { get; private set; }
 
-        public string Name 
-        { 
+        public string Name
+        {
             get { return _unitTypeModel.Name; }
             set
             {
@@ -32,15 +32,14 @@ namespace Lucifer.Ics.Editor.ViewModel
             }
         }
 
+    #region Validation
+
         public string this[string propertyName]
         {
             get
             {
                 var error = (_unitTypeModel as IDataErrorInfo)[propertyName];
-                // Dirty the commands registered with CommandManager,
-                // such as our Save command, so that they are queried
-                // to see if they can execute now.
-                CommandManager.InvalidateRequerySuggested();
+                //CommandManager.InvalidateRequerySuggested();
                 return error;
             }
         }
@@ -50,17 +49,25 @@ namespace Lucifer.Ics.Editor.ViewModel
             get { return (_unitTypeModel as IDataErrorInfo).Error; }
         }
 
+    #endregion
+
         bool _isReadOnly;
         public bool IsReadOnly
         {
             get { return _isReadOnly; }
-            set 
-            { 
+            set
+            {
                 _isReadOnly = value;
                 NotifyOfPropertyChange(() => IsReadOnly);
                 NotifyOfPropertyChange(() => CanEdit);
                 NotifyOfPropertyChange(() => CanCancel);
             }
+        }
+
+        protected override void OnDeactivate(bool isClosing)
+        {
+            if (isClosing && CanCancel)
+                Cancel();
         }
 
         public bool CanEdit { get { return IsReadOnly; } }
@@ -72,19 +79,27 @@ namespace Lucifer.Ics.Editor.ViewModel
             IsReadOnly = true;
         }
 
+        #region Button commands
+
+        public void Save()
+        {
+
+        }
+
         public void Close()
         {
             TryClose();
         }
-        protected override void OnDeactivate(bool isClosing)
-        {
-            if (isClosing && CanCancel)
-                Cancel();
-        }
+
+        #endregion
+
+        #region Module information
 
         public string IconFileName
         {
             get { return @"/Lucifer.Ics.Editor;component/Resources/UnitType.png"; }
         }
+
+        #endregion
     }
 }

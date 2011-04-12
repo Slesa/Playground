@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel;
+using Lucifer.Editor.Validators;
+using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.Model
@@ -24,10 +26,17 @@ namespace Lucifer.Ics.Editor.Model
             get { return _unitType.Name; }
             set { _unitType.Name = value; }
         }
+
+        #region IDataErrorInfo Members
+
         public string this[string columnName]
         {
             get { return GetValidationError(columnName); }
         }
+
+        public string Error { get { return null; } }
+
+        #endregion
 
         static readonly string[] ValidatedProperties =
             {
@@ -50,12 +59,8 @@ namespace Lucifer.Ics.Editor.Model
 
         string ValidateName()
         {
-            return null;
+            return EditValidators.IsStringMissing(Name) ? Strings.UnitTypeModel_Name_missing : null;
         }
 
-        public string Error
-        {
-            get { return null; }
-        }
     }
 }

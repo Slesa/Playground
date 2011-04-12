@@ -268,6 +268,96 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Contraction:.
+        /// </summary>
+        public static string EditUnitView_Contraction {
+            get {
+                return ResourceManager.GetString("EditUnitView_Contraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Factor to parent:.
+        /// </summary>
+        public static string EditUnitView_FactorToParent {
+            get {
+                return ResourceManager.GetString("EditUnitView_FactorToParent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditUnitView_Name {
+            get {
+                return ResourceManager.GetString("EditUnitView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New unit&gt;.
+        /// </summary>
+        public static string EditUnitView_NewUnit {
+            get {
+                return ResourceManager.GetString("EditUnitView_NewUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Parent:.
+        /// </summary>
+        public static string EditUnitView_Parent {
+            get {
+                return ResourceManager.GetString("EditUnitView_Parent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used for purchasing.
+        /// </summary>
+        public static string EditUnitView_Purchasing {
+            get {
+                return ResourceManager.GetString("EditUnitView_Purchasing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used for reciping.
+        /// </summary>
+        public static string EditUnitView_Reciping {
+            get {
+                return ResourceManager.GetString("EditUnitView_Reciping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit unit.
+        /// </summary>
+        public static string EditUnitView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditUnitView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new unit....
+        /// </summary>
+        public static string EditUnitView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditUnitView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit _type:.
+        /// </summary>
+        public static string EditUnitView_UnitType {
+            get {
+                return ResourceManager.GetString("EditUnitView_UnitType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inventory Control.
         /// </summary>
         public static string IcsModuleTitle {
@@ -286,6 +376,69 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contraction of the unit is missing.
+        /// </summary>
+        public static string UnitModel_Contraction_missing {
+            get {
+                return ResourceManager.GetString("UnitModel_Contraction_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factor to parent is invalid.
+        /// </summary>
+        public static string UnitModel_FactorToParent_invalid {
+            get {
+                return ResourceManager.GetString("UnitModel_FactorToParent_invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factor to parent is missing.
+        /// </summary>
+        public static string UnitModel_FactorToParent_missing {
+            get {
+                return ResourceManager.GetString("UnitModel_FactorToParent_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent&apos;s type is invalid.
+        /// </summary>
+        public static string UnitModel_InvalidParentType {
+            get {
+                return ResourceManager.GetString("UnitModel_InvalidParentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the unit is missing.
+        /// </summary>
+        public static string UnitModel_Name_missing {
+            get {
+                return ResourceManager.GetString("UnitModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recursion in parent of this unit detected.
+        /// </summary>
+        public static string UnitModel_Parent_recursion_detected {
+            get {
+                return ResourceManager.GetString("UnitModel_Parent_recursion_detected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit type of the unit is missing.
+        /// </summary>
+        public static string UnitModel_UnitType_missing {
+            get {
+                return ResourceManager.GetString("UnitModel_UnitType_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Units.
         /// </summary>
         public static string UnitsModule {
@@ -300,6 +453,15 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string UnitsTooltip {
             get {
                 return ResourceManager.GetString("UnitsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the unit type is missing.
+        /// </summary>
+        public static string UnitTypeModel_Name_missing {
+            get {
+                return ResourceManager.GetString("UnitTypeModel_Name_missing", resourceCulture);
             }
         }
         

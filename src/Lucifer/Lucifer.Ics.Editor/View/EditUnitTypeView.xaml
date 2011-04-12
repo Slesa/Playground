@@ -9,7 +9,7 @@
 
     <DockPanel LastChildFill="True" Style="{DynamicResource EditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource EditDialogButtonStackSkin}" >
-            <Button Style="{DynamicResource EditDialogButtonSkin}" Command="{Binding Path=SaveCommand}" IsDefault="True">
+            <Button x:Name="Save" Style="{DynamicResource EditDialogButtonSkin}" IsDefault="True">
                 <StackPanel Orientation="Horizontal" Width="Auto">
                     <Image Width="22" Height="22" Source="/Lucifer.Editor;component/Resources/button_ok.png" />
                     <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Resources:Strings.Button_Save}" />
@@ -41,12 +41,13 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
+            <!-- Name -->
             <Label Grid.Row="1" Style="{DynamicResource LabelSkin}" 
                    Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditUnitTypeView_Name}" />
-            <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource DialogTextBoxSkin}" 
+            <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource EditDialogTextBoxSkin}" 
                    Text="{Binding Path=Name, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
                    Validation.ErrorTemplate="{x:Null}" />
-            <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}"
+            <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
                    Content="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}" />
         </Grid>
     </DockPanel>

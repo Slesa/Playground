@@ -24,6 +24,12 @@ namespace Lucifer.Ics.Editor.ViewModel
                 };
         }
 
+        public void Add()
+        {
+            //_windowManager.ShowDialog(new EditUnitTypeViewModel());
+            ScreenManager.ActivateItem(new EditUnitViewModel());
+        }
+
         public string ModuleName
         {
             get { return Strings.UnitsModule; }
