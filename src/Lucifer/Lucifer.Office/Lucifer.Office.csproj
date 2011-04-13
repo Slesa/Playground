@@ -138,9 +138,17 @@
       <Project>{414A511E-1974-4B8D-802B-40F1969EA325}</Project>
       <Name>Lucifer.Ics.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Ics.Mapping\Lucifer.Ics.Mapping.csproj">
+      <Project>{7FC73472-D8E5-4823-AE2B-E74030CAFAB1}</Project>
+      <Name>Lucifer.Ics.Mapping</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lucifer.Pms.Editor\Lucifer.Pms.Editor.csproj">
       <Project>{7EA710A1-159B-4D4F-97D9-ACEC012D0D3B}</Project>
       <Name>Lucifer.Pms.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Pms.Mapping\Lucifer.Pms.Mapping.csproj">
+      <Project>{37E4D1B4-7B2E-43B4-8E3E-CC53EF59A703}</Project>
+      <Name>Lucifer.Pms.Mapping</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lucifer.Theme\Lucifer.Theme.csproj">
       <Project>{91BCA871-C76C-4AED-B29A-E06E91A92D40}</Project>
@@ -149,6 +157,10 @@
     <ProjectReference Include="..\Lucifer.Ums.Editor\Lucifer.Ums.Editor.csproj">
       <Project>{60BDCF5E-40B4-4669-B456-E8A4A0BDFEEE}</Project>
       <Name>Lucifer.Ums.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Ums.Mapping\Lucifer.Ums.Mapping.csproj">
+      <Project>{11554C4C-44C4-4D18-BBA0-A0715C192019}</Project>
+      <Name>Lucifer.Ums.Mapping</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

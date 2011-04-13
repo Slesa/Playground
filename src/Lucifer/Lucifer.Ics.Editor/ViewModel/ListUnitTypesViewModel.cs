@@ -3,7 +3,6 @@ using System.Linq;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Ics.Editor.Resources;
-using Lucifer.Ics.Model.Entities;
 using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel

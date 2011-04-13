@@ -1,15 +1,19 @@
-using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
 using Lucifer.Ums.Editor.Resources;
-using Lucifer.Ums.Model.Entities;
+using Lucifer.Ums.Model.Queries;
 
 namespace Lucifer.Ums.Editor.ViewModel
 {
     public class ListUserRolesViewModel : Screen, IUmsModule
     {
-        public ListUserRolesViewModel()
+        readonly IDbConversation _dbConversation;
+
+        public ListUserRolesViewModel(IDbConversation dbConversation)
         {
+            _dbConversation = dbConversation;
             DisplayName = Strings.UserRolesModule;
             CreateAllUserRoles();
         }
@@ -18,10 +22,13 @@ namespace Lucifer.Ums.Editor.ViewModel
 
         void CreateAllUserRoles()
         {
-            AllUserRoles = new ObservableCollection<UserRoleRowViewModel>
+            AllUserRoles = new ObservableCollection<UserRoleRowViewModel>(_dbConversation
+                .Query(new AllUserRolesQuery())
+                .Select(x=>new UserRoleRowViewModel(x)));
+            /*AllUserRoles = new ObservableCollection<UserRoleRowViewModel>
                 {
                     new UserRoleRowViewModel(new UserRole {Name = "User Role 1"}),
-                };
+                };*/
         }
 
         public string ModuleName

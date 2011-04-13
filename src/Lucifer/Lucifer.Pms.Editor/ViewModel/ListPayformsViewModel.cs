@@ -1,14 +1,19 @@
 using System.Collections.ObjectModel;
+using System.Linq;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
 using Lucifer.Pms.Editor.Resources;
-using Lucifer.Pms.Model.Entities;
+using Lucifer.Pms.Model.Queries;
 
 namespace Lucifer.Pms.Editor.ViewModel
 {
     public class ListPayformsViewModel : Screen, IPmsModule
     {
-        public ListPayformsViewModel()
+        readonly IDbConversation _dbConversation;
+
+        public ListPayformsViewModel(IDbConversation dbConversation)
         {
+            _dbConversation = dbConversation;
             DisplayName = Strings.PayformsModule;
             CreateAllPayforms();
         }
@@ -17,10 +22,13 @@ namespace Lucifer.Pms.Editor.ViewModel
 
         void CreateAllPayforms()
         {
-            AllPayforms = new ObservableCollection<PayformRowViewModel>
+            AllPayforms = new ObservableCollection<PayformRowViewModel>(_dbConversation
+                .Query(new AllPayformsQuery())
+                .Select(x=>new PayformRowViewModel(x)));
+            /*AllPayforms = new ObservableCollection<PayformRowViewModel>
                 {
                     new PayformRowViewModel(new Payform {Name = "Payform 1"}),
-                };
+                };*/
         }
 
         public string ModuleName

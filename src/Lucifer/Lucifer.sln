@@ -28,6 +28,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucifer.Caliburn", "Lucifer.Caliburn\Lucifer.Caliburn.csproj", "{C3D42136-0EB5-452B-827A-84FCEF880273}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucifer.Office", "Lucifer.Office\Lucifer.Office.csproj", "{5D7DE69D-A6B4-4C67-B0FF-7937311BBBA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7FC73472-D8E5-4823-AE2B-E74030CAFAB1} = {7FC73472-D8E5-4823-AE2B-E74030CAFAB1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucifer.Pms.Editor", "Lucifer.Pms.Editor\Lucifer.Pms.Editor.csproj", "{7EA710A1-159B-4D4F-97D9-ACEC012D0D3B}"
 EndProject

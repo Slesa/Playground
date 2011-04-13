@@ -1,14 +1,19 @@
 using System.Collections.ObjectModel;
+using System.Linq;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
 using Lucifer.Pms.Editor.Resources;
-using Lucifer.Pms.Model.Entities;
+using Lucifer.Pms.Model.Queries;
 
 namespace Lucifer.Pms.Editor.ViewModel
 {
     public class ListCurrenciesViewModel : Screen, IPmsModule
     {
-        public ListCurrenciesViewModel()
+        readonly IDbConversation _dbConversation;
+
+        public ListCurrenciesViewModel(IDbConversation dbConversation)
         {
+            _dbConversation = dbConversation;
             DisplayName = Strings.CurrenciesModule;
             CreateAllCurrencies();
         }
@@ -17,10 +22,13 @@ namespace Lucifer.Pms.Editor.ViewModel
 
         void CreateAllCurrencies()
         {
-            AllCurrencies = new ObservableCollection<CurrencyRowViewModel>
+            AllCurrencies = new ObservableCollection<CurrencyRowViewModel>(_dbConversation
+                .Query(new AllCurrenciesQuery())
+                .Select(x=>new CurrencyRowViewModel(x)));
+            /*AllCurrencies = new ObservableCollection<CurrencyRowViewModel>
                 {
                     new CurrencyRowViewModel(new Currency {Name = "Currency 1"}),
-                };
+                };*/
         }
 
         public string ModuleName

@@ -34,6 +34,7 @@
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
     </Reference>
@@ -51,6 +52,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UmsMappingWindsorInstaller.cs" />
     <Compile Include="UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRoleItemMap.cs" />

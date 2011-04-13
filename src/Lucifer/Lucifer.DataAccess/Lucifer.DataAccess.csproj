@@ -60,6 +60,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\FluentMappingFromAssembly.cs" />
     <Compile Include="Configuration\FluentMappingConventions.cs" />
     <Compile Include="Configuration\NhProfilerInitializer.cs" />
     <Compile Include="Container\ArrayDependencyFacility.cs" />

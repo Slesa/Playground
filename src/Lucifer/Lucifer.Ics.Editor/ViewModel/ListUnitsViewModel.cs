@@ -1,15 +1,19 @@
-using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
 using Lucifer.Ics.Editor.Resources;
-using Lucifer.Ics.Model.Entities;
+using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
     public class ListUnitsViewModel: Screen, IIcsModule
     {
-        public ListUnitsViewModel()
+        readonly IDbConversation _dbConversation;
+
+        public ListUnitsViewModel(IDbConversation dbConversation)
         {
+            _dbConversation = dbConversation;
             DisplayName = Strings.UnitsModule;
             CreateAllUnits();
         }
@@ -18,10 +22,13 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         void CreateAllUnits()
         {
-            AllUnits = new ObservableCollection<UnitRowViewModel>
+            AllUnits = new ObservableCollection<UnitRowViewModel>(_dbConversation
+                .Query(new AllUnitsQuery())
+                .Select(x => new UnitRowViewModel(x)));
+            /*AllUnits = new ObservableCollection<UnitRowViewModel>
                 {
                     new UnitRowViewModel(new Unit {Name = "Unit 1"}),
-                };
+                };*/
         }
 
         public void Add()

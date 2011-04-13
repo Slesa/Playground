@@ -6,7 +6,7 @@ using NHibernate.Linq;
 
 namespace Lucifer.Pms.Model.Queries
 {
-    public class PayformQueries : IDomainQuery<IEnumerable<Payform>>
+    public class AllPayformsQuery : IDomainQuery<IEnumerable<Payform>>
     {
         public IEnumerable<Payform> Execute(ISession session)
         {
