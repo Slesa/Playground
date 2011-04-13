@@ -61,6 +61,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -128,6 +129,10 @@
     <ProjectReference Include="..\Lucifer.Caliburn\Lucifer.Caliburn.csproj">
       <Project>{C3D42136-0EB5-452B-827A-84FCEF880273}</Project>
       <Name>Lucifer.Caliburn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lucifer.DataAccess\Lucifer.DataAccess.csproj">
+      <Project>{78C534DA-A9F9-4E79-8790-70AB5FCA39D7}</Project>
+      <Name>Lucifer.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lucifer.Ics.Editor\Lucifer.Ics.Editor.csproj">
       <Project>{414A511E-1974-4B8D-802B-40F1969EA325}</Project>

@@ -97,6 +97,10 @@
       <Project>{1CC60306-C505-4AAA-89A0-8F9EE13CF5A8}</Project>
       <Name>Lucifer.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Ums.Mapping\Lucifer.Ums.Mapping.csproj">
+      <Project>{11554C4C-44C4-4D18-BBA0-A0715C192019}</Project>
+      <Name>Lucifer.Ums.Mapping</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lucifer.Ums.Model\Lucifer.Ums.Model.csproj">
       <Project>{D4204F2F-BDA1-4D16-BCE8-00A7954C42DD}</Project>
       <Name>Lucifer.Ums.Model</Name>

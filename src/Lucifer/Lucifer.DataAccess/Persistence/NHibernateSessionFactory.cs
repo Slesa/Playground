@@ -83,7 +83,7 @@ namespace Lucifer.DataAccess.Persistence
             return session;
         }
 
-        [Conditional("Debug")]
+        [Conditional("DEBUG")]
         static void CreateDatabaseWhenDebug(FluentConfiguration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");

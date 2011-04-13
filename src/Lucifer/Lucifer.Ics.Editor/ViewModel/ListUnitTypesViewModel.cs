@@ -1,17 +1,21 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
+using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
     public class ListUnitTypesViewModel: Screen, IIcsModule
     {
+        readonly IDbConversation _dbConversation;
         readonly IWindowManager _windowManager;
 
-        public ListUnitTypesViewModel(IWindowManager windowManager)
+        public ListUnitTypesViewModel(IDbConversation dbConversation, IWindowManager windowManager)
         {
+            _dbConversation = dbConversation;
             _windowManager = windowManager;
             DisplayName = Strings.UnitTypesModule;
             CreateAllUnitTypes();
@@ -21,13 +25,16 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         void CreateAllUnitTypes()
         {
-            AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>
+            AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>(_dbConversation
+                .Query(new AllUnitTypesQuery())
+                .Select(x=>new UnitTypeRowViewModel(x)));
+            /* AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>
                 {
                     new UnitTypeRowViewModel(new UnitType {Name = "Length"}),
                     new UnitTypeRowViewModel(new UnitType {Name = "Weight"}),
                     new UnitTypeRowViewModel(new UnitType {Name = "Area"}),
                     new UnitTypeRowViewModel(new UnitType {Name = "Pressure"}),
-                };
+                };*/
         }
 
         public bool ItemSelected

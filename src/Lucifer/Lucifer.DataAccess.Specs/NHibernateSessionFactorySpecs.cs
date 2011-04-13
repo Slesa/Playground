@@ -4,6 +4,7 @@ using FluentNHibernate.Mapping;
 using FluentNHibernate.Utils;
 using Lucifer.DataAccess.Persistence;
 using Lucifer.Testing;
+using Machine.Fakes;
 using Machine.Specifications;
 using NHibernate;
 using Rhino.Mocks;
@@ -32,22 +33,22 @@ namespace Lucifer.DataAccess.Specs
     }
 
     [Subject(typeof(NHibernateSessionFactory))]
-    public class When_a_nhibernate_session_created_for_the_first_time
+    public class When_a_nhibernate_session_created_for_the_first_time : WithFakes
     {
         static IPersistenceConfiguration _persistenceConfiguration;
         static INHibernatePersistenceModel _persistenceModel;
-        static NHibernateSessionFactory _factory;
         static INHibernateInitializationAware[] _initializers;
+        static NHibernateSessionFactory _factory;
         static ISession _session;
 
         Establish context = () =>
         {
-            _persistenceConfiguration = MockRepository.GenerateStub<IPersistenceConfiguration>();
+            _persistenceConfiguration = An<IPersistenceConfiguration>();
             _persistenceConfiguration
                 .Stub(x => x.GetConfiguration())
                 .Return(new SqLiteInMemoryDatabaseConfiguration().GetConfiguration());
 
-            _persistenceModel = MockRepository.GenerateStub<INHibernatePersistenceModel>();
+            _persistenceModel = An<INHibernatePersistenceModel>();
             _persistenceModel
                 .Stub(x => x.AddMappings(null))
                 .IgnoreArguments()
