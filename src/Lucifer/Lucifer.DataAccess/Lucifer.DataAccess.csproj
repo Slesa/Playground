@@ -46,12 +46,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainEntity.cs" />
+    <Compile Include="IDbConversation.cs" />
     <Compile Include="IDomainQuery.cs" />
     <Compile Include="IPersistenceConfiguration.cs" />
+    <Compile Include="Persistence\DbConversation.cs" />
+    <Compile Include="Persistence\IMappingContributor.cs" />
+    <Compile Include="Persistence\INHibernateInitializationAware.cs" />
+    <Compile Include="Persistence\INHibernatePersistenceModel.cs" />
+    <Compile Include="Persistence\INHibernateSessionFactory.cs" />
+    <Compile Include="Persistence\NHibernatePersistenceModel.cs" />
+    <Compile Include="Persistence\NHibernateSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lucifer.Caliburn\Lucifer.Caliburn.csproj">
+      <Project>{C3D42136-0EB5-452B-827A-84FCEF880273}</Project>
+      <Name>Lucifer.Caliburn</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

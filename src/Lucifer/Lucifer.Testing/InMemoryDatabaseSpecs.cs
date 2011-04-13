@@ -1,12 +1,9 @@
 ﻿using System.Data.SQLite;
 using System.Diagnostics;
 using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Testing;
-using Lucifer.DataAccess;
 using Machine.Specifications;
 using NHibernate;
-using NHibernate.ByteCode.Castle;
 
 namespace Lucifer.Testing
 {
@@ -45,17 +42,5 @@ namespace Lucifer.Testing
 
         protected static ISessionFactory SessionFactory { get; private set; }
         protected static ISession Session { get; set; }
-    }
-
-    internal class SqLiteInMemoryDatabaseConfiguration : IPersistenceConfiguration
-    {
-        public IPersistenceConfigurer GetConfiguration()
-        {
-            return SQLiteConfiguration
-                .Standard
-                .InMemory()
-                .ShowSql()
-                .ProxyFactoryFactory(typeof(ProxyFactoryFactory).AssemblyQualifiedName);
-        }
     }
 }
