@@ -49,11 +49,13 @@ namespace Lucifer.Ics.Editor.ViewModel
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditUnitTypeViewModel());
+            ScreenManager.ActivateItem(new EditUnitTypeViewModel(_dbConversation));
         }
 
         public void Edit()
         {
+            foreach(var unitType in AllUnitTypes.Where(unitType => unitType.IsSelected) )
+                ScreenManager.ActivateItem(new EditUnitTypeViewModel(unitType.Id, _dbConversation));
         }
 
         public bool CanEdit()

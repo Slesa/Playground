@@ -1,6 +1,8 @@
+using System;
 using System.ComponentModel;
 using System.Windows.Input;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
@@ -9,14 +11,24 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class EditUnitTypeViewModel : Screen, IDataErrorInfo
     {
-        readonly UnitTypeModel _unitTypeModel;
+        readonly IDbConversation _dbConversation;
+        UnitTypeModel _unitTypeModel;
 
-        public EditUnitTypeViewModel()
+        public EditUnitTypeViewModel(IDbConversation dbConversation)
         {
+            _dbConversation = dbConversation;
             _unitTypeModel = new UnitTypeModel(new UnitType());
             Title = Strings.EditUnitTypeView_TitleNew;
             DisplayName = Strings.EditUnitTypeView_NewUnitType;
 
+        }
+
+        public EditUnitTypeViewModel(int id, IDbConversation dbConversation)
+        {
+            _dbConversation = dbConversation;
+            _dbConversation.UsingTransaction(() =>
+                { _unitTypeModel =new UnitTypeModel(_dbConversation.GetById<UnitType>(id));
+                });
         }
 
         public string Title { get; private set; }
@@ -52,6 +64,7 @@ namespace Lucifer.Ics.Editor.ViewModel
     #endregion
 
         bool _isReadOnly;
+
         public bool IsReadOnly
         {
             get { return _isReadOnly; }
