@@ -1,5 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Ics.Editor.Resources;
@@ -27,6 +30,8 @@ namespace Lucifer.Ics.Editor.ViewModel
             AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>(_dbConversation
                 .Query(new AllUnitTypesQuery())
                 .Select(x=>new UnitTypeRowViewModel(x)));
+            foreach (var unitType in AllUnitTypes)
+                unitType.PropertyChanged += OnUnitTypeRowPropertyChanged;
             /* AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>
                 {
                     new UnitTypeRowViewModel(new UnitType {Name = "Length"}),
@@ -34,6 +39,19 @@ namespace Lucifer.Ics.Editor.ViewModel
                     new UnitTypeRowViewModel(new UnitType {Name = "Area"}),
                     new UnitTypeRowViewModel(new UnitType {Name = "Pressure"}),
                 };*/
+        }
+
+        void OnUnitTypeRowPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            //if (e.PropertyName != "IsSelected")
+                //return;
+            RaisePropertyChangedEventImmediately(e.PropertyName);
+            //this.RaisePropertyChangedEventImmediately("Edit");
+            //this.RaisePropertyChangedEventImmediately("CanEdit");
+            this.Refresh();
+            CommandManager.InvalidateRequerySuggested();
+            //NotifyOfPropertyChange("CanEdit");
+            //NotifyOfPropertyChange("CanRemove");
         }
 
         public bool ItemSelected

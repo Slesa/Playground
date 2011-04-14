@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Linq;
 using Lucifer.Editor.Validators;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
@@ -34,7 +35,13 @@ namespace Lucifer.Ics.Editor.Model
             get { return GetValidationError(columnName); }
         }
 
-        public string Error { get { return null; } }
+        public string Error 
+        { 
+            get
+            {
+                return ValidatedProperties.Select(GetValidationError).FirstOrDefault(error => error != null);
+            }
+        }
 
         #endregion
 

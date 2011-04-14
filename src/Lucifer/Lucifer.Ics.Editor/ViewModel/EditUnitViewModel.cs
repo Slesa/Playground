@@ -1,6 +1,4 @@
-using System;
 using System.ComponentModel;
-using System.Windows.Input;
 using Caliburn.Micro;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;

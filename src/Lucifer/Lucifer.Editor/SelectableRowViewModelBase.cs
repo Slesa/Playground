@@ -16,6 +16,7 @@ namespace Lucifer.Editor
                     return;
                 _isSelected = value;
                 NotifyOfPropertyChange(() => IsSelected);
+                NotifyOfPropertyChange("CanEdit");
             }
         }
     }
