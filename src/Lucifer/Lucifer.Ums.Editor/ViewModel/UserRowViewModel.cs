@@ -3,16 +3,14 @@ using Lucifer.Ums.Model.Entities;
 
 namespace Lucifer.Ums.Editor.ViewModel
 {
-    public class UserRowViewModel: SelectableRowViewModelBase
+    public class UserRowViewModel: SelectableRowViewModelBase<User>
     {
-        readonly User _user;
-
         public UserRowViewModel(User user)
         {
-            _user = user;
+            ElementData = user;
         }
 
-        public int Id { get { return _user.Id; } }
-        public string Name { get { return _user.Name; } }
+        public int Id { get { return ElementData.Id; } }
+        public string Name { get { return ElementData.Name; } }
     }
 }

@@ -8,6 +8,15 @@ using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.Model
 {
+    public class UnitTypeChangedEvent
+    {
+        public UnitType UnitType;
+    }
+    public class UnitTypeRemovedEvent
+    {
+        public int Id;
+    }
+
     public class UnitTypeModel : PropertyChangedBase, IDataErrorInfo
     {
         readonly UnitType _unitType;
@@ -22,6 +31,7 @@ namespace Lucifer.Ics.Editor.Model
             _unitType = unitType;
         }
 
+        public UnitType UnitType { get { return _unitType; } }
         public int Id { get { return _unitType.Id; } }
         public string Name
         {

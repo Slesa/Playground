@@ -1,25 +1,33 @@
+using System;
 using Lucifer.Editor;
 using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
-    public class UnitRowViewModel : SelectableRowViewModelBase
+    public class UnitRowViewModel : SelectableRowViewModelBase<Unit>
     {
-        readonly Unit _unit;
-
         public UnitRowViewModel(Unit unit)
         {
-            _unit = unit;
+            ElementData = unit;
+        }
+        public void ExchangeData(Unit unit)
+        {
+            ElementData = unit;
         }
 
-        public int Id { get { return _unit.Id; } }
-        public string Name { get { return _unit.Name; } }
-        public string Contraction { get { return _unit.Contraction; } }
-        public UnitType UnitType { get { return _unit.UnitType; } }
-        public Unit Parent { get { return _unit.Parent; } }
-        public decimal FactorToParent { get { return _unit.FactorToParent; } }
-        public bool Purchasing { get { return _unit.Purchasing; } }
-        public bool Reciping { get { return _unit.Reciping; } }
+        public int Id { get { return ElementData.Id; } }
+        public string Name { get { return ElementData.Name; } }
+        public string Contraction { get { return ElementData.Contraction; } }
+        public UnitType UnitType
+        {
+            get { return ElementData.UnitType; }
+            set { ElementData.UnitType = value; }
+        }
+
+        public Unit Parent { get { return ElementData.Parent; } }
+        public decimal FactorToParent { get { return ElementData.FactorToParent; } }
+        public bool Purchasing { get { return ElementData.Purchasing; } }
+        public bool Reciping { get { return ElementData.Reciping; } }
         
     }
 }

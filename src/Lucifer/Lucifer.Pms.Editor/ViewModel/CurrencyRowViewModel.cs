@@ -3,17 +3,15 @@ using Lucifer.Pms.Model.Entities;
 
 namespace Lucifer.Pms.Editor.ViewModel
 {
-    public class CurrencyRowViewModel : SelectableRowViewModelBase
+    public class CurrencyRowViewModel : SelectableRowViewModelBase<Currency>
     {
-        readonly Currency _currency;
-
         public CurrencyRowViewModel(Currency currency)
         {
-            _currency = currency;
+            ElementData = currency;
         }
 
-        public int Id { get { return _currency.Id; } }
-        public string Name { get { return _currency.Name; } }
+        public int Id { get { return ElementData.Id; } }
+        public string Name { get { return ElementData.Name; } }
         
     }
 }

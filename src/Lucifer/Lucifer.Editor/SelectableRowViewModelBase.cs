@@ -7,8 +7,10 @@ namespace Lucifer.Editor
         bool IsSelected { get; set; }
     }
 
-    public class SelectableRowViewModelBase : PropertyChangedBase, ISelectableRowViewModelBase
+    public class SelectableRowViewModelBase<T> : PropertyChangedBase, ISelectableRowViewModelBase
     {
+        public T ElementData { get; set; }
+
         bool _isSelected;
         public bool IsSelected
         {

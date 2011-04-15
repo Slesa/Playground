@@ -1,33 +1,63 @@
+using System;
 using System.ComponentModel;
+using System.Windows;
+using System.Windows.Input;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
+using Lucifer.Editor.Resources;
+using NHibernate;
 
 namespace Lucifer.Editor
 {
     public abstract class EditItemViewModel<T> : Screen where T: PropertyChangedBase, IDataErrorInfo
     {
-        protected readonly IDbConversation _dbConversation;
-        protected T _element;
+        protected readonly IDbConversation DbConversation;
+        protected readonly IEventAggregator EventAggregator;
+        protected T Element;
 
-        protected EditItemViewModel(string caption, IDbConversation dbConversation)
+        protected EditItemViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
-            _dbConversation = dbConversation;
-            DisplayName = caption;
-            _element = CreateNewElementModel();
-            PrepareElement(_element);
+            DbConversation = dbConversation;
+            EventAggregator = eventAggregator;
+            Element = CreateNewElementModel();
+            PrepareElement(Element);
             
         }
 
-        protected EditItemViewModel(int elementId, string caption, IDbConversation dbConversation)
+        protected EditItemViewModel(int elementId, IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
-            _dbConversation = dbConversation;
-            DisplayName = caption;
-            _element = CreateElementModel(elementId);
-            PrepareElement(_element);
+            DbConversation = dbConversation;
+            EventAggregator = eventAggregator;
+            Element = CreateElementModel(elementId);
+            PrepareElement(Element);
         }
 
         protected abstract T CreateNewElementModel();
         protected abstract T CreateElementModel(int elementId);
+
+        protected bool SuccessfullySaved(System.Action action)
+        {
+            try
+            {
+                Mouse.OverrideCursor = Cursors.Wait;
+                DbConversation.UsingTransaction(action);
+                NotifyOfPropertyChange(() => DisplayName);
+                Mouse.OverrideCursor = null;
+                return true;
+            }
+            catch (StaleObjectStateException)
+            {
+                Mouse.OverrideCursor = null;
+                MessageBox.Show(Strings.Error_StaleObjectState);
+                return true;
+            }
+            catch (Exception)
+            {
+                Mouse.OverrideCursor = null;
+                MessageBox.Show(Strings.Error_CouldNotSaveObject);
+                return false;
+            }
+        }
 
         public bool CanSave
         {
@@ -43,14 +73,14 @@ namespace Lucifer.Editor
         {
             get
             {
-                var error = _element[propertyName];
+                var error = Element[propertyName];
                 return error;
             }
         }
 
         public string Error
         {
-            get { return _element.Error; }
+            get { return Element.Error; }
         }
 
         void PrepareElement(T element)

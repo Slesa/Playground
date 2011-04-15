@@ -1,12 +1,18 @@
 using System;
 using System.ComponentModel;
+using Caliburn.Micro;
 using Lucifer.Editor.Validators;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.Model
 {
-    public class UnitModel : IDataErrorInfo
+    public class UnitChangedEvent
+    {
+        public Unit Unit;
+    }
+
+    public class UnitModel : PropertyChangedBase, IDataErrorInfo
     {
         readonly Unit _unit;
 
@@ -20,26 +26,39 @@ namespace Lucifer.Ics.Editor.Model
             _unit = unit;
         }
 
+        public Unit Unit { get { return _unit; } }
         public int Id { get { return _unit.Id; } }
         public string Name
         {
             get { return _unit.Name; }
-            set { _unit.Name = value; }
+            set
+            {
+                _unit.Name = value;
+                NotifyOfPropertyChange(() => Error);
+            }
         }
         public string Contraction
         {
             get { return _unit.Contraction; }
-            set { _unit.Contraction = value; }
+            set
+            {
+                _unit.Contraction = value;
+                NotifyOfPropertyChange(() => Error);
+            }
         }
         public UnitType UnitType
         {
             get { return _unit.UnitType; }
-            set { _unit.UnitType = value; }
+            set { _unit.UnitType = value; NotifyOfPropertyChange(() => Error); }
         }
         public Unit Parent
         {
             get { return _unit.Parent; }
-            set { _unit.Parent = value; }
+            set
+            {
+                _unit.Parent = value;
+                NotifyOfPropertyChange(() => Error);
+            }
         }
         private string FactorToParentString { get; set; }
         public string FactorToParent
@@ -51,6 +70,7 @@ namespace Lucifer.Ics.Editor.Model
                 decimal x;
                 if (decimal.TryParse(FactorToParentString, out x))
                     _unit.FactorToParent = x;
+                NotifyOfPropertyChange(() => Error);
             }
         }
         public bool Purchasing

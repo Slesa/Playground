@@ -1,54 +1,64 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Caliburn.Micro;
+using Lucifer.DataAccess;
+using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
+using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
-    public class EditUnitViewModel : Screen, IDataErrorInfo
+    public class EditUnitViewModel : EditItemViewModel<UnitModel>, IDataErrorInfo, IHandle<UnitTypeChangedEvent>
     {
-        readonly UnitModel _unitModel;
-
-        public EditUnitViewModel()
+        public EditUnitViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
+            : base(dbConversation, eventAggregator)
         {
-            _unitModel = new UnitModel(new Unit());
-            Title = Strings.EditUnitView_TitleNew;
             DisplayName = Strings.EditUnitView_NewUnit;
-
+            Title = Strings.EditUnitView_TitleNew;
         }
 
+        public EditUnitViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
+            : base(id, dbConversation, eventAggregator)
+        {
+        }
+
+        public List<Unit> AllUnits { get; private set; }
+        public List<UnitType> AllUnitTypes { get; private set; }
         public string Title { get; private set; }
 
         public string Name
         {
-            get { return _unitModel.Name; }
+            get { return Element.Name; }
             set
             {
-                if (value == _unitModel.Name) return;
-                _unitModel.Name = value;
+                if (value == Element.Name) return;
+                Element.Name = value;
                 NotifyOfPropertyChange(() => Name);
             }
         }
         public string Contraction
         {
-            get { return _unitModel.Contraction; }
+            get { return Element.Contraction; }
             set
             {
-                if (value == _unitModel.Contraction) return;
-                _unitModel.Contraction = value;
+                if (value == Element.Contraction) return;
+                Element.Contraction = value;
                 NotifyOfPropertyChange(() => Contraction);
             }
         }
 
         public UnitType UnitType
         {
-            get { return _unitModel.UnitType; }
+            get { return Element.UnitType; }
             set
             {
-                if (value == _unitModel.UnitType)
+                if (value == Element.UnitType)
                     return;
-                _unitModel.UnitType = value;
+                Element.UnitType = value;
                 NotifyOfPropertyChange(() => ParentUnit);
                 NotifyOfPropertyChange(() => UnitType);
             }
@@ -56,16 +66,16 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public Unit ParentUnit
         {
-            get { return _unitModel.Parent; }
+            get { return Element.Parent; }
             set
             {
-                if (value == _unitModel.Parent)
+                if (value == Element.Parent)
                     return;
 
                 //if (_unitModel.Parent != null)
                 //    _unitModel.Parent.RemoveChild(_unitModel);
 
-                _unitModel.Parent = value.Id == 0 ? null : value;
+                Element.Parent = value.Id == 0 ? null : value;
 
                 //if (_unitModel.Parent != null)
                 //    _unitModel.Parent.AddChild(_unitModel.Unit);
@@ -77,67 +87,49 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public string FactorToParent
         {
-            get { return _unitModel.FactorToParent; }
+            get { return Element.FactorToParent; }
             set
             {
-                if (value == _unitModel.FactorToParent)
+                if (value == Element.FactorToParent)
                     return;
-                _unitModel.FactorToParent = value;
+                Element.FactorToParent = value;
                 NotifyOfPropertyChange(() => FactorToParent);
             }
         }
 
         public bool Purchasing
         {
-            get { return _unitModel.Purchasing; }
+            get { return Element.Purchasing; }
             set
             {
-                if (value == _unitModel.Purchasing)
+                if (value == Element.Purchasing)
                     return;
-                _unitModel.Purchasing = value;
+                Element.Purchasing = value;
                 NotifyOfPropertyChange(() => Purchasing);
             }
         }
 
         public bool Reciping
         {
-            get { return _unitModel.Reciping; }
+            get { return Element.Reciping; }
             set
             {
-                if (value == _unitModel.Reciping)
+                if (value == Element.Reciping)
                     return;
-                _unitModel.Reciping = value;
+                Element.Reciping = value;
                 NotifyOfPropertyChange(() => Reciping);
             }
         }
-        
-        #region Validation
 
-        public string this[string propertyName]
+        public void Save()
         {
-            get
-            {
-                var error = (_unitModel as IDataErrorInfo)[propertyName];
-                //CommandManager.InvalidateRequerySuggested();
-                return error;
-            }
-        }
+            if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Unit)))
+                return;
 
-        public string Error
-        {
-            get { return (_unitModel as IDataErrorInfo).Error; }
-        }
-
-        #endregion
-
-        #region Button commands
-
-        public void Close()
-        {
+            EventAggregator.Publish(new UnitChangedEvent { Unit = Element.Unit });
             TryClose();
         }
 
-        #endregion
 
         #region Module information
 
@@ -147,5 +139,36 @@ namespace Lucifer.Ics.Editor.ViewModel
         }
 
         #endregion
+
+        protected override UnitModel CreateNewElementModel()
+        {
+            PreloadLists();
+            return new UnitModel(new Unit());
+        }
+
+        protected override UnitModel CreateElementModel(int elementId)
+        {
+            UnitModel model = null;
+            DbConversation.UsingTransaction(() =>
+            {
+                PreloadLists();
+                model = new UnitModel(DbConversation.GetById<Unit>(elementId));
+            });
+            return model;
+        }
+
+        void PreloadLists()
+        {
+            AllUnits = DbConversation.Query(new AllUnitsQuery()).ToList();
+            AllUnitTypes = DbConversation.Query(new AllUnitTypesQuery()).ToList();
+        }
+
+        public void Handle(UnitTypeChangedEvent message)
+        {
+            AllUnitTypes = DbConversation.Query(new AllUnitTypesQuery()).ToList();
+            //var viewmodel = (from unit in AllUnits where unit.UnitType == message.UnitType select unit);
+            //foreach(var vm in viewmodel)
+            //    vm.UnitType = message.UnitType;
+        }
     }
 }

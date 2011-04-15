@@ -1,4 +1,6 @@
 using System.ComponentModel;
+using System.Windows;
+using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
@@ -10,14 +12,15 @@ namespace Lucifer.Ics.Editor.ViewModel
     public class EditUnitTypeViewModel : EditItemViewModel<UnitTypeModel>, IDataErrorInfo
     {
 
-        public EditUnitTypeViewModel(IDbConversation dbConversation) 
-            : base(Strings.EditUnitTypeView_TitleNew, dbConversation)
+        public EditUnitTypeViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
+            : base(dbConversation, eventAggregator)
         {
-            Title =Strings.EditUnitTypeView_NewUnitType; 
+            DisplayName = Strings.EditUnitTypeView_TitleNew;
+            Title = Strings.EditUnitTypeView_NewUnitType; 
         }
 
-        public EditUnitTypeViewModel(int id, IDbConversation dbConversation)
-            : base(id, Strings.EditUnitTypeView_TitleNew, dbConversation)
+        public EditUnitTypeViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
+            : base(id, dbConversation, eventAggregator)
         {
         }
 
@@ -25,18 +28,22 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public string Name
         {
-            get { return _element.Name; }
+            get { return Element.Name; }
             set
             {
-                if (value == _element.Name) return;
-                _element.Name = value;
+                if (value == Element.Name) return;
+                Element.Name = value;
                 NotifyOfPropertyChange(() => Name);
             }
         }
 
         public void Save()
         {
+            if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.UnitType))) 
+                return;
 
+            EventAggregator.Publish(new UnitTypeChangedEvent { UnitType = Element.UnitType});
+            TryClose();
         }
 
  
@@ -57,8 +64,8 @@ namespace Lucifer.Ics.Editor.ViewModel
         protected override UnitTypeModel CreateElementModel(int elementId)
         {
             UnitTypeModel model = null;
-            _dbConversation.UsingTransaction(() =>
-                { model =new UnitTypeModel(_dbConversation.GetById<UnitType>(elementId));
+            DbConversation.UsingTransaction(() =>
+                { model =new UnitTypeModel(DbConversation.GetById<UnitType>(elementId));
                 });
             return model;
         }

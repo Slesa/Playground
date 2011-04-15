@@ -3,17 +3,15 @@ using Lucifer.Pms.Model.Entities;
 
 namespace Lucifer.Pms.Editor.ViewModel
 {
-    public class PayformRowViewModel: SelectableRowViewModelBase
+    public class PayformRowViewModel: SelectableRowViewModelBase<Payform>
     {
-        readonly Payform _payform;
-
         public PayformRowViewModel(Payform payform)
         {
-            _payform = payform;
+            ElementData = payform;
         }
 
-        public int Id { get { return _payform.Id; } }
-        public string Name { get { return _payform.Name; } }
+        public int Id { get { return ElementData.Id; } }
+        public string Name { get { return ElementData.Name; } }
         
     }
 }

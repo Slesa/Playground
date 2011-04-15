@@ -10,12 +10,14 @@ namespace Lucifer.Editor
         where T : PropertyChangedBase, ISelectableRowViewModelBase
     {
         protected readonly IDbConversation DbConversation;
+        protected readonly IEventAggregator EventAggregator;
 
         public ObservableCollection<T> ElementList { get; private set; }
 
-        protected SelectionListViewModel(string caption, IDbConversation dbConversation)
+        protected SelectionListViewModel(string caption, IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
             DbConversation = dbConversation;
+            EventAggregator = eventAggregator;
             DisplayName = caption;
             PrepareElementList();
         }
