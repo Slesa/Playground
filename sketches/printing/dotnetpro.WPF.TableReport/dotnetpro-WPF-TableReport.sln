@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetpro-WPF-TableReport", "dotnetpro-WPF-TableReport.csproj", "{1D9D05A9-90E9-4EDA-B6C4-E3B43AF41515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestIt", "..\TestIt\TestIt.csproj", "{0787978F-5040-4708-AE3F-62F1C42CF952}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D9D05A9-90E9-4EDA-B6C4-E3B43AF41515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9D05A9-90E9-4EDA-B6C4-E3B43AF41515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9D05A9-90E9-4EDA-B6C4-E3B43AF41515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9D05A9-90E9-4EDA-B6C4-E3B43AF41515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0787978F-5040-4708-AE3F-62F1C42CF952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0787978F-5040-4708-AE3F-62F1C42CF952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0787978F-5040-4708-AE3F-62F1C42CF952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0787978F-5040-4708-AE3F-62F1C42CF952}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

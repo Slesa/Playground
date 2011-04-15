@@ -1,0 +1,199 @@
+﻿<UserControl x:Class="dotnetpro.WPF.TableReport.PreView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:dotnetpro.WPF.TableReport">
+
+    <UserControl.Resources>
+        <Style x:Key="DocumentViewerStyle1" BasedOn="{x:Null}" TargetType="{x:Type DocumentViewer}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DocumentViewer}">
+                        <Grid Background="{TemplateBinding Background}" KeyboardNavigation.TabNavigation="Local">
+                            <Grid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Command="NavigationCommands.PreviousPage" CommandTarget="{Binding ElementName=Preview}" />
+                                    <MenuItem Command="NavigationCommands.NextPage" CommandTarget="{Binding ElementName=Preview}" />
+                                    <Separator />
+                                    <MenuItem Click="DocumentWidth" Header="{Binding StringResources.btOptBreite}" />
+                                    <MenuItem Click="DocumentHigh" Header="{Binding StringResources.btOptHoehe}" />
+                                    <Separator />
+                                    <MenuItem Command="NavigationCommands.DecreaseZoom"  CommandTarget="{Binding ElementName=Preview}" />
+                                    <MenuItem Command="NavigationCommands.IncreaseZoom"  CommandTarget="{Binding ElementName=Preview}" />
+                                </ContextMenu>
+                            </Grid.ContextMenu>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost" IsTabStop="true" TabIndex="1" Focusable="{TemplateBinding Focusable}" Grid.Column="0" Grid.Row="1" CanContentScroll="true" HorizontalScrollBarVisibility="Auto"/>
+                            <DockPanel Grid.Row="1">
+                                <FrameworkElement Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" DockPanel.Dock="Right"/>
+                                <Rectangle VerticalAlignment="top" Height="10" Visibility="Visible">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStopCollection>
+                                                    <GradientStop Color="#66000000" Offset="0"/>
+                                                    <GradientStop Color="Transparent" Offset="1"/>
+                                                </GradientStopCollection>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </DockPanel>
+                            <ContentControl TabIndex="2" Focusable="{TemplateBinding Focusable}" Grid.Column="0" Grid.Row="2" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <local:RadioConverter x:Key="RadioConverter"/>
+    </UserControl.Resources>
+    
+    <Grid Opacity="{Binding OpacityValue}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="210"/>
+        </Grid.ColumnDefinitions>
+
+        <DocumentViewer Name="Preview" Document="{Binding PrintDocument}" Style="{StaticResource DocumentViewerStyle1}"/>
+
+        <DockPanel Grid.Column="1" Margin="5,4,5,5" ClipToBounds="True" TextBlock.FontFamily="Arial" TextBlock.FontSize="12" 
+                   IsEnabled="{Binding IsEnabled}">
+            <Button Click="btStart_Click" Width="96" Height="22" DockPanel.Dock="Bottom" Name="btStart"
+                    HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="{Binding StartButtonText}" TextBlock.TextAlignment="Center">
+            </Button>
+            
+            <WrapPanel Orientation="Vertical" Width="200">
+                <StackPanel Orientation="Vertical" Width="200">
+                    <TextBlock Text="{Binding StringResources.lbDrucker}" />
+                    
+                    <ComboBox Name="cmbPrinters" ItemsSource="{Binding Printers}" Width="200" Height="35" Margin="0,10,0,0"
+                              SelectedIndex="{Binding SelectedPrinterIndex,Mode=TwoWay}" ToolTip="{Binding PrinterName}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Height="30" Source="{Binding PrinterImage}"/>
+                                    <TextBlock Margin="5,5,5,5" Text="{Binding PrinterName}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    
+                    <Button Margin="0,1,3,0" Content="{Binding StringResources.btDruckerEinstellung}" Click="PrinterSettings" Cursor="Hand" HorizontalAlignment="Right">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <TextBlock TextDecorations="Underline">
+                                    <ContentPresenter />
+                                </TextBlock>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Foreground" Value="Blue" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Width="200" Orientation="Vertical" Margin="0,20,0,0">
+                    <TextBlock Text="{Binding StringResources.lbFormat}" />
+                    <ComboBox SelectedIndex="{Binding PageOrientation,Mode=TwoWay}" Width="200" Height="35" Margin="0,10,0,0">
+                        <ComboBoxItem>
+                            <ComboBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Height="30" Source="Images/portrait.png" />
+                                    <TextBlock Margin="5,5,5,5" Text="{Binding StringResources.cbAnsichtHoch}" />
+                                </StackPanel>
+                            </ComboBoxItem.Content>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <ComboBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Height="30" Source="Images/landscape.png" />
+                                    <TextBlock Margin="5,5,5,5" Text="{Binding StringResources.cbAnsichtQuer}" />
+                                </StackPanel>
+                            </ComboBoxItem.Content>
+                        </ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Margin="0,15,0,0" HorizontalAlignment="Left" Width="200" >
+                    <TextBlock Text="{Binding StringResources.lbAnzahl}" />
+                    <ContentControl Name="RadNumericAnzahl" Focusable="False"/>
+                </StackPanel>
+
+                <GroupBox Margin="0,15,0,0">
+                    <GroupBox.Header>
+                        <TextBlock Text="{Binding StringResources.grpSeiten}" />
+                    </GroupBox.Header>
+                    <!--Ganz bewußt werden hier verschiedene GroupNames verwendet! (WPF BUG)-->
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+                        <RadioButton GroupName="AlleSeiten" Content="{Binding StringResources.radioAlleSeiten}" IsChecked="{Binding Path=AllPages, Mode=TwoWay, Converter={StaticResource RadioConverter}, ConverterParameter=true}" Padding="3,0,0,0" />
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <RadioButton Name="radAuswahl" GroupName="AuswahlSeiten" Padding="3,0,0,0" IsChecked="{Binding Path=AllPages, Mode=TwoWay, Converter={StaticResource RadioConverter}, ConverterParameter=false}"/>
+                            <StackPanel HorizontalAlignment="Left" Width="80" IsEnabled="{Binding ElementName=radAuswahl, Path=IsChecked}">
+                                <TextBlock Text="{Binding StringResources.lbSeitenVon}" />
+                                <ContentControl Name="RadNumericSeitenVon" Focusable="False" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Left" Width="80" IsEnabled="{Binding ElementName=radAuswahl, Path=IsChecked}">
+                                <TextBlock Text="{Binding StringResources.lbSeitenBis}" />
+                                <ContentControl Name="RadNumericSeitenBis" Focusable="False"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <CheckBox IsChecked="{Binding HasColumnLines,Mode=TwoWay}" Margin="3,15,0,0" Content="{Binding StringResources.chkSpaltenlinien}" Width="200"/>
+                <CheckBox IsChecked="{Binding HasRowLines,Mode=TwoWay}" Margin="3,0,0,0" Content="{Binding StringResources.chkZeilenlinien}" Width="200"/>
+                <CheckBox IsChecked="{Binding HasAlternatingRows,Mode=TwoWay}" Margin="3,0,0,0" Content="{Binding StringResources.chkTabelliereffekt}" Width="200" />
+                <CheckBox IsChecked="{Binding HasFixedColumnWidths,Mode=TwoWay}" Margin="3,0,0,0" Content="{Binding StringResources.chkFixedColumnWidth}" Width="200" />
+
+                <StackPanel HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  IsEnabled="{Binding IsWert}">
+                    <TextBlock Text="{Binding StringResources.lbFont}" />
+                    <ComboBox SelectedIndex="{Binding FontSize,Mode=TwoWay}" Width="200" Height="21">
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                
+                <GroupBox Margin="0,15,0,0">
+                    <GroupBox.Header>
+                        <TextBlock Text="{Binding StringResources.grpVorschau}" />
+                    </GroupBox.Header>
+                    <StackPanel Orientation="Vertical" Width="200" Margin="0,5,0,0">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Button Click="DocumentWidth"  Width="90" Height="22" Margin="0,0,8,0" Content="{Binding StringResources.btOptBreite}"/>
+                            <Button Click="DocumentHigh" Width="90" Height="22" Content="{Binding StringResources.btOptHoehe}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Width="200" Margin="0,8,0,0">
+                            <Button Command="NavigationCommands.FirstPage" CommandTarget="{Binding ElementName=Preview}" Width="40" Height="22" Margin="0,0,10,0" Content="|&lt;" Padding="0,-1,0,0" ToolTip="{Binding StringResources.ttFirst}"/>
+                            <Button Command="NavigationCommands.PreviousPage" CommandTarget="{Binding ElementName=Preview}" Width="40" Height="22" Margin="0,0,8,0" Content="&lt;" Padding="0,-1,0,0" ToolTip="{Binding StringResources.ttPrevious}"/>
+                            <Button Command="NavigationCommands.NextPage" CommandTarget="{Binding ElementName=Preview}" Width="40" Height="22" Margin="0,0,10,0" Content="&gt;" Padding="0,-1,0,0" ToolTip="{Binding StringResources.ttNext}"/>
+                            <Button Command="NavigationCommands.LastPage" CommandTarget="{Binding ElementName=Preview}" Width="40" Height="22" Content="&gt;|" Padding="0,-1,0,0"  ToolTip="{Binding StringResources.ttLast}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>
