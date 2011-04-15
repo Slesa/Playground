@@ -2,10 +2,13 @@
 
 namespace Lucifer.Editor
 {
-    public class SelectableRowViewModelBase : PropertyChangedBase
+    public interface ISelectableRowViewModelBase
     {
-        public delegate void SelectionChangedEventHandler();
+        bool IsSelected { get; set; }
+    }
 
+    public class SelectableRowViewModelBase : PropertyChangedBase, ISelectableRowViewModelBase
+    {
         bool _isSelected;
         public bool IsSelected
         {
@@ -16,7 +19,6 @@ namespace Lucifer.Editor
                     return;
                 _isSelected = value;
                 NotifyOfPropertyChange(() => IsSelected);
-                NotifyOfPropertyChange("CanEdit");
             }
         }
     }

@@ -1,93 +1,37 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows.Input;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
+using Lucifer.Editor;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
-    public class ListUnitTypesViewModel: Screen, IIcsModule
+    public class ListUnitTypesViewModel : SelectionListViewModel<UnitTypeRowViewModel>, IIcsModule
     {
-        readonly IDbConversation _dbConversation;
         readonly IWindowManager _windowManager;
 
-        public ListUnitTypesViewModel(IDbConversation dbConversation, IWindowManager windowManager)
+        public ListUnitTypesViewModel(IDbConversation dbConversation, IWindowManager windowManager) 
+            : base(Strings.UnitTypesModule, dbConversation)
         {
-            _dbConversation = dbConversation;
             _windowManager = windowManager;
-            DisplayName = Strings.UnitTypesModule;
-            CreateAllUnitTypes();
-        }
-
-        public ObservableCollection<UnitTypeRowViewModel> AllUnitTypes { get; private set; }
-
-        void CreateAllUnitTypes()
-        {
-            AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>(_dbConversation
-                .Query(new AllUnitTypesQuery())
-                .Select(x=>new UnitTypeRowViewModel(x)));
-            foreach (var unitType in AllUnitTypes)
-                unitType.PropertyChanged += OnUnitTypeRowPropertyChanged;
-            /* AllUnitTypes = new ObservableCollection<UnitTypeRowViewModel>
-                {
-                    new UnitTypeRowViewModel(new UnitType {Name = "Length"}),
-                    new UnitTypeRowViewModel(new UnitType {Name = "Weight"}),
-                    new UnitTypeRowViewModel(new UnitType {Name = "Area"}),
-                    new UnitTypeRowViewModel(new UnitType {Name = "Pressure"}),
-                };*/
-        }
-
-        void OnUnitTypeRowPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            //if (e.PropertyName != "IsSelected")
-                //return;
-            RaisePropertyChangedEventImmediately(e.PropertyName);
-            //this.RaisePropertyChangedEventImmediately("Edit");
-            //this.RaisePropertyChangedEventImmediately("CanEdit");
-            this.Refresh();
-            CommandManager.InvalidateRequerySuggested();
-            //NotifyOfPropertyChange("CanEdit");
-            //NotifyOfPropertyChange("CanRemove");
-        }
-
-        public bool ItemSelected
-        {
-            get { return AllUnitTypes.Where(unitType => unitType.IsSelected).Count() == 1 ? true : false; }
-        }
-
-        public bool ItemsSelected
-        {
-            get { return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; }
         }
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditUnitTypeViewModel(_dbConversation));
+            ScreenManager.ActivateItem(new EditUnitTypeViewModel(DbConversation));
         }
 
         public void Edit()
         {
-            foreach(var unitType in AllUnitTypes.Where(unitType => unitType.IsSelected) )
-                ScreenManager.ActivateItem(new EditUnitTypeViewModel(unitType.Id, _dbConversation));
-        }
-
-        public bool CanEdit()
-        {
-            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; 
+            foreach(var unitType in ElementList.Where(unitType => unitType.IsSelected) )
+                ScreenManager.ActivateItem(new EditUnitTypeViewModel(unitType.Id, DbConversation));
         }
 
         public void Remove()
         {
-        }
-
-        public bool CanRemove()
-        {
-            return AllUnitTypes.FirstOrDefault(unitType => unitType.IsSelected) != null ? true : false; 
         }
 
         public string ModuleName
@@ -111,5 +55,11 @@ namespace Lucifer.Ics.Editor.ViewModel
             set;
         }
 
-   }
+        protected override ObservableCollection<UnitTypeRowViewModel> CreateElementList()
+        {
+            return new ObservableCollection<UnitTypeRowViewModel>(DbConversation
+                .Query(new AllUnitTypesQuery())
+                .Select(x=>new UnitTypeRowViewModel(x)));
+        }
+    }
 }

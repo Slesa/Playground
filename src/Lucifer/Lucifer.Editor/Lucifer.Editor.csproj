@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EachExtension.cs" />
+    <Compile Include="EditItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectableRowViewModelBase.cs" />
+    <Compile Include="SelectionListViewModel.cs" />
     <Compile Include="Validators\EditValidators.cs" />
   </ItemGroup>
   <ItemGroup>

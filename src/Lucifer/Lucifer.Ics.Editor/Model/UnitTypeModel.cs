@@ -1,13 +1,14 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
+using Caliburn.Micro;
 using Lucifer.Editor.Validators;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.Model
 {
-    public class UnitTypeModel : IDataErrorInfo
+    public class UnitTypeModel : PropertyChangedBase, IDataErrorInfo
     {
         readonly UnitType _unitType;
 
@@ -25,7 +26,11 @@ namespace Lucifer.Ics.Editor.Model
         public string Name
         {
             get { return _unitType.Name; }
-            set { _unitType.Name = value; }
+            set 
+            { 
+                _unitType.Name = value;
+                NotifyOfPropertyChange(() => Error);
+            }
         }
 
         #region IDataErrorInfo Members

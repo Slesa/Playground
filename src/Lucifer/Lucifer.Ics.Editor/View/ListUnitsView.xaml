@@ -7,7 +7,7 @@
 
     <UserControl.Resources>
         <!-- Die View Source -->
-        <CollectionViewSource x:Key="UnitList"  Source="{Binding Path=AllUnits}" >
+        <CollectionViewSource x:Key="UnitList"  Source="{Binding Path=ElementList}" >
             <CollectionViewSource.SortDescriptions>
                 <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
             </CollectionViewSource.SortDescriptions>
