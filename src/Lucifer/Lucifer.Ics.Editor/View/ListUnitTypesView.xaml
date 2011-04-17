@@ -27,15 +27,12 @@
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
             <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
-                    Command="{Binding Path=NewCommand}"
                     Content="{x:Static Resources:Strings.Button_New}" 
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_New_ToolTip}" />
             <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" 
-                    Command="{Binding Path=EditCommand}"
                     Content="{x:Static Resources:Strings.Button_Edit}"
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Edit_ToolTip}" />
             <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}"
-                    Command="{Binding Path=RemoveCommand}"
                     Content="{x:Static Resources:Strings.Button_Remove}"
                     ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Remove_ToolTip}" />
         </StackPanel>

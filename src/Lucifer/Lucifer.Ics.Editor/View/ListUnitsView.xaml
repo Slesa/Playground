@@ -13,9 +13,9 @@
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
 
-        <!-- Style x:Key="UnitTypeItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListCollectionStyle}">
-            <Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
-        </Style -->
+        <Style x:Key="UnitItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewCollectionStyle}">
+            <!-- Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+        </Style>
 
     </UserControl.Resources>
 
@@ -26,17 +26,17 @@
             <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_New}" 
                     ToolTip="{x:Static Resources:Strings.AllUnitsView_New_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_Edit}"
                     ToolTip="{x:Static Resources:Strings.AllUnitsView_Edit_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}"
+            <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}"
                     Content="{x:Static Resources:Strings.Button_Remove}"
                     ToolTip="{x:Static Resources:Strings.AllUnitsView_Remove_ToolTip}" />
         </StackPanel>
 
-        <!-- Liste ItemContainerStyle="{StaticResource UnitTypeItemStyle}" -->
-        <ListView Style="{DynamicResource ListViewCollectionSkin}" DataContext="{StaticResource UnitList}"
-                  ItemsSource="{Binding}">
+        <!-- Liste -->
+        <ListView Style="{DynamicResource ListViewCollectionSkin}" ItemContainerStyle="{StaticResource UnitItemStyle}"
+                  DataContext="{StaticResource UnitList}" ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>
                     <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->

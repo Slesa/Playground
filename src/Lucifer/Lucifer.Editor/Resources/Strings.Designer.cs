@@ -77,5 +77,14 @@ namespace Lucifer.Editor.Resources {
                 return ResourceManager.GetString("Error_StaleObjectState", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: unable to remove object(s).
+        /// </summary>
+        public static string Error_UnableToRemove {
+            get {
+                return ResourceManager.GetString("Error_UnableToRemove", resourceCulture);
+            }
+        }
     }
 }

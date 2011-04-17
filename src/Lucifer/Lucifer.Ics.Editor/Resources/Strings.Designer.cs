@@ -151,6 +151,15 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove units.
+        /// </summary>
+        public static string AllUnitsView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllUnitsView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit current unit type.
         /// </summary>
         public static string AllUnitTypesView_Edit_ToolTip {
@@ -183,6 +192,35 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string AllUnitTypesView_Remove_ToolTip {
             get {
                 return ResourceManager.GetString("AllUnitTypesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following unit types:
+        ///.
+        /// </summary>
+        public static string AllUnitTypesView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllUnitTypesView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove unit types.
+        /// </summary>
+        public static string AllUnitTypesView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllUnitTypesView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following units:
+        ///.
+        /// </summary>
+        public static string AlUnitsView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AlUnitsView_RemoveMessage", resourceCulture);
             }
         }
         

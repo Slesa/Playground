@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,7 +11,8 @@ using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
-    public class EditUnitViewModel : EditItemViewModel<UnitModel>, IDataErrorInfo, IHandle<UnitTypeChangedEvent>
+    public class EditUnitViewModel : EditItemViewModel<UnitModel>, IDataErrorInfo
+        , IHandle<UnitTypeChangedEvent>
     {
         public EditUnitViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(dbConversation, eventAggregator)

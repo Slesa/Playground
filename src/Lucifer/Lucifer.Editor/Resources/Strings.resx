@@ -123,4 +123,7 @@
   <data name="Error_StaleObjectState" xml:space="preserve">
     <value>Error: object was changed outside this dialog.</value>
   </data>
+  <data name="Error_UnableToRemove" xml:space="preserve">
+    <value>Error: unable to remove object(s)</value>
+  </data>
 </root>

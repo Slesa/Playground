@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -11,7 +10,9 @@ using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
-    public class ListUnitTypesViewModel : SelectionListViewModel<UnitTypeRowViewModel>, IIcsModule, IHandle<UnitTypeChangedEvent>
+    public class ListUnitTypesViewModel : SelectionListViewModel<UnitTypeRowViewModel>, IIcsModule
+        , IHandle<UnitTypeChangedEvent>
+        , IHandle<UnitTypeRemovedEvent>
     {
         public ListUnitTypesViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(Strings.UnitTypesModule, dbConversation, eventAggregator)
@@ -33,30 +34,47 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public void Remove()
         {
-            var selection = ElementList.Where(x => x.IsSelected).Take(10);
-            if (selection.Count() == 0)
+            var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);
+            if (selectesForMessage.Count() == 0)
                 return;
 
-            var message = string.Format("Are you sure to remove the following unit types:\n");
-            message = selection.Aggregate(
+            var message = string.Format(Strings.AllUnitTypesView_RemoveMessage);
+            message = selectesForMessage.Aggregate(
                 message, (current, unitType) => current + string.Format("{0} {1}", unitType.Id, unitType.Name));
 
-            if (MessageBox.Show(message, "Remove unit types", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            if (MessageBox.Show(message, Strings.AllUnitTypesView_RemoveTitle, MessageBoxButton.YesNo) != MessageBoxResult.Yes)
                 return;
 
+            var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
+            if (removedItems == null)
+                return;
+
+            foreach (var t in removedItems)
+                EventAggregator.Publish(new UnitTypeRemovedEvent { Id = t.Id });
+
+            /*
             try
             {
+                var removedItems = new List<UnitTypeRowViewModel>();
+                var selection = ElementList.Where(x => x.IsSelected);
                 DbConversation.UsingTransaction(() => 
                 {
-                    foreach(var element in selection)
-                    DbConversation.DeleteOnCommit(element.ElementData);
+                    foreach (var element in selection)
+                    {
+                        DbConversation.DeleteOnCommit(element.ElementData);
+                        removedItems.Add(element);
+                    }
                 });
+                foreach (var t in removedItems)
+                    EventAggregator.Publish(new UnitTypeRemovedEvent { Id = t.Id });
             }
             catch(Exception exception)
             {
                 MessageBox.Show("Error: unable to remove unit types\n{0}", exception.Message);
-            }
+            }*/
         }
+
+        #region IIcsModule
 
         public string ModuleName
         {
@@ -72,6 +90,8 @@ namespace Lucifer.Ics.Editor.ViewModel
         {
             get { return Strings.UnitTypesTooltip; }
         }
+
+        #endregion
 
         public Conductor<IScreen>.Collection.OneActive ScreenManager
         {
@@ -93,6 +113,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             {
                 viewmodel = new UnitTypeRowViewModel(message.UnitType);
                 ElementList.Add(viewmodel);
+                ConnectElement(viewmodel);
             }
             else
             {
@@ -101,6 +122,13 @@ namespace Lucifer.Ics.Editor.ViewModel
             }
             NotifyOfPropertyChange(() => ItemSelected);
             NotifyOfPropertyChange(() => ItemsSelected);
+        }
+
+        public void Handle(UnitTypeRemovedEvent message)
+        {
+            var viewmodel = (from vm in ElementList where vm.Id == message.Id select vm).FirstOrDefault();
+            if (viewmodel != null)
+                ElementList.Remove(viewmodel);
         }
     }
 }

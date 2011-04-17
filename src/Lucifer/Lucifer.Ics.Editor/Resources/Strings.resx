@@ -264,4 +264,18 @@
   <data name="Unit_Error_CouldNotSave" xml:space="preserve">
     <value>Could not save unit</value>
   </data>
+  <data name="AllUnitsView_RemoveTitle" xml:space="preserve">
+    <value>Remove units</value>
+  </data>
+  <data name="AllUnitTypesView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following unit types:
+</value>
+  </data>
+  <data name="AllUnitTypesView_RemoveTitle" xml:space="preserve">
+    <value>Remove unit types</value>
+  </data>
+  <data name="AlUnitsView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following units:
+</value>
+  </data>
 </root>
