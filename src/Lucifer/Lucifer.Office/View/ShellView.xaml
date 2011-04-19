@@ -7,31 +7,12 @@
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              mc:Ignorable="d" 
              MinHeight="600" MinWidth="800"
-             d:DesignHeight="300" d:DesignWidth="400">
-
-    <!-- UserControl.Resources>
-        <DataTemplate x:Key="ShellNavigationItemTemplate">
-            <Grid>
-                <Button ToolTip="{Binding ToolTip}">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="{Binding IconFileName}" Width="48" Height="48" />
-                        <TextBlock Text="{Binding ModuleName}" />
-                    </StackPanel>
-                    <i:Interaction.Triggers>
-                        <EventTrigger EventName="Click">
-                            <cal:ActionMessage MethodName="MenuBtnClick">
-                                <cal:Parameter Value="{Binding}"/>
-                            </cal:ActionMessage>
-                        </EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-            </Grid>
-        </DataTemplate>
-    </UserControl.Resources -->
+             d:DesignHeight="320" d:DesignWidth="480"
+			 Style="{DynamicResource ShellViewSkin}">
 
     <DockPanel Margin="20" LastChildFill="True">
 
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,20">
+        <StackPanel Style="{DynamicResource AppTitleStackPanelSkin}" DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,20">
             <Rectangle x:Name="rectangle" Height="100" Width="100" Margin="0" HorizontalAlignment="Left" Opacity="0.35" 
                        ToolTipService.ToolTip="{x:Static Resources:Strings.AppToolTip}">
                 <Rectangle.Fill>
@@ -45,8 +26,8 @@
                 </TextBlock.Effect>
             </TextBlock>
         </StackPanel>
-       
-        <ItemsControl x:Name="Items" DockPanel.Dock="Left">
+
+        <ItemsControl x:Name="Items" DockPanel.Dock="Left" Style="{DynamicResource AppMenuStackPanelSkin}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical" />

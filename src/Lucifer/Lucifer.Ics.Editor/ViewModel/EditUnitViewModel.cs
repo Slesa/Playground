@@ -19,11 +19,14 @@ namespace Lucifer.Ics.Editor.ViewModel
         {
             DisplayName = Strings.EditUnitView_NewUnit;
             Title = Strings.EditUnitView_TitleNew;
+            ToolTip = Strings.AllUnitsView_New_ToolTip;
         }
 
         public EditUnitViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
+            DisplayName = string.Format(Strings.EditUnitView_UnitIs, Element.Name);
+            ToolTip = Strings.AllUnitsView_Edit_ToolTip;
         }
 
         public List<Unit> AllUnits { get; private set; }
@@ -133,10 +136,14 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         #region Module information
 
+        public string ModuleName { get { return DisplayName; } }
+
         public string IconFileName
         {
             get { return @"/Lucifer.Ics.Editor;component/Resources/Unit.png"; }
         }
+
+        public string ToolTip { get; private set; }
 
         #endregion
 

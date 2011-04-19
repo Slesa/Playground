@@ -6,8 +6,13 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/PresentationFramework.Aero;V4.0.0.0;31bf3856ad364e35;component\themes/aero.normalcolor.xaml" />
+                <ResourceDictionary Source="/Lucifer.Theme;component/Colors.xaml" />
                 <ResourceDictionary Source="/Lucifer.Theme;component/Button.xaml" />
                 <ResourceDictionary Source="/Lucifer.Theme;component/General.xaml" />
+                <ResourceDictionary Source="/Lucifer.Theme;component/MainApp.xaml" />
+                <ResourceDictionary Source="/Lucifer.Theme;component/IcsModule.xaml" />
+                <ResourceDictionary Source="/Lucifer.Theme;component/PmsModule.xaml" />
+                <ResourceDictionary Source="/Lucifer.Theme;component/UmsModule.xaml" />
                 <ResourceDictionary>
                     <local:CastleBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>

@@ -1,0 +1,20 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+    <!-- Das UserControl der ShellView -->
+    <Style x:Key="ShellViewSkin" TargetType="UserControl">
+        <Setter Property="Background" Value="{StaticResource AppMainBackground}" />
+    </Style>
+
+    <!-- Das Stackpanel mit dem Titel und dem Icon -->
+    <Style x:Key="AppTitleStackPanelSkin" TargetType="StackPanel">
+        <Setter Property="Background" Value="{StaticResource AppTitleBackground}" />
+    </Style>
+
+    <!-- Das ItemsControl mit den Modulen -->
+    <Style x:Key="AppMenuStackPanelSkin" TargetType="ItemsControl">
+        <Setter Property="Background" Value="{StaticResource AppMenuBackground}" />
+    </Style>
+
+</ResourceDictionary>

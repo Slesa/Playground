@@ -19,7 +19,7 @@
 
     </UserControl.Resources>
 
-    <DockPanel LastChildFill="True" Style="{DynamicResource ListViewDockPanelSkin}">
+    <DockPanel LastChildFill="True" Style="{DynamicResource IcsListViewDockPanelSkin}">
 
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">

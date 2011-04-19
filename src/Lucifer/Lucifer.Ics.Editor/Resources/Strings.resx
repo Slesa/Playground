@@ -278,4 +278,10 @@
     <value>Are you sure to remove the following units:
 </value>
   </data>
+  <data name="EditUnitTypeView_UnitTypeIs" xml:space="preserve">
+    <value>Unit type {0}</value>
+  </data>
+  <data name="EditUnitView_UnitIs" xml:space="preserve">
+    <value>Unit {0}</value>
+  </data>
 </root>

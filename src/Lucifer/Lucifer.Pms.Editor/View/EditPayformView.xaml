@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
 
-    <DockPanel LastChildFill="True" Style="{DynamicResource EditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
+    <DockPanel LastChildFill="True" Style="{DynamicResource PmsEditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource EditDialogButtonStackSkin}" >
             <Button x:Name="Save" Style="{DynamicResource EditDialogButtonSkin}" IsDefault="True">
                 <StackPanel Orientation="Horizontal" Width="Auto">

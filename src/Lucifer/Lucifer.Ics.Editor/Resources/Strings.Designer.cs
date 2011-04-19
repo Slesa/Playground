@@ -306,6 +306,15 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unit type {0}.
+        /// </summary>
+        public static string EditUnitTypeView_UnitTypeIs {
+            get {
+                return ResourceManager.GetString("EditUnitTypeView_UnitTypeIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Contraction:.
         /// </summary>
         public static string EditUnitView_Contraction {
@@ -383,6 +392,15 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string EditUnitView_TitleNew {
             get {
                 return ResourceManager.GetString("EditUnitView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit {0}.
+        /// </summary>
+        public static string EditUnitView_UnitIs {
+            get {
+                return ResourceManager.GetString("EditUnitView_UnitIs", resourceCulture);
             }
         }
         

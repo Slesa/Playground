@@ -14,13 +14,16 @@ namespace Lucifer.Ics.Editor.ViewModel
         public EditUnitTypeViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
             : base(dbConversation, eventAggregator)
         {
-            DisplayName = Strings.EditUnitTypeView_TitleNew;
-            Title = Strings.EditUnitTypeView_NewUnitType; 
+            DisplayName = Strings.EditUnitTypeView_NewUnitType;
+            Title = Strings.EditUnitTypeView_TitleNew;
+            ToolTip = Strings.AllUnitTypesView_New_ToolTip;
         }
 
         public EditUnitTypeViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
+            DisplayName = string.Format(Strings.EditUnitTypeView_UnitTypeIs, Element.Name);
+            ToolTip = Strings.AllUnitTypesView_Edit_ToolTip;
         }
 
         public string Title { get; private set; }
@@ -48,10 +51,14 @@ namespace Lucifer.Ics.Editor.ViewModel
  
         #region Module information
 
+        public string ModuleName { get { return DisplayName; } }
+
         public string IconFileName
         {
             get { return @"/Lucifer.Ics.Editor;component/Resources/UnitType.png"; }
         }
+
+        public string ToolTip { get; private set; }
 
         #endregion
 
