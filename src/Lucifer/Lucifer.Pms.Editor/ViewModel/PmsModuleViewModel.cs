@@ -3,6 +3,7 @@ using System.Linq;
 using Caliburn.Micro;
 using Castle.Windsor;
 using Lucifer.Caliburn;
+using Lucifer.Editor;
 using Lucifer.Pms.Editor.Resources;
 
 namespace Lucifer.Pms.Editor.ViewModel
@@ -24,6 +25,7 @@ namespace Lucifer.Pms.Editor.ViewModel
             base.OnInitialize();
             DisplayName = Strings.PmsModuleTitle;
 
+            PmsModules.Each(x => x.ScreenManager = this);
             Items.AddRange(PmsModules);
             ActivateItem(Items.FirstOrDefault());
         }

@@ -54,9 +54,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CurrencyModel.cs" />
+    <Compile Include="Model\PayformModel.cs" />
     <Compile Include="PmsWindsorInstaller.cs" />
     <Compile Include="IPmsModule.cs" />
     <Compile Include="ViewModel\CurrencyRowViewModel.cs" />
+    <Compile Include="ViewModel\EditCurrencyViewModel.cs" />
+    <Compile Include="ViewModel\EditPayformViewModel.cs" />
     <Compile Include="ViewModel\ListCurrenciesViewModel.cs" />
     <Compile Include="ViewModel\ListPayformsViewModel.cs" />
     <Compile Include="ViewModel\PayformRowViewModel.cs" />
@@ -66,6 +70,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditCurrencyView.xaml.cs">
+      <DependentUpon>EditCurrencyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditPayformView.xaml.cs">
+      <DependentUpon>EditPayformView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListCurrenciesView.xaml.cs">
       <DependentUpon>ListCurrenciesView.xaml</DependentUpon>
@@ -112,6 +122,14 @@
     <Resource Include="Resources\Lucifer.Pms.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\EditCurrencyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditPayformView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ListCurrenciesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

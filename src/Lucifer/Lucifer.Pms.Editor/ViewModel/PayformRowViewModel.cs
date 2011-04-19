@@ -9,6 +9,10 @@ namespace Lucifer.Pms.Editor.ViewModel
         {
             ElementData = payform;
         }
+        public void ExchangeData(Payform payform)
+        {
+            ElementData = payform;
+        }
 
         public int Id { get { return ElementData.Id; } }
         public string Name { get { return ElementData.Name; } }

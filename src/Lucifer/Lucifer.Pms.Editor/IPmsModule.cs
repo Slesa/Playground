@@ -7,6 +7,7 @@ namespace Lucifer.Pms.Editor
         string ModuleName { get; }
         string IconFileName { get; }
         string ToolTip { get; }
-        
+
+        Conductor<IScreen>.Collection.OneActive ScreenManager { get; set; }
     }
 }

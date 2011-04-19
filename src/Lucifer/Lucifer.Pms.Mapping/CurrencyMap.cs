@@ -10,6 +10,7 @@ namespace Lucifer.Pms.Mapping
         {
             Id(d => d.Id).GeneratedBy.HiLo("10");
             Map(d => d.Name).Length(40);
+            Map(d => d.Contraction).Length(10);
 
             Version(d => d.Version);
         }

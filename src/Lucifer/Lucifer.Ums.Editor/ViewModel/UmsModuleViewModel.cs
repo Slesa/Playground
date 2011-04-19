@@ -3,6 +3,7 @@ using System.Linq;
 using Caliburn.Micro;
 using Castle.Windsor;
 using Lucifer.Caliburn;
+using Lucifer.Editor;
 using Lucifer.Ums.Editor.Resources;
 
 namespace Lucifer.Ums.Editor.ViewModel
@@ -24,6 +25,7 @@ namespace Lucifer.Ums.Editor.ViewModel
             base.OnInitialize();
             DisplayName = Strings.UmsModuleTitle;
 
+            UmsModules.Each(x => x.ScreenManager = this);
             Items.AddRange(UmsModules);
             ActivateItem(Items.FirstOrDefault());
         }

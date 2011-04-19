@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using System.Windows;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;

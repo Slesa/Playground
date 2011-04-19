@@ -9,15 +9,15 @@
              d:DesignHeight="320" d:DesignWidth="480">
     <UserControl.Resources>
         <!-- Die View Source -->
-        <CollectionViewSource x:Key="UserRolesList"  Source="{Binding Path=AllUserRoles}" >
+        <CollectionViewSource x:Key="UserRolesList"  Source="{Binding Path=ElementList}" >
             <CollectionViewSource.SortDescriptions>
                 <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
 
-        <!-- Style x:Key="UnitTypeItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListCollectionStyle}">
-            <Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
-        </Style -->
+        <Style x:Key="UserRoleItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewCollectionStyle}">
+            <!-- Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+        </Style>
 
     </UserControl.Resources>
 
@@ -25,19 +25,19 @@
 
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_New}" 
                     ToolTip="{x:Static Resources:Strings.AllUserRolesView_New_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_Edit}"
                     ToolTip="{x:Static Resources:Strings.AllUserRolesView_Edit_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}"
+            <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}"
                     Content="{x:Static Resources:Strings.Button_Remove}"
                     ToolTip="{x:Static Resources:Strings.AllUserRolesView_Remove_ToolTip}" />
         </StackPanel>
 
-        <!-- Liste ItemContainerStyle="{StaticResource UnitTypeItemStyle}" -->
-        <ListView x:Name="Users" Style="{DynamicResource ListViewCollectionSkin}"
+        <!-- Liste -->
+        <ListView x:Name="Users" Style="{DynamicResource ListViewCollectionSkin}" ItemContainerStyle="{StaticResource UserRoleItemStyle}" 
                   DataContext="{StaticResource UserRolesList}" ItemsSource="{Binding}">
 
             <ListView.View>

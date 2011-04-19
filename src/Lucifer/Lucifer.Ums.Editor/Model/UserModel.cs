@@ -3,42 +3,41 @@ using System.ComponentModel;
 using System.Linq;
 using Caliburn.Micro;
 using Lucifer.Editor.Validators;
-using Lucifer.Ics.Editor.Resources;
-using Lucifer.Ics.Model.Entities;
+using Lucifer.Ums.Editor.Resources;
+using Lucifer.Ums.Model.Entities;
 
-namespace Lucifer.Ics.Editor.Model
+namespace Lucifer.Ums.Editor.Model
 {
-    public class UnitTypeChangedEvent
+    public class UserChangedEvent
     {
-        public UnitType UnitType;
+        public User User;
     }
-    public class UnitTypeRemovedEvent
+    public class UserRemovedEvent
     {
         public int Id;
     }
 
-    public class UnitTypeModel : PropertyChangedBase, IDataErrorInfo
+    public class UserModel : PropertyChangedBase, IDataErrorInfo
     {
-        readonly UnitType _unitType;
+        readonly User _user;
 
-        public UnitTypeModel()
+        public UserModel()
         {
-            _unitType = new UnitType();
+            _user = new User();
+        }
+        public UserModel(User user)
+        {
+            _user = user;
         }
 
-        public UnitTypeModel(UnitType unitType)
-        {
-            _unitType = unitType;
-        }
-
-        public UnitType UnitType { get { return _unitType; } }
-        public int Id { get { return _unitType.Id; } }
+        public User User { get { return _user; } }
+        public int Id { get { return _user.Id; } }
         public string Name
         {
-            get { return _unitType.Name; }
-            set 
-            { 
-                _unitType.Name = value;
+            get { return _user.Name; }
+            set
+            {
+                _user.Name = value;
                 NotifyOfPropertyChange(() => Error);
             }
         }
@@ -50,8 +49,8 @@ namespace Lucifer.Ics.Editor.Model
             get { return GetValidationError(columnName); }
         }
 
-        public string Error 
-        { 
+        public string Error
+        {
             get
             {
                 return ValidatedProperties.Select(GetValidationError).FirstOrDefault(error => error != null);
@@ -72,7 +71,7 @@ namespace Lucifer.Ics.Editor.Model
             if (Array.IndexOf(ValidatedProperties, columnName) < 0)
                 return null;
             string error = null;
-            switch(columnName)
+            switch (columnName)
             {
                 case "Name":
                     error = ValidateName();
@@ -83,10 +82,9 @@ namespace Lucifer.Ics.Editor.Model
 
         string ValidateName()
         {
-            return EditValidators.IsStringMissing(Name) ? Strings.UnitTypeModel_Name_missing : null;
+            return EditValidators.IsStringMissing(Name) ? Strings.UserModel_Name_missing : null;
         }
 
         #endregion
-
     }
 }

@@ -126,6 +126,13 @@
   <data name="AllCurrenciesView_New_ToolTip" xml:space="preserve">
     <value>Insert new currency</value>
   </data>
+  <data name="AllCurrenciesView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following currencies:
+</value>
+  </data>
+  <data name="AllCurrenciesView_RemoveTitle" xml:space="preserve">
+    <value>Remove currencies</value>
+  </data>
   <data name="AllCurrenciesView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current currency</value>
   </data>
@@ -138,8 +145,18 @@
   <data name="AllPayformsView_New_ToolTip" xml:space="preserve">
     <value>Insert new payform</value>
   </data>
+  <data name="AllPayformsView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following payforms:
+</value>
+  </data>
+  <data name="AllPayformsView_RemoveTitle" xml:space="preserve">
+    <value>Remove payforms</value>
+  </data>
   <data name="AllPayformsView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current payform</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="Button_Edit" xml:space="preserve">
     <value>_Edit</value>
@@ -150,11 +167,44 @@
   <data name="Button_Remove" xml:space="preserve">
     <value>_Remove</value>
   </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="CurrenciesModule" xml:space="preserve">
     <value>Currencies</value>
   </data>
   <data name="CurrenciesTooltip" xml:space="preserve">
     <value>Manage currency informations and rates</value>
+  </data>
+  <data name="CurrencyModel_Name_missing" xml:space="preserve">
+    <value>Name of currency is missing</value>
+  </data>
+  <data name="EditCurrencyView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditCurrencyView_NewCurrency" xml:space="preserve">
+    <value>Add new currency...</value>
+  </data>
+  <data name="EditCurrencyView_TitleEdit" xml:space="preserve">
+    <value>Edit currency</value>
+  </data>
+  <data name="EditCurrencyView_TitleNew" xml:space="preserve">
+    <value>&lt;New currency&gt;</value>
+  </data>
+  <data name="EditPayformView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditPayformView_NewPayform" xml:space="preserve">
+    <value>Add new payform...</value>
+  </data>
+  <data name="EditPayformView_TitleEdit" xml:space="preserve">
+    <value>Edit payform</value>
+  </data>
+  <data name="EditPayformView_TitleNew" xml:space="preserve">
+    <value>&lt;New Payform&gt;</value>
+  </data>
+  <data name="PayformModel_Name_missing" xml:space="preserve">
+    <value>Name of payform is missing</value>
   </data>
   <data name="PayformsModule" xml:space="preserve">
     <value>Payforms</value>

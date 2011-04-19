@@ -9,6 +9,10 @@ namespace Lucifer.Ums.Editor.ViewModel
         {
             ElementData = userRole;
         }
+        public void ExchangeData(UserRole userRole)
+        {
+            ElementData = userRole;
+        }
 
         public int Id { get { return ElementData.Id; } }
         public string Name { get { return ElementData.Name; } }

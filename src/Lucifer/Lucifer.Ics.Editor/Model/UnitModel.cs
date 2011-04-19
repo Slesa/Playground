@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Linq;
 using Caliburn.Micro;
 using Lucifer.Editor.Validators;
 using Lucifer.Ics.Editor.Resources;
@@ -95,9 +96,17 @@ namespace Lucifer.Ics.Editor.Model
             get { return GetValidationError(columnName); }
         }
 
-        public string Error { get { return null; }  }
+        public string Error
+        {
+            get
+            {
+                return ValidatedProperties.Select(GetValidationError).FirstOrDefault(error => error != null);
+            }
+        }
 
         #endregion
+
+        #region Validation 
 
         static readonly string[] ValidatedProperties =
             {
@@ -183,7 +192,7 @@ namespace Lucifer.Ics.Editor.Model
             }
             return null;
         }
- 
 
+        #endregion
     }
 }

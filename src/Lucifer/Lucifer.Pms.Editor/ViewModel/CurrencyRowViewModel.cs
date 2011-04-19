@@ -9,6 +9,10 @@ namespace Lucifer.Pms.Editor.ViewModel
         {
             ElementData = currency;
         }
+        public void ExchangeData(Currency currency)
+        {
+            ElementData = currency;
+        }
 
         public int Id { get { return ElementData.Id; } }
         public string Name { get { return ElementData.Name; } }

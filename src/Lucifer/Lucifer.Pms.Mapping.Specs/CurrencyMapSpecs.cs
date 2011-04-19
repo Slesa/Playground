@@ -13,6 +13,7 @@ namespace Lucifer.Pms.Mapping.Specs
             var spec = new PersistenceSpecification<Currency>(Session);
             _check = spec
                 .CheckProperty(c => c.Name, "A currency")
+                .CheckProperty(c => c.Contraction, "curr")
                 .CheckProperty(c => c.Version, 1);
         };
 

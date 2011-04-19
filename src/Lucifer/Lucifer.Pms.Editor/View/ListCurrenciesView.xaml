@@ -9,15 +9,15 @@
 
     <UserControl.Resources>
         <!-- Die View Source -->
-        <CollectionViewSource x:Key="CurrencyList"  Source="{Binding Path=AllCurrencies}" >
+        <CollectionViewSource x:Key="CurrencyList"  Source="{Binding Path=ElementList}" >
             <CollectionViewSource.SortDescriptions>
                 <scm:SortDescription PropertyName="DisplayName" Direction="Ascending" />
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
 
-        <!-- Style x:Key="UnitTypeItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListCollectionStyle}">
-            <Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
-        </Style -->
+        <Style x:Key="CurrencyItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewCollectionStyle}">
+            <!-- Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+        </Style>
 
     </UserControl.Resources>
 
@@ -25,20 +25,20 @@
 
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_New}" 
                     ToolTip="{x:Static Resources:Strings.AllCurrenciesView_New_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}" 
+            <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" 
                     Content="{x:Static Resources:Strings.Button_Edit}"
                     ToolTip="{x:Static Resources:Strings.AllCurrenciesView_Edit_ToolTip}" />
-            <Button Style="{DynamicResource ListViewButtonSkin}"
+            <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}"
                     Content="{x:Static Resources:Strings.Button_Remove}"
                     ToolTip="{x:Static Resources:Strings.AllCurrenciesView_Remove_ToolTip}" />
         </StackPanel>
 
-        <!-- Liste ItemContainerStyle="{StaticResource UnitTypeItemStyle}" -->
-        <ListView Style="{DynamicResource ListViewCollectionSkin}" DataContext="{StaticResource CurrencyList}"
-                  ItemsSource="{Binding}">
+        <!-- Liste -->
+        <ListView Style="{DynamicResource ListViewCollectionSkin}"  ItemContainerStyle="{StaticResource CurrencyItemStyle}"
+                  DataContext="{StaticResource CurrencyList}" ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>
                     <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->

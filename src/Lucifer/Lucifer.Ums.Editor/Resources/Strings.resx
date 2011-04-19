@@ -126,6 +126,13 @@
   <data name="AllUserRolesView_New_ToolTip" xml:space="preserve">
     <value>Insert new user role</value>
   </data>
+  <data name="AllUserRolesView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following user roles:
+</value>
+  </data>
+  <data name="AllUserRolesView_RemoveTitle" xml:space="preserve">
+    <value>Remove user roles...</value>
+  </data>
   <data name="AllUserRolesView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current user role</value>
   </data>
@@ -138,8 +145,18 @@
   <data name="AllUsersView_New_ToolTip" xml:space="preserve">
     <value>Insert new user</value>
   </data>
+  <data name="AllUsersView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following users:
+</value>
+  </data>
+  <data name="AllUsersView_RemoveTitle" xml:space="preserve">
+    <value>Remove users...</value>
+  </data>
   <data name="AllUsersView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current user</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="Button_Edit" xml:space="preserve">
     <value>_Edit</value>
@@ -150,11 +167,44 @@
   <data name="Button_Remove" xml:space="preserve">
     <value>_Remove</value>
   </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EditUserRoleView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditUserRoleView_NewUserRole" xml:space="preserve">
+    <value>Add new user role...</value>
+  </data>
+  <data name="EditUserRoleView_TitleEdit" xml:space="preserve">
+    <value>Edit user role</value>
+  </data>
+  <data name="EditUserRoleView_TitleNew" xml:space="preserve">
+    <value>&lt;New user role&gt;</value>
+  </data>
+  <data name="EditUserView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditUserView_NewUser" xml:space="preserve">
+    <value>Add new user...</value>
+  </data>
+  <data name="EditUserView_TitleEdit" xml:space="preserve">
+    <value>Edit user</value>
+  </data>
+  <data name="EditUserView_TitleNew" xml:space="preserve">
+    <value>&lt;New user&gt;</value>
+  </data>
   <data name="UmsModuleTitle" xml:space="preserve">
     <value>User Management</value>
   </data>
   <data name="UmsModuleTooltip" xml:space="preserve">
     <value>Edit user and their rights</value>
+  </data>
+  <data name="UserModel_Name_missing" xml:space="preserve">
+    <value>Name of user is missing</value>
+  </data>
+  <data name="UserRoleModel_Name_missing" xml:space="preserve">
+    <value>Name of user role is missing</value>
   </data>
   <data name="UserRolesModule" xml:space="preserve">
     <value>User roles</value>
