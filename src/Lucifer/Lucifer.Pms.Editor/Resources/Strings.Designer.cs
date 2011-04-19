@@ -70,11 +70,29 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contraction.
+        /// </summary>
+        public static string AllCurrenciesView_Header_Contraction {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_Contraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string AllCurrenciesView_Header_Name {
             get {
                 return ResourceManager.GetString("AllCurrenciesView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Symbol.
+        /// </summary>
+        public static string AllCurrenciesView_Header_Symbol {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_Symbol", resourceCulture);
             }
         }
         
@@ -243,6 +261,24 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Symbol of currency is missing.
+        /// </summary>
+        public static string CurrencyModel_Symbol_missing {
+            get {
+                return ResourceManager.GetString("CurrencyModel_Symbol_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Contraction:.
+        /// </summary>
+        public static string EditCurrencyView_Contraction {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_Contraction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Name:.
         /// </summary>
         public static string EditCurrencyView_Name {
@@ -257,6 +293,15 @@ namespace Lucifer.Pms.Editor.Resources {
         public static string EditCurrencyView_NewCurrency {
             get {
                 return ResourceManager.GetString("EditCurrencyView_NewCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Symbol:.
+        /// </summary>
+        public static string EditCurrencyView_Symbol {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_Symbol", resourceCulture);
             }
         }
         

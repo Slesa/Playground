@@ -35,6 +35,28 @@ namespace Lucifer.Pms.Editor.ViewModel
             }
         }
 
+        public string Contraction
+        {
+            get { return Element.Contraction; }
+            set
+            {
+                if (value == Element.Contraction) return;
+                Element.Contraction = value;
+                NotifyOfPropertyChange(() => Contraction);
+            }
+        }
+
+        public string Symbol
+        {
+            get { return Element.Symbol; }
+            set
+            {
+                if (value == Element.Symbol) return;
+                Element.Symbol = value;
+                NotifyOfPropertyChange(() => Symbol);
+            }
+        }
+
         public void Save()
         {
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Currency))) 

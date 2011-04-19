@@ -41,6 +41,24 @@ namespace Lucifer.Pms.Editor.Model
                 NotifyOfPropertyChange(() => Error);
             }
         }
+        public string Contraction
+        {
+            get { return _currency.Contraction; }
+            set 
+            { 
+                _currency.Contraction = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
+        public string Symbol
+        {
+            get { return _currency.Symbol; }
+            set 
+            { 
+                _currency.Symbol = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
 
         #region IDataErrorInfo Members
 
@@ -64,6 +82,7 @@ namespace Lucifer.Pms.Editor.Model
         static readonly string[] ValidatedProperties =
             {
                 "Name",
+                "Symbol",
             };
 
         string GetValidationError(string columnName)
@@ -76,6 +95,9 @@ namespace Lucifer.Pms.Editor.Model
                 case "Name":
                     error = ValidateName();
                     break;
+                case "Symbol":
+                    error = ValidateSymbol();
+                    break;
             }
             return error;
         }
@@ -83,6 +105,11 @@ namespace Lucifer.Pms.Editor.Model
         string ValidateName()
         {
             return EditValidators.IsStringMissing(Name) ? Strings.CurrencyModel_Name_missing : null;
+        }
+
+        string ValidateSymbol()
+        {
+            return EditValidators.IsStringMissing(Symbol) ? Strings.CurrencyModel_Symbol_missing : null;
         }
 
         #endregion

@@ -120,8 +120,14 @@
   <data name="AllCurrenciesView_Edit_ToolTip" xml:space="preserve">
     <value>Edit current currency</value>
   </data>
+  <data name="AllCurrenciesView_Header_Contraction" xml:space="preserve">
+    <value>Contraction</value>
+  </data>
   <data name="AllCurrenciesView_Header_Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="AllCurrenciesView_Header_Symbol" xml:space="preserve">
+    <value>Symbol</value>
   </data>
   <data name="AllCurrenciesView_New_ToolTip" xml:space="preserve">
     <value>Insert new currency</value>
@@ -179,11 +185,20 @@
   <data name="CurrencyModel_Name_missing" xml:space="preserve">
     <value>Name of currency is missing</value>
   </data>
+  <data name="CurrencyModel_Symbol_missing" xml:space="preserve">
+    <value>Symbol of currency is missing</value>
+  </data>
+  <data name="EditCurrencyView_Contraction" xml:space="preserve">
+    <value>_Contraction:</value>
+  </data>
   <data name="EditCurrencyView_Name" xml:space="preserve">
     <value>_Name:</value>
   </data>
   <data name="EditCurrencyView_NewCurrency" xml:space="preserve">
     <value>Add new currency...</value>
+  </data>
+  <data name="EditCurrencyView_Symbol" xml:space="preserve">
+    <value>_Symbol:</value>
   </data>
   <data name="EditCurrencyView_TitleEdit" xml:space="preserve">
     <value>Edit currency</value>

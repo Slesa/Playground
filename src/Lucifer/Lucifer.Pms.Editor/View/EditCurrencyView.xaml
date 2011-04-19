@@ -32,6 +32,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -49,6 +53,24 @@
                    Validation.ErrorTemplate="{x:Null}" />
             <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
                    Content="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Contraction -->
+            <Label Grid.Row="3" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textContraction}" Content="{x:Static Resources:Strings.EditCurrencyView_Contraction}" />
+            <TextBox Grid.Row="3" Grid.Column="1" Name="_textContraction" Style="{DynamicResource EditDialogTextBoxSkin}" 
+                   Text="{Binding Path=Contraction, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="4" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textContraction, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Symbol -->
+            <Label Grid.Row="5" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textSymbol}" Content="{x:Static Resources:Strings.EditCurrencyView_Symbol}" />
+            <TextBox Grid.Row="5" Grid.Column="1" Name="_textSymbol" Style="{DynamicResource EditDialogTextBoxSkin}" 
+                   Text="{Binding Path=Symbol, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="6" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textSymbol, Path=(Validation.Errors).CurrentItem}" />
         </Grid>
     </DockPanel>
 </UserControl>
