@@ -13,13 +13,16 @@ namespace Lucifer.Pms.Editor.ViewModel
         public EditCurrencyViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
             : base(dbConversation, eventAggregator)
         {
-            DisplayName = Strings.EditCurrencyView_TitleNew;
-            Title = Strings.EditCurrencyView_NewCurrency; 
+            DisplayName = Strings.EditCurrencyView_NewCurrency;
+            Title = Strings.EditCurrencyView_TitleNew;
+            ToolTip = Strings.AllCurrenciesView_New_ToolTip;
         }
 
         public EditCurrencyViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
+            DisplayName = string.Format(Strings.EditCurrencyView_CurrencyIs, Element.Name);
+            ToolTip = Strings.AllCurrenciesView_Edit_ToolTip;
         }
 
         public string Title { get; private set; }
@@ -69,10 +72,14 @@ namespace Lucifer.Pms.Editor.ViewModel
  
         #region Module information
 
+        public string ModuleName { get { return DisplayName; } }
+
         public string IconFileName
         {
             get { return @"/Lucifer.Pms.Editor;component/Resources/Currency.png"; }
         }
+
+        public string ToolTip { get; private set; }
 
         #endregion
 

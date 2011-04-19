@@ -225,7 +225,7 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new user role....
+        ///   Looks up a localized string similar to &lt;New user role&gt;.
         /// </summary>
         public static string EditUserRoleView_NewUserRole {
             get {
@@ -243,11 +243,20 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;New user role&gt;.
+        ///   Looks up a localized string similar to Add new user role....
         /// </summary>
         public static string EditUserRoleView_TitleNew {
             get {
                 return ResourceManager.GetString("EditUserRoleView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User role {0}.
+        /// </summary>
+        public static string EditUserRoleView_UserRoleIs {
+            get {
+                return ResourceManager.GetString("EditUserRoleView_UserRoleIs", resourceCulture);
             }
         }
         
@@ -261,7 +270,7 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new user....
+        ///   Looks up a localized string similar to &lt;New user&gt;.
         /// </summary>
         public static string EditUserView_NewUser {
             get {
@@ -279,11 +288,20 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;New user&gt;.
+        ///   Looks up a localized string similar to Add new user....
         /// </summary>
         public static string EditUserView_TitleNew {
             get {
                 return ResourceManager.GetString("EditUserView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User {0}.
+        /// </summary>
+        public static string EditUserView_UserIs {
+            get {
+                return ResourceManager.GetString("EditUserView_UserIs", resourceCulture);
             }
         }
         

@@ -191,11 +191,14 @@
   <data name="EditCurrencyView_Contraction" xml:space="preserve">
     <value>_Contraction:</value>
   </data>
+  <data name="EditCurrencyView_CurrencyIs" xml:space="preserve">
+    <value>Currency {0}</value>
+  </data>
   <data name="EditCurrencyView_Name" xml:space="preserve">
     <value>_Name:</value>
   </data>
   <data name="EditCurrencyView_NewCurrency" xml:space="preserve">
-    <value>Add new currency...</value>
+    <value>&lt;New currency&gt;</value>
   </data>
   <data name="EditCurrencyView_Symbol" xml:space="preserve">
     <value>_Symbol:</value>
@@ -204,19 +207,22 @@
     <value>Edit currency</value>
   </data>
   <data name="EditCurrencyView_TitleNew" xml:space="preserve">
-    <value>&lt;New currency&gt;</value>
+    <value>Add new currency...</value>
   </data>
   <data name="EditPayformView_Name" xml:space="preserve">
     <value>_Name:</value>
   </data>
   <data name="EditPayformView_NewPayform" xml:space="preserve">
-    <value>Add new payform...</value>
+    <value>&lt;New Payform&gt;</value>
+  </data>
+  <data name="EditPayformView_PayformIs" xml:space="preserve">
+    <value>Payform {0}</value>
   </data>
   <data name="EditPayformView_TitleEdit" xml:space="preserve">
     <value>Edit payform</value>
   </data>
   <data name="EditPayformView_TitleNew" xml:space="preserve">
-    <value>&lt;New Payform&gt;</value>
+    <value>Add new payform...</value>
   </data>
   <data name="PayformModel_Name_missing" xml:space="preserve">
     <value>Name of payform is missing</value>

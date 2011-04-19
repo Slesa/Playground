@@ -13,13 +13,16 @@ namespace Lucifer.Ums.Editor.ViewModel
         public EditUserRoleViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
             : base(dbConversation, eventAggregator)
         {
-            DisplayName = Strings.EditUserRoleView_TitleNew;
-            Title = Strings.EditUserRoleView_NewUserRole; 
+            DisplayName = Strings.EditUserRoleView_NewUserRole;
+            Title = Strings.EditUserRoleView_TitleNew;
+            ToolTip = Strings.AllUserRolesView_New_ToolTip;
         }
 
         public EditUserRoleViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
+            DisplayName = string.Format(Strings.EditUserRoleView_UserRoleIs, Element.Name);
+            ToolTip = Strings.AllUserRolesView_Edit_ToolTip;
         }
 
         public string Title { get; private set; }
@@ -47,10 +50,14 @@ namespace Lucifer.Ums.Editor.ViewModel
  
         #region Module information
 
+        public string ModuleName { get { return DisplayName; } }
+
         public string IconFileName
         {
             get { return @"/Lucifer.Ums.Editor;component/Resources/UserRole.png"; }
         }
+
+        public string ToolTip { get; private set; }
 
         #endregion
 

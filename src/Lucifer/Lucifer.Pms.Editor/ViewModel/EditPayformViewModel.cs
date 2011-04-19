@@ -13,13 +13,16 @@ namespace Lucifer.Pms.Editor.ViewModel
         public EditPayformViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
             : base(dbConversation, eventAggregator)
         {
-            DisplayName = Strings.EditPayformView_TitleNew;
-            Title = Strings.EditPayformView_NewPayform; 
+            DisplayName = Strings.EditPayformView_NewPayform;
+            Title = Strings.EditPayformView_TitleNew;
+            ToolTip = Strings.AllPayformsView_New_ToolTip;
         }
 
         public EditPayformViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
+            DisplayName = string.Format(Strings.EditPayformView_PayformIs, Element.Name);
+            ToolTip = Strings.AllPayformsView_Edit_ToolTip;
         }
 
         public string Title { get; private set; }
@@ -47,10 +50,14 @@ namespace Lucifer.Pms.Editor.ViewModel
  
         #region Module information
 
+        public string ModuleName { get { return DisplayName; } }
+
         public string IconFileName
         {
             get { return @"/Lucifer.Pms.Editor;component/Resources/Payform.png"; }
         }
+
+        public string ToolTip { get; private set; }
 
         #endregion
 

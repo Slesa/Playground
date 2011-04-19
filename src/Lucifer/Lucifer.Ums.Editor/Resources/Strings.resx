@@ -174,25 +174,31 @@
     <value>_Name:</value>
   </data>
   <data name="EditUserRoleView_NewUserRole" xml:space="preserve">
-    <value>Add new user role...</value>
+    <value>&lt;New user role&gt;</value>
   </data>
   <data name="EditUserRoleView_TitleEdit" xml:space="preserve">
     <value>Edit user role</value>
   </data>
   <data name="EditUserRoleView_TitleNew" xml:space="preserve">
-    <value>&lt;New user role&gt;</value>
+    <value>Add new user role...</value>
+  </data>
+  <data name="EditUserRoleView_UserRoleIs" xml:space="preserve">
+    <value>User role {0}</value>
   </data>
   <data name="EditUserView_Name" xml:space="preserve">
     <value>_Name:</value>
   </data>
   <data name="EditUserView_NewUser" xml:space="preserve">
-    <value>Add new user...</value>
+    <value>&lt;New user&gt;</value>
   </data>
   <data name="EditUserView_TitleEdit" xml:space="preserve">
     <value>Edit user</value>
   </data>
   <data name="EditUserView_TitleNew" xml:space="preserve">
-    <value>&lt;New user&gt;</value>
+    <value>Add new user...</value>
+  </data>
+  <data name="EditUserView_UserIs" xml:space="preserve">
+    <value>User {0}</value>
   </data>
   <data name="UmsModuleTitle" xml:space="preserve">
     <value>User Management</value>

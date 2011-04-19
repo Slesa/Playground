@@ -279,6 +279,15 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Currency {0}.
+        /// </summary>
+        public static string EditCurrencyView_CurrencyIs {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_CurrencyIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Name:.
         /// </summary>
         public static string EditCurrencyView_Name {
@@ -288,7 +297,7 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new currency....
+        ///   Looks up a localized string similar to &lt;New currency&gt;.
         /// </summary>
         public static string EditCurrencyView_NewCurrency {
             get {
@@ -315,7 +324,7 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;New currency&gt;.
+        ///   Looks up a localized string similar to Add new currency....
         /// </summary>
         public static string EditCurrencyView_TitleNew {
             get {
@@ -333,11 +342,20 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new payform....
+        ///   Looks up a localized string similar to &lt;New Payform&gt;.
         /// </summary>
         public static string EditPayformView_NewPayform {
             get {
                 return ResourceManager.GetString("EditPayformView_NewPayform", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payform {0}.
+        /// </summary>
+        public static string EditPayformView_PayformIs {
+            get {
+                return ResourceManager.GetString("EditPayformView_PayformIs", resourceCulture);
             }
         }
         
@@ -351,7 +369,7 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;New Payform&gt;.
+        ///   Looks up a localized string similar to Add new payform....
         /// </summary>
         public static string EditPayformView_TitleNew {
             get {
