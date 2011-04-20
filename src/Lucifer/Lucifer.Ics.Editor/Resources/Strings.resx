@@ -274,7 +274,7 @@
   <data name="AllUnitTypesView_RemoveTitle" xml:space="preserve">
     <value>Remove unit types</value>
   </data>
-  <data name="AlUnitsView_RemoveMessage" xml:space="preserve">
+  <data name="AllUnitsView_RemoveMessage" xml:space="preserve">
     <value>Are you sure to remove the following units:
 </value>
   </data>
@@ -283,5 +283,118 @@
   </data>
   <data name="EditUnitView_UnitIs" xml:space="preserve">
     <value>Unit {0}</value>
+  </data>
+  <data name="AllPurchaseFamiliesView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current purchase family</value>
+  </data>
+  <data name="AllPurchaseFamiliesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllPurchaseFamiliesView_New_ToolTip" xml:space="preserve">
+    <value>Insert a new purchase family</value>
+  </data>
+  <data name="AllPurchaseFamiliesView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following purchase families:
+</value>
+  </data>
+  <data name="AllPurchaseFamiliesView_RemoveTitle" xml:space="preserve">
+    <value>Remove purchase families</value>
+  </data>
+  <data name="AllPurchaseFamiliesView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current purchase family</value>
+  </data>
+  <data name="AllPurchaseItemsView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current purchase item</value>
+  </data>
+  <data name="AllPurchaseItemsView_Header_Family" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="AllPurchaseItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllPurchaseItemsView_Header_PurchaseUnit" xml:space="preserve">
+    <value>P.-Unit</value>
+  </data>
+  <data name="AllPurchaseItemsView_Header_RecipeUnit" xml:space="preserve">
+    <value>R.-Unit</value>
+  </data>
+  <data name="AllPurchaseItemsView_New_ToolTip" xml:space="preserve">
+    <value>Insert a new purchase item</value>
+  </data>
+  <data name="AllPurchaseItemsView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following purchase items:
+</value>
+  </data>
+  <data name="AllPurchaseItemsView_RemoveTitle" xml:space="preserve">
+    <value>Remove purchase items</value>
+  </data>
+  <data name="AllPurchaseItemsView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current purchase item</value>
+  </data>
+  <data name="EditPurchaseFamilyView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditPurchaseFamilyView_NewPurchaseFamily" xml:space="preserve">
+    <value>&lt;New purchase family&gt;</value>
+  </data>
+  <data name="EditPurchaseFamilyView_PurchaseFamilyIs" xml:space="preserve">
+    <value>Purchase family {0}</value>
+  </data>
+  <data name="EditPurchaseFamilyView_TitleEdit" xml:space="preserve">
+    <value>Edit purchase family</value>
+  </data>
+  <data name="EditPurchaseFamilyView_TitleNew" xml:space="preserve">
+    <value>Add new purchase family...</value>
+  </data>
+  <data name="EditPurchaseItemView_Family" xml:space="preserve">
+    <value>_Family:</value>
+  </data>
+  <data name="EditPurchaseItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditPurchaseItemView_NewPurchaseItem" xml:space="preserve">
+    <value>&lt;New purchase item&gt;</value>
+  </data>
+  <data name="EditPurchaseItemView_PurchaseItemIs" xml:space="preserve">
+    <value>Purchase item {0}</value>
+  </data>
+  <data name="EditPurchaseItemView_PurchaseUnit" xml:space="preserve">
+    <value>_Purchase unit:</value>
+  </data>
+  <data name="EditPurchaseItemView_RecipeUnit" xml:space="preserve">
+    <value>_Recipe unit:</value>
+  </data>
+  <data name="EditPurchaseItemView_TitleEdit" xml:space="preserve">
+    <value>Edit purchase item</value>
+  </data>
+  <data name="EditPurchaseItemView_TitleNew" xml:space="preserve">
+    <value>Add new purchase item...</value>
+  </data>
+  <data name="PurchaseFamiliesModule" xml:space="preserve">
+    <value>Purchase families</value>
+  </data>
+  <data name="PurchaseFamiliesTooltip" xml:space="preserve">
+    <value>Purchase families to group purchase items</value>
+  </data>
+  <data name="PurchaseFamilyModel_Name_missing" xml:space="preserve">
+    <value>Name of purchase family is missing</value>
+  </data>
+  <data name="PurchaseItemModel_Name_missing" xml:space="preserve">
+    <value>Name of the purchase item is missing</value>
+  </data>
+  <data name="PurchaseItemModel_PurchaseFamily_is_missing" xml:space="preserve">
+    <value>Family of the purchase item is missing</value>
+  </data>
+  <data name="PurchaseItemModel_PurchaseUnit_is_missing" xml:space="preserve">
+    <value>Purchase unit of the purchase item is missing</value>
+  </data>
+  <data name="PurchaseItemModel_RecipeUnit_is_missing" xml:space="preserve">
+    <value>Recipe unit of the purchase item is missing</value>
+  </data>
+  <data name="PurchaseItemsModule" xml:space="preserve">
+    <value>Purchase items</value>
+  </data>
+  <data name="PurchaseItemsTooltip" xml:space="preserve">
+    <value>Manage purchase items</value>
   </data>
 </root>

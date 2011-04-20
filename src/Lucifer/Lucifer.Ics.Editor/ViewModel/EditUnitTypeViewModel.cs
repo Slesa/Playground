@@ -10,7 +10,6 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class EditUnitTypeViewModel : EditItemViewModel<UnitTypeModel>, IDataErrorInfo
     {
-
         public EditUnitTypeViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
             : base(dbConversation, eventAggregator)
         {

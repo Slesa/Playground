@@ -16,9 +16,9 @@ namespace Lucifer.Ics.Mapping
             Map(d => d.Purchasing);
             Map(d => d.Reciping);
 
-            HasMany(d => d.Children)
-                .Access.CamelCaseField(Prefix.Underscore)
-                .Cascade.AllDeleteOrphan();
+            //HasMany(d => d.Children)
+            //    .Access.CamelCaseField(Prefix.Underscore)
+            //    .Cascade.AllDeleteOrphan();
             
             Version(d => d.Version);
 

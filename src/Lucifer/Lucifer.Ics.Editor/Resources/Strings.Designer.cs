@@ -61,6 +61,143 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current purchase family.
+        /// </summary>
+        public static string AllPurchaseFamiliesView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPurchaseFamiliesView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllPurchaseFamiliesView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllPurchaseFamiliesView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a new purchase family.
+        /// </summary>
+        public static string AllPurchaseFamiliesView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPurchaseFamiliesView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current purchase family.
+        /// </summary>
+        public static string AllPurchaseFamiliesView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPurchaseFamiliesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following purchase families:
+        ///.
+        /// </summary>
+        public static string AllPurchaseFamiliesView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllPurchaseFamiliesView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove purchase families.
+        /// </summary>
+        public static string AllPurchaseFamiliesView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllPurchaseFamiliesView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit current purchase item.
+        /// </summary>
+        public static string AllPurchaseItemsView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family.
+        /// </summary>
+        public static string AllPurchaseItemsView_Header_Family {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_Header_Family", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllPurchaseItemsView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to P.-Unit.
+        /// </summary>
+        public static string AllPurchaseItemsView_Header_PurchaseUnit {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_Header_PurchaseUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to R.-Unit.
+        /// </summary>
+        public static string AllPurchaseItemsView_Header_RecipeUnit {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_Header_RecipeUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a new purchase item.
+        /// </summary>
+        public static string AllPurchaseItemsView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current purchase item.
+        /// </summary>
+        public static string AllPurchaseItemsView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following purchase items:
+        ///.
+        /// </summary>
+        public static string AllPurchaseItemsView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove purchase items.
+        /// </summary>
+        public static string AllPurchaseItemsView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllPurchaseItemsView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit current unit.
         /// </summary>
         public static string AllUnitsView_Edit_ToolTip {
@@ -151,6 +288,16 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following units:
+        ///.
+        /// </summary>
+        public static string AllUnitsView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllUnitsView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove units.
         /// </summary>
         public static string AllUnitsView_RemoveTitle {
@@ -215,16 +362,6 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure to remove the following units:
-        ///.
-        /// </summary>
-        public static string AlUnitsView_RemoveMessage {
-            get {
-                return ResourceManager.GetString("AlUnitsView_RemoveMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Button_Cancel {
@@ -266,6 +403,123 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string Button_Save {
             get {
                 return ResourceManager.GetString("Button_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditPurchaseFamilyView_Name {
+            get {
+                return ResourceManager.GetString("EditPurchaseFamilyView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New purchase family&gt;.
+        /// </summary>
+        public static string EditPurchaseFamilyView_NewPurchaseFamily {
+            get {
+                return ResourceManager.GetString("EditPurchaseFamilyView_NewPurchaseFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase family {0}.
+        /// </summary>
+        public static string EditPurchaseFamilyView_PurchaseFamilyIs {
+            get {
+                return ResourceManager.GetString("EditPurchaseFamilyView_PurchaseFamilyIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit purchase family.
+        /// </summary>
+        public static string EditPurchaseFamilyView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditPurchaseFamilyView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new purchase family....
+        /// </summary>
+        public static string EditPurchaseFamilyView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditPurchaseFamilyView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Family:.
+        /// </summary>
+        public static string EditPurchaseItemView_Family {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_Family", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditPurchaseItemView_Name {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New purchase item&gt;.
+        /// </summary>
+        public static string EditPurchaseItemView_NewPurchaseItem {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_NewPurchaseItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase item {0}.
+        /// </summary>
+        public static string EditPurchaseItemView_PurchaseItemIs {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_PurchaseItemIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Purchase unit:.
+        /// </summary>
+        public static string EditPurchaseItemView_PurchaseUnit {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_PurchaseUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Recipe unit:.
+        /// </summary>
+        public static string EditPurchaseItemView_RecipeUnit {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_RecipeUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit purchase item.
+        /// </summary>
+        public static string EditPurchaseItemView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new purchase item....
+        /// </summary>
+        public static string EditPurchaseItemView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditPurchaseItemView_TitleNew", resourceCulture);
             }
         }
         
@@ -428,6 +682,87 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string IcsModuleTooltip {
             get {
                 return ResourceManager.GetString("IcsModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase families.
+        /// </summary>
+        public static string PurchaseFamiliesModule {
+            get {
+                return ResourceManager.GetString("PurchaseFamiliesModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase families to group purchase items.
+        /// </summary>
+        public static string PurchaseFamiliesTooltip {
+            get {
+                return ResourceManager.GetString("PurchaseFamiliesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of purchase family is missing.
+        /// </summary>
+        public static string PurchaseFamilyModel_Name_missing {
+            get {
+                return ResourceManager.GetString("PurchaseFamilyModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the purchase item is missing.
+        /// </summary>
+        public static string PurchaseItemModel_Name_missing {
+            get {
+                return ResourceManager.GetString("PurchaseItemModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family of the purchase item is missing.
+        /// </summary>
+        public static string PurchaseItemModel_PurchaseFamily_is_missing {
+            get {
+                return ResourceManager.GetString("PurchaseItemModel_PurchaseFamily_is_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase unit of the purchase item is missing.
+        /// </summary>
+        public static string PurchaseItemModel_PurchaseUnit_is_missing {
+            get {
+                return ResourceManager.GetString("PurchaseItemModel_PurchaseUnit_is_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipe unit of the purchase item is missing.
+        /// </summary>
+        public static string PurchaseItemModel_RecipeUnit_is_missing {
+            get {
+                return ResourceManager.GetString("PurchaseItemModel_RecipeUnit_is_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase items.
+        /// </summary>
+        public static string PurchaseItemsModule {
+            get {
+                return ResourceManager.GetString("PurchaseItemsModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage purchase items.
+        /// </summary>
+        public static string PurchaseItemsTooltip {
+            get {
+                return ResourceManager.GetString("PurchaseItemsTooltip", resourceCulture);
             }
         }
         

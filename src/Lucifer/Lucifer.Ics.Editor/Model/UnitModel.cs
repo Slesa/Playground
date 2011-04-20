@@ -25,7 +25,6 @@ namespace Lucifer.Ics.Editor.Model
         {
             _unit = new Unit();
         }
-
         public UnitModel(Unit unit)
         {
             _unit = unit;

@@ -39,7 +39,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (selectesForMessage.Count() == 0)
                 return;
 
-            var message = string.Format(Strings.AlUnitsView_RemoveMessage);
+            var message = string.Format(Strings.AllUnitsView_RemoveMessage);
             message = selectesForMessage.Aggregate(
                 message, (current, unit) => current + string.Format("{0} {1}", unit.Id, unit.Name));
 
