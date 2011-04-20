@@ -14,6 +14,10 @@ namespace Lucifer.Pms.Mapping.Specs
             _check = spec
                 .CheckProperty(c => c.Name, "A currency")
                 .CheckProperty(c => c.Contraction, "curr")
+                .CheckProperty(c => c.Rate, 1.42m)
+                .CheckProperty(c => c.DecimalPosition, 2)
+                .CheckProperty(c => c.DecimalChar, ',')
+                .CheckProperty(c => c.ThousandChar, '.')
                 .CheckProperty(c => c.Version, 1);
         };
 

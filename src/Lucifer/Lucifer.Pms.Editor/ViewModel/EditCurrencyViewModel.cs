@@ -37,7 +37,6 @@ namespace Lucifer.Pms.Editor.ViewModel
                 NotifyOfPropertyChange(() => Name);
             }
         }
-
         public string Contraction
         {
             get { return Element.Contraction; }
@@ -48,7 +47,6 @@ namespace Lucifer.Pms.Editor.ViewModel
                 NotifyOfPropertyChange(() => Contraction);
             }
         }
-
         public string Symbol
         {
             get { return Element.Symbol; }
@@ -57,6 +55,46 @@ namespace Lucifer.Pms.Editor.ViewModel
                 if (value == Element.Symbol) return;
                 Element.Symbol = value;
                 NotifyOfPropertyChange(() => Symbol);
+            }
+        }
+        public decimal Rate
+        {
+            get { return Element.Rate; }
+            set
+            {
+                if (value == Element.Rate) return;
+                Element.Rate = value;
+                NotifyOfPropertyChange(() => Rate);
+            }
+        }
+        public int DecimalPosition
+        {
+            get { return Element.DecimalPosition; }
+            set
+            {
+                if (value == Element.DecimalPosition) return;
+                Element.DecimalPosition = value;
+                NotifyOfPropertyChange(() => DecimalPosition);
+            }
+        }
+        public char DecimalChar
+        {
+            get { return Element.DecimalChar; }
+            set
+            {
+                if (value == Element.DecimalChar) return;
+                Element.DecimalChar = value;
+                NotifyOfPropertyChange(() => DecimalChar);
+            }
+        }
+        public char ThousandChar
+        {
+            get { return Element.ThousandChar; }
+            set
+            {
+                if (value == Element.ThousandChar) return;
+                Element.ThousandChar = value;
+                NotifyOfPropertyChange(() => ThousandChar);
             }
         }
 

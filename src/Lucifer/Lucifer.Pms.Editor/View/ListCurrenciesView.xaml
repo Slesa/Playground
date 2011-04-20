@@ -45,6 +45,10 @@
                     <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_Name}" DisplayMemberBinding="{Binding Path=Name}" />
                     <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_Contraction}" DisplayMemberBinding="{Binding Path=Contraction}" />
                     <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_Symbol}" DisplayMemberBinding="{Binding Path=Symbol}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_Rate}" DisplayMemberBinding="{Binding Path=Rate}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_DecimalPosition}" DisplayMemberBinding="{Binding Path=DecimalPosition}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_DecimalChar}" DisplayMemberBinding="{Binding Path=DecimalChar}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllCurrenciesView_Header_ThousandChar}" DisplayMemberBinding="{Binding Path=ThousandChar}" />
                 </GridView>
             </ListView.View>
 

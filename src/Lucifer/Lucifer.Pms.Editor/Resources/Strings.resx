@@ -123,11 +123,23 @@
   <data name="AllCurrenciesView_Header_Contraction" xml:space="preserve">
     <value>Contraction</value>
   </data>
+  <data name="AllCurrenciesView_Header_DecimalChar" xml:space="preserve">
+    <value>Dec.Chr.</value>
+  </data>
+  <data name="AllCurrenciesView_Header_DecimalPosition" xml:space="preserve">
+    <value>Dec.Pos.</value>
+  </data>
   <data name="AllCurrenciesView_Header_Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="AllCurrenciesView_Header_Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
   <data name="AllCurrenciesView_Header_Symbol" xml:space="preserve">
     <value>Symbol</value>
+  </data>
+  <data name="AllCurrenciesView_Header_ThousandChar" xml:space="preserve">
+    <value>Ths.Chr.</value>
   </data>
   <data name="AllCurrenciesView_New_ToolTip" xml:space="preserve">
     <value>Insert new currency</value>
@@ -194,14 +206,26 @@
   <data name="EditCurrencyView_CurrencyIs" xml:space="preserve">
     <value>Currency {0}</value>
   </data>
+  <data name="EditCurrencyView_DecimalChar" xml:space="preserve">
+    <value>Decimal char:</value>
+  </data>
+  <data name="EditCurrencyView_DecimalPos" xml:space="preserve">
+    <value>Decimal pos:</value>
+  </data>
   <data name="EditCurrencyView_Name" xml:space="preserve">
     <value>_Name:</value>
   </data>
   <data name="EditCurrencyView_NewCurrency" xml:space="preserve">
     <value>&lt;New currency&gt;</value>
   </data>
+  <data name="EditCurrencyView_Rate" xml:space="preserve">
+    <value>_Rate:</value>
+  </data>
   <data name="EditCurrencyView_Symbol" xml:space="preserve">
     <value>_Symbol:</value>
+  </data>
+  <data name="EditCurrencyView_ThousandChar" xml:space="preserve">
+    <value>Thousand char:</value>
   </data>
   <data name="EditCurrencyView_TitleEdit" xml:space="preserve">
     <value>Edit currency</value>

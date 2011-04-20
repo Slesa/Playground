@@ -59,6 +59,42 @@ namespace Lucifer.Pms.Editor.Model
                 NotifyOfPropertyChange(() => Error);
             }
         }
+        public decimal Rate
+        {
+            get { return _currency.Rate; }
+            set
+            {
+                _currency.Rate = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
+        public int DecimalPosition
+        {
+            get { return _currency.DecimalPosition; }
+            set
+            {
+                _currency.DecimalPosition = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
+        public char DecimalChar
+        {
+            get { return _currency.DecimalChar; }
+            set
+            {
+                _currency.DecimalChar = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
+        public char ThousandChar
+        {
+            get { return _currency.ThousandChar; }
+            set
+            {
+                _currency.ThousandChar = value;
+                NotifyOfPropertyChange(() => Error);
+            }
+        }
 
         #region IDataErrorInfo Members
 

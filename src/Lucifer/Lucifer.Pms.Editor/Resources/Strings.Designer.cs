@@ -79,6 +79,24 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dec.Chr..
+        /// </summary>
+        public static string AllCurrenciesView_Header_DecimalChar {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_DecimalChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dec.Pos..
+        /// </summary>
+        public static string AllCurrenciesView_Header_DecimalPosition {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_DecimalPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string AllCurrenciesView_Header_Name {
@@ -88,11 +106,29 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rate.
+        /// </summary>
+        public static string AllCurrenciesView_Header_Rate {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_Rate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Symbol.
         /// </summary>
         public static string AllCurrenciesView_Header_Symbol {
             get {
                 return ResourceManager.GetString("AllCurrenciesView_Header_Symbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ths.Chr..
+        /// </summary>
+        public static string AllCurrenciesView_Header_ThousandChar {
+            get {
+                return ResourceManager.GetString("AllCurrenciesView_Header_ThousandChar", resourceCulture);
             }
         }
         
@@ -288,6 +324,24 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Decimal char:.
+        /// </summary>
+        public static string EditCurrencyView_DecimalChar {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_DecimalChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decimal pos:.
+        /// </summary>
+        public static string EditCurrencyView_DecimalPos {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_DecimalPos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Name:.
         /// </summary>
         public static string EditCurrencyView_Name {
@@ -306,11 +360,29 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Rate:.
+        /// </summary>
+        public static string EditCurrencyView_Rate {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_Rate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Symbol:.
         /// </summary>
         public static string EditCurrencyView_Symbol {
             get {
                 return ResourceManager.GetString("EditCurrencyView_Symbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thousand char:.
+        /// </summary>
+        public static string EditCurrencyView_ThousandChar {
+            get {
+                return ResourceManager.GetString("EditCurrencyView_ThousandChar", resourceCulture);
             }
         }
         

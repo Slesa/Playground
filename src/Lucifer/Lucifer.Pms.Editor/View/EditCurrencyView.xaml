@@ -36,6 +36,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -71,6 +77,42 @@
                    Validation.ErrorTemplate="{x:Null}" />
             <ContentPresenter Grid.Row="6" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
                    Content="{Binding ElementName=_textSymbol, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Rate -->
+            <Label Grid.Row="7" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textRate}" Content="{x:Static Resources:Strings.EditCurrencyView_Rate}" />
+            <TextBox Grid.Row="7" Grid.Column="1" Name="_textRate" Style="{DynamicResource EditDialogTextBoxSkin}" 
+                   Text="{Binding Path=Rate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="8" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textRate, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Decimal Pos -->
+            <Label Grid.Row="9" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textDecimalPos}" Content="{x:Static Resources:Strings.EditCurrencyView_DecimalPos}" />
+            <TextBox Grid.Row="9" Grid.Column="1" Name="_textDecimalPos" Style="{DynamicResource EditDialogTextBoxSkin}" 
+                   Text="{Binding Path=DecimalPosition, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="10" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textDecimalPos, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Decimal Char -->
+            <Label Grid.Row="11" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textDecimalChar}" Content="{x:Static Resources:Strings.EditCurrencyView_DecimalChar}" />
+            <TextBox Grid.Row="11" Grid.Column="1" Name="_textDecimalChar" Style="{DynamicResource EditDialogTextBoxSkin}" 
+                   Text="{Binding Path=DecimalChar, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="12" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textDecimalChar, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Thousand Char -->
+            <Label Grid.Row="13" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_textThousandChar}" Content="{x:Static Resources:Strings.EditCurrencyView_ThousandChar}" />
+            <TextBox Grid.Row="13" Grid.Column="1" Name="_textThousandChar" Style="{DynamicResource EditDialogTextBoxSkin}" 
+                   Text="{Binding Path=ThousandChar, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="14" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_textThousandChar, Path=(Validation.Errors).CurrentItem}" />
         </Grid>
     </DockPanel>
 </UserControl>
