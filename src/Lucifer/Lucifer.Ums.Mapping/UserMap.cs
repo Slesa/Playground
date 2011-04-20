@@ -9,6 +9,7 @@ namespace Lucifer.Ums.Mapping
         {
             Id(d => d.Id).GeneratedBy.HiLo("10");
             Map(d => d.Name).Length(40);
+            References(d => d.UserRole).Not.Nullable();
 
             Version(d => d.Version);
         }

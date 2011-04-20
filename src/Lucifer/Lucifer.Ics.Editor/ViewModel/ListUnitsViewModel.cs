@@ -104,6 +104,13 @@ namespace Lucifer.Ics.Editor.ViewModel
             NotifyOfPropertyChange(() => ItemsSelected);
         }
 
+        public void Handle(UnitRemovedEvent message)
+        {
+            var viewmodel = (from vm in ElementList where vm.Id == message.Id select vm).FirstOrDefault();
+            if (viewmodel != null)
+                ElementList.Remove(viewmodel);
+        }
+
         public void Handle(UnitTypeChangedEvent message)
         {
             var viewmodel = (from vm in ElementList where vm.UnitType==message.UnitType select vm);
@@ -114,11 +121,5 @@ namespace Lucifer.Ics.Editor.ViewModel
                 });
         }
 
-        public void Handle(UnitRemovedEvent message)
-        {
-            var viewmodel = (from vm in ElementList where vm.Id == message.Id select vm).FirstOrDefault();
-            if (viewmodel != null)
-                ElementList.Remove(viewmodel);
-        }
     }
 }

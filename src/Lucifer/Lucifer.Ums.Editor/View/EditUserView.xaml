@@ -30,6 +30,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -47,6 +49,17 @@
                    Validation.ErrorTemplate="{x:Null}" />
             <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
                    Content="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- User Role -->
+            <!-- wenn editierbar: SelectedValue="{Binding SelectedUnitType, ValidatesOnDataErrors=True}" -->
+            <Label Grid.Row="3" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_comboUserRole}" Content="{x:Static Resources:Strings.EditUserView_UserRole}" />
+            <ComboBox Grid.Row="3" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
+                      ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
+                      SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                      Validation.ErrorTemplate="{x:Null}" IsEditable="False" />
+            <ContentPresenter Grid.Row="4" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
+                   Content="{Binding ElementName=_comboUserRole, Path=(Validation.Errors).CurrentItem}" />
         </Grid>
     </DockPanel>
 </UserControl>

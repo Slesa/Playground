@@ -134,6 +134,15 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User role.
+        /// </summary>
+        public static string AllUsersView_Header_UserRole {
+            get {
+                return ResourceManager.GetString("AllUsersView_Header_UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insert new user.
         /// </summary>
         public static string AllUsersView_New_ToolTip {
@@ -306,6 +315,15 @@ namespace Lucifer.Ums.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User _role:.
+        /// </summary>
+        public static string EditUserView_UserRole {
+            get {
+                return ResourceManager.GetString("EditUserView_UserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Management.
         /// </summary>
         public static string UmsModuleTitle {
@@ -329,6 +347,15 @@ namespace Lucifer.Ums.Editor.Resources {
         public static string UserModel_Name_missing {
             get {
                 return ResourceManager.GetString("UserModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User role is missing.
+        /// </summary>
+        public static string UserModel_UserRole_missing {
+            get {
+                return ResourceManager.GetString("UserModel_UserRole_missing", resourceCulture);
             }
         }
         

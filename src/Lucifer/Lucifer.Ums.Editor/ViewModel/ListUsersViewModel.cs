@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -13,6 +14,7 @@ namespace Lucifer.Ums.Editor.ViewModel
     public class ListUsersViewModel : SelectionListViewModel<UserRowViewModel>, IUmsModule
         , IHandle<UserChangedEvent>
         , IHandle<UserRemovedEvent>
+        , IHandle<UserRoleChangedEvent>
     {
         public ListUsersViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(Strings.UsersModule, dbConversation, eventAggregator)
@@ -110,6 +112,16 @@ namespace Lucifer.Ums.Editor.ViewModel
             var viewmodel = (from vm in ElementList where vm.Id == message.Id select vm).FirstOrDefault();
             if (viewmodel != null)
                 ElementList.Remove(viewmodel);
+        }
+
+        public void Handle(UserRoleChangedEvent message)
+        {
+            var viewmodel = (from vm in ElementList where vm.UserRole == message.UserRole select vm);
+            viewmodel.Each(x =>
+            {
+                x.UserRole = message.UserRole;
+                x.Refresh();
+            });
         }
     }
 }

@@ -142,6 +142,9 @@
   <data name="AllUsersView_Header_Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="AllUsersView_Header_UserRole" xml:space="preserve">
+    <value>User role</value>
+  </data>
   <data name="AllUsersView_New_ToolTip" xml:space="preserve">
     <value>Insert new user</value>
   </data>
@@ -200,6 +203,9 @@
   <data name="EditUserView_UserIs" xml:space="preserve">
     <value>User {0}</value>
   </data>
+  <data name="EditUserView_UserRole" xml:space="preserve">
+    <value>User _role:</value>
+  </data>
   <data name="UmsModuleTitle" xml:space="preserve">
     <value>User Management</value>
   </data>
@@ -208,6 +214,9 @@
   </data>
   <data name="UserModel_Name_missing" xml:space="preserve">
     <value>Name of user is missing</value>
+  </data>
+  <data name="UserModel_UserRole_missing" xml:space="preserve">
+    <value>User role is missing</value>
   </data>
   <data name="UserRoleModel_Name_missing" xml:space="preserve">
     <value>Name of user role is missing</value>

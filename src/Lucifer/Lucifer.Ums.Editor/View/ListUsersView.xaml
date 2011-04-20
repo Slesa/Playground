@@ -44,6 +44,7 @@
                 <GridView>
                     <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->
                     <GridViewColumn Header="{x:Static Resources:Strings.AllUsersView_Header_Name}" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="{x:Static Resources:Strings.AllUsersView_Header_UserRole}" DisplayMemberBinding="{Binding Path=UserRole.Name}" />
                 </GridView>
             </ListView.View>
 

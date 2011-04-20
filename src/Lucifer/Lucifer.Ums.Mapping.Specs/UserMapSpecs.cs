@@ -11,8 +11,12 @@ namespace Lucifer.Ums.Mapping.Specs
         Because of = () =>
         {
             var spec = new PersistenceSpecification<User>(Session);
+            var userRole = new UserRole();
+            spec.TransactionalSave(userRole);
+
             _check = spec
                 .CheckProperty(c => c.Name, "A User")
+                .CheckReference(c => c.UserRole, userRole)
                 .CheckProperty(c => c.Version, 1);
         };
 

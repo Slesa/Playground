@@ -41,6 +41,11 @@ namespace Lucifer.Ums.Editor.Model
                 NotifyOfPropertyChange(() => Error);
             }
         }
+        public UserRole UserRole
+        {
+            get { return _user.UserRole; }
+            set { _user.UserRole = value; NotifyOfPropertyChange(() => Error); }
+        }
 
         #region IDataErrorInfo Members
 
@@ -64,6 +69,7 @@ namespace Lucifer.Ums.Editor.Model
         static readonly string[] ValidatedProperties =
             {
                 "Name",
+                "UserRole",
             };
 
         string GetValidationError(string columnName)
@@ -76,6 +82,9 @@ namespace Lucifer.Ums.Editor.Model
                 case "Name":
                     error = ValidateName();
                     break;
+                case "UserRole":
+                    error = ValidateUserRole();
+                    break;
             }
             return error;
         }
@@ -83,6 +92,12 @@ namespace Lucifer.Ums.Editor.Model
         string ValidateName()
         {
             return EditValidators.IsStringMissing(Name) ? Strings.UserModel_Name_missing : null;
+        }
+        string ValidateUserRole()
+        {
+            if (UserRole == null)
+                return Strings.UserModel_UserRole_missing;
+            return null;
         }
 
         #endregion

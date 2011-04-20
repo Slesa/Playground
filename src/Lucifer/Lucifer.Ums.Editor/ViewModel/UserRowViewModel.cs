@@ -16,5 +16,10 @@ namespace Lucifer.Ums.Editor.ViewModel
 
         public int Id { get { return ElementData.Id; } }
         public string Name { get { return ElementData.Name; } }
+        public UserRole UserRole
+        {
+            get { return ElementData.UserRole; }
+            set { ElementData.UserRole = value; }
+        }
     }
 }

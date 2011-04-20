@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class EditUnitViewModel : EditItemViewModel<UnitModel>, IDataErrorInfo
         , IHandle<UnitTypeChangedEvent>
+        , IHandle<UnitTypeRemovedEvent>
     {
         public EditUnitViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(dbConversation, eventAggregator)
@@ -53,7 +55,6 @@ namespace Lucifer.Ics.Editor.ViewModel
                 NotifyOfPropertyChange(() => Contraction);
             }
         }
-
         public UnitType UnitType
         {
             get { return Element.UnitType; }
@@ -66,7 +67,6 @@ namespace Lucifer.Ics.Editor.ViewModel
                 NotifyOfPropertyChange(() => UnitType);
             }
         }
-
         public Unit ParentUnit
         {
             get { return Element.Parent; }
@@ -87,7 +87,6 @@ namespace Lucifer.Ics.Editor.ViewModel
                 NotifyOfPropertyChange(() => UnitType);
             }
         }
-
         public string FactorToParent
         {
             get { return Element.FactorToParent; }
@@ -99,7 +98,6 @@ namespace Lucifer.Ics.Editor.ViewModel
                 NotifyOfPropertyChange(() => FactorToParent);
             }
         }
-
         public bool Purchasing
         {
             get { return Element.Purchasing; }
@@ -111,7 +109,6 @@ namespace Lucifer.Ics.Editor.ViewModel
                 NotifyOfPropertyChange(() => Purchasing);
             }
         }
-
         public bool Reciping
         {
             get { return Element.Reciping; }
@@ -176,6 +173,11 @@ namespace Lucifer.Ics.Editor.ViewModel
             //var viewmodel = (from unit in AllUnits where unit.UnitType == message.UnitType select unit);
             //foreach(var vm in viewmodel)
             //    vm.UnitType = message.UnitType;
+        }
+
+        public void Handle(UnitTypeRemovedEvent message)
+        {
+            AllUnitTypes = DbConversation.Query(new AllUnitTypesQuery()).ToList();
         }
     }
 }

@@ -1,14 +1,20 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ums.Editor.Model;
 using Lucifer.Ums.Editor.Resources;
 using Lucifer.Ums.Model.Entities;
+using Lucifer.Ums.Model.Queries;
 
 namespace Lucifer.Ums.Editor.ViewModel
 {
     public class EditUserViewModel : EditItemViewModel<UserModel>, IDataErrorInfo
+        , IHandle<UserRoleChangedEvent>
+        , IHandle<UserRoleRemovedEvent>
     {
         public EditUserViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
             : base(dbConversation, eventAggregator)
@@ -25,6 +31,7 @@ namespace Lucifer.Ums.Editor.ViewModel
             ToolTip = Strings.AllUsersView_Edit_ToolTip;
         }
 
+        public List<UserRole> AllUserRoles { get; private set; }
         public string Title { get; private set; }
 
         public string Name
@@ -35,6 +42,17 @@ namespace Lucifer.Ums.Editor.ViewModel
                 if (value == Element.Name) return;
                 Element.Name = value;
                 NotifyOfPropertyChange(() => Name);
+            }
+        }
+        public UserRole UserRole
+        {
+            get { return Element.UserRole; }
+            set
+            {
+                if (value == Element.UserRole)
+                    return;
+                Element.UserRole = value;
+                NotifyOfPropertyChange(() => UserRole);
             }
         }
 
@@ -63,6 +81,7 @@ namespace Lucifer.Ums.Editor.ViewModel
 
         protected override UserModel CreateNewElementModel()
         {
+            PreloadLists();
             return new UserModel(new User());
         }
 
@@ -70,9 +89,26 @@ namespace Lucifer.Ums.Editor.ViewModel
         {
             UserModel model = null;
             DbConversation.UsingTransaction(() =>
-                { model =new UserModel(DbConversation.GetById<User>(elementId));
+                {
+                    PreloadLists();
+                    model = new UserModel(DbConversation.GetById<User>(elementId));
                 });
             return model;
+        }
+
+        void PreloadLists()
+        {
+            AllUserRoles = DbConversation.Query(new AllUserRolesQuery()).ToList();
+        }
+
+        public void Handle(UserRoleChangedEvent message)
+        {
+            AllUserRoles = DbConversation.Query(new AllUserRolesQuery()).ToList();
+        }
+
+        public void Handle(UserRoleRemovedEvent message)
+        {
+            AllUserRoles = DbConversation.Query(new AllUserRolesQuery()).ToList();
         }
     }
 }

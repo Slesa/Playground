@@ -51,10 +51,10 @@ namespace Lucifer.Editor
                 MessageBox.Show(Strings.Error_StaleObjectState);
                 return true;
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 Mouse.OverrideCursor = null;
-                MessageBox.Show(Strings.Error_CouldNotSaveObject);
+                MessageBox.Show(Strings.Error_CouldNotSaveObject+"\n\n"+exception.Message);
                 return false;
             }
         }
