@@ -258,13 +258,7 @@
   <data name="UnitModel_UnitType_missing" xml:space="preserve">
     <value>Unit type of the unit is missing</value>
   </data>
-  <data name="UnitType_Error_CouldNotSave" xml:space="preserve">
-    <value>Could not save unit type</value>
-  </data>
-  <data name="Unit_Error_CouldNotSave" xml:space="preserve">
-    <value>Could not save unit</value>
-  </data>
-  <data name="AllUnitsView_RemoveTitle" xml:space="preserve">
+	<data name="AllUnitsView_RemoveTitle" xml:space="preserve">
     <value>Remove units</value>
   </data>
   <data name="AllUnitTypesView_RemoveMessage" xml:space="preserve">

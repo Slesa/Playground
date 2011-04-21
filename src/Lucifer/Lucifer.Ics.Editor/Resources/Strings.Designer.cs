@@ -767,15 +767,6 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not save unit.
-        /// </summary>
-        public static string Unit_Error_CouldNotSave {
-            get {
-                return ResourceManager.GetString("Unit_Error_CouldNotSave", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Contraction of the unit is missing.
         /// </summary>
         public static string UnitModel_Contraction_missing {
@@ -853,15 +844,6 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string UnitsTooltip {
             get {
                 return ResourceManager.GetString("UnitsTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Could not save unit type.
-        /// </summary>
-        public static string UnitType_Error_CouldNotSave {
-            get {
-                return ResourceManager.GetString("UnitType_Error_CouldNotSave", resourceCulture);
             }
         }
         

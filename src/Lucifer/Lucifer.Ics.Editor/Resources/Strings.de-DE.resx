@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+	
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="AllUnitsView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuelle Einheit bearbeiten</value>
+  </data>
+	<data name="AllUnitsView_Header_Contraction" xml:space="preserve">
+    <value>Kürzel</value>
+  </data>
+	<data name="AllUnitsView_Header_FactorToParent" xml:space="preserve">
+    <value>Faktor</value>
+  </data>
+	<data name="AllUnitsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllUnitsView_Header_Parent" xml:space="preserve">
+    <value>Ursprung</value>
+  </data>
+	<data name="AllUnitsView_Header_Purchasing" xml:space="preserve">
+    <value>Einkauf</value>
+  </data>
+	<data name="AllUnitsView_Header_Reciping" xml:space="preserve">
+    <value>Rezept</value>
+  </data>
+	<data name="AllUnitsView_Header_UnitType" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+	<data name="AllUnitsView_New_ToolTip" xml:space="preserve">
+    <value>Neue Einheit anlegen</value>
+  </data>
+	<data name="AllUnitsView_Remove_ToolTip" xml:space="preserve">
+    <value>Selektierte Einheit löschen</value>
+  </data>
+	<data name="AllUnitTypesView_Edit_ToolTip" xml:space="preserve">
+    <value>Selektierten Einheitentyp berbeiten</value>
+  </data>
+	<data name="AllUnitTypesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllUnitTypesView_New_ToolTip" xml:space="preserve">
+    <value>Neuen Einheitentyp anlegen</value>
+  </data>
+	<data name="AllUnitTypesView_Remove_ToolTip" xml:space="preserve">
+    <value>Selektierten Einheitentyp löschen</value>
+  </data>
+	<data name="Button_Edit" xml:space="preserve">
+    <value>_Bearbeiten</value>
+  </data>
+	<data name="Button_New" xml:space="preserve">
+    <value>_Neu</value>
+  </data>
+	<data name="Button_Remove" xml:space="preserve">
+    <value>_Löschen</value>
+  </data>
+	<data name="IcsModuleTitle" xml:space="preserve">
+    <value>Bestandsverwaltung</value>
+  </data>
+	<data name="IcsModuleTooltip" xml:space="preserve">
+    <value>Verwalten von Beständen, Lagern, ...</value>
+  </data>
+	<data name="UnitsTooltip" xml:space="preserve">
+    <value>Einheiten verwalten</value>
+  </data>
+	<data name="UnitTypesModule" xml:space="preserve">
+    <value>Einheitentypen</value>
+  </data>
+	<data name="UnitTypesTooltip" xml:space="preserve">
+    <value>Einheitentypen verwalten zum Gruppieren von Einheiten</value>
+  </data>
+	<data name="Button_Cancel" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+	<data name="Button_Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+	<data name="EditUnitTypeView_Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+	<data name="EditUnitTypeView_TitleEdit" xml:space="preserve">
+    <value>Einheitentyp bearbeiten</value>
+  </data>
+	<data name="EditUnitTypeView_TitleNew" xml:space="preserve">
+    <value>Neuen Einheitentyp hinzufügen...</value>
+  </data>
+	<data name="EditUnitTypeView_NewUnitType" xml:space="preserve">
+    <value>&lt;Neuer Typ&gt;</value>
+  </data>
+	<data name="UnitTypeModel_Name_missing" xml:space="preserve">
+    <value>Name des Einheitentyps fehlt</value>
+  </data>
+	<data name="EditUnitView_Contraction" xml:space="preserve">
+    <value>_Kürzel:</value>
+  </data>
+	<data name="EditUnitView_FactorToParent" xml:space="preserve">
+    <value>_Faktor zum Ursprung:</value>
+  </data>
+	<data name="EditUnitView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditUnitView_NewUnit" xml:space="preserve">
+    <value>&lt;Neue Einheit&gt;</value>
+  </data>
+	<data name="EditUnitView_Parent" xml:space="preserve">
+    <value>_Ursprung:</value>
+  </data>
+	<data name="EditUnitView_Purchasing" xml:space="preserve">
+    <value>Zum Bestellen</value>
+  </data>
+	<data name="EditUnitView_Reciping" xml:space="preserve">
+    <value>Für die Rezeptur</value>
+  </data>
+	<data name="EditUnitView_TitleEdit" xml:space="preserve">
+    <value>Einheit bearbeiten</value>
+  </data>
+	<data name="EditUnitView_TitleNew" xml:space="preserve">
+    <value>Neue Einheit hinzufügen...</value>
+  </data>
+	<data name="EditUnitView_UnitType" xml:space="preserve">
+    <value>Einheiten_typ:</value>
+  </data>
+	<data name="UnitModel_Contraction_missing" xml:space="preserve">
+    <value>Kürzel der Einheit fehlt</value>
+  </data>
+	<data name="UnitModel_FactorToParent_invalid" xml:space="preserve">
+    <value>Faktor zum Ursprung ungültig</value>
+  </data>
+	<data name="UnitModel_FactorToParent_missing" xml:space="preserve">
+    <value>Faktor zum Ursprung fehlt</value>
+  </data>
+	<data name="UnitModel_InvalidParentType" xml:space="preserve">
+    <value>Typ des Ursprungs ist ungültig</value>
+  </data>
+	<data name="UnitModel_Name_missing" xml:space="preserve">
+    <value>Name der Einheit fehlt</value>
+  </data>
+	<data name="UnitModel_Parent_recursion_detected" xml:space="preserve">
+    <value>Rekursion im Ursprung der Einheit entdeckt</value>
+  </data>
+	<data name="UnitModel_UnitType_missing" xml:space="preserve">
+    <value>Typ der Einheit fehlt</value>
+  </data>
+	<data name="AllUnitsView_RemoveTitle" xml:space="preserve">
+    <value>Einheiten löschen</value>
+  </data>
+	<data name="AllUnitTypesView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Einheitentypen löschen möchten:
+</value>
+  </data>
+	<data name="AllUnitTypesView_RemoveTitle" xml:space="preserve">
+    <value>Einheitentypen löschen</value>
+  </data>
+	<data name="AllUnitsView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Einheiten löschen möchten:
+</value>
+  </data>
+	<data name="EditUnitTypeView_UnitTypeIs" xml:space="preserve">
+    <value>Einheitentyp {0}</value>
+  </data>
+	<data name="EditUnitView_UnitIs" xml:space="preserve">
+    <value>Einheit {0}</value>
+  </data>
+	<data name="AllPurchaseFamiliesView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuelle Einkaufswarengruppe bearbeiten</value>
+  </data>
+	<data name="AllPurchaseFamiliesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllPurchaseFamiliesView_New_ToolTip" xml:space="preserve">
+    <value>Neue Einkaufswarengruppe einfügen</value>
+  </data>
+	<data name="AllPurchaseFamiliesView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die fogenden Einkaufswarengruppen löschen möchten:
+</value>
+  </data>
+	<data name="AllPurchaseFamiliesView_RemoveTitle" xml:space="preserve">
+    <value>Einkaufswarengruppen löschen</value>
+  </data>
+	<data name="AllPurchaseFamiliesView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuelle Einkaufswarengruppen löschen</value>
+  </data>
+	<data name="AllPurchaseItemsView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuelle Einkaufswarengruppe bearbeiten</value>
+  </data>
+	<data name="AllPurchaseItemsView_Header_Family" xml:space="preserve">
+    <value>Warengruppe</value>
+  </data>
+	<data name="AllPurchaseItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllPurchaseItemsView_Header_PurchaseUnit" xml:space="preserve">
+    <value>L.-Einheit</value>
+  </data>
+	<data name="AllPurchaseItemsView_Header_RecipeUnit" xml:space="preserve">
+    <value>R.-Einheit</value>
+  </data>
+	<data name="AllPurchaseItemsView_New_ToolTip" xml:space="preserve">
+    <value>Neuen Einkaufsartikel anlegen</value>
+  </data>
+	<data name="AllPurchaseItemsView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Einkaufsartikel löschen möchten:
+</value>
+  </data>
+	<data name="AllPurchaseItemsView_RemoveTitle" xml:space="preserve">
+    <value>Einkaufsartikel löschen</value>
+  </data>
+	<data name="AllPurchaseItemsView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuellen Einkaufsartikel löschen</value>
+  </data>
+	<data name="EditPurchaseFamilyView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditPurchaseFamilyView_NewPurchaseFamily" xml:space="preserve">
+    <value>&lt;Neue Einkaufswarengruppe&gt;</value>
+  </data>
+	<data name="EditPurchaseFamilyView_PurchaseFamilyIs" xml:space="preserve">
+    <value>Einkaufswarengruppe {0}</value>
+  </data>
+	<data name="EditPurchaseFamilyView_TitleEdit" xml:space="preserve">
+    <value>Einkaufswarengruppe bearbeiten</value>
+  </data>
+	<data name="EditPurchaseFamilyView_TitleNew" xml:space="preserve">
+    <value>Neue Einkaufswarengruppe hinzufügen...</value>
+  </data>
+	<data name="EditPurchaseItemView_Family" xml:space="preserve">
+    <value>_Warengruppe:</value>
+  </data>
+	<data name="EditPurchaseItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditPurchaseItemView_NewPurchaseItem" xml:space="preserve">
+    <value>&lt;Neuer Einkaufsartikel&gt;</value>
+  </data>
+	<data name="EditPurchaseItemView_PurchaseItemIs" xml:space="preserve">
+    <value>Einkaufsartikel {0}</value>
+  </data>
+	<data name="EditPurchaseItemView_PurchaseUnit" xml:space="preserve">
+    <value>_Einkaufseinheit:</value>
+  </data>
+	<data name="EditPurchaseItemView_RecipeUnit" xml:space="preserve">
+    <value>_Rezepteinheit:</value>
+  </data>
+	<data name="EditPurchaseItemView_TitleEdit" xml:space="preserve">
+    <value>Einkaufsartikel bearbeiten</value>
+  </data>
+	<data name="EditPurchaseItemView_TitleNew" xml:space="preserve">
+    <value>Neuen Einkaufsartikel hinzufügen...</value>
+  </data>
+	<data name="PurchaseFamiliesModule" xml:space="preserve">
+    <value>Einkaufswarengruppen</value>
+  </data>
+	<data name="PurchaseFamiliesTooltip" xml:space="preserve">
+    <value>Einkaufswarengruppen zum Gruppieren von Einkaufsartikeln</value>
+  </data>
+	<data name="PurchaseFamilyModel_Name_missing" xml:space="preserve">
+    <value>Name der Einkaufswarengruppe fehlt</value>
+  </data>
+	<data name="PurchaseItemModel_Name_missing" xml:space="preserve">
+    <value>Name des Einkaufsartikels fehlt</value>
+  </data>
+	<data name="PurchaseItemModel_PurchaseFamily_is_missing" xml:space="preserve">
+    <value>Warengruppe des Einkaufsartikels fehlt</value>
+  </data>
+	<data name="PurchaseItemModel_PurchaseUnit_is_missing" xml:space="preserve">
+    <value>Einkaufseinheit des Einkaufsartikels fehlt</value>
+  </data>
+	<data name="PurchaseItemModel_RecipeUnit_is_missing" xml:space="preserve">
+    <value>Rezepteinheit des Einkaufsartikels fehlt</value>
+  </data>
+	<data name="PurchaseItemsModule" xml:space="preserve">
+    <value>Einkaufsartikel</value>
+  </data>
+	<data name="PurchaseItemsTooltip" xml:space="preserve">
+    <value>Einkaufsartikel verwalten</value>
+  </data>
+	<data name="UnitsModule" xml:space="preserve">
+    <value>Einheiten</value>
+  </data>
+</root>
