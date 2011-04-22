@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" 
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
-             xmlns:Editor="clr-namespace:Lucifer.Editor.Behaviors;assembly=Lucifer.Editor" mc:Ignorable="d" 
+             xmlns:Editor="clr-namespace:Lucifer.Editor.Behaviors;assembly=Lucifer.Editor" 
+             mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
 
     <UserControl.Resources>
@@ -26,21 +27,30 @@
 
         <!-- Buttons -->
         <StackPanel Style="{DynamicResource ListViewButtonStackSkin}">
-            <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" 
-                    Content="{x:Static Resources:Strings.Button_New}" 
-                    ToolTip="{x:Static Resources:Strings.AllUnitTypesView_New_ToolTip}" />
-            <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" 
-                    Content="{x:Static Resources:Strings.Button_Edit}"
-                    ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Edit_ToolTip}" />
-            <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}"
-                    Content="{x:Static Resources:Strings.Button_Remove}"
-                    ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Remove_ToolTip}" />
+            <Button x:Name="Add" Style="{DynamicResource ListViewButtonSkin}" ToolTip="{x:Static Resources:Strings.AllUnitTypesView_New_ToolTip}" Width="Auto">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="22" Height="22" Source="/Lucifer.Editor;component/Resources/button_add.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Resources:Strings.Button_New}" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="Edit" Style="{DynamicResource ListViewButtonSkin}" ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Edit_ToolTip}">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Lucifer.Editor;component/Resources/button_edit.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Resources:Strings.Button_Edit}" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="Remove" Style="{DynamicResource ListViewButtonSkin}" ToolTip="{x:Static Resources:Strings.AllUnitTypesView_Remove_ToolTip}">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Image Width="22" Height="22" Source="/Lucifer.Editor;component/Resources/button_remove.png" />
+                    <Label Style="{DynamicResource ButtonLabelSkin}" MinWidth="60" Content="{x:Static Resources:Strings.Button_Remove}" />
+                </StackPanel>
+            </Button>
         </StackPanel>
 
         <!-- Liste -->
         <ListView x:Name="UnitTypes" Style="{DynamicResource ListViewCollectionSkin}" ItemContainerStyle="{StaticResource UnitTypeListItemStyle}" 
-                  DataContext="{StaticResource UnitTypeList}" ItemsSource="{Binding}"> 
-                  
+                  DataContext="{StaticResource UnitTypeList}" ItemsSource="{Binding}">
+
             <ListView.View>
                 <GridView>
                     <!-- GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" / -->
