@@ -55,13 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CurrencyModel.cs" />
+    <Compile Include="Model\DiscountModel.cs" />
     <Compile Include="Model\PayformModel.cs" />
     <Compile Include="PmsWindsorInstaller.cs" />
     <Compile Include="IPmsModule.cs" />
     <Compile Include="ViewModel\CurrencyRowViewModel.cs" />
+    <Compile Include="ViewModel\DiscountRowViewModel.cs" />
     <Compile Include="ViewModel\EditCurrencyViewModel.cs" />
+    <Compile Include="ViewModel\EditDiscountViewModel.cs" />
     <Compile Include="ViewModel\EditPayformViewModel.cs" />
     <Compile Include="ViewModel\ListCurrenciesViewModel.cs" />
+    <Compile Include="ViewModel\ListDiscountsViewModel.cs" />
     <Compile Include="ViewModel\ListPayformsViewModel.cs" />
     <Compile Include="ViewModel\PayformRowViewModel.cs" />
     <Compile Include="ViewModel\PmsModuleViewModel.cs" />
@@ -74,11 +78,17 @@
     <Compile Include="View\EditCurrencyView.xaml.cs">
       <DependentUpon>EditCurrencyView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditDiscountView.xaml.cs">
+      <DependentUpon>EditDiscountView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditPayformView.xaml.cs">
       <DependentUpon>EditPayformView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListCurrenciesView.xaml.cs">
       <DependentUpon>ListCurrenciesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListDiscountsView.xaml.cs">
+      <DependentUpon>ListDiscountsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListPayformsView.xaml.cs">
       <DependentUpon>ListPayformsView.xaml</DependentUpon>
@@ -130,11 +140,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EditDiscountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EditPayformView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ListCurrenciesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListDiscountsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

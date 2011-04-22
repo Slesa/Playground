@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrencyMap.cs" />
+    <Compile Include="DiscountMap.cs" />
     <Compile Include="PmsMappingWindsorInstaller.cs" />
     <Compile Include="PayformMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

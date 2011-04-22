@@ -10,12 +10,12 @@ using Lucifer.Pms.Model.Queries;
 
 namespace Lucifer.Pms.Editor.ViewModel
 {
-    public class ListCurrenciesViewModel : SelectionListViewModel<CurrencyRowViewModel>, IPmsModule
-        , IHandle<CurrencyChangedEvent>
-        , IHandle<CurrencyRemovedEvent>
+    public class ListDiscountsViewModel : SelectionListViewModel<DiscountRowViewModel>, IPmsModule
+        , IHandle<DiscountChangedEvent>
+        , IHandle<DiscountRemovedEvent>
     {
-        public ListCurrenciesViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(Strings.CurrenciesModule, dbConversation, eventAggregator)
+        public ListDiscountsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
+            : base(Strings.DiscountsModule, dbConversation, eventAggregator)
         {
             eventAggregator.Subscribe(this);
         }
@@ -23,13 +23,13 @@ namespace Lucifer.Pms.Editor.ViewModel
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditCurrencyViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditDiscountViewModel(DbConversation, EventAggregator));
         }
 
         public void Edit()
         {
-            foreach (var currency in ElementList.Where(x => x.IsSelected))
-                ScreenManager.ActivateItem(new EditCurrencyViewModel(currency.Id, DbConversation, EventAggregator));
+            foreach (var discount in ElementList.Where(x => x.IsSelected))
+                ScreenManager.ActivateItem(new EditDiscountViewModel(discount.Id, DbConversation, EventAggregator));
         }
 
         public void Remove()
@@ -38,11 +38,11 @@ namespace Lucifer.Pms.Editor.ViewModel
             if (selectesForMessage.Count() == 0)
                 return;
 
-            var message = string.Format(Strings.AllCurrenciesView_RemoveMessage);
+            var message = string.Format(Strings.AllDiscountsView_RemoveMessage);
             message = selectesForMessage.Aggregate(
-                message, (current, currency) => current + string.Format("{0} {1}", currency.Id, currency.Name));
+                message, (current, discount) => current + string.Format("{0} {1}", discount.Id, discount.Name));
 
-            if (MessageBox.Show(message, Strings.AllCurrenciesView_RemoveTitle, MessageBoxButton.YesNo) !=
+            if (MessageBox.Show(message, Strings.AllDiscountsView_RemoveTitle, MessageBoxButton.YesNo) !=
                 MessageBoxResult.Yes)
                 return;
 
@@ -51,24 +51,24 @@ namespace Lucifer.Pms.Editor.ViewModel
                 return;
 
             foreach (var t in removedItems)
-                EventAggregator.Publish(new CurrencyRemovedEvent {Id = t.Id});
+                EventAggregator.Publish(new DiscountRemovedEvent {Id = t.Id});
         }
 
         #region IIcsModule
 
         public string ModuleName
         {
-            get { return Strings.CurrenciesModule; }
+            get { return Strings.DiscountsModule; }
         }
 
         public string IconFileName
         {
-            get { return @"/Lucifer.Pms.Editor;component/Resources/Currency.png"; }
+            get { return @"/Lucifer.Pms.Editor;component/Resources/Discount.png"; }
         }
 
         public string ToolTip
         {
-            get { return Strings.CurrenciesTooltip; }
+            get { return Strings.DiscountsTooltip; }
         }
 
         #endregion
@@ -79,32 +79,32 @@ namespace Lucifer.Pms.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<CurrencyRowViewModel> CreateElementList()
+        protected override ObservableCollection<DiscountRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<CurrencyRowViewModel>(DbConversation
-                .Query(new AllCurrenciesQuery())
-                .Select(x => new CurrencyRowViewModel(x)));
+            return new ObservableCollection<DiscountRowViewModel>(DbConversation
+                .Query(new AllDiscountsQuery())
+                .Select(x => new DiscountRowViewModel(x)));
         }
 
-        public void Handle(CurrencyChangedEvent message)
+        public void Handle(DiscountChangedEvent message)
         {
-            var viewmodel = (from vm in ElementList where vm.Id == message.Currency.Id select vm).FirstOrDefault();
+            var viewmodel = (from vm in ElementList where vm.Id == message.Discount.Id select vm).FirstOrDefault();
             if (viewmodel == null)
             {
-                viewmodel = new CurrencyRowViewModel(message.Currency);
+                viewmodel = new DiscountRowViewModel(message.Discount);
                 ElementList.Add(viewmodel);
                 ConnectElement(viewmodel);
             }
             else
             {
-                viewmodel.ExchangeData(message.Currency);
+                viewmodel.ExchangeData(message.Discount);
                 viewmodel.Refresh();
             }
             NotifyOfPropertyChange(() => ItemSelected);
             NotifyOfPropertyChange(() => ItemsSelected);
         }
 
-        public void Handle(CurrencyRemovedEvent message)
+        public void Handle(DiscountRemovedEvent message)
         {
             var viewmodel = (from vm in ElementList where vm.Id == message.Id select vm).FirstOrDefault();
             if (viewmodel != null)

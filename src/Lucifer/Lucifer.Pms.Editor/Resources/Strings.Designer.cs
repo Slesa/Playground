@@ -170,6 +170,70 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current discount.
+        /// </summary>
+        public static string AllDiscountsView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllDiscountsView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate.
+        /// </summary>
+        public static string AllDiscountsView_Header_Rate {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_Header_Rate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new discount.
+        /// </summary>
+        public static string AllDiscountsView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current discount.
+        /// </summary>
+        public static string AllDiscountsView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are your sure to remove the following discounts:
+        ///.
+        /// </summary>
+        public static string AllDiscountsView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove discounts.
+        /// </summary>
+        public static string AllDiscountsView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllDiscountsView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit current payform.
         /// </summary>
         public static string AllPayformsView_Edit_ToolTip {
@@ -306,6 +370,42 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name of the discount is missing.
+        /// </summary>
+        public static string DiscountModel_Name_missing {
+            get {
+                return ResourceManager.GetString("DiscountModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate of the discount is missing.
+        /// </summary>
+        public static string DiscountModel_Rate_missing {
+            get {
+                return ResourceManager.GetString("DiscountModel_Rate_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discounts.
+        /// </summary>
+        public static string DiscountsModule {
+            get {
+                return ResourceManager.GetString("DiscountsModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount table positions or amounts.
+        /// </summary>
+        public static string DiscountsTooltip {
+            get {
+                return ResourceManager.GetString("DiscountsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Contraction:.
         /// </summary>
         public static string EditCurrencyView_Contraction {
@@ -401,6 +501,33 @@ namespace Lucifer.Pms.Editor.Resources {
         public static string EditCurrencyView_TitleNew {
             get {
                 return ResourceManager.GetString("EditCurrencyView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditDiscountView_Name {
+            get {
+                return ResourceManager.GetString("EditDiscountView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Rate:.
+        /// </summary>
+        public static string EditDiscountView_Rate {
+            get {
+                return ResourceManager.GetString("EditDiscountView_Rate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit discount.
+        /// </summary>
+        public static string EditDiscountView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditDiscountView_TitleEdit", resourceCulture);
             }
         }
         

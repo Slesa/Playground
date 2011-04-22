@@ -154,6 +154,28 @@
   <data name="AllCurrenciesView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current currency</value>
   </data>
+  <data name="AllDiscountsView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current discount</value>
+  </data>
+  <data name="AllDiscountsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllDiscountsView_Header_Rate" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="AllDiscountsView_New_ToolTip" xml:space="preserve">
+    <value>Insert new discount</value>
+  </data>
+  <data name="AllDiscountsView_RemoveMessage" xml:space="preserve">
+    <value>Are your sure to remove the following discounts:
+</value>
+  </data>
+  <data name="AllDiscountsView_RemoveTitle" xml:space="preserve">
+    <value>Remove discounts</value>
+  </data>
+  <data name="AllDiscountsView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current discount</value>
+  </data>
   <data name="AllPayformsView_Edit_ToolTip" xml:space="preserve">
     <value>Edit current payform</value>
   </data>
@@ -200,6 +222,18 @@
   <data name="CurrencyModel_Symbol_missing" xml:space="preserve">
     <value>Symbol of currency is missing</value>
   </data>
+  <data name="DiscountModel_Name_missing" xml:space="preserve">
+    <value>Name of the discount is missing</value>
+  </data>
+  <data name="DiscountModel_Rate_missing" xml:space="preserve">
+    <value>Rate of the discount is missing</value>
+  </data>
+  <data name="DiscountsModule" xml:space="preserve">
+    <value>Discounts</value>
+  </data>
+  <data name="DiscountsTooltip" xml:space="preserve">
+    <value>Discount table positions or amounts</value>
+  </data>
   <data name="EditCurrencyView_Contraction" xml:space="preserve">
     <value>_Contraction:</value>
   </data>
@@ -232,6 +266,15 @@
   </data>
   <data name="EditCurrencyView_TitleNew" xml:space="preserve">
     <value>Add new currency...</value>
+  </data>
+  <data name="EditDiscountView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditDiscountView_Rate" xml:space="preserve">
+    <value>_Rate:</value>
+  </data>
+  <data name="EditDiscountView_TitleEdit" xml:space="preserve">
+    <value>Edit discount</value>
   </data>
   <data name="EditPayformView_Name" xml:space="preserve">
     <value>_Name:</value>
