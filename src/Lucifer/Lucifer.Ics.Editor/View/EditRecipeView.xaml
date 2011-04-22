@@ -1,10 +1,8 @@
-﻿<UserControl x:Class="Lucifer.Ics.Editor.View.EditPurchaseFamilyView"
+﻿<UserControl x:Class="Lucifer.Ics.Editor.View.EditRecipeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" 
-             mc:Ignorable="d" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
 
     <DockPanel LastChildFill="True" Style="{DynamicResource IcsEditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
@@ -23,7 +21,7 @@
             </Button>
         </StackPanel>
 
-        <TextBlock DockPanel.Dock="Top" x:Name="Title" FontSize="20" Text="{x:Static Resources:Strings.EditPurchaseFamilyView_TitleEdit}"/>
+        <TextBlock DockPanel.Dock="Top" x:Name="Title" FontSize="20" Text="{x:Static Resources:Strings.EditRecipeView_TitleEdit}"/>
 
         <Grid Style="{DynamicResource EditDialogGridSkin}">
 
@@ -41,9 +39,9 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <!-- Name -->
+            <!-- PLU -->
             <Label Grid.Row="1" Style="{DynamicResource LabelSkin}" 
-                   Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditPurchaseFamilyView_Name}" />
+                   Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditRecipeView_Plu}" />
             <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource EditDialogTextBoxSkin}" 
                    Text="{Binding Path=Name, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
                    Validation.ErrorTemplate="{x:Null}" />

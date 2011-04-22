@@ -54,8 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IcsWindsorInstaller.cs" />
+    <Compile Include="Model\ProductionItemModel.cs" />
     <Compile Include="Model\PurchaseFamilyModel.cs" />
     <Compile Include="Model\PurchaseItemModel.cs" />
+    <Compile Include="Model\RecipeModel.cs" />
+    <Compile Include="Model\StockModel.cs" />
     <Compile Include="Model\UnitModel.cs" />
     <Compile Include="Model\UnitTypeModel.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
@@ -63,26 +66,44 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\EditProductionItemViewModel.cs" />
     <Compile Include="ViewModel\EditPurchaseFamilyViewModel.cs" />
     <Compile Include="ViewModel\EditPurchaseItemViewModel.cs" />
+    <Compile Include="ViewModel\EditRecipeViewModel.cs" />
+    <Compile Include="ViewModel\EditStockViewModel.cs" />
     <Compile Include="ViewModel\EditUnitTypeViewModel.cs" />
     <Compile Include="ViewModel\EditUnitViewModel.cs" />
     <Compile Include="ViewModel\IcsModuleViewModel.cs" />
     <Compile Include="IIcsModule.cs" />
+    <Compile Include="ViewModel\ListProductionItemsViewModel.cs" />
     <Compile Include="ViewModel\ListPurchaseFamiliesViewModel.cs" />
     <Compile Include="ViewModel\ListPurchaseItemsViewModel.cs" />
+    <Compile Include="ViewModel\ListRecipesViewModel.cs" />
+    <Compile Include="ViewModel\ListStocksViewModel.cs" />
     <Compile Include="ViewModel\ListUnitsViewModel.cs" />
     <Compile Include="ViewModel\ListUnitTypesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ProductionItemRowViewModel.cs" />
     <Compile Include="ViewModel\PurchaseFamilyRowViewModel.cs" />
     <Compile Include="ViewModel\PurchaseItemRowViewModel.cs" />
+    <Compile Include="ViewModel\RecipeRowViewModel.cs" />
+    <Compile Include="ViewModel\StockRowViewModel.cs" />
     <Compile Include="ViewModel\UnitRowViewModel.cs" />
     <Compile Include="ViewModel\UnitTypeRowViewModel.cs" />
+    <Compile Include="View\EditProductionItemView.xaml.cs">
+      <DependentUpon>EditProductionItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditPurchaseFamilyView.xaml.cs">
       <DependentUpon>EditPurchaseFamilyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditPurchaseItemView.xaml.cs">
       <DependentUpon>EditPurchaseItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditRecipeView.xaml.cs">
+      <DependentUpon>EditRecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditStockView.xaml.cs">
+      <DependentUpon>EditStockView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditUnitTypeView.xaml.cs">
       <DependentUpon>EditUnitTypeView.xaml</DependentUpon>
@@ -93,11 +114,20 @@
     <Compile Include="View\IcsModuleView.xaml.cs">
       <DependentUpon>IcsModuleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ListProductionItemsView.xaml.cs">
+      <DependentUpon>ListProductionItemsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ListPurchaseFamiliesView.xaml.cs">
       <DependentUpon>ListPurchaseFamiliesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListPurchaseItemsView.xaml.cs">
       <DependentUpon>ListPurchaseItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListRecipesView.xaml.cs">
+      <DependentUpon>ListRecipesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListStocksView.xaml.cs">
+      <DependentUpon>ListStocksView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListUnitsView.xaml.cs">
       <DependentUpon>ListUnitsView.xaml</DependentUpon>
@@ -117,11 +147,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\EditProductionItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EditPurchaseFamilyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EditPurchaseItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditRecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditStockView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,11 +179,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ListProductionItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ListPurchaseFamiliesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ListPurchaseItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListRecipesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListStocksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

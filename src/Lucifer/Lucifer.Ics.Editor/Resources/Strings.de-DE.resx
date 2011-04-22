@@ -372,4 +372,157 @@
 	<data name="UnitsModule" xml:space="preserve">
     <value>Einheiten</value>
   </data>
+	<data name="AllProductionItemsView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuellen Produktionsartikel bearbeiten</value>
+  </data>
+	<data name="AllProductionItemsView_Header_ItemNames" xml:space="preserve">
+    <value>Artikel</value>
+  </data>
+	<data name="AllProductionItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllProductionItemsView_Header_RecipeUnit" xml:space="preserve">
+    <value>R.-Einheit</value>
+  </data>
+	<data name="AllProductionItemsView_New_ToolTip" xml:space="preserve">
+    <value>Neuen Produktionsartikel hinzufügen</value>
+  </data>
+	<data name="AllProductionItemsView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Produktionsartikel löschen möchten:
+</value>
+  </data>
+	<data name="AllProductionItemsView_RemoveTitle" xml:space="preserve">
+    <value>Produktionsartikel löschen</value>
+  </data>
+	<data name="AllProductionItemsView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuellen Produktionsartikel löschen</value>
+  </data>
+	<data name="AllRecipesView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuelles Rezept bearbeiten</value>
+  </data>
+	<data name="AllRecipesView_Header_ItemNames" xml:space="preserve">
+    <value>Einträge</value>
+  </data>
+	<data name="AllRecipesView_Header_Plu" xml:space="preserve">
+    <value>Plu</value>
+  </data>
+	<data name="AllRecipesView_New_ToolTip" xml:space="preserve">
+    <value>Neues Rezept einfügen</value>
+  </data>
+	<data name="AllRecipesView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Rezepte löschen möchten:
+</value>
+  </data>
+	<data name="AllRecipesView_RemoveTitle" xml:space="preserve">
+    <value>Rezepte löschen</value>
+  </data>
+	<data name="AllRecipesView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuelles Rezept löschen</value>
+  </data>
+	<data name="AllStocksView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuelles Lager bearbeiten</value>
+  </data>
+	<data name="AllStocksView_Header_ItemNames" xml:space="preserve">
+    <value>Einträge</value>
+  </data>
+	<data name="AllStocksView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllStocksView_New_ToolTip" xml:space="preserve">
+    <value>Neues Lager hinzufügen</value>
+  </data>
+	<data name="AllStocksView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Lager löschen möchten:
+</value>
+  </data>
+	<data name="AllStocksView_RemoveTitle" xml:space="preserve">
+    <value>Lager löschen</value>
+  </data>
+	<data name="AllStocksView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuelles Lager löschen</value>
+  </data>
+	<data name="ProductionItemModel_Name_missing" xml:space="preserve">
+    <value>Name des Produktionsartikel fehlt</value>
+  </data>
+	<data name="ProductionItemModel_RecipeUnit_is_missing" xml:space="preserve">
+    <value>Rezpteinheit des Produktionsartikels fehlt</value>
+  </data>
+	<data name="ProductionItemsModule" xml:space="preserve">
+    <value>Produktionsartikel</value>
+  </data>
+	<data name="ProductionItemsTooltip" xml:space="preserve">
+    <value>Produktionsartikel verwalten</value>
+  </data>
+	<data name="RecipeModel_Plu_missing" xml:space="preserve">
+    <value>PLU des Rezepts fehlt</value>
+  </data>
+	<data name="RecipesModule" xml:space="preserve">
+    <value>Rezepte</value>
+  </data>
+	<data name="RecipesTooltip" xml:space="preserve">
+    <value>Rezepte und ihre Zutaten</value>
+  </data>
+	<data name="StockModel_Name_missing" xml:space="preserve">
+    <value>Name des Lagers fehlt</value>
+  </data>
+	<data name="StocksModule" xml:space="preserve">
+    <value>Lager</value>
+  </data>
+	<data name="StocksTooltip" xml:space="preserve">
+    <value>Lager verwalten</value>
+  </data>
+	<data name="AllStocksView_Header_MainStock" xml:space="preserve">
+    <value>Haupt</value>
+  </data>
+	<data name="EditProductionItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditProductionItemView_NewProductionItem" xml:space="preserve">
+    <value>&lt;Neuer Produktionsartikel&gt;</value>
+  </data>
+	<data name="EditProductionItemView_ProductionItemIs" xml:space="preserve">
+    <value>Produktionsartikel {0}</value>
+  </data>
+	<data name="EditProductionItemView_RecipeUnit" xml:space="preserve">
+    <value>_Rezepteinheit:</value>
+  </data>
+	<data name="EditProductionItemView_TitleEdit" xml:space="preserve">
+    <value>Produktionsartikel bearbeiten</value>
+  </data>
+	<data name="EditProductionItemView_TitleNew" xml:space="preserve">
+    <value>Neuen Produktionsartikel hinzufügen</value>
+  </data>
+	<data name="EditRecipeView_NewRecipe" xml:space="preserve">
+    <value>&lt;Neues Rezept&gt;</value>
+  </data>
+	<data name="EditRecipeView_Plu" xml:space="preserve">
+    <value>_Plu:</value>
+  </data>
+	<data name="EditRecipeView_RecipeIs" xml:space="preserve">
+    <value>Rezept {0}</value>
+  </data>
+	<data name="EditRecipeView_TitleEdit" xml:space="preserve">
+    <value>Rezept bearbeiten</value>
+  </data>
+	<data name="EditRecipeView_TitleNew" xml:space="preserve">
+    <value>Neues Rezept hinzufügen</value>
+  </data>
+	<data name="EditStockView_MainStock" xml:space="preserve">
+    <value>_Hauptlager</value>
+  </data>
+	<data name="EditStockView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditStockView_NewStock" xml:space="preserve">
+    <value>&lt;Neues Lager&gt;</value>
+  </data>
+	<data name="EditStockView_PurchaseStockIs" xml:space="preserve">
+    <value>Lager {0}</value>
+  </data>
+	<data name="EditStockView_TitleEdit" xml:space="preserve">
+    <value>Lager bearbeiten</value>
+  </data>
+	<data name="EditStockView_TitleNew" xml:space="preserve">
+    <value>Neues Lager hinzufügen</value>
+  </data>
 </root>

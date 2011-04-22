@@ -64,8 +64,13 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductionItemMapSpecs.cs" />
     <Compile Include="PurchaseFamilyMapSpecs.cs" />
     <Compile Include="PurchaseItemMapSpecs.cs" />
+    <Compile Include="RecipeItemMapSpecs.cs" />
+    <Compile Include="RecipeMapSpecs.cs" />
+    <Compile Include="StockItemMapSpecs.cs" />
+    <Compile Include="StockMapSpecs.cs" />
     <Compile Include="UnitMapSpecs.cs" />
     <Compile Include="UnitTypeMapSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

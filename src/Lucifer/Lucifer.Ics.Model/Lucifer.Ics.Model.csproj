@@ -48,15 +48,23 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ProductionItem.cs" />
     <Compile Include="Entities\PurchaseFamily.cs" />
     <Compile Include="Entities\PurchaseItem.cs" />
+    <Compile Include="Entities\Recipe.cs" />
     <Compile Include="Entities\RecipeableItem.cs" />
+    <Compile Include="Entities\RecipeItem.cs" />
+    <Compile Include="Entities\Stock.cs" />
+    <Compile Include="Entities\StockItem.cs" />
     <Compile Include="Entities\Unit.cs" />
     <Compile Include="Entities\UnitType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\ProductionItemsQuery.cs" />
     <Compile Include="Queries\PurchaseItemsQuery.cs" />
     <Compile Include="Queries\PurchaseFamiliesQuery.cs" />
     <Compile Include="Queries\RecipeableItemsQuery.cs" />
+    <Compile Include="Queries\RecipesQuery.cs" />
+    <Compile Include="Queries\StocksQuery.cs" />
     <Compile Include="Queries\UnitQueries.cs" />
     <Compile Include="Queries\UnitTypeQueries.cs" />
   </ItemGroup>

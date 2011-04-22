@@ -53,9 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IcsMappingWindsorInstaller.cs" />
+    <Compile Include="ProductionItemMap.cs" />
     <Compile Include="PurchaseFamilyMap.cs" />
     <Compile Include="PurchaseItemMap.cs" />
     <Compile Include="RecipeableItemMap.cs" />
+    <Compile Include="RecipeItemMap.cs" />
+    <Compile Include="RecipeMap.cs" />
+    <Compile Include="StockItemMap.cs" />
+    <Compile Include="StockMap.cs" />
     <Compile Include="UnitMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTypeMap.cs" />

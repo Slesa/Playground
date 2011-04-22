@@ -29,7 +29,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
+
         <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
 
     </DockPanel>

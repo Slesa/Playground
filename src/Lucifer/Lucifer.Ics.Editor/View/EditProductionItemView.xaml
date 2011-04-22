@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Lucifer.Ics.Editor.View.EditPurchaseFamilyView"
+﻿<UserControl x:Class="Lucifer.Ics.Editor.View.EditProductionItemView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -23,11 +23,13 @@
             </Button>
         </StackPanel>
 
-        <TextBlock DockPanel.Dock="Top" x:Name="Title" FontSize="20" Text="{x:Static Resources:Strings.EditPurchaseFamilyView_TitleEdit}"/>
+        <TextBlock DockPanel.Dock="Top" x:Name="Title" FontSize="20" Text="{x:Static Resources:Strings.EditProductionItemView_TitleEdit}"/>
 
         <Grid Style="{DynamicResource EditDialogGridSkin}">
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -43,12 +45,22 @@
 
             <!-- Name -->
             <Label Grid.Row="1" Style="{DynamicResource LabelSkin}" 
-                   Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditPurchaseFamilyView_Name}" />
+                   Target="{Binding ElementName=_textName}" Content="{x:Static Resources:Strings.EditProductionItemView_Name}" />
             <TextBox Grid.Row="1" Grid.Column="1" Name="_textName" Style="{DynamicResource EditDialogTextBoxSkin}" 
                    Text="{Binding Path=Name, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
                    Validation.ErrorTemplate="{x:Null}" />
             <ContentPresenter Grid.Row="2" Grid.Column="1" Style="{DynamicResource EditDialogErrorPresenterSkin}"
                    Content="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Recipe Unit -->
+            <Label Grid.Row="3" Style="{DynamicResource LabelSkin}" Content="{x:Static Resources:Strings.EditProductionItemView_RecipeUnit}"
+                   Target="{Binding ElementName=_comboRecipeUnit}"  />
+            <ComboBox Grid.Row="3" Grid.Column="1" Name="_comboRecipeUnit" Style="{DynamicResource DialogComboBoxSkin}"
+                      ItemsSource="{Binding Path=AllRecipeUnits}" DisplayMemberPath="Name" 
+                      SelectedItem="{Binding RecipeUnit, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                   Validation.ErrorTemplate="{x:Null}" />
+            <ContentPresenter Grid.Row="4" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}" 
+                   Content="{Binding ElementName=_comboRecipeUnit, Path=(Validation.Errors).CurrentItem}" />
         </Grid>
     </DockPanel>
 </UserControl>

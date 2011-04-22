@@ -258,7 +258,7 @@
   <data name="UnitModel_UnitType_missing" xml:space="preserve">
     <value>Unit type of the unit is missing</value>
   </data>
-	<data name="AllUnitsView_RemoveTitle" xml:space="preserve">
+  <data name="AllUnitsView_RemoveTitle" xml:space="preserve">
     <value>Remove units</value>
   </data>
   <data name="AllUnitTypesView_RemoveMessage" xml:space="preserve">
@@ -390,5 +390,158 @@
   </data>
   <data name="PurchaseItemsTooltip" xml:space="preserve">
     <value>Manage purchase items</value>
+  </data>
+  <data name="AllProductionItemsView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current production item</value>
+  </data>
+  <data name="AllProductionItemsView_Header_ItemNames" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="AllProductionItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllProductionItemsView_Header_RecipeUnit" xml:space="preserve">
+    <value>R.-Unit</value>
+  </data>
+  <data name="AllProductionItemsView_New_ToolTip" xml:space="preserve">
+    <value>Insert a new production item</value>
+  </data>
+  <data name="AllProductionItemsView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following production items:
+</value>
+  </data>
+  <data name="AllProductionItemsView_RemoveTitle" xml:space="preserve">
+    <value>Remove production items</value>
+  </data>
+  <data name="AllProductionItemsView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current production item</value>
+  </data>
+  <data name="AllRecipesView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current recipe</value>
+  </data>
+  <data name="AllRecipesView_Header_ItemNames" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="AllRecipesView_Header_Plu" xml:space="preserve">
+    <value>Plu</value>
+  </data>
+  <data name="AllRecipesView_New_ToolTip" xml:space="preserve">
+    <value>Insert a new recipe</value>
+  </data>
+  <data name="AllRecipesView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following recipes:
+</value>
+  </data>
+  <data name="AllRecipesView_RemoveTitle" xml:space="preserve">
+    <value>Remove recipes</value>
+  </data>
+  <data name="AllRecipesView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current recipe</value>
+  </data>
+  <data name="AllStocksView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current stock</value>
+  </data>
+  <data name="AllStocksView_Header_ItemNames" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="AllStocksView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllStocksView_New_ToolTip" xml:space="preserve">
+    <value>Insert a new stock</value>
+  </data>
+  <data name="AllStocksView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following stocks:
+</value>
+  </data>
+  <data name="AllStocksView_RemoveTitle" xml:space="preserve">
+    <value>Remove stocks</value>
+  </data>
+  <data name="AllStocksView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current stock</value>
+  </data>
+  <data name="ProductionItemModel_Name_missing" xml:space="preserve">
+    <value>Name of production item is missing</value>
+  </data>
+  <data name="ProductionItemModel_RecipeUnit_is_missing" xml:space="preserve">
+    <value>Recipe unit of production item is missing</value>
+  </data>
+  <data name="ProductionItemsModule" xml:space="preserve">
+    <value>Production items</value>
+  </data>
+  <data name="ProductionItemsTooltip" xml:space="preserve">
+    <value>Manage production items</value>
+  </data>
+  <data name="RecipeModel_Plu_missing" xml:space="preserve">
+    <value>PLU of recipe is missing</value>
+  </data>
+  <data name="RecipesModule" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="RecipesTooltip" xml:space="preserve">
+    <value>Recipes and their ingredients</value>
+  </data>
+  <data name="StockModel_Name_missing" xml:space="preserve">
+    <value>Name of the stock is missing</value>
+  </data>
+  <data name="StocksModule" xml:space="preserve">
+    <value>Stocks</value>
+  </data>
+  <data name="StocksTooltip" xml:space="preserve">
+    <value>Manage stocks</value>
+  </data>
+  <data name="AllStocksView_Header_MainStock" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="EditProductionItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditProductionItemView_NewProductionItem" xml:space="preserve">
+    <value>&lt;New production item&gt;</value>
+  </data>
+  <data name="EditProductionItemView_ProductionItemIs" xml:space="preserve">
+    <value>Production item {0}</value>
+  </data>
+  <data name="EditProductionItemView_RecipeUnit" xml:space="preserve">
+    <value>_Recipe unit:</value>
+  </data>
+  <data name="EditProductionItemView_TitleEdit" xml:space="preserve">
+    <value>Edit production item</value>
+  </data>
+  <data name="EditProductionItemView_TitleNew" xml:space="preserve">
+    <value>Insert new production item</value>
+  </data>
+  <data name="EditRecipeView_NewRecipe" xml:space="preserve">
+    <value>&lt;New recipe&gt;</value>
+  </data>
+  <data name="EditRecipeView_Plu" xml:space="preserve">
+    <value>_Plu:</value>
+  </data>
+  <data name="EditRecipeView_RecipeIs" xml:space="preserve">
+    <value>Recipe {0}</value>
+  </data>
+  <data name="EditRecipeView_TitleEdit" xml:space="preserve">
+    <value>Edit recipe</value>
+  </data>
+  <data name="EditRecipeView_TitleNew" xml:space="preserve">
+    <value>Insert new recipe</value>
+  </data>
+  <data name="EditStockView_MainStock" xml:space="preserve">
+    <value>_Main stock</value>
+  </data>
+  <data name="EditStockView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditStockView_NewStock" xml:space="preserve">
+    <value>&lt;New stock&gt;</value>
+  </data>
+  <data name="EditStockView_PurchaseStockIs" xml:space="preserve">
+    <value>Stock {0}</value>
+  </data>
+  <data name="EditStockView_TitleEdit" xml:space="preserve">
+    <value>Edit stock</value>
+  </data>
+  <data name="EditStockView_TitleNew" xml:space="preserve">
+    <value>Insert new stock</value>
   </data>
 </root>

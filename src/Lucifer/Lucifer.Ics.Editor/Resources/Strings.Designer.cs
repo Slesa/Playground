@@ -61,6 +61,79 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current production item.
+        /// </summary>
+        public static string AllProductionItemsView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string AllProductionItemsView_Header_ItemNames {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_Header_ItemNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllProductionItemsView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to R.-Unit.
+        /// </summary>
+        public static string AllProductionItemsView_Header_RecipeUnit {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_Header_RecipeUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a new production item.
+        /// </summary>
+        public static string AllProductionItemsView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current production item.
+        /// </summary>
+        public static string AllProductionItemsView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following production items:
+        ///.
+        /// </summary>
+        public static string AllProductionItemsView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove production items.
+        /// </summary>
+        public static string AllProductionItemsView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllProductionItemsView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit current purchase family.
         /// </summary>
         public static string AllPurchaseFamiliesView_Edit_ToolTip {
@@ -194,6 +267,143 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string AllPurchaseItemsView_RemoveTitle {
             get {
                 return ResourceManager.GetString("AllPurchaseItemsView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit current recipe.
+        /// </summary>
+        public static string AllRecipesView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllRecipesView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string AllRecipesView_Header_ItemNames {
+            get {
+                return ResourceManager.GetString("AllRecipesView_Header_ItemNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plu.
+        /// </summary>
+        public static string AllRecipesView_Header_Plu {
+            get {
+                return ResourceManager.GetString("AllRecipesView_Header_Plu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a new recipe.
+        /// </summary>
+        public static string AllRecipesView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllRecipesView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current recipe.
+        /// </summary>
+        public static string AllRecipesView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllRecipesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following recipes:
+        ///.
+        /// </summary>
+        public static string AllRecipesView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllRecipesView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove recipes.
+        /// </summary>
+        public static string AllRecipesView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllRecipesView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit current stock.
+        /// </summary>
+        public static string AllStocksView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllStocksView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string AllStocksView_Header_ItemNames {
+            get {
+                return ResourceManager.GetString("AllStocksView_Header_ItemNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main.
+        /// </summary>
+        public static string AllStocksView_Header_MainStock {
+            get {
+                return ResourceManager.GetString("AllStocksView_Header_MainStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllStocksView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllStocksView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert a new stock.
+        /// </summary>
+        public static string AllStocksView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllStocksView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current stock.
+        /// </summary>
+        public static string AllStocksView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllStocksView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following stocks:
+        ///.
+        /// </summary>
+        public static string AllStocksView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllStocksView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove stocks.
+        /// </summary>
+        public static string AllStocksView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllStocksView_RemoveTitle", resourceCulture);
             }
         }
         
@@ -409,6 +619,60 @@ namespace Lucifer.Ics.Editor.Resources {
         /// <summary>
         ///   Looks up a localized string similar to _Name:.
         /// </summary>
+        public static string EditProductionItemView_Name {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New production item&gt;.
+        /// </summary>
+        public static string EditProductionItemView_NewProductionItem {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_NewProductionItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Production item {0}.
+        /// </summary>
+        public static string EditProductionItemView_ProductionItemIs {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_ProductionItemIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Recipe unit:.
+        /// </summary>
+        public static string EditProductionItemView_RecipeUnit {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_RecipeUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit production item.
+        /// </summary>
+        public static string EditProductionItemView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new production item.
+        /// </summary>
+        public static string EditProductionItemView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
         public static string EditPurchaseFamilyView_Name {
             get {
                 return ResourceManager.GetString("EditPurchaseFamilyView_Name", resourceCulture);
@@ -520,6 +784,105 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string EditPurchaseItemView_TitleNew {
             get {
                 return ResourceManager.GetString("EditPurchaseItemView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New recipe&gt;.
+        /// </summary>
+        public static string EditRecipeView_NewRecipe {
+            get {
+                return ResourceManager.GetString("EditRecipeView_NewRecipe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Plu:.
+        /// </summary>
+        public static string EditRecipeView_Plu {
+            get {
+                return ResourceManager.GetString("EditRecipeView_Plu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipe {0}.
+        /// </summary>
+        public static string EditRecipeView_RecipeIs {
+            get {
+                return ResourceManager.GetString("EditRecipeView_RecipeIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit recipe.
+        /// </summary>
+        public static string EditRecipeView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditRecipeView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new recipe.
+        /// </summary>
+        public static string EditRecipeView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditRecipeView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Main stock.
+        /// </summary>
+        public static string EditStockView_MainStock {
+            get {
+                return ResourceManager.GetString("EditStockView_MainStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditStockView_Name {
+            get {
+                return ResourceManager.GetString("EditStockView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New stock&gt;.
+        /// </summary>
+        public static string EditStockView_NewStock {
+            get {
+                return ResourceManager.GetString("EditStockView_NewStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock {0}.
+        /// </summary>
+        public static string EditStockView_PurchaseStockIs {
+            get {
+                return ResourceManager.GetString("EditStockView_PurchaseStockIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit stock.
+        /// </summary>
+        public static string EditStockView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditStockView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new stock.
+        /// </summary>
+        public static string EditStockView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditStockView_TitleNew", resourceCulture);
             }
         }
         
@@ -686,6 +1049,42 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name of production item is missing.
+        /// </summary>
+        public static string ProductionItemModel_Name_missing {
+            get {
+                return ResourceManager.GetString("ProductionItemModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipe unit of production item is missing.
+        /// </summary>
+        public static string ProductionItemModel_RecipeUnit_is_missing {
+            get {
+                return ResourceManager.GetString("ProductionItemModel_RecipeUnit_is_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Production items.
+        /// </summary>
+        public static string ProductionItemsModule {
+            get {
+                return ResourceManager.GetString("ProductionItemsModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage production items.
+        /// </summary>
+        public static string ProductionItemsTooltip {
+            get {
+                return ResourceManager.GetString("ProductionItemsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase families.
         /// </summary>
         public static string PurchaseFamiliesModule {
@@ -763,6 +1162,60 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string PurchaseItemsTooltip {
             get {
                 return ResourceManager.GetString("PurchaseItemsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PLU of recipe is missing.
+        /// </summary>
+        public static string RecipeModel_Plu_missing {
+            get {
+                return ResourceManager.GetString("RecipeModel_Plu_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipes.
+        /// </summary>
+        public static string RecipesModule {
+            get {
+                return ResourceManager.GetString("RecipesModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipes and their ingredients.
+        /// </summary>
+        public static string RecipesTooltip {
+            get {
+                return ResourceManager.GetString("RecipesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the stock is missing.
+        /// </summary>
+        public static string StockModel_Name_missing {
+            get {
+                return ResourceManager.GetString("StockModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stocks.
+        /// </summary>
+        public static string StocksModule {
+            get {
+                return ResourceManager.GetString("StocksModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage stocks.
+        /// </summary>
+        public static string StocksTooltip {
+            get {
+                return ResourceManager.GetString("StocksTooltip", resourceCulture);
             }
         }
         
