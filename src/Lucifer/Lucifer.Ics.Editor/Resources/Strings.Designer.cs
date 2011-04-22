@@ -617,6 +617,33 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string EditProductionitemView_HeaderName {
+            get {
+                return ResourceManager.GetString("EditProductionitemView_HeaderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string EditProductionItemView_HeaderQuantity {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_HeaderQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit.
+        /// </summary>
+        public static string EditProductionitemView_HeaderUnit {
+            get {
+                return ResourceManager.GetString("EditProductionitemView_HeaderUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Name:.
         /// </summary>
         public static string EditProductionItemView_Name {
@@ -667,6 +694,15 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string EditProductionItemView_TitleNew {
             get {
                 return ResourceManager.GetString("EditProductionItemView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used _items:.
+        /// </summary>
+        public static string EditProductionItemView_UsedItems {
+            get {
+                return ResourceManager.GetString("EditProductionItemView_UsedItems", resourceCulture);
             }
         }
         
@@ -788,6 +824,42 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string EditRecipeView_HeaderName {
+            get {
+                return ResourceManager.GetString("EditRecipeView_HeaderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string EditRecipeView_HeaderQuantity {
+            get {
+                return ResourceManager.GetString("EditRecipeView_HeaderQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string EditRecipeView_HeaderType {
+            get {
+                return ResourceManager.GetString("EditRecipeView_HeaderType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit.
+        /// </summary>
+        public static string EditRecipeView_HeaderUnit {
+            get {
+                return ResourceManager.GetString("EditRecipeView_HeaderUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;New recipe&gt;.
         /// </summary>
         public static string EditRecipeView_NewRecipe {
@@ -815,6 +887,15 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recipe items:.
+        /// </summary>
+        public static string EditRecipeView_RecipeItems {
+            get {
+                return ResourceManager.GetString("EditRecipeView_RecipeItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit recipe.
         /// </summary>
         public static string EditRecipeView_TitleEdit {
@@ -829,6 +910,42 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string EditRecipeView_TitleNew {
             get {
                 return ResourceManager.GetString("EditRecipeView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string EditStockView_HeaderArticle {
+            get {
+                return ResourceManager.GetString("EditStockView_HeaderArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string EditStockView_HeaderQuantity {
+            get {
+                return ResourceManager.GetString("EditStockView_HeaderQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string EditStockView_HeaderType {
+            get {
+                return ResourceManager.GetString("EditStockView_HeaderType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit.
+        /// </summary>
+        public static string EditStockView_HeaderUnit {
+            get {
+                return ResourceManager.GetString("EditStockView_HeaderUnit", resourceCulture);
             }
         }
         
@@ -865,6 +982,15 @@ namespace Lucifer.Ics.Editor.Resources {
         public static string EditStockView_PurchaseStockIs {
             get {
                 return ResourceManager.GetString("EditStockView_PurchaseStockIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock items:.
+        /// </summary>
+        public static string EditStockView_StockItems {
+            get {
+                return ResourceManager.GetString("EditStockView_StockItems", resourceCulture);
             }
         }
         

@@ -7,6 +7,45 @@
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
 
+    <UserControl.Resources>
+        <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+            <Setter Property="ValidationErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <TextBlock Foreground="Red" Margin="2,0,0,0" Text="!" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRow}">
+                        <Border x:Name="DGR_Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <SelectiveScrollingGrid>
+                                <SelectiveScrollingGrid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </SelectiveScrollingGrid.ColumnDefinitions>
+                                <SelectiveScrollingGrid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </SelectiveScrollingGrid.RowDefinitions>
+                                <DataGridCellsPresenter Grid.Column="1" ItemsPanel="{TemplateBinding ItemsPanel}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Visibility="{TemplateBinding DetailsVisibility}"/>
+                                <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                            </SelectiveScrollingGrid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+            <DataGridRowsPresenter x:Name="PART_RowsPresenter" IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+    </UserControl.Resources>
+
     <DockPanel LastChildFill="True" Style="{DynamicResource IcsEditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource EditDialogButtonStackSkin}" >
             <Button x:Name="Save" Style="{DynamicResource EditDialogButtonSkin}" IsDefault="True">
@@ -28,7 +67,6 @@
         <Grid Style="{DynamicResource EditDialogGridSkin}">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -61,6 +99,31 @@
                    Validation.ErrorTemplate="{x:Null}" />
             <ContentPresenter Grid.Row="4" Grid.Column="1" Style="{DynamicResource DialogErrorPresenterSkin}" 
                    Content="{Binding ElementName=_comboRecipeUnit, Path=(Validation.Errors).CurrentItem}" />
+
+            <!-- Recipe items -->
+            <Label Grid.Row="5" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_gridRecipeItems}" Content="{x:Static Resources:Strings.EditProductionItemView_UsedItems}" />
+            <DockPanel Grid.Column="1" Grid.Row="5" LastChildFill="True">
+                <!-- StackPanel Orientation="Vertical" DockPanel.Dock="Right">
+                    <Button Content="{x:Static Localization:Strings.Button_Remove}" Margin="5" MinHeight="25" MinWidth="75" Command="{Binding Path=RemoveRecipeItem}" />
+                </StackPanel -->
+                <!--  -->
+                <DataGrid x:Name="_gridRecipeItems" IsSynchronizedWithCurrentItem="True" Margin="5" AutoGenerateColumns="False" AlternationCount="2"
+                    ItemsSource="{Binding RecipeItems}" 
+                    RowStyle="{DynamicResource DataGridRowStyle}" ItemsPanel="{DynamicResource ItemsPanelTemplate}" >
+                    <DataGrid.Columns>
+                        <DataGridComboBoxColumn x:Name="_comboItems" Header="{x:Static Resources:Strings.EditProductionitemView_HeaderName}" MinWidth="60"
+                             SelectedItemBinding="{Binding RecipeableItem, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"  
+                             ItemsSource="{Binding Source=AllRecipeableItems}" 
+                             DisplayMemberPath="Name" SortMemberPath="RecipeableItem.Name" />
+                        <DataGridTextColumn Header="{x:Static Resources:Strings.EditProductionItemView_HeaderQuantity}" Binding="{Binding Quantity}" />
+                        <DataGridComboBoxColumn x:Name="_comboUnits" Header="{x:Static Resources:Strings.EditProductionitemView_HeaderUnit}"
+                             SelectedItemBinding="{Binding Unit, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                             ItemsSource="{Binding Source=AllRecipeUnits}" 
+                             DisplayMemberPath="Contraction" SortMemberPath="Unit.Contraction" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
         </Grid>
     </DockPanel>
 </UserControl>

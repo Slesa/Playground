@@ -87,6 +87,7 @@
     <Compile Include="ViewModel\PurchaseFamilyRowViewModel.cs" />
     <Compile Include="ViewModel\PurchaseItemRowViewModel.cs" />
     <Compile Include="ViewModel\RecipeRowViewModel.cs" />
+    <Compile Include="ViewModel\StockItemRowViewModel.cs" />
     <Compile Include="ViewModel\StockRowViewModel.cs" />
     <Compile Include="ViewModel\UnitRowViewModel.cs" />
     <Compile Include="ViewModel\UnitTypeRowViewModel.cs" />

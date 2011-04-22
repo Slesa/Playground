@@ -1,10 +1,14 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
+using Lucifer.Ics.Model.Queries;
 
 namespace Lucifer.Ics.Editor.ViewModel
 {
@@ -25,6 +29,9 @@ namespace Lucifer.Ics.Editor.ViewModel
             ToolTip = Strings.AllStocksView_Edit_ToolTip;
         }
 
+        public List<RecipeableItem> AllRecipeableItems { get; private set; }
+        public List<Unit> AllUnits { get; private set; }
+        public ObservableCollection<StockItemRowViewModel> StockItems { get; private set; }
         public string Title { get; private set; }
 
         public string Name
@@ -71,16 +78,30 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         #endregion
 
+        void PreloadLists(StockModel model)
+        {
+            AllRecipeableItems = DbConversation.Query(new AllRecipeableItemsQuery()).ToList();
+            AllUnits = DbConversation.Query(new AllUnitsQuery()).ToList();
+            StockItems = new ObservableCollection<StockItemRowViewModel>(
+                model.StockItems
+                .Select(x => new StockItemRowViewModel(x)));
+            //StockItems.CollectionChanged += OnStockItemsChanged;
+        }
+
         protected override StockModel CreateNewElementModel()
         {
-            return new StockModel(new Stock());
+            var model = new StockModel(new Stock());
+            PreloadLists(model);
+            return model;
         }
 
         protected override StockModel CreateElementModel(int elementId)
         {
             StockModel model = null;
             DbConversation.UsingTransaction(() =>
-                { model =new StockModel(DbConversation.GetById<Stock>(elementId));
+                {
+                    model = new StockModel(DbConversation.GetById<Stock>(elementId));
+                    PreloadLists(model);
                 });
             return model;
         }

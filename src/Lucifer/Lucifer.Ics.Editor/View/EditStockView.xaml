@@ -7,6 +7,71 @@
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
 
+    <UserControl.Resources>
+        <Style x:Key="CellEditComboboxStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self},
+                                    Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Red"/>
+                    <Setter Property="ToolTip"
+              Value="{Binding RelativeSource={RelativeSource Self},
+                     Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+            <Setter Property="ValidationErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Ellipse Width="12" Height="12" Fill="Red" Stroke="Black" StrokeThickness="0.5"/>
+                            <TextBlock FontWeight="Bold" Padding="4,0,0,0" Margin="0" VerticalAlignment="Top" Foreground="White" Text="!"
+                                ToolTip="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}},
+                                Path=(Validation.Errors)[0].ErrorContent}"/>
+                            <!-- TextBlock Foreground="Red" Margin="2,0,0,0" Text="!" VerticalAlignment="Center"/ -->
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRow}">
+                        <Border x:Name="DGR_Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <SelectiveScrollingGrid>
+                                <SelectiveScrollingGrid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </SelectiveScrollingGrid.ColumnDefinitions>
+                                <SelectiveScrollingGrid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </SelectiveScrollingGrid.RowDefinitions>
+                                <DataGridCellsPresenter Grid.Column="1" ItemsPanel="{TemplateBinding ItemsPanel}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Visibility="{TemplateBinding DetailsVisibility}"/>
+                                <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                            </SelectiveScrollingGrid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+            <DataGridRowsPresenter x:Name="PART_RowsPresenter" IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+    </UserControl.Resources>
+
     <DockPanel LastChildFill="True" Style="{DynamicResource IcsEditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Style="{DynamicResource EditDialogButtonStackSkin}" >
             <Button x:Name="Save" Style="{DynamicResource EditDialogButtonSkin}" IsDefault="True">
@@ -52,6 +117,52 @@
             
             <!-- IsMainStock -->
             <CheckBox Grid.Row="3" Grid.Column="1" Content="{x:Static Resources:Strings.EditStockView_MainStock}" IsChecked="{Binding IsMainStock}" />
+
+            <!-- Stock items -->
+            <Label Grid.Row="4" Grid.Column="0" Style="{DynamicResource LabelSkin}" 
+                   Target="{Binding ElementName=_gridStockItems}" Content="{x:Static Resources:Strings.EditStockView_StockItems}" />
+            <DockPanel Grid.Column="1" Grid.Row="4" LastChildFill="True">
+
+                <!-- StackPanel Orientation="Vertical" DockPanel.Dock="Right">
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=BookFromCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_BookFrom}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=SendToCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_SendTo}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=DepositCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_Deposit}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=RemovalCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Stocks_Removal}" />
+                    <Button Style="{DynamicResource ListButtonSkin}" Command="{Binding Path=PrintCommand}" 
+                        Content="{x:Static Localization:Strings.Button_Print}" />
+                </StackPanel -->
+
+                <DataGrid Name="_gridStockItems" IsSynchronizedWithCurrentItem="True" Margin="5" AutoGenerateColumns="false" AlternationCount="2"
+                    ItemsSource="{Binding StockItems}" 
+                    RowStyle="{DynamicResource DataGridRowStyle}" ItemsPanel="{DynamicResource ItemsPanelTemplate}">
+
+                    <!-- DataGrid.RowValidationRules>
+                        <ViewModel:RowDataInfoValidationRule ValidationStep="UpdatedValue" />
+                    </DataGrid.RowValidationRules -->
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{x:Static Resources:Strings.EditStockView_HeaderType}" 
+                             Binding="{Binding RecipeableItemType, Mode=OneWay}" IsReadOnly="True" />
+                        <DataGridComboBoxColumn x:Name="_comboItems" Header="{x:Static Resources:Strings.EditStockView_HeaderArticle}" MinWidth="60"
+                             EditingElementStyle="{StaticResource CellEditComboboxStyle}"                   
+                             SelectedItemBinding="{Binding RecipeableItem, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"  
+                             ItemsSource="{Binding Source=AllRecipeableItems}" 
+                             DisplayMemberPath="Name" SortMemberPath="RecipeableItem.Name" />
+                        <DataGridTextColumn Header="{x:Static Resources:Strings.EditStockView_HeaderQuantity}" 
+                             Binding="{Binding Quantity, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+                        <DataGridComboBoxColumn x:Name="_comboUnits" Header="{x:Static Resources:Strings.EditStockView_HeaderUnit}"
+                             EditingElementStyle="{StaticResource CellEditComboboxStyle}"
+                             SelectedItemBinding="{Binding Unit, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                             ItemsSource="{Binding Source=AllUnits}" 
+                             DisplayMemberPath="Contraction" SortMemberPath="Unit.Contraction" /> 
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </DockPanel>
         </Grid>
     </DockPanel>
 </UserControl>

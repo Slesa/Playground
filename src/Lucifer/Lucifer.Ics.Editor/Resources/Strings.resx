@@ -544,4 +544,46 @@
   <data name="EditStockView_TitleNew" xml:space="preserve">
     <value>Insert new stock</value>
   </data>
+  <data name="EditProductionitemView_HeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="EditProductionItemView_HeaderQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="EditProductionitemView_HeaderUnit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="EditProductionItemView_UsedItems" xml:space="preserve">
+    <value>Used _items:</value>
+  </data>
+  <data name="EditRecipeView_HeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="EditRecipeView_HeaderQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="EditRecipeView_HeaderType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="EditRecipeView_HeaderUnit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="EditRecipeView_RecipeItems" xml:space="preserve">
+    <value>Recipe items:</value>
+  </data>
+  <data name="EditStockView_HeaderArticle" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="EditStockView_HeaderQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="EditStockView_HeaderType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="EditStockView_HeaderUnit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="EditStockView_StockItems" xml:space="preserve">
+    <value>Stock items:</value>
+  </data>
 </root>

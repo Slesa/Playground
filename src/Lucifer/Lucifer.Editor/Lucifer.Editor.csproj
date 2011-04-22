@@ -83,6 +83,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\button_add.png" />
+    <Resource Include="Resources\button_edit.png" />
+    <Resource Include="Resources\button_print.png" />
+    <Resource Include="Resources\button_remove.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
