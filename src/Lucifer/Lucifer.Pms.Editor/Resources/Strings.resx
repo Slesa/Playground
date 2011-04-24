@@ -195,6 +195,47 @@
   <data name="AllPayformsView_Remove_ToolTip" xml:space="preserve">
     <value>Remove current payform</value>
   </data>
+  <data name="AllSalesFamiliesView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current sales family</value>
+  </data>
+  <data name="AllSalesFamiliesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllSalesFamiliesView_New_ToolTip" xml:space="preserve">
+    <value>Insert new sales family</value>
+  </data>
+  <data name="AllSalesFamiliesView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following sales families:
+</value>
+  </data>
+  <data name="AllSalesFamiliesView_RemoveTitle" xml:space="preserve">
+    <value>Remove sales families</value>
+  </data>
+  <data name="AllSalesFamiliesView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current sales family</value>
+  </data>
+  <data name="AllSalesItemsView_Edit_ToolTip" xml:space="preserve">
+    <value>Edit current sales item</value>
+  </data>
+  <data name="AllSalesItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="AllSalesItemsView_Header_SalesFamily" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="AllSalesItemsView_New_ToolTip" xml:space="preserve">
+    <value>Insert new sales item</value>
+  </data>
+  <data name="AllSalesItemsView_RemoveMessage" xml:space="preserve">
+    <value>Are you sure to remove the following sales items:
+</value>
+  </data>
+  <data name="AllSalesItemsView_RemoveTitle" xml:space="preserve">
+    <value>Remove sales items</value>
+  </data>
+  <data name="AllSalesItemsView_Remove_ToolTip" xml:space="preserve">
+    <value>Remove current sales item</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -291,6 +332,39 @@
   <data name="EditPayformView_TitleNew" xml:space="preserve">
     <value>Add new payform...</value>
   </data>
+  <data name="EditSalesFamilyView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditSalesFamilyView_NewSalesFamily" xml:space="preserve">
+    <value>&lt;New sales family&gt;</value>
+  </data>
+  <data name="EditSalesFamilyView_SalesFamilyIs" xml:space="preserve">
+    <value>Sales family {0}</value>
+  </data>
+  <data name="EditSalesFamilyView_TitleEdit" xml:space="preserve">
+    <value>Edit sales family</value>
+  </data>
+  <data name="EditSalesFamilyView_TitleNew" xml:space="preserve">
+    <value>Add new sales family...</value>
+  </data>
+  <data name="EditSalesItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+  <data name="EditSalesItemView_NewSalesItem" xml:space="preserve">
+    <value>&lt;new sales item&gt;</value>
+  </data>
+  <data name="EditSalesItemView_SalesFamily" xml:space="preserve">
+    <value>Sales _family:</value>
+  </data>
+  <data name="EditSalesItemView_SalesItemIs" xml:space="preserve">
+    <value>Sales item {0}</value>
+  </data>
+  <data name="EditSalesItemView_TitleEdit" xml:space="preserve">
+    <value>Edit sales item</value>
+  </data>
+  <data name="EditSalesItemView_TitleNew" xml:space="preserve">
+    <value>Add new sales item</value>
+  </data>
   <data name="PayformModel_Name_missing" xml:space="preserve">
     <value>Name of payform is missing</value>
   </data>
@@ -305,5 +379,26 @@
   </data>
   <data name="PmsModuleTooltip" xml:space="preserve">
     <value>Everything you need to control your POS envrionment</value>
+  </data>
+  <data name="SalesFamiliesModule" xml:space="preserve">
+    <value>Sales families</value>
+  </data>
+  <data name="SalesFamiliesTooltip" xml:space="preserve">
+    <value>Group sales items in their families</value>
+  </data>
+  <data name="SalesFamilyItem_Name_missing" xml:space="preserve">
+    <value>Name of the sales item is missing</value>
+  </data>
+  <data name="SalesFamilyItem_SalesFamily_missing" xml:space="preserve">
+    <value>Family of the sales item is missing</value>
+  </data>
+  <data name="SalesFamilyModel_Name_missing" xml:space="preserve">
+    <value>Name of the sales family is missing</value>
+  </data>
+  <data name="SalesItemsModule" xml:space="preserve">
+    <value>Sales items</value>
+  </data>
+  <data name="SalesItemsTooltip" xml:space="preserve">
+    <value>Sales items and their prices</value>
   </data>
 </root>

@@ -289,6 +289,125 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit current sales family.
+        /// </summary>
+        public static string AllSalesFamiliesView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllSalesFamiliesView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllSalesFamiliesView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllSalesFamiliesView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new sales family.
+        /// </summary>
+        public static string AllSalesFamiliesView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllSalesFamiliesView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current sales family.
+        /// </summary>
+        public static string AllSalesFamiliesView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllSalesFamiliesView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following sales families:
+        ///.
+        /// </summary>
+        public static string AllSalesFamiliesView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllSalesFamiliesView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove sales families.
+        /// </summary>
+        public static string AllSalesFamiliesView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllSalesFamiliesView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit current sales item.
+        /// </summary>
+        public static string AllSalesItemsView_Edit_ToolTip {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_Edit_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string AllSalesItemsView_Header_Name {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_Header_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family.
+        /// </summary>
+        public static string AllSalesItemsView_Header_SalesFamily {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_Header_SalesFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert new sales item.
+        /// </summary>
+        public static string AllSalesItemsView_New_ToolTip {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_New_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove current sales item.
+        /// </summary>
+        public static string AllSalesItemsView_Remove_ToolTip {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_Remove_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to remove the following sales items:
+        ///.
+        /// </summary>
+        public static string AllSalesItemsView_RemoveMessage {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_RemoveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove sales items.
+        /// </summary>
+        public static string AllSalesItemsView_RemoveTitle {
+            get {
+                return ResourceManager.GetString("AllSalesItemsView_RemoveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Button_Cancel {
@@ -577,6 +696,105 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditSalesFamilyView_Name {
+            get {
+                return ResourceManager.GetString("EditSalesFamilyView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;New sales family&gt;.
+        /// </summary>
+        public static string EditSalesFamilyView_NewSalesFamily {
+            get {
+                return ResourceManager.GetString("EditSalesFamilyView_NewSalesFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales family {0}.
+        /// </summary>
+        public static string EditSalesFamilyView_SalesFamilyIs {
+            get {
+                return ResourceManager.GetString("EditSalesFamilyView_SalesFamilyIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit sales family.
+        /// </summary>
+        public static string EditSalesFamilyView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditSalesFamilyView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new sales family....
+        /// </summary>
+        public static string EditSalesFamilyView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditSalesFamilyView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Name:.
+        /// </summary>
+        public static string EditSalesItemView_Name {
+            get {
+                return ResourceManager.GetString("EditSalesItemView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;new sales item&gt;.
+        /// </summary>
+        public static string EditSalesItemView_NewSalesItem {
+            get {
+                return ResourceManager.GetString("EditSalesItemView_NewSalesItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales _family:.
+        /// </summary>
+        public static string EditSalesItemView_SalesFamily {
+            get {
+                return ResourceManager.GetString("EditSalesItemView_SalesFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales item {0}.
+        /// </summary>
+        public static string EditSalesItemView_SalesItemIs {
+            get {
+                return ResourceManager.GetString("EditSalesItemView_SalesItemIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit sales item.
+        /// </summary>
+        public static string EditSalesItemView_TitleEdit {
+            get {
+                return ResourceManager.GetString("EditSalesItemView_TitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new sales item.
+        /// </summary>
+        public static string EditSalesItemView_TitleNew {
+            get {
+                return ResourceManager.GetString("EditSalesItemView_TitleNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name of payform is missing.
         /// </summary>
         public static string PayformModel_Name_missing {
@@ -618,6 +836,69 @@ namespace Lucifer.Pms.Editor.Resources {
         public static string PmsModuleTooltip {
             get {
                 return ResourceManager.GetString("PmsModuleTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales families.
+        /// </summary>
+        public static string SalesFamiliesModule {
+            get {
+                return ResourceManager.GetString("SalesFamiliesModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group sales items in their families.
+        /// </summary>
+        public static string SalesFamiliesTooltip {
+            get {
+                return ResourceManager.GetString("SalesFamiliesTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the sales item is missing.
+        /// </summary>
+        public static string SalesFamilyItem_Name_missing {
+            get {
+                return ResourceManager.GetString("SalesFamilyItem_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family of the sales item is missing.
+        /// </summary>
+        public static string SalesFamilyItem_SalesFamily_missing {
+            get {
+                return ResourceManager.GetString("SalesFamilyItem_SalesFamily_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of the sales family is missing.
+        /// </summary>
+        public static string SalesFamilyModel_Name_missing {
+            get {
+                return ResourceManager.GetString("SalesFamilyModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales items.
+        /// </summary>
+        public static string SalesItemsModule {
+            get {
+                return ResourceManager.GetString("SalesItemsModule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales items and their prices.
+        /// </summary>
+        public static string SalesItemsTooltip {
+            get {
+                return ResourceManager.GetString("SalesItemsTooltip", resourceCulture);
             }
         }
     }

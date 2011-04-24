@@ -1,5 +1,4 @@
-﻿
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 using Lucifer.Pms.Model.Entities;
 
 namespace Lucifer.Pms.Mapping

@@ -244,4 +244,142 @@
 	<data name="PmsModuleTooltip" xml:space="preserve">
     <value>Alles was Sie benötigen um Ihre POS-Umgebung zu verwalten</value>
   </data>
+	<data name="AllDiscountsView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuellen Rabatt bearbeiten</value>
+  </data>
+	<data name="AllDiscountsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllDiscountsView_Header_Rate" xml:space="preserve">
+    <value>Satz</value>
+  </data>
+	<data name="AllDiscountsView_New_ToolTip" xml:space="preserve">
+    <value>Neuen Rabatt hinzufügen</value>
+  </data>
+	<data name="AllDiscountsView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Rabatte löschen möchten:
+</value>
+  </data>
+	<data name="AllDiscountsView_RemoveTitle" xml:space="preserve">
+    <value>Rabatte löschen</value>
+  </data>
+	<data name="AllDiscountsView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuellen Rabatt löschen</value>
+  </data>
+	<data name="AllSalesFamiliesView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuelle Verkaufswarengruppe bearbeiten</value>
+  </data>
+	<data name="AllSalesFamiliesView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllSalesFamiliesView_New_ToolTip" xml:space="preserve">
+    <value>Neue Verkaufswarengruppe hinzufügen</value>
+  </data>
+	<data name="AllSalesFamiliesView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Verkaufswarengruppen löschen möchten:
+</value>
+  </data>
+	<data name="AllSalesFamiliesView_RemoveTitle" xml:space="preserve">
+    <value>Verkaufswarengruppen löschen</value>
+  </data>
+	<data name="AllSalesFamiliesView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuelle Verkaufswarengruppe löschen</value>
+  </data>
+	<data name="AllSalesItemsView_Edit_ToolTip" xml:space="preserve">
+    <value>Aktuellen Verkaufsartikel bearbeiten</value>
+  </data>
+	<data name="AllSalesItemsView_Header_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<data name="AllSalesItemsView_Header_SalesFamily" xml:space="preserve">
+    <value>Warengruppe</value>
+  </data>
+	<data name="AllSalesItemsView_New_ToolTip" xml:space="preserve">
+    <value>Neuen Verkaufsartikel hinzufügen</value>
+  </data>
+	<data name="AllSalesItemsView_RemoveMessage" xml:space="preserve">
+    <value>Sind Sie sicher, daß Sie die folgenden Verkaufsartikel löschen möchten:
+</value>
+  </data>
+	<data name="AllSalesItemsView_RemoveTitle" xml:space="preserve">
+    <value>Verkaufsartikel löschen</value>
+  </data>
+	<data name="AllSalesItemsView_Remove_ToolTip" xml:space="preserve">
+    <value>Aktuellen Verkausartikel löschen</value>
+  </data>
+	<data name="DiscountModel_Name_missing" xml:space="preserve">
+    <value>Name des Rabattes fehlt</value>
+  </data>
+	<data name="DiscountModel_Rate_missing" xml:space="preserve">
+    <value>Satz des Rabattes fehlt</value>
+  </data>
+	<data name="DiscountsModule" xml:space="preserve">
+    <value>Rabatte</value>
+  </data>
+	<data name="DiscountsTooltip" xml:space="preserve">
+    <value>Rabattieren von Tischpositionen oder Beträgen</value>
+  </data>
+	<data name="EditDiscountView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditDiscountView_Rate" xml:space="preserve">
+    <value>_Satz:</value>
+  </data>
+	<data name="EditDiscountView_TitleEdit" xml:space="preserve">
+    <value>Rabatt bearbeiten</value>
+  </data>
+	<data name="EditSalesFamilyView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditSalesFamilyView_NewSalesFamily" xml:space="preserve">
+    <value>&lt;Neue Verkaufswarengruppe&gt;</value>
+  </data>
+	<data name="EditSalesFamilyView_SalesFamilyIs" xml:space="preserve">
+    <value>Verkaufswarengruppe {0}</value>
+  </data>
+	<data name="EditSalesFamilyView_TitleEdit" xml:space="preserve">
+    <value>Verkaufswarengruppe bearbeiten</value>
+  </data>
+	<data name="EditSalesFamilyView_TitleNew" xml:space="preserve">
+    <value>Neue Verkaufswarengruppe hinzufügen...</value>
+  </data>
+	<data name="EditSalesItemView_Name" xml:space="preserve">
+    <value>_Name:</value>
+  </data>
+	<data name="EditSalesItemView_NewSalesItem" xml:space="preserve">
+    <value>&lt;Neuer Verkaufsartikel&gt;</value>
+  </data>
+	<data name="EditSalesItemView_SalesFamily" xml:space="preserve">
+    <value>_Warengruppe:</value>
+  </data>
+	<data name="EditSalesItemView_SalesItemIs" xml:space="preserve">
+    <value>Verkaufsartikel {0}</value>
+  </data>
+	<data name="EditSalesItemView_TitleEdit" xml:space="preserve">
+    <value>Verkaufsartikel bearbeiten</value>
+  </data>
+	<data name="EditSalesItemView_TitleNew" xml:space="preserve">
+    <value>Neuen Verkaufsartikel hinzufügen</value>
+  </data>
+	<data name="SalesFamiliesModule" xml:space="preserve">
+    <value>Verkaufswarengruppe</value>
+  </data>
+	<data name="SalesFamiliesTooltip" xml:space="preserve">
+    <value>Verkaufsartikel in Warengruppen gruppieren</value>
+  </data>
+	<data name="SalesFamilyItem_Name_missing" xml:space="preserve">
+    <value>Name des Verkaufsartikels fehlt</value>
+  </data>
+	<data name="SalesFamilyItem_SalesFamily_missing" xml:space="preserve">
+    <value>Warengruppe des Verkaufsartikels fehlt</value>
+  </data>
+	<data name="SalesFamilyModel_Name_missing" xml:space="preserve">
+    <value>Name der Verkaufswarengruppe fehlt</value>
+  </data>
+	<data name="SalesItemsModule" xml:space="preserve">
+    <value>Verkaufsartikel</value>
+  </data>
+	<data name="SalesItemsTooltip" xml:space="preserve">
+    <value>Verkaufsartikel und ihre Preise</value>
+  </data>
 </root>

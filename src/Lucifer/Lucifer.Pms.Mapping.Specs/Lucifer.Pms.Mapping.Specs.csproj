@@ -68,6 +68,8 @@
     <Compile Include="DiscountMapSpecs.cs" />
     <Compile Include="PayformMapSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesFamilyMapSpecs.cs" />
+    <Compile Include="SalesItemMapSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

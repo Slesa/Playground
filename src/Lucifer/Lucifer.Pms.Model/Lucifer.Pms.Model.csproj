@@ -51,10 +51,14 @@
     <Compile Include="Entities\Currency.cs" />
     <Compile Include="Entities\Discount.cs" />
     <Compile Include="Entities\Payform.cs" />
+    <Compile Include="Entities\SalesFamily.cs" />
+    <Compile Include="Entities\SalesItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\CurrencyQueries.cs" />
-    <Compile Include="Queries\DiscountsQuery.cs" />
+    <Compile Include="Queries\DiscountQueries.cs" />
     <Compile Include="Queries\PayformQueries.cs" />
+    <Compile Include="Queries\SalesFamilyQueries.cs" />
+    <Compile Include="Queries\SalesItemQueries.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lucifer.DataAccess\Lucifer.DataAccess.csproj">

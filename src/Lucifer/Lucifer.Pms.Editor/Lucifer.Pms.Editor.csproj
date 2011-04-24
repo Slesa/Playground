@@ -57,6 +57,8 @@
     <Compile Include="Model\CurrencyModel.cs" />
     <Compile Include="Model\DiscountModel.cs" />
     <Compile Include="Model\PayformModel.cs" />
+    <Compile Include="Model\SalesFamilyModel.cs" />
+    <Compile Include="Model\SalesItemModel.cs" />
     <Compile Include="PmsWindsorInstaller.cs" />
     <Compile Include="IPmsModule.cs" />
     <Compile Include="ViewModel\CurrencyRowViewModel.cs" />
@@ -64,9 +66,13 @@
     <Compile Include="ViewModel\EditCurrencyViewModel.cs" />
     <Compile Include="ViewModel\EditDiscountViewModel.cs" />
     <Compile Include="ViewModel\EditPayformViewModel.cs" />
+    <Compile Include="ViewModel\EditSalesFamilyViewModel.cs" />
+    <Compile Include="ViewModel\EditSalesItemViewModel.cs" />
     <Compile Include="ViewModel\ListCurrenciesViewModel.cs" />
     <Compile Include="ViewModel\ListDiscountsViewModel.cs" />
     <Compile Include="ViewModel\ListPayformsViewModel.cs" />
+    <Compile Include="ViewModel\ListSalesFamiliesViewModel.cs" />
+    <Compile Include="ViewModel\ListSalesItemsViewModel.cs" />
     <Compile Include="ViewModel\PayformRowViewModel.cs" />
     <Compile Include="ViewModel\PmsModuleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +81,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\SalesFamilyRowViewModel.cs" />
+    <Compile Include="ViewModel\SalesItemRowViewModel.cs" />
     <Compile Include="View\EditCurrencyView.xaml.cs">
       <DependentUpon>EditCurrencyView.xaml</DependentUpon>
     </Compile>
@@ -84,6 +92,12 @@
     <Compile Include="View\EditPayformView.xaml.cs">
       <DependentUpon>EditPayformView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditSalesFamilyView.xaml.cs">
+      <DependentUpon>EditSalesFamilyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditSalesItemView.xaml.cs">
+      <DependentUpon>EditSalesItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ListCurrenciesView.xaml.cs">
       <DependentUpon>ListCurrenciesView.xaml</DependentUpon>
     </Compile>
@@ -92,6 +106,12 @@
     </Compile>
     <Compile Include="View\ListPayformsView.xaml.cs">
       <DependentUpon>ListPayformsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListSalesFamiliesView.xaml.cs">
+      <DependentUpon>ListSalesFamiliesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListSalesItemsView.xaml.cs">
+      <DependentUpon>ListSalesItemsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PmsModuleView.xaml.cs">
       <DependentUpon>PmsModuleView.xaml</DependentUpon>
@@ -148,6 +168,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\EditSalesFamilyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditSalesItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ListCurrenciesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +185,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ListPayformsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListSalesFamiliesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListSalesItemsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Payform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Discount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SalesItem.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

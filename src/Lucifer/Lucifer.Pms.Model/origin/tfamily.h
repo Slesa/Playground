@@ -276,68 +276,7 @@ namespace PosLib
 		}
 	};
 
-	class			TFamilies
-	: public TValueList
-	{
-		Q_OBJECT
-		static const char	fileName[];
-	public:
-		static const char	listName[];
-		static const char	elementName[];
-	public:
-		TFamilies(bool autodel=TRUE)
-		: TValueList(autodel)
-		{
-		}
-		~TFamilies()
-		{
-		}
-		/*!	\return Liefert den Namen der Liste innerhalb des XML-Baums.
-			\brief Listennamen ermitteln.
-		*/
-		virtual QString	getListName() const
-		{
-			return listName;
-		}
-		virtual QString	getFileName() const
-		{
-			return fileName;
-		}
-		virtual QString	getElementName()
-		{
-			return elementName;
-		}
-		TFamily*	operator [] (int index)
-		{
-			return (TFamily*) TValueList::operator [](index);
-		}
-	};
 
-	class			TFamilyIt
-	: public TValueListIt
-	{
-	public:
-		TFamilyIt(TFamilies& list)
-		: TValueListIt(list)
-		{
-		}
-		TFamily*	operator () ()
-		{
-			return (TFamily*) TValueListIt::operator()();
-		}
-		TFamily*	toFirst()
-		{
-			return (TFamily*) TValueListIt::toFirst();
-		}
-		TFamily*	current()
-		{
-			return (TFamily*) TValueListIt::current();
-		}
-		TFamily*	operator ++ ()
-		{
-			return (TFamily*) TValueListIt:: operator ++();
-		}
-    };
 }
 
 using namespace PosLib;
