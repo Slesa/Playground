@@ -13,7 +13,7 @@ namespace Lucifer.Ics.Editor.ViewModel
         readonly IWindsorContainer _container;
 
         IEnumerable<IIcsModule> _icsModules;
-        public IEnumerable<IIcsModule> IcsModules { get { return _icsModules ?? (_icsModules = _container.ResolveAll<IIcsModule>()); } }
+        public IEnumerable<IIcsModule> IcsModules { get { return _icsModules ?? (_icsModules = _container.ResolveAll<IIcsModule>().OrderBy(x=>x.ModuleName)); } }
         
         public IcsModuleViewModel(IWindsorContainer container/*, IEventAggregator eventAggregator*/)
         {

@@ -13,7 +13,7 @@ namespace Lucifer.Pms.Editor.ViewModel
         readonly IWindsorContainer _container;
 
         IEnumerable<IPmsModule> _pmsModules;
-        public IEnumerable<IPmsModule> PmsModules { get { return _pmsModules ?? (_pmsModules = _container.ResolveAll<IPmsModule>()); } }
+        public IEnumerable<IPmsModule> PmsModules { get { return _pmsModules ?? (_pmsModules = _container.ResolveAll<IPmsModule>().OrderBy(x=>x.ModuleName)); } }
         
         public PmsModuleViewModel(IWindsorContainer container/*, IEventAggregator eventAggregator*/)
         {
