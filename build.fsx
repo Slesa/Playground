@@ -1,108 +1,74 @@
-// Learn more about F# at http://fsharp.net
+// Include Fake Libs
 #I @"tools\FAKE"
 #r "FakeLib.dll" 
+
 open Fake
-//open System.IO
-
-// version info
-let version = "0.0.1";
-
-let buildDir  = @".\build\"
-
-let appReferences = 
-  !+ @"src\tools\**\*.csproj"
-    |> Scan
-
-Target? Default <- DoNothing
-
-Target? Clean <-
-  fun _ -> CleanDirs [buildDir; testDir; deployDir] 
-
-Target? BuildApp <-
-  fun _ ->  
-    MSBuildDebug buildDir "Build" appReferences
-      |> Log "AppBuild-Output: "     
-
-For? Default <- Dependency? BuildApp
-
-
-// start build
-Run? Default
-
-
+open Fake.MSBuild
 
 // Directories
-//let testDir   = @".\test\"
-//let deployDir = @".\deploy\"
+let buildDir  = @".\build\"
+let testDir   = @".\test\"
+let deployDir = @".\deploy\"
 
 // Tools
-//let fxCopRoot = @".\Tools\FxCop\FxCopCmd.exe"
+let mspecPath = @".\Tools\Machine.Specifications\mspec-x86-clr4.exe"
+let fxCopRoot = @".\Tools\FxCop\FxCopCmd.exe"
 
 // Filesets
-//let appReferences = 
-//  !+ @"sketches\Godot\**\*.csproj"
-//    ++ @"src\matrix\**\*.vcxproj"
-//      |> Scan
-//let appReferences = 
-//    !+ @"src\matrix\**\*.vcxproj"
-//    !+ @"d:\sources\reloaded\src\matrix\src\SolTerminal\SolTerminal.Console\SolTerminal.Console.csproj"
-//      |> Scan
- 
-//let testReferences = 
-//    !+ @"src\**\*Test.csproj" 
-//        |> Scan 
+let appReferences =
+  !+ @"src\Lucifer\**\*.csproj"
+    |> Scan
 
+// Versioninfo
+let version = "0.1" // or retrieve from CI server
 
 // Targets
- 
-//Target? BuildApp <-
-//    fun _ ->  
-//        MSBuildDebug buildDir "Build" appReferences
-//          |> Log "AppBuild-Output: "     
- 
-//Target? BuildTest <-
-//    fun _ -> 
-//        MSBuildDebug testDir "Build" testReferences
-//          |> Log "TestBuild-Output: "
- 
-//Target? FxCop <-
-//    fun _ ->
-//        !+ (buildDir + @"\**\*.dll") 
-//         ++ (buildDir + @"\**\*.exe") 
-//           |> Scan  
-//           |> FxCop (fun p -> 
-//                {p with                     
-//                    ReportFileName = testDir + "FXCopResults.xml";
-//                    ToolPath = fxCopRoot})
-  
-//Target? Deploy <-
-//    fun _ ->
-//        !+ (buildDir + "\**\*.*") 
-//          -- "*.zip" 
-//          |> Scan
-//          |> Zip buildDir (deployDir + "reloaded." + version + ".zip")
- 
-//Target? Default <- DoNothing
-//Target? Test <- DoNothing 
+Target "Clean" (fun _ ->
+  CleanDirs [buildDir; testDir; deployDir]
+)
+
+Target "BuildApp" (fun _ -> 
+    AssemblyInfo 
+        (fun p -> 
+        {p with
+            CodeLanguage = CSharp;
+            AssemblyVersion = version;
+            AssemblyTitle = "Lucifer Office";
+            AssemblyDescription = "Bring the light into the world";
+            Guid = "EE5621DB-B86B-44eb-987F-9C94BCC98441";
+            OutputFileName = @".\src\Lucifer\AssemblyInfo.cs"})          
+      
+    appReferences 
+        |> Seq.map (RemoveTestsFromProject AllNUnitReferences AllSpecAndTestDataFiles)
+        |> MSBuildRelease buildDir "Build"
+        |> Log "AppBuild-Output: "
+)
+
+Target "BuildTest" (fun _ -> 
+  MSBuildDebug testDir "Build" appReferences
+    |> Log "TestBuild-Output: "
+)
+
+Target "MSpecTest" (fun _ ->  
+  !! (testDir @@ "*.Specs.dll") 
+    |> MSpec (fun p -> 
+      {p with 
+        ToolPath = mspecPath; 
+        HtmlOutputDir = testDir + @"reporting.html"})
+)
+
+Target "Deploy" (fun _ ->
+  !+ (buildDir + "\**\*.*") 
+    -- "*.zip" 
+      |> Scan
+      |> Zip buildDir (deployDir + "Lucifer." + version + ".zip")
+)
 
 // Dependencies
-//For? BuildApp <- Dependency? Clean    
-//For? BuildTest <- Dependency? Clean
-//For? NUnitTest <- Dependency? BuildApp |> And? BuildTest |> And? FxCop      
-//For? xUnitTest <- Dependency? BuildApp |> And? BuildTest |> And? FxCop      
-//For? Test <- Dependency? BuildApp |> And? BuildTest
-//For? Test <- Dependency? xUnitTest |> And? NUnitTest      
-//For? Deploy <- Dependency? Test      
-//For? Default <- Dependency? Deploy
+AllTargetsDependOn "Clean"
+"MSpecTest" <== ["BuildApp"; "BuildTest"]
+"Deploy" <== ["MSpecTest"]
  
-
-//let path = @"d:\sources\reloaded";
-//Directory.SetCurrentDirectory( path );
-//
-//!+ @"src\sketches\Godot\**\*.vcxproj"
-//  ++ @"src\matrix\**\*.vcxproj"
-//  |> Scan
-//  |> printfn "%A";
-//
-//  System.Console.ReadKey();
+// start build
+Run "Deploy"
 

@@ -33,7 +33,7 @@ namespace Lucifer.DataAccess.Specs
     }
 
     [Subject(typeof(NHibernateSessionFactory))]
-    public class When_a_nhibernate_session_created_for_the_first_time : WithFakes
+    public class When_a_nhibernate_session_created_for_the_first_time 
     {
         static IPersistenceConfiguration _persistenceConfiguration;
         static INHibernatePersistenceModel _persistenceModel;
@@ -43,31 +43,31 @@ namespace Lucifer.DataAccess.Specs
 
         Establish context = () =>
         {
-            _persistenceConfiguration = An<IPersistenceConfiguration>();
+            _persistenceConfiguration = MockRepository.GenerateStub<IPersistenceConfiguration>();
             _persistenceConfiguration
                 .Stub(x => x.GetConfiguration())
                 .Return(new SqLiteInMemoryDatabaseConfiguration().GetConfiguration());
 
-            _persistenceModel = An<INHibernatePersistenceModel>();
+            _persistenceModel = MockRepository.GenerateStub<INHibernatePersistenceModel>();
             _persistenceModel
                 .Stub(x => x.AddMappings(null))
                 .IgnoreArguments()
                 .WhenCalled(x =>
-                {
-                    var config = (MappingConfiguration)x.Arguments.First();
-                    config.FluentMappings.Add<MappedClassMap>();
-                });
+                    {
+                        var config = (MappingConfiguration) x.Arguments.First();
+                        config.FluentMappings.Add<MappedClassMap>();
+                    });
 
             _initializers = new[]
-				               {
-				               	MockRepository.GenerateStub<INHibernateInitializationAware>(),
-				               	MockRepository.GenerateStub<INHibernateInitializationAware>()
-				               };
+                {
+                    MockRepository.GenerateStub<INHibernateInitializationAware>(),
+                    MockRepository.GenerateStub<INHibernateInitializationAware>()
+                };
 
             _factory = new NHibernateSessionFactory(_persistenceConfiguration, _persistenceModel)
-            {
-                Initializers = _initializers
-            };
+                {
+                    Initializers = _initializers
+                };
         };
 
         Because of = () => { _session = _factory.CreateSession(); };
@@ -76,7 +76,7 @@ namespace Lucifer.DataAccess.Specs
             () => _persistenceConfiguration.AssertWasCalled(x => x.GetConfiguration());
 
         It should_add_mappings_from_the_persistence_model =
-            () => _persistenceModel.AssertWasCalled(x => x.AddMappings(Arg<MappingConfiguration>.Is.NotNull));
+            () => _persistenceModel.AssertWasCalled(x => x.AddMappings(Arg<MappingConfiguration>.Is.NotNull), o => o.Repeat.AtLeastOnce());
 
         It should_invoke_the_initializers_before_initialization =
             () => _initializers.Each(x => x.AssertWasCalled(i => i.BeforeInitialization()));

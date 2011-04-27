@@ -1,12 +1,14 @@
 ﻿using System.Data.SQLite;
 using System.Diagnostics;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Testing;
 using Machine.Specifications;
 using NHibernate;
 
 namespace Lucifer.Testing
 {
+    [Subject(typeof(SQLiteConfiguration))]
     public class InMemoryDatabaseSpecs<TMappingAssembly>
     {
         Establish context
