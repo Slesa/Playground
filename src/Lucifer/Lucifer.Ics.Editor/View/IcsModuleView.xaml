@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <DockPanel Margin="10" LastChildFill="True">
 
-        <ItemsControl x:Name="Items" DockPanel.Dock="Top" Style="{DynamicResource IcsMenuStackPanelSkin}">
+        <ListBox x:Name="Items" Style="{DynamicResource IcsNavigationItemSkin}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />
@@ -16,20 +16,16 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <!--  -->
-                    <Button Margin="8" ToolTip="{Binding ToolTip}" cal:Message.Attach="ActivateItem($datacontext)">
-                        <!-- Grid Width="100" -->
+                    <Button Margin="8" ToolTip="{Binding ToolTip}" MinWidth="100" cal:Message.Attach="ActivateItem($datacontext)">
                         <StackPanel>
                             <Image Source="{Binding IconFileName}" Width="48" Height="48" />
                             <TextBlock Text="{Binding ModuleName}" HorizontalAlignment="Center" />
                         </StackPanel>
-                        <!-- TextBlock VerticalAlignment="Top" HorizontalAlignment="Right" Margin="2" Text="{Binding Status, Mode=TwoWay}" / -->
-                        <!-- /Grid -->
                     </Button>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>
-
+        </ListBox>
+        
         <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
 
     </DockPanel>

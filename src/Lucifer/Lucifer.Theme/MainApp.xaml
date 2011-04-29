@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
 
     <!-- Das UserControl der ShellView -->
-    <Style x:Key="ShellViewSkin" TargetType="UserControl">
+    <Style x:Key="ShellViewSkin" TargetType="Window">
         <Setter Property="Background" Value="{StaticResource AppMainBackground}" />
     </Style>
 
@@ -17,4 +17,11 @@
         <Setter Property="Background" Value="{StaticResource AppMenuBackground}" />
     </Style>
 
+    <!-- Das Stackpanel mit dem Titel und dem Icon der Module -->
+    <Style x:Key="AppNavigationItemSkin" TargetType="ListBox">
+        <Setter Property="Background" Value="{StaticResource AppTitleBackground}" />
+        <Setter Property="DockPanel.Dock" Value="Left" />
+        <Setter Property="Margin" Value="10,10,10,0" />
+        <Setter Property="Padding" Value="0,0,20,0" />
+    </Style>
 </ResourceDictionary>

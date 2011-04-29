@@ -2,11 +2,6 @@
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
 
-    <!-- Das PMS-ItemsControl mit den Modulen -->
-    <Style x:Key="PmsMenuStackPanelSkin" TargetType="ItemsControl">
-        <Setter Property="Background" Value="{StaticResource PmsMenuBackground}" />
-    </Style>
-
     <!-- Das Dockpanel, das den gesamten Dialog einnimmt -->
     <Style x:Key="PmsListViewDockPanelSkin" TargetType="DockPanel">
         <Setter Property="Background" Value="{StaticResource PmsModuleBackground}" />
@@ -14,6 +9,14 @@
 
     <Style x:Key="PmsEditDialogDockPanelSkin" TargetType="DockPanel" BasedOn="{StaticResource EditDialogDockPanelSkin}">
         <Setter Property="Background" Value="{StaticResource PmsModuleBackground}" />
+    </Style>
+
+    <!-- Das PMS-ItemsControl mit den Submodulen -->
+    <Style x:Key="PmsNavigationItemSkin" TargetType="ListBox">
+        <Setter Property="Background" Value="{StaticResource PmsMenuBackground}" />
+        <Setter Property="DockPanel.Dock" Value="Top" />
+        <!--<Setter Property="Margin" Value="10,10,10,0" />-->
+        <!--<Setter Property="Padding" Value="0,0,20,0" />-->
     </Style>
 
 </ResourceDictionary>
