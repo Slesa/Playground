@@ -1,4 +1,4 @@
-﻿namespace Caliburn.Micro.HelloWP7 {
+﻿namespace Caliburn.Micro {
     using System;
 
     //The following code exists to enable resurrection of the ActiveItem when bound to a Pivot control
@@ -12,7 +12,6 @@
 
         public PivotFix(Conductor<T>.Collection.OneActive conductor) {
             this.conductor = conductor;
-            this.conductor.CloseStrategy = new DefaultCloseStrategy<T>(false);
         }
 
         public void OnViewLoaded(object view, Action<object> onViewLoadedBase) {
@@ -26,13 +25,11 @@
         }
 
         public void ChangeActiveItem(T newItem, bool closePrevious, Action<T, bool> changeActiveItemBase) {
-            if (newItem == null)
+            if(newItem == null)
                 return;
 
-            if (!readyToActivate && !doneReactivating)
-            {
-                if (conductor.Items.IndexOf(newItem) > 0)
-                {
+            if(!readyToActivate && !doneReactivating) {
+                if(conductor.Items.IndexOf(newItem) > 0) {
                     toActivate = newItem;
                     return;
                 }

@@ -10,7 +10,8 @@
     /// Hosts attached properties related to view models.
     /// </summary>
     public static class View {
-        static ILog log = LogManager.GetLog(typeof(View));
+        static readonly ILog Log = LogManager.GetLog(typeof(View));
+        static readonly ContentPropertyAttribute DefaultContentProperty = new ContentPropertyAttribute("Content");
 
         /// <summary>
         /// The default view context.
@@ -51,17 +52,6 @@
                 );
 
         /// <summary>
-        /// A dependency property for attaching a model to the UI.
-        /// </summary>
-        public static DependencyProperty ModelProperty =
-            DependencyProperty.RegisterAttached(
-                "Model",
-                typeof(object),
-                typeof(View),
-                new PropertyMetadata(OnModelChanged)
-                );
-
-        /// <summary>
         /// A dependency property for assigning a context to a particular portion of the UI.
         /// </summary>
         public static readonly DependencyProperty ContextProperty =
@@ -70,6 +60,17 @@
                 typeof(object),
                 typeof(View),
                 new PropertyMetadata(OnContextChanged)
+                );
+
+        /// <summary>
+        /// A dependency property for attaching a model to the UI.
+        /// </summary>
+        public static DependencyProperty ModelProperty =
+            DependencyProperty.RegisterAttached(
+                "Model",
+                typeof(object),
+                typeof(View),
+                new PropertyMetadata(OnModelChanged)
                 );
 
         /// <summary>
@@ -84,6 +85,37 @@
                 );
 
         /// <summary>
+        /// Executes the handler immediately if the element is loaded, otherwise wires it to the Loaded event.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <param name="handler">The handler.</param>
+        /// <returns>true if the handler was executed immediately; false otherwise</returns>
+        public static bool ExecuteOnLoad(FrameworkElement element, RoutedEventHandler handler) {
+#if SILVERLIGHT
+            if((bool)element.GetValue(IsLoadedProperty))
+#else
+            if(element.IsLoaded)
+#endif
+            {
+                handler(element, new RoutedEventArgs());
+                return true;
+            }
+            else {
+                RoutedEventHandler loaded = null;
+                loaded = (s, e) => {
+#if SILVERLIGHT
+                    element.SetValue(IsLoadedProperty, true);
+#endif
+                    handler(s, e);
+                    element.Loaded -= loaded;
+                };
+
+                element.Loaded += loaded;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Used to retrieve the root, non-framework-created view.
         /// </summary>
         /// <param name="view">The view to search.</param>
@@ -93,20 +125,24 @@
         /// The WindowManager marks that element as a framework-created element so that it can determine what it created vs. what was intended by the developer.
         /// Calling GetFirstNonGeneratedView allows the framework to discover what the original element was. 
         /// </remarks>
-        public static Func<DependencyObject, DependencyObject> GetFirstNonGeneratedView = view => {
-            if((bool)view.GetValue(IsGeneratedProperty)) {
-                if(view is ContentControl)
-                    return (DependencyObject)((ContentControl)view).Content;
+        public static Func<object, object> GetFirstNonGeneratedView = view => {
+            var dependencyObject = view as DependencyObject;
+            if(dependencyObject == null)
+                return view;
 
-                var type = view.GetType();
+            if((bool)dependencyObject.GetValue(IsGeneratedProperty)) {
+                if(dependencyObject is ContentControl)
+                    return ((ContentControl)dependencyObject).Content;
+
+                var type = dependencyObject.GetType();
                 var contentProperty = type.GetAttributes<ContentPropertyAttribute>(true)
-                    .FirstOrDefault() ?? new ContentPropertyAttribute("Content");
+                                          .FirstOrDefault() ?? DefaultContentProperty;
 
-                return (DependencyObject)type.GetProperty(contentProperty.Name)
-                    .GetValue(view, null);
+                return type.GetProperty(contentProperty.Name)
+                    .GetValue(dependencyObject, null);
             }
 
-            return view;
+            return dependencyObject;
         };
 
         /// <summary>
@@ -179,8 +215,8 @@
                 var context = GetContext(targetLocation);
                 var view = ViewLocator.LocateForModel(args.NewValue, targetLocation, context);
 
-                ViewModelBinder.Bind(args.NewValue, view, context);
                 SetContentProperty(targetLocation, view);
+                ViewModelBinder.Bind(args.NewValue, view, context);
             }
             else SetContentProperty(targetLocation, args.NewValue);
         }
@@ -195,9 +231,9 @@
                 return;
 
             var view = ViewLocator.LocateForModel(model, targetLocation, e.NewValue);
-            ViewModelBinder.Bind(model, view, e.NewValue);
 
             SetContentProperty(targetLocation, view);
+            ViewModelBinder.Bind(model, view, e.NewValue);
         }
 
         private static void SetContentProperty(object targetLocation, object view)
@@ -214,13 +250,13 @@
             try {
                 var type = targetLocation.GetType();
                 var contentProperty = type.GetAttributes<ContentPropertyAttribute>(true)
-                    .FirstOrDefault() ?? new ContentPropertyAttribute("Content");
+                    .FirstOrDefault() ?? DefaultContentProperty;
 
                 type.GetProperty(contentProperty.Name)
                     .SetValue(targetLocation, view, null);
             }
             catch(Exception e) {
-                log.Error(e);
+                Log.Error(e);
             }
         }
     }

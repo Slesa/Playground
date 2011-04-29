@@ -1,18 +1,18 @@
-﻿namespace Caliburn.Micro.HelloWP7
-{
+﻿namespace Caliburn.Micro {
     using System;
+    using Microsoft.Phone.Tasks;
 
-    public class PhoneContainer : SimpleContainer
-    {
-        public PhoneContainer(PhoneBootstrapper bootstrapper)
-        {
+    public class PhoneContainer : SimpleContainer {
+        readonly PhoneBootstrapper bootstrapper;
+
+        public PhoneContainer(PhoneBootstrapper bootstrapper) {
+            this.bootstrapper = bootstrapper;
             Activator = new InstanceActivator(bootstrapper, type => GetInstance(type, null));
         }
 
         public InstanceActivator Activator { get; private set; }
 
-        protected override object ActivateInstance(Type type, object[] args)
-        {
+        protected override object ActivateInstance(Type type, object[] args) {
             return Activator.ActivateInstance(base.ActivateInstance(type, args));
         }
 
@@ -28,6 +28,24 @@
 
                 return instance;
             });
+        }
+
+        public void RegisterPhoneServices(bool treatViewAsLoaded = false) {
+            RegisterInstance(typeof(INavigationService), null, new FrameAdapter(bootstrapper.RootFrame, treatViewAsLoaded));
+            RegisterInstance(typeof(IPhoneService), null, new PhoneApplicationServiceAdapter(bootstrapper.PhoneService));
+            RegisterSingleton(typeof(IWindowManager), null, typeof(WindowManager));
+            RegisterSingleton(typeof(IEventAggregator), null, typeof(EventAggregator));
+        }
+
+        public void InstallChooser<TChooser, TResult>()
+            where TChooser : ChooserBase<TResult>, new()
+            where TResult : TaskEventArgs {
+            Activator.InstallChooser<TChooser, TResult>();
+        }
+
+        public void InstallLauncher<TLauncher>()
+            where TLauncher : new() {
+            Activator.InstallLauncher<TLauncher>();
         }
     }
 }

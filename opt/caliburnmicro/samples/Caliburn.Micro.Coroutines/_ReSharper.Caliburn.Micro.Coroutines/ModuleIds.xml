@@ -1,4 +1,0 @@
-<Modules>
-  <Module PersistentId="2400BC51-BF6A-4225-80A6-BC639ED73033" ModuleId="Caliburn.Micro.Coroutines.External" />
-  <Module PersistentId="71B3BB3D-2B4F-4A3F-A0F9-8F697EE6054D" ModuleId="Host" />
-</Modules>

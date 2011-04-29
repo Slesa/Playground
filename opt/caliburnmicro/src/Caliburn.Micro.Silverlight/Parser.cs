@@ -16,6 +16,8 @@
     /// </summary>
     public static class Parser
     {
+        static readonly Regex LongFormatRegularExpression = new Regex(@"^[\s]*\[[^\]]*\][\s]*=[\s]*\[[^\]]*\][\s]*$");
+
         /// <summary>
         /// Parses the specified message text.
         /// </summary>
@@ -23,11 +25,17 @@
         /// <param name="text">The message text.</param>
         /// <returns>The triggers parsed from the text.</returns>
         public static IEnumerable<TriggerBase> Parse(DependencyObject target, string text) {
+            if(string.IsNullOrEmpty(text))
+                return new TriggerBase[0];
+
             var triggers = new List<TriggerBase>();
             var messageTexts = Split(text, ';');
 
             foreach (var messageText in messageTexts) {
-                var triggerPlusMessage = Split(messageText, '=');
+                var triggerPlusMessage = LongFormatRegularExpression.IsMatch(messageText) 
+                    ? Split(messageText, '=') 
+                    : new[] { null, messageText };
+
                 var messageDetail = triggerPlusMessage.Last()
                 .Replace("[", string.Empty)
                 .Replace("]", string.Empty)
@@ -114,8 +122,7 @@
                 var nameAndBindingMode = parameterText.Split(':').Select(x => x.Trim()).ToArray();
                 var index = nameAndBindingMode[0].IndexOf('.');
 
-                RoutedEventHandler handler = null;
-                handler = (s, e) => {
+                View.ExecuteOnLoad(fe, delegate {
                     BindParameter(
                         fe,
                         actualParameter,
@@ -123,12 +130,7 @@
                         index == -1 ? null : nameAndBindingMode[0].Substring(index + 1),
                         nameAndBindingMode.Length == 2 ? (BindingMode)Enum.Parse(typeof(BindingMode), nameAndBindingMode[1], true) : BindingMode.OneWay
                         );
-                    fe.Loaded -= handler;
-                };
-
-                if((bool)fe.GetValue(View.IsLoadedProperty))
-                    handler(null, null);
-                else fe.Loaded += handler;
+                });
             }
 
             return actualParameter;
@@ -164,7 +166,7 @@
             if(field == null)
                 return;
 
-            ConventionManager.ApplySilverlightTriggers(element, (DependencyProperty)field.GetValue(null), x => expression);
+            ConventionManager.ApplySilverlightTriggers(element, (DependencyProperty)field.GetValue(null), x => expression, null, null);
 #else
             binding.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
             BindingOperations.SetBinding(parameter, Parameter.ValueProperty, binding);

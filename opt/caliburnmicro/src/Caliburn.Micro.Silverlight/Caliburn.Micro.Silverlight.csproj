@@ -28,24 +28,30 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Bin\Debug</OutputPath>
+    <OutputPath>..\..\bin\Silverlight\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>Bin\Debug\Caliburn.Micro.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Silverlight\Debug\Caliburn.Micro.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>Bin\Release</OutputPath>
+    <OutputPath>..\..\bin\Silverlight\Release\</OutputPath>
     <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>Bin\Release\Caliburn.Micro.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\Silverlight\Release\Caliburn.Micro.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Caliburn.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -102,10 +108,14 @@
     <Compile Include="SequentialResult.cs" />
     <Compile Include="TypeDescriptor.cs" />
     <Compile Include="View.cs" />
+    <Compile Include="ViewAware.cs" />
     <Compile Include="ViewLocator.cs" />
     <Compile Include="ViewModelBinder.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="WindowManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Caliburn.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

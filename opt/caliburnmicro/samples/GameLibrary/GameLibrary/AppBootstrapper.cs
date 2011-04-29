@@ -14,7 +14,7 @@
 
         protected override void StartDesignTime()
         {
-            LogManager.GetLog = type => new DebugLog(type);
+            LogManager.GetLog = type => new SimpleLog(type);
             base.StartDesignTime();
         }
 

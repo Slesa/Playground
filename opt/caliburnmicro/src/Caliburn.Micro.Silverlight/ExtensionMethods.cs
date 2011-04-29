@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
-    using Expression = System.Linq.Expressions.Expression;
 
     /// <summary>
     /// Generic extension methods used by the framework.
@@ -87,26 +86,18 @@
 		/// <param name="first">The first sequence to merge.</param>
 		/// <param name="second">The second sequence to merge.</param>
 		/// <param name="resultSelector"> A function that specifies how to merge the elements from the two sequences.</param>
-		/// <returns> An System.Collections.Generic.IEnumerable<T> that contains merged elements of two input sequences.</returns>
+		/// <returns>An System.Collections.Generic.IEnumerable&lt;T&gt; that contains merged elements of two input sequences.</returns>
 		public static IEnumerable<TResult> Zip<TFirst, TSecond, TResult>(this IEnumerable<TFirst> first, IEnumerable<TSecond> second, Func<TFirst, TSecond, TResult> resultSelector)
 		{
 			if (first == null)
-			{
 				throw new ArgumentNullException("first");
-			}
 			if (second == null)
-			{
 				throw new ArgumentNullException("second");
-			}
 			if (resultSelector == null)
-			{
 				throw new ArgumentNullException("resultSelector");
-			}
 
 			var enumFirst = first.GetEnumerator();
 			var enumSecond = second.GetEnumerator();
-
-			if (enumFirst == null || enumSecond == null) yield break;
 
 			while (enumFirst.MoveNext() && enumSecond.MoveNext()) {
 				yield return resultSelector(enumFirst.Current, enumSecond.Current);
