@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -79,9 +78,9 @@ namespace Lucifer.Ics.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<PurchaseItemRowViewModel> CreateElementList()
+        protected override BindableCollection<PurchaseItemRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<PurchaseItemRowViewModel>(DbConversation
+            return new BindableCollection<PurchaseItemRowViewModel>(DbConversation
                 .Query(new AllPurchaseItemsQuery())
                 .Select(x => new PurchaseItemRowViewModel(x)));
         }

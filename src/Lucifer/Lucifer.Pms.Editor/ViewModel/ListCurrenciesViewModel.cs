@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -79,9 +78,9 @@ namespace Lucifer.Pms.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<CurrencyRowViewModel> CreateElementList()
+        protected override BindableCollection<CurrencyRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<CurrencyRowViewModel>(DbConversation
+            return new BindableCollection<CurrencyRowViewModel>(DbConversation
                 .Query(new AllCurrenciesQuery())
                 .Select(x => new CurrencyRowViewModel(x)));
         }

@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
@@ -99,9 +98,9 @@ namespace Lucifer.Ics.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<UnitTypeRowViewModel> CreateElementList()
+        protected override BindableCollection<UnitTypeRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<UnitTypeRowViewModel>(DbConversation
+            return new BindableCollection<UnitTypeRowViewModel>(DbConversation
                 .Query(new AllUnitTypesQuery())
                 .Select(x => new UnitTypeRowViewModel(x)));
         }

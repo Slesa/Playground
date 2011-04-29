@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -79,9 +78,9 @@ namespace Lucifer.Pms.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<SalesFamilyRowViewModel> CreateElementList()
+        protected override BindableCollection<SalesFamilyRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<SalesFamilyRowViewModel>(DbConversation
+            return new BindableCollection<SalesFamilyRowViewModel>(DbConversation
                 .Query(new AllSalesFamiliesQuery())
                 .Select(x => new SalesFamilyRowViewModel(x)));
         }

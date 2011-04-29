@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
@@ -16,7 +15,7 @@ namespace Lucifer.Editor
         protected readonly IDbConversation DbConversation;
         protected readonly IEventAggregator EventAggregator;
 
-        public ObservableCollection<T> ElementList { get; private set; }
+        public IObservableCollection<T> ElementList { get; private set; }
 
         protected SelectionListViewModel(string caption, IDbConversation dbConversation, IEventAggregator eventAggregator)
         {
@@ -73,7 +72,7 @@ namespace Lucifer.Editor
             }
         }
 
-        protected abstract ObservableCollection<T> CreateElementList();
+        protected abstract BindableCollection<T> CreateElementList();
 
         void PrepareElementList()
         {

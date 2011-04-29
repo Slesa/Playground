@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -79,9 +78,9 @@ namespace Lucifer.Ics.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<UnitRowViewModel> CreateElementList()
+        protected override BindableCollection<UnitRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<UnitRowViewModel>(DbConversation
+            return new BindableCollection<UnitRowViewModel>(DbConversation
                 .Query(new AllUnitsQuery())
                 .Select(x => new UnitRowViewModel(x)));
         }

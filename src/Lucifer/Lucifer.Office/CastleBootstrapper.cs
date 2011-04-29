@@ -50,6 +50,8 @@ namespace Lucifer.Office
 
             _container.Install(_container.ResolveAll<IWindsorInstaller>());
 
+            LogManager.GetLog = type => new CaliburnLogger(type);
+
             base.Configure();
         }
 

@@ -51,6 +51,7 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="CaliburnLogger.cs" />
     <Compile Include="Converters\ImageSourceConverter.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="IShell.cs" />

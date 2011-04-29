@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
@@ -79,9 +78,9 @@ namespace Lucifer.Ums.Editor.ViewModel
             set;
         }
 
-        protected override ObservableCollection<UserRoleRowViewModel> CreateElementList()
+        protected override BindableCollection<UserRoleRowViewModel> CreateElementList()
         {
-            return new ObservableCollection<UserRoleRowViewModel>(DbConversation
+            return new BindableCollection<UserRoleRowViewModel>(DbConversation
                 .Query(new AllUserRolesQuery())
                 .Select(x => new UserRoleRowViewModel(x)));
         }

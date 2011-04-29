@@ -15,7 +15,7 @@ namespace Lucifer.Ums.Editor.ViewModel
         IEnumerable<IUmsModule> _umsModules;
         public IEnumerable<IUmsModule> UmsModules { get { return _umsModules ?? (_umsModules = _container.ResolveAll<IUmsModule>().OrderBy(x=>x.ModuleName)); } }
         
-        public UmsModuleViewModel(IWindsorContainer container/*, IEventAggregator eventAggregator*/)
+        public UmsModuleViewModel(IWindsorContainer container)
         {
             _container = container;
         }

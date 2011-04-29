@@ -15,7 +15,7 @@ namespace Lucifer.Ics.Editor.ViewModel
         IEnumerable<IIcsModule> _icsModules;
         public IEnumerable<IIcsModule> IcsModules { get { return _icsModules ?? (_icsModules = _container.ResolveAll<IIcsModule>().OrderBy(x=>x.ModuleName)); } }
         
-        public IcsModuleViewModel(IWindsorContainer container/*, IEventAggregator eventAggregator*/)
+        public IcsModuleViewModel(IWindsorContainer container)
         {
             _container = container;
         }
