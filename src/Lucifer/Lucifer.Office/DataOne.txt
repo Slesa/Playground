@@ -1,0 +1,21 @@
+﻿Weaver -> PropertyChanged Events
+CM::ILog implementieren/zuweisen
+CM liefer IoC Zugriff!
+IObsevable + BindableCOllection
+
+Tab schon offen - Items.SingleOrDefault(x=>x.<Element>==<me>);
+
+IResult OpenResult, Conductor vom IoC auflösen lassen, bei Execute den Conductor mit dem mitgelieferten View aktivieren
+
+BusyIndicator, über alles was ausgegraut wird. Content wie Hauptview, BusyResult dazu
+QuestionViewModel als Screen, Aufrufbar per IResult
+
+*Manager per IoC.Get<> ermitteln!!!
+
+Reihenfolge auf/zu? -> DetermineNextItem 
+
+
+Fokus in die neue View?
+Page-Gesteuert?
+DoubleCLickBehavior -> doubleclicktrigger caliburn  / In ALl About Actions
+
