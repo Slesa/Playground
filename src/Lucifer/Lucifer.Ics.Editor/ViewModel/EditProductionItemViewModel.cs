@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
@@ -25,7 +26,7 @@ namespace Lucifer.Ics.Editor.ViewModel
         public EditProductionItemViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
-            DisplayName = string.Format(Strings.EditProductionItemView_ProductionItemIs, Element.Name);
+            DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditProductionItemView_ProductionItemIs, Element.Name);
             ToolTip = Strings.AllProductionItemsView_Edit_ToolTip;
         }
 

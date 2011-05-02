@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Globalization;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
@@ -21,7 +22,7 @@ namespace Lucifer.Ums.Editor.ViewModel
         public EditUserRoleViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
-            DisplayName = string.Format(Strings.EditUserRoleView_UserRoleIs, Element.Name);
+            DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditUserRoleView_UserRoleIs, Element.Name);
             ToolTip = Strings.AllUserRolesView_Edit_ToolTip;
         }
 

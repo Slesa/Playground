@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
@@ -25,7 +26,7 @@ namespace Lucifer.Ics.Editor.ViewModel
         public EditStockViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
-            DisplayName = string.Format(Strings.EditStockView_PurchaseStockIs, Element.Name);
+            DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditStockView_PurchaseStockIs, Element.Name);
             ToolTip = Strings.AllStocksView_Edit_ToolTip;
         }
 

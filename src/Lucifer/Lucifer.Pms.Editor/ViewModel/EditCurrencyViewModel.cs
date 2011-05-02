@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Globalization;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
@@ -21,7 +22,7 @@ namespace Lucifer.Pms.Editor.ViewModel
         public EditCurrencyViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
-            DisplayName = string.Format(Strings.EditCurrencyView_CurrencyIs, Element.Name);
+            DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditCurrencyView_CurrencyIs, Element.Name);
             ToolTip = Strings.AllCurrenciesView_Edit_ToolTip;
         }
 

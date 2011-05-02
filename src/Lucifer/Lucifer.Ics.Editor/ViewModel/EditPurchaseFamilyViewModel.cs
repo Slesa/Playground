@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Globalization;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
@@ -21,7 +22,7 @@ namespace Lucifer.Ics.Editor.ViewModel
         public EditPurchaseFamilyViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
             : base(id, dbConversation, eventAggregator)
         {
-            DisplayName = string.Format(Strings.EditPurchaseFamilyView_PurchaseFamilyIs, Element.Name);
+            DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditPurchaseFamilyView_PurchaseFamilyIs, Element.Name);
             ToolTip = Strings.AllPurchaseFamiliesView_Edit_ToolTip;
         }
 
