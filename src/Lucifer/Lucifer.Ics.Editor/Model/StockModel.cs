@@ -11,11 +11,20 @@ namespace Lucifer.Ics.Editor.Model
 {
     public class StockChangedEvent
     {
-        public Stock Stock;
+        public StockChangedEvent(Stock stock)
+        {
+            Stock = stock;
+        }
+        public Stock Stock { get; private set; }
     }
+
     public class StockRemovedEvent
     {
-        public int Id;
+        public StockRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class StockModel : PropertyChangedBase, IDataErrorInfo

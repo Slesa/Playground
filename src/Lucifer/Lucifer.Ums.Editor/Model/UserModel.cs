@@ -10,11 +10,20 @@ namespace Lucifer.Ums.Editor.Model
 {
     public class UserChangedEvent
     {
-        public User User;
+        public UserChangedEvent(User user)
+        {
+            User = user;
+        }
+        public User User { get; private set; }
     }
+
     public class UserRemovedEvent
     {
-        public int Id;
+        public UserRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class UserModel : PropertyChangedBase, IDataErrorInfo

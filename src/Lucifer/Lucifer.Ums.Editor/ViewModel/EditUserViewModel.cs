@@ -61,7 +61,7 @@ namespace Lucifer.Ums.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.User))) 
                 return;
 
-            EventAggregator.Publish(new UserChangedEvent { User = Element.User});
+            EventAggregator.Publish(new UserChangedEvent(Element.User));
             TryClose();
         }
 

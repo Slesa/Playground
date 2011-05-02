@@ -43,7 +43,7 @@ namespace Lucifer.Ums.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.UserRole))) 
                 return;
 
-            EventAggregator.Publish(new UserRoleChangedEvent { UserRole = Element.UserRole});
+            EventAggregator.Publish(new UserRoleChangedEvent(Element.UserRole));
             TryClose();
         }
 

@@ -43,7 +43,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Recipe))) 
                 return;
 
-            EventAggregator.Publish(new RecipeChangedEvent { Recipe = Element.Recipe});
+            EventAggregator.Publish(new RecipeChangedEvent(Element.Recipe));
             TryClose();
         }
 

@@ -125,7 +125,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Unit)))
                 return;
 
-            EventAggregator.Publish(new UnitChangedEvent { Unit = Element.Unit });
+            EventAggregator.Publish(new UnitChangedEvent(Element.Unit));
             TryClose();
         }
 

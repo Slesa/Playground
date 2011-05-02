@@ -103,7 +103,7 @@ namespace Lucifer.Pms.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Currency))) 
                 return;
 
-            EventAggregator.Publish(new CurrencyChangedEvent { Currency = Element.Currency});
+            EventAggregator.Publish(new CurrencyChangedEvent(Element.Currency));
             TryClose();
         }
 

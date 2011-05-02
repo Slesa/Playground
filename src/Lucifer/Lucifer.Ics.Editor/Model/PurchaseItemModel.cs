@@ -10,11 +10,20 @@ namespace Lucifer.Ics.Editor.Model
 {
     public class PurchaseItemChangedEvent
     {
-        public PurchaseItem PurchaseItem;
+        public PurchaseItemChangedEvent(PurchaseItem item)
+        {
+            PurchaseItem = item;
+        }
+        public PurchaseItem PurchaseItem { get; private set; }
     }
+
     public class PurchaseItemRemovedEvent
     {
-        public int Id;
+        public PurchaseItemRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class PurchaseItemModel : PropertyChangedBase, IDataErrorInfo

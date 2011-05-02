@@ -43,7 +43,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.UnitType))) 
                 return;
 
-            EventAggregator.Publish(new UnitTypeChangedEvent { UnitType = Element.UnitType});
+            EventAggregator.Publish(new UnitTypeChangedEvent(Element.UnitType));
             TryClose();
         }
 

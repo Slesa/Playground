@@ -10,11 +10,20 @@ namespace Lucifer.Pms.Editor.Model
 {
     public class PayformChangedEvent
     {
-        public Payform Payform;
+        public PayformChangedEvent(Payform payform)
+        {
+            Payform = payform;
+        }
+        public Payform Payform { get; private set; }
     }
+
     public class PayformRemovedEvent
     {
-        public int Id;
+        public PayformRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class PayformModel : PropertyChangedBase, IDataErrorInfo

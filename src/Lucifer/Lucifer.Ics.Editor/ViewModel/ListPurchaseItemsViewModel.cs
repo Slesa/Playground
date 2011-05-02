@@ -50,7 +50,7 @@ namespace Lucifer.Ics.Editor.ViewModel
                 return;
 
             foreach (var t in removedItems)
-                EventAggregator.Publish(new PurchaseItemRemovedEvent { Id = t.Id });
+                EventAggregator.Publish(new PurchaseItemRemovedEvent(t.Id));
         }
 
         #region IIcsModule

@@ -58,7 +58,7 @@ namespace Lucifer.Pms.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.SalesItem))) 
                 return;
 
-            EventAggregator.Publish(new SalesItemChangedEvent { SalesItem = Element.SalesItem });
+            EventAggregator.Publish(new SalesItemChangedEvent(Element.SalesItem));
             TryClose();
         }
 

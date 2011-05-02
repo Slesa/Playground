@@ -43,7 +43,7 @@ namespace Lucifer.Pms.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.SalesFamily))) 
                 return;
 
-            EventAggregator.Publish(new SalesFamilyChangedEvent { SalesFamily = Element.SalesFamily });
+            EventAggregator.Publish(new SalesFamilyChangedEvent(Element.SalesFamily));
             TryClose();
         }
 

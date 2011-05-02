@@ -49,7 +49,7 @@ namespace Lucifer.Ics.Editor.ViewModel
                 return;
 
             foreach (var t in removedItems)
-                EventAggregator.Publish(new UnitTypeRemovedEvent { Id = t.Id });
+                EventAggregator.Publish(new UnitTypeRemovedEvent(t.Id));
 
             /*
             try

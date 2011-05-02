@@ -10,11 +10,20 @@ namespace Lucifer.Pms.Editor.Model
 {
     public class DiscountChangedEvent
     {
-        public Discount Discount;
+        public DiscountChangedEvent(Discount discount)
+        {
+            Discount = discount;
+        }
+        public Discount Discount { get; private set; }
     }
+
     public class DiscountRemovedEvent
     {
-        public int Id;
+        public DiscountRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class DiscountModel : PropertyChangedBase, IDataErrorInfo

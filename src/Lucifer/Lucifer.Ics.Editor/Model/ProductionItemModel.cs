@@ -10,11 +10,20 @@ namespace Lucifer.Ics.Editor.Model
 {
     public class ProductionItemChangedEvent
     {
-        public ProductionItem ProductionItem;
+        public ProductionItemChangedEvent(ProductionItem item)
+        {
+            ProductionItem = item;
+        }
+        public ProductionItem ProductionItem { get; private set; }
     }
+
     public class ProductionItemRemovedEvent
     {
-        public int Id;
+        public ProductionItemRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class ProductionItemModel : PropertyChangedBase, IDataErrorInfo

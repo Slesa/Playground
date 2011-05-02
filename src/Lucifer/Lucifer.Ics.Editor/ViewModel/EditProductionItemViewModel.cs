@@ -61,7 +61,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.ProductionItem))) 
                 return;
 
-            EventAggregator.Publish(new ProductionItemChangedEvent { ProductionItem = Element.ProductionItem });
+            EventAggregator.Publish(new ProductionItemChangedEvent(Element.ProductionItem));
             TryClose();
         }
 

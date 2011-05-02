@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.Editor.Validators;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
 
@@ -10,11 +9,20 @@ namespace Lucifer.Ics.Editor.Model
 {
     public class RecipeChangedEvent
     {
-        public Recipe Recipe;
+        public RecipeChangedEvent(Recipe recipe)
+        {
+            Recipe = recipe;
+        }
+        public Recipe Recipe { get; private set; }
     }
+
     public class RecipeRemovedEvent
     {
-        public int Id;
+        public RecipeRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class RecipeModel : PropertyChangedBase, IDataErrorInfo

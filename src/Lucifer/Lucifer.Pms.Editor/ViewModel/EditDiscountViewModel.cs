@@ -53,7 +53,7 @@ namespace Lucifer.Pms.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Discount))) 
                 return;
 
-            EventAggregator.Publish(new DiscountChangedEvent { Discount = Element.Discount});
+            EventAggregator.Publish(new DiscountChangedEvent(Element.Discount));
             TryClose();
         }
 

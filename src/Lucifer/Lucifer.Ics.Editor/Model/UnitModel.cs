@@ -10,11 +10,20 @@ namespace Lucifer.Ics.Editor.Model
 {
     public class UnitChangedEvent
     {
-        public Unit Unit;
+        public UnitChangedEvent(Unit unit)
+        {
+            Unit = unit;
+        }
+        public Unit Unit { get; private set; }
     }
+
     public class UnitRemovedEvent
     {
-        public int Id;
+        public UnitRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class UnitModel : PropertyChangedBase, IDataErrorInfo

@@ -52,7 +52,7 @@ namespace Lucifer.Ums.Editor.ViewModel
                 return;
 
             foreach (var t in removedItems)
-                EventAggregator.Publish(new UserRemovedEvent { Id = t.Id });
+                EventAggregator.Publish(new UserRemovedEvent(t.Id));
         }
 
         #region IIcsModule

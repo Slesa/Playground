@@ -10,11 +10,20 @@ namespace Lucifer.Pms.Editor.Model
 {
     public class CurrencyChangedEvent
     {
-        public Currency Currency;
+        public CurrencyChangedEvent(Currency currency)
+        {
+            Currency = currency;
+        }
+        public Currency Currency { get; private set; }
     }
+
     public class CurrencyRemovedEvent
     {
-        public int Id;
+        public CurrencyRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class CurrencyModel : PropertyChangedBase, IDataErrorInfo

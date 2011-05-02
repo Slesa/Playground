@@ -60,7 +60,7 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Stock))) 
                 return;
 
-            EventAggregator.Publish(new StockChangedEvent { Stock = Element.Stock});
+            EventAggregator.Publish(new StockChangedEvent(Element.Stock));
             TryClose();
         }
 

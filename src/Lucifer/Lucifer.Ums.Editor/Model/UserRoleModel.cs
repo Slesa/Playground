@@ -10,11 +10,20 @@ namespace Lucifer.Ums.Editor.Model
 {
     public class UserRoleChangedEvent
     {
-        public UserRole UserRole;
+        public UserRoleChangedEvent(UserRole role)
+        {
+            UserRole = role;
+        }
+        public UserRole UserRole { get; private set; }
     }
+
     public class UserRoleRemovedEvent
     {
-        public int Id;
+        public UserRoleRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class UserRoleModel : PropertyChangedBase, IDataErrorInfo

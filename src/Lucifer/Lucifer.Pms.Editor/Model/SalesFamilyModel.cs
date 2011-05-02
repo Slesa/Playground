@@ -10,11 +10,20 @@ namespace Lucifer.Pms.Editor.Model
 {
     public class SalesFamilyChangedEvent
     {
-        public SalesFamily SalesFamily;
+        public SalesFamilyChangedEvent(SalesFamily family)
+        {
+            SalesFamily = family;
+        }
+        public SalesFamily SalesFamily { get; private set; }
     }
+
     public class SalesFamilyRemovedEvent
     {
-        public int Id;
+        public SalesFamilyRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class SalesFamilyModel : PropertyChangedBase, IDataErrorInfo

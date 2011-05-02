@@ -43,7 +43,7 @@ namespace Lucifer.Pms.Editor.ViewModel
             if (!SuccessfullySaved(() => DbConversation.InsertOnCommit(Element.Payform))) 
                 return;
 
-            EventAggregator.Publish(new PayformChangedEvent { Payform = Element.Payform});
+            EventAggregator.Publish(new PayformChangedEvent(Element.Payform));
             TryClose();
         }
 

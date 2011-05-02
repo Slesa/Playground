@@ -10,11 +10,20 @@ namespace Lucifer.Ics.Editor.Model
 {
     public class PurchaseFamilyChangedEvent
     {
-        public PurchaseFamily PurchaseFamily;
+        public PurchaseFamilyChangedEvent(PurchaseFamily family)
+        {
+            PurchaseFamily = family;
+        }
+        public PurchaseFamily PurchaseFamily { get; private set; }
     }
+
     public class PurchaseFamilyRemovedEvent
     {
-        public int Id;
+        public PurchaseFamilyRemovedEvent(int id)
+        {
+            Id = id;
+        }
+        public int Id { get; private set; }
     }
 
     public class PurchaseFamilyModel : PropertyChangedBase, IDataErrorInfo
