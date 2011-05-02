@@ -60,6 +60,7 @@
     <Compile Include="IUmsModule.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Model\UserRoleModel.cs" />
+    <Compile Include="Properties\PrivateInfo.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <DependentUpon>Strings.resx</DependentUpon>
       <DesignTime>True</DesignTime>

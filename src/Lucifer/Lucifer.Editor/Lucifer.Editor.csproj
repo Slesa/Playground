@@ -61,6 +61,7 @@
     <Compile Include="Behaviors\DoubleClickBehavior.cs" />
     <Compile Include="EachExtension.cs" />
     <Compile Include="EditItemViewModel.cs" />
+    <Compile Include="Properties\PrivateInfo.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

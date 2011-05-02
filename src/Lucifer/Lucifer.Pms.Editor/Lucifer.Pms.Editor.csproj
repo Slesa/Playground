@@ -64,6 +64,7 @@
     <Compile Include="Model\SalesItemModel.cs" />
     <Compile Include="PmsWindsorInstaller.cs" />
     <Compile Include="IPmsModule.cs" />
+    <Compile Include="Properties\PrivateInfo.cs" />
     <Compile Include="ViewModel\CurrencyRowViewModel.cs" />
     <Compile Include="ViewModel\DiscountRowViewModel.cs" />
     <Compile Include="ViewModel\EditCurrencyViewModel.cs" />
