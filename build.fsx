@@ -59,6 +59,7 @@ Target "MSpecTest" (fun _ ->
 
 Target "FxCop" (fun _ ->
     !+ (testDir + @"\**\Lucifer.*.dll") 
+      -- "*.Specs.dll"
         ++ (buildDir + @"\**\*.exe") 
         |> Scan  
         |> FxCop (fun p -> 
