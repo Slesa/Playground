@@ -54,7 +54,17 @@ Target "MSpecTest" (fun _ ->
     |> MSpec (fun p -> 
       {p with 
         ToolPath = mspecPath; 
-        HtmlOutputDir = testDir + @"reporting.html"})
+        HtmlOutputDir = testDir + @"_mspec_report.html"})
+)
+
+Target "FxCop" (fun _ ->
+    !+ (testDir + @"\**\Lucifer.*.dll") 
+        ++ (buildDir + @"\**\*.exe") 
+        |> Scan  
+        |> FxCop (fun p -> 
+            {p with                     
+                ReportFileName = testDir + "_fxcop_result.xml";
+                ToolPath = fxCopRoot})
 )
 
 Target "Deploy" (fun _ ->
@@ -65,10 +75,16 @@ Target "Deploy" (fun _ ->
 )
 
 // Dependencies
-AllTargetsDependOn "Clean"
-"MSpecTest" <== ["BuildApp"; "BuildTest"]
-"Deploy" <== ["MSpecTest"]
- 
+// AllTargetsDependOn "Clean"
+// "MSpecTest" <== ["BuildApp"; "BuildTest"]
+// "Deploy" <== ["MSpecTest"]
+
+"Clean"
+  ==> "BuildApp" <=> "BuildTest"
+  ==> "FxCop"
+  ==> "MSpecTest"
+  ==> "Deploy"
+
 // start build
 Run "Deploy"
 
