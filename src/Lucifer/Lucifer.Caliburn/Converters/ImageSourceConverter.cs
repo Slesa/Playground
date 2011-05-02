@@ -14,11 +14,12 @@ namespace Lucifer.Caliburn.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is BitmapImage)
+            var bitmap = value as BitmapImage;
+            return bitmap!=null ? bitmap.UriSource.ToString() : null;
+            /*if (value is BitmapImage)
             {
                 return ((BitmapImage)value).UriSource.ToString();
-            }
-            return null;
+            }*/
         }
     }
 }

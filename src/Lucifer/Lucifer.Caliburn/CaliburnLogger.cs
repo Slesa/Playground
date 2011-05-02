@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using Caliburn.Micro;
 
 namespace Lucifer.Caliburn
@@ -28,11 +29,13 @@ namespace Lucifer.Caliburn
             Debug.WriteLine(CreateLogMessage(exception.ToString()), "ERROR");
         }
 
-        static string CreateLogMessage(string format, params object[] args)
+        string CreateLogMessage(string format, params object[] args)
         {
-            return string.Format("[{0}] {1}",
-                DateTime.Now.ToString("o"),
-                string.Format(format, args));
+            return string.Format(CultureInfo.CurrentCulture, 
+                "[{0}] {1} - [{2}]",
+                DateTime.Now.ToString("o", CultureInfo.CurrentCulture),
+                string.Format(format, args),
+                _type);
         }
     }
 }

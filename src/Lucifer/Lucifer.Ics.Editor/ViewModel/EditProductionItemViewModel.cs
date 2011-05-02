@@ -70,7 +70,7 @@ namespace Lucifer.Ics.Editor.ViewModel
 
         public string ModuleName { get { return DisplayName; } }
 
-        public string IconFileName
+        public static string IconFileName
         {
             get { return @"/Lucifer.Ics.Editor;component/Resources/ProductionItem.png"; }
         }
