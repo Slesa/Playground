@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
 using Lucifer.Editor.Validators;
@@ -76,12 +77,12 @@ namespace Lucifer.Ics.Editor.Model
         private string FactorToParentString { get; set; }
         public string FactorToParent
         {
-            get { return _unit.FactorToParent.ToString(); }
+            get { return _unit.FactorToParent.ToString(CultureInfo.CurrentCulture); }
             set
             {
                 FactorToParentString = value;
                 decimal x;
-                if (decimal.TryParse(FactorToParentString, out x))
+                if (decimal.TryParse(FactorToParentString, NumberStyles.Float, CultureInfo.CurrentCulture, out x))
                     _unit.FactorToParent = x;
                 NotifyOfPropertyChange(() => Error);
             }

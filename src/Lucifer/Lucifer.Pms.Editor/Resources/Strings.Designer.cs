@@ -831,7 +831,7 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Everything you need to control your POS envrionment.
+        ///   Looks up a localized string similar to Everything you need to control your POS environment.
         /// </summary>
         public static string PmsModuleTooltip {
             get {

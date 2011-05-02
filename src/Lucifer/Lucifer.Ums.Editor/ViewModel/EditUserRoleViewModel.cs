@@ -53,7 +53,7 @@ namespace Lucifer.Ums.Editor.ViewModel
 
         public string ModuleName { get { return DisplayName; } }
 
-        public string IconFileName
+        public static string IconFileName
         {
             get { return @"/Lucifer.Ums.Editor;component/Resources/UserRole.png"; }
         }

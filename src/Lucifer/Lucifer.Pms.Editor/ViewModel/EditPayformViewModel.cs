@@ -53,7 +53,7 @@ namespace Lucifer.Pms.Editor.ViewModel
 
         public string ModuleName { get { return DisplayName; } }
 
-        public string IconFileName
+        public static string IconFileName
         {
             get { return @"/Lucifer.Pms.Editor;component/Resources/Payform.png"; }
         }

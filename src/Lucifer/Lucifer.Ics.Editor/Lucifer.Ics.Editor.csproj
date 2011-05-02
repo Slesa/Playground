@@ -243,6 +243,10 @@
       <Project>{E9C92FF1-5366-4FAF-9E3A-008EB06E577B}</Project>
       <Name>Lucifer.Ics.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lucifer.Ums.Editor\Lucifer.Ums.Editor.csproj">
+      <Project>{60BDCF5E-40B4-4669-B456-E8A4A0BDFEEE}</Project>
+      <Name>Lucifer.Ums.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
