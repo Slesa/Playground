@@ -24,4 +24,15 @@
         <Setter Property="Margin" Value="10,10,10,0" />
         <Setter Property="Padding" Value="0,0,20,0" />
     </Style>
+
+    <!-- Der Question-Dialog -->
+    <Style x:Key="QuestionViewSkin" TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource AppMainBackground}" />
+    </Style>
+
+    <!-- Der Text des Question-Dialogs -->
+    <Style x:Key="QuestionViewTextSkin" TargetType="TextBlock">
+        <!--<Setter Property="Background" Value="White" />-->
+        <Setter Property="Foreground" Value="WhiteSmoke" />
+    </Style>
 </ResourceDictionary>

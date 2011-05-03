@@ -86,5 +86,14 @@ namespace Lucifer.Editor.Resources {
                 return ResourceManager.GetString("Error_UnableToRemove", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please be patient....
+        /// </summary>
+        public static string Message_Busy_Indicator {
+            get {
+                return ResourceManager.GetString("Message_Busy_Indicator", resourceCulture);
+            }
+        }
     }
 }

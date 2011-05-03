@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
+using Lucifer.Editor.Results;
+using Lucifer.Editor.ViewModel;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Queries;
@@ -31,46 +34,48 @@ namespace Lucifer.Ics.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditUnitTypeViewModel(unitType.Id, DbConversation, EventAggregator));
         }
 
-        public void Remove()
+        public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);
-            if (selectesForMessage.Count() == 0)
-                return;
-
-            var message = string.Format(Strings.AllUnitTypesView_RemoveMessage);
-            message = selectesForMessage.Aggregate(
-                message, (current, unitType) => current + string.Format("{0} {1}", unitType.Id, unitType.Name));
-
-            if (MessageBox.Show(message, Strings.AllUnitTypesView_RemoveTitle, MessageBoxButton.YesNo) != MessageBoxResult.Yes)
-                return;
-
-            var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
-            if (removedItems == null)
-                return;
-
-            foreach (var t in removedItems)
-                EventAggregator.Publish(new UnitTypeRemovedEvent(t.Id));
-
-            /*
-            try
+            if (selectesForMessage.Count() > 0)
             {
-                var removedItems = new List<UnitTypeRowViewModel>();
-                var selection = ElementList.Where(x => x.IsSelected);
-                DbConversation.UsingTransaction(() => 
+
+                var message = string.Format(Strings.AllUnitTypesView_RemoveMessage);
+                message = selectesForMessage.Aggregate(
+                    message, (current, unitType) => current + string.Format("  [ {0} {1} ]", unitType.Id, unitType.Name));
+
+                var question = new QuestionViewModel(Strings.AllUnitTypesView_RemoveTitle, message, 
+                    Answer.Yes, Answer.No);
+                yield return new QuestionResult(question)
+                    .CancelOn(Answer.No);
+
+                var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
+                if (removedItems != null)
                 {
-                    foreach (var element in selection)
+                    foreach (var t in removedItems)
+                        EventAggregator.Publish(new UnitTypeRemovedEvent(t.Id));
+                }
+                /*
+                try
+                {
+                    var removedItems = new List<UnitTypeRowViewModel>();
+                    var selection = ElementList.Where(x => x.IsSelected);
+                    DbConversation.UsingTransaction(() => 
                     {
-                        DbConversation.DeleteOnCommit(element.ElementData);
-                        removedItems.Add(element);
-                    }
-                });
-                foreach (var t in removedItems)
-                    EventAggregator.Publish(new UnitTypeRemovedEvent { Id = t.Id });
+                        foreach (var element in selection)
+                        {
+                            DbConversation.DeleteOnCommit(element.ElementData);
+                            removedItems.Add(element);
+                        }
+                    });
+                    foreach (var t in removedItems)
+                        EventAggregator.Publish(new UnitTypeRemovedEvent { Id = t.Id });
+                }
+                catch(Exception exception)
+                {
+                    MessageBox.Show("Error: unable to remove unit types\n{0}", exception.Message);
+                }*/
             }
-            catch(Exception exception)
-            {
-                MessageBox.Show("Error: unable to remove unit types\n{0}", exception.Message);
-            }*/
         }
 
         #region IIcsModule

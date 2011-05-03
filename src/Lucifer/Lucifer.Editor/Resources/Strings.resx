@@ -126,4 +126,7 @@
   <data name="Error_UnableToRemove" xml:space="preserve">
     <value>Error: unable to remove object(s)</value>
   </data>
+  <data name="Message_Busy_Indicator" xml:space="preserve">
+    <value>Please be patient...</value>
+  </data>
 </root>
