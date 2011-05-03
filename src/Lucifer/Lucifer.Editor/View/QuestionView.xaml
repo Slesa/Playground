@@ -6,9 +6,10 @@
              xmlns:Micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             Height="350" Width="450" Title="{Binding Title}" 
-         Style="{DynamicResource QuestionViewSkin}">
+             Height="350" Width="450"  
+         Style="{DynamicResource QuestionViewSkin}" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}" Style="{DynamicResource QuestionViewTitleSkin}" />
         <ItemsControl HorizontalAlignment="Center" DockPanel.Dock="Bottom" ItemsSource="{Binding PossibleAnswers}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>

@@ -30,6 +30,15 @@
         <Setter Property="Background" Value="{StaticResource AppMainBackground}" />
     </Style>
 
+    <!-- Der Title des Question-Dialogs -->
+    <Style x:Key="QuestionViewTitleSkin" TargetType="TextBlock">
+        <Setter Property="DockPanel.Dock" Value="Top" />
+        <!--<Setter Property="Background" Value="White" />-->
+        <Setter Property="Foreground" Value="WhiteSmoke" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+
     <!-- Der Text des Question-Dialogs -->
     <Style x:Key="QuestionViewTextSkin" TargetType="TextBlock">
         <!--<Setter Property="Background" Value="White" />-->

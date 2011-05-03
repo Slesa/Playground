@@ -38,6 +38,7 @@ namespace Lucifer.Ics.Editor.Model
         public UnitModel(Unit unit)
         {
             _unit = unit;
+            FactorToParentString = _unit.FactorToParent.ToString(CultureInfo.CurrentCulture);
         }
 
         public Unit Unit { get { return _unit; } }
@@ -189,7 +190,7 @@ namespace Lucifer.Ics.Editor.Model
             decimal factor = 0.0m;
             if (!EditValidators.IsStringMissing(FactorToParentString))
             {
-                if (!decimal.TryParse(FactorToParentString, out factor))
+                if (!decimal.TryParse(FactorToParentString, NumberStyles.Float, CultureInfo.CurrentCulture, out factor))
                     return Strings.UnitModel_FactorToParent_invalid;
             }
             if (Parent != null)
