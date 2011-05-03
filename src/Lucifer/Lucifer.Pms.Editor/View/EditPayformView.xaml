@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Resources="clr-namespace:Lucifer.Pms.Editor.Resources" 
              mc:Ignorable="d" 
+             FocusManager.FocusedElement="{Binding ElementName=_textName}"
              d:DesignHeight="320" d:DesignWidth="480">
 
     <DockPanel LastChildFill="True" Style="{DynamicResource PmsEditDialogDockPanelSkin}" FocusManager.FocusedElement="{Binding ElementName=_textName}">

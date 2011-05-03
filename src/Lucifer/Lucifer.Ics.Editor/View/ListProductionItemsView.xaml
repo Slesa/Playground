@@ -6,6 +6,7 @@
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
              xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" 
              mc:Ignorable="d" 
+             FocusManager.FocusedElement="{Binding ElementName=ProductionItems}"
              d:DesignHeight="320" d:DesignWidth="480">
 
     <UserControl.Resources>

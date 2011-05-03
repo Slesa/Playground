@@ -6,6 +6,7 @@
              xmlns:Resources="clr-namespace:Lucifer.Ums.Editor.Resources" 
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
              mc:Ignorable="d" 
+             FocusManager.FocusedElement="{Binding ElementName=UserRoles}"
              d:DesignHeight="320" d:DesignWidth="480">
     <UserControl.Resources>
         <!-- Die View Source -->
@@ -37,7 +38,7 @@
         </StackPanel>
 
         <!-- Liste -->
-        <ListView x:Name="Users" Style="{DynamicResource ListViewCollectionSkin}" ItemContainerStyle="{StaticResource UserRoleItemStyle}" 
+        <ListView x:Name="UserRoles" Style="{DynamicResource ListViewCollectionSkin}" ItemContainerStyle="{StaticResource UserRoleItemStyle}" 
                   DataContext="{StaticResource UserRolesList}" ItemsSource="{Binding}">
 
             <ListView.View>

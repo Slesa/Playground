@@ -6,6 +6,7 @@
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
              xmlns:Resources="clr-namespace:Lucifer.Pms.Editor.Resources" 
              mc:Ignorable="d" 
+             FocusManager.FocusedElement="{Binding ElementName=Currencies}"
              d:DesignHeight="320" d:DesignWidth="480">
 
     <UserControl.Resources>
@@ -38,7 +39,7 @@
         </StackPanel>
 
         <!-- Liste -->
-        <ListView Style="{DynamicResource ListViewCollectionSkin}"  ItemContainerStyle="{StaticResource CurrencyItemStyle}"
+        <ListView x:Name="Currencies" Style="{DynamicResource ListViewCollectionSkin}"  ItemContainerStyle="{StaticResource CurrencyItemStyle}"
                   DataContext="{StaticResource CurrencyList}" ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>

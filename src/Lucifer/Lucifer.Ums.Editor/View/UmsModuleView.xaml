@@ -4,31 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
+             xmlns:Controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended" 
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="480">
+    <Controls:BusyIndicator HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
-    <DockPanel Margin="10" LastChildFill="True">
+        <DockPanel Margin="10" LastChildFill="True">
 
-        <ListBox x:Name="Items" Style="{DynamicResource UmsNavigationItemSkin}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Margin="8" ToolTip="{Binding ToolTip}" MinWidth="100" cal:Message.Attach="ActivateItem($datacontext)">
-                        <StackPanel>
-                            <Image Source="{Binding IconFileName}" Width="48" Height="48" />
-                            <TextBlock Text="{Binding ModuleName}" HorizontalAlignment="Center" />
-                        </StackPanel>
-                    </Button>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ListBox>
+            <ListBox x:Name="Items" Style="{DynamicResource UmsNavigationItemSkin}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Margin="8" ToolTip="{Binding ToolTip}" MinWidth="100" cal:Message.Attach="ActivateItem($datacontext)">
+                            <StackPanel>
+                                <Image Source="{Binding IconFileName}" Width="48" Height="48" />
+                                <TextBlock Text="{Binding ModuleName}" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
 
-        <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            <ContentControl x:Name="ActiveItem" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
 
-    </DockPanel>
+        </DockPanel>
+    </Controls:BusyIndicator>
 
 </UserControl>
