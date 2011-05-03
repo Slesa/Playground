@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
+using Lucifer.Editor.Results;
+using Lucifer.Editor.ViewModel;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Queries;
@@ -30,25 +33,29 @@ namespace Lucifer.Ics.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditRecipeViewModel(recipe.Id, DbConversation, EventAggregator));
         }
 
-        public void Remove()
+        public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);
-            if (selectesForMessage.Count() == 0)
-                return;
+            if (selectesForMessage.Count() > 0)
+            {
 
-            var message = string.Format(Strings.AllRecipesView_RemoveMessage);
-            message = selectesForMessage.Aggregate(
-                message, (current, pf) => current + string.Format("{0} {1}", pf.Id, pf.Plu));
+                var message = Strings.AllRecipesView_RemoveMessage;
+                message = selectesForMessage.Aggregate(
+                    message,
+                    (current, pf) => current + string.Format(CultureInfo.CurrentCulture, "{0} {1}", pf.Id, pf.Plu));
 
-            if (MessageBox.Show(message, Strings.AllRecipesView_RemoveTitle, MessageBoxButton.YesNo) != MessageBoxResult.Yes)
-                return;
+                var question = new QuestionViewModel(Strings.AllRecipesView_RemoveTitle, message,
+                                                     Answer.Yes, Answer.No);
+                yield return new QuestionResult(question)
+                    .CancelOn(Answer.No);
 
-            var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
-            if (removedItems == null)
-                return;
-
-            foreach (var t in removedItems)
-                EventAggregator.Publish(new RecipeRemovedEvent(t.Id));
+                var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
+                if (removedItems != null)
+                {
+                    foreach (var t in removedItems)
+                        EventAggregator.Publish(new RecipeRemovedEvent(t.Id));
+                }
+            }
         }
 
         #region IIcsModule

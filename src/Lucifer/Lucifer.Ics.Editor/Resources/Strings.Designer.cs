@@ -1409,6 +1409,24 @@ namespace Lucifer.Ics.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purchasing.
+        /// </summary>
+        public static string UnitRowModel_Purchasing {
+            get {
+                return ResourceManager.GetString("UnitRowModel_Purchasing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reciping.
+        /// </summary>
+        public static string UnitRowModel_Reciping {
+            get {
+                return ResourceManager.GetString("UnitRowModel_Reciping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Units.
         /// </summary>
         public static string UnitsModule {

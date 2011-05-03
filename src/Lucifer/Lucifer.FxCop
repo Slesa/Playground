@@ -577,31 +577,6 @@
        </Message>
       </Messages>
       <Namespaces>
-       <Namespace Name="Lucifer.Ics.Editor.Model">
-        <Types>
-         <Type Name="UnitModel">
-          <Members>
-           <Member Name="#FactorToParent">
-            <Accessors>
-             <Accessor Name="#get_FactorToParent()">
-              <Messages>
-               <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-02 13:43:44Z">
-                <Issue Name="IFormatProviderAlternateString">
-                 <Item>'decimal.ToString()'</Item>
-                 <Item>'UnitModel.FactorToParent.get()'</Item>
-                 <Item>'decimal.ToString(IFormatProvider)'</Item>
-                 <Item>'CultureInfo.CurrentCulture'</Item>
-                 <Item>'CultureInfo.InvariantCulture'</Item>
-                </Issue>
-               </Message>
-              </Messages>
-             </Accessor>
-            </Accessors>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
        <Namespace Name="Lucifer.Ics.Editor.View">
         <Types>
          <Type Name="EditProductionItemView">
@@ -3803,15 +3778,6 @@
              </Message>
             </Messages>
            </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditCurrencyViewModel.IconFileName'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
           </Members>
          </Type>
          <Type Name="EditDiscountViewModel">
@@ -3822,15 +3788,6 @@
               <Issue>
                <Item>'EditDiscountViewModel.EditDiscountViewModel(IDbConversation, IEventAggregator)'</Item>
                <Item>&#xD;&#xA;&#xD;&#xA;EditDiscountViewModel..ctor(IDbConversation, IEventAggregator)&#xD;&#xA;Screen.set_DisplayName(String):Void</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditDiscountViewModel.IconFileName'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -3849,15 +3806,6 @@
              </Message>
             </Messages>
            </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditPayformViewModel.IconFileName'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
           </Members>
          </Type>
          <Type Name="EditSalesFamilyViewModel">
@@ -3868,15 +3816,6 @@
               <Issue>
                <Item>'EditSalesFamilyViewModel.EditSalesFamilyViewModel(IDbConversation, IEventAggregator)'</Item>
                <Item>&#xD;&#xA;&#xD;&#xA;EditSalesFamilyViewModel..ctor(IDbConversation, IEventAggregator)&#xD;&#xA;Screen.set_DisplayName(String):Void</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditSalesFamilyViewModel.IconFileName'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -3901,15 +3840,6 @@
               <Issue>
                <Item>'List&lt;SalesFamily&gt;'</Item>
                <Item>'EditSalesItemViewModel.AllSalesFamilies'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditSalesItemViewModel.IconFileName'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -4088,14 +4018,6 @@
            <Item>AllCurrenciesView_Header_ThousandChar</Item>
            <Item>Ths</Item>
            <Item>Ths.Chr.</Item>
-          </Issue>
-         </Message>
-         <Message Id="envrionment" TypeName="ResourceStringsShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1703" Created="2011-05-02 14:54:53Z">
-          <Issue Name="StringResource">
-           <Item>'Lucifer.Pms.Editor.Resources.Strings.resx'</Item>
-           <Item>PmsModuleTooltip</Item>
-           <Item>envrionment</Item>
-           <Item>Everything you need to control your POS envrionment</Item>
           </Issue>
          </Message>
          <Message Id="informations" TypeName="ResourceStringsShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1703" Created="2011-05-02 14:54:53Z">
@@ -4662,15 +4584,6 @@
              </Message>
             </Messages>
            </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditUserRoleViewModel.IconFileName'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
           </Members>
          </Type>
          <Type Name="EditUserViewModel">
@@ -4691,15 +4604,6 @@
               <Issue>
                <Item>'List&lt;UserRole&gt;'</Item>
                <Item>'EditUserViewModel.AllUserRoles'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#IconFileName">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-02 13:43:44Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'EditUserViewModel.IconFileName'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -4908,9 +4812,6 @@
    </Rule>
    <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
     <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
-   </Rule>
-   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
-    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
    </Rule>
    <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
     <Resolution Name="Default">Consider making {0} non-public or a constant.</Resolution>

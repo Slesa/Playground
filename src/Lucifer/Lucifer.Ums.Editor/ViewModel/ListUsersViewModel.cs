@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
+using Lucifer.Editor.Results;
+using Lucifer.Editor.ViewModel;
 using Lucifer.Ums.Editor.Model;
 using Lucifer.Ums.Editor.Resources;
 using Lucifer.Ums.Model.Queries;
@@ -33,26 +36,27 @@ namespace Lucifer.Ums.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditUserViewModel(payform.Id, DbConversation, EventAggregator));
         }
 
-        public void Remove()
+        public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);
-            if (selectesForMessage.Count() == 0)
-                return;
+            if (selectesForMessage.Count() > 0)
+            {
+                var message = Strings.AllUsersView_RemoveMessage;
+                message = selectesForMessage.Aggregate(
+                    message, (current, unitType) => current + string.Format(CultureInfo.CurrentCulture, "{0} {1}", unitType.Id, unitType.Name));
 
-            var message = string.Format(Strings.AllUsersView_RemoveMessage);
-            message = selectesForMessage.Aggregate(
-                message, (current, unitType) => current + string.Format("{0} {1}", unitType.Id, unitType.Name));
+                var question = new QuestionViewModel(Strings.AllUsersView_RemoveTitle, message,
+                                                     Answer.Yes, Answer.No);
+                yield return new QuestionResult(question)
+                    .CancelOn(Answer.No);
 
-            if (MessageBox.Show(message, Strings.AllUsersView_RemoveTitle, MessageBoxButton.YesNo) !=
-                MessageBoxResult.Yes)
-                return;
-
-            var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
-            if (removedItems == null)
-                return;
-
-            foreach (var t in removedItems)
-                EventAggregator.Publish(new UserRemovedEvent(t.Id));
+                var removedItems = RemoveSelectionWith(element => DbConversation.DeleteOnCommit(element.ElementData));
+                if (removedItems != null)
+                {
+                    foreach (var t in removedItems)
+                        EventAggregator.Publish(new UserRemovedEvent(t.Id));
+                }
+            }
         }
 
         #region IIcsModule

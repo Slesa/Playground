@@ -586,4 +586,10 @@
   <data name="EditStockView_StockItems" xml:space="preserve">
     <value>Stock items:</value>
   </data>
+  <data name="UnitRowModel_Purchasing" xml:space="preserve">
+    <value>Purchasing</value>
+  </data>
+  <data name="UnitRowModel_Reciping" xml:space="preserve">
+    <value>Reciping</value>
+  </data>
 </root>

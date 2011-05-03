@@ -1,5 +1,5 @@
-using System;
 using Lucifer.Editor;
+using Lucifer.Ics.Editor.Resources;
 using Lucifer.Ics.Model.Entities;
 
 namespace Lucifer.Ics.Editor.ViewModel
@@ -28,6 +28,13 @@ namespace Lucifer.Ics.Editor.ViewModel
         public decimal FactorToParent { get { return ElementData.FactorToParent; } }
         public bool Purchasing { get { return ElementData.Purchasing; } }
         public bool Reciping { get { return ElementData.Reciping; } }
-        
+
+        public override string ToString()
+        {
+            var text = Name+", "+Contraction;
+            if (Purchasing) text += ", " + Strings.UnitRowModel_Purchasing;
+            if (Reciping) text += ", " + Strings.UnitRowModel_Reciping;
+            return text;
+        }
     }
 }

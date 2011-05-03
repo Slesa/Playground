@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using Lucifer.DataAccess;
 using Lucifer.Editor;
@@ -40,9 +40,10 @@ namespace Lucifer.Ics.Editor.ViewModel
             if (selectesForMessage.Count() > 0)
             {
 
-                var message = string.Format(Strings.AllUnitTypesView_RemoveMessage);
+                var message = Strings.AllUnitTypesView_RemoveMessage;
                 message = selectesForMessage.Aggregate(
-                    message, (current, unitType) => current + string.Format("  [ {0} {1} ]", unitType.Id, unitType.Name));
+                    message, (current, unitType) => current 
+                        + string.Format(CultureInfo.CurrentCulture, "  [ {0} {1} ]", unitType.Id, unitType.Name));
 
                 var question = new QuestionViewModel(Strings.AllUnitTypesView_RemoveTitle, message, 
                     Answer.Yes, Answer.No);
@@ -55,26 +56,6 @@ namespace Lucifer.Ics.Editor.ViewModel
                     foreach (var t in removedItems)
                         EventAggregator.Publish(new UnitTypeRemovedEvent(t.Id));
                 }
-                /*
-                try
-                {
-                    var removedItems = new List<UnitTypeRowViewModel>();
-                    var selection = ElementList.Where(x => x.IsSelected);
-                    DbConversation.UsingTransaction(() => 
-                    {
-                        foreach (var element in selection)
-                        {
-                            DbConversation.DeleteOnCommit(element.ElementData);
-                            removedItems.Add(element);
-                        }
-                    });
-                    foreach (var t in removedItems)
-                        EventAggregator.Publish(new UnitTypeRemovedEvent { Id = t.Id });
-                }
-                catch(Exception exception)
-                {
-                    MessageBox.Show("Error: unable to remove unit types\n{0}", exception.Message);
-                }*/
             }
         }
 
