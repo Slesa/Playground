@@ -17,10 +17,10 @@ namespace Lucifer.Editor
 
         public IObservableCollection<T> ElementList { get; private set; }
 
-        protected SelectionListViewModel(string caption, IDbConversation dbConversation, IEventAggregator eventAggregator)
+        protected SelectionListViewModel(string caption)
         {
-            DbConversation = dbConversation;
-            EventAggregator = eventAggregator;
+            DbConversation = IoC.Get<IDbConversation>();
+            EventAggregator = IoC.Get<IEventAggregator>();
             DisplayName = caption;
             PrepareElementList();
         }

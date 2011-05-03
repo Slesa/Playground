@@ -1,7 +1,5 @@
 using System.ComponentModel;
 using System.Globalization;
-using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ums.Editor.Model;
 using Lucifer.Ums.Editor.Resources;
@@ -11,16 +9,15 @@ namespace Lucifer.Ums.Editor.ViewModel
 {
     public class EditUserRoleViewModel : EditItemViewModel<UserRoleModel>, IDataErrorInfo
     {
-        public EditUserRoleViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditUserRoleViewModel() 
         {
             DisplayName = Strings.EditUserRoleView_NewUserRole;
             Title = Strings.EditUserRoleView_TitleNew;
             ToolTip = Strings.AllUserRolesView_New_ToolTip;
         }
 
-        public EditUserRoleViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditUserRoleViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditUserRoleView_UserRoleIs, Element.Name);
             ToolTip = Strings.AllUserRolesView_Edit_ToolTip;

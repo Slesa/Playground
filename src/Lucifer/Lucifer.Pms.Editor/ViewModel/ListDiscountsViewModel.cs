@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -16,22 +15,22 @@ namespace Lucifer.Pms.Editor.ViewModel
         , IHandle<DiscountChangedEvent>
         , IHandle<DiscountRemovedEvent>
     {
-        public ListDiscountsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(Strings.DiscountsModule, dbConversation, eventAggregator)
+        public ListDiscountsViewModel() 
+            : base(Strings.DiscountsModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditDiscountViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditDiscountViewModel());
         }
 
         public void Edit()
         {
             foreach (var discount in ElementList.Where(x => x.IsSelected))
-                ScreenManager.ActivateItem(new EditDiscountViewModel(discount.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditDiscountViewModel(discount.Id));
         }
 
         public IEnumerable<IResult> Remove()

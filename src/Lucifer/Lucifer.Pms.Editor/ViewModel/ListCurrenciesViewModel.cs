@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -16,22 +15,22 @@ namespace Lucifer.Pms.Editor.ViewModel
         , IHandle<CurrencyChangedEvent>
         , IHandle<CurrencyRemovedEvent>
     {
-        public ListCurrenciesViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(Strings.CurrenciesModule, dbConversation, eventAggregator)
+        public ListCurrenciesViewModel() 
+            : base(Strings.CurrenciesModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditCurrencyViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditCurrencyViewModel());
         }
 
         public void Edit()
         {
             foreach (var currency in ElementList.Where(x => x.IsSelected))
-                ScreenManager.ActivateItem(new EditCurrencyViewModel(currency.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditCurrencyViewModel(currency.Id));
         }
 
         public IEnumerable<IResult> Remove()

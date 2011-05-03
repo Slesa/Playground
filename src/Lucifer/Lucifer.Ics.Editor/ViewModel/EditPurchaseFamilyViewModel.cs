@@ -1,7 +1,5 @@
 using System.ComponentModel;
 using System.Globalization;
-using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
@@ -11,16 +9,15 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class EditPurchaseFamilyViewModel : EditItemViewModel<PurchaseFamilyModel>, IDataErrorInfo
     {
-        public EditPurchaseFamilyViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditPurchaseFamilyViewModel() 
         {
             DisplayName = Strings.EditPurchaseFamilyView_NewPurchaseFamily;
             Title = Strings.EditPurchaseFamilyView_TitleNew;
             ToolTip = Strings.AllPurchaseFamiliesView_New_ToolTip;
         }
 
-        public EditPurchaseFamilyViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditPurchaseFamilyViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditPurchaseFamilyView_PurchaseFamilyIs, Element.Name);
             ToolTip = Strings.AllPurchaseFamiliesView_Edit_ToolTip;

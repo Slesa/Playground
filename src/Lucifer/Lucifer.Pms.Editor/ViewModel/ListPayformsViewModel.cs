@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -16,22 +15,22 @@ namespace Lucifer.Pms.Editor.ViewModel
         , IHandle<PayformChangedEvent>
         , IHandle<PayformRemovedEvent>
     {
-        public ListPayformsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(Strings.PayformsModule, dbConversation, eventAggregator)
+        public ListPayformsViewModel()
+            : base(Strings.PayformsModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditPayformViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditPayformViewModel());
         }
 
         public void Edit()
         {
             foreach (var payform in ElementList.Where(unitType => unitType.IsSelected))
-                ScreenManager.ActivateItem(new EditPayformViewModel(payform.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditPayformViewModel(payform.Id));
         }
 
         public IEnumerable<IResult> Remove()

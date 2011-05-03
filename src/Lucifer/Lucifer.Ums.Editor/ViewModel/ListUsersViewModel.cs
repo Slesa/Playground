@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -17,23 +16,23 @@ namespace Lucifer.Ums.Editor.ViewModel
         , IHandle<UserRemovedEvent>
         , IHandle<UserRoleChangedEvent>
     {
-        public ListUsersViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(Strings.UsersModule, dbConversation, eventAggregator)
+        public ListUsersViewModel()
+            : base(Strings.UsersModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditUserViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditUserViewModel());
         }
 
         public void Edit()
         {
             foreach (var payform in ElementList.Where(unitType => unitType.IsSelected))
-                ScreenManager.ActivateItem(new EditUserViewModel(payform.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditUserViewModel(payform.Id));
         }
 
         public IEnumerable<IResult> Remove()

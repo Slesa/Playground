@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -18,21 +17,21 @@ namespace Lucifer.Ics.Editor.ViewModel
         , IHandle<PurchaseFamilyChangedEvent>
         , IHandle<UnitChangedEvent>
     {
-        public ListPurchaseItemsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(Strings.PurchaseItemsModule, dbConversation, eventAggregator)
+        public ListPurchaseItemsViewModel()
+            : base(Strings.PurchaseItemsModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
-            ScreenManager.ActivateItem(new EditPurchaseItemViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditPurchaseItemViewModel());
         }
 
         public void Edit()
         {
             foreach (var purchaseItem in ElementList.Where(pi => pi.IsSelected))
-                ScreenManager.ActivateItem(new EditPurchaseItemViewModel(purchaseItem.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditPurchaseItemViewModel(purchaseItem.Id));
         }
 
         public IEnumerable<IResult> Remove()
@@ -132,7 +131,7 @@ namespace Lucifer.Ics.Editor.ViewModel
                 x.Refresh();
             });
             var recipeViews = (from vm in ElementList where vm.RecipeUnit == message.Unit select vm);
-            purchaseViews.Each(x =>
+            recipeViews.Each(x =>
             {
                 x.RecipeUnit = message.Unit;
                 x.Refresh();

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -17,22 +16,22 @@ namespace Lucifer.Pms.Editor.ViewModel
         , IHandle<SalesItemRemovedEvent>
         , IHandle<SalesFamilyChangedEvent>
     {
-        public ListSalesItemsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(Strings.SalesItemsModule, dbConversation, eventAggregator)
+        public ListSalesItemsViewModel() 
+            : base(Strings.SalesItemsModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditSalesItemViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditSalesItemViewModel());
         }
 
         public void Edit()
         {
             foreach (var salesItem in ElementList.Where(x => x.IsSelected))
-                ScreenManager.ActivateItem(new EditSalesItemViewModel(salesItem.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditSalesItemViewModel(salesItem.Id));
         }
 
         public IEnumerable<IResult> Remove()

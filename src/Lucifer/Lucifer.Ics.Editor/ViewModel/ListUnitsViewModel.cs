@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -17,22 +16,22 @@ namespace Lucifer.Ics.Editor.ViewModel
         , IHandle<UnitRemovedEvent>
         , IHandle<UnitTypeChangedEvent>
     {
-        public ListUnitsViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(Strings.UnitsModule, dbConversation, eventAggregator)
+        public ListUnitsViewModel()
+            : base(Strings.UnitsModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
             //_windowManager.ShowDialog(new EditUnitTypeViewModel());
-            ScreenManager.ActivateItem(new EditUnitViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditUnitViewModel());
         }
 
         public void Edit()
         {
             foreach (var unit in ElementList.Where(unit => unit.IsSelected))
-                ScreenManager.ActivateItem(new EditUnitViewModel(unit.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditUnitViewModel(unit.Id));
         }
 
         public IEnumerable<IResult> Remove()

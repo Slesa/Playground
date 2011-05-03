@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -16,21 +15,21 @@ namespace Lucifer.Ics.Editor.ViewModel
         , IHandle<RecipeChangedEvent>
         , IHandle<RecipeRemovedEvent>
     {
-        public ListRecipesViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(Strings.ProductionItemsModule, dbConversation, eventAggregator)
+        public ListRecipesViewModel()
+            : base(Strings.ProductionItemsModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
-            ScreenManager.ActivateItem(new EditRecipeViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditRecipeViewModel());
         }
 
         public void Edit()
         {
             foreach (var recipe in ElementList.Where(pf => pf.IsSelected))
-                ScreenManager.ActivateItem(new EditRecipeViewModel(recipe.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditRecipeViewModel(recipe.Id));
         }
 
         public IEnumerable<IResult> Remove()

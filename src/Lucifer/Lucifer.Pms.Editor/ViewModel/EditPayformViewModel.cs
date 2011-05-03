@@ -1,7 +1,5 @@
 using System.ComponentModel;
 using System.Globalization;
-using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Pms.Editor.Model;
 using Lucifer.Pms.Editor.Resources;
@@ -11,16 +9,15 @@ namespace Lucifer.Pms.Editor.ViewModel
 {
     public class EditPayformViewModel : EditItemViewModel<PayformModel>, IDataErrorInfo
     {
-        public EditPayformViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditPayformViewModel() 
         {
             DisplayName = Strings.EditPayformView_NewPayform;
             Title = Strings.EditPayformView_TitleNew;
             ToolTip = Strings.AllPayformsView_New_ToolTip;
         }
 
-        public EditPayformViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditPayformViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditPayformView_PayformIs, Element.Name);
             ToolTip = Strings.AllPayformsView_Edit_ToolTip;

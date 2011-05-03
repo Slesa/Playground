@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
 using Lucifer.Editor.ViewModel;
@@ -16,21 +15,21 @@ namespace Lucifer.Ics.Editor.ViewModel
         , IHandle<StockChangedEvent>
         , IHandle<StockRemovedEvent>
     {
-        public ListStocksViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(Strings.StocksModule, dbConversation, eventAggregator)
+        public ListStocksViewModel()
+            : base(Strings.StocksModule)
         {
-            eventAggregator.Subscribe(this);
+            EventAggregator.Subscribe(this);
         }
 
         public void Add()
         {
-            ScreenManager.ActivateItem(new EditStockViewModel(DbConversation, EventAggregator));
+            ScreenManager.ActivateItem(new EditStockViewModel());
         }
 
         public void Edit()
         {
             foreach (var stock in ElementList.Where(pf => pf.IsSelected))
-                ScreenManager.ActivateItem(new EditStockViewModel(stock.Id, DbConversation, EventAggregator));
+                ScreenManager.ActivateItem(new EditStockViewModel(stock.Id));
         }
 
         public IEnumerable<IResult> Remove()

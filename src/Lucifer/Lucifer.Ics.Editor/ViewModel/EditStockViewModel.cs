@@ -3,8 +3,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
@@ -15,16 +13,15 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class EditStockViewModel : EditItemViewModel<StockModel>, IDataErrorInfo
     {
-        public EditStockViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditStockViewModel() 
         {
             DisplayName = Strings.EditStockView_NewStock;
             Title = Strings.EditStockView_TitleNew;
             ToolTip = Strings.AllStocksView_New_ToolTip;
         }
 
-        public EditStockViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditStockViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditStockView_PurchaseStockIs, Element.Name);
             ToolTip = Strings.AllStocksView_Edit_ToolTip;

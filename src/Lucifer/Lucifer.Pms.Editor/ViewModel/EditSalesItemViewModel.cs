@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Pms.Editor.Model;
 using Lucifer.Pms.Editor.Resources;
@@ -14,16 +12,15 @@ namespace Lucifer.Pms.Editor.ViewModel
 {
     public class EditSalesItemViewModel : EditItemViewModel<SalesItemModel>, IDataErrorInfo
     {
-        public EditSalesItemViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditSalesItemViewModel() 
         {
             DisplayName = Strings.EditSalesItemView_NewSalesItem;
             Title = Strings.EditSalesItemView_TitleNew;
             ToolTip = Strings.AllSalesItemsView_New_ToolTip;
         }
 
-        public EditSalesItemViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditSalesItemViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditSalesItemView_SalesItemIs, Element.Name);
             ToolTip = Strings.AllSalesItemsView_Edit_ToolTip;

@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
@@ -18,16 +17,16 @@ namespace Lucifer.Ics.Editor.ViewModel
         , IHandle<UnitChangedEvent>
         , IHandle<UnitRemovedEvent>
     {
-        public EditPurchaseItemViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditPurchaseItemViewModel() 
+            : base()
         {
             DisplayName = Strings.EditPurchaseItemView_NewPurchaseItem;
             Title = Strings.EditPurchaseItemView_TitleNew;
             ToolTip = Strings.AllPurchaseItemsView_New_ToolTip;
         }
 
-        public EditPurchaseItemViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditPurchaseItemViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditPurchaseItemView_PurchaseItemIs, Element.Name);
             ToolTip = Strings.AllPurchaseItemsView_Edit_ToolTip;

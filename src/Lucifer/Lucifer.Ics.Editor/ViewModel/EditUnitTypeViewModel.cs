@@ -1,7 +1,5 @@
 using System.ComponentModel;
 using System.Globalization;
-using Caliburn.Micro;
-using Lucifer.DataAccess;
 using Lucifer.Editor;
 using Lucifer.Ics.Editor.Model;
 using Lucifer.Ics.Editor.Resources;
@@ -11,16 +9,15 @@ namespace Lucifer.Ics.Editor.ViewModel
 {
     public class EditUnitTypeViewModel : EditItemViewModel<UnitTypeModel>, IDataErrorInfo
     {
-        public EditUnitTypeViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator) 
-            : base(dbConversation, eventAggregator)
+        public EditUnitTypeViewModel() 
         {
             DisplayName = Strings.EditUnitTypeView_NewUnitType;
             Title = Strings.EditUnitTypeView_TitleNew;
             ToolTip = Strings.AllUnitTypesView_New_ToolTip;
         }
 
-        public EditUnitTypeViewModel(int id, IDbConversation dbConversation, IEventAggregator eventAggregator)
-            : base(id, dbConversation, eventAggregator)
+        public EditUnitTypeViewModel(int id)
+            : base(id)
         {
             DisplayName = string.Format(CultureInfo.CurrentCulture, Strings.EditUnitTypeView_UnitTypeIs, Element.Name);
             ToolTip = Strings.AllUnitTypesView_Edit_ToolTip;

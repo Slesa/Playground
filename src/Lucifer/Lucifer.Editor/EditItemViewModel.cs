@@ -15,19 +15,19 @@ namespace Lucifer.Editor
         protected readonly IEventAggregator EventAggregator;
         protected T Element;
 
-        protected EditItemViewModel(IDbConversation dbConversation, IEventAggregator eventAggregator)
+        protected EditItemViewModel()
         {
-            DbConversation = dbConversation;
-            EventAggregator = eventAggregator;
+            DbConversation = IoC.Get<IDbConversation>();
+            EventAggregator = IoC.Get<IEventAggregator>();
             Element = CreateNewElementModel();
             PrepareElement(Element);
             
         }
 
-        protected EditItemViewModel(int elementId, IDbConversation dbConversation, IEventAggregator eventAggregator)
+        protected EditItemViewModel(int elementId)
         {
-            DbConversation = dbConversation;
-            EventAggregator = eventAggregator;
+            DbConversation = IoC.Get<IDbConversation>();
+            EventAggregator = IoC.Get<IEventAggregator>();
             Element = CreateElementModel(elementId);
             PrepareElement(Element);
         }
