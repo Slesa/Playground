@@ -858,29 +858,29 @@ namespace Lucifer.Pms.Editor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name of the sales family is missing.
+        /// </summary>
+        public static string SalesFamilyModel_Name_missing {
+            get {
+                return ResourceManager.GetString("SalesFamilyModel_Name_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name of the sales item is missing.
         /// </summary>
-        public static string SalesFamilyItem_Name_missing {
+        public static string SalesItem_Name_missing {
             get {
-                return ResourceManager.GetString("SalesFamilyItem_Name_missing", resourceCulture);
+                return ResourceManager.GetString("SalesItem_Name_missing", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Family of the sales item is missing.
         /// </summary>
-        public static string SalesFamilyItem_SalesFamily_missing {
+        public static string SalesItem_SalesFamily_missing {
             get {
-                return ResourceManager.GetString("SalesFamilyItem_SalesFamily_missing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name of the sales family is missing.
-        /// </summary>
-        public static string SalesFamilyModel_Name_missing {
-            get {
-                return ResourceManager.GetString("SalesFamilyModel_Name_missing", resourceCulture);
+                return ResourceManager.GetString("SalesItem_SalesFamily_missing", resourceCulture);
             }
         }
         

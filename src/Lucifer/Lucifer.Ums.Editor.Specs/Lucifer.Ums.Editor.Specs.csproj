@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9A6B2B50-AD5C-4542-8ECD-5F3218C7A83C}</ProjectGuid>
+    <ProjectGuid>{364E891A-EA45-4C97-B1B9-FB325286FCAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lucifer.Ics.Editor.Specs</RootNamespace>
-    <AssemblyName>Lucifer.Ics.Editor.Specs</AssemblyName>
+    <RootNamespace>Lucifer.Ums.Editor.Specs</RootNamespace>
+    <AssemblyName>Lucifer.Ums.Editor.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+    <Reference Include="Caliburn.Micro">
       <HintPath>..\packages\Caliburn.Micro.1.0.0\lib\Net40\Caliburn.Micro.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
@@ -64,13 +64,7 @@
     <Compile Include="..\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ProductionItemModelSpecs.cs" />
-    <Compile Include="PurchaseFamilyModelSpecs.cs" />
-    <Compile Include="PurchaseItemModelSpecs.cs" />
-    <Compile Include="RecipeModelSpecs.cs" />
-    <Compile Include="StockModelSpecs.cs" />
-    <Compile Include="UnitModelSpecs.cs" />
-    <Compile Include="UnitTypeModelSpecs.cs" />
+    <Compile Include="UserModelSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -80,13 +74,13 @@
       <Project>{78C534DA-A9F9-4E79-8790-70AB5FCA39D7}</Project>
       <Name>Lucifer.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucifer.Ics.Editor\Lucifer.Ics.Editor.csproj">
-      <Project>{414A511E-1974-4B8D-802B-40F1969EA325}</Project>
-      <Name>Lucifer.Ics.Editor</Name>
+    <ProjectReference Include="..\Lucifer.Ums.Editor\Lucifer.Ums.Editor.csproj">
+      <Project>{60BDCF5E-40B4-4669-B456-E8A4A0BDFEEE}</Project>
+      <Name>Lucifer.Ums.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lucifer.Ics.Model\Lucifer.Ics.Model.csproj">
-      <Project>{E9C92FF1-5366-4FAF-9E3A-008EB06E577B}</Project>
-      <Name>Lucifer.Ics.Model</Name>
+    <ProjectReference Include="..\Lucifer.Ums.Model\Lucifer.Ums.Model.csproj">
+      <Project>{D4204F2F-BDA1-4D16-BCE8-00A7954C42DD}</Project>
+      <Name>Lucifer.Ums.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

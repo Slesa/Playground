@@ -104,11 +104,11 @@ namespace Lucifer.Pms.Editor.Model
 
         string ValidateName()
         {
-            return EditValidators.IsStringMissing(Name) ? Strings.SalesFamilyItem_Name_missing : null;
+            return EditValidators.IsStringMissing(Name) ? Strings.SalesItem_Name_missing : null;
         }
         string ValidateSalesFamily()
         {
-            return SalesFamily==null ? Strings.SalesFamilyItem_SalesFamily_missing : null;
+            return SalesFamily==null ? Strings.SalesItem_SalesFamily_missing : null;
         }
 
         #endregion

@@ -386,10 +386,10 @@
   <data name="SalesFamiliesTooltip" xml:space="preserve">
     <value>Group sales items in their families</value>
   </data>
-  <data name="SalesFamilyItem_Name_missing" xml:space="preserve">
+  <data name="SalesItem_Name_missing" xml:space="preserve">
     <value>Name of the sales item is missing</value>
   </data>
-  <data name="SalesFamilyItem_SalesFamily_missing" xml:space="preserve">
+  <data name="SalesItem_SalesFamily_missing" xml:space="preserve">
     <value>Family of the sales item is missing</value>
   </data>
   <data name="SalesFamilyModel_Name_missing" xml:space="preserve">
