@@ -16,3 +16,4 @@ opt/
 *.idb
 *.pdb
 ipch/
+*_Spliced.*
