@@ -32,6 +32,11 @@ namespace Lucifer.Ics.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditPurchaseFamilyViewModel(purchaseFamily.Id));
         }
 
+        public void Open(PurchaseFamilyRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditPurchaseFamilyViewModel(viewModel.Id));
+        }
+
         public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);

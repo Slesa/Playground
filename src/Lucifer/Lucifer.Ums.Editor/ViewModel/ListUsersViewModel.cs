@@ -31,8 +31,13 @@ namespace Lucifer.Ums.Editor.ViewModel
 
         public void Edit()
         {
-            foreach (var payform in ElementList.Where(unitType => unitType.IsSelected))
-                ScreenManager.ActivateItem(new EditUserViewModel(payform.Id));
+            foreach (var user in ElementList.Where(row => row.IsSelected))
+                ScreenManager.ActivateItem(new EditUserViewModel(user.Id));
+        }
+
+        public void Open(UserRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditUserViewModel(viewModel.Id));
         }
 
         public IEnumerable<IResult> Remove()

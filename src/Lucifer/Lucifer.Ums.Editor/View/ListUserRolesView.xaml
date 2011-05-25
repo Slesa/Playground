@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Resources="clr-namespace:Lucifer.Ums.Editor.Resources" 
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              mc:Ignorable="d" 
              FocusManager.FocusedElement="{Binding ElementName=UserRoles}"
              d:DesignHeight="320" d:DesignWidth="480">
@@ -17,7 +18,7 @@
         </CollectionViewSource>
 
         <Style x:Key="UserRoleItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewCollectionStyle}">
-            <!-- Setter Property="ViewModel:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.DoubleClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+            <Setter Property="cal:Message.Attach" Value="[Event MouseDoubleClick] = [Action Open($this)]" />
         </Style>
 
     </UserControl.Resources>

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
              xmlns:Resources="clr-namespace:Lucifer.Ics.Editor.Resources" 
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              mc:Ignorable="d" 
              FocusManager.FocusedElement="{Binding ElementName=ProductionItems}"
              d:DesignHeight="320" d:DesignWidth="480">
@@ -18,7 +19,7 @@
         </CollectionViewSource>
 
         <Style x:Key="ProductionItemListItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewCollectionStyle}">
-            <!-- Setter Property="Editor:DoubleClickBehavior.MouseDoubleClick" Value="{Binding Path=DataContext.EditCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" / -->
+            <Setter Property="cal:Message.Attach" Value="[Event MouseDoubleClick] = [Action Open($this)]" />
         </Style>
 
     </UserControl.Resources>

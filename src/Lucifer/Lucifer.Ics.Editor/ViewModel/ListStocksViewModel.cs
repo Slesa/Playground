@@ -32,6 +32,11 @@ namespace Lucifer.Ics.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditStockViewModel(stock.Id));
         }
 
+        public void Open(StockRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditStockViewModel(viewModel.Id));
+        }
+
         public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);

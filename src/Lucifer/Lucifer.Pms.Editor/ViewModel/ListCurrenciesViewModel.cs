@@ -33,6 +33,11 @@ namespace Lucifer.Pms.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditCurrencyViewModel(currency.Id));
         }
 
+        public void Open(CurrencyRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditCurrencyViewModel(viewModel.Id));
+        }
+
         public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);

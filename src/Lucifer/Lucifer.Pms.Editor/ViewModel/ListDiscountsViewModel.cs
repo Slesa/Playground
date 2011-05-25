@@ -33,6 +33,11 @@ namespace Lucifer.Pms.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditDiscountViewModel(discount.Id));
         }
 
+        public void Open(DiscountRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditDiscountViewModel(viewModel.Id));
+        }
+
         public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);

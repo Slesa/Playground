@@ -33,6 +33,11 @@ namespace Lucifer.Pms.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditPayformViewModel(payform.Id));
         }
 
+        public void Open(PayformRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditPayformViewModel(viewModel.Id));
+        }
+
         public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);

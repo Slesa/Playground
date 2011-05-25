@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using Lucifer.Editor;
 using Lucifer.Editor.Results;
@@ -30,8 +29,13 @@ namespace Lucifer.Ums.Editor.ViewModel
 
         public void Edit()
         {
-            foreach (var payform in ElementList.Where(unitType => unitType.IsSelected))
-                ScreenManager.ActivateItem(new EditUserRoleViewModel(payform.Id));
+            foreach (var userRole in ElementList.Where(row => row.IsSelected))
+                ScreenManager.ActivateItem(new EditUserRoleViewModel(userRole.Id));
+        }
+
+        public void Open(UserRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditUserViewModel(viewModel.Id));
         }
 
         public IEnumerable<IResult> Remove()

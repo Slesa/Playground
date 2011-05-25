@@ -33,6 +33,11 @@ namespace Lucifer.Ics.Editor.ViewModel
                 ScreenManager.ActivateItem(new EditUnitTypeViewModel(unitType.Id));
         }
 
+        public void Open(UnitTypeRowViewModel viewModel)
+        {
+            ScreenManager.ActivateItem(new EditUnitTypeViewModel(viewModel.Id));
+        }
+
         public IEnumerable<IResult> Remove()
         {
             var selectesForMessage = ElementList.Where(x => x.IsSelected).Take(10);
