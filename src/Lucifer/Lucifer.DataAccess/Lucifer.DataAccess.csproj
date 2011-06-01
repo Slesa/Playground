@@ -66,8 +66,6 @@
     <Compile Include="Configuration\FluentMappingFromAssembly.cs" />
     <Compile Include="Configuration\FluentMappingConventions.cs" />
     <Compile Include="Configuration\NhProfilerInitializer.cs" />
-    <Compile Include="Container\ArrayDependencyFacility.cs" />
-    <Compile Include="Container\ArraySubDependencyResolver.cs" />
     <Compile Include="DomainEntity.cs" />
     <Compile Include="IDbConversation.cs" />
     <Compile Include="IDomainQuery.cs" />

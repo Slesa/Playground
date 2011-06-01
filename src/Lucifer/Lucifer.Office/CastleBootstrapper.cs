@@ -11,8 +11,8 @@ using Castle.Windsor;
 using Lucifer.Caliburn;
 using Lucifer.DataAccess;
 using Lucifer.DataAccess.Configuration;
-using Lucifer.DataAccess.Container;
 using Lucifer.DataAccess.Persistence;
+using Lucifer.Office.Container;
 using Lucifer.Office.ViewModel;
 using Parameter = Castle.MicroKernel.Registration.Parameter;
 
