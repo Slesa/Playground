@@ -1,0 +1,36 @@
+//////////////////////////////////////////////////////////////////////////////
+//	alu.a - Test signed/unsigned alu operations - D. J. Viner
+//////////////////////////////////////////////////////////////////////////////
+//
+//	1.0.0	18.07.1995	Created
+//	1.0.1	18.12.1995	Mods for new start-up
+//
+//////////////////////////////////////////////////////////////////////////////
+
+        INCLUDE start.i
+
+        LI      R1,#-10			// Try adding and subtracting -10
+        LI      R2,#20			// and 20
+        ADD     R3,R1,R2		// R3 should now contain  10 ($0000000A)
+        SUB     R4,R1,R2		// R4 should now contain -30 ($FFFFFFE2)
+
+        LI      R5,#10			// Try adding and subtracting 10
+        LI      R6,#20			// and 20
+        ADD     R7,R5,R6		// R7 should now contain  30 ($0000001E)
+        SUB     R8,R5,R6		// R8 should now contain -10 ($FFFFFFF6)
+        SUB     R9,R6,R5		// R9 should now contain  10 ($0000000A)
+
+        LUI     R10,#$FFFF		//
+        SLLI    R11,R10,#14
+        ADDU    R12,R11,R11
+        ADDU    R13,R12,R11
+
+        ADDU    R14,R13,R12     // Force overflow error here (result is
+                                // greater than 0xFFFFFFFF)
+
+        HALT
+
+        END
+
+
+

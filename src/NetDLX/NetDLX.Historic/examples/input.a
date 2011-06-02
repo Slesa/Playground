@@ -1,0 +1,31 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Input.a     Test keyboard input                                 ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   15.07.95    Created                                             ;
+; DJV   25.07.95    Added LF check for Unix                             ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE start.i
+
+
+Loop    INPUT                   ; Input character
+        OUTPUTBYTE              ; Display it
+        SEQI    R2,R1,#13       ; Check for CR (Amiga/PC)
+        BNEZ    R2,Out
+        SEQI    R2,R1,#10       ; Check for LF (Unix)
+        BEQZ    R2,Loop
+
+Out     LI      R1,#10          ; Force line feed
+        OUTPUTBYTE
+
+        HALT
+
+
+        END
+
+
+

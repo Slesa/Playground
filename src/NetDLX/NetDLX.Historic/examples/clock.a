@@ -1,0 +1,57 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Clock.a     Test the (simulated) timer interrupts               ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   04.08.95    Created                                             ;
+; DJV   23.10.95    Now uses L32/O to load pointers                     ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+            INCLUDE start.i
+            INCLUDE timer.i
+
+
+            L32O    R1,TrapTimer
+            SW      16(R0),R1
+
+            L32     R26,TIMER_BASE          ; Point R26 to timer base
+
+            LI      R2,#$300                ; Latch value
+            SW      TO1_LATCH(R26),R2
+            LI      R2,#1                   ; Enable timer
+            SW      TO1_STATUS(R26),R2
+
+            LI      R2,#10                  ; A count of 10 ints
+            SW      Count(R29),R2
+
+            LHI     R5,#$8000
+
+Loop        LW      R1,Count(R29)
+            SEQ     R3,R1,R2
+            BNEZ    R3,Loop
+            MOV     R2,R1
+            SEQI    R3,R1,#0                ; Check for zero
+            BNEZ    R3,Exit
+            AND     R4,R1,R5                ; Check R1 not gone negative
+            BEQZ    R4,Loop
+
+Exit        SW      TO1_STATUS(R26),R0      ; Disable timer
+
+            HALT
+
+
+TrapTimer   LW      R27,TO1_STATUS(R26)
+            LW      R27,Count(R29)
+            DEC     R27
+            SW      Count(R29),R27
+            JSRA    ClearInt
+            RFE
+
+Count       DC.W    0
+
+            END
+
+
+

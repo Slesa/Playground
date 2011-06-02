@@ -1,0 +1,35 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Print.a     Test the PRINT macro in print.i                     ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   08.07.95    Created                                             ;
+; DJV   12.07.95    Improved for PRINT subroutine + added R1 counter    ;
+;                   as proof that R1 is not corrupted by PRINT routine  ;
+; DJV   23.10.95    Removed PAD instructions as DAsm can now insert     ;
+;                   them automatically                                  ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+
+        INCLUDE "start.i"
+
+        LI      R1,#1           ; Init R1
+        JSRA    PRINT
+        DC.B    'Hello ',0
+        INC     R1
+        JSRA    PRINT
+        DC.B    'Jim!',10,0
+        INC     R1
+        JSRA    PRINT
+        DC.B    'The big fat (and quite ugly) fox '
+        DC.B    'falls over the lazy dog.',10
+        DC.B    'Serves it right!',10,0
+        INC     R1              ; R1 now contains 4
+        HALT
+
+        end
+
+
+

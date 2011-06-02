@@ -1,0 +1,185 @@
+//////////////////////////////////////////////////////////////////////////////
+//	DLX Autoloaded Routines - D. J. Viner
+//////////////////////////////////////////////////////////////////////////////
+//
+//	1.0.0	15.12.1995	Created from traps.i and print.i
+//	1.0.1	18.12.1995	Added GENINCs to make auto.i
+//
+//////////////////////////////////////////////////////////////////////////////
+
+            INCLUDE macro.i
+
+
+            *=$200          // Start location for routines
+
+//////////////////////////////////////////////////////////////////////////////
+// InitInt
+//
+// Initialise the interrupt pointer at location 0
+//////////////////////////////////////////////////////////////////////////////
+
+            GENINC
+
+InitInt     L32     R1,IntEntry
+            SUBUI   R1,R1,#4
+            LHI     R2,#$0800
+            OR      R1,R1,R2
+            SW      0(R0),R1
+            JR      R31
+
+//////////////////////////////////////////////////////////////////////////////
+// IntEntry
+//
+// Interrupt entry point - note that Timer interrupts will corrupt R28
+//////////////////////////////////////////////////////////////////////////////
+
+            GENINC
+
+IntEntry    PUSH    R1
+            PUSH    R2
+            PUSH    R3
+            MOVS2I  R1,S1       // Get Int Status Reg
+
+            // See if unimplemented instruction
+
+            ANDI    R2,R1,#INT_UNDEF_OPCODE
+            BEQZ    R2,TestDiv
+
+            L32     R3,INT_UNDEF_OPCODE
+            SW      ITemp(R0),R3
+
+            JAL     PRINT
+            DC.B    'Unimplemented instruction error',10,0
+            BRA     IntOut
+
+TestDiv     ANDI    R2,R1,#INT_DIVIDEBYZERO
+            BEQZ    R2,TestOverflow
+
+            L32     R3,INT_DIVIDEBYZERO
+            SW      ITemp(R0),R3
+
+            JAL     PRINT
+            DC.B    'Division by zero error',10,0
+            BRA     IntOut
+
+TestOverflow
+            ANDI    R2,R1,#INT_OVERFLOW
+            BEQZ    R2,TestTimer
+
+            L32     R3,INT_OVERFLOW
+            SW      ITemp(R0),R3
+
+            JAL     PRINT
+            DC.B    'Integer overflow error',10,0
+            BRA     IntOut
+
+TestTimer   ANDI    R2,R1,#INT_TIMER
+            BEQZ    R2,Undoc
+
+            L32     R3,INT_TIMER
+            SW      ITemp(R0),R3
+
+            LW      R28,16(R0)
+            BEQZ    R28,NoTimer
+
+            PULL    R3
+            PULL    R2
+            PULL    R1
+            JR      R28             // Jump to timer routine
+
+NoTimer     JAL     PRINT
+            DC.B    'Timer Interrupt but no timer vector set',10,0
+            BRA     IntOut
+
+Undoc       JAL     PRINT
+            DC.B    'Undocumented Interrupt value detected',10,0
+
+IntOut      MOVS2I  R1,S0           // Get saved address from IAR
+            SUBUI   R1,R1,#4        // Point to instr that caused error
+            JAL     PRINT
+            DC.B    'Error location: $',0
+            OUTPUTHEX               // Output address in R1
+            JAL     PRINT
+            DC.B    10,0
+            MOVS2I  R1,S1           // Get interrupt reg
+            JAL     PRINT
+            DC.B    'Int Status Reg: $',0
+            OUTPUTHEX               // Output address in R1
+            JAL     PRINT
+            DC.B    10,0
+
+            JAL     ClearInt
+
+            MOVI2S  S0,R0           // Clear IAR
+
+            HALT
+
+
+//////////////////////////////////////////////////////////////////////////////
+// ClearInt
+//
+// Clear Interrupt Status
+//////////////////////////////////////////////////////////////////////////////
+
+            GENINC
+
+ClearInt    SUBR
+            PUSH    R1
+            PUSH    R2
+
+            LW      R1,ITemp(R0)
+            MOVS2I  R2,S1
+            XOR     R2,R2,R1
+            MOVI2S  S1,R2
+
+            PULL    R2
+            PULL    R1
+            RTS
+
+ITemp       DC.W    0
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Print the null-terminated string following the call. Note that R30
+// must be initialised as a stack pointer before this call as PUSH/PULL
+// is used in order to save and restore the contents of R1. R29 must
+// also be initialised to point to the current load offset. (Both R30
+// and R29 will be set correctly if start.i has been INCLUDEd first. The
+// routine currently causes problems if an interrupt occurs during its
+// execution.
+//
+//       Format:     JAL     PRINT
+//                   DC.B    'Some text',0
+//////////////////////////////////////////////////////////////////////////////
+
+            GENINC
+
+PRINT       PUSH    R2              // Save R2
+            MOV     R2,R31          // Copy R31
+            PUSH    R1              // Save R1
+
+PLoop       LBU     R1,0(R2)        // Get byte to print
+            BEQZ    R1,POut         // Exit loop if 0 found
+            OUTPUTBYTE              // Print contents of R1
+            INC     R2              // Inc R31 to point to next byte
+            BRA     PLoop           // Always branch
+
+POut        SRLI    R2,R2,#2        // This code makes sure that R2 points
+            SLLI    R2,R2,#2        // to the first long-word aligned
+            ADDUI   R2,R2,#4        // address after the end of the text
+
+            PULL    R1              // Restore original contents of R1
+            MOV     R31,R2          // and then R2
+            PULL    R2
+
+            JR      R31             // Jump to code following text
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+            DEBUG       // Turn on any debugging/listing as set by
+            LIST        // the DASM command line
+
+//////////////////////////////////////////////////////////////////////////////
+
+

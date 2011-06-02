@@ -1,0 +1,24 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Loop.a      Test loop and branch                                ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   08.07.95    Created                                             ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE "start.i"
+
+        LI      R1,#'A
+
+Loop    OUTPUTBYTE
+        ADDUI   r1,R1,#1
+        SEQI    R2,R1,#'[
+        BEQZ    R2,Loop
+
+        HALT
+
+        end
+
+

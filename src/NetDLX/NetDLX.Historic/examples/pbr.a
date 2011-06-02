@@ -1,0 +1,45 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       PBr.a       Pipeline Branch Test Program                        ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   05.12.95    Created                                             ;
+; DJV   28.01.96    Added run results explanation                       ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+;                                                                       ;
+; Try out this example with the pipeline settings of B0 to B3 (with the ;
+; feed forward setting set to either F1 or F2). The results will be as  ;
+; follows:                                                              ;
+;    B0     All instructions will be executed which is WRONG! (13/11/7) ;
+;    B1     R1 and R7 get assigned as expected, pipeline flushed        ;
+;           after branch calculated in EX stage (13/11/4)               ;
+;    B2     As B1 except pipeline flushes IF when branch at ID stage    ;
+;           (11/9/4)                                                    ;
+;    B3     R2 also gets assigned as this is now in the branch delay    ;
+;           slot (11/9/5)                                               ;
+;                                                                       ;
+; The numbers in brackets refer to (cycles with F1/cycles with F2/      ;
+; numbers of completed instructions). Try the program on the hardwired  ;
+; and microcode simulators for CPI comparisons.                         ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+
+        ADDI    R1,R0,#1
+        BNEZ    R1,Br
+        ADDI    R2,R0,#2        ; Done if in delay slot (B3) or B0
+
+        ADDI    R3,R0,#3        ; These done if data hazard between
+        ADDI    R4,R0,#4        ; ADDI R1... and BNEZ is not detected
+        ADDI    R5,R0,#5        ; ...
+        ADDI    R6,R0,#6        ; ...
+
+Br      ADDI    R7,R0,#7        ; Will always do this one
+
+        ; Halt the program
+
+        TRAP    0
+
+
+

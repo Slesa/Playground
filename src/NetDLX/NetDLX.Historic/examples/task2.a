@@ -1,0 +1,299 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Task2.a     DLX Assembler Multitasking Controller Demo          ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   30.11.95    Created from task.a                                 ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+;-----------------------------------------------------------------------;
+; Run tasks whose start addresses are listed at $0F00.                  ;
+;                                                                       ;
+; Note - very experimental - hardly works!                              ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE macro.i
+        INCLUDE timer.i
+
+;-----------------------------------------------------------------------;
+; Task handling storage areas (currently for 5 tasks)                   ;
+;-----------------------------------------------------------------------;
+
+        SR1     EQU     $00
+        SR2     EQU     $04
+        SR3     EQU     $08
+        SR4     EQU     $0C
+        SR5     EQU     $10
+        SR6     EQU     $14
+        SStatus EQU     $18
+        SIAR    EQU     $1C
+        SStack  EQU     $20
+        SJump   EQU     $24
+        SSp1    EQU     $28
+        SRun    EQU     $2C
+
+        StoreSz EQU     12  ; How big each task's store size is
+                            ; in LONG WORDS
+
+;-----------------------------------------------------------------------;
+
+        ; Initialise the system
+
+        L32     R28,TIMER_BASE          ; Point R28 to timer base
+        SW      TO1_STATUS(R28),R0      ; Disable timer
+        MOVI2S  S1,R0                   ; Clear status reg
+        MOVI2S  S0,R0                   ; Clear IAR reg
+
+        JAL     InitTraps
+
+        ; Initialise the tasks
+
+        CLR     R1
+Init1   LW      R2,#$F00(R1)
+        BEQZ    FinInit
+
+        L32     R3,Store
+        LIU     R4,#StoreSz
+
++StoreSz*R1
+
+        ADDI    R1,#4
+        BRA
+
+FinInit
+
+        L32O    R1,Task1
+        SW      SIAR+Store(R29),R1
+        SW      SRun+Store(R29),R1
+
+        L32O    R1,Task2
+        SW      StoreSz*4+SIAR+Store(R29),R1
+        SW      StoreSz*4+SRun+Store(R29),R1
+
+        ; Start the interrupts and jump straight to first task
+
+        JAL     InitTimer
+        SW      Stack(R29),R30  ; Save LLS stack
+
+        J       Task1
+
+;-----------------------------------------------------------------------;
+; Turn off timer interrupts                                             ;
+;-----------------------------------------------------------------------;
+
+KillTimer
+        SW      TO1_STATUS(R28),R0
+        JR      R31
+
+Store   DS.W    StoreSz ; Room for R1 to R6, Status, IAR(PC), R30, R31
+        DS.W    StoreSz
+        DS.W    StoreSz
+        DS.W    StoreSz
+        DS.W    StoreSz
+
+This    DC.W    0       ; Current task number (0 to 4)
+MaxTask DC.W    5       ; Max number of tasks
+Stack   DC.W    0       ; Stack pointer for LLS
+Temp1   DC.W    0       ; Temp stack save
+Temp2   DC.W    0       ; Temp R31 save
+
+
+;-----------------------------------------------------------------------;
+; Task 1 is a simple task to just increment a register until it         ;
+; reaches $3FF                                                          ;
+;-----------------------------------------------------------------------;
+
+Task1   CLR     R1
+        LHI     R3,#0
+        ORI     R3,R3,#$3F
+        LI      R30,#$77FC  ; Initialise task 1 stack pointer
+
+T1Loop  INC     R1
+        SEQ     R4,R1,R3
+        BEQZ    R4,T1Loop
+        JAL     PRINT
+        DC.B    'Task one finished',10,0
+        LI      R1,#0
+        J       HaltTask
+
+;-----------------------------------------------------------------------;
+; Task 2 is a simple task to just keep adding $10 to a register until   ;
+; it reaches $100                                                       ;
+;-----------------------------------------------------------------------;
+
+Task2   CLR     R1
+        LI      R3,#$100
+        LI      R30,#$73FC  ; Initialise task 2 stack pointer
+
+T2Loop  ADDI    R1,R1,#$10
+        SEQ     R5,R1,R3
+        BEQZ    R5,T2Loop
+        JAL     PRINT
+        DC.B    'Task two finished',10,0
+        LI      R1,#1
+;       J       HaltTask
+
+HaltTask
+        LW      R30,Stack(R29)          ; Get LLS stack
+        JAL     SetCurrentTask2
+        SW      SRun(R2),R0             ; Kill run flag
+
+BusyLoop
+        J       BusyLoop                ; Loop until killed
+
+;-----------------------------------------------------------------------;
+; Initialise timer 1 for task switching                                 ;
+;-----------------------------------------------------------------------;
+
+InitTimer
+        L32O    R1,TrapTimer
+        SW      16(R0),R1
+
+        LI      R2,#$200                ; Latch value
+        SW      TO1_LATCH(R28),R2
+        LI      R2,#1                   ; Enable timer
+        SW      TO1_STATUS(R28),R2
+
+        JR      R31
+
+;-----------------------------------------------------------------------;
+; Interrupt coding for timer                                            ;
+;-----------------------------------------------------------------------;
+
+TrapTimer
+        SW      Temp1(R29),R30          ; Save task stack
+        SW      Temp2(R29),R31          ; Save task R31
+        LW      R30,Stack(R29)          ; Get LLS stack
+        LW      R27,TO1_STATUS(R28)
+        ANDI    R27,R27,#$80
+        BEQZ    R27,Tim2
+
+        ; Save current task details
+
+        PUSH    R31
+        PUSH    R4  ; Save these regs first
+        PUSH    R3
+        PUSH    R2
+        PUSH    R1
+        OUTPUTHEX
+        JAL     PRINT
+        DC.B    ' Task ',0
+
+        JAL     SetCurrentTask
+        OUTPUTDEC
+        JAL     PRINT
+        DC.B    10,0
+
+        ; Save Task Regs
+
+        PULL    R4      ; Actually saved R1
+        SW      SR1(R2),R4
+        PULL    R4      ; Actually saved R2
+        SW      SR2(R2),R4
+        PULL    R4      ; Actually saved R3
+        SW      SR3(R2),R4
+        PULL    R4
+        SW      SR4(R2),R4
+        SW      SR5(R2),R5
+        SW      SR6(R2),R6
+        MOVS2I  R4,S1           ; Status reg
+        SW      SStatus(R2),R4
+        MOVS2I  R4,S0           ; IAR
+        SW      SIAR(R2),R4
+        LW      R4,Temp1(R29)
+        SW      SStack(R2),R4
+        LW      R4,Temp2(R29)
+        SW      SJump(R2),R4
+
+        ; Find next task to run
+
+NextTask
+        MOV     R6,R3           ; Save first task number
+
+TskLoop INC     R3              ; R3 holds current task
+        LW      R4,MaxTask(R29)
+        SGE     R5,R3,R4
+        BEQZ    R5,NoZero
+        CLR     R3              ; Loop around for first task
+
+        ; See if task able to run
+
+NoZero  SW      This(R29),R3
+;        MOV     R1,R3
+;        OUTPUTDEC
+        JAL     SetCurrentTask
+        LW      R5,SRun(R2)      ; Get task run status
+        BNEZ    R5,RunTask
+
+        SEQ     R5,R3,R6
+        BEQZ    R5,TskLoop
+
+        JAL     KillTimer       ; Halt if gone round all tasks
+        HALT
+
+        ; Start up next task
+
+RunTask LW      R1,SR1(R2)
+        LW      R3,SR3(R2)
+        LW      R4,SR4(R2)
+        LW      R5,SR5(R2)
+        LW      R6,SStatus(R2)
+        MOVI2S  S1,R6
+        LW      R6,SIAR(R2)
+        MOVI2S  S0,R6
+        LW      R6,SR6(R2)
+        SW      Stack(R29),R30  ; Save LLS stack
+        LW      R30,SStack(R2)
+        LW      R31,SJump(R2)
+        LW      R2,SR2(R2)      ; Restore R2 last as it being used
+                                ; as the table pointer!
+
+        ; Continue with task
+
+        RFE
+
+        ; Check for other timer interrupts
+
+Tim2    LW      R27,TO2_STATUS(R28)
+        ANDI    R27,R27,#$80
+        BEQZ    R27,Tim3
+
+        RFE
+
+Tim3    LW      R27,TO3_STATUS(R28)
+
+        RFE
+
+
+;-----------------------------------------------------------------------;
+; Routine to get a pointer to the base of the current task's saved      ;
+; storage                                                               ;
+;-----------------------------------------------------------------------;
+
+SetCurrentTask
+        LW      R1,This(R29)
+
+SetCurrentTask2
+        MOV     R3,R1
+        L32O    R2,Store
+
+DoAdd   BEQZ    R1,NoAdd
+        ADDUI   R2,R2,#StoreSz*4
+        DEC     R1
+        BRA     DoAdd
+
+NoAdd   JR      R31
+
+;-----------------------------------------------------------------------;
+
+        INCLUDE print.i
+        INCLUDE traps.i
+
+        END
+
+
+
+
+

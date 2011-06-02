@@ -1,0 +1,28 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Set.a       Test Set instructions                               ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   21.07.95    Created                                             ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE start.i
+
+        LI      R1,#10
+        LI      R2,#-1
+        SLT     R3,R1,R2
+        SLT     R4,R2,R1
+        SEQI    R5,R2,#-1
+        SNE     R6,R1,R2
+        SGT     R7,R1,R2
+        SGT     R8,R2,R1
+        LI      R9,#$FFFF
+        LUI     R10,#$FFFF
+        HALT
+
+        END
+
+
+

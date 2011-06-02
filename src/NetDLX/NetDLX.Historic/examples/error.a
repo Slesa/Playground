@@ -1,0 +1,27 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Error.a     Test error traps                                    ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   16.07.95    Created                                             ;
+; DJV   15.12.95    Mods for changed interrupt handling                 ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE start.i
+
+
+        ; Test the divide by zero error
+
+        LI      R1,#57
+        CLR     R2
+        MOVI2FP F1,R1
+        MOVI2FP F2,R2
+        DIVU    F3,F1,F2
+
+        HALT
+
+        END
+
+
+

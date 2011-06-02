@@ -1,0 +1,54 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       PData.a     Pipeline Data Hazard Test Program                   ;
+;                   Based upon H&P figures 6.7/8 (page 262) and         ;
+;                   JWRG DLX05 slides 9-11                              ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   04.12.95    Created                                             ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+;                                                                       ;
+; To see the effects of data hazards:                                   ;
+;   1. Run this program using hardwired cpu and note results in         ;
+;      the GPR registers.                                               ;
+;   2. Run program using pipelined cpu with all the pipeline settings   ;
+;      at zero (turned off: KB0F0L0) and note the problems with R4      ;
+;      and R6.                                                          ;
+;   3. Turn on the register data hazard stall (KF1) and run again.      ;
+;      This will fix the problems but take 2 cycles longer.             ;
+;   4. Turning on feed forwarding (KF2) will provide the correct        ;
+;      result and take the same time as in 2.                           ;
+;                                                                       ;
+;   Note that it is recommended that the program is run with debug      ;
+;   on (use H1000 to run, if loaded at 1000 hex) and the debug settings ;
+;   at JSp. This will show when stages are stalled. Running with JSP    ;
+;   will also show the values loaded into the internal working          ;
+;   registers.                                                          ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        ; Set up some values so that each source register
+        ; contains its own register number (which makes it
+        ; easy to see what's going on)
+
+        ADDI    R2,R0,#2
+        ADDI    R3,R0,#3
+        ADDI    R5,R0,#5
+        ADDI    R7,R0,#7
+        ADDI    R9,R0,#9
+        ADDI    R11,R0,#11
+
+        ; John Glauert's code
+
+        ADD     R1,R2,R3
+        SUB     R4,R1,R5
+        AND     R6,R1,R7
+        XOR     R8,R1,R9
+        OR      R10,R1,R11
+
+        ; Halt the program
+
+        TRAP    0
+
+

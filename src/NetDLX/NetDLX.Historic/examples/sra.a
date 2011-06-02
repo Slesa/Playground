@@ -1,0 +1,32 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Sra.a       Test SRA and SRAI instructions                      ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   20.07.95    Created                                             ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE start.i
+
+        LHI     R1,#$8080
+        SRAI    R2,R1,#1    ; These should all retain high bits set
+        SRAI    R3,R1,#2
+        SRAI    R4,R1,#3
+        SRAI    R5,R1,#4
+        SRAI    R6,R1,#5
+
+        LHI     R7,#$4080
+        SRAI    R8,R7,#1    ; These should NOT retain high bits set
+        SRAI    R9,R7,#2
+        SRAI    R10,R7,#3
+        SRAI    R11,R7,#4
+        SRAI    R12,R7,#5
+
+        HALT
+
+        END
+
+
+

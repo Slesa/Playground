@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////////////////////////////////
+//	align.a - Test for non-aligned memory access - D. J. Viner
+//////////////////////////////////////////////////////////////////////////////
+//
+//	1.0.0	19.10.1995	Created
+//	1.0.1	18.12.1995	Mods for new start up
+//	1.0.2	03.04.2001	Commented the code properly
+//
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+        INCLUDE "start.i"
+
+        // First test - see if non-longword aligned stores and loads work
+
+        LHI     R1,#$1234		// Set up R1 with #$12345678
+        ORI     R1,R1,#$5678
+        SW      $80(R0),R1		// Store it at 4 locations of which
+        SW      $85(R0),R1		// only the first is longword aligned
+        SW      $8A(R0),R1
+        SW      $8F(R0),R1
+        LW      R2,$82(R0)		// Grab a couple of non-longword aligned
+        SW      $A0(R0),R2		// values and store them at A0/4 to see
+        LW      R2,$87(R0)		// if they also work ok.
+        SW      $A4(R0),R2
+
+		// Second test - see if overlapping stores work. This should
+		// result in a sequence of memory addresses holding $12 plus
+		// a final $34.
+
+        LI      R10,#$100		// Base address into R10
+        LI      R11,#$1234		// Value to store
+
+Loop:   SH      0(R10),R11		// Store R11 at (R10)
+        INC     R10				// Move to next BYTE
+        SEQI    R12,R10,#$120	// Has R10 reached #$120?
+        BEQZ    R12,Loop		// No, then loop
+
+        HALT
+
+        end
+
+
+
+

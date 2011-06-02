@@ -1,0 +1,41 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Num.a       Test floating point numbers and conversion routines ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   14.07.95    Created                                             ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE start.i
+
+
+        LI      R1,#57
+        LI      R2,#7
+        MOVI2FP F1,R1
+        CVTI2D  F29,F1
+        MOVI2FP F2,R2
+        CVTI2D  F30,F2
+        ADDD    F0,F28,F30
+        SUBD    F2,F28,F30
+        MULTD   F4,F28,F30
+        DIVD    F6,F28,F30
+        SD      Num1(R29),F0
+        SD      Num2(R29),F2
+        SD      Num3(R29),F4
+        SD      Num4(R29),F6
+        MOVD    F8,F6
+        LTD     F6,F4
+
+        HALT
+
+Num1    DS.W    2
+Num2    DS.W    2
+Num3    DS.W    2
+Num4    DS.W    2
+
+
+        END
+
+

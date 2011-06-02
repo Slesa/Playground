@@ -1,0 +1,19 @@
+;-------------------------------------------------------------;
+; A DLX program to sum 10 values starting at memory location  ;
+; $3000 and store the result in location $3100                ;
+;-------------------------------------------------------------;
+
+	ADDI	R3,R0,#10
+	ADDI	R1,R0,#$3000
+	ADDI	R2,R0,#0
+
+Again	LW	R4,0(R1)
+	ADDI	R1,R1,#4
+	ADD	R2,R2,R4
+	SUBI	R3,R3,#1
+	BNEZ	R3,Again
+
+	SW	$3100(R0),R2
+
+	END
+

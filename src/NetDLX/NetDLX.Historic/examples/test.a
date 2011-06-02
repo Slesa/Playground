@@ -1,0 +1,44 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Test.a      Original DLX Assembler test code                    ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   27.06.95    Original                                            ;
+; DJV   06.07.95    Macro stuff added                                   ;
+; DJV   15.07.95    Now uses 'standard' R29 for relocation base set in  ;
+;                   macro.i                                             ;
+; DJV   18.12.95    Mods for new start-up                               ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE "start.i"
+
+Rtn     MACRO
+        SUBR
+        LW      \1,\2(R29)
+        ADDUI   \1,\1,#$404
+        SW      \3(R29),\1
+        RTS
+        ENDM
+
+; Start of the code
+
+        JAL     Rtn1
+        JAL     Rtn2
+        NOP
+        LHI     R12,#$FFFF
+        ORI     R12,R12,#$FFFF
+        HALT
+
+Rtn1    Rtn     R1,Data,To
+
+Rtn2    Rtn     R2,To,Data2
+
+Data    DC.B    65,66,67,68
+To      DC.W    0
+Data2   DC.W    0
+
+
+        end
+
+

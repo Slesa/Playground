@@ -1,0 +1,53 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       PLd.a       Pipeline Load Test Program                          ;
+;                   Based upon H&P figure 6.10 (page 265) and           ;
+;                   JWRG DLX05 slides 19-21                             ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   07.12.95    Created                                             ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+;                                                                       ;
+; To see the effects of load hazards:                                   ;
+;   1. Place the WORD (32-bit) value 1 at location 32 (20 hex).         ;
+;   2. Run this program using hardwired cpu and note results in         ;
+;      the GPR registers.                                               ;
+;   3. Run program using pipelined cpu with all the pipeline settings   ;
+;      at zero (turned off: KB0F0L0) and note the problems with R4      ;
+;      and R5.                                                          ;
+;   4. Turn on the Load Hazard detection (KL1) and run again. This      ;
+;      should fix the R5 result.                                        ;
+;   5. Adding the load delay slot is only successful in association     ;
+;      with feed forwarding. Turn this on (KF2) and run again which     ;
+;      should return the same results as in 2.                          ;
+;                                                                       ;
+;   Note that it is recommended that the program is run with debug      ;
+;   on (use H1000 to run, if loaded at 1000 hex) and the debug settings ;
+;   at JSp. This will show when stages are stalled. Running with JSP    ;
+;   will also show the values loaded into the internal working          ;
+;   registers.                                                          ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        ; Set up some values in the registers that will be used
+
+        ADDI    R2,R0,#0
+        ADDI    R7,R0,#7
+        ADDI    R8,R0,#8
+
+        ; Do load - it is up to the user to store something at
+        ; 32 (0x20) before running the program
+
+        LW      R1,32(R2)
+        ADD     R4,R1,R7
+        SUB     R5,R1,R8
+        AND     R6,R1,R7
+
+        ; Halt the program
+
+        TRAP    0
+
+;-----------------------------------------------------------------------;
+
+

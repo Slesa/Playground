@@ -1,0 +1,29 @@
+;-----------------------------------------------------------------------;
+;                                                                       ;
+;       Trap.a      Test TRAP and RFE                                   ;
+;                                                                       ;
+;       Updates                                                         ;
+; DJV   13.07.95    Created                                             ;
+; DJV   15.07.95    Made fully relocatable                              ;
+; DJV   23.07.95    Now uses L32O to load Int pointer and offset        ;
+; DJV   18.12.95    Mods for new start-up                               ;
+; DJV   08.01.96    Fixed print bug                                     ;
+;                                                                       ;
+;-----------------------------------------------------------------------;
+
+        INCLUDE start.i
+
+
+        L32O    R1,Int          ; Initialise pointer to interrupt
+                                ; at longword vector 16 (16 * 4 = 64)
+        SW      64(R0),R1       ; ...and store in vector
+        TRAP    64              ; call it
+        HALT
+
+Int     JSRA    PRINT
+        DC.B    'Interrupt at location $40',10,0
+        RFE
+
+        END
+
+
