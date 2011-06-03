@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundaryException.cs" />
     <Compile Include="Cpu.cs" />
     <Compile Include="IFpu.cs" />
     <Compile Include="IMmu.cs" />
