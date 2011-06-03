@@ -82,12 +82,10 @@
     <ClInclude Include="dis.h" />
     <ClInclude Include="dsym.h" />
     <ClInclude Include="io.h" />
-    <ClInclude Include="machine.h" />
     <ClInclude Include="masm.h" />
     <ClInclude Include="micro.h" />
     <ClInclude Include="mon.h" />
     <ClInclude Include="msym.h" />
-    <ClInclude Include="system.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpu.c" />

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="system.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cpu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -34,9 +31,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="io.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="machine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="masm.h">
