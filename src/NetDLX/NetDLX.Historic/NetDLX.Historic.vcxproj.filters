@@ -33,9 +33,6 @@
     <ClInclude Include="io.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="masm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="micro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -71,9 +68,6 @@
     <ClCompile Include="dasm2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dasmlink.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dis.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -92,9 +86,6 @@
     <ClCompile Include="masm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="masmlink.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="mem.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,9 +96,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mon3.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="monlink.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="msym.c">

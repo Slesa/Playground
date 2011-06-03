@@ -82,7 +82,6 @@
     <ClInclude Include="dis.h" />
     <ClInclude Include="dsym.h" />
     <ClInclude Include="io.h" />
-    <ClInclude Include="masm.h" />
     <ClInclude Include="micro.h" />
     <ClInclude Include="mon.h" />
     <ClInclude Include="msym.h" />
@@ -94,19 +93,16 @@
     <ClCompile Include="cpup.c" />
     <ClCompile Include="dasm.c" />
     <ClCompile Include="dasm2.c" />
-    <ClCompile Include="dasmlink.c" />
     <ClCompile Include="dis.c" />
     <ClCompile Include="dsym.c" />
     <ClCompile Include="help.c" />
     <ClCompile Include="ini.c" />
     <ClCompile Include="io.c" />
     <ClCompile Include="masm.c" />
-    <ClCompile Include="masmlink.c" />
     <ClCompile Include="mem.c" />
     <ClCompile Include="mon.c" />
     <ClCompile Include="mon2.c" />
     <ClCompile Include="mon3.c" />
-    <ClCompile Include="monlink.c" />
     <ClCompile Include="msym.c" />
     <ClCompile Include="udlink.c" />
     <ClCompile Include="unpack.c" />
