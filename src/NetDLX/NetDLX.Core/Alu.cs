@@ -6,47 +6,47 @@ namespace NetDLX.Core
     {
         public UInt32 Add(UInt32 a, UInt32 b)
         {
-            return 0;
+            return a+b;
         }
 
         public UInt32 Sub(UInt32 a, UInt32 b)
         {
-            return 0;
+            return a-b;
         }
 
         public float Mult(float a, float b)
         {
-            return 0;
+            return a*b;
         }
 
         public float Div(float a, float b)
         {
-            return 0;
+            return a/b;
         }
 
         public double Mult(double a, double b)
         {
-            return 0;
+            return a*b;
         }
 
         public double Div(double a, double b)
         {
-            return 0;
+            return a/b;
         }
 
         public UInt32 And(UInt32 a, UInt32 b)
         {
-            return 0;
+            return a&b;
         }
 
         public UInt32 Or(UInt32 a, UInt32 b)
         {
-            return 0;
+            return a|b;
         }
 
         public UInt32 Xor(UInt32 a, UInt32 b)
         {
-            return 0;
+            return a^b;
         }
 
         public UInt32 Lhh(UInt16 value)

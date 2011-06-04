@@ -72,9 +72,10 @@ namespace NetDLX.Core.Specs
     }
 
     [Subject(typeof(Mmu))]
-    public class When_reading_same_adress_in_different_bits : WithSubject<Mmu>
+    public class When_reading_same_address_in_different_bits : WithSubject<Mmu>
     {
         Establish context = () => Subject.WriteWord(address, 0xFEDBCA98);
+
         Because of = () =>
             {
                 _halfword1 = Subject.ReadHalfWord(address);

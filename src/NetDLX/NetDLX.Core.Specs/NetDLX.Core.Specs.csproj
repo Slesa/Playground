@@ -48,8 +48,10 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AluSpecs.cs" />
     <Compile Include="MmuSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

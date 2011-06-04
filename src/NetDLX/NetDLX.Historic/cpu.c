@@ -15,9 +15,9 @@ BPTYPE  BP;
 struct DecodeTables DecodeT [128] =
 {
 
-                        //~~~~~~~~~~~
-                        // I/J Types
-                        //~~~~~~~~~~~
+						//~~~~~~~~~~~
+						// I/J Types
+						//~~~~~~~~~~~
 
 //                          Dec1     Dec2   Type     F/Len    D12
 /* TRAP    000000 00 00 */  TRAP,    ERROR, T_Other, US | 4, "   ",
@@ -95,9 +95,9 @@ struct DecodeTables DecodeT [128] =
 /* -       111110 F8 3E */  ERROR,   ERROR, T_None,      0,  "   ",
 /* RRRR    111111 FC 3F */  RTYPE,   ERROR, T_None,      0,  "   ",
 
-                        //~~~~~~~~~
-                        // R Types
-                        //~~~~~~~~~
+						//~~~~~~~~~
+						// R Types
+						//~~~~~~~~~
 
 /* MOVS2I  000000 00 00 */  MOVS2I,  ERROR, T_Move,      4,  "RS ",
 /* MOVI2S  000001 04 01 */  MOVI2S,  ERROR, T_Move,      4,  "SR ",
@@ -179,45 +179,45 @@ struct DecodeTables DecodeT [128] =
 
 VOID SetRegisterTypes (ULONG IR, UBYTE *Src1, UBYTE *Src2, UBYTE *Dest)
 {
-    UBYTE   Op = ((IR >> 26) & 0x3F), i, *p;
+	UBYTE   Op = ((IR >> 26) & 0x3F), i, *p;
 
 
-    if (Op == 0x3F) // If R Type then access the 2nd half of the table
-        Op = (IR & 0x3F) + 64;
+	if (Op == 0x3F) // If R Type then access the 2nd half of the table
+		Op = (IR & 0x3F) + 64;
 
-    for (i = 0; i < 3; i++)
-    {
-        switch (i)
-        {
-            case 0 : p = Dest; break;
-            case 1 : p = Src1; break;
-            case 2 : p = Src2;
-        }
+	for (i = 0; i < 3; i++)
+	{
+		switch (i)
+		{
+			case 0 : p = Dest; break;
+			case 1 : p = Src1; break;
+			case 2 : p = Src2;
+		}
 
-        *p = NA;    // Default to 'NotApplicable'
+		*p = NA;    // Default to 'NotApplicable'
 
-        switch (DecodeT [Op].Regs [i])
-        {
-            case 'R' : // case ' ' :
-                *p = INT;
-                break;
+		switch (DecodeT [Op].Regs [i])
+		{
+			case 'R' : // case ' ' :
+				*p = INT;
+				break;
 
-            case 'I' :
-                *p = INTFP;
-                break;
+			case 'I' :
+				*p = INTFP;
+				break;
 
-            case 'F' :
-                *p = FPS;
-                break;
+			case 'F' :
+				*p = FPS;
+				break;
 
-            case 'D' :
-                *p = FPD;
-                break;
+			case 'D' :
+				*p = FPD;
+				break;
 
-            case 'S' :
-                *p = SPEC;
-        }
-    }
+			case 'S' :
+				*p = SPEC;
+		}
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -228,9 +228,9 @@ VOID SetRegisterTypes (ULONG IR, UBYTE *Src1, UBYTE *Src2, UBYTE *Dest)
 
 VOID DecodeIType (ULONG Instr, UBYTE *d, UBYTE *s, WORD *i)
 {
-    *s = (Instr & 0x03E00000) >> 21;
-    *d = (Instr & 0x001F0000) >> 16;
-    *i = Instr & 0x0000FFFF;
+	*s = (Instr & 0x03E00000) >> 21;
+	*d = (Instr & 0x001F0000) >> 16;
+	*i = Instr & 0x0000FFFF;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -241,10 +241,10 @@ VOID DecodeIType (ULONG Instr, UBYTE *d, UBYTE *s, WORD *i)
 
 VOID DecodeRType (ULONG Instr, UBYTE *d, UBYTE *s1, UBYTE *s2, WORD *f)
 {
-    *s1 = (Instr & 0x03E00000) >> 21;
-    *s2 = (Instr & 0x001F0000) >> 16;
-    *d  = (Instr & 0x0000F800) >> 11;
-    *f  = Instr & 0x000007FF;
+	*s1 = (Instr & 0x03E00000) >> 21;
+	*s2 = (Instr & 0x001F0000) >> 16;
+	*d  = (Instr & 0x0000F800) >> 11;
+	*f  = Instr & 0x000007FF;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -255,12 +255,12 @@ VOID DecodeRType (ULONG Instr, UBYTE *d, UBYTE *s1, UBYTE *s2, WORD *f)
 
 VOID DecodeJType (ULONG Instr, LONG *n)
 {
-    *n  = Instr & 0x03FFFFFF;
+	*n  = Instr & 0x03FFFFFF;
 
-    // Check for -ve offset and force top 6 bits to 1 if so
+	// Check for -ve offset and force top 6 bits to 1 if so
 
-    if (*n & 0x02000000)
-        *n |= 0xFC000000;
+	if (*n & 0x02000000)
+		*n |= 0xFC000000;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -269,118 +269,60 @@ VOID DecodeJType (ULONG Instr, LONG *n)
 
 VOID IncClock (ULONG Num)
 {
-    // Ignore if breakpoint set (i.e. doing a TRAP 0)
+	// Ignore if breakpoint set (i.e. doing a TRAP 0)
 
-    if (!BP.Copy)
-    {
-        dlx.Cycles += Num;
-        dlx.Clock += Num;
+	if (!BP.Copy)
+	{
+		dlx.Cycles += Num;
+		dlx.Clock += Num;
 
-        if (dlx.Type & TIMERON)
-        {
-            if (timer.Timer1Status & T_ENABLED)
-            {
-                timer.Timer1Count += Num;
+		if (dlx.Type & TIMERON)
+		{
+			if (timer.Timer1Status & T_ENABLED)
+			{
+				timer.Timer1Count += Num;
 
-                if (timer.Timer1Count >= timer.Timer1Latch)
-                {
-                    SetInterrupt (INT_TIMER);
-                    timer.Timer1Status |= T_INTERRUPT;
-                    timer.Timer1Count = 0;
-                }
-            }
+				if (timer.Timer1Count >= timer.Timer1Latch)
+				{
+					SetInterrupt (INT_TIMER);
+					timer.Timer1Status |= T_INTERRUPT;
+					timer.Timer1Count = 0;
+				}
+			}
 
-            if (timer.Timer2Status & T_ENABLED)
-            {
-                timer.Timer2Count += Num;
+			if (timer.Timer2Status & T_ENABLED)
+			{
+				timer.Timer2Count += Num;
 
-                if (timer.Timer2Count >= timer.Timer2Latch)
-                {
-                    SetInterrupt (INT_TIMER);
-                    timer.Timer2Status |= T_INTERRUPT;
-                    timer.Timer2Count = 0;
-                }
-            }
+				if (timer.Timer2Count >= timer.Timer2Latch)
+				{
+					SetInterrupt (INT_TIMER);
+					timer.Timer2Status |= T_INTERRUPT;
+					timer.Timer2Count = 0;
+				}
+			}
 
-            if (timer.Timer2Status & T_ENABLED)
-            {
-                timer.Timer2Count += Num;
+			if (timer.Timer2Status & T_ENABLED)
+			{
+				timer.Timer2Count += Num;
 
-                if (timer.Timer3Count >= timer.Timer3Latch)
-                {
-                    SetInterrupt (INT_TIMER);
-                    timer.Timer3Status |= T_INTERRUPT;
-                    timer.Timer3Count = 0;
-                }
-            }
-        }
-    }
+				if (timer.Timer3Count >= timer.Timer3Latch)
+				{
+					SetInterrupt (INT_TIMER);
+					timer.Timer3Status |= T_INTERRUPT;
+					timer.Timer3Count = 0;
+				}
+			}
+		}
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
 VOID SetInterrupt (ULONG Int)
 {
-    dlx.IStatus |= Int;
+	dlx.IStatus |= Int;
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// Ctrl-C/A routines to break into program (Amiga and PC only currently)
-/////////////////////////////////////////////////////////////////////////////////////////
-
-#ifdef AMIGA
-void __regargs _CXBRK (void)
-{
-    dlx.Running = FALSE;
-    printf ("**Break\n");
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-VOID CheckCtrlC ()
-{
-    chkabort ();
-}
-#endif
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-#ifdef UNIX
-VOID CheckCtrlC ()
-{
-}
-#endif
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-#ifdef MAC
-VOID CheckCtrlC ()
-{
-}
-#endif
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// This routine modified from the Turbo C example keyboard code
-/////////////////////////////////////////////////////////////////////////////////////////
-
-#ifdef Pc
-VOID CheckCtrlC ()
-{
-    int key, modifiers;
-
-    if (bioskey (1))
-    {
-        key = bioskey (0);
-        modifiers = bioskey (2);
-
-        if (modifiers & 4 && (key == 0x1E01 || key == 0x2E03))
-        {
-            dlx.Running = FALSE;
-            printf ("**Break\n");
-        }
-    }
-}
-#endif
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // Call the relevant module to execute each machine instruction
@@ -388,19 +330,19 @@ VOID CheckCtrlC ()
 
 BOOL RunOneInstr (BOOL Debug)
 {
-    switch (SIMTYPE)
-    {
-        case HARDWIRED :
-            return RunOneHardwiredInstr (Debug);
+	switch (SIMTYPE)
+	{
+		case HARDWIRED :
+			return RunOneHardwiredInstr (Debug);
 
-        case MICROCODE :
-            return RunOneMicrocodeInstr (Debug);
+		case MICROCODE :
+			return RunOneMicrocodeInstr (Debug);
 
-        case PIPELINED :
-            return RunOnePipelinedInstr (Debug);
-    }
+		case PIPELINED :
+			return RunOnePipelinedInstr (Debug);
+	}
 
-    return FALSE;
+	return FALSE;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -409,20 +351,12 @@ BOOL RunOneInstr (BOOL Debug)
 
 VOID Run (BOOL Debug)
 {
-    dlx.Running = TRUE;
+	dlx.Running = TRUE;
 
-    do {
-        dlx.Running = RunOneInstr (Debug);
-        CheckCtrlC ();
-    } while (dlx.Running);
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-VOID ErrorExit ()
-{
-    free (dlx.Memory);
-    exit (20);
+	do {
+		dlx.Running = RunOneInstr (Debug);
+		CheckCtrlC ();
+	} while (dlx.Running);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -432,34 +366,34 @@ VOID ErrorExit ()
 
 VOID ClearDLXRegs (BOOL All)
 {
-    WORD    i;
+	WORD    i;
 
 
-    dlx.Instr = dlx.IDone = dlx.IStart = 0;
-    dlx.Clock = dlx.Cycles = dlx.IStatus = 0;
+	dlx.Instr = dlx.IDone = dlx.IStart = 0;
+	dlx.Clock = dlx.Cycles = dlx.IStatus = 0;
 
-    dlx.Loads = dlx.Stores = dlx.ALU = dlx.Set = 0;
-    dlx.Jumps = dlx.JALs = dlx.Move = dlx.Convert = 0;
-    dlx.BranchTaken = dlx.BranchNotTaken = dlx.TrapRfe = 0;
-    BP.Copy = BP.PC = 0;
+	dlx.Loads = dlx.Stores = dlx.ALU = dlx.Set = 0;
+	dlx.Jumps = dlx.JALs = dlx.Move = dlx.Convert = 0;
+	dlx.BranchTaken = dlx.BranchNotTaken = dlx.TrapRfe = 0;
+	BP.Copy = BP.PC = 0;
 
-    dlx.Trapped = FALSE;
+	dlx.Trapped = FALSE;
 
-    for (i = IF; i <= WB; i++)
-        dlx.Pipe [i].Status = FLUSH;
+	for (i = IF; i <= WB; i++)
+		dlx.Pipe [i].Status = FLUSH;
 
-    if (All)
-    {
-        for (i = 0; i < 32; i++)
-        {
-            dlx.R [i] = 0;
-            dlx.FP.I [i] = 0;
-        }
+	if (All)
+	{
+		for (i = 0; i < 32; i++)
+		{
+			dlx.R [i] = 0;
+			dlx.FP.I [i] = 0;
+		}
 
-        dlx.PC = dlx.IAR = dlx.FPStatus = 0;
-        dlx.MAR = dlx.MDR = dlx.Temp = 0;
-        dlx.RegA = dlx.RegB = dlx.RegC = 0;
-    }
+		dlx.PC = dlx.IAR = dlx.FPStatus = 0;
+		dlx.MAR = dlx.MDR = dlx.Temp = 0;
+		dlx.RegA = dlx.RegB = dlx.RegC = 0;
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -468,24 +402,24 @@ VOID ClearDLXRegs (BOOL All)
 
 VOID LoadMicrocode (STRPTR FName, BOOL MainTable)
 {
-    UWORD   i;
-    FILE    *f;
-    ULONG   Sz;
-    UBYTE   Conv1 [4], Conv2 [4], j;
-    BOOL    McErr = FALSE, Open = FALSE;
+	UWORD   i;
+	FILE    *f;
+	ULONG   Sz;
+	UBYTE   Conv1 [4], Conv2 [4], j;
+	BOOL    McErr = FALSE, Open = FALSE;
 
 
-    f = fopen (FName, "rb");
+	f = fopen (FName, "rb");
 
-    if (!f)
-    {
-        printf ("Cannot open microcode table file '%s'\n", FName);
-        McErr = TRUE;
-    }
-    else
-        Open = TRUE;
+	if (!f)
+	{
+		printf ("Cannot open microcode table file '%s'\n", FName);
+		McErr = TRUE;
+	}
+	else
+		Open = TRUE;
 
-    if (!McErr)
+	if (!McErr)
 		for (i = 0; i < MICROSIZE && !McErr; i++)
 		{
 			Sz = fread (Conv2, 1, 4, f);
@@ -507,44 +441,44 @@ VOID LoadMicrocode (STRPTR FName, BOOL MainTable)
 				memcpy (&dlx.Microcode [i], Conv2, 4);
 		}
 
-    if (!McErr)
-    {
-        Sz = fread (dlx.MicroJump, 1, MICROSIZE, f);
+	if (!McErr)
+	{
+		Sz = fread (dlx.MicroJump, 1, MICROSIZE, f);
 
-        if (Sz != MICROSIZE)
-        {
-            printf ("Read MicroJump error (%ld/%lX)\n", Sz, ftell (f));
-            McErr = TRUE;
-        }
-    }
+		if (Sz != MICROSIZE)
+		{
+			printf ("Read MicroJump error (%ld/%lX)\n", Sz, ftell (f));
+			McErr = TRUE;
+		}
+	}
 
-    if (!McErr)
-    {
-        Sz = fread (dlx.Decode1, 1, DECODE1SIZE, f);
+	if (!McErr)
+	{
+		Sz = fread (dlx.Decode1, 1, DECODE1SIZE, f);
 
-        if (Sz != DECODE1SIZE)
-        {
-            printf ("Read Decode1 error (%ld/%lX)\n", Sz, ftell (f));
-            McErr = TRUE;
-        }
-    }
+		if (Sz != DECODE1SIZE)
+		{
+			printf ("Read Decode1 error (%ld/%lX)\n", Sz, ftell (f));
+			McErr = TRUE;
+		}
+	}
 
-    if (!McErr)
-    {
-        Sz = fread (dlx.Decode2, 1, DECODE2SIZE, f);
+	if (!McErr)
+	{
+		Sz = fread (dlx.Decode2, 1, DECODE2SIZE, f);
 
-        if (Sz != DECODE2SIZE)
-        {
-            printf ("Read Decode2 error (%ld/%lX)\n", Sz, ftell (f));
-            McErr = TRUE;
-        }
-    }
+		if (Sz != DECODE2SIZE)
+		{
+			printf ("Read Decode2 error (%ld/%lX)\n", Sz, ftell (f));
+			McErr = TRUE;
+		}
+	}
 
-    if (Open)
-        fclose (f);
+	if (Open)
+		fclose (f);
 
-    if (McErr && MainTable)
-        ErrorExit ();
+	if (McErr && MainTable)
+		ErrorExit ();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -554,64 +488,60 @@ VOID LoadMicrocode (STRPTR FName, BOOL MainTable)
 
 BOOL InitCpu ()
 {
-    FILE    *f;
-    UBYTE   Txt [82];
+	FILE    *f;
+	UBYTE   Txt [82];
 
-    // Set defaults
+	// Set defaults
 
-    memset (&dlx, 0, sizeof (dlx));
+	memset (&dlx, 0, sizeof (dlx));
 
-    dlx.Type = HARDWIRED | TIMERON | TRAPSON | MOVESON | VECTORTRAPS;
+	dlx.Type = HARDWIRED | TIMERON | TRAPSON | MOVESON | VECTORTRAPS;
 
-    dlx.SizeOfMem = 0x40000;  // Start with 256K
+	dlx.SizeOfMem = 0x40000;  // Start with 256K
 
-    // Read in the microcode tables
+	// Read in the microcode tables
 
-    LoadMicrocode ("dlxmcode.tbl", TRUE);
+	LoadMicrocode ("dlxmcode.tbl", TRUE);
 
-    // Allow user settings to alter defaults
+	// Allow user settings to alter defaults
 
-    ReadIni ();
+	ReadIni ();
 
-    // Ignore calls for greater than 63K on Turbo-C on an MS-DOS-based PC
-    // until calloc probs fixed
+	// Ignore calls for greater than 63K on Turbo-C on an MS-DOS-based PC
+	// until calloc probs fixed
 
 //  if (LittleEndian && dlx.SizeOfMem > 0xFC00)
 //      dlx.SizeOfMem = 0xFC00;
 
-    // Allocate some system memory
+	// Allocate some system memory
 
-    do {
-        dlx.Memory = (STRPTR) calloc (1, dlx.SizeOfMem);
+	do {
+		dlx.Memory = (STRPTR) calloc (1, dlx.SizeOfMem);
 
-        if (!dlx.Memory)    // If failed then try with half size
-            dlx.SizeOfMem /= 2;
+		if (!dlx.Memory)    // If failed then try with half size
+			dlx.SizeOfMem /= 2;
 
-    } while (!dlx.Memory && dlx.SizeOfMem > 16384);
+	} while (!dlx.Memory && dlx.SizeOfMem > 16384);
 
-    if (!dlx.Memory)
-        return FALSE;
+	if (!dlx.Memory)
+		return FALSE;
 
-    // Autoload any required files
+	// Autoload any required files
 
-    f = fopen ("dlxaload.lst", "rb");
+	f = fopen ("dlxaload.lst", "rb");
 
-    if (f)
-    {
-        while (!feof (f))
-        {
-            fgets (Txt, 80, f);
+	if (f)
+	{
+		while (!feof (f))
+		{
+			fgets (Txt, 80, f);
 
-            if (Txt [0] > ' ')
-                DoLoad (Txt, FALSE);
-        }
+			if (Txt [0] > ' ')
+				DoLoad (Txt, FALSE);
+		}
 
-        fclose (f);
-    }
+		fclose (f);
+	}
 
-    return TRUE;
+	return TRUE;
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-
