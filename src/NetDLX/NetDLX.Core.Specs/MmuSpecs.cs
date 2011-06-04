@@ -106,7 +106,7 @@ namespace NetDLX.Core.Specs
     }
 
     [Subject(typeof(Mmu))]
-    public class When_reading_exceeding_memory_space : WithSubject<Mmu>
+    public class When_reading_exceeds_memory_space : WithSubject<Mmu>
     {
         Because of = () =>
             {
@@ -125,7 +125,7 @@ namespace NetDLX.Core.Specs
     }
 
     [Subject(typeof(Mmu))]
-    public class When_writing_exceeding_memory_space : WithSubject<Mmu>
+    public class When_writing_exceeds_memory_space : WithSubject<Mmu>
     {
         Because of = () =>
             {

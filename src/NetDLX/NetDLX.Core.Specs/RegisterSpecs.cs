@@ -102,7 +102,7 @@ namespace NetDLX.Core.Specs
     }
 
     [Subject(typeof(Mmu))]
-    public class When_reading_exceeding_register_count : WithSubject<Registers>
+    public class When_reading_exceeds_register_count : WithSubject<Registers>
     {
         Because of = () =>
         {
@@ -132,12 +132,15 @@ namespace NetDLX.Core.Specs
     }
 
     [Subject(typeof(Mmu))]
-    public class When_writing_exceeding_register_count : WithSubject<Registers>
+    public class When_writing_exceeds_register_count : WithSubject<Registers>
     {
         Because of = () =>
         {
+            _word0Error = Catch.Exception(() => Subject.WriteWord(0, 1));
             _wordError = Catch.Exception(() => Subject.WriteWord(Subject.NumberOfRegisters, 1));
+            _half0Error = Catch.Exception(() => Subject.WriteHalfWord(0, 1));
             _halfError = Catch.Exception(() => Subject.WriteHalfWord(Subject.NumberOfRegisters, 1));
+            _byte0Error = Catch.Exception(() => Subject.WriteByte(0, 1));
             _byteError = Catch.Exception(() => Subject.WriteByte(Subject.NumberOfRegisters, 1));
 
             _floatError = Catch.Exception(() => Subject.WriteFloat(Subject.NumberOfFloatRegisters, 1));
@@ -145,16 +148,22 @@ namespace NetDLX.Core.Specs
             _fWordError = Catch.Exception(() => Subject.WriteFWord(Subject.NumberOfFloatRegisters, 1));
         };
 
+        It should_fail_for_word_at_register_zero = () => _word0Error.ShouldBeOfType(typeof (BoundaryException));
         It should_fail_for_words = () => _wordError.ShouldBeOfType(typeof(BoundaryException));
+        It should_fail_for_half_word_at_register_zero = () => _half0Error.ShouldBeOfType(typeof(BoundaryException));
         It should_fail_for_half_words = () => _halfError.ShouldBeOfType(typeof(BoundaryException));
+        It should_fail_for_byteat_register_zero = () => _byte0Error.ShouldBeOfType(typeof(BoundaryException));
         It should_fail_for_bytes = () => _byteError.ShouldBeOfType(typeof(BoundaryException));
 
         It should_fail_for_floats = () => _floatError.ShouldBeOfType(typeof (BoundaryException));
         It should_fail_for_doubles = () => _doubleError.ShouldBeOfType(typeof (BoundaryException));
         It should_fail_for_floating_words = () => _fWordError.ShouldBeOfType(typeof (BoundaryException));
 
+        static Exception _word0Error;
         static Exception _wordError;
+        static Exception _half0Error;
         static Exception _halfError;
+        static Exception _byte0Error;
         static Exception _byteError;
         static Exception _floatError;
         static Exception _doubleError;

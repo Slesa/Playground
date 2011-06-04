@@ -34,7 +34,7 @@ namespace NetDLX.Core
 
         public void WriteWord(uint register, UInt32 value)
         {
-            if (register >= NumberOfRegisters)
+            if (register==0 || register >= NumberOfRegisters)
                 throw new BoundaryException();
             R[register] = value;
         }
@@ -48,7 +48,7 @@ namespace NetDLX.Core
 
         public void WriteHalfWord(uint register, UInt16 value)
         {
-            if (register >= NumberOfRegisters)
+            if (register==0 || register >= NumberOfRegisters)
                 throw new BoundaryException();
             R[register] = value;
         }
@@ -62,7 +62,7 @@ namespace NetDLX.Core
 
         public void WriteByte(uint register, Byte value)
         {
-            if (register >= NumberOfRegisters)
+            if (register==0 || register >= NumberOfRegisters)
                 throw new BoundaryException();
             R[register] = value;
         }
