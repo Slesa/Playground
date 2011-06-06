@@ -1,6 +1,6 @@
 using System;
 
-namespace NetDLX.Core
+namespace NetDLX.Core.Exceptions
 {
     public class BoundaryException : Exception
     {

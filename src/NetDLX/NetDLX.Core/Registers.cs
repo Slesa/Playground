@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using NetDLX.Core.Exceptions;
 
 namespace NetDLX.Core
 {

@@ -1,4 +1,5 @@
 using System;
+using NetDLX.Core.Exceptions;
 
 namespace NetDLX.Core
 {

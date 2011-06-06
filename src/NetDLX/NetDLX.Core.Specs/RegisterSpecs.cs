@@ -1,6 +1,7 @@
 using System;
 using Machine.Fakes;
 using Machine.Specifications;
+using NetDLX.Core.Exceptions;
 
 namespace NetDLX.Core.Specs
 {
