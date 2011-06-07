@@ -5,33 +5,29 @@ using NetDLX.Core.Exceptions;
 
 namespace NetDLX.Core
 {
-    public class AssembleData : IAssemble
+    public class AssembleData : AssembleBase, IAssemble
     {
-        struct OpCode
+        class Command
         {
-            public string Mnemonic;
-            public Byte Command;
-            public uint Operands;
+            public string Mnemonic { get; set; }
+            public Byte OpCode { get; set; }
+            public string Operands { get; set; }
         }
 
-        IEnumerable<OpCode> KnownCommands = new List<OpCode>
+        IEnumerable<Command> KnownCommands = new List<Command>
             {
-                new OpCode {Mnemonic = "LB", Command = 0x10, Operands = 2},
-            };
-        Dictionary<string, Byte> Commands = new Dictionary<string, byte>
-            {
-                {"LB",   0x10},          // 010000
-                {"LBU",  0x11},          // 010001
-                {"LH",   0x12},          // 010010
-                {"LHU",  0x13},          // 010011
-                {"LW",   0x14},          // 010100
-                {"LF",   0x16},          // 010110
-                {"LD",   0x17},          // 010111
-                {"SB",   0x18},          // 011000
-                {"SH",   0x1A},          // 011010
-                {"SW",   0x1C},          // 011100
-                {"SF",   0x1E},          // 011110
-                {"SD",   0x1F},          // 011111
+                new Command {Mnemonic = "LB", OpCode = 0x10, Operands = "RR"},          // 010000
+                new Command {Mnemonic = "LBU", OpCode = 0x11, Operands = "RR"},         // 010001
+                new Command {Mnemonic = "LH", OpCode = 0x12, Operands = "RR"},          // 010010
+                new Command {Mnemonic = "LHU", OpCode = 0x13, Operands = "RR"},         // 010011
+                new Command {Mnemonic = "LW", OpCode = 0x14, Operands = "RR"},          // 010100
+                new Command {Mnemonic = "LF", OpCode = 0x16, Operands = "RR"},          // 010110
+                new Command {Mnemonic = "LD", OpCode = 0x17, Operands = "RR"},          // 010111
+                new Command {Mnemonic = "SB", OpCode = 0x18, Operands = "RR"},          // 011000
+                new Command {Mnemonic = "SH", OpCode = 0x1A, Operands = "RR"},          // 011010
+                new Command {Mnemonic = "SW", OpCode = 0x1C, Operands = "RR"},          // 011100
+                new Command {Mnemonic = "SF", OpCode = 0x1E, Operands = "RR"},          // 011110
+                new Command {Mnemonic = "SD", OpCode = 0x1F, Operands = "RR"},          // 011111
             };
 
         public bool CanAssemble(string command)
@@ -44,21 +40,27 @@ namespace NetDLX.Core
         {
             var query = from o in KnownCommands where o.Mnemonic == command.ToUpper() select o;
             var op = query.FirstOrDefault();
+            if( op==null )
+                throw new UnknownCommandException();
             
-            if( args.Count()<op.Operands )
+            if( args==null || args.Count()<op.Operands.Length )
                 throw new SyntaxErrorException();
 
-            var op1 = AssembleOperands.TranslateGpRegister(args[0]);
-            var op2 = AssembleOperands.TranslateGpRegister(args[1]);
+            var opcode = (UInt32)(op.OpCode<<26);
+            if (op.Operands.Length > 1)
+            {
+                var op1 = TranslateRegister(op.Operands[0], args[0]);
+                opcode |= op1 << 21;
+            }
+            if (op.Operands.Length > 2)
+            {
+                var op2 = TranslateRegister(op.Operands[1], args[1]);
+                opcode |= op2 << 16;
+            }
 
-            return (UInt32)(op.Command << 26);
-            /*            if(op==null)
-                throw new UnknownCommandException();
-            if( args.Count() !=op. )
-            Byte opCode;
-            if( !Commands.TryGetValue(command, out opCode) )
-            if( !)
-            }? 0u : opCode */
+            return opcode;
         }
+
+
     }
 }

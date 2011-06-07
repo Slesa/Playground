@@ -40,10 +40,11 @@
     <Compile Include="AssembleData.cs" />
     <Compile Include="Exceptions\BoundaryException.cs" />
     <Compile Include="Cpu.cs" />
+    <Compile Include="Exceptions\InvalidRegisterException.cs" />
     <Compile Include="Exceptions\SyntaxErrorException.cs" />
     <Compile Include="Exceptions\UnknownCommandException.cs" />
     <Compile Include="IAssemble.cs" />
-    <Compile Include="AssembleOperands.cs" />
+    <Compile Include="AssembleBase.cs" />
     <Compile Include="IFpu.cs" />
     <Compile Include="IMmu.cs" />
     <Compile Include="IRegisters.cs" />
