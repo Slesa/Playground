@@ -11,8 +11,8 @@ ClientBin/
 .moc/
 tmp/
 opt/
-*.chache
-.docstates
+*.cache
+*.docstates
 *.sdf
 *.opensdf
 *.idb

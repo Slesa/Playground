@@ -39,6 +39,7 @@
     <Compile Include="Alu.cs" />
     <Compile Include="AssembleArithmetic.cs" />
     <Compile Include="AssembleData.cs" />
+    <Compile Include="Assembler.cs" />
     <Compile Include="CpuOperation.cs" />
     <Compile Include="Exceptions\BoundaryException.cs" />
     <Compile Include="Cpu.cs" />
