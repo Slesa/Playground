@@ -1,67 +1,42 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using NetDLX.Core.Exceptions;
 
 namespace NetDLX.Core
 {
-    public class AssembleBase 
+    public static class AssembleBase
     {
-        public uint TranslateRegister(char shorten, string specific)
+        public static bool CanAssemble(string command, IEnumerable<CpuOperation> knownCommands)
         {
-            if (shorten == 'R')
-                return TranslateGpRegister(specific);
-            if (shorten == 'F')
-                return TranslateFpRegister(specific);
-            if (shorten == 'D')
-                return TranslateDpRegister(specific);
-            if (shorten == 'I')
-                return TranslateImmediate(specific);
-            throw new InvalidRegisterException();
+            var found = knownCommands.Count(op => op.Mnemonic == command.ToUpper());
+            return found > 0;
         }
 
-        static uint TranslateImmediate(string specific)
+        public static UInt32 Assemble(string command, string[] args, IEnumerable<CpuOperation> knownCommands)
         {
-            return ExtractWord(specific);
-        }
+            var query = from o in knownCommands where o.Mnemonic == command.ToUpper() select o;
+            var op = query.FirstOrDefault();
+            if (op == null)
+                throw new UnknownCommandException();
 
-        static uint TranslateGpRegister(string register)
-        {
-            var reg = register.ToLower();
-            if (!reg.StartsWith("r"))
+            if (args == null || args.Count() < op.Operands.Length)
                 throw new SyntaxErrorException();
-            var id = ExtractWord(reg.Substring(1));
-            if (id >= 32)
-                throw new InvalidRegisterException();
-            return id;
+
+            var opcode = (UInt32)(op.OpCode << 26);
+            if (op.Operands.Length > 1)
+            {
+                var op1 = TranslateOperands.Translate(op.Operands[0], args[0]);
+                opcode |= op1 << 21;
+            }
+            if (op.Operands.Length > 2)
+            {
+                var op2 = TranslateOperands.Translate(op.Operands[1], args[1]);
+                opcode |= op2 << 16;
+            }
+
+            return opcode;
         }
 
-        static uint TranslateFpRegister(string register)
-        {
-            var reg = register.ToLower();
-            if (!reg.StartsWith("f"))
-                throw new SyntaxErrorException();
-            var id = ExtractWord(reg.Substring(1));
-            if (id >= 32)
-                throw new InvalidRegisterException();
-            return id;
-        }
-
-        static uint TranslateDpRegister(string register)
-        {
-            var reg = register.ToLower();
-            if (!reg.StartsWith("d"))
-                throw new SyntaxErrorException();
-            var id = ExtractWord(reg.Substring(1));
-            if (id >= 16)
-                throw new InvalidRegisterException();
-            return id;
-        }
-
-        static uint ExtractWord(string reg)
-        {
-            uint value;
-            if (!UInt32.TryParse(reg, out value))
-                throw new SyntaxErrorException();
-            return value;
-        }
     }
 }

@@ -6,6 +6,6 @@ namespace NetDLX.Core
     public interface IAssemble
     {
         bool CanAssemble(string command);
-        UInt32 Translate(string command, string[] args);
+        UInt32 Assemble(string command, string[] args);
     }
 }
