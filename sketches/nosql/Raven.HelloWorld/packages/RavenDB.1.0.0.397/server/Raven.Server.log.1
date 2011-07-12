@@ -1,0 +1,498 @@
+Delete a document with key: Raven/Backup/Status and etag 
+Document with key 'Raven/Backup/Status' was not found, and considered deleted
+New index Raven%2fDocumentsByEntityName:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Raven_2fDocumentsByEntityName : AbstractViewGenerator
+{
+	public Index_Raven_2fDocumentsByEntityName()
+	{
+		this.ForEntityName = null;
+		this.ViewText = @"from doc in docs 
+let Tag = doc[""@metadata""][""Raven-Entity-Name""]
+where  Tag != null 
+select new { Tag, LastModified = doc[""@metadata""][""Last-Modified""] };";
+		this.MapDefinition = docs => from doc in docs
+			let Tag = doc["@metadata"]["Raven-Entity-Name"]
+			where Tag != null
+			select new { Tag, LastModified = doc["@metadata"]["Last-Modified"], __document_id = doc.__document_id };
+		this.AddField("LastModified");
+		this.AddField("__document_id");
+		this.AddField("Tag");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Compiled to:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Raven_2fDocumentsByEntityName : AbstractViewGenerator
+{
+	public Index_Raven_2fDocumentsByEntityName()
+	{
+		this.ForEntityName = null;
+		this.ViewText = @"from doc in docs 
+let Tag = doc[""@metadata""][""Raven-Entity-Name""]
+where  Tag != null 
+select new { Tag, LastModified = doc[""@metadata""][""Last-Modified""] };";
+		this.MapDefinition = docs => from doc in docs
+			let Tag = doc["@metadata"]["Raven-Entity-Name"]
+			where Tag != null
+			select new { Tag, LastModified = doc["@metadata"]["Last-Modified"], __document_id = doc.__document_id };
+		this.AddField("LastModified");
+		this.AddField("__document_id");
+		this.AddField("Tag");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Creating index Raven/DocumentsByEntityName with encoded name Raven/DocumentsByEntityName
+Creating index for Raven/DocumentsByEntityName
+New index Raven%2fDocumentCollections:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Raven_2fDocumentCollections : AbstractViewGenerator
+{
+	public Index_Raven_2fDocumentCollections()
+	{
+		this.ForEntityName = null;
+		this.ViewText = @"from doc in docs
+let Name = doc[""@metadata""][""Raven-Entity-Name""]
+where Name != null
+select new { Name , Count = 1}
+
+from result in results
+group result by result.Name into g
+select new { Name = g.Key, Count = g.Sum(x=>x.Count) }";
+		this.MapDefinition = docs => from doc in docs
+			let Name = doc["@metadata"]["Raven-Entity-Name"]
+			where Name != null
+			select new { Name, Count = 1, __document_id = doc.__document_id };
+		this.ReduceDefinition = results => from result in results
+			group result by result.Name into g
+			select new { Name = g.Key, Count = g.Sum(x => x.Count) };
+		this.GroupByExtraction = result => result.Name;
+		this.AddField("Name");
+		this.AddField("Count");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Compiled to:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Raven_2fDocumentCollections : AbstractViewGenerator
+{
+	public Index_Raven_2fDocumentCollections()
+	{
+		this.ForEntityName = null;
+		this.ViewText = @"from doc in docs
+let Name = doc[""@metadata""][""Raven-Entity-Name""]
+where Name != null
+select new { Name , Count = 1}
+
+from result in results
+group result by result.Name into g
+select new { Name = g.Key, Count = g.Sum(x=>x.Count) }";
+		this.MapDefinition = docs => from doc in docs
+			let Name = doc["@metadata"]["Raven-Entity-Name"]
+			where Name != null
+			select new { Name, Count = 1, __document_id = doc.__document_id };
+		this.ReduceDefinition = results => from result in results
+			group result by result.Name into g
+			select new { Name = g.Key, Count = g.Sum(x => x.Count) };
+		this.GroupByExtraction = result => result.Name;
+		this.AddField("Name");
+		this.AddField("Count");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Creating index Raven/DocumentCollections with encoded name Raven/DocumentCollections
+Creating index for Raven/DocumentCollections
+Request #   1: GET     -    38 ms - <default>  - 200 - /silverlight/plugins?noCache=1475985485
+Request #   2: GET     -   117 ms - <default>  - 200 - /databases/?noCache=792727555
+Document with key 'Raven/Databases/docs' was not found
+Error on request
+Raven.Http.Exceptions.BadRequestException: Could not find a database named: docs
+   at Raven.Http.HttpServer.SetupRequestToProperDatabase(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 443
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 364
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   3: GET     -   224 ms - <default>  - 400 - /databases/docs/Raven/WarningMessages
+Request #   4: GET     -   243 ms - <default>  - 200 - /stats?noCache=168526505
+Request #   5: GET     -    10 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=1602894486
+Request #   6: GET     -     3 ms - <default>  - 200 - /silverlight/ensureStartup?noCache=1473768001
+Issuing query on index Raven/DocumentCollections for all documents
+Request #   7: GET     -     4 ms - <default>  - 200 - /build/version
+Request #   8: GET     -   414 ms - <default>  - 200 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #   9: GET     -     9 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #  10: GET     -    12 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=1709419934
+Document with key 'Raven/Replication/Destinations' was not found
+Request #  11: GET     -     9 ms - <default>  - 404 - /docs/Raven/Replication/Destinations
+Document with key 'Raven/Hilo/products' was not found
+Request #  12: GET     -     0 ms - <default>  - 404 - /docs/Raven/Hilo/products
+Putting a document with key: Raven/Hilo/products and etag 00000000-0000-0000-0000-000000000000
+Inserted a new document with key 'Raven/Hilo/products', update: False, 
+Request #  13: PUT     -   186 ms - <default>  - 201 - /docs/Raven/Hilo/products
+Indexing 1 documents for index: Raven/DocumentCollections
+Indexing 1 documents for index: Raven/DocumentsByEntityName
+Executing batched commands in a single transaction
+Putting a document with key: products/1 and etag 
+Inserted a new document with key 'products/1', update: False, 
+Successfully executed 1 commands
+Request #  14: POST    -    44 ms - <default>  - 200 - /bulk_docs
+	PUT products/1
+Document with key 'Raven/Hilo/orders' was not found
+Request #  15: GET     -     0 ms - <default>  - 404 - /docs/Raven/Hilo/orders
+Mapped 0 documents for Raven/DocumentCollections
+Putting a document with key: Raven/Hilo/orders and etag 00000000-0000-0000-0000-000000000000
+Inserted a new document with key 'Raven/Hilo/orders', update: False, 
+Request #  16: PUT     -    21 ms - <default>  - 201 - /docs/Raven/Hilo/orders
+Indexed 0 documents for Raven/DocumentsByEntityName
+Executing batched commands in a single transaction
+Putting a document with key: orders/1 and etag 
+Inserted a new document with key 'orders/1', update: False, 
+Successfully executed 1 commands
+Request #  17: POST    -    13 ms - <default>  - 200 - /bulk_docs
+	PUT orders/1
+Indexing 3 documents for index: Raven/DocumentCollections
+Indexing 3 documents for index: Raven/DocumentsByEntityName
+Mapped result for 'Raven/DocumentCollections': '{
+  "Name": "Products",
+  "Count": 1,
+  "__document_id": "products/1"
+}'
+Index 'Raven/DocumentsByEntityName' resulted in: Document<stored/uncompressed,indexed,omitNorms<__document_id:products/1> indexed,omitNorms<Tag:Products> indexed,omitNorms<LastModified:2011-07-12T13:43:03.4660000>>
+Mapped result for 'Raven/DocumentCollections': '{
+  "Name": "Orders",
+  "Count": 1,
+  "__document_id": "orders/1"
+}'
+Mapped 2 documents for Raven/DocumentCollections
+Index 'Raven/DocumentsByEntityName' resulted in: Document<stored/uncompressed,indexed,omitNorms<__document_id:orders/1> indexed,omitNorms<Tag:Orders> indexed,omitNorms<LastModified:2011-07-12T13:43:03.5820000>>
+Indexed 2 documents for Raven/DocumentsByEntityName
+Found 2 mapped results for keys [Products, Orders] for index Raven/DocumentCollections
+Starting to read 2 reduce keys for index Raven/DocumentCollections
+Read 2 reduce keys in 00:00:00.0741302 with 2 results for index Raven/DocumentCollections
+Reduce key Products result in index Raven/DocumentCollections gave document: Document<indexed,omitNorms<__reduce_key:products> stored/uncompressed,indexed,tokenized<Name:Products> stored/uncompressed,indexed,omitNorms<Count:1> stored/uncompressed,indexed,tokenized,omitNorms,omitTermFreqAndPositions<Count_Range:1>>
+Reduce key Orders result in index Raven/DocumentCollections gave document: Document<indexed,omitNorms<__reduce_key:orders> stored/uncompressed,indexed,tokenized<Name:Orders> stored/uncompressed,indexed,omitNorms<Count:1> stored/uncompressed,indexed,tokenized,omitNorms,omitTermFreqAndPositions<Count_Range:1>>
+Reduce resulted in 2 entries for Raven/DocumentCollections for reduce keys: Products, Orders
+Indexed 2 reduce keys in 00:00:00.2772215 with 2 results for index Raven/DocumentCollections
+Issuing query on index Raven/DocumentCollections for all documents
+Request #  18: GET     -    13 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=-552800196
+Request #  19: GET     -   221 ms - <default>  - 200 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #  20: GET     -    10 ms - <default>  - 404 - /static/ordersTemplate
+Request #  21: GET     -     0 ms - <default>  - 404 - /static/SystemTemplate
+Request #  22: GET     -     0 ms - <default>  - 404 - /static/productsTemplate
+Request #  23: GET     -     3 ms - <default>  - 200 - /indexes/?start=0&pageSize=8&noCache=263472219
+Request #  24: GET     -     0 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Issuing query on index Raven/DocumentsByEntityName for: Tag:Orders
+Document with key 'orders/1' was found
+Request #  25: GET     -   221 ms - <default>  - 200 - /indexes/Raven/DocumentsByEntityName?query=Tag%253AOrders&start=0&pageSize=140&aggregation=None
+Issuing query on index Raven/DocumentsByEntityName for: Tag:Orders
+Request #  26: GET     -     8 ms - <default>  - 200 - /indexes/Raven/DocumentsByEntityName?query=Tag%253AOrders&start=1&pageSize=129&aggregation=None
+Issuing query on index Raven/DocumentsByEntityName for: Tag:Products
+Document with key 'products/1' was found
+Request #  27: GET     -    15 ms - <default>  - 200 - /indexes/Raven/DocumentsByEntityName?query=Tag%253AProducts&start=0&pageSize=130&aggregation=None
+Issuing query on index Raven/DocumentsByEntityName for: Tag:Products
+Request #  28: GET     -    13 ms - <default>  - 200 - /indexes/Raven/DocumentsByEntityName?query=Tag%253AProducts&start=1&pageSize=129&aggregation=None
+Request #  29: GET     -     2 ms - <default>  - 404 - /static/ProductsTemplate
+Request #  30: GET     -     1 ms - <default>  - 200 - /silverlight/plugins?noCache=-1445754055
+Request #  31: GET     -     3 ms - <default>  - 200 - /databases/?noCache=979066403
+Document with key 'Raven/Databases/docs' was not found
+Request #  32: GET     -     4 ms - <default>  - 400 - /databases/docs/Raven/WarningMessages
+Error on request
+Raven.Http.Exceptions.BadRequestException: Could not find a database named: docs
+   at Raven.Http.HttpServer.SetupRequestToProperDatabase(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 443
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 364
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #  33: GET     -     3 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #  34: GET     -     2 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=2053340599
+Request #  35: GET     -     0 ms - <default>  - 200 - /silverlight/ensureStartup?noCache=-2074668674
+Request #  36: GET     -     1 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #  37: GET     -     3 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=628769813
+Request #  38: GET     -     0 ms - <default>  - 404 - /static/ordersTemplate
+Request #  39: GET     -     2 ms - <default>  - 404 - /static/SystemTemplate
+Request #  40: GET     -     0 ms - <default>  - 404 - /static/productsTemplate
+Issuing query on index Raven/DocumentCollections for all documents
+Request #  41: GET     -     3 ms - <default>  - 200 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=250&aggregation=None&sort=Name
+Request #  42: GET     -     2 ms - <default>  - 404 - /indexes/dynamic/Products?definition=yes&noCache=283346446
+New index Temp%2fProducts:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Temp_2fProducts : AbstractViewGenerator
+{
+	public Index_Temp_2fProducts()
+	{
+		this.ForEntityName = "Products";
+		this.ViewText = @"from doc in docs.Products
+select new {  }";
+		this.MapDefinition = docs => from doc in docs
+			where doc["@metadata"]["Raven-Entity-Name"] == "Products"
+			select new { __document_id = doc.__document_id };
+		this.AddField("__document_id");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Compiled to:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Temp_2fProducts : AbstractViewGenerator
+{
+	public Index_Temp_2fProducts()
+	{
+		this.ForEntityName = "Products";
+		this.ViewText = @"from doc in docs.Products
+select new {  }";
+		this.MapDefinition = docs => from doc in docs
+			where doc["@metadata"]["Raven-Entity-Name"] == "Products"
+			select new { __document_id = doc.__document_id };
+		this.AddField("__document_id");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Creating index Temp/Products with encoded name Temp/Products
+Creating index for Temp/Products
+Indexing 4 documents for index: Temp/Products
+Issuing query on index Temp/Products for: select *
+Index 'Temp/Products' resulted in: Document<stored/uncompressed,indexed,omitNorms<__document_id:products/1>>
+Indexed 1 documents for Temp/Products
+Issuing query on index Temp/Products for: select *
+Request #  43: GET     - 1,397 ms - <default>  - 200 - /indexes/dynamic/Products?query=select%2520*&start=0&pageSize=144&aggregation=None
+Request #  44: GET     -     1 ms - <default>  - 404 - /indexes/dynamic?definition=yes&noCache=106832279
+New index Temp%2fAllDocs:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Temp_2fAllDocs : AbstractViewGenerator
+{
+	public Index_Temp_2fAllDocs()
+	{
+		this.ForEntityName = null;
+		this.ViewText = @"from doc in docs
+select new {  }";
+		this.MapDefinition = docs => from doc in docs
+			select new { __document_id = doc.__document_id };
+		this.AddField("__document_id");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Compiled to:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_Temp_2fAllDocs : AbstractViewGenerator
+{
+	public Index_Temp_2fAllDocs()
+	{
+		this.ForEntityName = null;
+		this.ViewText = @"from doc in docs
+select new {  }";
+		this.MapDefinition = docs => from doc in docs
+			select new { __document_id = doc.__document_id };
+		this.AddField("__document_id");
+		this.AddQueryParameterForMap("__document_id");
+		this.AddQueryParameterForReduce("__document_id");
+	}
+}
+
+Creating index Temp/AllDocs with encoded name Temp/AllDocs
+Creating index for Temp/AllDocs
+Indexing 4 documents for index: Temp/AllDocs
+Issuing query on index Temp/AllDocs for: select * from Products
+Index 'Temp/AllDocs' resulted in: Document<stored/uncompressed,indexed,omitNorms<__document_id:products/1>>
+Index 'Temp/AllDocs' resulted in: Document<stored/uncompressed,indexed,omitNorms<__document_id:orders/1>>
+Indexed 2 documents for Temp/AllDocs
+Issuing query on index Temp/AllDocs for: select * from Products
+Issuing query on index Temp/AllDocs for: select * from Products
+Issuing query on index Temp/AllDocs for: select * from Products
+Issuing query on index Temp/AllDocs for: select * from Products
+Issuing query on index Temp/AllDocs for: select * from Products
+Request #  45: GET     -   674 ms - <default>  - 200 - /indexes/dynamic?query=select%2520*%2520from%2520Products&start=0&pageSize=144&aggregation=None
+Request #  46: GET     -     1 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #  47: GET     -     6 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=-713075721
+Request #  48: GET     -    80 ms - <default>  - 200 - /stats?noCache=1836462045
+Request #  49: GET     -    44 ms - <default>  - 200 - /stats?noCache=-210179416
+Request #  50: GET     -    48 ms - <default>  - 200 - /stats?noCache=-1002912219
+Request #  51: GET     -   170 ms - <default>  - 200 - /stats?noCache=826661655
+Request #  52: GET     -    38 ms - <default>  - 200 - /stats?noCache=140923814
+Request #  53: GET     -   143 ms - <default>  - 200 - /stats?noCache=494265340
+Request #  54: GET     -    50 ms - <default>  - 200 - /stats?noCache=-712541640
+Request #  55: GET     -    74 ms - <default>  - 200 - /stats?noCache=-1276841420
+Document with key 'Raven/Replication/Destinations' was not found
+Request #  56: GET     -    35 ms - <default>  - 404 - /docs/Raven/Replication/Destinations
+Document with key 'orders/1' was found
+Request #  57: GET     -     9 ms - <default>  - 200 - /docs/orders/1
+Request #  58: GET     -   250 ms - <default>  - 200 - /stats?noCache=-572840346
+Document with key 'Raven/Replication/Destinations' was not found
+Request #  59: GET     -     3 ms - <default>  - 404 - /docs/Raven/Replication/Destinations
+Document with key 'orders/1' was found
+Request #  60: GET     -     0 ms - <default>  - 200 - /docs/orders/1
+Request #  61: GET     -    33 ms - <default>  - 200 - /stats?noCache=1944972552
+Request #  62: GET     -    36 ms - <default>  - 200 - /stats?noCache=1556221501
+Request #  63: GET     -   115 ms - <default>  - 200 - /stats?noCache=1683883230
+Request #  64: GET     -   158 ms - <default>  - 200 - /stats?noCache=2128174222
+Request #  65: GET     -    38 ms - <default>  - 200 - /stats?noCache=2110280904
+Request #  66: GET     -   143 ms - <default>  - 200 - /stats?noCache=1621691947
+Request #  67: GET     -    33 ms - <default>  - 200 - /stats?noCache=-965898045
+Request #  68: GET     -    91 ms - <default>  - 200 - /stats?noCache=1529468083
+Deleting index Temp/Products
+Deleting index Temp/AllDocs
+Request #  69: GET     -    32 ms - <default>  - 200 - /stats?noCache=1494274013
+Request #  70: GET     -    64 ms - <default>  - 200 - /stats?noCache=-1859209616
+Request #  71: GET     -    26 ms - <default>  - 200 - /stats?noCache=2103218168
+Request #  72: GET     -    30 ms - <default>  - 200 - /stats?noCache=-1081442432
+Request #  73: GET     -    51 ms - <default>  - 200 - /stats?noCache=950744772
+Request #  74: GET     -    86 ms - <default>  - 200 - /stats?noCache=-1524721218
+Request #  75: GET     -    39 ms - <default>  - 200 - /stats?noCache=-598937219
+Request #  76: GET     -    26 ms - <default>  - 200 - /stats?noCache=-559615778
+Request #  77: GET     -    35 ms - <default>  - 200 - /stats?noCache=-302369230
+Request #  78: GET     -    93 ms - <default>  - 200 - /stats?noCache=1497543628
+Request #  79: GET     -    29 ms - <default>  - 200 - /stats?noCache=-1766006575
+Request #  80: GET     -   164 ms - <default>  - 200 - /stats?noCache=-272157660
+Request #  81: GET     -    95 ms - <default>  - 200 - /stats?noCache=764555428
+Request #  82: GET     -    60 ms - <default>  - 200 - /stats?noCache=751672673
+Request #  83: GET     -    27 ms - <default>  - 200 - /stats?noCache=1498908104
+Request #  84: GET     -    52 ms - <default>  - 200 - /stats?noCache=1574654121
+Request #  85: GET     -    84 ms - <default>  - 200 - /stats?noCache=-1172346528
+Request #  86: GET     -    48 ms - <default>  - 200 - /stats?noCache=526857200
+Document with key 'Raven/Replication/Destinations' was not found
+Request #  87: GET     -     2 ms - <default>  - 404 - /docs/Raven/Replication/Destinations
+Document with key 'orders/1' was found
+Request #  88: GET     -     1 ms - <default>  - 200 - /docs/orders/1
+New index OrdersContainingProduct:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_OrdersContainingProduct : AbstractViewGenerator
+{
+	public Index_OrdersContainingProduct()
+	{
+		this.ForEntityName = "Orders";
+		this.ViewText = @"docs.Orders
+	.SelectMany(order => order.OrderLines, (order, line) => new {ProductId = line.ProductId})";
+		this.MapDefinition = docs => docs.Where(__document => __document["@metadata"]["Raven-Entity-Name"] == "Orders").SelectMany(order => order.OrderLines, (order, line) => new { ProductId = line.ProductId, __document_id = order.__document_id });
+		this.AddField("ProductId");
+		this.AddField("__document_id");
+	}
+}
+
+Compiled to:
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using Raven.Database.Indexing;
+public class Index_OrdersContainingProduct : AbstractViewGenerator
+{
+	public Index_OrdersContainingProduct()
+	{
+		this.ForEntityName = "Orders";
+		this.ViewText = @"docs.Orders
+	.SelectMany(order => order.OrderLines, (order, line) => new {ProductId = line.ProductId})";
+		this.MapDefinition = docs => docs.Where(__document => __document["@metadata"]["Raven-Entity-Name"] == "Orders").SelectMany(order => order.OrderLines, (order, line) => new { ProductId = line.ProductId, __document_id = order.__document_id });
+		this.AddField("ProductId");
+		this.AddField("__document_id");
+	}
+}
+
+Creating index OrdersContainingProduct with encoded name OrdersContainingProduct
+Creating index for OrdersContainingProduct
+Request #  89: PUT     - 2,316 ms - <default>  - 201 - /indexes/OrdersContainingProduct
+Indexing 4 documents for index: OrdersContainingProduct
+Issuing query on index OrdersContainingProduct for: ProductId:products/1
+Request #  90: GET     -    49 ms - <default>  - 200 - /indexes/OrdersContainingProduct?query=ProductId%253Aproducts%252F1&start=0&pageSize=128&aggregation=None
+Index 'OrdersContainingProduct' resulted in: Document<stored/uncompressed,indexed,omitNorms<__document_id:orders/1> indexed,tokenized<ProductId:products/1>>
+Indexed 1 documents for OrdersContainingProduct
+Issuing query on index OrdersContainingProduct for: ProductId:products/1
+Document with key 'orders/1' was found
+Request #  91: GET     -   160 ms - <default>  - 200 - /indexes/OrdersContainingProduct?query=ProductId%253Aproducts%252F1&start=0&pageSize=128&aggregation=None
+Request #  92: GET     -   123 ms - <default>  - 200 - /stats?noCache=1146413490
+Request #  93: GET     -    15 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #  94: GET     -     2 ms - <default>  - 304 - /indexes/Raven/DocumentsByEntityName?query=Tag%253AOrders&start=0&pageSize=140&aggregation=None
+Request #  95: GET     -     3 ms - <default>  - 304 - /indexes/Raven/DocumentsByEntityName?query=Tag%253AOrders&start=1&pageSize=129&aggregation=None
+Request #  96: GET     -   167 ms - <default>  - 200 - /stats?noCache=1445136617
+Request #  97: GET     -     0 ms - <default>  - 200 - /silverlight/plugins?noCache=-132490099
+Request #  98: GET     -    13 ms - <default>  - 200 - /databases/?noCache=642876220
+Document with key 'Raven/Databases/docs' was not found
+Error on request
+Raven.Http.Exceptions.BadRequestException: Could not find a database named: docs
+   at Raven.Http.HttpServer.SetupRequestToProperDatabase(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 443
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 364
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #  99: GET     -    77 ms - <default>  - 400 - /databases/docs/Raven/WarningMessages
+Request # 100: GET     -     1 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request # 101: GET     -     1 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=1199734493
+Request # 102: GET     -     0 ms - <default>  - 200 - /silverlight/ensureStartup?noCache=1350928772
+Request # 103: GET     -     3 ms - <default>  - 304 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request # 104: GET     -     2 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=-1563573594
+Request # 105: GET     -     0 ms - <default>  - 404 - /static/ordersTemplate
+Request # 106: GET     -     0 ms - <default>  - 404 - /static/SystemTemplate
+Request # 107: GET     -     0 ms - <default>  - 404 - /static/productsTemplate
+Request # 108: GET     -    32 ms - <default>  - 200 - /stats?noCache=-95705681
+Request # 109: GET     -    72 ms - <default>  - 200 - /stats?noCache=-2052900208
+Stopping background workers

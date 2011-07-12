@@ -1,0 +1,90 @@
+Delete a document with key: Raven/Backup/Status and etag 
+Document with key 'Raven/Backup/Status' was not found, and considered deleted
+Request #   1: GET     -   568 ms - <default>  - 200 - /stats?noCache=-99824837
+Request #   2: GET     -    14 ms - <default>  - 200 - /docs/?start=0&pageSize=12&noCache=806756305
+Error on request
+System.InvalidOperationException: Could not find index named: Raven/DocumentCollections
+   at Raven.Database.DocumentDatabase.<>c__DisplayClass6d.<Query>b__65(IStorageActionsAccessor actions) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 633
+   at Raven.Storage.Esent.TransactionalStorage.ExecuteBatch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 346
+   at Raven.Storage.Esent.TransactionalStorage.Batch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 316
+   at Raven.Database.DocumentDatabase.Query(String index, IndexQuery query) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 625
+   at Raven.Database.Server.Responders.Index.PerformQueryAgainstExistingIndex(IHttpContext context, String index, IndexQuery indexQuery, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 150
+   at Raven.Database.Server.Responders.Index.ExecuteQuery(IHttpContext context, String index, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 136
+   at Raven.Database.Server.Responders.Index.GetIndexQueryRessult(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 92
+   at Raven.Database.Server.Responders.Index.OnGet(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 84
+   at Raven.Database.Server.Responders.Index.Respond(IHttpContext context) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 46
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 380
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   3: GET     -   153 ms - <default>  - 500 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Error on request
+System.InvalidOperationException: Could not find index named: Raven/DocumentCollections
+   at Raven.Database.DocumentDatabase.<>c__DisplayClass6d.<Query>b__65(IStorageActionsAccessor actions) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 633
+   at Raven.Storage.Esent.TransactionalStorage.ExecuteBatch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 346
+   at Raven.Storage.Esent.TransactionalStorage.Batch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 316
+   at Raven.Database.DocumentDatabase.Query(String index, IndexQuery query) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 625
+   at Raven.Database.Server.Responders.Index.PerformQueryAgainstExistingIndex(IHttpContext context, String index, IndexQuery indexQuery, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 150
+   at Raven.Database.Server.Responders.Index.ExecuteQuery(IHttpContext context, String index, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 136
+   at Raven.Database.Server.Responders.Index.GetIndexQueryRessult(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 92
+   at Raven.Database.Server.Responders.Index.OnGet(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 84
+   at Raven.Database.Server.Responders.Index.Respond(IHttpContext context) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 46
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 380
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   4: GET     -    23 ms - <default>  - 500 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Error on request
+System.InvalidOperationException: Could not find index named: Raven/DocumentCollections
+   at Raven.Database.DocumentDatabase.<>c__DisplayClass6d.<Query>b__65(IStorageActionsAccessor actions) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 633
+   at Raven.Storage.Esent.TransactionalStorage.ExecuteBatch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 346
+   at Raven.Storage.Esent.TransactionalStorage.Batch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 316
+   at Raven.Database.DocumentDatabase.Query(String index, IndexQuery query) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 625
+   at Raven.Database.Server.Responders.Index.PerformQueryAgainstExistingIndex(IHttpContext context, String index, IndexQuery indexQuery, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 150
+   at Raven.Database.Server.Responders.Index.ExecuteQuery(IHttpContext context, String index, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 136
+   at Raven.Database.Server.Responders.Index.GetIndexQueryRessult(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 92
+   at Raven.Database.Server.Responders.Index.OnGet(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 84
+   at Raven.Database.Server.Responders.Index.Respond(IHttpContext context) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 46
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 380
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   5: GET     -     7 ms - <default>  - 500 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Error on request
+System.InvalidOperationException: Could not find index named: Raven/DocumentCollections
+   at Raven.Database.DocumentDatabase.<>c__DisplayClass6d.<Query>b__65(IStorageActionsAccessor actions) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 633
+   at Raven.Storage.Esent.TransactionalStorage.ExecuteBatch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 346
+   at Raven.Storage.Esent.TransactionalStorage.Batch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 316
+   at Raven.Database.DocumentDatabase.Query(String index, IndexQuery query) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 625
+   at Raven.Database.Server.Responders.Index.PerformQueryAgainstExistingIndex(IHttpContext context, String index, IndexQuery indexQuery, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 150
+   at Raven.Database.Server.Responders.Index.ExecuteQuery(IHttpContext context, String index, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 136
+   at Raven.Database.Server.Responders.Index.GetIndexQueryRessult(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 92
+   at Raven.Database.Server.Responders.Index.OnGet(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 84
+   at Raven.Database.Server.Responders.Index.Respond(IHttpContext context) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 46
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 380
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   6: GET     -     8 ms - <default>  - 500 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Error on request
+System.InvalidOperationException: Could not find index named: Raven/DocumentCollections
+   at Raven.Database.DocumentDatabase.<>c__DisplayClass6d.<Query>b__65(IStorageActionsAccessor actions) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 633
+   at Raven.Storage.Esent.TransactionalStorage.ExecuteBatch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 346
+   at Raven.Storage.Esent.TransactionalStorage.Batch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 316
+   at Raven.Database.DocumentDatabase.Query(String index, IndexQuery query) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 625
+   at Raven.Database.Server.Responders.Index.PerformQueryAgainstExistingIndex(IHttpContext context, String index, IndexQuery indexQuery, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 150
+   at Raven.Database.Server.Responders.Index.ExecuteQuery(IHttpContext context, String index, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 136
+   at Raven.Database.Server.Responders.Index.GetIndexQueryRessult(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 92
+   at Raven.Database.Server.Responders.Index.OnGet(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 84
+   at Raven.Database.Server.Responders.Index.Respond(IHttpContext context) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 46
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 380
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   7: GET     -    21 ms - <default>  - 500 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Error on request
+System.InvalidOperationException: Could not find index named: Raven/DocumentCollections
+   at Raven.Database.DocumentDatabase.<>c__DisplayClass6d.<Query>b__65(IStorageActionsAccessor actions) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 633
+   at Raven.Storage.Esent.TransactionalStorage.ExecuteBatch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 346
+   at Raven.Storage.Esent.TransactionalStorage.Batch(Action`1 action) in c:\Builds\raven\Raven.Storage.Esent\TransactionalStorage.cs:line 316
+   at Raven.Database.DocumentDatabase.Query(String index, IndexQuery query) in c:\Builds\raven\Raven.Database\DocumentDatabase.cs:line 625
+   at Raven.Database.Server.Responders.Index.PerformQueryAgainstExistingIndex(IHttpContext context, String index, IndexQuery indexQuery, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 150
+   at Raven.Database.Server.Responders.Index.ExecuteQuery(IHttpContext context, String index, Guid& indexEtag) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 136
+   at Raven.Database.Server.Responders.Index.GetIndexQueryRessult(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 92
+   at Raven.Database.Server.Responders.Index.OnGet(IHttpContext context, String index) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 84
+   at Raven.Database.Server.Responders.Index.Respond(IHttpContext context) in c:\Builds\raven\Raven.Database\Server\Responders\Index.cs:line 46
+   at Raven.Http.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 380
+   at Raven.Http.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\raven\Raven.Http\HttpServer.cs:line 209
+Request #   8: GET     -     9 ms - <default>  - 500 - /indexes/Raven/DocumentCollections?query=&start=0&pageSize=25&aggregation=None&sort=Name
+Request #   9: GET     -    35 ms - <default>  - 200 - /stats?noCache=499243733
+Stopping background workers
