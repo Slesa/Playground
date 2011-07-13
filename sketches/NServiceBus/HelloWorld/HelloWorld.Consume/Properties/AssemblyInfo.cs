@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HelloWorld.Core")]
+[assembly: AssemblyTitle("HelloWorld.Consume")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("HelloWorld.Core")]
+[assembly: AssemblyProduct("HelloWorld.Consume")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d7a8bbec-7fef-4089-b807-0b8819fdcef9")]
+[assembly: Guid("fbe3cdd4-578c-4d34-b1dc-8b3793d74804")]
 
 // Version information for an assembly consists of the following four values:
 //
