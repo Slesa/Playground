@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B1122E66-D850-4FCF-ADBD-981D5C167484}</ProjectGuid>
+    <ProjectGuid>{56FFD873-6B4D-4A52-8C92-7606179C3FC0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloWorld.Publish</RootNamespace>
-    <AssemblyName>HelloWorld.Publish</AssemblyName>
+    <RootNamespace>HelloWorld.Subscribe</RootNamespace>
+    <AssemblyName>HelloWorld.Subscribe</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,20 +31,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.2.5.0.1469\lib\net40\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.2.5.0.1469\lib\net40\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.2.5.0.1469\lib\net40\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.2.5.0.1469\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus, Version=2.5.0.1469, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="NServiceBus">
       <HintPath>..\packages\NServiceBus.2.5.0.1469\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core, Version=2.5.0.1469, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="NServiceBus.Core">
       <HintPath>..\packages\NServiceBus.2.5.0.1469\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Host, Version=2.5.0.1469, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="NServiceBus.Host">
       <HintPath>..\packages\NServiceBus.Host.2.5.0.1469\lib\net40\NServiceBus.Host.exe</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.CastleWindsor">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.2.5.0.1469\lib\net40\NServiceBus.ObjectBuilder.CastleWindsor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,12 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EndpointConfig.cs" />
+    <Compile Include="EventMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerEndpoint.cs" />
+    <Compile Include="Subscriber2Endpoint.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="NServiceBus.Host.exe.config">
+    <None Include="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
