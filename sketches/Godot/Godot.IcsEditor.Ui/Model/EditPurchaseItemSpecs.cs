@@ -32,7 +32,7 @@ namespace Godot.IcsEditor.Ui.Model
         static string _purchaseFamilyError;
     }
 
-    [Subject(typeof(EditUnit))]
+    [Subject(typeof(EditPurchaseItem))]
     public class When_creating_valid_purchaseitem
     {
         static EditPurchaseItem _purchaseItem;

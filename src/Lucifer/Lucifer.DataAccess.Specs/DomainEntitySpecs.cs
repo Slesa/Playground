@@ -41,9 +41,7 @@ namespace Lucifer.DataAccess.Specs
         It should_be_considered_as_equal = () => ((Object)Person1).Equals(Person2).ShouldBeTrue();
         It should_be_considered_as_equal_with_equality_operator = () => (Person1 == Person2).ShouldBeTrue();
         It should_be_considered_as_equal_with_inequality_operator = () => (Person1 != Person2).ShouldBeFalse();
-
         It should_have_symmetric_inequality = () => ((Object)Person2).Equals(Person1).ShouldBeTrue();
-
         It should_compute_the_same_hash = () => Person1.GetHashCode().ShouldEqual(Person2.GetHashCode());
     }
 
