@@ -1,0 +1,4 @@
+Name, Vorname, Strasse, Ort
+Duck, Donald, Gansweg, Entenhausen
+Gans, Gustav, Erpelweg, Entenhausen
+Duck, Dussel, Müllplatz, Gänslingen
