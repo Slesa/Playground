@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:local="clr-namespace:Nubis.Theme">
+
+    <LinearGradientBrush x:Key="AppMainBackground" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        <GradientStop Color="#FFDA5E69" Offset="1"/>
+        <GradientStop Color="#FF071B25"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="AppTitleBackground" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#da5e69"/>
+        <GradientStop Color="#FF4C596D" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="AppMenuBackground" EndPoint="1,0" StartPoint="0,1">
+        <GradientStop Color="#da5e69"/>
+        <GradientStop Color="#FF4C596D" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="IcsMenuBackground" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF1E3B36"/>
+        <GradientStop Color="#FF8EEAED" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="IcsModuleBackground" EndPoint="1,0" StartPoint="0,1">
+        <GradientStop Color="#FF1E3B36"/>
+        <GradientStop Color="#FF8EEAED" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PmsMenuBackground" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF562154"/>
+        <GradientStop Color="#FFEF7AF5" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PmsModuleBackground" EndPoint="1,0" StartPoint="0,1">
+        <GradientStop Color="#FF562154"/>
+        <GradientStop Color="#FFEF7AF5" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="UmsMenuBackground" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="#FF72522A"/>
+        <GradientStop Color="#FFF5B27A" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="UmsModuleBackground" EndPoint="1,0" StartPoint="0,1">
+        <GradientStop Color="#FF72522A"/>
+        <GradientStop Color="#FFF5B27A" Offset="1"/>
+    </LinearGradientBrush>
+</ResourceDictionary>

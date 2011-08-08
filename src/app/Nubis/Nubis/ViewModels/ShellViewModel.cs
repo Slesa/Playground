@@ -1,27 +1,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using Caliburn.Micro;
-using Castle.Windsor;
-using Nubis.Core;
+using Nubis.Caliburn;
 using Nubis.Resources;
 
 namespace Nubis.ViewModels
 {
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<ErrorMessage>
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell //, IHandle<ErrorMessage>
     {
-        readonly IWindsorContainer _container;
-        IEnumerable<IModule> _modules;
-        public IEnumerable<IModule> Modules { get { return _modules ?? (_modules = _container.ResolveAll<IModule>()); }}
+        //IEnumerable<IModule> _modules;
+        //public IEnumerable<IModule> Modules { get { return _modules ?? (_modules = _container.ResolveAll<IModule>()); }}
+        public IModule[] Modules { get; set; }
 
         public ShellViewModel(
-            IWindsorContainer container,
             //TestViewModel testViewModel,
             /*MusicViewModel musicViewModel,
             MovieViewModel movieViewModel, */
             //WelcomeViewModel welcomeViewModel,
             IEventAggregator eventAggregator)
         {
-            _container = container;
             HasActiveDialog = false;
             eventAggregator.Subscribe(this);
             //Items.Add(welcomeViewModel);
@@ -49,7 +46,7 @@ namespace Nubis.ViewModels
             ActivateItem((IScreen)o);
         }
 
-
+        /*
         public void Handle(ErrorMessage message)
         {
             if (HasActiveDialog)
@@ -66,7 +63,7 @@ namespace Nubis.ViewModels
             foreach (var screen in Items)
                 yield return Show.NotBusy(screen);
         } 
-
+        */
         public bool HasActiveDialog { get; set; }
     }
 }

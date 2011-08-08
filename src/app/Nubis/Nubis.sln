@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis", "Nubis\Nubis.csproj", "{605847E3-9EBC-4091-AE14-5224D05D3FAF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C} = {D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Core", "Nubis.Core\Nubis.Core.csproj", "{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}"
 EndProject
@@ -12,6 +15,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Maths", "Nubis.Maths\Nubis.Maths.csproj", "{E538F8AD-BBC5-4DA6-A320-BCB7F3687C38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Maths.Specs", "Nubis.Maths.Specs\Nubis.Maths.Specs.csproj", "{709E55CD-1702-4F83-B58C-4CBC4C9987FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Caliburn", "Nubis.Caliburn\Nubis.Caliburn.csproj", "{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nubis.Theme", "Nubis.Theme\Nubis.Theme.csproj", "{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,7 +43,6 @@ Global
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}.Release|Any CPU.Build.0 = Release|Any CPU
@@ -83,6 +89,26 @@ Global
 		{709E55CD-1702-4F83-B58C-4CBC4C9987FD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{709E55CD-1702-4F83-B58C-4CBC4C9987FD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{709E55CD-1702-4F83-B58C-4CBC4C9987FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}.Release|x86.ActiveCfg = Release|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

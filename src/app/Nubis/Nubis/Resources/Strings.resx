@@ -120,6 +120,9 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Nubis</value>
   </data>
+  <data name="AppToolTip" xml:space="preserve">
+    <value>Nubis mortgage calculator</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>

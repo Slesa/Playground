@@ -1,6 +1,5 @@
-using System;
 using Caliburn.Micro;
-using Nubis.Core;
+using Nubis.Caliburn;
 using Nubis.Funding.Resources;
 
 namespace Nubis.Funding.ViewModels
@@ -14,7 +13,7 @@ namespace Nubis.Funding.ViewModels
 
         public string IconFileName
         {
-            get { return "Nubis.Funding;component/Resources/Images/FundingData.png"; }
+            get { return @"/Nubis.Funding;component/Resources/Images/FundingData.png"; }
         }
 
         public string ToolTip

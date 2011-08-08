@@ -37,23 +37,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro">
-      <HintPath>..\..\..\..\lib\Caliburn.Micro\wpf\Caliburn.Micro.dll</HintPath>
+    <Reference Include="Caliburn.Micro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Caliburn.Micro.1.0.0\lib\Net40\Caliburn.Micro.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\..\..\lib\CastleWindsor\net-3.5\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.MicroKernel">
-      <HintPath>..\..\..\..\lib\CastleWindsor\net-3.5\Castle.MicroKernel.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor">
-      <HintPath>..\..\..\..\lib\CastleWindsor\net-3.5\Castle.Windsor.dll</HintPath>
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.2.5.3\lib\NET40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\lib\Caliburn.Micro\wpf\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.1.0.0\lib\Net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -71,12 +72,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Container\ArrayDependencyFacility.cs" />
+    <Compile Include="Container\ArraySubDependencyResolver.cs" />
     <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ErrorDialogViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,10 +101,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,26 +113,28 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nubis.Core\Nubis.Core.csproj">
-      <Project>{0FA8C40B-C092-42ED-80BA-9DBF45E8BCC1}</Project>
-      <Name>Nubis.Core</Name>
+    <ProjectReference Include="..\Nubis.Caliburn\Nubis.Caliburn.csproj">
+      <Project>{64EE183A-EF9C-4AFB-BF4C-3182E866A01A}</Project>
+      <Name>Nubis.Caliburn</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nubis.Funding\Nubis.Funding.csproj">
       <Project>{5A4D59A0-504A-4A10-B08C-029599315BE2}</Project>
       <Name>Nubis.Funding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nubis.Theme\Nubis.Theme.csproj">
+      <Project>{D09F636C-5EB2-4FA5-A1A0-8C3ED91BCA0C}</Project>
+      <Name>Nubis.Theme</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\ErrorDialogView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Nubis.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\nubis.png" />
   </ItemGroup>
