@@ -7,7 +7,7 @@ namespace Lucifer.DataAccess.Configuration
 {
     public class NhProfilerInitializer : INHibernateInitializationAware
     {
-         public bool Enabled { get; set; }
+        public bool Enabled { get; set; }
 
         public NhProfilerInitializer()
         {
@@ -20,17 +20,9 @@ namespace Lucifer.DataAccess.Configuration
             Enabled = true;
         }
 
-        public void BeforeInitialization()
-        {
-        }
-
-        public void Configuring(NHibernate.Cfg.Configuration configuration)
-        {
-        }
-
-        public void Configured(NHibernate.Cfg.Configuration configuration)
-        {
-        }
+        public void BeforeInitialization() { }
+        public void Configuring(NHibernate.Cfg.Configuration configuration) { }
+        public void Configured(NHibernate.Cfg.Configuration configuration) { }
 
         public void Initialized(NHibernate.Cfg.Configuration configuration, ISessionFactory sessionFactory)
         {

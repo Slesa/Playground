@@ -8,7 +8,7 @@ using Lucifer.DataAccess.Persistence;
 
 namespace Lucifer.Ums.Mapping
 {
-    public class PmsWindsorInstaller : IWindsorInstaller
+    public class UmsWindsorInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
