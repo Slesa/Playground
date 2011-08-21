@@ -28,6 +28,14 @@ module ActsAsCsv
 		def initialize
 			read
 		end
+
+		def each
+			return @csv_contents.each
+		end
+
+		def self.method_missing name, *args
+			number = 
+		end
 	end
 end
 
@@ -40,3 +48,4 @@ m = RubyCsv.new
 puts m.headers.inspect
 puts m.csv_contents.inspect
 
+m.each { |row| puts row.one }
