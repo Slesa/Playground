@@ -1,13 +1,12 @@
-different(red, green). different(red, blue).
-different(green, red). different(green, blue).
-different(blue, red). different(blue, green).
+different(red, green). different(green, red).
+different(blue, green). different(green, blue).
+different(blue, red). different(red, blue).
 
-coloring(Alabama, Mississippi, Georgia, Tennessee, Florida) :-
-  different(Mississippi, Tennessee),
-  different(Mississippi, Alabama),
-  different(Alabama, Mississippi),
-  different(Alabama, Tennessee),
-  different(Alabama, Georgia),
-  different(Alabama, Florida),
-  different(Georgia, Florida),
-  different(Georgia, Tennessee).
+coloring(Saarland, Pfalz, Baden, Hessen, Westfalen, Bayern) :-
+  different(Pfalz, Saarland),
+  different(Pfalz, Baden),
+  different(Pfalz, Hessen),
+  different(Pfalz, Westfalen),
+  different(Hessen, Baden),
+  different(Hessen, Westfalen),
+  different(Hessen, Bayern).
