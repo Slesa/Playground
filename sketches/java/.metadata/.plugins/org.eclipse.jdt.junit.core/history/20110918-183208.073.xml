@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="Rerun specs.When_investigating_5.it_should_return_buzz" project="FizzBuzz" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="it_should_return_buzz" classname="specs.When_investigating_5" time="0.0"/>
+</testrun>

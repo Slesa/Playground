@@ -1,0 +1,22 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class When_havin_any_number extends FizzBuzzTest {
+
+	@Test
+	public void it_should_return_same_as_string() {
+		String result = _fizzBuzz.get_output(7);
+		assertEquals(result, "7");
+	}
+
+}
+
+public class When_investigating_3 extends FizzBuzzTest {
+
+	@Test
+	public void it_should_return_fizz() {
+		String result = _fizzBuzz.get_output(3);
+		assertEquals(result, "Fizz");
+	}
+}

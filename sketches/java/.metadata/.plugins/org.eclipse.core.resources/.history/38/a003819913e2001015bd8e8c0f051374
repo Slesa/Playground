@@ -1,0 +1,11 @@
+package specs;
+import org.junit.Test;
+
+public class When_investigating_5 extends FizzBuzzTest {
+	
+	@Test
+	public void it_should_return_buzz() {
+		String result = _fizzBuzz.get_output(5);
+		expect(5, "Buzz");
+	}
+}

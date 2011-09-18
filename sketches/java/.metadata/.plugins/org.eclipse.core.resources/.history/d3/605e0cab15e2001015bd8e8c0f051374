@@ -1,0 +1,69 @@
+package Main;
+
+public class Format3 implements INumberFormatter {
+
+	@Override
+	public boolean can_handle(int number) {
+		
+		return number%3==0;
+	}
+
+	@Override
+	public String handle(int number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+ 
+}
+
+public class Format5 implements INumberFormatter {
+
+	@Override
+	public boolean can_handle(int number) {
+		
+		return number%5==0;
+	}
+
+	@Override
+	public String handle(int number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+
+public class FizzBuzz {
+
+	public String get_output(int number) {
+		
+		if( number%3==0 && number%5==0 )
+			return "FizzBuzz";
+		
+		if( number%3==0 )
+			return "Fizz";
+		
+		if( number%5==0 )
+			return "Buzz";
+		
+		return String.format("%d", number);
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int max = 10;
+		for(int i=0; i<max; i++)
+		{
+			if( i%3==0 && i%5==0 )
+			{
+				System.out.println("FizzBuzz");
+				continue;
+			}
+			System.out.format("%d", i);
+			System.out.println();
+		}
+	}
+
+}

@@ -1,0 +1,75 @@
+package Main;
+
+public class Format_divisible_by_3 implements INumberFormatter {
+
+	@Override
+	public boolean can_handle(int number) {
+		
+		return number%3==0;
+	}
+
+	@Override
+	public String handle(int number) {
+		
+		return "Fizz";
+	}
+ 
+}
+
+public class Format5 implements INumberFormatter {
+
+	@Override
+	public boolean can_handle(int number) {
+		
+		return number%5==0;
+	}
+
+	@Override
+	public String handle(int number) {
+		
+		return "Buzz";
+	}
+	
+}
+
+public class FizzBuzz {
+
+	static INumberFormatter[] _numberFormatter;
+	
+	public String get_output(int number) {
+		
+		if( number%3==0 && number%5==0 )
+			return "FizzBuzz";
+		
+		if( number%3==0 )
+			return "Fizz";
+		
+		if( number%5==0 )
+			return "Buzz";
+		
+		return String.format("%d", number);
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		_numberFormatter = new INumberFormatter[3];
+		_numberFormatter[0] = new Format_divisible_by_3();
+		_numberFormatter[1] = new Format_divisible_by_5();
+		_numberFormatter[2] = new Format_divisible_by_3_and_5();
+		
+		int max = 10;
+		for(int i=0; i<max; i++)
+		{
+			if( i%3==0 && i%5==0 )
+			{
+				System.out.println("FizzBuzz");
+				continue;
+			}
+			System.out.format("%d", i);
+			System.out.println();
+		}
+	}
+
+}

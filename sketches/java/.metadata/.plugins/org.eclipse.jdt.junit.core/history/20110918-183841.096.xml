@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="specs" project="FizzBuzz" tests="6" started="6" failures="1" errors="0" ignored="0">
+  <testsuite name="specs.When_divisible_by_3_and_5" time="0.016">
+    <testcase name="it_should_return_fizzbuzz_for_15" classname="specs.When_divisible_by_3_and_5" time="0.016">
+      <failure>
+        <expected>Fizz</expected>
+        <actual>FizzBuzz</actual>org.junit.ComparisonFailure: expected:&lt;Fizz[]&gt; but was:&lt;Fizz[Buzz]&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:123)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:145)&#13;
+	at specs.FizzBuzzTest.expect(FizzBuzzTest.java:20)&#13;
+	at specs.When_divisible_by_3_and_5.it_should_return_fizzbuzz_for_15(When_divisible_by_3_and_5.java:9)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)&#13;
+&#13;
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="specs.When_havin_any_number" time="0.002">
+    <testcase name="it_should_return_same_as_string" classname="specs.When_havin_any_number" time="0.002"/>
+  </testsuite>
+  <testsuite name="specs.When_divisible_by_3" time="0.004">
+    <testcase name="it_should_return_fizz_for_3" classname="specs.When_divisible_by_3" time="0.003"/>
+    <testcase name="it_should_return_fizz_for_6" classname="specs.When_divisible_by_3" time="0.001"/>
+  </testsuite>
+  <testsuite name="specs.When_divisible_by_5" time="0.001">
+    <testcase name="it_should_return_buzz_for_5" classname="specs.When_divisible_by_5" time="0.0"/>
+    <testcase name="it_should_return_buzz_for_10" classname="specs.When_divisible_by_5" time="0.001"/>
+  </testsuite>
+</testrun>
