@@ -1,0 +1,22 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class When_havin_any_number {
+
+	private FizzBuzz _fizzBuzz;
+
+	@Before
+	public void setUp() throws Exception {
+		_fizzBuzz = new FizzBuzz();
+	}
+
+	@Test
+	public void test() {
+		String result = _fizzBuzz.get_output(7);
+		assertEquals(result, "7");
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="Rerun When_havin_any_number.it_should_return_same_as_string" project="FizzBuzz" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="it_should_return_same_as_string" classname="When_havin_any_number" time="0.0"/>
+</testrun>
