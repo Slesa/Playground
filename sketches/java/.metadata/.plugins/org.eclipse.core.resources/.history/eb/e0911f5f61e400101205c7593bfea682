@@ -1,0 +1,19 @@
+
+public class HelloSpring {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		try {
+		}
+		catch(Exception e) {
+			
+			ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(new String[] {"springexample-creditaccount.xml"});
+			e.printStackTrace();
+		}
+		System.out.println("Done");
+	}
+
+}
