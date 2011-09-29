@@ -19,3 +19,5 @@ opt/
 *.pdb
 ipch/
 *_Spliced.*
+.metadata/
+target/
