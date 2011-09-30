@@ -22,7 +22,6 @@ public class HelloHibernate {
 			
 			shutdown_session_factory();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

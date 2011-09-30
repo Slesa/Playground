@@ -4,52 +4,48 @@
 
 <hibernate-configuration>
 
-	<session-factory>
-        <!-- Database connection settings -->
+	<!--  session-factory>
+
         <property name="connection.driver_class">org.h2.Driver</property>
         <property name="connection.url">jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1;MVCC=TRUE</property>
         <property name="connection.username">sa</property>
         <property name="connection.password"/>
 
-        <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
 
-        <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
 
-        <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
-        <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-
-        <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
 
         <mapping resource="Event.hbm.xml"/>
-	</session-factory>
+	</session-factory -->
 
-	<!--  session-factory>
+	<session-factory>
 		<property name="connection.url">
-			jdbc:sqlserver://localhost;integratedSecurity=true;databaseName=hellohibernate;instanceName=SQLEXPRESS;
+			jdbc:sqlite:hellohibernate.db
 		</property>
 		<property name="connection.driver_class">
-			com.microsoft.sqlserver.jdbc.SQLServerDriver
+			org.sqlite.JDBC
 		</property>
 		<property name="dialect">
-			org.hibernate.dialect.SQLServerDialect
+			SQLiteDialect
 		</property>
-		<property name="cache.provider_class">
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!--  property name="cache.provider_class">
 			org.hibernate.cache.EhCacheProvider
-		</property>
+		</property -->
 		<property name="current_session_context_class">
 			thread
 		</property>
-		<property name="hibernate.transaction.factory_class">
+		<!--  property name="hibernate.transaction.factory_class">
 			org.hibernate.JDBCTransactionFactory
-		</property>
+		</property -->
+
+        <property name="show_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
-		<mapping class="Honey" />
-		<mapping class="Bee" />
-	</session-factory -->
+        <mapping resource="Event.hbm.xml"/>
+	</session-factory>
 </hibernate-configuration>
