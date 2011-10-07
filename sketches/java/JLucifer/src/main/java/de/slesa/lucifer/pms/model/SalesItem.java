@@ -1,5 +1,6 @@
 package de.slesa.lucifer.pms.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +17,6 @@ public class SalesItem {
 	protected Long id;
 	protected String name;
 	
-	@OneToOne
+	@OneToOne( cascade=CascadeType.ALL )
 	protected SalesFamily salesFamily;
 }

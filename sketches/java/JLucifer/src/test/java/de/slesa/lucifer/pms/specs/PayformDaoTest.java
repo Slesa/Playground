@@ -12,25 +12,27 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.slesa.lucifer.pms.model.Discount;
-import de.slesa.lucifer.pms.persistence.IDiscountDao;
+import de.slesa.lucifer.pms.model.Payform;
+import de.slesa.lucifer.pms.persistence.IPayformDao;
 
 @TransactionConfiguration
 @ContextConfiguration("classpath:context.xml")
 @Transactional
 @RunWith(SpringJUnit4ClassRunner.class)
-public class DiscountDaoTest {
+public class PayformDaoTest {
 
 	@Resource
-	IDiscountDao discountDao;
+	IPayformDao payformDao;
 	
-	@Test public void saveDiscount() {
-		Discount discount = new Discount("25 percent", 0.25);
-		discountDao.save(discount);
+	@Test public void savePayform() {
+		Payform payform = new Payform();
+		payform.setName("Cash");
+		payformDao.save(payform);
 		
-		List<Discount> discounts = discountDao.findAllDiscounts();
-		Discount saved = discounts.get(0);
-		Assert.assertEquals("There should be one saved discount",1,discounts.size());
-		Assert.assertEquals("Discount should be equal to saved one", discount, saved);
+		List<Payform> payforms = payformDao.findAllPayforms();
+		Payform saved = payforms.get(0);
+		Assert.assertEquals("There should be one saved payform",1,payforms.size());
+		Assert.assertEquals("Payform should be equal to saved one", payform, saved);
+		
 	}
 }

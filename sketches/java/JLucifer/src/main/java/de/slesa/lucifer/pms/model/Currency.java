@@ -14,10 +14,15 @@ public class Currency {
 	@GeneratedValue
 	protected Long id;
 	protected String name;
-	protected String Contraction;
-	protected String Symbol;
+	protected String contraction;
+	protected String symbol;
 	protected double rate;
 	protected int decimalPosition;
-	protected char DecimalChar;
-	protected char ThousandChar;
+	protected char decimalChar;
+	protected char thousandChar;
+	
+	public Currency(String name, String contraction) {
+		this.name = name;
+		this.contraction = contraction;
+	}
 }

@@ -25,14 +25,12 @@ public class CurrencyDaoTest {
 	ICurrencyDao currencyDao;
 	
 	@Test public void saveCurrency() {
-		Currency currency = new Currency();
-		currency.setName("Euro");
-		currency.setContraction("€");
+		Currency currency = new Currency("Euro", "€");
 		currencyDao.save(currency);
 		
 		List<Currency> currencies = currencyDao.findAllCurrencies();
 		Currency saved = currencies.get(0);
 		Assert.assertEquals("There should be one saved currency",1,currencies.size());
-		Assert.assertEquals("Currency should be equal to saved currency", currency, saved);
+		Assert.assertEquals("Currency should be equal to saved one", currency, saved);
 	}
 }
