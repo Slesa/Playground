@@ -16,6 +16,7 @@ public class SalesItemDao implements ISalesItemDao {
 	@PersistenceContext
 	EntityManager em;
 	
+	@SuppressWarnings("unchecked")
 	public List<SalesItem> findAllSalesItems() {
 		
 		return em.createQuery("FROM SalesItem si").getResultList();

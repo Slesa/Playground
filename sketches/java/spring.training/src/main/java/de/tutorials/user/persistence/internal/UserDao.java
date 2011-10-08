@@ -16,13 +16,11 @@ public class UserDao implements IUserDao {
 	@PersistenceContext
 	private EntityManager em;
 
-	@Override
 	@SuppressWarnings("unchecked")
 	public List<User> findAllUsers() {
 		return em.createQuery("from User u").getResultList();
 	}
 
-	@Override
 	public void save(User user) {
 		em.persist(user);
 	}
