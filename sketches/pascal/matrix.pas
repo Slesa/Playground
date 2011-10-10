@@ -1,5 +1,7 @@
 program MatrixSummen(input,output);
-
+{ Ueberprueft bei einer Matrix von Interger-Zahlen, ob
+  jede Spaltensumme groesser ist als die Zeilensumme
+  einer angegebenen Zeile }
 const
 	ZEILENMAX = 3;
 	SPALTENMAX = 4;
@@ -15,36 +17,42 @@ var
 	Spalte : tSpalte;
 	Eingabe : integer;
 
-function ZeilenSummeKleiner(Zeile : integer) : boolean;
-Label 10;
+function ZeilenSummeKleiner(SelektZeile : integer) : boolean;
+{ Liefert true, wenn alle Spaltensummen groesser sind
+  als die Zeilensumme der uebergebenen Zeile }
 var
-	i,j : integer;
-	summe, vergleich : integer;
+	Spalte, Zeile : integer;
+	ZeilenSumme, SpaltenSumme : integer;
+	Fertig : boolean;
 begin
-	summe := 0;
-	for i:=1 to SPALTENMAX do
-		summe := summe + Matrix[Zeile, i];
-
-	writeln ('Zeilensumme der Zeile ',Zeile:1,': ', summe);
-	writeln ('Spaltensummen: ');
-
-	for i:=1 to SPALTENMAX do begin
-		vergleich := 0;
-		for j:=1 to ZEILENMAX do
-			vergleich := vergleich + Matrix[j,i];
-
-		write ('Spalte ', i, ': ', vergleich);
-		if vergleich<=summe then begin
-			writeln (', ', vergleich, ' <= ', summe);
-			ZeilenSummeKleiner := false;
-			goto 10
-		end else
-			writeln (', ', vergleich, ' > ', summe);
-	end;
 
 	ZeilenSummeKleiner := true;
+	Fertig := false;
 
-	10:
+	ZeilenSumme := 0;
+	for Spalte:=1 to SPALTENMAX do
+		ZeilenSumme := ZeilenSumme + Matrix[SelektZeile, Spalte];
+
+	writeln ('Zeilensumme der Zeile ',SelektZeile:1,': ', ZeilenSumme);
+	writeln ('Spaltensummen: ');
+
+	Spalte := 1;
+	repeat
+		SpaltenSumme := 0;
+		for Zeile:=1 to ZEILENMAX do
+			SpaltenSumme := SpaltenSumme + Matrix[Zeile,Spalte];
+
+		write ('Spalte ', Spalte , ': ', SpaltenSumme);
+		if SpaltenSumme<=ZeilenSumme then 
+		begin
+			writeln (', ', SpaltenSumme, ' <= ', ZeilenSumme);
+			ZeilenSummeKleiner := false;
+			Fertig := true;
+		end else
+			writeln (', ', SpaltenSumme, ' > ', ZeilenSumme);
+		Spalte := Spalte+1;
+	until Fertig or (Spalte>=SPALTENMAX);
+
 end;
 
 begin
