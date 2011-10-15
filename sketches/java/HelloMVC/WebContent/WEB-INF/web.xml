@@ -11,6 +11,32 @@
 	<load-on-startup>1</load-on-startup>
 </servlet>
 
+
+<!--  servlet>
+    <servlet-name>log4j-init</servlet-name>
+    <servlet-class>com.foo.Log4jInit</servlet-class>
+
+    <init-param>
+      <param-name>log4j-init-file</param-name>
+      <param-value>WEB-INF/log4j.properties</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+</servlet -->
+
+<!--  listener>
+	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+<context-param>
+	<param-name>log4jConfigLocation</param-name>
+	<param-value>/WEB-INF/classes/log4j.properties</param-value>
+</context-param>
+</listener >
+
+<context-param>
+<param-name>log4jConfigLocation</param-name>
+<param-value>/WEB-INF/classes/log4j.properties</param-value>
+</context-param -->
+
 <servlet-mapping>
 	<servlet-name>dispatcher</servlet-name>
 	<url-pattern>/forms/*</url-pattern>
