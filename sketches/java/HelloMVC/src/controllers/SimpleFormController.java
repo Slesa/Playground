@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class SimpleFormController {
 
-	@RequestMapping(value="/simpleForm.html", method=RequestMethod.GET)
+	@RequestMapping(value = "/simpleForm.html", method = RequestMethod.GET)
 	public void simpleForm(Model model) {
 		model.addAttribute(new User());
 	}
 
-	@RequestMapping(value="/formoutput.html", method=RequestMethod.POST)
+	@RequestMapping(value = "/formoutput.html", method = RequestMethod.POST)
 	public void simple(@ModelAttribute User user, Model model) {
 		model.addAttribute("user", user);
 	}

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloWorldController {
 
-	@RequestMapping("/helloworld")
+	@RequestMapping("/helloworld.html")
 	public ModelAndView helloWorld() {
 		String message = "Hello World, Spring 3.0!";
 		return new ModelAndView("helloworld", "message", message);

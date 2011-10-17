@@ -34,6 +34,7 @@ public class ValidationController {
 		if (result.hasErrors()) {
 			return "validationform";
 		}
+		// Add the saved validationForm to the model
 		model.put("validationForm", validationForm);
 		return "validationsuccess";
 	}
