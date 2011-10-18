@@ -14,12 +14,13 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 	">
 
-	<context:component-scan base-package="controllers" />
-	
 	<!-- Enable annotation driven controllers, validation etc... -->
 	<mvc:annotation-driven />
 	
+	<context:component-scan base-package="controllers" />
 
+	<bean id="registrationValidation" class="model.RegistrationValidation" />
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 

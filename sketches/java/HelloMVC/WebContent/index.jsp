@@ -12,6 +12,8 @@
 	<li><a href="forms/helloworld.html">Hello World</a></li>
 	<li><a href="forms/simpleForm.html">Simple Form</a></li>
 	<li><a href="forms/validationform.html">Validation Form</a></li>
+	<li><a href="forms/loginform.html">Login Form</a></li>
+	<li><a href="forms/registrationform.html">Registration Form</a></li>
 </ul>
 </body>
 </html>
