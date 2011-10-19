@@ -1,0 +1,10 @@
+.bar {
+	background-color:#DDDDDD;
+	cursor:pointer;
+}
+.current {
+	color:#CC0000;
+}
+.content {
+	padding:10px;
+}
