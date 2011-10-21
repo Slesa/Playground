@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.roadrantz</groupId>
+	<artifactId>roadrantz</artifactId>
+	<packaging>pom</packaging>
+	<name>Spring in Action 2E, RoadRantz Example</name>
+	<version>3.0-SNAPSHOT</version>
+	<url>http://www.habuma.com</url>
+
+  	<properties>
+    	<spring.version>2.5.2</spring.version>
+  	</properties>
+
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>https://maven-repository.dev.java.net/nonav/repository</url>
+			<layout>legacy</layout>
+		</repository>
+		<repository>
+		    <id>spring-milestone</id>
+		    <name>Spring Portfolio Milestone Repository</name>
+		    <url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
+		</repository>		
+		<repository>
+		    <id>spring-snapshot</id>
+		    <name>Spring Portfolio Milestone Repository</name>
+		    <url>http://s3.amazonaws.com/maven.springframework.org/snapshot</url>
+		</repository>		
+	</repositories>
+
+	<build>
+	  <plugins>
+		<plugin>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<configuration>
+				<excludes>
+					<exclude>**/*RantServiceTest*.java</exclude>
+				</excludes>
+			</configuration>
+		</plugin>
+
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.5</source>
+				<target>1.5</target>
+			</configuration>
+		</plugin>
+				
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <configuration>
+            <check>
+              <branchRate>100</branchRate>
+              <lineRate>100</lineRate>
+              <haltOnFailure>false</haltOnFailure>
+              <totalBranchRate>100</totalBranchRate>
+              <totalLineRate>100</totalLineRate>
+              <packageLineRate>100</packageLineRate>
+              <packageBranchRate>100</packageBranchRate>
+            </check>
+			<forkMode>once</forkMode>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>test</phase>
+              <goals>
+                <goal>cobertura</goal>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.3</version>
+        </plugin>
+      </plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>itest</id>
+			<activation>
+				<property>
+					<name>itest</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>surefire-it</id>
+								<phase>integration-test</phase>
+								<goals>
+									<goal>test</goal>
+								</goals>
+								<configuration>
+									<excludes>
+										<exclude>none</exclude>
+									</excludes>
+									<includes>
+										<include>
+											**/*RantServiceTest*.java
+										</include>
+									</includes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	
+   <dependencies>
+       <dependency>
+           <groupId>joda-time</groupId>
+           <artifactId>joda-time</artifactId>
+           <version>1.5.2</version>
+       </dependency>
+       <dependency>
+           <groupId>log4j</groupId>
+           <artifactId>log4j</artifactId>
+           <version>1.2.13</version>
+       </dependency>
+	    
+       <dependency>
+           <groupId>junit</groupId>
+           <artifactId>junit</artifactId>
+           <version>4.4</version>
+           <scope>test</scope>
+       </dependency>
+       <dependency>
+          <groupId>junit-addons</groupId>
+          <artifactId>junit-addons</artifactId>
+          <version>1.4</version>
+          <scope>test</scope>
+       </dependency>
+       <dependency>
+          <groupId>org.easymock</groupId>
+          <artifactId>easymock</artifactId>
+          <version>2.3</version>
+          <scope>test</scope>
+       </dependency>
+   </dependencies>
+   
+	<modules>
+	  <module>domain</module>
+      <module>persistence</module>
+      <module>service</module>
+      <module>web</module>
+	</modules>
+</project>

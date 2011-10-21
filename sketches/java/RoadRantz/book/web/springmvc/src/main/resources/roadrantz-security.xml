@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+   xmlns:beans="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+               http://www.springframework.org/schema/security
+               http://www.springframework.org/schema/security/spring-security-2.0.xsd">
+
+   <!--
+    Automatically registers a login form, BASIC authentication, anonymous authentication, 
+    logout services, remember-me and servlet-api-integration.
+    -->
+   <http auto-config="true">
+      <intercept-url pattern="/home.htm" requires-channel="http" />
+      <intercept-url pattern="/login.htm" requires-channel="https" />
+      <form-login login-page="/login.htm" />
+   </http>
+   
+   <authentication-provider user-service-ref="userService" />
+
+   <global-method-security secured-annotations="enabled" /> 
+
+   <jdbc-user-service id="userService" data-source-ref="dataSource" />
+   <!-- 
+       users-by-username-query="select email,password,true from motorist where email=?"
+       authorities-by-username-query="select m.email,'ROLE_'+p.privilege from motorist m, motorist_privileges p where m.email=? and m.id=p.motorist_id" />
+     -->
+</beans:beans>
