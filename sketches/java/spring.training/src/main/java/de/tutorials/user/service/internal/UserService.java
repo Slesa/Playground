@@ -15,12 +15,10 @@ public class UserService implements IUserService{
 	@Autowired
 	IUserDao userDao;
 	
-	@Override
 	public List<User> findAllUsers() {
 		return userDao.findAllUsers();
 	}
 
-	@Override
 	@Transactional
 	public void register(User user) {
 		userDao.save(user);

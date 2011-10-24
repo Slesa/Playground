@@ -1,5 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.Event;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +7,10 @@ import javax.swing.*;
 
 public class SwingFrame  extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final String[] MONTHS = {
 		"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 	};

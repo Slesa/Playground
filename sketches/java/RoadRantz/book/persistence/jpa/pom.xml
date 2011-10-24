@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">  
+	<parent>
+		<groupId>com.roadrantz</groupId>
+		<artifactId>roadrantz-persistence</artifactId>
+		<version>3.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.roadrantz</groupId>
+	<artifactId>roadrantz-persistence-jpa</artifactId>
+	<packaging>jar</packaging>
+	<name>Spring in Action 2E, RoadRantz Example, JPA Persistence</name>
+	<version>3.0-SNAPSHOT</version>
+	<url>http://www.habuma.com</url>
+
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>
+				https://maven-repository.dev.java.net/nonav/repository
+			</url>
+			<layout>legacy</layout>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.roadrantz</groupId>
+			<artifactId>roadrantz-persistence-common</artifactId>
+			<version>3.0-SNAPSHOT</version>
+	    </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.1</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>xerces</groupId>
+					<artifactId>xercesImpl</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>toplink.essentials</groupId>
+			<artifactId>toplink-essentials</artifactId>
+			<version>2.0-36</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>

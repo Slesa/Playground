@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"  
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <parent>
+     <groupId>com.roadrantz</groupId>
+     <artifactId>roadrantz</artifactId>
+     <version>3.0-SNAPSHOT</version>
+   </parent>
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.roadrantz</groupId>
+   <artifactId>roadrantz-web</artifactId>
+   <packaging>pom</packaging>
+   <name>Spring in Action 2E, RoadRantz Example, Web</name>
+   <version>3.0-SNAPSHOT</version>
+   <url>http://www.habuma.com</url>
+   
+   <dependencies>
+      <dependency>
+         <groupId>com.roadrantz</groupId>
+         <artifactId>roadrantz-domain</artifactId>
+         <version>3.0-SNAPSHOT</version>
+      </dependency>
+   </dependencies>
+   <modules>
+      <module>springmvc</module>
+   </modules>
+</project>
