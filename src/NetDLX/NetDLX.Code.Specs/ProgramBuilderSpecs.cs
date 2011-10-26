@@ -4,7 +4,7 @@ using Machine.Specifications;
 namespace NetDLX.Code.Specs
 {
     [Subject(typeof(ProgramBuilder))]
-    public class When_translating_empty_source : WithSubject<ProgramBuilder>
+    public class When_handling_empty_source : WithSubject<ProgramBuilder>
     {
         Because of = () => _program = Subject.Generate("    ");
 
@@ -14,6 +14,16 @@ namespace NetDLX.Code.Specs
         It should_have_space_for_code = () => _program.Code.ShouldNotBeNull();
         It should_add_no_code = () => _program.Code.Count.ShouldEqual(0);
         It should_set_current_address = () => _program.CurrentAddress.ShouldEqual(0);
+
+        static Program _program;
+    }
+
+    [Subject(typeof(ProgramBuilder))]
+    public class When_handling_jump_label : WithSubject<ProgramBuilder>
+    {
+        Because of = () => _program = Subject.Generate("start:");
+
+        It should_generate_label = () => _program.Labels.Count.ShouldEqual(1);
 
         static Program _program;
     }

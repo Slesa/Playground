@@ -36,8 +36,10 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BuilderHandlerBase.cs" />
+    <Compile Include="IBuilderHandler.cs" />
     <Compile Include="Label.cs" />
+    <Compile Include="LabelBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

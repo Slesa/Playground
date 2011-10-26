@@ -1,3 +1,5 @@
+using System;
+
 namespace NetDLX.Code
 {
     public enum LabelType
@@ -31,5 +33,20 @@ namespace NetDLX.Code
         }
         public LabelType Type { get; set; }
         public string Value { get; set; }
+        public uint GetWord()
+        {
+            var value = Value;
+            var style = System.Globalization.NumberStyles.Number;
+            if( value.StartsWith("0x") )
+            {
+                style = System.Globalization.NumberStyles.HexNumber;
+                value = value.Substring(2);
+            }
+            return uint.Parse(value, style);
+        }
+        public T GetValue<T>()
+        {
+            return (T) Convert.ChangeType(Value, typeof(T));
+        }
     }
 }

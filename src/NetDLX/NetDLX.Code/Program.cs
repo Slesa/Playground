@@ -19,6 +19,7 @@ namespace NetDLX.Code
         public void AddLabel(Label label)
         {
             label.Address = CurrentAddress;
+            CurrentAddress += label.Size;
             Labels.Add(label);
         }
     }
