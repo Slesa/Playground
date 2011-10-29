@@ -37,12 +37,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderHandlerBase.cs" />
+    <Compile Include="FpuOpBuilder.cs" />
     <Compile Include="IBuilderHandler.cs" />
     <Compile Include="Label.cs" />
     <Compile Include="LabelBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetDLX.Core\NetDLX.Core.csproj">
+      <Project>{A62E1389-7EBB-4EAE-B40B-27E20238248A}</Project>
+      <Name>NetDLX.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

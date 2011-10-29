@@ -6,13 +6,13 @@ namespace NetDLX.Code
     {
         public int CurrentAddress { get; set; }
         public string Name { get; set; }
-        public List<byte> Code { get; private set; }
+        public List<uint> Code { get; private set; }
         public List<Label> Labels { get; private set; }
 
         public Program()
         {
             CurrentAddress = 0;
-            Code = new List<byte>();
+            Code = new List<uint>();
             Labels = new List<Label>();
         }
 
@@ -21,6 +21,12 @@ namespace NetDLX.Code
             label.Address = CurrentAddress;
             CurrentAddress += label.Size;
             Labels.Add(label);
+        }
+
+        public void AddCode(uint opCode)
+        {
+            Code.Add(opCode);
+            CurrentAddress += 1;
         }
     }
 }

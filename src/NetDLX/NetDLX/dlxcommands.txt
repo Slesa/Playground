@@ -50,12 +50,12 @@ Ex: add r1,r2,r3
 R[regc] <-- R[rega] + R[regb]
 All are signed integers.
 
-addd
+[F] addd
 Ex: addd f4,f4,f6
 D[dregc] <-- D[drega] + D[dregb]
 All are double precision floating point numbers.
 
-addf
+[F] addf
 Ex: addf f3,f4,f5
 F[fregc] <-- F[frega] + F[fregb]
 All are single precision floating point numbers.
@@ -136,12 +136,12 @@ Ex: div f2,f2,f3
 F[fregc] <-- F[frega] / F[fregb]
 All are signed integers.
 
-divd
+[F] divd
 Ex: divd f4,f4,f6
 D[dregc] <-- D[drega] / D[dregb]
 All are double precision floats.
 
-divf
+[F] divf
 Ex: divf f2,f3,f6
 F[fregc] <-- F[frega] / F[fregb]
 All are single precision floats.
@@ -299,12 +299,12 @@ Ex: mult f2,f3,f4
 F[fregc] <-- F[frega] * F[fregb]
 All are signed integers.
 
-multd
+[F] multd
 Ex: multd f2,f4,f6
 D[dregc] <-- D[drega] * D[dregb]
 All are double precision floats.
 
-multf
+[F] multf
 Ex: multf f3,f4,f5
 F[fregc] <-- F[frega] * F[fregb]
 All are single precision floats.
@@ -498,12 +498,12 @@ Ex: sub r3,r2,r1
 Ex: R[regc] <-- R[rega] - R[regb]
 All are signed integers.
 
-subd
+[F] subd
 Ex: subd f2,f4,f6
 D[dregc] <-- D[drega] - D[dregb]
 All are double precision floats.
 
-subf
+[F] subf
 Ex: subf f3,f4,f6
 F[fregc] <-- F[frega] - F[fregb]
 All are single precision floats.

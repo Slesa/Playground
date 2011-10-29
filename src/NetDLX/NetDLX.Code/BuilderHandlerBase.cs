@@ -19,6 +19,11 @@ namespace NetDLX.Code
             return ReplaceSpacesRegex.Replace(source.Trim(), @" ");
         }
 
+        public static bool IsLabel(string line)
+        {
+            return line.EndsWith(":");
+        }
+
         public static bool IsComment(string line)
         {
             return line.StartsWith(";");

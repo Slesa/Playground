@@ -40,7 +40,7 @@ namespace NetDLX.Code
         {
             newLine = line;
             var labelName = SeparateLine(line)[0];
-            if (labelName == null || !labelName.EndsWith(":")) return null;
+            if (labelName == null || !IsLabel(labelName)) return null;
 
             var dp = line.IndexOf(":");
             newLine = line.Substring(dp + 1).Trim();

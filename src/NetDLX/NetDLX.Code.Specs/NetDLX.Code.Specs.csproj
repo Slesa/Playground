@@ -45,6 +45,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FpuOpBuilderSpecs.cs" />
     <Compile Include="LabelBuilderSpecs.cs" />
     <Compile Include="ProgramBuilderSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\NetDLX.Code\NetDLX.Code.csproj">
       <Project>{DAB184A4-BB43-44A4-8D42-33047F0FF9A4}</Project>
       <Name>NetDLX.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetDLX.Core\NetDLX.Core.csproj">
+      <Project>{A62E1389-7EBB-4EAE-B40B-27E20238248A}</Project>
+      <Name>NetDLX.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
