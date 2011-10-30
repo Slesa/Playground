@@ -1,7 +1,8 @@
 using System;
+using System.Globalization;
 using NetDLX.Core.Exceptions;
 
-namespace NetDLX.Core
+namespace NetDLX.Code
 {
     public static class TranslateOperands
     {
@@ -20,7 +21,9 @@ namespace NetDLX.Core
         
         static uint TranslateImmediate(string specific)
         {
-            return ExtractWord(specific);
+            return specific.StartsWith("0x") 
+                ? uint.Parse(specific.Substring(2), NumberStyles.HexNumber) 
+                : ExtractWord(specific);
         }
 
         static uint TranslateGpRegister(string register)
@@ -48,10 +51,10 @@ namespace NetDLX.Core
         static uint TranslateDpRegister(string register)
         {
             var reg = register.ToLower();
-            if (!reg.StartsWith("d"))
+            if (!reg.StartsWith("f"))
                 throw new SyntaxErrorException();
             var id = ExtractWord(reg.Substring(1));
-            if (id >= 16)
+            if ((id % 2 != 0) || (id >= 32))
                 throw new InvalidRegisterException();
             return id;
         }

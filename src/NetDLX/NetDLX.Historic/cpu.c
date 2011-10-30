@@ -103,17 +103,9 @@ struct DecodeTables DecodeT [128] =
 /* MOVI2S  000001 04 01 */  MOVI2S,  ERROR, T_Move,      4,  "SR ",
 /* MOVFP2I 000010 08 02 */  MOVFP2I, ERROR, T_Move,      4,  "IR ",
 /* MOVI2FP 000011 0C 03 */  MOVI2FP, ERROR, T_Move,      4,  "RI ",
-/* MOVF    000100 10 04 */  MOVFP,   ERROR, T_Move,      4,  "FF ",
-/* MOVD    000101 14 05 */  MOVFP,   ERROR, T_Move,      4,  "DD ",
 /* -       000110 18 06 */  ERROR,   ERROR, T_None,      0,  "   ",
 /* -       000111 1C 07 */  ERROR,   ERROR, T_None,      0,  "   ",
 
-/* CVTF2D  001010 20 08 */  CVT,     ERROR, T_Convert,   4,  "DF ",
-/* CVTF2I  001011 24 09 */  CVT,     ERROR, T_Convert,   4,  "IF ",
-/* CVTD2F  001100 28 0A */  CVT,     ERROR, T_Convert,   4,  "FD ",
-/* CVTD2I  001101 2C 0B */  CVT,     ERROR, T_Convert,   4,  "ID ",
-/* CVTI2F  001110 30 0C */  CVT,     ERROR, T_Convert,   4,  "FI ",
-/* CVTI2D  001111 34 0D */  CVT,     ERROR, T_Convert,   4,  "DI ",
 /* -       001000 38 0E */  ERROR,   ERROR, T_None,      0,  "   ",
 /* -       001001 3C 0F */  ERROR,   ERROR, T_None,      0,  "   ",
 

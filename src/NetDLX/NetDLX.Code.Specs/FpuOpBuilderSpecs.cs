@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using Machine.Fakes;
 using Machine.Specifications;
+using NetDLX.Core;
 using NetDLX.Core.Exceptions;
 
 namespace NetDLX.Code.Specs
@@ -62,11 +64,11 @@ namespace NetDLX.Code.Specs
         It should_consume_source = () => _result.ShouldBeEmpty();
         It should_add_code = () => Program.Code.Count.ShouldEqual(1);
         It should_set_current_address = () => Program.CurrentAddress.ShouldEqual(1);
-        It should_calc_opcode = () => Program.Code[0].ShouldEqual<uint>(0x8c221800);
+        It should_calc_opcode = () => Program.Code[0].ShouldEqual<uint>(0x8c443000);
 
         static bool _canHandle;
         static string _result;
-        const string Source = "addd d1, d2, d3";
+        const string Source = "addd f2, f4, f6";
     }
 
     [Subject(typeof(FpuOpBuilder))]
@@ -81,7 +83,7 @@ namespace NetDLX.Code.Specs
 
         static string _result;
         static Exception _error;
-        const string Source = "addd d1,d2";
+        const string Source = "addd f2,f4";
     }
 
     [Subject(typeof(FpuOpBuilder))]
@@ -97,6 +99,36 @@ namespace NetDLX.Code.Specs
         static string _result;
         static Exception _error;
         const string Source = "addd r1,r2";
+    }
+
+    [Subject(typeof(FpuOpBuilder))]
+    public class When_translating_all_fpu_ops : FpuOpBuilderSpecsBase
+    {
+        Because of = () =>
+            {
+                foreach (var fpuop in FpuOperations.KnownOps)
+                {
+                    var operandCount = 1;
+                    var operands = "";
+                    foreach (var op in fpuop.Operands)
+                    {
+                        var operand = op;
+                        var index = operandCount++;
+                        if (operand == 'D')
+                        {
+                            operand = 'F'; 
+                            index *= 2; 
+                        }
+                        if(operand=='I')
+                            operand = ' ';
+                        if (!string.IsNullOrEmpty(operands)) operands += ",";
+                        operands += operand + index.ToString();
+                    }
+                    Subject.Handle(Program, fpuop.Mnemonic+" "+operands);
+                }
+            };
+
+        It should_work = () => Program.Code.Count.ShouldEqual(FpuOperations.KnownOps.Count());
     }
 
 

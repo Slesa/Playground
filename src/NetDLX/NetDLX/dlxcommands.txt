@@ -264,12 +264,12 @@ Ex: lw r19,label+63(r8)
 R[regb] <-- M[imm16 + R[rega]]
 One word is read from the effective address computed by adding signed integer imm16 and unsigned integer R[rega] and is stored in R[regb].
 
-movd
+[F] movd
 Ex: movd f2,f4
 D[dregc] <-- D[drega]
 Copies two words from double register D[drega] to double register D[dregc].
 
-movf
+[F] movf
 Ex: movf f1,f2
 F[fregc] <-- F[frega]
 Copies one word from fp register F[frega] to fp register F[fregc].

@@ -27,7 +27,7 @@ namespace NetDLX.Code
             var offset = 21;
             foreach(var operand in operands)
             {
-                var code = TranslateOperands.Translate(operand, arguments[currentArg++]);
+                var code = TranslateOperands.Translate(operand, arguments[currentArg++].Trim());
                 opcode += code << offset;
                 offset -= 5;
             }
@@ -45,7 +45,7 @@ namespace NetDLX.Code
             var opcode = query.FirstOrDefault();
             if (opcode == null) return null;
 
-            newLine = SeparateLine(line)[1];
+            newLine = line.Replace(mnemonic, "").Trim();
 
             return opcode;
         }
