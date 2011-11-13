@@ -1,0 +1,81 @@
+body {
+  font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  background-color: #FFFFFF;
+  margin-top: 0px;
+  text-align: center;
+}
+
+div#container
+{
+   width:748px;
+margin-left: auto;
+margin-right: auto;
+text-align: left;
+border-left: 1px solid #000000;
+border-right: 1px solid #000000;
+border-bottom: 1px solid #000000;
+}
+
+.header {
+  width:748px;
+  background-image: url("../images/traffic-strip3.jpg");
+  background-repeat: repeat-x;
+  background-color: #ffffff;
+  border-bottom: 1px, dotted, #660000;
+  font-size: 8pt;
+  color: #FFFFFF;
+}
+
+.menuBar {
+  background-color: #660000;
+  color: #FFFFFF;
+  width:748px;
+}
+
+.menuBar a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.contentArea {
+  background-color: #DDDDFF;
+  width:748px;
+}
+
+.footer {
+  width:100%;
+  background-color: #006e00;
+  color: #FFFFFF;
+}
+
+.aboutBox {
+   border: 1px solid #000066;
+   background-color: #eeeeee;
+   font-size: 10pt;
+   width: 300px;
+}
+
+.signInBox {
+   border: 1px solid #000066;
+   background-color: #eeeeee;
+   font-size: 8pt;
+   width: 300px;
+   text-align:center;
+}
+
+.rantList {
+  font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+  font-size: 9pt;
+}
+
+.plateDiv {
+	width:100px;
+	height:50px;
+	text-align:center;
+	align:center;
+	float:left;
+	margin-right:10px;
+}

@@ -40,5 +40,37 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
+
+	<!-- For HelloMVC -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.2.0.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-api</artifactId>
+    	<version>1.4.2</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+	<dependency>
+    	<groupId>javax.validation</groupId>
+    	<artifactId>validation-api</artifactId>
+    	<version>1.0.0.GA</version>
+	</dependency>
+	<dependency>
+    	<groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+    	<version>1.2.16</version>
+	</dependency>
+    
   </dependencies>
 </project>

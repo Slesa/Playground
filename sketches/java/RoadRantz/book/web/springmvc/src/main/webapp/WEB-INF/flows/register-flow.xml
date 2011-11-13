@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+
+  <var name="motoristForm" 
+      class="com.roadrantz.flow.register.MotoristFormObject" scope="flow" />
+
+  <start-state idref="motoristInfo" />
+
+  <view-state id="motoristInfo" view="motoristDetailForm">
+    <render-actions>
+      <action bean="formAction" method="setupForm"/>
+    </render-actions>  
+    <transition on="continue" to="addVehicles">
+      <action bean="formAction" method="bind"/>
+    </transition>
+  </view-state>
+  
+  <view-state id="addVehicles" view="motoristVehicleForm">
+    <render-actions>
+      <action bean="formAction" method="setupForm"/>
+    </render-actions>
+    <transition on="add" to="addVehicleAction">
+      <action bean="formAction" method="bind"/>
+    </transition>
+    <transition on="continue" to="registerMotoristInfo">
+      <action bean="formAction" method="bind"/>
+    </transition>
+    <transition on="back" to="motoristInfo">
+      <action bean="formAction" method="bind"/>
+    </transition>
+  </view-state>
+  
+  <action-state id="addVehicleAction">
+    <action bean="addVehicleAction" />
+    <transition on="continue" to="addVehicles" />
+  </action-state>
+  
+  <action-state id="registerMotoristInfo">
+    <action bean="registerMotoristAction" />
+    <transition on="done" to="finish" />
+  </action-state>  
+  
+  <end-state id="finish" view="externalRedirect:home.htm" />
+</flow>

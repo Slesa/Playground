@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:flow="http://www.springframework.org/schema/webflow-config"
+           xmlns:p="http://www.springframework.org/schema/p"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans 
+               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-2.5.xsd
+               http://www.springframework.org/schema/webflow-config
+               http://www.springframework.org/schema/webflow-config/spring-webflow-config-1.0.xsd">
+               
+
+  <bean id="messageSource" class=
+      "org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+      <list>
+        <value>messages</value>
+        <value>errors</value>
+      </list>
+    </property>
+  </bean>
+
+  <context:component-scan base-package="com.roadrantz.mvc" />
+
+  <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+  <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="mappings">
+      <value>
+        /login.htm=loginController
+        /register.htm=registerController
+      </value>
+    </property>
+    <property name="order" value="2" />
+  </bean>
+      
+  <bean id="tilesConfigurer" 
+        class="org.springframework.web.servlet.view.tiles.TilesConfigurer"
+        p:definitions="/WEB-INF/roadrantz-tiles.xml" />
+        
+  <bean id="loginController" 
+        class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+
+  <bean id="registerController"
+        class="org.springframework.webflow.executor.mvc.FlowController"
+        p:flowExecutor-ref="flowExecutor"
+        p:defaultFlowId="register-flow" />
+    
+  <bean id="viewResolver" 
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+        p:viewClass="org.springframework.web.servlet.view.tiles.TilesJstlView" />
+        
+  <flow:executor id="flowExecutor" registry-ref="flowRegistry" />        
+        
+  <flow:registry id="flowRegistry">
+    <flow:location path="/WEB-INF/flows/register-flow.xml"/>
+  </flow:registry>
+
+  <bean id="formAction" class="org.springframework.webflow.action.FormAction"
+        p:formObjectName="motoristForm"
+        p:formObjectClass="com.roadrantz.flow.register.MotoristFormObject" />
+
+  <bean id="addVehicleAction"
+        class="com.roadrantz.flow.register.AddVehicleAction" />
+
+  <bean id="registerMotoristAction" 
+        class="com.roadrantz.flow.register.RegisterMotoristAction" 
+        p:rantService-ref="rantService" />
+</beans>

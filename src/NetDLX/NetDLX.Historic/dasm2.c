@@ -16,8 +16,6 @@
 struct OpCodeType OpCodes [] =
 {
     "ADD ",     "RRRd12", 'R', 0xFC000020,   // 1111 1100  10 0000
-    "ADDD ",    "FFFd12", 'R', 0xFC000023,   // 1111 1100  10 0011
-    "ADDF ",    "fffd12", 'R', 0xFC000022,   // 1111 1100  10 0010
     "ADDI ",    "RRId1i", 'I', 0x80000000,   // 1000 0000
     "ADDU ",    "RRRd12", 'R', 0xFC000021,   // 1111 1100  10 0001
     "ADDUI ",   "RRId1i", 'I', 0x84000000,   // 1000 0100
@@ -27,19 +25,11 @@ struct OpCodeType OpCodes [] =
     "BFPF ",    "Q  o  ", 'B', 0x38000000,   // 0011 1000
     "BFPT ",    "Q  o  ", 'B', 0x3C000000,   // 0011 1100
     "BNEZ ",    "RQ 1o ", 'B', 0x34000000,   // 0011 0100
-    "CVTD2F ",  "fF d1 ", 'R', 0xFC00000A,   // 1111 1100  00 1010
-    "CVTD2I ",  "fF d1 ", 'R', 0xFC00000B,   // 1111 1100  00 1011
-    "CVTF2D ",  "Ff d1 ", 'R', 0xFC000008,   // 1111 1100  00 1000
-    "CVTF2I ",  "ff d1 ", 'R', 0xFC000009,   // 1111 1100  00 1001
-    "CVTI2D ",  "Ff d1 ", 'R', 0xFC00000D,   // 1111 1100  00 1101
-    "CVTI2F ",  "ff d1 ", 'R', 0xFC00000C,   // 1111 1100  00 1100
     "DC.B ",    " ",      'P', PSEUDO_DCB,
     "DC.H ",    " ",      'P', PSEUDO_DCH,
     "DC.W ",    " ",      'P', PSEUDO_DCW,
     "DEBUG ",   " ",      'P', PSEUDO_DEBUG,
     "DIV ",     "fffd12", 'R', 0xFC00002C,   // 1111 1100  10 1100
-    "DIVD ",    "FFFd12", 'R', 0xFC00002F,   // 1111 1100  10 1111
-    "DIVF ",    "fffd12", 'R', 0xFC00002E,   // 1111 1100  10 1110
     "DIVU ",    "fffd12", 'R', 0xFC00002D,   // 1111 1100  10 1101
     "DS.B ",    " ",      'P', PSEUDO_DSB,
     "DS.H ",    " ",      'P', PSEUDO_DSH,
@@ -75,15 +65,11 @@ struct OpCodeType OpCodes [] =
     "LTF ",     "ff 12 ", 'R', 0xFC000010,   // 1111 1100  01 0000
     "LW ",      "RORdo1", 'I', 0x50000000,   // 1101 0000
     "MACRO ",   " ",      'P', PSEUDO_MACRO,
-    "MOVD ",    "FF d1 ", 'R', 0xFC000005,   // 1111 1100  00 0101
-    "MOVF ",    "ff d1 ", 'R', 0xFC000004,   // 1111 1100  00 0100
     "MOVFP2I ", "Rf d1 ", 'R', 0xFC000002,   // 1111 1100  00 0010
     "MOVI2FP ", "fR d1 ", 'R', 0xFC000003,   // 1111 1100  00 0011
     "MOVI2S ",  "SR d1 ", 'R', 0xFC000001,   // 1111 1100  00 0001
     "MOVS2I ",  "RS d1 ", 'R', 0xFC000000,   // 1111 1100  00 0000
     "MULT ",    "fffd12", 'R', 0xFC000028,   // 1111 1100  10 1000
-    "MULTD ",   "FFFd12", 'R', 0xFC00002B,   // 1111 1100  10 1011
-    "MULTF ",   "fffd12", 'R', 0xFC00002A,   // 1111 1100  10 1010
     "MULTU ",   "fffd12", 'R', 0xFC000029,   // 1111 1100  10 1001
     "NED ",     "FF 12 ", 'R', 0xFC00001D,   // 1111 1100  01 1101
     "NEF ",     "ff 12 ", 'R', 0xFC000015,   // 1111 1100  01 0101
@@ -119,8 +105,6 @@ struct OpCodeType OpCodes [] =
     "SRL ",     "RRRd12", 'R', 0xFC000036,   // 1111 1100  11 0110
     "SRLI ",    "RRId1i", 'I', 0xD8000000,   // 1101 1000
     "SUB ",     "RRRd12", 'R', 0xFC000024,   // 1111 1100  10 0100
-    "SUBD ",    "FFFd12", 'R', 0xFC000027,   // 1111 1100  10 0111
-    "SUBF ",    "fffd12", 'R', 0xFC000026,   // 1111 1100  10 0110
     "SUBI ",    "RRId1i", 'I', 0x90000000,   // 1001 0000
     "SUBU ",    "RRRd12", 'R', 0xFC000025,   // 1111 1100  10 0101
     "SUBUI ",   "RRId1i", 'I', 0x94000000,   // 1001 0100

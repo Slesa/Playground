@@ -1,0 +1,27 @@
+ul {
+	width:450px;
+	list-style-type:none;
+	margin:10px 0 0 10px;
+	background-color:#EEEEEE;
+	overflow:hidden;
+}
+li {
+	float:left;
+	cursor:pointer;
+}
+li.current {
+	background-color:#DDDDDD;
+	border-bottom:3px solid #DDDDDD;
+}
+div.tabs {
+	width:450px;
+	margin:0 0 10px 10px;
+}
+div.dyn-tabs {
+	width:440px;
+	padding:5px;
+	height:100px;
+	overflow:auto;
+	background-color:#DDDDDD;
+	display:none;
+}
