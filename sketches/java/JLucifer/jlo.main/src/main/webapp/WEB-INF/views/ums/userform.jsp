@@ -4,16 +4,16 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Edit currency</title>
+		<title>Edit user</title>
 	</head>
 	<body>
-		<form:form method="POST" action="validationform.html" commandName="validationform">
+		<form:form method="POST" action="index.html" commandName="index">
 		<table>
 			<tr>
-				<td>Currency name:<font color="red"><form:errors path="currencyName" /></font></td>
+				<td>User name:<font color="red"><form:errors path="userName" /></font></td>
 			</tr>
 			<tr>
-				<td><form:input path="currencyName" /></td>
+				<td><form:input path="userName" /></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Submit" /></td>

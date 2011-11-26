@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import de.slesa.jlo.pms.forms.CurrencyForm;
 
+// http://mhimu.wordpress.com/2007/11/27/spring-mvc-tutorial/
+
 @Controller
-@RequestMapping("/currency.html")
+@RequestMapping("/pms/currency.html")
 public class CurrencyController {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

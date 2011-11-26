@@ -17,20 +17,22 @@
 	<!-- Enable annotation driven controllers, validation etc... -->
 	<mvc:annotation-driven />
 	
-	<!--  context:component-scan base-package="de.slesa.jlo.pms.controllers" / -->
+	<context:component-scan base-package="de.slesa.jlo.pms.controllers" />
+	
+	<!--  bean id="CurrencyEdit" class="de.slesa.jlo.pms.controllers.CurrencyController" / -->
 
 	<!--  bean id="registrationValidation" class="model.RegistrationValidation" / -->
 	
-	<!--  bean id="viewResolver"
+	<bean id="pmsViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
 		<property name="prefix">
-			<value>/WEB-INF/views/</value>
+			<value>/WEB-INF/views/pms/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
-	</bean -->
+	</bean>
 	
 	<!--  bean id="messageSource" 
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
