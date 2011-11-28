@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>de.slesa</groupId>
-  <artifactId>JLucifer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>JLucifer</name>
-  
-  
-  <modules>
-    <module>jlo.main</module>
-    <module>jlo.ums</module>
-    <module>jlo.pms</module>
-  </modules>
-  
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.slesa</groupId>
+	<artifactId>JLucifer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>JLucifer</name>
+
+	<dependencies>
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>0.10.0</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
+</dependencies>
+
+	<modules>
+		<module>jlo.main</module>
+		<module>jlo.ums</module>
+		<module>jlo.pms</module>
+	</modules>
+
 </project>

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import de.slesa.jlo.ums.forms.UserForm;
 
 @Controller
-@RequestMapping("/ums/user.html")
+@RequestMapping("/user.html")
 public class UserController {
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(method=RequestMethod.GET)
 	public String showUserForm(Map model) {
 		UserForm form = new UserForm();

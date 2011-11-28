@@ -16,7 +16,22 @@
 	<name>jlo.main Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<properties>
+		<buildsystem.version>0.0.1-SNAPSHOT</buildsystem.version>
+	</properties>
+	
 	<dependencies>
+
+		<dependency>
+			<groupId>de.slesa</groupId>
+			<artifactId>jlo.pms</artifactId>
+			<version>${buildsystem.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.slesa</groupId>
+			<artifactId>jlo.ums</artifactId>
+			<version>${buildsystem.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>

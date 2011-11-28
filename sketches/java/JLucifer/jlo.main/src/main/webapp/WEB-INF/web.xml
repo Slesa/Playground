@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/j2ee" 
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
 
-<display-name>Lucifer Office</display-name>
+	<display-name>Lucifer Office</display-name>
 
-<servlet>
-	<servlet-name>pms</servlet-name>
-	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	<load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-	<servlet-name>pms</servlet-name>
-	<url-pattern>/forms/*</url-pattern>
-</servlet-mapping>
+	<servlet>
+		<servlet-name>pms</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pms</servlet-name>
+		<url-pattern>/forms/pms/*</url-pattern>
+	</servlet-mapping>
 
-<servlet>
-	<servlet-name>ums</servlet-name>
-	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	<load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-	<servlet-name>ums</servlet-name>
-	<url-pattern>/forms/*</url-pattern>
-</servlet-mapping>
+	<servlet>
+		<servlet-name>ums</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ums</servlet-name>
+		<url-pattern>/forms/ums/*</url-pattern>
+	</servlet-mapping>
 
 
-<!--  servlet>
-	<servlet-name>dispatcher</servlet-name>
-	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	<load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-	<servlet-name>dispatcher</servlet-name>
-	<url-pattern>/cfg/*</url-pattern>
-</servlet-mapping -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/forms/*</url-pattern>
+	</servlet-mapping>
 
-<welcome-file-list>
-	<welcome-file>index.jsp</welcome-file>
-</welcome-file-list>
- 
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
 </web-app>

@@ -11,7 +11,7 @@ import de.slesa.jlo.pms.forms.CurrencyForm;
 // http://mhimu.wordpress.com/2007/11/27/spring-mvc-tutorial/
 
 @Controller
-@RequestMapping("/pms/currency.html")
+@RequestMapping("/currency.html")
 public class CurrencyController {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
