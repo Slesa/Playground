@@ -18,6 +18,8 @@
 
 	<context:component-scan base-package="de.slesa.jlo.pms.controllers" />
 
+	<bean id="currencyDao" class="de.slesa.jlo.pms.persistence.CurrencyDao" />
+
 	<bean id="pmsViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
