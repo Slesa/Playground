@@ -17,13 +17,23 @@
 		<tr>
 			<th>Currency ID</th>
 			<th>Currency Name</th>
-
+			<th>Contraction</th>
+			<th>Symbol</th>
+			<th>Rate</th>
+			<th>Dec. position</th>
+			<th>Dec. char</th>
+			<th>Ths. char</th>
 		</tr>
 
 		<c:forEach items="${currencies}" var="currency">
 		<tr>
 			<td><c:out value="${currency.Id}"/></td>
 			<td><c:out value="${currency.Name}"/></td>
+			<td><c:out value="${currency.Contraction}"/></td>
+			<td><c:out value="${currency.Rate}"/></td>
+			<td><c:out value="${currency.DecimalPosition}"/></td>
+			<td><c:out value="${currency.DecimalChar}"/></td>
+			<td><c:out value="${currency.ThousandChar}"/></td>
 		</tr>
 		</c:forEach>
 	</table>

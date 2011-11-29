@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import de.slesa.jlo.pms.forms.CurrencyForm;
 import de.slesa.jlo.pms.model.Currency;
 import de.slesa.jlo.pms.persistence.ICurrencyDao;
 
@@ -19,22 +18,22 @@ import de.slesa.jlo.pms.persistence.ICurrencyDao;
 // http://www.roseindia.net/tutorial/spring/spring3/web/spring-3-mvc-and-hibernate3-example-part3.html
 
 @Controller
-@RequestMapping("/currencies")
+@RequestMapping("/pms/currencies")
 public class CurrencyController {
 
 	@Autowired
-	private ICurrencyDao currencyDao;
+	private ICurrencyService currencyService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listCurrencies() {
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("currencies", currencyDao.findAll());
-		return new ModelAndView("curreciesList", model);
+		model.put("currencies", currencyService.listCurrencies());
+		return new ModelAndView("currenciesList", model);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public ModelAndView saveCurrency(@ModelAttribute(" currency") Currency currency, BindingResult result) {
-		currencyDao.save(currency);
+		currencyService.addCurrency(currency);
 		return new ModelAndView("redirect:/currencies.html");
 	}
 	
