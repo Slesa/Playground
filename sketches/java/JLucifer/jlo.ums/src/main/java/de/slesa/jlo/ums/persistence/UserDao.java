@@ -5,20 +5,28 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import de.slesa.jlo.ums.model.User;
 
 public class UserDao implements IUserDao {
 
-	@PersistenceContext
-	EntityManager em;
+	@Autowired
+	private SessionFactory sessionFactory;
+
+//	@PersistenceContext
+//	EntityManager em;
 	
 	@SuppressWarnings("unchecked")
 	public List<User> findAll() {
-		return em.createQuery("FROM User u").getResultList();
+		return sessionFactory.getCurrentSession().createCriteria(User.class).list();
+//		return em.createQuery("FROM User u").getResultList();
 	}
 
 	public void save(User user) {
-		em.persist(user);
+		sessionFactory.getCurrentSession().saveOrUpdate(user);
+//		em.persist(user);
 	}
 
 }

@@ -11,7 +11,7 @@
 <body>
 <h1>Lucifer Office</h1>
 <ul>
-	<li><a href="forms/ums/user.html">Add user</a></li>
+	<li><a href="forms/ums/users.html">Users</a></li>
 	<li><a href="forms/pms/currencies">Currencies</a></li>
 </ul>
 </body>

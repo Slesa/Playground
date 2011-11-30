@@ -15,8 +15,8 @@
 	<c:if test="${!empty currencies}">
 	<table>
 		<tr>
-			<th>Currency ID</th>
-			<th>Currency Name</th>
+			<th>ID</th>
+			<th>Name</th>
 			<th>Contraction</th>
 			<th>Symbol</th>
 			<th>Rate</th>
@@ -27,13 +27,13 @@
 
 		<c:forEach items="${currencies}" var="currency">
 		<tr>
-			<td><c:out value="${currency.Id}"/></td>
-			<td><c:out value="${currency.Name}"/></td>
-			<td><c:out value="${currency.Contraction}"/></td>
-			<td><c:out value="${currency.Rate}"/></td>
-			<td><c:out value="${currency.DecimalPosition}"/></td>
-			<td><c:out value="${currency.DecimalChar}"/></td>
-			<td><c:out value="${currency.ThousandChar}"/></td>
+			<td><c:out value="${currency.id}"/></td>
+			<td><c:out value="${currency.name}"/></td>
+			<td><c:out value="${currency.contraction}"/></td>
+			<td><c:out value="${currency.rate}"/></td>
+			<td><c:out value="${currency.decimalPosition}"/></td>
+			<td><c:out value="${currency.decimalChar}"/></td>
+			<td><c:out value="${currency.thousandChar}"/></td>
 		</tr>
 		</c:forEach>
 	</table>

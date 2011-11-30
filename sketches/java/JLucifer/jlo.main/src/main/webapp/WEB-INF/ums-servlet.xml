@@ -19,6 +19,8 @@
 	
 	<context:component-scan base-package="de.slesa.jlo.ums.controllers" />
 	
+	<bean id="userDao" class="de.slesa.jlo.ums.persistence.UserDao" />
+	
 	<bean id="umsViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 

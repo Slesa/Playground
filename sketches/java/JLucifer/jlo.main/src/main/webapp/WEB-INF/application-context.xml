@@ -17,9 +17,6 @@
 	<context:property-placeholder location="classpath:jdbc.properties" />
 
 
-	<!-- context:component-scan base-package="de.slesa.jlo.pms.controllers" 
-		/ -->
-
 	<!-- bean id="registrationValidation" class="model.RegistrationValidation" 
 		/ -->
 

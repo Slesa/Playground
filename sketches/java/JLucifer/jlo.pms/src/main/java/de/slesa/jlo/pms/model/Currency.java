@@ -21,6 +21,8 @@ public class Currency {
 	protected char decimalChar;
 	protected char thousandChar;
 	
+	public Currency() {}
+	
 	public Currency(String name, String contraction) {
 		this.name = name;
 		this.contraction = contraction;

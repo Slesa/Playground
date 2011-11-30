@@ -11,31 +11,41 @@
 	
 		<h1>Add currency</h1>
 		
-		<c:url var="viewCurrenciesUrl" value="/currencies.html" />
+		<c:url var="viewCurrenciesUrl" value="/forms/pms/currencies" />
 		<a href="${viewCurrenciesUrl}">Show all currencies</a>
 
 		<br />
 		<br />
 		
-		<c:url var="saveCurrencyUrl" value="/currencies/save.html" />
+		<c:url var="saveCurrencyUrl" value="/forms/pms/currencies/save" />
 				
 		<form:form modelAttribute="currency" method="POST" action="${saveCurrencyUrl}">
-		<form:label path="currencyName">Currency name:</form:label>
-		<form:input path="currencyName" />
+		<form:label path="name">Currency name:</form:label>
+		<form:input path="name" />
 		
 		<br />
 		
-		<form:label path="currencyContraction">Contraction:</form:label>
-		<form:input path="currencyContraction" />
+		<form:label path="contraction">Contraction:</form:label>
+		<form:input path="contraction" />
 		
 		<br />
+		
+		<form:label path="rate">Rate:</form:label>
+		<form:input path="rate" />
+		
+		<form:label path="decimalPosition">Decimal position:</form:label>
+		<form:input path="decimalPosition" />
+		
+		<br />
+		
+		<input type="submit" value="Save currency" />
 		
 		<!--  table>
 			<tr>
-				<td>Currency name:<font color="red"><form:errors path="currencyName" /></font></td>
+				<td>Currency name:<font color="red"><form:errors path="name" /></font></td>
 			</tr>
 			<tr>
-				<td><form:input path="currencyName" /></td>
+				<td><form:input path="name" /></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Submit" /></td>
