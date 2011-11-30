@@ -17,6 +17,10 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
 	default-autowire="byName">
 
+	<context:annotation-config />
+	<tx:annotation-driven />
+	<context:component-scan base-package="de.slesa.jlo.ums" />
+
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
@@ -35,9 +39,27 @@ String url = "jdbc:h2:mem;INIT=RUNSCRIPT FROM '~/create.sql'\\;RUNSCRIPT FROM '~
  
 	<bean id="UserDao" class="de.slesa.jlo.ums.persistence.UserDao" />
 	<bean id="UserRoleDao" class="de.slesa.jlo.ums.persistence.UserRoleDao" />
-	<context:component-scan base-package="de.slesa.jlo.ums" />
 	
-	<bean id="entityManagerFactory"
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>de.slesa.jlo.ums.model.User</value>
+				<value>de.slesa.jlo.ums.model.UserRole</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--  bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="slesa.jlo.ums" />
 		<property name="jpaVendorAdapter">
@@ -47,12 +69,14 @@ String url = "jdbc:h2:mem;INIT=RUNSCRIPT FROM '~/create.sql'\\;RUNSCRIPT FROM '~
 				<property name="databasePlatform" value="org.hibernate.dialect.H2Dialect" />
 			</bean>
 		</property>
+	</bean -->
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<!--  bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" / -->
 
-	<context:annotation-config />
-
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" />
-
-	<tx:annotation-driven />
 
 </beans>
