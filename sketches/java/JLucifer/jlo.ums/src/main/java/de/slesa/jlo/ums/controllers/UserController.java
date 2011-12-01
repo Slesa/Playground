@@ -24,13 +24,13 @@ public class UserController {
 	public ModelAndView listUsers() {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("users", userService.listUsers());
-		return new ModelAndView("usersList.jsp", model);
+		return new ModelAndView("usersList", model);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public ModelAndView saveUser(@ModelAttribute("user") User user, BindingResult result) {
 		userService.addUser(user);
-		return new ModelAndView("redirect:/forms/ums/users");
+		return new ModelAndView("redirect:/ums/users");
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)

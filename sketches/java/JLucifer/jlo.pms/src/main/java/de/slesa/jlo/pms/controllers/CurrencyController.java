@@ -27,7 +27,7 @@ public class CurrencyController {
 	public ModelAndView listCurrencies() {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("currencies", currencyService.listCurrencies());
-		return new ModelAndView("currenciesList.jsp", model);
+		return new ModelAndView("currenciesList", model);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)

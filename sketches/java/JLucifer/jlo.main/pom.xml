@@ -2,19 +2,20 @@
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<artifactId>JLucifer</artifactId>
 		<groupId>de.slesa</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>de.slesa</groupId>
 	<artifactId>jlo.main</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+
 	<packaging>war</packaging>
-	<name>jlo.main Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<name>Java Lucifer Office</name>
+	<url>http://www.slesa.de</url>
 
 	<properties>
 		<buildsystem.version>0.0.1-SNAPSHOT</buildsystem.version>
@@ -127,13 +128,6 @@
 			<artifactId>lombok</artifactId>
 			<version>0.10.0</version>
 			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.2.0.Final</version>
 			<scope>compile</scope>
 		</dependency>
 
