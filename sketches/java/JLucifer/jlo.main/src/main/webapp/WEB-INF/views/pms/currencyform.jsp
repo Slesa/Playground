@@ -2,17 +2,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE htlm PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<jsp:include page="../../initlibs.jsp" />
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Add currency</title>
 	</head>
 	<body>
-	
 		<h1>Add currency</h1>
 		
 		<c:url var="viewCurrenciesUrl" value="/forms/pms/currencies" />
 		<a href="${viewCurrenciesUrl}">Show all currencies</a>
+		
+		<%
+		isc.DynamicForm.create({
+			ID: "currencyForm",
+			left: 50, top: 250,
+			width: 300,
+			fields: [
+				{name: "name", title: "Name"},
+				{name: "contraction", title: "Contraction:"}
+			]
+		})
+		 %>
+	<!--  
 
 		<br />
 		<br />
@@ -40,18 +53,8 @@
 		
 		<input type="submit" value="Save currency" />
 		
-		<!--  table>
-			<tr>
-				<td>Currency name:<font color="red"><form:errors path="name" /></font></td>
-			</tr>
-			<tr>
-				<td><form:input path="name" /></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Submit" /></td>
-			</tr>
-		</table -->
 		</form:form>
+		 -->
 	</body>
 </html>
  

@@ -1,0 +1,9 @@
+<DataSource ID="PortalColumn" createStandalone="false">
+    <fields>
+        <field name="portalRows" type="PortalRow" multiple="true" propertiesOnly="true" />
+       	<field name="width" type="measure" title="Width" basic="true" />
+
+        <!-- This is to allow for auto-wrapping -->
+        <field name="portlets" type="Portlet" multiple="true" />
+    </fields> 
+</DataSource>

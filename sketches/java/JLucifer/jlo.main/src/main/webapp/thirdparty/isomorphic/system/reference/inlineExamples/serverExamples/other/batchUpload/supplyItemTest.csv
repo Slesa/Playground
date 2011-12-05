@@ -1,0 +1,5 @@
+"nextShipment","category","itemName","itemID","unitCost","description","SKU","inStock","units"
+"2009-01-21","Widget","Large grey widget",,0.41,"","45300","","EACH"
+"2008-11-17","Gizmo","Small blue gizmo",,-0.47,"","90600","","Ea"
+"","Gizmo","Large green gizmo",,0.61,"","135900","","Ea"
+"","Widget","Small red widget",,0.58,"","190000","","Ea"

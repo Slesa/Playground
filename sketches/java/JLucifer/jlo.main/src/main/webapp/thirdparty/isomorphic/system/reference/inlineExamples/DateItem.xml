@@ -1,0 +1,21 @@
+<DynamicForm 
+    ID="dateForm"
+    numCols="4"
+    width="600"
+>
+    <fields>
+        <field name="pickListDate" title="PickList Date" type="date" change="dateLabel.setContents(value)"/>
+        <field name="directInputDate" title="Direct Input Date" type="date" useTextField="true" change="dateLabel.setContents(value)"/>
+    </fields>
+</DynamicForm>
+
+<Label 
+    ID="dateLabel" 
+    top="40" 
+    left="100"
+    width="400"
+/>
+
+<JS>
+dateLabel.setContents(dateForm.getValue('pickListDate'));
+</JS>

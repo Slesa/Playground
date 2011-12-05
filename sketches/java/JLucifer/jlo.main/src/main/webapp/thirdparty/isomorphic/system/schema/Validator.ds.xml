@@ -1,0 +1,42 @@
+<Object ID="Validator" __autoConstruct="DataSource" addGlobalId="false">
+	<fields>
+        <!-- used by all validators -->
+		<type type="string"/>					
+        <stopIfFalse type="boolean"/>
+        <clientOnly type="boolean"/>
+        <!-- used by all validators -->
+		<errorMessage type="string"/>
+        <!-- used by integerRange, lengthRange, floatLimit -->
+		<max type="float"/>
+		<min type="float"/>
+		<exclusive type="boolean"/>
+        <!-- used by mask -->
+		<mask type="regexp"/>
+		<transformTo type="regexp"/>
+        <!-- used by floatLimit -->
+		<precision type="integer"/>
+        <!-- used by requiredIf, regexp -->
+		<expression type="string"/>
+        <!-- used by matchesField -->
+		<otherField type="string"/>
+        <!-- used by isOneOf -->
+		<list type="text" multiple="true"/>
+        <!-- used by contains, doesntContain, and substringCount -->
+        <valueMap type="ValueMap"/>
+        <!-- used by inValueMap -->
+		<substring type="text"/>
+        <!-- used by substringCount -->
+		<operator type="text"/>
+		<count type="integer"/>
+
+        <!-- for conditional validators -->
+        <applyWhen type="AdvancedCriteria"/>
+        <dependentFields type="string" multiple="true"/>
+
+        <!-- custom server validator: Velocity expression -->
+        <serverCondition type="string"/>
+        <!-- custom server validator: Object invoked via DMI -->
+        <serverObject type="ServerObject"/>
+	</fields>
+</Object>
+

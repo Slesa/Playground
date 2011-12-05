@@ -1,0 +1,12 @@
+<DataSource
+    ID="teamMembers"
+    clientOnly="true"
+    titleField="employeeName"
+>
+    <fields>
+        <field name="employeeName"    title="Name"            type="text"     length="128"/>
+        <field name="employeeId"      title="Employee ID"     type="integer"  
+               foreignKey="employees.EmployeeId"  />
+        <field name="projectCode"     title="Project Code"    type="text"     length="30"/> 
+    </fields>
+</DataSource>

@@ -1,0 +1,9 @@
+
+<DataSource ID="mediaLibraryHB" dataFormat="iscServer" serverType="hibernate" tableName="mediaLibraryHB" >
+    <!--beanClassName="com.isomorphic.examples.server.uploadHB.MediaItem"-->
+    <fields>
+        <field name="pk" type="sequence" hidden="true" primaryKey="true" />
+        <field name="title" type="text" />
+        <field name="image" type="imageFile" maxFileSize="51200" />
+    </fields>
+</DataSource>

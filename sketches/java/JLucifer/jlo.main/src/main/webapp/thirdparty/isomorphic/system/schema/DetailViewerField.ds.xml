@@ -1,0 +1,16 @@
+<DataSource ID="DetailViewerField" autoIdField="name">
+	<fields>
+		<field name="name"			type="string"  xmlAttribute="true" basic="true"/>
+		<field name="type"			type="string"  xmlAttribute="true" basic="true"/>
+		<field name="title"			type="HTMLString"  xmlAttribute="true" basic="true"/>
+		<field name="valueMap"		type="ValueMap" />
+		<field name="showIf"		type="expression" />
+		<field name="asHTML"		type="boolean" visibility="internal"/>
+		<field name="value"			type="HTMLString" />
+		<field name="width"			type="positiveInteger" visibility="internal"/>
+		<field name="height"		type="positiveInteger" />
+        <field name="imageSize"     type="number"/>
+        <field name="imageWidth"    type="number"/>
+        <field name="imageHeight"   type="number"/>
+	</fields>
+</DataSource>

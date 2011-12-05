@@ -1,0 +1,23 @@
+<DynamicForm width="300">
+    <fields>
+        <field defaultValue="Item" type="section" sectionExpanded="true">
+            <itemIds>
+                <itemId>itemName</itemId>
+                <itemId>description</itemId>
+                <itemId>price</itemId>
+            </itemIds>
+        </field>
+        <field name="itemName" type="text" title="Item"/>
+        <field name="description" type="textArea" title="Description"/>
+        <field name="price" type="float" title="Price" defaultValue="low"/>
+        <field defaultValue="Stock" type="section" sectionExpanded="false">
+            <itemIds>
+                <itemId>inStock</itemId>
+                <itemId>nextShipment</itemId>
+            </itemIds>
+        </field>
+        <field name="inStock" type="checkbox" title="In Stock"/>
+        <field name="nextShipment" type="date" title="Next Shipment"
+               useTextField="true"/>        
+    </fields>
+</DynamicForm>

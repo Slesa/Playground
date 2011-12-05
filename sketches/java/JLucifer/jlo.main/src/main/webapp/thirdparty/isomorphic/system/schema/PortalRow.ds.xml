@@ -1,0 +1,6 @@
+<DataSource ID="PortalRow" createStandalone="false">
+    <fields>
+        <!-- Note that type is "Canvas" because we will automatically generate the portlet if needed -->
+        <field name="portlets" type="Canvas" multiple="true" />
+    </fields>
+</DataSource>

@@ -1,0 +1,17 @@
+<DataSource
+    ID="teamMembers"
+    serverType="sql"
+    tableName="teamMembers"
+    testFileName="/examples/shared/ds/test_data/teamMembers.data.xml"
+    dbImportFileName="/examples/shared/ds/test_data/teamMembers.data.xml"
+
+    titleField="employeeName"
+>
+    <fields>
+    	<field name="uniqueSeq"       hidden="true"           type="sequence" primaryKey="true"/>
+        <field name="employeeName"    title="Name"            type="text"     length="128"/>
+        <field name="employeeId"      title="Employee ID"     type="integer"  
+               foreignKey="employees.EmployeeId"  />
+        <field name="projectCode"     title="Project Code"    type="text"     length="30"/> 
+    </fields>
+</DataSource>
