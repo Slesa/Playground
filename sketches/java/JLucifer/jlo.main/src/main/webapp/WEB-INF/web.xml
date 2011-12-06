@@ -56,4 +56,53 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+    <jsp-config>
+        <!-- Isomorphic JSP tags -->
+        <taglib>
+            <taglib-uri>isomorphic</taglib-uri> 
+            <taglib-location>/WEB-INF/iscTaglib.xml</taglib-location> 
+        </taglib>
+
+        <!-- Struts Tag Library Descriptors -->
+        <!--  taglib>
+            <taglib-uri>/tags/struts-bean</taglib-uri>
+            <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/struts-html</taglib-uri>
+            <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/struts-logic</taglib-uri>
+            <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/struts-nested</taglib-uri>
+            <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/tags/struts-tiles</taglib-uri>
+            <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+        </taglib -->
+
+        <!-- Serve *.isc files with iscHeader/iscFooter -->
+        <jsp-property-group>
+            <url-pattern>*.isc</url-pattern>
+            <el-ignored>true</el-ignored>
+            <include-prelude>/shared/jsp/iscHeader.jsp</include-prelude>
+            <include-coda>/shared/jsp/iscFooter.jsp</include-coda>
+        </jsp-property-group>
+        <!-- Process *.rpc files as RPC requests - puts you in an iterator over current RPC requests -->
+        <jsp-property-group>
+            <url-pattern>*.rpc</url-pattern>
+            <el-ignored>true</el-ignored>
+            <include-prelude>/shared/jsp/rpcHeader.jsp</include-prelude>
+            <include-coda>/shared/jsp/rpcFooter.jsp</include-coda>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <el-ignored>true</el-ignored>
+        </jsp-property-group>
+    </jsp-config> 
+    
 </web-app>
