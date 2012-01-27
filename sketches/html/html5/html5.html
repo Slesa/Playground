@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Slesa's Blog</title>
+		<link rel="stylesheet" href="html5.css" type="text/css">
+
+		<script type="text/javascript">
+
+			var links = $("a.popup");
+			links.click(function(event){
+				event.preventDefault();
+				window.open($(this).attr('href'));
+			});
+
+		</script>
+		<!-- script type="text/javascript">
+			$(function(){
+				$(".popup").click(function(event){
+					event.PreventDefault();
+					var href = $(this).attr("href");
+					var width = $(this).attr("data-width");
+					var height = $(this).attr("data-height");
+					var popup = window.open(href, "popup", "height="+height+", width="+width+"");
+				});
+			});>
+		</script -->
+
+	</head>
+
+	<body>
+
+	<header id="page_header">
+		<h1>Slesa's Blog</h1>
+
+		<nav>
+			<ul>
+				<li><a href="/">Latest Posts</a></li>
+				<li><a href="archives">Archives</a></li>
+				<li><a href="contributors">Contributors</a></li>
+				<li><a href="contact">Contact us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="posts">
+		<article class="post">
+			<header>
+				<h2>Interessantes Video über Bingo</h2>
+				<p>Posted by Slesa on <time datetime="2011-19-10T13:05">19. Januar 2011 um 13:05</time>
+			</header>
+			<aside>
+				<p>Ursprünglich von ilkerde per Twitter</p>
+			</aside>
+			<p>Auf youtube.com gibts ein interessantes Video über "Bingo the clown". Ich bin mir nicht
+			   sicher, ob es eine Art von Gesellschaftskritik sein soll, aber ich denke schon.
+			</p>
+			<footer>
+				<p><a href="comments"><i>25 comments</i></a>...</p>
+			</footer>
+		</article>
+	</section>
+
+	<section id="sidebar">
+		<nav>
+			<h3>Archives</h3>
+			<ul>
+				<li><a href="2011/01">Januar 2011</a></li>
+				<li><a href="2010/12">Dezember 2010</a></li>
+				<li><a href="2011/11">November 2010</a></li>
+			</ul>
+		</nav>
+	</section>
+
+	<footer id="page_footer">
+		<p>&copy; 2011 by Slesa Solutions</p>
+		<nav>
+			<ul>
+				<li><a href="http://www.slesa.de">Home</a></li>
+				<li><a href="about">About</a></li>
+				<li><a href="terms.html">Terms of service</a></li>
+				<li><a href="privacy.html">Privacy</a></li>
+				<li><a href="style.css" data-width="600" data-height="600" title="Help me!" class="popup">Help</a></li>
+			</ul>
+		</nav>
+	</footer>
+
+	</body>
+
+</html>
