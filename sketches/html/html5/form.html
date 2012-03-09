@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Formulare Formulare...</title>
+	<link rel="stylesheet" href="forms.css" type="text/css" media="screen"/>
+	<script type="text/javascript" charset="utf-8" src="../jquery-1.6.4.js"></script>
+	<script type="text/javascript" charset="utf-8" src="jquery.simpleColor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="jquery.placeholder.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			function hasAutofocus() {
+				var element = document.createElement('input');
+				return 'autofocus' in element;
+			}
+
+			if (!hasAutofocus()){
+				$('input[autofocus]').focus();
+			}
+
+			function hasColorSupport (){
+				input = document.createElement("input");
+				input.setAttribute("type", "color");
+				var hasColorType = (input.type !== "text");
+				if (hasColorType){
+					var testString = "foo";
+					input.value = testString;
+					hasColorType = (input.value != testString);
+				}
+				return(hasColorType);
+			}
+
+			if (!hasColorSupport()){
+				$('input[type=color]').simpleColor();
+			}
+		});
+	</script>
+</head>
+
+<body>
+
+<form id="myform" method="post" action="/projects/1">
+
+	<fieldset id="personal_information">
+		<legend>Project information</legend>
+		<ol>
+			<li>
+				<label for="name">Name</label>
+				<input type="text" name="name" autofocus id="name">
+			</li>
+			<li>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" placeholder="8-10 characters">
+			</li>
+			<li>
+				<label for="priority">Priority</label>
+				<input type="range" min="0" max="10" name="priority" value="0" id="priority">
+			</li>
+			<li>
+				<label for="estimated_hours">Estimated hours</label>
+				<input type="number" name="estimated_hours" min="0" max="1000" id="estimated_hours" value=1>
+			</li>
+			<li>
+				<label for="start_date">Start date</label>
+				<input type="date" name="start_date" id="start_date" value="2011-01-01">
+			</li>
+			<li>
+				<label for="email">Email contact</label>
+				<input type="email" name="email" id="email">
+			</li>
+			<li>
+				<label for=url">Staging URL</label>
+				<input type="url" name="url" id="url" placeholder="www.example.com">
+			</li>
+			<li>
+				<label for="color">Project color</label>
+				<input type="color" name="project_color" id="project_color">
+			</li>
+			<li>
+				<input type="submit" value="Submit">
+			</li>
+		</ol>
+	</fieldset>
+
+</form>
+
+<script language="javascript">
+	$(function(){
+
+		function hasPlaceholderSupport(){
+			var element = document.createElement('input');
+			return 'placeholder' in element;
+		}
+
+		if (!hasPlaceholderSupport()){
+			$('#myform').placeholder();
+		}
+	});
+</script>
+
+</body>
+</html>
+

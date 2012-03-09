@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>SmartClient&trade; 8.1 Feature Explorer</title>
+</head>
+<body BGCOLOR='#606060' CLASS=normal STYLE="overflow:hidden">
+
+<script>
+
+window.isomorphicDir='../../';
+
+</script>
+
+<LINK REL="stylesheet" TYPE="text/css" HREF="skin/shell_styles.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="sourceColorizer.css">
+
+<SCRIPT>var isc_maxCSSLoaders=200</SCRIPT>
+
+<!-- load ISC -->
+<SCRIPT SRC=../modules/ISC_History.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../development/ISC_FileLoader.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_Core.js?isc_version=8.1.js></SCRIPT>
+<!--  -->
+<SCRIPT SRC=../modules/ISC_Foundation.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_Containers.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_Grids.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_Forms.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_RichTextEditor.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_DataBinding.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../modules/ISC_Calendar.js?isc_version=8.1.js></SCRIPT>
+<!-- //>PluginBridges -->
+<SCRIPT SRC=../modules/ISC_PluginBridges.js?isc_version=8.1.js></SCRIPT>
+<!-- //<PluginBridges -->
+<SCRIPT SRC=../modules/ISC_Drawing.js?isc_version=8.1.js></SCRIPT>
+<!--  -->
+<SCRIPT SRC=../development/ISC_SyntaxHiliter.js?isc_version=8.1.js></SCRIPT>
+<SCRIPT SRC=../development/ISC_ExampleViewer.js?isc_version=8.1.js></SCRIPT>
+
+<script>
+// Determine what skin file to load
+isc.currentSkin = isc.params.skin;
+if (isc.currentSkin == null) isc.currentSkin = "Enterprise";
+
+// use the file loader to load the appropriate skin file.
+// then, incorporate locale into the feature explorer.
+isc.FileLoader.loadSkin(isc.currentSkin, function () {
+    var localeFile = "../../locales/frameworkMessages.properties";
+    if (isc.params.locale) {
+        if (isc.params.locale != "en")
+            localeFile = "../../locales/frameworkMessages_" + isc.params.locale + ".properties";
+    }
+    isc.FileLoader.loadJSFiles(localeFile, "showExplorer()");
+});
+</script>
+
+<!-- SCRIPT src=../../skins/SmartClient/load_skin.js?isc_version=8.1.js></SCRIPT -->
+
+<script src=exampleTree.js></script>
+<script>
+isc.Page.leaveScrollbarGap = false;
+
+function showExplorer () {
+    if (window.location.protocol == "file:") {
+        isc.warn("The Feature Explorer requires the SmartClient server to be running. See the"
+                +"Quickstart section of the Release Notes for instructions on starting the server."
+                +"<br><br>You may also access these examples online at"
+                +" <a href='http://www.smartclient.com'>http://www.SmartClient.com</a>");
+    } else {
+    // Allow the skin switcher to show
+    isc.ExampleViewer.addProperties({
+        suppressSkinSwitch : false,
+        currentSkin:isc.currentSkin
+    });
+    isc.FeatureExplorer.create({
+        ID: "featureExplorer",
+        width: "100%",
+        height: "100%",
+        treeData: exampleTree,
+        autoDraw: true
+    });
+    }
+}
+</script>
+
+</body>
+</html>

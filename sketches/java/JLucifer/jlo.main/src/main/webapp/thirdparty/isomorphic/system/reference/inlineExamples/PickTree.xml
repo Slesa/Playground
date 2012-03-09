@@ -1,0 +1,47 @@
+<Tree ID="departmentTree">
+    <root name="root">
+        <children>
+            <TreeNode name="Marketing">
+                <children>
+                    <TreeNode name="Advertising"/>
+                    <TreeNode name="Community Relations"/>
+                </children>
+            </TreeNode>
+            <TreeNode name="Sales">
+                <children>
+                    <TreeNode name="Channel Sales"/>
+                    <TreeNode name="Direct Sales"/>
+                </children>
+            </TreeNode>
+            <TreeNode name="Manufacturing">
+                <children>
+                    <TreeNode name="Design"/>
+                    <TreeNode name="Development"/>
+                    <TreeNode name="QA"/>
+                </children>
+            </TreeNode>
+            <TreeNode name="Services">
+                <children>
+                    <TreeNode name="Support"/>
+                    <TreeNode name="Consulting"/>
+                </children>
+            </TreeNode>
+        </children>
+    </root>
+</Tree>
+
+<DynamicForm>
+    <fields>
+        <field name="department" title="Department" type="pickTree" valueField="name">
+            <valueTree><JS>departmentTree</JS></valueTree>
+        </field>
+        <field name="category"
+               title="Category" 
+               type="pickTree" 
+               dataSource="supplyCategory"
+               emptyMenuMessage="No Sub Categories"
+               canSelectParentItems="true"
+        />
+    </fields>
+</DynamicForm>
+

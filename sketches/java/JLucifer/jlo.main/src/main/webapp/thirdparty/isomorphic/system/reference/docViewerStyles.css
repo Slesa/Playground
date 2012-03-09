@@ -1,0 +1,99 @@
+.searchField {
+    font-family:Tahoma,sans-serif;
+    font-size:12px;
+    color:black;
+    background-color:white;
+    border:none;
+}
+.searchForm {
+    margin-left:34px;
+    margin-right:11px;
+}
+.filterForm {
+    margin-left:22px;
+    margin-right:7px;
+}
+.backLabelDown,
+.backLabel {
+    font-family:Tahoma,sans-serif;
+    font-size:11px;
+    color:#e0e0e0;
+}
+.backLabelOver {
+    font-family:Tahoma,sans-serif;
+    font-size:11px;
+    color:#e0ffe0;
+    text-decoration:underline;
+}
+.forwardLabelDown,
+.forwardLabel {
+    font-family:Tahoma,sans-serif;
+    font-size:11px;
+    color:#e0e0e0;
+    text-align:right;    
+}
+.forwardLabelOver {
+    font-family:Tahoma,sans-serif;
+    font-size:11px;
+    color:#e0ffe0;
+    text-decoration:underline;
+    text-align:right;
+}
+
+
+.mainTitle {
+    font-family:Trebuchet MS,sans-serif;
+    font-size:18px;
+/*
+    color:#b0e0ff;
+    color:#ff6060;
+*/
+    color:#80ff80;
+    text-align:center;
+}
+.explorerTabTitle,
+.explorerTabTitleDown {
+    font-family:Tahoma,Verdana, Bitstream Vera Sans, sans-serif; font-size:11px;
+    padding-top:3px;
+}
+.explorerTabTitleOver {
+    font-family:Tahoma,Verdana, Bitstream Vera Sans, sans-serif; font-size:11px;
+    padding-top:3px;
+}
+.explorerTabTitleDisabled {
+    font-family:Tahoma,Verdana, Bitstream Vera Sans, sans-serif; font-size:11px;
+	color:#666666;
+    padding-top:3px;
+}
+.explorerTabTitleSelected,
+.explorerTabTitleSelectedDown {
+    font-family:Tahoma,Verdana, Bitstream Vera Sans, sans-serif; font-size:11px;
+	font-weight:bold;
+    padding-bottom:2px;
+}
+.explorerTabTitleSelectedOver {
+    font-family:Tahoma,Verdana, Bitstream Vera Sans, sans-serif; font-size:11px;
+	font-weight:bold;
+    padding-bottom:2px;
+}
+.explorerTabTitleSelectedDisabled {
+    font-family:Tahoma,Verdana, Bitstream Vera Sans, sans-serif; font-size:11px;
+	color:#666666;
+    font-weight:bold;
+    padding-bottom:2px;
+}
+
+.searchHilight {
+    background-color: yellow;
+}
+
+.docHover {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px; color:black;
+    background-color:#e0ebff; border:1px solid #808080; padding:5px;
+}
+var {
+    font-style: normal;
+}
+.smartgwt {
+    display:none;
+}

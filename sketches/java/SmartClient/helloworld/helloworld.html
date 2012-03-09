@@ -1,0 +1,50 @@
+<HTML>
+	<HEAD>
+		<SCRIPT>var isoDir="../isomorphic/";</SCRIPT>
+		<SCRIPT src=../isomorphic/system/modules/ISC_Core.js></SCRIPT>
+		<SCRIPT src=../isomorphic/system/modules/ISC_Foundation.js></SCRIPT> 
+		<SCRIPT src=../isomorphic/system/modules/ISC_Containers.js></SCRIPT>
+		<SCRIPT src=../isomorphic/system/modules/ISC_Grids.js></SCRIPT>
+		<SCRIPT src=../isomorphic/system/modules/ISC_Forms.js></SCRIPT>
+		<SCRIPT src=../isomorphic/system/modules/ISC_DataBinding.js></SCRIPT>
+		<SCRIPT src=../isomorphic/skins/BlackOps/load_skin.js></SCRIPT>
+		
+	</HEAD>
+	<BODY>
+		<SCRIPT>
+			isc.Label.create({
+				left: 200, top: 200, width: 10,
+				ID: "labelHello", 
+				contents: "Hello world Label"});
+			isc.Button.create({
+				title: "Hello",
+				click: "isc.say('Hello world')"
+			});
+			isc.ListGrid.create({
+				ID: "listContacts",
+				left: 50, top: 50,
+				width: 300,
+				fields: [
+					{name: "salutation", title: "Title"},
+					{name: "firstname", title: "First name"}, 
+					{name: "lastname", title: "Last name"}
+					]
+				});
+
+			isc.DynamicForm.create({
+				ID: "formContacts",
+				left: 50, top: 350,
+				width: 300,
+				fields: [
+					{name: "salutation", title: "Title", editorType: "select", valueMap: ["Ms", "Mr", "Mrs"] },
+					{name: "firstname", title: "First name"},
+					{name: "lastname", title: "Last name"},
+					{name: "status", title: "Status", editorType: "radioGroup", valueMap: ["Employed", "Unemployed"] },
+					{name: "birthdate", title: "Birthday", editorType: "date"},
+					{name: "followup", title: "Follow up", editorType: "checkbox"}
+					]
+				})
+		</SCRIPT>
+	</BODY>
+</HTML>
+

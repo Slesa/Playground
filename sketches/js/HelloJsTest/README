@@ -1,0 +1,11 @@
+This eclipse is configured to run JS test automatically on each save. Curently
+the location of java is set to /usr/bin/java which should work on Linux and
+MacIntosh computers. On windows you will have set the path to your java location
+before Eclipse will run your files automatically.
+
+Changing the location of 'java':
+  1. From menu select 'Project' than 'Properties'
+  2. On the right hand side of the pop up select 'Builders'
+  3. After selecting 'js-test-driver' builder click 'Edit...' button.
+  4. Change the location of the 'java' executable to your location.
+

@@ -1,0 +1,5 @@
+<DynamicForm width="300">
+    <fields>
+        <field title="Time" type="time"/>
+    </fields>
+</DynamicForm>

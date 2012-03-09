@@ -1,0 +1,11 @@
+<Label
+    height="30"
+    padding="10"
+    align="center"
+    valign="center"
+    wrap="false"
+    icon="icons/16/approved.png"
+    showEdges="true"
+><contents>
+    <![CDATA[<i>Approved</i> for release]]>
+</contents></Label>

@@ -1,0 +1,236 @@
+
+.explorerTabTitle,
+.explorerTabTitleDown {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+    padding-top:3px;
+}
+.explorerTabTitleOver {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+    padding-top:3px;
+}
+.explorerTabTitleDisabled {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+      color:#666666;
+    padding-top:3px;
+}
+.explorerTabTitleSelected,
+.explorerTabTitleSelectedDown {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+      font-weight:bold;
+    padding-bottom:2px;
+}
+.explorerTabTitleSelectedOver {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+      font-weight:bold;
+    padding-bottom:2px;
+}
+.explorerTabTitleSelectedDisabled {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+      color:#666666;
+    font-weight:bold;
+    padding-bottom:2px;
+}
+.exampleTabTitle,
+.exampleTabTitleSelected,
+.exampleTabTitleOver,
+.exampleTabTitleDown,
+.exampleTabTitleSelectedOver,
+.exampleTabTitleSelectedDown,
+.exampleTabTitleDisabled,
+.exampleTabTitleSelectedDisabled {
+    font-family:Arial,Bitstream Vera Sans,sans-serif; font-size:11px; font-weight:bold;
+    color: #DDDDDD;
+    padding-right:20px;
+}
+
+.exampleTabTitleSelected {
+    color: #213D42;
+}
+.exampleTabTitleOver,
+.exampleTabTitleDown,
+.exampleTabTitleSelectedOver,
+.exampleTabTitleSelectedDown {
+    color: #00CCCC;
+}
+.exampleTabTitleDisabled,
+.exampleTabTitleSelectedDisabled {
+    color: #666666;
+}
+
+.exampleTabBar {
+    background-color:transparent;
+}
+
+.explorerExampleTitle {
+	font-family:Bitstream Vera Sans,sans-serif;
+	color:#ffffff;
+	padding-left:6px;
+	background-color:#404080;
+	font-size:18px;
+}
+.explorerExampleDescription {
+	font-family:Georgia,serif;
+    color:black;
+	font-size:13px;
+	padding:6px;
+}
+.explorerTitlePageTitle {
+    font-family:Bitstream Vera Sans,sans-serif;
+	color:#ffffff;
+	padding-left:6px;
+	background-color:#404080;
+	font-size:18px;
+}
+.explorerTitlePageDescription {
+	font-family:Georgia,serif;
+    color:black;
+	font-size:13px;
+	padding:6px;
+}
+.explorerFolderList {
+	font-family:Georgia,serif;
+	font-size:13px;
+	padding:6px;
+}
+.explorerCheckErrorMessage {
+    color: red;
+	font-family:Georgia,serif;
+	font-size:13px;
+}
+.explorerSourceEditor {
+	border:1px solid #808080;
+	padding:10px;
+	font-size:12px;
+	font-family:Lucida Console, Monaco, Bitstream Vera Sans Mono, sans-serif;
+    color:#333333;
+}
+.explorerSourceViewer {
+	padding:10px;
+	font-size:12px;
+	font-family:Lucida Console, Monaco, Bitstream Vera Sans Mono, sans-serif;
+}
+
+.explorerTree {
+    border-top: 2px solid rgb(129,141,185);
+}
+
+.etreeCell,
+.etreeCellDark,
+.etreeCellOver,
+.etreeCellOverDark,
+.etreeCellSelected,
+.etreeCellSelectedDark,
+.etreeCellSelectedOver,
+.etreeCellSelectedOverDark,
+.etreeCellDisabled,
+.etreeCellDisabledDark {
+	font-family:Arial,Bitstream Vera Sans,sans-serif; font-size:11px; text-overflow:ellipsis;
+	color:#333333;
+	background-color:#ffffff;
+}
+.etreeCellDark {
+	background-color:#EFF1F1;
+}
+.etreeCellOver,
+.etreeCellOverDark {
+	background-color:#D9F7F7;
+}
+.etreeCellSelected,
+.etreeCellSelectedDark {
+	background-color:#FAEBB5;
+}
+.etreeCellSelectedOver,
+.etreeCellSelectedOverDark {
+	background-color:#F8E290;
+}
+.etreeCellDisabled,
+.etreeCellDisabledDark {
+	color:#999999;
+	background-color:#F6F5DA;
+}
+
+.splitbarDown {
+	border-left:2px solid #606060;
+	border-right:2px solid #606060;
+	background-color:#F0F0F0;
+}
+
+.examplePane {
+	margin:20px;
+}
+
+.jumpButton {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+	border:1px solid #F0F0F0;
+}
+
+.jumpButtonOver {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;
+	border-left:1px solid white;
+	border-top:1px solid white;
+	border-right:1px solid #808080;
+	border-bottom:1px solid #808080;
+}
+
+.jumpButtonDown {
+    font-family:Tahoma,Verdana,Bitstream Vera Sans, sans-serif; font-size:11px;	
+	border-left:1px solid #808080;
+	border-top:1px solid #808080;
+	border-right:1px solid white;
+	border-bottom:1px solid white;
+}
+
+.exampleDescCode {
+	font-family:Bitstream Vera Sans Mono, Courier New, monospace;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.exampleTitle {
+    color:black; background-color:white;
+	font-family:Gill Sans MT,Bitstream Vera Sans,sans-serif; font-size:22px;
+}
+
+.exampleText {
+	font-family:Georgia,serif; font-size:11px;
+}
+
+.exampleTextBlock {
+    background-color:white; color:black;
+	font-family:Georgia,serif; font-size:11px;
+	line-height:16px; text-align:justify;
+	padding-left:10px; padding-right:10px;
+}
+
+
+.exampleDropTitle {
+	float:left;font-family:Gill Sans MT,Bitstream Vera Sans,sans-serif;
+    font-size:22px;
+    line-height:32px;
+    color:#404040;
+}
+
+.explorerFormTitle,
+.explorerFormTitleFocused,
+.explorerFormTitleDisabled,
+.explorerFormCellError,
+.explorerFormTitleError,
+.explorerFormHint {
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px;
+    color:black;
+}
+.blackText,
+.blackOnWhite {
+    color:black;
+    font-family:Verdana,Bitstream Vera Sans,sans-serif; font-size:11px;
+}
+.blackOnWhite {
+    background-color:white;
+}
+
+.exampleSeparator {
+    border-bottom: 2px solid gray;
+    background-color:white; color:black;
+    font-weight: bold;
+    text-align: left;
+}
