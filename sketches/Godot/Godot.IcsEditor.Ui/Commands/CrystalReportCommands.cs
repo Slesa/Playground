@@ -30,11 +30,11 @@ namespace Godot.IcsEditor.Ui.Commands
         }
 
         void PrintReport(CrystalReportPrintEventArgs args)
-        {
+        {/*
             var workspace = //WorkspaceCollector.FindView<CrystalReportViewModel>() ??
                             ViewActivator.Display<CrystalReportViewModel>(
                                 new { reportFile = args.ReportFile, description = args.Description } );
-            WorkspaceCollector.SetActiveWorkspace(workspace);
+            WorkspaceCollector.SetActiveWorkspace(workspace);*/
         }
 
         public override int Priority

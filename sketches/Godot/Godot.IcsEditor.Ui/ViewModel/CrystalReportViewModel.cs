@@ -1,14 +1,16 @@
 using System;
 using System.Configuration;
 using System.Threading;
+/*
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.ReportAppServer.DataDefModel;
 using Godot.IcsEditor.Ui.Localization;
 using ConnectionInfo = CrystalDecisions.Shared.ConnectionInfo;
 using Table = CrystalDecisions.CrystalReports.Engine.Table;
-
+*/
 namespace Godot.IcsEditor.Ui.ViewModel
 {
+    /*
     public class CrystalReportViewModel : ResponsibleWorkspaceViewModel
     {
         readonly string _reportFile;
@@ -115,5 +117,5 @@ namespace Godot.IcsEditor.Ui.ViewModel
                 translated = sourceText;
             return translated;
         }
-    }
+    }*/
 }

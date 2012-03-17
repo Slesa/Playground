@@ -13,7 +13,7 @@ namespace Godot.IcsEditor.Ui.View
         public CrystalReportView()
         {
             InitializeComponent();
-            ReportViewer.BackColor = System.Drawing.Color.AliceBlue;
+            //ReportViewer.BackColor = System.Drawing.Color.AliceBlue;
         }
 
         private void OnWindowLoaded(object sender, RoutedEventArgs e)
@@ -40,9 +40,11 @@ namespace Godot.IcsEditor.Ui.View
                 }
             }
 */
+            /*
             var dataContext = DataContext as CrystalReportViewModel;
             if (dataContext != null) ReportViewer.ReportSource =  
                 dataContext.GetReportDocument();
+             */
         }
 
 #if NEVER

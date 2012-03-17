@@ -9,9 +9,9 @@ This resource dictionary is used by the MainWindow.
     x:Class="Godot.IcsEditor.Ui.MainWindowResources_xaml">
 
     <!-- Crystal Reports -->
-    <DataTemplate DataType="{x:Type vm:CrystalReportViewModel}">
+    <!-- DataTemplate DataType="{x:Type vm:CrystalReportViewModel}">
         <vw:CrystalReportView />
-    </DataTemplate>
+    </DataTemplate -->
 
     <!-- DlgSettings -->
     <!-- DataTemplate DataType="{x:Type vm:DlgSettingsViewModel}">
