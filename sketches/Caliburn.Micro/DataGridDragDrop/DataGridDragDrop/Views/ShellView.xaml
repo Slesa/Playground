@@ -16,14 +16,14 @@
     <DockPanel LastChildFill="True" >
 
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Height="40" Margin="10">
-            <Button MinWidth="80" Margin="5" x:Name="SelectMode" IsDefault="True">Single</Button>
+            <Button MinWidth="80" Margin="5" x:Name="SelectMode">Single</Button>
             <Button MinWidth="80" Margin="5" x:Name="Save" IsDefault="True">Save</Button>
             <Button MinWidth="80" Margin="5" x:Name="Close" IsCancel="True">Close</Button>
         </StackPanel>
 
         <DataGrid Name="DataItemsGrid" Margin="5" AutoGenerateColumns="False" AllowDrop="True" RowHeight="16"
                   AlternationCount="2" AlternatingRowBackground="#0F000000"
-                  CanUserAddRows="false" CanUserResizeRows="False" SelectionMode="Extended"
+                  CanUserAddRows="false" CanUserResizeRows="False" SelectionMode="Single"
                   RowStyle="{StaticResource RowStyle}" RowHeaderStyle="{StaticResource RowHeaderStyle}"
                   ItemsSource="{Binding Path=GridRows}">
             
