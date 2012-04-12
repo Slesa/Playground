@@ -1,0 +1,81 @@
+﻿<Window x:Class="DataGridDragDrop.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+        xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
+        Background="LightBlue"
+        >
+    <Window.Resources>
+        <Style x:Key="RowStyle" TargetType="{x:Type DataGridRow}">
+            <Setter Property="Height" Value="20" />
+        </Style>
+        <Style x:Key="RowHeaderStyle" TargetType="{x:Type DataGridRowHeader}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel LastChildFill="True" >
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Height="40" Margin="10">
+            <Button MinWidth="80" Margin="5" x:Name="SelectMode" IsDefault="True">Single</Button>
+            <Button MinWidth="80" Margin="5" x:Name="Save" IsDefault="True">Save</Button>
+            <Button MinWidth="80" Margin="5" x:Name="Close" IsCancel="True">Close</Button>
+        </StackPanel>
+
+        <DataGrid Name="DataItemsGrid" Margin="5" AutoGenerateColumns="False" AllowDrop="True" RowHeight="16"
+                  AlternationCount="2" AlternatingRowBackground="#0F000000"
+                  CanUserAddRows="false" CanUserResizeRows="False" SelectionMode="Extended"
+                  RowStyle="{StaticResource RowStyle}" RowHeaderStyle="{StaticResource RowHeaderStyle}"
+                  ItemsSource="{Binding Path=GridRows}">
+            
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="BeginningEdit">
+                    <cal:ActionMessage MethodName="OnBeginEdit" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="CellEditEnding">
+                    <cal:ActionMessage MethodName="OnEndEdit" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                    <cal:ActionMessage MethodName="OnMouseDown">
+                        <cal:Parameter Value="$eventargs" />
+                    </cal:ActionMessage>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="DragEnter">
+                    <cal:ActionMessage MethodName="OnDragEnter">
+                        <cal:Parameter Value="$eventargs"/>
+                    </cal:ActionMessage>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="DragLeave">
+                    <cal:ActionMessage MethodName="OnDragLeave">
+                        <cal:Parameter Value="$eventargs" />
+                    </cal:ActionMessage>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="PreviewDrop">
+                    <cal:ActionMessage MethodName="OnDragDrop">
+                        <cal:Parameter Value="$eventargs"/>
+                    </cal:ActionMessage>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <DataGrid.Columns>
+                
+                <DataGridTextColumn Header="Id" IsReadOnly="True" Binding="{Binding Id}"/>
+
+                <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding Name}" />
+
+                <DataGridCheckBoxColumn Header="Visible" Binding="{Binding Visible}" />
+
+                <DataGridCheckBoxColumn Header="Checked" Binding="{Binding Checked}" />
+                
+                <DataGridTextColumn Header="Int" Binding="{Binding IntValue}" />
+                
+                <DataGridTextColumn Header="Text" Binding="{Binding TextValue}" />
+                
+                <DataGridComboBoxColumn Header="Selectable" DisplayMemberPath="Selection" />
+                
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+    </DockPanel>
+
+</Window>
