@@ -1,0 +1,147 @@
+﻿<Window
+    x:Class="TapThroughPopup.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:TapThroughPopup"
+    x:Name="Window"
+    Title="MainWindow"
+    Width="640"
+    Height="480"
+    >
+
+    <StackPanel>
+        
+        <Menu IsMainMenu="True">
+            <MenuItem Header="_Menu">
+                    <MenuItem Header="Command _1"/>
+                    <MenuItem Header="Command _2"/>
+                    <MenuItem Header="Command _3"/>
+                    <MenuItem Header="Command _4"/>
+                    <MenuItem Header="Command _5"/>
+                    <MenuItem Header="Command _6"/>
+                    <MenuItem Header="Command _7"/>
+                    <MenuItem Header="Command _8"/>
+                    <MenuItem Header="Command _9"/>
+            </MenuItem>
+        </Menu>
+        
+        <ComboBox Width="200" HorizontalAlignment="Left" SelectedIndex="0">
+            <i:Interaction.Behaviors>
+                <local:TapThroughBehavior/>
+            </i:Interaction.Behaviors>
+            <ComboBoxItem Content="Element 1" />
+            <ComboBoxItem Content="Element 2" />
+            <ComboBoxItem Content="Element 3" />
+            <ComboBoxItem Content="Element 4" />
+            <ComboBoxItem Content="Element 5" />
+            <ComboBoxItem Content="Element 6" />
+            <ComboBoxItem Content="Element 7" />
+            <ComboBoxItem Content="Element 8" />
+            <ComboBoxItem Content="Element 9" />
+        </ComboBox>
+        
+        <Button Content="Change background" Click="ChangeBackground" />
+    </StackPanel>
+    <!--
+    <Window.Resources>
+
+        <DataTemplate
+            x:Key="DataTemplate.ComboBox.LabelOnly">
+            <Grid>
+                <TextBlock
+                    Text="{Binding Label}" />
+            </Grid>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid
+        x:Name="LayoutRoot"
+        Background="White"
+        DataContext="{Binding Source={StaticResource SampleDataComboBox}}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup
+                x:Name="BackgroundStates">
+                <VisualState
+                    x:Name="Normal" />
+                <VisualState
+                    x:Name="Colored">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames
+                            Storyboard.TargetName="LayoutRoot"
+                            Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                            <EasingColorKeyFrame
+                                KeyTime="0"
+                                Value="#FFD0EFBB" />
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <StackPanel>
+            <Grid
+                x:Name="cFirstRow"
+                VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    x:Name="cStandard">
+                    <TextBlock
+                        Text="Standard ComboBox"
+                        TextWrapping="Wrap" />
+                    <ComboBox
+                        ItemsSource="{Binding Collection}"
+                        ItemTemplate="{DynamicResource DataTemplate.ComboBox.LabelOnly}"
+                        SelectedIndex="0"
+                        Style="{DynamicResource ComboBox.Standard}" />
+                </StackPanel>
+            </Grid>
+            <Grid
+                x:Name="cThirdRow"
+                Margin="0,20,0,0"
+                VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="TapThroughComboBox" Style="{DynamicResource ComboBox.TapThrough}" d:LayoutOverrides="Height" ItemsSource="{Binding Collection}" SelectedIndex="0">
+                    <i:Interaction.Behaviors>
+                        <local:TapThroughBehavior/>
+                    </i:Interaction.Behaviors>
+                </ComboBox>
+            </Grid>
+        </StackPanel>
+        <ToggleButton
+            x:Name="ChangeBackgroundButton"
+            Grid.RowSpan="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Change Background"
+            d:LayoutOverrides="Width">
+            <i:Interaction.Triggers>
+                <ei:DataTrigger
+                    Binding="{Binding IsChecked, ElementName=ChangeBackgroundButton}"
+                    Value="True">
+                    <ei:GoToStateAction
+                        x:Name="GoToColoredState"
+                        StateName="Colored" />
+                </ei:DataTrigger>
+                <ei:DataTrigger
+                    Binding="{Binding IsChecked, ElementName=ChangeBackgroundButton}"
+                    Value="False">
+                    <ei:GoToStateAction
+                        x:Name="GoToNormalState"
+                        StateName="Normal" />
+                </ei:DataTrigger>
+            </i:Interaction.Triggers>
+        </ToggleButton>
+
+    </Grid> -->
+</Window>
