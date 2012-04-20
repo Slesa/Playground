@@ -1,0 +1,31 @@
+﻿<Window x:Class="Converter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Converter"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:RateConverter x:Key="RateConverter" />
+        <sys:Double x:Key="Drachme">340.75</sys:Double>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Margin="10" >Euro:</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="0" x:Name="_input" Text="0" Margin="10" />
+        <TextBlock Grid.Column="0" Grid.Row="1" Margin="10">Drachme:</TextBlock>
+        <!-- Using a textbox allows to copy its content -->
+        <TextBox Grid.Column="1" Grid.Row="1" 
+                 Text="{Binding ElementName=_input, Path=Text,
+            Converter={StaticResource RateConverter},ConverterParameter={StaticResource Drachme},
+            Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10" />
+    </Grid>
+</Window>
