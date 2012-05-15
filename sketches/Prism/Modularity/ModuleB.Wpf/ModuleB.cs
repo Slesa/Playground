@@ -5,7 +5,9 @@ using Modules.Wpf;
 
 namespace ModuleB.Wpf
 {
+#if (!SILVERLIGHT)
     [Module(ModuleName=WellKnownModuleNames.ModuleB, OnDemand = true)]
+#endif
     public class ModuleB : IModule
     {
         readonly ILoggerFacade _logger;
