@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
@@ -21,8 +22,12 @@ namespace Modularity.Wpf
         {
             base.InitializeShell();
 
+#if SILVERLIGHT
+            Application.Current.RootVisual = (UIElement) Shell;
+#else
             Application.Current.MainWindow = (Window) Shell;
             Application.Current.MainWindow.Show();
+#endif
         }
 
         protected override ILoggerFacade CreateLogger()
@@ -41,7 +46,11 @@ namespace Modularity.Wpf
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
+#if SILVERLIGHT
+            return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(new Uri("/Modularity.Sl;component/ModulesCatalog.xaml", UriKind.Relative));
+#else
             return new AggregateModuleCatalog();
+#endif
         }
 
         protected override void ConfigureModuleCatalog()
@@ -56,12 +65,13 @@ namespace Modularity.Wpf
                     ModuleType = moduleCType.AssemblyQualifiedName,
                     InitializationMode = InitializationMode.OnDemand
                 });
-
+#if (!SILVERLIGHT)
             var directoryCatalog = new DirectoryModuleCatalog {ModulePath = @".\Modules"};
             ((AggregateModuleCatalog) ModuleCatalog).AddCatalog(directoryCatalog);
 
             var configurationCatalog = new ConfigurationModuleCatalog();
             ((AggregateModuleCatalog) ModuleCatalog).AddCatalog(configurationCatalog);
+#endif
         }
     }
 }

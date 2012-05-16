@@ -14,7 +14,7 @@
     <AssemblyName>Modularity.Sl.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
-    <SilverlightApplicationList>{4C440C4C-8546-486A-8E8E-402B0217ECE9}|..\Modularity.Sl\Modularity.Sl.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{4C440C4C-8546-486A-8E8E-402B0217ECE9}|..\Modularity.Sl\Modularity.Sl.csproj|ClientBin|False,{DE6BE011-5054-481C-84F5-49FD9BAEC055}|..\ModuleA.Sl\ModuleA.Sl.csproj|ClientBin|False,{EFC7DBF3-CA01-4E87-820A-E8BFDE13D081}|..\ModuleB.Sl\ModuleB.Sl.csproj|ClientBin|False,{3894F269-9BA5-4EF8-93A3-953F0ACABEF9}|..\ModuleC.Sl\ModuleC.Sl.csproj|ClientBin|False,{E78745C2-A853-4416-BADC-EC7634E2DEC5}|..\ModuleD.Sl\ModuleD.Sl.csproj|ClientBin|False,{8423E33C-3017-4AC7-B500-8BA76A978121}|..\ModuleE.Sl\ModuleE.Sl.csproj|ClientBin|False,{3BD1724D-82AD-469F-8DCC-B59D11221AE5}|..\ModuleF.Sl\ModuleF.Sl.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,10 +53,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\Modularity.Sl.xap" />
+    <Content Include="ClientBin\ModuleA.xap" />
+    <Content Include="ClientBin\ModuleC.xap" />
+    <Content Include="ClientBin\ModuleD.xap" />
+    <Content Include="ClientBin\ModuleE.xap" />
+    <Content Include="ClientBin\ModuleF.xap" />
     <Content Include="Modularity.SlTestPage.aspx" />
     <Content Include="Modularity.SlTestPage.html" />
     <Content Include="Silverlight.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
