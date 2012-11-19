@@ -69,6 +69,7 @@
     <Compile Include="Behaviors\SynchronizeSelectedItems.cs" />
     <Compile Include="Behaviors\SelectedItemBehavior.cs" />
     <Compile Include="Helpers\WeakEventHandler.cs" />
+    <Compile Include="ViewModels\GroupedViewModel.cs" />
     <Compile Include="ViewModels\ItemsViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MultiViewModel.cs" />

@@ -24,55 +24,52 @@ namespace Selections.Behaviors
                 typeof(SynchronizeSelectedItems),
                 new PropertyMetadata(null, OnSelectionsPropertyChanged));
 
-        private bool updating;
-        private WeakEventHandler<SynchronizeSelectedItems, object, NotifyCollectionChangedEventArgs> currentWeakHandler;
+        bool _updating;
+        WeakEventHandler<SynchronizeSelectedItems, object, NotifyCollectionChangedEventArgs> _currentWeakHandler;
 
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly",
             Justification = "Dependency property")]
         public IList Selections
         {
-            get { return (IList)this.GetValue(SelectionsProperty); }
-            set { this.SetValue(SelectionsProperty, value); }
+            get { return (IList)GetValue(SelectionsProperty); }
+            set { SetValue(SelectionsProperty, value); }
         }
 
         protected override void OnAttached()
         {
             base.OnAttached();
-
-            this.AssociatedObject.SelectionChanged += this.OnSelectedItemsChanged;
-            this.UpdateSelectedItems();
+            AssociatedObject.SelectionChanged += OnSelectedItemsChanged;
+            UpdateSelectedItems();
         }
 
         protected override void OnDetaching()
         {
-            this.AssociatedObject.SelectionChanged += this.OnSelectedItemsChanged;
-
+            AssociatedObject.SelectionChanged -= OnSelectedItemsChanged;
             base.OnDetaching();
         }
 
-        private static void OnSelectionsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        static void OnSelectionsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var behavior = d as SynchronizeSelectedItems;
 
             if (behavior != null)
             {
-                if (behavior.currentWeakHandler != null)
+                if (behavior._currentWeakHandler != null)
                 {
-                    behavior.currentWeakHandler.Detach();
-                    behavior.currentWeakHandler = null;
+                    behavior._currentWeakHandler.Detach();
+                    behavior._currentWeakHandler = null;
                 }
-
                 if (e.NewValue != null)
                 {
                     var notifyCollectionChanged = e.NewValue as INotifyCollectionChanged;
                     if (notifyCollectionChanged != null)
                     {
-                        behavior.currentWeakHandler =
+                        behavior._currentWeakHandler =
                             new WeakEventHandler<SynchronizeSelectedItems, object, NotifyCollectionChangedEventArgs>(
                                 behavior,
                                 (instance, sender, args) => instance.OnSelectionsCollectionChanged(sender, args),
-                                (listener) => notifyCollectionChanged.CollectionChanged -= listener.OnEvent);
-                        notifyCollectionChanged.CollectionChanged += behavior.currentWeakHandler.OnEvent;
+                                listener => notifyCollectionChanged.CollectionChanged -= listener.OnEvent);
+                        notifyCollectionChanged.CollectionChanged += behavior._currentWeakHandler.OnEvent;
                     }
 
                     behavior.UpdateSelectedItems();
@@ -80,65 +77,63 @@ namespace Selections.Behaviors
             }
         }
 
-        private void OnSelectedItemsChanged(object sender, SelectionChangedEventArgs e)
+        void OnSelectedItemsChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.UpdateSelections(e);
+            UpdateSelections(e);
         }
 
-        private void UpdateSelections(SelectionChangedEventArgs e)
+        void UpdateSelections(SelectionChangedEventArgs e)
         {
-            this.ExecuteIfNotUpdating(
+            ExecuteIfNotUpdating(
                 () =>
                 {
-                    if (this.Selections != null)
+                    if (Selections != null)
                     {
                         foreach (var item in e.AddedItems)
                         {
-                            this.Selections.Add(item);
+                            Selections.Add(item);
                         }
-
                         foreach (var item in e.RemovedItems)
                         {
-                            this.Selections.Remove(item);
+                            Selections.Remove(item);
                         }
                     }
                 });
         }
 
-        private void OnSelectionsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        void OnSelectionsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            this.UpdateSelectedItems(e);
+            UpdateSelectedItems(e);
         }
 
-        private void UpdateSelectedItems()
+        void UpdateSelectedItems()
         {
-            this.ExecuteIfNotUpdating(
+            ExecuteIfNotUpdating(
                 () =>
                 {
-                    if (this.AssociatedObject != null)
+                    if (AssociatedObject != null)
                     {
-                        this.AssociatedObject.SelectedItems.Clear();
-                        foreach (var item in this.Selections ?? new object[0])
+                        AssociatedObject.SelectedItems.Clear();
+                        foreach (var item in Selections ?? new object[0])
                         {
-                            this.AssociatedObject.SelectedItems.Add(item);
+                            AssociatedObject.SelectedItems.Add(item);
                         }
                     }
                 });
         }
 
-        private void UpdateSelectedItems(NotifyCollectionChangedEventArgs e)
+        void UpdateSelectedItems(NotifyCollectionChangedEventArgs e)
         {
-            this.ExecuteIfNotUpdating(
+            ExecuteIfNotUpdating(
                 () =>
                 {
-                    if (this.AssociatedObject != null)
+                    if (AssociatedObject != null)
                     {
                         if (e.Action == NotifyCollectionChangedAction.Reset)
                         {
                             AssociatedObject.SelectedItems.Clear();
                             return;
                         }
-                        //this.AssociatedObject.SelectedItems.Clear();
                         if (e.Action == NotifyCollectionChangedAction.Add)
                         {
                             foreach (var item in e.NewItems)
@@ -153,30 +148,22 @@ namespace Selections.Behaviors
                                 AssociatedObject.SelectedItems.Remove(item);
                             }
                         }
-                        /*
-                        foreach (var item in this.Selections ?? new object[0])
-                        {
-                            this.AssociatedObject.SelectedItems.Add(item);
-                        }*/
                     }
                 });
         }
 
-        private void ExecuteIfNotUpdating(Action execute)
+        void ExecuteIfNotUpdating(Action execute)
         {
-            if (!this.updating)
+            if (_updating) return;
+            try
             {
-                try
-                {
-                    this.updating = true;
-                    execute();
-                }
-                finally
-                {
-                    this.updating = false;
-                }
+                _updating = true;
+                execute();
+            }
+            finally
+            {
+                _updating = false;
             }
         }
-
     }
 }

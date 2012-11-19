@@ -25,5 +25,15 @@ namespace Selections.ViewModels
             }
             return nodes;
         }
+
+        public static ObservableCollection<GroupedViewModel> CreateGroupedItems(int max)
+        {
+            var items = new ObservableCollection<GroupedViewModel>();
+            for (var i = 0; i < max; i++)
+            {
+                items.Add(new GroupedViewModel(i, "Item " + (i + 1)));
+            }
+            return items;
+        }
     }
 }

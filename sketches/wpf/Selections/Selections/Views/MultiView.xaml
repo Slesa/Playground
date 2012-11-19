@@ -28,13 +28,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0" ItemsSource="{Binding ItemsViewSource}" 
+            <ListView Grid.Column="0" ItemsSource="{Binding ItemsViewSource}" 
              DisplayMemberPath="Name" HorizontalAlignment="Stretch"
              SelectionMode="Multiple">
                 <i:Interaction.Behaviors>
                     <Behaviors:SynchronizeSelectedItems Selections="{Binding SelectedItems}" />
                 </i:Interaction.Behaviors>
-            </ListBox>
+            </ListView>
             <ListBox Grid.Column="1" ItemsSource="{Binding SelectedItems}" 
              DisplayMemberPath="Name" HorizontalAlignment="Stretch" />
         </Grid>
