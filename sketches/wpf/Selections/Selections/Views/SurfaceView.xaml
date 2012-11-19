@@ -3,12 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Selections.ViewModels" 
-             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:Selections.ViewModels"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:s="clr-namespace:Microsoft.Surface.Presentation.Controls;assembly=Microsoft.Surface.Presentation"
+             xmlns:Behaviors="clr-namespace:Selections.Behaviors" mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <local:SurfaceViewModel x:Key="ViewModel" />
     </UserControl.Resources>
     <DockPanel DataContext="{StaticResource ViewModel}">
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Filter:" />
+            <TextBox Grid.Column="1" Text="{Binding SearchItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Content="Clear" Command="{Binding ClearSelectionCommand}" Width="60" />
+            <Button Content="Select all" Command="{Binding SelectAllCommand}" Width="60" />
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <s:SurfaceListBox Grid.Column="0" ItemsSource="{Binding ItemsViewSource}" 
+             DisplayMemberPath="Name" HorizontalAlignment="Stretch"
+             SelectionMode="Multiple">
+                <i:Interaction.Behaviors>
+                    <Behaviors:SynchronizeSelectedItems Selections="{Binding SelectedItems}" />
+                </i:Interaction.Behaviors>
+            </s:SurfaceListBox>
+            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedItems}" 
+             DisplayMemberPath="Name" HorizontalAlignment="Stretch" />
+        </Grid>
     </DockPanel>
 </UserControl>
