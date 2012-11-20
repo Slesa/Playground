@@ -57,9 +57,6 @@
     <Reference Include="Microsoft.Surface.Presentation">
       <HintPath>..\lib\Microsoft.Surface.Presentation.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Surface.Presentation.Generic">
-      <HintPath>..\lib\Microsoft.Surface.Presentation.Generic.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
