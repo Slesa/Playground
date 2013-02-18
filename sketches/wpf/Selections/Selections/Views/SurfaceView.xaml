@@ -29,8 +29,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <s:SurfaceListBox Grid.Column="0" ItemsSource="{Binding ItemsViewSource}" 
-                              Background="Brown"
+            <s:SurfaceListBox Grid.Column="0" ItemsSource="{Binding ItemsViewSource}" Background="Brown"
              DisplayMemberPath="Name" HorizontalAlignment="Stretch"
              SelectionMode="Multiple">
                 <i:Interaction.Behaviors>

@@ -80,6 +80,5 @@ namespace Selections.ViewModels
             var resource = (ItemViewModel)o;
             return resource.Name == null || resource.Name.ToLower().Contains(_search.ToLower());
         }
-          
     }
 }
