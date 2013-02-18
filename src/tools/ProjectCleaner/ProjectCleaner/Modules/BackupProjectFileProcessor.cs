@@ -8,6 +8,8 @@ namespace ProjectCleaner.Modules
         public bool Handle(ProjectParser project)
         {
             var fileInfo = new FileInfo(project.ProjectFile);
+            if (fileInfo.IsReadOnly) fileInfo.IsReadOnly = false;
+
             var newFileName = fileInfo.FullName + ".bak";
             
             if (!File.Exists(newFileName)) fileInfo.CopyTo(newFileName);

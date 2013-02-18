@@ -35,6 +35,7 @@ namespace ProjectCleaner
             Container.RegisterType<IProcessProjects, BackupProjectFileProcessor>("backup");
             Container.RegisterType<IProcessProjects, RemoveSourceControlProcessor>("sourcecontrol");
             Container.RegisterType<IProcessProjects, RemoveUnknownTargetProcessor>("unknowntargets");
+            Container.RegisterType<IProcessProjects, ResetTargetFrameworkProcessor>("targetframework");
 
             Container.RegisterType<ICollectProjects, ProjectCollector>();
             Container.RegisterType<CleanupProcessor, CleanupProcessor>();

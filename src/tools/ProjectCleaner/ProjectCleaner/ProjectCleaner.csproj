@@ -94,9 +94,10 @@
     <Compile Include="Modules\BackupProjectFileProcessor.cs" />
     <Compile Include="Modules\RemoveSourceControlProcessor.cs" />
     <Compile Include="Modules\RemoveUnknownTargetProcessor.cs" />
+    <Compile Include="Modules\ResetTargetFrameworkProcessor.cs" />
     <Compile Include="Parsing\ProjectParser.cs" />
     <Compile Include="ProjectCollector.cs" />
-    <Compile Include="ViewModels\CleanupProcessor.cs" />
+    <Compile Include="CleanupProcessor.cs" />
     <Compile Include="IProcessProjects.cs" />
     <Compile Include="ViewModels\ProjectVisitedEvent.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />

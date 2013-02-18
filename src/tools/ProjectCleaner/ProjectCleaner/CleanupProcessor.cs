@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using Microsoft.Practices.Prism.Events;
 using ProjectCleaner.Parsing;
+using ProjectCleaner.ViewModels;
 
-namespace ProjectCleaner.ViewModels
+namespace ProjectCleaner
 {
     public class CleanupProcessor
     {
@@ -39,6 +39,8 @@ namespace ProjectCleaner.ViewModels
                 if (changed)
                 {
                     var tmpFileName = projectFile + ".tmp";
+                    var tmpFileInfo = new FileInfo(tmpFileName);
+                    if(tmpFileInfo.Exists) tmpFileInfo.IsReadOnly = false;
                     if(File.Exists(tmpFileName)) File.Delete(tmpFileName);
 
                     File.Move(projectFile, tmpFileName);

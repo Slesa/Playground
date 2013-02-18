@@ -16,9 +16,10 @@
       </ContentControl>
       
       <GroupBox Header="Adjust content" Grid.Row="1">
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" IsEnabled="False">
             <CheckBox Content="Remove _source control connections" IsChecked="True" />
             <CheckBox Content="Remove missing target includes" IsChecked="True" />
+            <CheckBox Content="Reset target framework version" IsChecked="True" />
         </StackPanel>
       </GroupBox>
         

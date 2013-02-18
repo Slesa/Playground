@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Microsoft.Build.Construction;
 
 namespace ProjectCleaner.Parsing
@@ -12,6 +10,7 @@ namespace ProjectCleaner.Parsing
             ProjectFile = projectFile;
         }
 
+        public string DirectoryPath { get; set; }
         public string ProjectFile { get; set; }
         public ProjectRootElement RootElement { get; private set; }
         public ICollection<ProjectImportElement> Imports { get; private set; }
@@ -21,10 +20,10 @@ namespace ProjectCleaner.Parsing
             RootElement = ProjectRootElement.Open(ProjectFile);
             if (RootElement == null) return false;
 
+            DirectoryPath = RootElement.DirectoryPath;
             Imports = RootElement.Imports;
             
             /*
-            DirectoryPath = root.DirectoryPath;
 
             ReadItemLists(root);
 
