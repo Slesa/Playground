@@ -1,5 +1,5 @@
 #include <QtTest/QtTest>
-#include "dlist.h"
+#include "../../dlist.h"
 
 class When_a_new_dlist_is_created: public QObject
 {

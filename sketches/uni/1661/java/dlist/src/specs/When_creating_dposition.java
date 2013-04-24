@@ -18,12 +18,12 @@ public class When_creating_dposition {
 	}
 
 	@Test
-	public void it_should_have_no_succ() {
-		assertNull(this.subject.getSucc());
+	public void it_should_have_no_previous() {
+		assertNull(this.subject.getPrevious());
 	}
 	
 	@Test
-	public void it_should_have_no_pred() {
-		assertNull(this.subject.getPred());
+	public void it_should_have_no_next() {
+		assertNull(this.subject.getNext());
 	}
 }
