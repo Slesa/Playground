@@ -1,10 +1,10 @@
-package specs;
+package list.specs;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import dlist.DList;
-import dlist.DPosition;
+import list.DList;
+import list.DPosition;
 
 public class When_prepending_element {
 

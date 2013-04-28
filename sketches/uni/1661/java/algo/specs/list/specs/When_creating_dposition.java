@@ -1,11 +1,11 @@
-package specs;
-import static org.junit.Assert.*;
-import org.junit.Test;
+package list.specs;
 
-import dlist.DPosition;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import list.DPosition;
 
 public class When_creating_dposition {
-
+	
 	private DPosition<Integer> subject;
 	
 	public When_creating_dposition() {

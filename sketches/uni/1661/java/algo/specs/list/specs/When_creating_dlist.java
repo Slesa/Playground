@@ -1,9 +1,9 @@
-package specs;
+package list.specs;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
-import dlist.DList;
-import dlist.DPosition;
+import static org.junit.Assert.*;
+import list.DList;
+import list.DPosition;
 
 public class When_creating_dlist {
 
@@ -24,5 +24,4 @@ public class When_creating_dlist {
 		DPosition<Integer> tail = subject.getTail();
 		assertEquals(null, tail); 
 	}
-
 }

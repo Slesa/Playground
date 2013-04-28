@@ -1,4 +1,4 @@
-package dlist;
+package list;
 
 public class DList<T> {
 
