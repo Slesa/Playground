@@ -21,3 +21,5 @@ ipch/
 *_Spliced.*
 .metadata/
 target/
+Makefile
+*.o
