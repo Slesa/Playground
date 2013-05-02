@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using Microsoft.Practices.Prism.Events;
 using ProjectCleaner.Parsing;
 using ProjectCleaner.ViewModels;
@@ -9,7 +10,8 @@ namespace ProjectCleaner
     {
         readonly IEventAggregator _eventAggregator;
         ICollectProjects ProjectCollector { get; set; }
-        IProcessProjects[] ProjectProcessors { get; set; }
+        
+        public IProcessProjects[] ProjectProcessors { get; set; }
 
         public CleanupProcessor(IEventAggregator eventAggregator, ICollectProjects collector, IProcessProjects[] processors)
         {
@@ -31,7 +33,7 @@ namespace ProjectCleaner
 
                 _eventAggregator.GetEvent<ProjectVisitedEvent>().Publish(projectFile);
 
-                foreach (var processor in ProjectProcessors)
+                foreach (var processor in ProjectProcessors.Where(x=>x.IsEnabled).OrderBy(x=>x.Priority))
                 {
                     changed = changed | processor.Handle(project);
                 }
@@ -43,7 +45,7 @@ namespace ProjectCleaner
                     if(tmpFileInfo.Exists) tmpFileInfo.IsReadOnly = false;
                     if(File.Exists(tmpFileName)) File.Delete(tmpFileName);
 
-                    File.Move(projectFile, tmpFileName);
+                    File.Copy(projectFile, tmpFileName);
                     
                     project.RootElement.Save(projectFile);
 

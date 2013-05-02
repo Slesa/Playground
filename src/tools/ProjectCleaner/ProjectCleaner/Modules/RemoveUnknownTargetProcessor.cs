@@ -3,9 +3,14 @@ using ProjectCleaner.Parsing;
 
 namespace ProjectCleaner.Modules
 {
-    public class RemoveUnknownTargetProcessor : IProcessProjects
+    public class RemoveUnknownTargetProcessor : ProjectProcessorBase
     {
-        public bool Handle(ProjectParser project)
+        public RemoveUnknownTargetProcessor() 
+            : base(2, "Remove missing target includes")
+        {
+        }
+
+        public override bool Handle(ProjectParser project)
         {
             var changed = false;
 
@@ -13,13 +18,19 @@ namespace ProjectCleaner.Modules
             foreach (var import in project.Imports)
             {
                 var importName = import.Project.ToLower();
-                if (importName.Contains("msbuild")) continue;
-                if (File.Exists(import.Project)) continue;
+                if (!IsRemoveableTarget(importName, import.Project)) continue;
                 root.RemoveChild(import);
                 changed = true;
             }
 
             return changed;
+        }
+
+        bool IsRemoveableTarget(string importName, string projectName)
+        {
+            if (importName.EndsWith("stylecop.targets")) return true;
+            if (importName.Contains("msbuild")) return false;
+            return File.Exists(projectName);
         }
     }
 }

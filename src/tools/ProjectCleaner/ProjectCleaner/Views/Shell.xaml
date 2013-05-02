@@ -3,6 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Project Cleaner" Height="350" Width="525">
   
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ProcessorItemTemplate">
+                <CheckBox IsChecked="{Binding IsEnabled}" Content="{Binding Name}" />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
       
       <Grid.RowDefinitions>
@@ -14,14 +21,18 @@
       <ContentControl AllowDrop="True" HorizontalAlignment="Center" Background="BlueViolet" Drop="OnDrop" DragOver="OnDragOver" DragLeave="OnDragLeave">
         <TextBlock Text="{Binding DropTargetText}" Height="150" />  
       </ContentControl>
-      
+
       <GroupBox Header="Adjust content" Grid.Row="1">
-        <StackPanel Orientation="Vertical" IsEnabled="False">
-            <CheckBox Content="Remove _source control connections" IsChecked="True" />
-            <CheckBox Content="Remove missing target includes" IsChecked="True" />
-            <CheckBox Content="Reset target framework version" IsChecked="True" />
-        </StackPanel>
-      </GroupBox>
+            <Grid>
+                <ItemsControl x:Name="ProcessItemList" ItemTemplate="{StaticResource ProcessorItemTemplate}" ItemsSource="{Binding CleanupProcessor.ProjectProcessors}">
+              <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+          </ItemsControl>
+            </Grid>
+        </GroupBox>
         
         <ListView Grid.Row="2" ItemsSource="{Binding VisitedProjects}" />
     </Grid>

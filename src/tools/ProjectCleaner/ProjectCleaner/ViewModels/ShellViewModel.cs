@@ -9,7 +9,7 @@ namespace ProjectCleaner.ViewModels
 {
     public class ShellViewModel : NotificationObject
     {
-        CleanupProcessor CleanupProcessor { get; set; }
+        public CleanupProcessor CleanupProcessor { get; set; }
 
         public ShellViewModel(IEventAggregator eventAggregator, CleanupProcessor cleanupProcessor)
         {

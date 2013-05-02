@@ -5,9 +5,14 @@ using ProjectCleaner.Parsing;
 
 namespace ProjectCleaner.Modules
 {
-    public class RemoveSourceControlProcessor : IProcessProjects
+    public class RemoveSourceControlProcessor : ProjectProcessorBase
     {
-        public bool Handle(ProjectParser project)
+        public RemoveSourceControlProcessor() 
+            : base(1, "Remove source control connections")
+        {
+        }
+
+        public override bool Handle(ProjectParser project)
         {
             var changed = false;
 

@@ -4,9 +4,14 @@ using ProjectCleaner.Parsing;
 
 namespace ProjectCleaner.Modules
 {
-    public class ResetTargetFrameworkProcessor : IProcessProjects
+    public class ResetTargetFrameworkProcessor : ProjectProcessorBase
     {
-        public bool Handle(ProjectParser project)
+        public ResetTargetFrameworkProcessor()
+            : base(3, "Reset target framework version to 4.0")
+        {
+        }
+
+        public override bool Handle(ProjectParser project)
         {
             var changed = false;
 

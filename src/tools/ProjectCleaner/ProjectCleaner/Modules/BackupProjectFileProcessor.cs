@@ -3,9 +3,14 @@ using ProjectCleaner.Parsing;
 
 namespace ProjectCleaner.Modules
 {
-    public class BackupProjectFileProcessor : IProcessProjects
+    public class BackupProjectFileProcessor : ProjectProcessorBase
     {
-        public bool Handle(ProjectParser project)
+        public BackupProjectFileProcessor() 
+            : base(0, "Make a backup of the original project file")
+        {
+        }
+
+        public override bool Handle(ProjectParser project)
         {
             var fileInfo = new FileInfo(project.ProjectFile);
             if (fileInfo.IsReadOnly) fileInfo.IsReadOnly = false;
