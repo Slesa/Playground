@@ -2,11 +2,53 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WpfReflector"
-        Title="WPF Reflector" Height="350" Width="525">
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+        Title="WPF Reflector" Height="350" Width="525"
+        FocusManager.FocusedElement="{Binding ElementName=txtTypeName}">
     <Window.Resources>
         <local:MainViewModel x:Key="MainViewModel"/>
+
+        <Style x:Key="Style.ItemContainer" TargetType="ListBoxItem">
+            <!--<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <TextBox Text="{TemplateBinding}" IsReadOnly="True"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>-->
+        </Style>
+
     </Window.Resources>
+
     <Grid DataContext="{StaticResource MainViewModel}">
+        <i:Interaction.Triggers>
+            <ei:KeyTrigger Key="Enter" ActiveOnFocus="True"
+                  SourceObject="{Binding ElementName=txtTypeName}">
+                <i:InvokeCommandAction
+                  Command="{Binding SearchAppDomainCommand}" />
+            </ei:KeyTrigger>
+            <ei:KeyTrigger Key="C" Modifiers="Ctrl"
+                  ActiveOnFocus="True"
+                  SourceObject="{Binding ElementName=lstResults}">
+                <i:InvokeCommandAction 
+                  Command="{Binding CopyToClipboardCommand}" />
+            </ei:KeyTrigger>
+            <ei:KeyTrigger Key="D" Modifiers="Ctrl"
+                  ActiveOnFocus="True"
+                  SourceObject="{Binding ElementName=lstResults}">
+                <i:InvokeCommandAction 
+                  Command="{Binding CopyTypeToClipboardCommand}" />
+            </ei:KeyTrigger>
+            <local:MouseDoubleClickTrigger>
+                <i:InvokeCommandAction Command="{Binding CopyToClipboardCommand}" />
+            </local:MouseDoubleClickTrigger>
+        </i:Interaction.Triggers>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="20"/>
@@ -18,8 +60,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="70"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Name="txtTypeName" Text="{Binding TargetTypeName}" />
-            <Button Grid.Column="1" Content="Search" Command="{Binding SearchAppDomainCommand}"/>
+            <TextBox Grid.Column="0" Name="txtTypeName" Text="{Binding TargetTypeName, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Grid.Column="1" Content="Search" Command="{Binding SearchAppDomainCommand}" />
         </Grid>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <CheckBox Name="chkFields" Content="Fields" IsChecked="{Binding IncludeFields}"/>
@@ -27,6 +69,7 @@
             <CheckBox Name="chkTypes" Content="Types" IsChecked="{Binding IncludeTypes}" />
         </StackPanel>
         <TextBlock Grid.Row="2" Text="{Binding CurrentResults.Count}"/>
-        <ListBox Grid.Row="3" ItemsSource="{Binding CurrentResults}"/>
+        <ListBox x:Name="lstResults" Grid.Row="3" ItemsSource="{Binding CurrentResults}" SelectedItem="{Binding SelectedResult}">
+        </ListBox>
     </Grid>
 </Window>

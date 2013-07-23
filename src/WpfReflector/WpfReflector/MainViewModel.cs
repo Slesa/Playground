@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows;
 
@@ -18,9 +16,18 @@ namespace WpfReflector
         private bool _includeProperties;
         private bool _includeTypes;
         private string _targetTypeName;
-        private ICommand _searchAppDomainCommand;
 
         #endregion
+
+        public MainViewModel()
+        {
+            IncludeFields = true;
+            IncludeProperties = true;
+            IncludeTypes = true;
+            SearchAppDomainCommand = new DelegateCommand(SearchAppDomain);
+            CopyToClipboardCommand = new DelegateCommand(CopyToClipboard);
+            CopyTypeToClipboardCommand = new DelegateCommand(CopyTypeToClipboard);
+        }
 
         #region Properties
         public ObservableCollection<String> CurrentResults
@@ -81,23 +88,29 @@ namespace WpfReflector
             }
         }
 
-        public ICommand SearchAppDomainCommand
-        {
-            get
-            {
-                if (_searchAppDomainCommand == null)
-                {
-                    _searchAppDomainCommand = new DelegateCommand(() => SearchAppDomain());
-                }
+        public string SelectedResult { get; set; }
 
-                return _searchAppDomainCommand;
-            }
-
-        }
+        public ICommand SearchAppDomainCommand { get; private set; }
+        public ICommand CopyToClipboardCommand { get; private set; }
+        public ICommand CopyTypeToClipboardCommand { get; private set; }
 
         #endregion
 
         #region Methods
+
+
+        void CopyToClipboard()
+        {
+            Clipboard.SetText(SelectedResult);
+        }
+
+        void CopyTypeToClipboard()
+        {
+            var type = SelectedResult;
+            var pos = type.LastIndexOf('.');
+            if (pos > 0) type = type.Substring(pos + 1);
+            Clipboard.SetText(type);
+        }
 
         /**
          * Searches the WPF Framework for usages of the given type.
