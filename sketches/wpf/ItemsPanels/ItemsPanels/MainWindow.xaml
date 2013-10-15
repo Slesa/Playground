@@ -1,0 +1,77 @@
+﻿<Window x:Class="ItemsPanels.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:ItemsPanels"
+        Title="ItemsPanels"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Height="500" Width="500">
+	<Window.Resources>
+		<DataTemplate x:Key="CircleItemTemplate">
+            <Grid>
+                <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="AntiqueWhite" />
+                <ContentPresenter Content="{TemplateBinding Content}" />
+    	    </Grid>
+		</DataTemplate>
+
+        <ItemsPanelTemplate x:Key="RadialPanelTemplate">
+            <local:RadialPanel />    
+        </ItemsPanelTemplate>
+
+        <DataTemplate x:Key="ColorEnum">
+            <Rectangle Width="20" Height="20" Fill="{Binding Name}" ToolTip="{Binding Name}" Stroke="#FF000000" />
+        </DataTemplate>
+        
+	</Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="+" Click="OnAddItem"></Button>
+            <TextBlock Width="20" Text="{Binding Items.Count}"/>
+        </StackPanel>
+    <TabControl Grid.Row="1">
+        <TabItem Header="Bezier">
+                <Path Stroke="Black" StrokeThickness="1">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="10,100">
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <QuadraticBezierSegment Point2="200,200" Point1="300,100" />
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+            </TabItem>
+        <TabItem Header="Circle">
+            <Grid>
+                <Ellipse Width="{Binding ElementName=panel, Path=Width}" Height="{Binding ElementName=panel, Path=Height}" Fill="Beige"/>
+                <local:RadialPanel >
+                    <Button Content="Eins"/>
+                    <Button Content="Zwei"/>
+                    <Button Content="Drei"/>
+                    <Button Content="Vier"/>
+                    <Button Content="Fumf"/>
+                    <Button Content="Sechs"/>
+                    <Button Content="Sieben"/>
+                </local:RadialPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="List">
+            <Grid>
+                <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource RadialPanelTemplate}"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Colors">
+            <ItemsControl Name="ColorList" ItemTemplate="{StaticResource ColorEnum}" ItemsPanel="{StaticResource RadialPanelTemplate}" />
+        </TabItem>
+    </TabControl>
+    </Grid>
+</Window>

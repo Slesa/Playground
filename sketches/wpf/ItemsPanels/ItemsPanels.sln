@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemsPanels", "ItemsPanels\ItemsPanels.csproj", "{FE9D4F28-CCC8-4FA2-8FD8-12A80C8464C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE9D4F28-CCC8-4FA2-8FD8-12A80C8464C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE9D4F28-CCC8-4FA2-8FD8-12A80C8464C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE9D4F28-CCC8-4FA2-8FD8-12A80C8464C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE9D4F28-CCC8-4FA2-8FD8-12A80C8464C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
