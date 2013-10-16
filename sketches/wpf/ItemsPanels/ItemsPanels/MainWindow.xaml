@@ -3,75 +3,108 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:ItemsPanels"
         Title="ItemsPanels"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Height="500" Width="500">
-	<Window.Resources>
-		<DataTemplate x:Key="CircleItemTemplate">
+        Height="800" Width="1280">
+
+    <Window.Resources>
+        <DataTemplate x:Key="CircleItemTemplate">
             <Grid>
-                <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="AntiqueWhite" />
-                <ContentPresenter Content="{TemplateBinding Content}" />
-    	    </Grid>
-		</DataTemplate>
+                <Ellipse Fill="AntiqueWhite" />
+                <ContentPresenter Content="{Binding}" />
+            </Grid>
+        </DataTemplate>
 
         <ItemsPanelTemplate x:Key="RadialPanelTemplate">
-            <local:RadialPanel />    
+            <local:RadialPanel />
+        </ItemsPanelTemplate>
+
+        <ItemsPanelTemplate x:Key="BezierPanelTemplate">
+            <local:BezierPanel>
+                <local:BezierPanel.PathFigure>
+                    <PathFigure StartPoint="100 100">
+                        <!--<PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />-->
+                        <!--<PolyBezierSegment Points="200 50, 300 150, 400 100" />-->
+                        <QuadraticBezierSegment Point1="323,90" Point2="538,246" />
+                        <!--<QuadraticBezierSegment Point1="0,0" Point2="538,246" />-->
+                    </PathFigure>
+                </local:BezierPanel.PathFigure>
+            </local:BezierPanel>
         </ItemsPanelTemplate>
 
         <DataTemplate x:Key="ColorEnum">
             <Rectangle Width="20" Height="20" Fill="{Binding Name}" ToolTip="{Binding Name}" Stroke="#FF000000" />
         </DataTemplate>
-        
-	</Window.Resources>
+
+    </Window.Resources>
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="+" Click="OnAddItem"></Button>
-            <TextBlock Width="20" Text="{Binding Items.Count}"/>
+            <Button Margin="3" Content=" + " Click="OnAddItem"/>
+            <Button Margin="3" Content=" - " Click="OnDelItem"/>
+            <TextBlock MinWidth="20" Text="{Binding Items.Count}" VerticalAlignment="Center"/>
         </StackPanel>
-    <TabControl Grid.Row="1">
-        <TabItem Header="Bezier">
-                <Path Stroke="Black" StrokeThickness="1">
-                    <Path.Data>
-                        <PathGeometry>
-                            <PathGeometry.Figures>
-                                <PathFigureCollection>
-                                    <PathFigure StartPoint="10,100">
-                                        <PathFigure.Segments>
-                                            <PathSegmentCollection>
-                                                <QuadraticBezierSegment Point2="200,200" Point1="300,100" />
-                                            </PathSegmentCollection>
-                                        </PathFigure.Segments>
-                                    </PathFigure>
-                                </PathFigureCollection>
-                            </PathGeometry.Figures>
-                        </PathGeometry>
-                    </Path.Data>
-                </Path>
+        <TabControl Grid.Row="1">
+            <TabItem Header="Bezier">
+                <Grid>
+                    <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource BezierPanelTemplate}"/>
+                    <Canvas Background="Transparent" Width="1280" Height="800">
+                        <Ellipse Canvas.Left="323" Canvas.Top="90" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="538" Canvas.Top="246" Width="10" Height="10" Fill="BlueViolet"/>
+                    </Canvas>
+                    <!--<Canvas Background="Transparent" Width="1280" Height="800">
+                        <Ellipse Canvas.Left="100" Canvas.Top="100" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="200" Canvas.Top="50" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="300" Canvas.Top="150" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="400" Canvas.Top="100" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="500" Canvas.Top="50" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="600" Canvas.Top="150" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="700" Canvas.Top="100" Width="10" Height="10" Fill="BlueViolet"/>
+                    </Canvas>-->
+                </Grid>
             </TabItem>
-        <TabItem Header="Circle">
-            <Grid>
-                <Ellipse Width="{Binding ElementName=panel, Path=Width}" Height="{Binding ElementName=panel, Path=Height}" Fill="Beige"/>
-                <local:RadialPanel >
-                    <Button Content="Eins"/>
-                    <Button Content="Zwei"/>
-                    <Button Content="Drei"/>
-                    <Button Content="Vier"/>
-                    <Button Content="Fumf"/>
-                    <Button Content="Sechs"/>
-                    <Button Content="Sieben"/>
-                </local:RadialPanel>
-            </Grid>
-        </TabItem>
-        <TabItem Header="List">
-            <Grid>
-                <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource RadialPanelTemplate}"/>
-            </Grid>
-        </TabItem>
-        <TabItem Header="Colors">
-            <ItemsControl Name="ColorList" ItemTemplate="{StaticResource ColorEnum}" ItemsPanel="{StaticResource RadialPanelTemplate}" />
-        </TabItem>
-    </TabControl>
+            <TabItem Header="Text">
+                <Grid>
+                    <local:TextOnPathControl Text="Over the river and through the woods to grandmother's house we go...">
+                        <local:TextOnPathControl.PathFigure>
+                            <PathFigure StartPoint="50 50">
+                                <QuadraticBezierSegment Point1="323,90" Point2="538,246" />
+                                <!--<PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />-->
+                                <!--<PolyBezierSegment Points="100 50, 700 150" />-->
+                            </PathFigure>
+                        </local:TextOnPathControl.PathFigure>
+                    </local:TextOnPathControl>
+                    <Canvas Background="Transparent" Width="1280" Height="800">
+                        <Ellipse Canvas.Left="323" Canvas.Top="90" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="538" Canvas.Top="246" Width="10" Height="10" Fill="BlueViolet"/>
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Circle">
+                <Grid>
+                    <Ellipse Width="{Binding ElementName=panel, Path=Width}" Height="{Binding ElementName=panel, Path=Height}" Fill="Beige"/>
+                    <local:RadialPanel >
+                        <Button Content="Eins"/>
+                        <Button Content="Zwei"/>
+                        <Button Content="Drei"/>
+                        <Button Content="Vier"/>
+                        <Button Content="Fumf"/>
+                        <Button Content="Sechs"/>
+                        <Button Content="Sieben"/>
+                    </local:RadialPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="List">
+                <Grid>
+                    <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource RadialPanelTemplate}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Colors">
+                <ItemsControl Name="ColorList" ItemTemplate="{StaticResource ColorEnum}" ItemsPanel="{StaticResource RadialPanelTemplate}" />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

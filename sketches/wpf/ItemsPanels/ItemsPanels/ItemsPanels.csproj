@@ -53,7 +53,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BezierPanel.cs" />
     <Compile Include="RadialPanel.cs" />
+    <Compile Include="TextOnPathBase.cs" />
+    <Compile Include="TextOnPathControl.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

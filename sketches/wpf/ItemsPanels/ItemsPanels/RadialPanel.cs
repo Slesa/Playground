@@ -9,7 +9,6 @@ namespace ItemsPanels
         protected override Size MeasureOverride(Size availableSize)
         {
             var size = new Size(double.PositiveInfinity, double.PositiveInfinity);
-            
             foreach (UIElement element in Children)
             {
                 element.Measure(size);
