@@ -5,13 +5,12 @@ using System.Windows.Media;
 
 namespace ItemsPanels
 {
-    public class BezierPanel : Panel
+    public class GeometryPanel : Panel
     {
-
         public static readonly DependencyProperty PathFigureProperty =
             DependencyProperty.Register("PathFigure",
                 typeof(PathFigure),
-                typeof(BezierPanel),
+                typeof(GeometryPanel),
                 new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsArrange|FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         public PathFigure PathFigure

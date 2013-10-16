@@ -6,10 +6,11 @@
         Height="800" Width="1280">
 
     <Window.Resources>
+        <!--<Style TargetType=""></Style>-->
         <DataTemplate x:Key="CircleItemTemplate">
             <Grid>
                 <Ellipse Fill="AntiqueWhite" />
-                <ContentPresenter Content="{Binding}" />
+                <ContentPresenter Content="{TemplateBinding Content}" />
             </Grid>
         </DataTemplate>
 
@@ -20,7 +21,7 @@
         <ItemsPanelTemplate x:Key="BezierPanelTemplate">
             <local:BezierPanel>
                 <local:BezierPanel.PathFigure>
-                    <PathFigure StartPoint="100 100">
+                    <PathFigure StartPoint="10 10">
                         <!--<PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />-->
                         <!--<PolyBezierSegment Points="200 50, 300 150, 400 100" />-->
                         <QuadraticBezierSegment Point1="323,90" Point2="538,246" />
@@ -28,6 +29,17 @@
                     </PathFigure>
                 </local:BezierPanel.PathFigure>
             </local:BezierPanel>
+        </ItemsPanelTemplate>
+
+        <ItemsPanelTemplate x:Key="GeometryPanelTemplate">
+            <local:GeometryPanel>
+                <local:GeometryPanel.PathFigure>
+                    <PathFigure StartPoint="10 10">
+                        <PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />
+                        <!--<PolyBezierSegment Points="200 50, 300 150, 400 100" />-->
+                    </PathFigure>
+                </local:GeometryPanel.PathFigure>
+            </local:GeometryPanel>
         </ItemsPanelTemplate>
 
         <DataTemplate x:Key="ColorEnum">
@@ -38,20 +50,23 @@
 
 
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button Margin="3" Content=" + " Click="OnAddItem"/>
             <Button Margin="3" Content=" - " Click="OnDelItem"/>
             <TextBlock MinWidth="20" Text="{Binding Items.Count}" VerticalAlignment="Center"/>
         </StackPanel>
+        
         <TabControl Grid.Row="1">
             <TabItem Header="Bezier">
                 <Grid>
                     <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource BezierPanelTemplate}"/>
-                    <Canvas Background="Transparent" Width="1280" Height="800">
+                    <Canvas Background="Transparent">
                         <Ellipse Canvas.Left="323" Canvas.Top="90" Width="10" Height="10" Fill="BlueViolet"/>
                         <Ellipse Canvas.Left="538" Canvas.Top="246" Width="10" Height="10" Fill="BlueViolet"/>
                     </Canvas>
@@ -66,26 +81,59 @@
                     </Canvas>-->
                 </Grid>
             </TabItem>
-            <TabItem Header="Text">
+
+            <TabItem Header="Bez-Text">
                 <Grid>
                     <local:TextOnPathControl Text="Over the river and through the woods to grandmother's house we go...">
                         <local:TextOnPathControl.PathFigure>
                             <PathFigure StartPoint="50 50">
                                 <QuadraticBezierSegment Point1="323,90" Point2="538,246" />
-                                <!--<PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />-->
-                                <!--<PolyBezierSegment Points="100 50, 700 150" />-->
                             </PathFigure>
                         </local:TextOnPathControl.PathFigure>
                     </local:TextOnPathControl>
-                    <Canvas Background="Transparent" Width="1280" Height="800">
+                    <Canvas Background="Transparent">
                         <Ellipse Canvas.Left="323" Canvas.Top="90" Width="10" Height="10" Fill="BlueViolet"/>
                         <Ellipse Canvas.Left="538" Canvas.Top="246" Width="10" Height="10" Fill="BlueViolet"/>
                     </Canvas>
                 </Grid>
             </TabItem>
-            <TabItem Header="Circle">
+
+            <TabItem Header="Geometry" >
                 <Grid>
-                    <Ellipse Width="{Binding ElementName=panel, Path=Width}" Height="{Binding ElementName=panel, Path=Height}" Fill="Beige"/>
+                    <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource GeometryPanelTemplate}"/>
+                    <Canvas Background="Transparent" Width="1280" Height="800">
+                        <Ellipse Canvas.Left="100" Canvas.Top="100" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="200" Canvas.Top="50" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="300" Canvas.Top="150" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="400" Canvas.Top="100" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="500" Canvas.Top="50" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="600" Canvas.Top="150" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="700" Canvas.Top="100" Width="10" Height="10" Fill="BlueViolet"/>
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Geo-Text">
+                <Grid>
+                    <local:TextOnPathControl Text="Over the river and through the woods to grandmother's house we go...">
+                        <local:TextOnPathControl.PathFigure>
+                            <PathFigure StartPoint="50 50">
+                                <!--<QuadraticBezierSegment Point1="323,90" Point2="538,246" />-->
+                                <PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />
+                                <!--<PolyBezierSegment Points="100 50, 700 150" />-->
+                            </PathFigure>
+                        </local:TextOnPathControl.PathFigure>
+                    </local:TextOnPathControl>
+                    <Canvas Background="Transparent">
+                        <Ellipse Canvas.Left="323" Canvas.Top="90" Width="10" Height="10" Fill="BlueViolet"/>
+                        <Ellipse Canvas.Left="538" Canvas.Top="246" Width="10" Height="10" Fill="BlueViolet"/>
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Fixed List">
+                <Grid>
+                    <Ellipse Fill="Beige"/>
                     <local:RadialPanel >
                         <Button Content="Eins"/>
                         <Button Content="Zwei"/>
@@ -97,11 +145,13 @@
                     </local:RadialPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="List">
+            
+            <TabItem Header="Dynamic List">
                 <Grid>
                     <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CircleItemTemplate}" ItemsPanel="{StaticResource RadialPanelTemplate}"/>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="Colors">
                 <ItemsControl Name="ColorList" ItemTemplate="{StaticResource ColorEnum}" ItemsPanel="{StaticResource RadialPanelTemplate}" />
             </TabItem>

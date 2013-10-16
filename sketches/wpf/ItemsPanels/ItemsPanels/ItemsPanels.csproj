@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BezierPanel.cs" />
+    <Compile Include="GeometryPanel.cs" />
     <Compile Include="RadialPanel.cs" />
     <Compile Include="TextOnPathBase.cs" />
     <Compile Include="TextOnPathControl.cs" />
