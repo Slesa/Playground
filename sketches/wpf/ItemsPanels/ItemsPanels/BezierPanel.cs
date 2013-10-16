@@ -7,17 +7,17 @@ namespace ItemsPanels
 {
     public class BezierPanel : Panel
     {
-
-        public static readonly DependencyProperty PathFigureProperty =
-            DependencyProperty.Register("PathFigure",
-                typeof(PathFigure),
+        public static readonly DependencyProperty InnerPointProperty =
+            DependencyProperty.Register("InnerPoint",
+                typeof(Point),
                 typeof(BezierPanel),
-                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsArrange|FrameworkPropertyMetadataOptions.AffectsMeasure));
+                new FrameworkPropertyMetadata(default(Point), 
+                    FrameworkPropertyMetadataOptions.AffectsArrange|FrameworkPropertyMetadataOptions.AffectsMeasure));
 
-        public PathFigure PathFigure
+        public Point InnerPoint
         {
-            set { SetValue(PathFigureProperty, value); }
-            get { return (PathFigure)GetValue(PathFigureProperty); }
+            set { SetValue(InnerPointProperty, value); }
+            get { return (Point) GetValue(InnerPointProperty); }
         }
 
         protected override Size MeasureOverride(Size availableSize)
@@ -33,7 +33,10 @@ namespace ItemsPanels
         //Size newArrangeOverride(Size finalSize)
         protected override Size ArrangeOverride(Size finalSize)
         {
-            var pathLength = TextOnPathBase.GetPathFigureLength(PathFigure);
+            var bezier = new QuadraticBezierSegment(InnerPoint, new Point(finalSize.Width, finalSize.Height), true);
+            var pathFigure = new PathFigure(new Point(10, 10), new[] { bezier }, false);
+
+            var pathLength = TextOnPathBase.GetPathFigureLength(pathFigure);
             var neededSpace = 0.0; // finalSize.Width;
 
 
@@ -51,7 +54,7 @@ namespace ItemsPanels
                 var stepPerc = spaceStep / spaceAvail;
 
                 var scalingFactor = pathLength / neededSpace;
-                var pathGeometry = new PathGeometry(new[] {PathFigure});
+                var pathGeometry = new PathGeometry(new[] {pathFigure});
                 var baseline = scalingFactor;
 
                 var progress = 0.0; // stepPerc / 2;
@@ -86,6 +89,7 @@ namespace ItemsPanels
             return base.ArrangeOverride(finalSize);
         }
 
+#if NOT
         //protected override Size ArrangeOverride(Size finalSize)
         Size OriginalArrangeOverride(Size finalSize)
         {
@@ -136,5 +140,6 @@ namespace ItemsPanels
             }
             return base.ArrangeOverride(finalSize);
         }
+#endif
     }
 }

@@ -19,16 +19,12 @@
         </ItemsPanelTemplate>
 
         <ItemsPanelTemplate x:Key="BezierPanelTemplate">
-            <local:BezierPanel>
-                <local:BezierPanel.PathFigure>
+            <local:BezierPanel InnerPoint="323,90" />
+                <!--<local:BezierPanel>
                     <PathFigure StartPoint="10 10">
-                        <!--<PolyBezierSegment Points="200 50, 300 150, 400 100, 500 50, 600 150, 700 100" />-->
-                        <!--<PolyBezierSegment Points="200 50, 300 150, 400 100" />-->
-                        <QuadraticBezierSegment Point1="323,90" Point2="538,246" />
-                        <!--<QuadraticBezierSegment Point1="0,0" Point2="538,246" />-->
+                        <QuadraticBezierSegment Point1="" Point2="538,246" />
                     </PathFigure>
-                </local:BezierPanel.PathFigure>
-            </local:BezierPanel>
+            </local:BezierPanel>-->
         </ItemsPanelTemplate>
 
         <ItemsPanelTemplate x:Key="GeometryPanelTemplate">
@@ -82,7 +78,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Bez-Text">
+            <!--<TabItem Header="Bez-Text">
                 <Grid>
                     <local:TextOnPathControl Text="Over the river and through the woods to grandmother's house we go...">
                         <local:TextOnPathControl.PathFigure>
@@ -96,7 +92,7 @@
                         <Ellipse Canvas.Left="538" Canvas.Top="246" Width="10" Height="10" Fill="BlueViolet"/>
                     </Canvas>
                 </Grid>
-            </TabItem>
+            </TabItem>-->
 
             <TabItem Header="Geometry" >
                 <Grid>
