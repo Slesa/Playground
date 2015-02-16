@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld.Desktop\HelloWorld.csproj", "{7E911B0D-479C-4BEA-9C02-9DD93D0A14DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldModule", "HelloWorldModule\HelloWorldModule.csproj", "{DFC0924F-5639-42CC-BF3E-CC4BD805926F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{0B3542DD-847D-4F9A-B986-CE7038BC1D20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E911B0D-479C-4BEA-9C02-9DD93D0A14DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E911B0D-479C-4BEA-9C02-9DD93D0A14DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E911B0D-479C-4BEA-9C02-9DD93D0A14DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E911B0D-479C-4BEA-9C02-9DD93D0A14DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC0924F-5639-42CC-BF3E-CC4BD805926F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC0924F-5639-42CC-BF3E-CC4BD805926F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC0924F-5639-42CC-BF3E-CC4BD805926F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC0924F-5639-42CC-BF3E-CC4BD805926F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B3542DD-847D-4F9A-B986-CE7038BC1D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3542DD-847D-4F9A-B986-CE7038BC1D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B3542DD-847D-4F9A-B986-CE7038BC1D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3542DD-847D-4F9A-B986-CE7038BC1D20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

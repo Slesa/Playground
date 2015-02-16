@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopDemo", "WorkshopDemo\WorkshopDemo.csproj", "{262CDD06-BCA7-4D2A-BCB9-4472BCAD61A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTest", "NUnitTest\NUnitTest.csproj", "{3B62C4D3-4725-460C-AE7E-E07E5EDA4424}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 NUnitTest", "NUnitTest\02 NUnitTest.csproj", "{3B62C4D3-4725-460C-AE7E-E07E5EDA4424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLogic", "CoreLogic\CoreLogic.csproj", "{089080D7-522F-4BC7-850A-4A23A442E642}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 CoreLogic", "CoreLogic\01 CoreLogic.csproj", "{089080D7-522F-4BC7-850A-4A23A442E642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSpecTest", "MSpecTest\MSpecTest.csproj", "{F0E3D838-23D9-4B75-B1BC-32671109BDCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 MSpecTest", "MSpecTest\03 MSpecTest.csproj", "{F0E3D838-23D9-4B75-B1BC-32671109BDCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowTest", "FlowTest\FlowTest.csproj", "{1197F46D-7EEB-4E9B-A982-58936F1A82DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 FlowTest", "FlowTest\04 FlowTest.csproj", "{1197F46D-7EEB-4E9B-A982-58936F1A82DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeTest", "FakeTest\FakeTest.csproj", "{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 FakeTest", "FakeTest\05 FakeTest.csproj", "{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 Database", "06 Database\06 Database.csproj", "{859DB131-AFB4-4680-B74D-ACD3674E4BA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859DB131-AFB4-4680-B74D-ACD3674E4BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859DB131-AFB4-4680-B74D-ACD3674E4BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859DB131-AFB4-4680-B74D-ACD3674E4BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859DB131-AFB4-4680-B74D-ACD3674E4BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="HelloWorldModule.Views.ClientView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontWeight="Bold" Text="Name: "></TextBlock>
+            <TextBlock Text="{Binding Name}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontWeight="Bold" Text="Address: "></TextBlock>
+            <TextBlock Text="{Binding Address}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontWeight="Bold" Text="Email: "></TextBlock>
+            <TextBlock Text="{Binding Email}"></TextBlock>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

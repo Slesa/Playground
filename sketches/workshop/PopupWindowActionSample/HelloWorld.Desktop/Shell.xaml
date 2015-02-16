@@ -1,0 +1,15 @@
+﻿<Window x:Class="HelloWorld.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cal="http://www.codeplex.com/prism"
+    Title="WPF PopupWindowAction Sample" Height="300" Width="300">
+    <Grid>
+    <StackPanel>
+        <TextBlock Text="Main Region" Margin="2" FontWeight="Bold"/>
+        <Border BorderThickness="3" BorderBrush="DarkRed" Margin="2">
+            <ItemsControl Name="MainRegion" cal:RegionManager.RegionName="MainRegion" Margin="2"/>
+        </Border>
+    </StackPanel>
+        <Rectangle Fill="Black" Opacity="0.2"/>
+    </Grid>
+</Window>
