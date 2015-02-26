@@ -1,8 +1,29 @@
 ﻿<Window x:Class="WorkshopDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WorkshopDemo="clr-namespace:WorkshopDemo"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="_booleanToVisibilityConverter" />
+    </Window.Resources>
+    <Window.DataContext>
+        <WorkshopDemo:MainViewModel />
+    </Window.DataContext>
+
+    <DockPanel>
+        <Border DockPanel.Dock="Bottom" BorderBrush="BlueViolet" BorderThickness="1" Height="20" Visibility="{Binding StatusVisible, Converter={StaticResource _booleanToVisibilityConverter}}">
+            <TextBox Text="{Binding StatusText}" />
+        </Border>
+
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right">
+                <Button Content="_Add" Command="{Binding AddCommand}" />
+                <Button Content="_Edit" Command="{Binding EditCommand}" />
+                <Button Content="_Remove" Command="{Binding RemoveCommand}" />
+            </StackPanel>
+            <ListBox ItemsSource="{Binding Items}" />
+        </DockPanel>
+    </DockPanel>
+    
 </Window>

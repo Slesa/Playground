@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopDemo", "WorkshopDemo\WorkshopDemo.csproj", "{262CDD06-BCA7-4D2A-BCB9-4472BCAD61A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTest", "NUnitTest\NUnitTest.csproj", "{3B62C4D3-4725-460C-AE7E-E07E5EDA4424}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowTest", "FlowTest\FlowTest.csproj", "{1197F46D-7EEB-4E9B-A982-58936F1A82DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeTest", "FakeTest\FakeTest.csproj", "{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopSpecs", "WorkshopSpecs\WorkshopSpecs.csproj", "{425BC71C-7632-4943-A8D6-1E6DAB67BE05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CDFDC3C-058E-4192-BF6D-D0189659BE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{425BC71C-7632-4943-A8D6-1E6DAB67BE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{425BC71C-7632-4943-A8D6-1E6DAB67BE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{425BC71C-7632-4943-A8D6-1E6DAB67BE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{425BC71C-7632-4943-A8D6-1E6DAB67BE05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
