@@ -1,0 +1,24 @@
+NUGET
+  remote: http://nuget.org/api/v2
+  specs:
+    Blend.Interctivity.WPF.v4.0 (1.0.3)
+    FluentNHibernate (2.0.1.0)
+      NHibernate (>= 4.0)
+    Iesi.Collections (4.0.0.4000)
+    Machine.Fakes (2.5.0)
+      Machine.Specifications (>= 0.9)
+    Machine.Fakes.RhinoMocks (2.5.0)
+      Machine.Fakes (2.5)
+      RhinoMocks (>= 3.6.1)
+    Machine.Specifications (0.9.1)
+    Machine.Specifications.Should (0.7.2)
+      Machine.Specifications (>= 0.7 < 1.0)
+    NHibernate (4.0.3.4000)
+      Iesi.Collections (>= 4.0 < 5.0)
+    NuGet.CommandLine (2.8.3)
+    NUnit (2.6.4)
+    RhinoMocks (3.6.1)
+    SpecFlow (1.9.0)
+    SpecFlow.NUnit (1.1.1)
+      NUnit (>= 2.6)
+      SpecFlow

@@ -1,8 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
-using Microsoft.Expression.Interactivity.Core;
 
 namespace WorkshopDemo
 {
@@ -17,13 +15,40 @@ namespace WorkshopDemo
         public MainViewModel()
         {
             Items = new ObservableCollection<WorkItem>();
+            AddCommand = new DelegateCommand(Add, CanAdd);
+            EditCommand = new DelegateCommand(Edit, CanEdit);
+            RemoveCommand = new DelegateCommand(Remove, CanRemove);
         }
 
-        public ICommand AddCommand { get; set; }
-        public ICommand EditCommand { get; set; }
-        public ICommand RemoveCommand { get; set; }
+        public DelegateCommand AddCommand { get; set; }
 
-        public ObservableCollection<WorkItem> Items { get; private set; }
+        void Add(object o) { }
+
+        bool CanAdd(object o)
+        {
+            return true;
+        }
+
+        public DelegateCommand EditCommand { get; set; }
+        void Edit(object o) { }
+
+        bool CanEdit(object o)
+        {
+            return SelectedItem!=null;
+        }
+
+        public DelegateCommand RemoveCommand { get; set; }
+        void Remove(object o) { }
+
+        bool CanRemove(object o)
+        {
+            return SelectedItem!=null;
+        }
+
+
+        public WorkItem SelectedItem { get; set; }
+        public ObservableCollection<WorkItem> Items { get; internal set; }
+
 
         string _statusText;
 
@@ -42,6 +67,7 @@ namespace WorkshopDemo
         {
             get { return !string.IsNullOrEmpty(StatusText); }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

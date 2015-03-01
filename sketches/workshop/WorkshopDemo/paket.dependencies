@@ -1,0 +1,15 @@
+source http://nuget.org/api/v2
+
+nuget Blend.Interctivity.WPF.v4.0 1.0.3
+nuget FluentNHibernate 2.0.1.0
+nuget Iesi.Collections 4.0.0.4000
+nuget NHibernate 4.0.3.4000
+nuget NUnit >= 2.6.0
+nuget Machine.Fakes >= 2.4.0
+nuget Machine.Fakes.RhinoMocks >= 2.4.0
+nuget Machine.Specifications >= 0.9.1
+nuget Machine.Specifications.Should >= 0.7.2
+nuget Nuget.CommandLine 2.8.3
+nuget RhinoMocks >= 3.6.1
+nuget SpecFlow >= 1.9.0
+nuget SpecFlow.NUnit >= 1.1.1

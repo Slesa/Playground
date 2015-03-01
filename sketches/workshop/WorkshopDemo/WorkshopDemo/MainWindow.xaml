@@ -22,7 +22,7 @@
                 <Button Content="_Edit" Command="{Binding EditCommand}" />
                 <Button Content="_Remove" Command="{Binding RemoveCommand}" />
             </StackPanel>
-            <ListBox ItemsSource="{Binding Items}" />
+            <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" />
         </DockPanel>
     </DockPanel>
     
