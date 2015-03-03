@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="hidden\DoDont.cs" />
+    <Compile Include="hidden\DontTestDb.cs" />
     <Compile Include="XamlContentParserSpecs.cs" />
     <Compile Include="IFetchUriContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
