@@ -35,6 +35,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePin.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePin.feature</DependentUpon>
+    </Compile>
     <Compile Include="Order.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -45,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ChangePin.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChangePin.feature.cs</LastGenOutput>
+    </None>
     <None Include="Order.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Order.feature.cs</LastGenOutput>
